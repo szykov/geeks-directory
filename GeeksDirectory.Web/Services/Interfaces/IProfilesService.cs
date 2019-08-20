@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using GeeksDirectory.Data.Entities;
 using GeeksDirectory.SharedTypes.Models;
@@ -9,12 +10,12 @@ namespace GeeksDirectory.Web.Services.Interfaces
     {
         GeekProfile Get(int id);
 
-        IEnumerable<GeekProfile> Get();
+        IEnumerable<GeekProfile> Get(int take, int skip);
 
         IEnumerable<GeekProfile> Search(string searchQuery);
 
-        void Update(int id, ProfileModel profile);
+        void Update(int id, GeekProfileModel profile);
 
-        GeekProfile Add(ProfileModel profile);
+        Task<GeekProfile> AddAsync(GeekProfileModel profile);
     }
 }

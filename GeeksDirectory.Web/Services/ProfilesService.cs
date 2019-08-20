@@ -1,37 +1,102 @@
-﻿using GeeksDirectory.Data.Entities;
+﻿using AutoMapper;
+
+using GeeksDirectory.Data.Entities;
+using GeeksDirectory.Data.Repositories;
+using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.Web.Services.Interfaces;
 
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Services
 {
     public class ProfilesService : IProfilesService
     {
-        public IEnumerable<GeekProfile> Get()
+        private readonly IProfilesRepository repository;
+        private readonly UserManager<ApplicationUser> userManager;
+        private readonly IMapper mapper;
+        private readonly ILogger logger;
+
+        public ProfilesService(IProfilesRepository repository, UserManager<ApplicationUser> userManager, IMapperService mapperService, ILogger<ProfilesService> logger)
         {
-            throw new NotImplementedException();
+            this.repository = repository;
+            this.userManager = userManager;
+            this.mapper = mapperService.GetGeekProfileMapper();
+            this.logger = logger;
+        }
+
+        public IEnumerable<GeekProfile> Get(int take, int skip)
+        {
+            try
+            {
+                return this.repository.Get(take, skip);
+            }
+            catch (Exception ex)
+            {
+                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
+            }
         }
 
         public GeekProfile Get(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return this.repository.Get(id);
+            }
+            catch (Exception ex)
+            {
+                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
+            }
         }
 
         public IEnumerable<GeekProfile> Search(string searchQuery)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return this.repository.Search(searchQuery);
+            }
+            catch (Exception ex)
+            {
+                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
+            }
         }
 
-        public void Update(int id, ProfileModel profile)
+        public void Update(int id, GeekProfileModel profile)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var entity = this.repository.Get(id);
+                this.mapper.Map(profile, entity);
+
+                this.repository.Update(entity);
+
+                this.logger.LogInformation("Updated profile {@entity} with {@profile}", entity, profile);
+            }
+            catch (Exception ex)
+            {
+                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
+            }
         }
 
-        public GeekProfile Add(ProfileModel profile)
+        public async Task<GeekProfile> AddAsync(GeekProfileModel profile)
         {
-            throw new NotImplementedException();
+            var applicationUser = new ApplicationUser { UserName = profile.Email, Email = profile.Email };
+            await this.userManager.CreateAsync(applicationUser, profile.Password);
+
+            var entity = this.mapper.Map<GeekProfile>(profile);
+            entity.ApplicationUser = applicationUser;
+
+            this.repository.Add(entity);
+
+            this.logger.LogInformation("Added profile {@entity} with {@profile}", entity, profile);
+
+            return entity;
         }
     }
 }

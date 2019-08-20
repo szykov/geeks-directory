@@ -2,8 +2,18 @@
 
 namespace GeeksDirectory.SharedTypes.Models
 {
-    public class ProfileModel
+    public class GeekProfileModel
     {
+        [Required]
+        [EmailAddress]
+        [StringLength(maximumLength: 255)]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [StringLength(maximumLength: 255)]
+        public string Password { get; set; }
+
         [Required]
         [StringLength(maximumLength: 255)]
         public string Name { get; set; }

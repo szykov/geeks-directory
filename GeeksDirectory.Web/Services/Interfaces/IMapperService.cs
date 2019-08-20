@@ -4,6 +4,8 @@ namespace GeeksDirectory.Web.Services.Interfaces
 {
     public interface IMapperService
     {
-        IMapper GetExceptionResponseMapper();
+        IMapper GetExceptionMapper();
+
+        IMapper GetGeekProfileMapper();
     }
 }

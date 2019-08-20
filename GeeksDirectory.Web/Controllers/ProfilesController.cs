@@ -5,15 +5,17 @@ using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
 using GeeksDirectory.Web.Services.Interfaces;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
+using OpenIddict.Validation;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Controllers
 {
-    [Authorize]
+    [Authorize(AuthenticationSchemes = OpenIddictValidationDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class ProfilesController : Controller
@@ -25,18 +27,18 @@ namespace GeeksDirectory.Web.Controllers
         public ProfilesController(IProfilesService context, IMapperService mapperService, ILogger<ProfilesController> logger)
         {
             this.context = context;
-            this.mapper = mapperService.GetExceptionResponseMapper();
+            this.mapper = mapperService.GetExceptionMapper();
             this.logger = logger;
         }
 
-        // GET: /api/profiles
+        // GET: /api/profiles?take={take}&skip={skip}
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult<IEnumerable<GeekProfile>> GetProfiles()
+        public ActionResult<IEnumerable<GeekProfile>> GetProfiles(int take = 25, int skip = 0)
         {
             try
             {
-                var profiles = this.context.Get();
+                var profiles = this.context.Get(take, skip);
                 return this.Ok(profiles);
             }
             catch (LogicException ex)
@@ -46,9 +48,26 @@ namespace GeeksDirectory.Web.Controllers
             }
         }
 
+        // GET: /api/profiles/search?query={query}
+        [AllowAnonymous]
+        [HttpGet("search")]
+        public ActionResult<IEnumerable<GeekProfile>> SearchProfiles([FromQuery]string query)
+        {
+            try
+            {
+                var profiles = this.context.Search(query);
+                return this.Ok(profiles);
+            }
+            catch (LogicException ex)
+            {
+                this.logger.LogError(ex, "Unable to search in profiles.");
+                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
+            }
+        }
+
         // GET: /api/profiles/{id}
         [AllowAnonymous]
-        [HttpGet]
+        [HttpGet("{id}", Name = "GetProfile")]
         public ActionResult<GeekProfile> GetProfile([FromRoute]int id)
         {
             try
@@ -63,31 +82,14 @@ namespace GeeksDirectory.Web.Controllers
             }
         }
 
-        // GET: /api/profiles?search={search}
-        [AllowAnonymous]
-        [HttpGet]
-        public ActionResult<IEnumerable<GeekProfile>> SearchProfiles([FromQuery]string search)
-        {
-            try
-            {
-                var profiles = this.context.Search(search);
-                return this.Ok(profiles);
-            }
-            catch (LogicException ex)
-            {
-                this.logger.LogError(ex, "Unable to search in profiles.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
-            }
-        }
-
         // POST: /api/profiles
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult<GeekProfile> RegisterProfile([FromBody]ProfileModel model)
+        public async Task<ActionResult<GeekProfile>> RegisterProfile([FromBody]GeekProfileModel model)
         {
             try
             {
-                var profile = this.context.Add(model);
+                var profile = await this.context.AddAsync(model);
                 return this.CreatedAtRoute(nameof(GetProfile), new { Id = profile.ProfileId }, profile);
             }
             catch (LogicException ex)
@@ -98,8 +100,8 @@ namespace GeeksDirectory.Web.Controllers
         }
 
         // PATCH: /api/profiles/{id}
-        [HttpPatch]
-        public ActionResult<GeekProfile> UpdateProfile([FromRoute]int id, [FromBody]ProfileModel model)
+        [HttpPatch("{id}")]
+        public ActionResult<GeekProfile> UpdateProfile([FromRoute]int id, [FromBody]GeekProfileModel model)
         {
             try
             {

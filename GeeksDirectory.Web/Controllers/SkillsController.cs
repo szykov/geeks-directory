@@ -5,14 +5,18 @@ using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
 using GeeksDirectory.Web.Services.Interfaces;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
+using OpenIddict.Validation;
+
 using System.Collections.Generic;
 
 namespace GeeksDirectory.Web.Controllers
 {
-    [Authorize]
+    [Authorize(AuthenticationSchemes = OpenIddictValidationDefaults.AuthenticationScheme)]
     [Route("api/profiles")]
     [ApiController]
     public class SkillsController : ControllerBase
@@ -24,7 +28,7 @@ namespace GeeksDirectory.Web.Controllers
         public SkillsController(ISkillsService context, IMapperService mapperService, ILogger<ProfilesController> logger)
         {
             this.context = context;
-            this.mapper = mapperService.GetExceptionResponseMapper();
+            this.mapper = mapperService.GetExceptionMapper();
             this.logger = logger;
         }
 
