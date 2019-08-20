@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.62
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.Web", "GeeksDirectory.Web\GeeksDirectory.Web.csproj", "{0E352F00-FAF8-4B16-BF4A-53F2AC7436CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.SharedTypes", "GeeksDirectory.SharedTypes\GeeksDirectory.SharedTypes.csproj", "{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E352F00-FAF8-4B16-BF4A-53F2AC7436CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E352F00-FAF8-4B16-BF4A-53F2AC7436CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E352F00-FAF8-4B16-BF4A-53F2AC7436CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E352F00-FAF8-4B16-BF4A-53F2AC7436CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {746B0CE4-51DF-4552-8CC7-F15F60F4FCA3}
+	EndGlobalSection
+EndGlobal
