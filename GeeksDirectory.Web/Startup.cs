@@ -1,7 +1,8 @@
-
 using GeeksDirectory.Data;
 using GeeksDirectory.SharedTypes.Extensions;
 using GeeksDirectory.Web.Configuration;
+using GeeksDirectory.Web.Services;
+using GeeksDirectory.Web.Services.Interfaces;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,6 +50,9 @@ namespace GeeksDirectory.Web
 
             //  Services
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(this.connectionString));
+
+            services.AddScoped<IProfilesService, ProfilesService>();
+            services.AddScoped<ISkillsService, SkillsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,7 +7,7 @@ namespace GeeksDirectory.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public virtual DbSet<Profile> Profiles { get; set; }
+        public virtual DbSet<GeekProfile> Profiles { get; set; }
 
         public virtual DbSet<Skill> Skills { get; set; }
 

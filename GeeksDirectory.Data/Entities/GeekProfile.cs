@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GeeksDirectory.Data.Entities
 {
-    public class Profile
+    public class GeekProfile
     {
         [Key]
         public int ProfileId { get; set; }
