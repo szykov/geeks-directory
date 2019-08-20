@@ -7,6 +7,10 @@ namespace GeeksDirectory.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public virtual DbSet<Profile> Profiles { get; set; }
+
+        public virtual DbSet<Skill> Skills { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 
