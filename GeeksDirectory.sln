@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.Web", "Geeks
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.SharedTypes", "GeeksDirectory.SharedTypes\GeeksDirectory.SharedTypes.csproj", "{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksDirectory.Data", "GeeksDirectory.Data\GeeksDirectory.Data.csproj", "{0FBF71F3-08E2-4D99-921B-CD567CB1CC6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FBF71F3-08E2-4D99-921B-CD567CB1CC6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBF71F3-08E2-4D99-921B-CD567CB1CC6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBF71F3-08E2-4D99-921B-CD567CB1CC6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBF71F3-08E2-4D99-921B-CD567CB1CC6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

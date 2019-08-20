@@ -1,10 +1,11 @@
-using AutoMapper;
 
-using GeeksDirectory.Web.Configuration;
+using GeeksDirectory.Data;
 using GeeksDirectory.SharedTypes.Extensions;
+using GeeksDirectory.Web.Configuration;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -19,8 +20,7 @@ namespace GeeksDirectory.Web
         private readonly IConfiguration configuration;
         private readonly IEnumerable<string> origins;
         private readonly IHostingEnvironment environment;
-
-        public IConfiguration Configuration { get; }
+        private string connectionString;
 
         public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment environment)
         {
@@ -28,11 +28,14 @@ namespace GeeksDirectory.Web
             this.configuration = configuration;
             this.origins = this.configuration.GetSection("AllowOrigins").Get<IEnumerable<string>>();
             this.environment = environment;
+            this.connectionString = this.configuration.GetConnectionString("DefaultConnection");
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddPredefinedOpenIddict(this.connectionString);
+
             if (this.origins.NotNullOrEmpty())
             {
                 services.AddPredefinedCors(this.origins);
@@ -43,6 +46,9 @@ namespace GeeksDirectory.Web
             services.AddPredefinedErrorHandling(this.logger);
 
             services.AddPredefinedSpa();
+
+            //  Services
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(this.connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

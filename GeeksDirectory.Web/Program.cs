@@ -20,7 +20,7 @@ namespace GeeksDirectory.Web
             try
             {
                 logger.Debug("init main");
-                CreateWebHost(args).Run();
+                CreateWebHostBuilder(args).Build().Run();
             }
             catch (Exception ex)
             {
@@ -34,7 +34,7 @@ namespace GeeksDirectory.Web
             }
         }
 
-        public static IWebHost CreateWebHost(string[] args) =>
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UsePredefinedAppConfiguration(args)
@@ -44,10 +44,8 @@ namespace GeeksDirectory.Web
                     logging.AddDebug();
                     logging.AddConsole();
                     logging.ClearProviders();
-                    logging.SetMinimumLevel(LogLevel.Trace);
                 })
                 .UseNLog()  // Setup NLog for Dependency injection
-                .UseKestrel()
-                .Build();
+                .UseKestrel();
     }
 }
