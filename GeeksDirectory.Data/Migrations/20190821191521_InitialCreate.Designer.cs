@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeeksDirectory.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190820141618_AddedProfiles")]
-    partial class AddedProfiles
+    [Migration("20190821191521_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,7 +72,7 @@ namespace GeeksDirectory.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("GeeksDirectory.Data.Entities.Profile", b =>
+            modelBuilder.Entity("GeeksDirectory.Data.Entities.GeekProfile", b =>
                 {
                     b.Property<int>("ProfileId")
                         .ValueGeneratedOnAdd()
@@ -103,7 +103,9 @@ namespace GeeksDirectory.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int?>("ProfileId");
+                    b.Property<int>("ProfileId");
+
+                    b.Property<int>("Score");
 
                     b.Property<string>("Title");
 
@@ -375,7 +377,7 @@ namespace GeeksDirectory.Data.Migrations
                     b.ToTable("OpenIddictTokens");
                 });
 
-            modelBuilder.Entity("GeeksDirectory.Data.Entities.Profile", b =>
+            modelBuilder.Entity("GeeksDirectory.Data.Entities.GeekProfile", b =>
                 {
                     b.HasOne("GeeksDirectory.Data.Entities.ApplicationUser", "ApplicationUser")
                         .WithMany()
@@ -384,9 +386,10 @@ namespace GeeksDirectory.Data.Migrations
 
             modelBuilder.Entity("GeeksDirectory.Data.Entities.Skill", b =>
                 {
-                    b.HasOne("GeeksDirectory.Data.Entities.Profile")
+                    b.HasOne("GeeksDirectory.Data.Entities.GeekProfile", "Profile")
                         .WithMany("Skills")
-                        .HasForeignKey("ProfileId");
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

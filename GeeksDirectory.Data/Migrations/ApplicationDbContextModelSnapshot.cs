@@ -101,17 +101,13 @@ namespace GeeksDirectory.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int?>("GeekProfileProfileId");
-
-                    b.Property<int?>("ProfileId");
+                    b.Property<int>("ProfileId");
 
                     b.Property<int>("Score");
 
                     b.Property<string>("Title");
 
                     b.HasKey("SkillId");
-
-                    b.HasIndex("GeekProfileProfileId");
 
                     b.HasIndex("ProfileId");
 
@@ -388,13 +384,10 @@ namespace GeeksDirectory.Data.Migrations
 
             modelBuilder.Entity("GeeksDirectory.Data.Entities.Skill", b =>
                 {
-                    b.HasOne("GeeksDirectory.Data.Entities.GeekProfile")
-                        .WithMany("Skills")
-                        .HasForeignKey("GeekProfileProfileId");
-
                     b.HasOne("GeeksDirectory.Data.Entities.GeekProfile", "Profile")
-                        .WithMany()
-                        .HasForeignKey("ProfileId");
+                        .WithMany("Skills")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

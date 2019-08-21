@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using OpenIddict.Validation;
 
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GeeksDirectory.Web.Controllers
 {
@@ -49,7 +50,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // POST: /api/profiles/{profileId}/skills/{skillName}
         [HttpPost("{profileId}/skills/{skillName}")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> SetScore([FromRoute]int profileId, [FromRoute]string skillName, [FromBody]int score)
+        public ActionResult<IEnumerable<GeekProfileResponse>> SetScore([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
         {
             try
             {

@@ -8,6 +8,8 @@ namespace GeeksDirectory.Data.Repositories
 
         Skill Get(int profileId, string skillTitle);
 
+        bool Exists(int profileId, string skillTitle);
+
         void SetScore(Skill skill, int score);
     }
 }

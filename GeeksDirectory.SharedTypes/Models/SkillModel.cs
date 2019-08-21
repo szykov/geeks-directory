@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GeeksDirectory.Data.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace GeeksDirectory.SharedTypes.Models
 {
     public class SkillModel
     {
         [Required]
+        [NoWhitespaceValidation(ErrorMessage = "The field {0} shouldn't have white spaces.")]
         [StringLength(maximumLength: 50)]
         public string Title { get; set; }
 
@@ -12,7 +14,6 @@ namespace GeeksDirectory.SharedTypes.Models
         [StringLength(maximumLength: 255)]
         public string Description { get; set; }
 
-        [Required]
         [Range(0, 5)]
         public int Score { get; set; }
     }

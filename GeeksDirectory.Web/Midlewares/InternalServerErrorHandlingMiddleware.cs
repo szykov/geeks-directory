@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 using System;
+using System.Net.Sockets;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Midlewares
@@ -30,6 +31,10 @@ namespace GeeksDirectory.Web.Midlewares
             {
                 await this.next(httpContext);
             }
+            catch (Exception ex) when (ex.GetBaseException() is SocketException)
+            {
+                httpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+            }
             catch (Exception ex)
             {
                 if (!httpContext.Response.HasStarted)
@@ -45,8 +50,6 @@ namespace GeeksDirectory.Web.Midlewares
                             ContractResolver = new CamelCasePropertyNamesContractResolver(),
                             NullValueHandling = NullValueHandling.Ignore,
                         });
-
-                    httpContext.Response.ContentType = "application/json";
 
                     await httpContext.Response.WriteAsync(jsonResult);
                 }

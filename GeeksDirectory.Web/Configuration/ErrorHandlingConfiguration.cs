@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using System.ComponentModel.DataAnnotations;
+
 namespace GeeksDirectory.Web.Configuration
 {
     public static class ErrorHandlingConfiguration
@@ -19,9 +21,11 @@ namespace GeeksDirectory.Web.Configuration
                 options.InvalidModelStateResponseFactory = (context) =>
                 {
                     var errorResponse = context.ModelState.ToErrorResponse();
+                    logger.LogWarning(new ValidationException(errorResponse.Message),
+                        "In action {@action} model validation errors: {@modelErrors}.",
+                        context.ActionDescriptor.DisplayName, errorResponse.Details);
 
-                    logger.LogWarning("In action {0} model validation errors: {1}.", context.ActionDescriptor.DisplayName, context.ModelState);
-                    return new UnprocessableEntityObjectResult(errorResponse);
+                    return new BadRequestObjectResult(errorResponse);
                 };
             });
 

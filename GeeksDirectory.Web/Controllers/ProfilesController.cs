@@ -84,7 +84,7 @@ namespace GeeksDirectory.Web.Controllers
         // POST: /api/profiles
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<GeekProfileResponse>> RegisterProfile([FromBody]GeekProfileModel model)
+        public async Task<ActionResult<GeekProfileResponse>> RegisterProfile([FromBody]CreateGeekProfileModel model)
         {
             try
             {

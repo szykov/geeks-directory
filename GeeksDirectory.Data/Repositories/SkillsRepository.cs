@@ -22,14 +22,8 @@ namespace GeeksDirectory.Data.Repositories
                 throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillTitle)} are invalid.");
             }
 
-            var profile = this.context.Profiles.Where(prf => prf.ProfileId == profileId).SingleOrDefault();
-
-            if (profile == null)
-            {
-                throw new KeyNotFoundException("Profile has not been found.");
-            }
-
-            var skill = profile.Skills.Where(s => s.Title == skillTitle).Single();
+            var skill = this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
+                .Where(s => s.Title == skillTitle).SingleOrDefault();
 
             if (skill == null)
             {
@@ -37,6 +31,17 @@ namespace GeeksDirectory.Data.Repositories
             }
 
             return skill;
+        }
+
+        public bool Exists(int profileId, string skillTitle)
+        {
+            if (profileId == 0 || String.IsNullOrEmpty(skillTitle))
+            {
+                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillTitle)} are invalid.");
+            }
+
+            return this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
+                .Where(s => s.Title == skillTitle).Any();
         }
 
         public void Add(int profileId, Skill skill)

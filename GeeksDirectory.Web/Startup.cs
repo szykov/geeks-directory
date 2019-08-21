@@ -1,13 +1,9 @@
-using GeeksDirectory.Data;
-using GeeksDirectory.Data.Repositories;
 using GeeksDirectory.SharedTypes.Extensions;
 using GeeksDirectory.Web.Configuration;
-using GeeksDirectory.Web.Services;
-using GeeksDirectory.Web.Services.Interfaces;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -36,45 +32,36 @@ namespace GeeksDirectory.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddPredefinedOpenIddict(this.connectionString);
-
+            services.AddPredefinedServices(this.connectionString);
             if (this.origins.NotNullOrEmpty())
             {
                 services.AddPredefinedCors(this.origins);
             }
 
+            services.AddPredefinedOpenIddict(this.connectionString);
+
             services.AddPredefinedRouting();
-            services.AddPredefinedErrorHandling(this.logger);
             services.AddPredefinedSpa();
 
-            //  Services
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(this.connectionString));
-
-            services.AddScoped<IMapperService, MapperService>();
-
-            services.AddScoped<IProfilesRepository, ProfilesRepository>();
-            services.AddScoped<ISkillsRepository, SkillsRepository>();
-
-            services.AddScoped<IProfilesService, ProfilesService>();
-            services.AddScoped<ISkillsService, SkillsService>();
-
-            // Cookies
             services.AddPredefinedApplicationCookie();
+
+            services.AddPredefinedErrorHandling(this.logger);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            app.UseAuthentication();
-
             if (this.origins.NotNullOrEmpty())
             {
                 app.UsePredefinedCors();
             }
 
+            app.UseAuthentication();
             app.UsePredefinedErrorHandling(env);
             app.UsePredefinedRouting();
             app.UsePredefinedSpa(env);
+
+
         }
     }
 }

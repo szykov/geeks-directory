@@ -16,6 +16,6 @@ namespace GeeksDirectory.Web.Services.Interfaces
 
         void Update(int profileId, GeekProfileModel model);
 
-        Task<GeekProfileResponse> AddAsync(GeekProfileModel model);
+        Task<GeekProfileResponse> AddAsync(CreateGeekProfileModel model);
     }
 }

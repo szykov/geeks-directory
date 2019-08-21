@@ -31,7 +31,11 @@ namespace GeeksDirectory.Web.Configuration
                 }
             })
             .AddJsonOptions(options => options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore)
-            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            .ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressMapClientErrors = true;
+            });
 
             // Enforce lower case URL routing
             services.AddRouting(options => options.LowercaseUrls = true);

@@ -88,18 +88,11 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public async Task<GeekProfileResponse> AddAsync(GeekProfileModel model)
+        public async Task<GeekProfileResponse> AddAsync(CreateGeekProfileModel model)
         {
             try
             {
-                var exists = await this.userManager.FindByEmailAsync(model.Email);
-                if (exists != null)
-                {
-                    throw new ArgumentException("Profile already exists.");
-                }
-
-                var applicationUser = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                await this.userManager.CreateAsync(applicationUser, model.Password);
+                var applicationUser = await CreateUser(model.Email, model.Password);
 
                 var profile = this.mapper.Map<GeekProfile>(model);
                 profile.ApplicationUser = applicationUser;
@@ -114,6 +107,20 @@ namespace GeeksDirectory.Web.Services
             {
                 throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
             }
+        }
+
+        private async Task<ApplicationUser> CreateUser(string email, string password)
+        {
+            var exists = await this.userManager.FindByEmailAsync(email);
+            if (exists != null)
+            {
+                throw new ArgumentException("Profile already exists.");
+            }
+
+            var applicationUser = new ApplicationUser { UserName = email, Email = email };
+            await this.userManager.CreateAsync(applicationUser, password);
+
+            return applicationUser;
         }
     }
 }

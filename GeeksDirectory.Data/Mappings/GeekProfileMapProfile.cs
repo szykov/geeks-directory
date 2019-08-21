@@ -11,6 +11,7 @@ namespace GeeksDirectory.SharedTypes.Mappings
         public GeekProfileMapProfile()
         {
             this.CreateMap<GeekProfileModel, GeekProfile>();
+            this.CreateMap<CreateGeekProfileModel, GeekProfile>();
 
             this.CreateMap<GeekProfile, GeekProfileResponse>()
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.ApplicationUser.Email));

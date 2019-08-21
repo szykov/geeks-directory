@@ -18,6 +18,6 @@ namespace GeeksDirectory.Data.Entities
 
         public string City { get; set; }
 
-        public IEnumerable<Skill> Skills { get; set; }
+        public List<Skill> Skills { get; set; }
     }
 }

@@ -32,6 +32,11 @@ namespace GeeksDirectory.Web.Services
         {
             try
             {
+                if(this.repository.Exists(profileId, model.Title))
+                {
+                    throw new ArgumentException("Skill already exists.");
+                }
+
                 var skill = this.mapper.Map<Skill>(model);
                 this.repository.Add(profileId, skill);
 

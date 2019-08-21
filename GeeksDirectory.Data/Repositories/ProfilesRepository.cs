@@ -24,7 +24,7 @@ namespace GeeksDirectory.Data.Repositories
                 throw new ArgumentException(message: $"{nameof(take)} and/or {nameof(skip)} are invalid.");
             }
 
-            return this.context.Profiles.Take(take).Skip(skip).ToList();
+            return this.context.Profiles.Include(prf => prf.Skills).Take(take).Skip(skip).ToList();
         }
 
         public GeekProfile Get(int id)
@@ -34,7 +34,8 @@ namespace GeeksDirectory.Data.Repositories
                 throw new ArgumentException(message: $"{nameof(id)} is invalid.");
             }
 
-            var profile = this.context.Profiles.Where(prf => prf.ProfileId == id).SingleOrDefault();
+            var profile = this.context.Profiles.Include(prf => prf.Skills)
+                .Where(prf => prf.ProfileId == id).SingleOrDefault();
 
             if (profile == null)
             {
