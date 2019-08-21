@@ -6,7 +6,7 @@ namespace GeeksDirectory.Data.Repositories
 {
     public interface IProfilesRepository
     {
-        void Add(GeekProfile entity);
+        void Add(GeekProfile profile);
 
         GeekProfile Get(int id);
 
@@ -14,6 +14,6 @@ namespace GeeksDirectory.Data.Repositories
 
         IEnumerable<GeekProfile> Search(string searchQuery);
 
-        void Update(GeekProfile entity);
+        void Update(int profileId, GeekProfile profile);
     }
 }

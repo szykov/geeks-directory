@@ -7,5 +7,7 @@ namespace GeeksDirectory.Web.Services.Interfaces
         IMapper GetExceptionMapper();
 
         IMapper GetGeekProfileMapper();
+
+        IMapper GetSkillMapper();
     }
 }

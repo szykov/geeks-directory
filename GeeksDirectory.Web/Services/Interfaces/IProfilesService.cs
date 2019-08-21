@@ -1,21 +1,21 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using GeeksDirectory.SharedTypes.Models;
+using GeeksDirectory.SharedTypes.Responses;
 
-using GeeksDirectory.Data.Entities;
-using GeeksDirectory.SharedTypes.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Services.Interfaces
 {
     public interface IProfilesService
     {
-        GeekProfile Get(int id);
+        GeekProfileResponse Get(int profileId);
 
-        IEnumerable<GeekProfile> Get(int take, int skip);
+        IEnumerable<GeekProfileResponse> Get(int take, int skip);
 
-        IEnumerable<GeekProfile> Search(string searchQuery);
+        IEnumerable<GeekProfileResponse> Search(string searchQuery);
 
-        void Update(int id, GeekProfileModel profile);
+        void Update(int profileId, GeekProfileModel model);
 
-        Task<GeekProfile> AddAsync(GeekProfileModel profile);
+        Task<GeekProfileResponse> AddAsync(GeekProfileModel model);
     }
 }

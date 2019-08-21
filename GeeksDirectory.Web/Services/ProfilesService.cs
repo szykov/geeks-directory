@@ -4,6 +4,7 @@ using GeeksDirectory.Data.Entities;
 using GeeksDirectory.Data.Repositories;
 using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
+using GeeksDirectory.SharedTypes.Responses;
 using GeeksDirectory.Web.Services.Interfaces;
 
 using Microsoft.AspNetCore.Http;
@@ -31,72 +32,88 @@ namespace GeeksDirectory.Web.Services
             this.logger = logger;
         }
 
-        public IEnumerable<GeekProfile> Get(int take, int skip)
+        public IEnumerable<GeekProfileResponse> Get(int take, int skip)
         {
             try
             {
-                return this.repository.Get(take, skip);
+                var profiles = this.repository.Get(take, skip);
+                return this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
                 throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
             }
         }
 
-        public GeekProfile Get(int id)
+        public GeekProfileResponse Get(int profileId)
         {
             try
             {
-                return this.repository.Get(id);
+                var profile = this.repository.Get(profileId);
+                return this.mapper.Map<GeekProfileResponse>(profile);
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
             {
                 throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
             }
         }
 
-        public IEnumerable<GeekProfile> Search(string searchQuery)
+        public IEnumerable<GeekProfileResponse> Search(string searchQuery)
         {
             try
             {
-                return this.repository.Search(searchQuery);
+                var profiles = this.repository.Search(searchQuery);
+                return this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
                 throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
             }
         }
 
-        public void Update(int id, GeekProfileModel profile)
+        public void Update(int profileId, GeekProfileModel profile)
         {
             try
             {
-                var entity = this.repository.Get(id);
+                var entity = this.repository.Get(profileId);
                 this.mapper.Map(profile, entity);
 
-                this.repository.Update(entity);
+                this.repository.Update(profileId, entity);
 
                 this.logger.LogInformation("Updated profile {@entity} with {@profile}", entity, profile);
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException || ex is ArgumentNullException)
             {
                 throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
             }
         }
 
-        public async Task<GeekProfile> AddAsync(GeekProfileModel profile)
+        public async Task<GeekProfileResponse> AddAsync(GeekProfileModel model)
         {
-            var applicationUser = new ApplicationUser { UserName = profile.Email, Email = profile.Email };
-            await this.userManager.CreateAsync(applicationUser, profile.Password);
+            try
+            {
+                var exists = await this.userManager.FindByEmailAsync(model.Email);
+                if (exists != null)
+                {
+                    throw new ArgumentException("Profile already exists.");
+                }
 
-            var entity = this.mapper.Map<GeekProfile>(profile);
-            entity.ApplicationUser = applicationUser;
+                var applicationUser = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                await this.userManager.CreateAsync(applicationUser, model.Password);
 
-            this.repository.Add(entity);
+                var profile = this.mapper.Map<GeekProfile>(model);
+                profile.ApplicationUser = applicationUser;
 
-            this.logger.LogInformation("Added profile {@entity} with {@profile}", entity, profile);
+                this.repository.Add(profile);
 
-            return entity;
+                this.logger.LogInformation("Added profile {@entity} with {@profile}", profile, model);
+
+                return this.mapper.Map<GeekProfileResponse>(profile);
+            }
+            catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException)
+            {
+                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
+            }
         }
     }
 }

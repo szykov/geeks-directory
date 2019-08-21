@@ -34,7 +34,7 @@ namespace GeeksDirectory.Web.Controllers
         // GET: /api/profiles?take={take}&skip={skip}
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult<IEnumerable<GeekProfile>> GetProfiles(int take = 25, int skip = 0)
+        public ActionResult<IEnumerable<GeekProfileResponse>> GetProfiles(int take = 25, int skip = 0)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace GeeksDirectory.Web.Controllers
         // GET: /api/profiles/search?query={query}
         [AllowAnonymous]
         [HttpGet("search")]
-        public ActionResult<IEnumerable<GeekProfile>> SearchProfiles([FromQuery]string query)
+        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles([FromQuery]string query)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace GeeksDirectory.Web.Controllers
         // GET: /api/profiles/{id}
         [AllowAnonymous]
         [HttpGet("{id}", Name = "GetProfile")]
-        public ActionResult<GeekProfile> GetProfile([FromRoute]int id)
+        public ActionResult<GeekProfileResponse> GetProfile([FromRoute]int id)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace GeeksDirectory.Web.Controllers
         // POST: /api/profiles
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<GeekProfile>> RegisterProfile([FromBody]GeekProfileModel model)
+        public async Task<ActionResult<GeekProfileResponse>> RegisterProfile([FromBody]GeekProfileModel model)
         {
             try
             {
@@ -101,7 +101,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // PATCH: /api/profiles/{id}
         [HttpPatch("{id}")]
-        public ActionResult<GeekProfile> UpdateProfile([FromRoute]int id, [FromBody]GeekProfileModel model)
+        public ActionResult<GeekProfileResponse> UpdateProfile([FromRoute]int id, [FromBody]GeekProfileModel model)
         {
             try
             {

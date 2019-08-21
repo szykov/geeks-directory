@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 
-using GeeksDirectory.Data.Entities;
 using GeeksDirectory.SharedTypes.Mappings;
-using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.Web.Services.Interfaces;
 
 namespace GeeksDirectory.Web.Services
@@ -13,7 +11,7 @@ namespace GeeksDirectory.Web.Services
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile<ExceptionResponseMapProfile>();
+                cfg.AddProfile<ExceptionMapProfile>();
             });
 
             return new Mapper(config);
@@ -23,7 +21,17 @@ namespace GeeksDirectory.Web.Services
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<GeekProfileModel, GeekProfile>();
+                cfg.AddProfile<GeekProfileMapProfile>();
+            });
+
+            return new Mapper(config);
+        }
+
+        public IMapper GetSkillMapper()
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<SkillMapProfile>();
             });
 
             return new Mapper(config);

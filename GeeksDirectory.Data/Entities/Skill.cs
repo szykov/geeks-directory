@@ -12,5 +12,7 @@ namespace GeeksDirectory.Data.Entities
         public string Description { get; set; }
 
         public int Score { get; set; }
+
+        public GeekProfile Profile { get; set; }
     }
 }

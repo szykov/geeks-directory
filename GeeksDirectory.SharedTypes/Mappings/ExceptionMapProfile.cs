@@ -6,9 +6,9 @@ using System;
 
 namespace GeeksDirectory.SharedTypes.Mappings
 {
-    public class ExceptionResponseMapProfile : Profile
+    public class ExceptionMapProfile : Profile
     {
-        public ExceptionResponseMapProfile()
+        public ExceptionMapProfile()
         {
             this.CreateMap<Exception, ErrorResponse>()
                 .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.InnerException.GetType().Name))

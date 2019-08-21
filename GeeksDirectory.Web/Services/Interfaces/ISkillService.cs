@@ -1,11 +1,12 @@
 ﻿using GeeksDirectory.SharedTypes.Models;
+using GeeksDirectory.SharedTypes.Responses;
 
 namespace GeeksDirectory.Web.Services.Interfaces
 {
     public interface ISkillsService
     {
-        void Add(int profileId, SkillModel skill);
+        SkillResponse Add(int profileId, SkillModel model);
 
-        void SetScore(int profileId, string skillName, int scoreId);
+        void SetScore(int profileId, string skillTitle, int scoreId);
     }
 }

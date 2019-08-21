@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 
-using GeeksDirectory.Data.Entities;
 using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
@@ -34,7 +33,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // POST: /api/profiles/{profileId}/skills
         [HttpPost("{profileId}/skills")]
-        public ActionResult<IEnumerable<GeekProfile>> AddSkill([FromRoute]int profileId, [FromBody]SkillModel model)
+        public ActionResult<IEnumerable<GeekProfileResponse>> AddSkill([FromRoute]int profileId, [FromBody]SkillModel model)
         {
             try
             {
@@ -50,7 +49,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // POST: /api/profiles/{profileId}/skills/{skillName}
         [HttpPost("{profileId}/skills/{skillName}")]
-        public ActionResult<IEnumerable<GeekProfile>> SetScore([FromRoute]int profileId, [FromRoute]string skillName, [FromBody]int score)
+        public ActionResult<IEnumerable<GeekProfileResponse>> SetScore([FromRoute]int profileId, [FromRoute]string skillName, [FromBody]int score)
         {
             try
             {

@@ -21,7 +21,7 @@ namespace GeeksDirectory.Data.Repositories
         {
             if (take <= 0 || skip < 0)
             {
-                throw new ArgumentException(message: $"{nameof(take)} and/or {nameof(skip)} are invalid");
+                throw new ArgumentException(message: $"{nameof(take)} and/or {nameof(skip)} are invalid.");
             }
 
             return this.context.Profiles.Take(take).Skip(skip).ToList();
@@ -31,10 +31,17 @@ namespace GeeksDirectory.Data.Repositories
         {
             if (id == 0)
             {
-                throw new ArgumentException(message: $"{nameof(id)} is invalid");
+                throw new ArgumentException(message: $"{nameof(id)} is invalid.");
             }
 
-            return this.context.Profiles.Where(prf => prf.ProfileId == id).Single();
+            var profile = this.context.Profiles.Where(prf => prf.ProfileId == id).SingleOrDefault();
+
+            if (profile == null)
+            {
+                throw new KeyNotFoundException("Profile has not been found.");
+            }
+
+            return profile;
         }
 
         public IEnumerable<GeekProfile> Search(string searchQuery)
@@ -52,15 +59,20 @@ namespace GeeksDirectory.Data.Repositories
                 .Where(prf => EF.Functions.FreeText(String.Join(String.Empty, prf.Skills.Select(s => s.Title)), searchQuery));
         }
 
-        public void Update(GeekProfile entity)
+        public void Update(int profileId, GeekProfile profile)
         {
-            this.context.Profiles.Update(entity);
+            this.context.Profiles.Update(profile);
             context.SaveChanges();
         }
 
-        public void Add(GeekProfile entity)
+        public void Add(GeekProfile profile)
         {
-            this.context.Profiles.Add(entity);
+            if (profile == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(profile));
+            }
+
+            this.context.Profiles.Add(profile);
             context.SaveChanges();
         }
     }

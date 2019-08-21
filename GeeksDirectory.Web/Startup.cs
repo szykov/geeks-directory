@@ -1,4 +1,5 @@
 using GeeksDirectory.Data;
+using GeeksDirectory.Data.Repositories;
 using GeeksDirectory.SharedTypes.Extensions;
 using GeeksDirectory.Web.Configuration;
 using GeeksDirectory.Web.Services;
@@ -43,9 +44,7 @@ namespace GeeksDirectory.Web
             }
 
             services.AddPredefinedRouting();
-
             services.AddPredefinedErrorHandling(this.logger);
-
             services.AddPredefinedSpa();
 
             //  Services
@@ -53,9 +52,13 @@ namespace GeeksDirectory.Web
 
             services.AddScoped<IMapperService, MapperService>();
 
+            services.AddScoped<IProfilesRepository, ProfilesRepository>();
+            services.AddScoped<ISkillsRepository, SkillsRepository>();
+
             services.AddScoped<IProfilesService, ProfilesService>();
             services.AddScoped<ISkillsService, SkillsService>();
 
+            // Cookies
             services.AddPredefinedApplicationCookie();
         }
 
@@ -70,9 +73,7 @@ namespace GeeksDirectory.Web
             }
 
             app.UsePredefinedErrorHandling(env);
-
             app.UsePredefinedRouting();
-
             app.UsePredefinedSpa(env);
         }
     }
