@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GeeksDirectory.Data.Entities
 {
@@ -13,6 +14,9 @@ namespace GeeksDirectory.Data.Entities
 
         public int Score { get; set; }
 
+        public int ProfileId { get; set; }
+
+        [ForeignKey("ProfileId")]
         public GeekProfile Profile { get; set; }
     }
 }

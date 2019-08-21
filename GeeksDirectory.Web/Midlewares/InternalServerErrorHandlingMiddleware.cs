@@ -1,4 +1,5 @@
 ﻿using GeeksDirectory.SharedTypes.Responses;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;

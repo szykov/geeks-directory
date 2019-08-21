@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Formatters;
-using Microsoft.AspNetCore.Server.IISIntegration;
 using Microsoft.Extensions.DependencyInjection;
 
 using Newtonsoft.Json;
@@ -32,19 +29,12 @@ namespace GeeksDirectory.Web.Configuration
                         jsonOutputFormatter.SupportedMediaTypes.Remove("text/json");
                     }
                 }
-
-                var policy = new AuthorizationPolicyBuilder()
-                    .RequireAuthenticatedUser()
-                    .Build();
-                setup.Filters.Add(new AuthorizeFilter(policy));
             })
             .AddJsonOptions(options => options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore)
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Enforce lower case URL routing
             services.AddRouting(options => options.LowercaseUrls = true);
-
-            services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
             return services;
         }

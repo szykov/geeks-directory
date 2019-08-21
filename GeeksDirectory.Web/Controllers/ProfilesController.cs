@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 
-using GeeksDirectory.Data.Entities;
 using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
