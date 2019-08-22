@@ -28,11 +28,24 @@ namespace GeeksDirectory.Web.Services
             this.logger = logger;
         }
 
+        public SkillResponse Get(int profileId, string skillName)
+        {
+            try
+            {
+                var skill = this.repository.Get(profileId, skillName);
+                return this.mapper.Map<SkillResponse>(skill);
+            }
+            catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
+            {
+                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
+            }
+        }
+
         public SkillResponse Add(int profileId, SkillModel model)
         {
             try
             {
-                if(this.repository.Exists(profileId, model.Title))
+                if(this.repository.Exists(profileId, model.Name))
                 {
                     throw new ArgumentException("Skill already exists.");
                 }
@@ -48,11 +61,11 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public void SetScore(int profileId, string skillTitle, int score)
+        public void SetScore(int profileId, string skillName, int score)
         {
             try
             {
-                var skill = this.repository.Get(profileId, skillTitle);
+                var skill = this.repository.Get(profileId, skillName);
                 this.repository.SetScore(skill, score);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)

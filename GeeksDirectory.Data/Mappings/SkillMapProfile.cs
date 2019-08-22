@@ -11,7 +11,9 @@ namespace GeeksDirectory.SharedTypes.Mappings
         public SkillMapProfile()
         {
             this.CreateMap<SkillModel, Skill>();
-            this.CreateMap<Skill, SkillResponse>();
+
+            this.CreateMap<Skill, SkillResponse>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.SkillId));
         }
     }
 }

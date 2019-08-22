@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 
 using OpenIddict.Validation;
 
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GeeksDirectory.Web.Controllers
@@ -32,14 +31,30 @@ namespace GeeksDirectory.Web.Controllers
             this.logger = logger;
         }
 
-        // POST: /api/profiles/{profileId}/skills
-        [HttpPost("{profileId}/skills")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> AddSkill([FromRoute]int profileId, [FromBody]SkillModel model)
+        // GET: /api/profiles/{profileId}/skills/{skillName}
+        [AllowAnonymous]
+        [HttpGet("{profileId}/skills/{skillName}", Name = "GetSkill")]
+        public ActionResult<SkillResponse> GetSkill([FromRoute]int profileId, [FromRoute]string skillName)
         {
             try
             {
-                this.context.Add(profileId, model);
-                return this.NoContent();
+                return this.context.Get(profileId, skillName);
+            }
+            catch (LogicException ex)
+            {
+                this.logger.LogError(ex, "Unable to fetch list of profiles.");
+                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
+            }
+        }
+
+        // POST: /api/profiles/{profileId}/skills
+        [HttpPost("{profileId}/skills")]
+        public ActionResult<SkillResponse> AddSkill([FromRoute]int profileId, [FromBody]SkillModel model)
+        {
+            try
+            {
+                var skill = this.context.Add(profileId, model);
+                return this.CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
             }
             catch (LogicException ex)
             {
@@ -50,7 +65,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // POST: /api/profiles/{profileId}/skills/{skillName}
         [HttpPost("{profileId}/skills/{skillName}")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> SetScore([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
+        public ActionResult SetScore([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
         {
             try
             {

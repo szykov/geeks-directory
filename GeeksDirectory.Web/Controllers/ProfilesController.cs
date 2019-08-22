@@ -66,7 +66,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // GET: /api/profiles/{id}
         [AllowAnonymous]
-        [HttpGet("{id}", Name = "GetProfile")]
+        [HttpGet("{id}", Name = nameof(GetProfile))]
         public ActionResult<GeekProfileResponse> GetProfile([FromRoute]int id)
         {
             try
@@ -89,7 +89,7 @@ namespace GeeksDirectory.Web.Controllers
             try
             {
                 var profile = await this.context.AddAsync(model);
-                return this.CreatedAtRoute(nameof(GetProfile), new { Id = profile.ProfileId }, profile);
+                return this.CreatedAtRoute(nameof(GetProfile), new { profile.Id }, profile);
             }
             catch (LogicException ex)
             {

@@ -5,8 +5,10 @@ namespace GeeksDirectory.Web.Services.Interfaces
 {
     public interface ISkillsService
     {
+        SkillResponse Get(int profileId, string skillName);
+
         SkillResponse Add(int profileId, SkillModel model);
 
-        void SetScore(int profileId, string skillTitle, int scoreId);
+        void SetScore(int profileId, string skillName, int score);
     }
 }

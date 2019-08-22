@@ -6,9 +6,9 @@ namespace GeeksDirectory.Data.Repositories
     {
         void Add(int profileId, Skill skill);
 
-        Skill Get(int profileId, string skillTitle);
+        Skill Get(int profileId, string skillName);
 
-        bool Exists(int profileId, string skillTitle);
+        bool Exists(int profileId, string skillName);
 
         void SetScore(Skill skill, int score);
     }

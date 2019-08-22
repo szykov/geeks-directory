@@ -15,15 +15,15 @@ namespace GeeksDirectory.Data.Repositories
             this.context = context;
         }
 
-        public Skill Get(int profileId, string skillTitle)
+        public Skill Get(int profileId, string skillName)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillTitle))
+            if (profileId == 0 || String.IsNullOrEmpty(skillName))
             {
-                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillTitle)} are invalid.");
+                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillName)} are invalid.");
             }
 
             var skill = this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.Title == skillTitle).SingleOrDefault();
+                .Where(s => s.Name == skillName).SingleOrDefault();
 
             if (skill == null)
             {
@@ -33,15 +33,15 @@ namespace GeeksDirectory.Data.Repositories
             return skill;
         }
 
-        public bool Exists(int profileId, string skillTitle)
+        public bool Exists(int profileId, string skillName)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillTitle))
+            if (profileId == 0 || String.IsNullOrEmpty(skillName))
             {
-                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillTitle)} are invalid.");
+                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillName)} are invalid.");
             }
 
             return this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.Title == skillTitle).Any();
+                .Where(s => s.Name == skillName).Any();
         }
 
         public void Add(int profileId, Skill skill)

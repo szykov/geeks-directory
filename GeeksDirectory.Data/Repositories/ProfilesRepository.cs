@@ -57,7 +57,7 @@ namespace GeeksDirectory.Data.Repositories
                 .Where(prf => EF.Functions.FreeText(prf.MiddleName, searchQuery))
                 .Where(prf => EF.Functions.FreeText(prf.City, searchQuery))
                 .Where(prf => EF.Functions.FreeText(String.Join(String.Empty, prf.Skills.Select(s => s.Description)), searchQuery))
-                .Where(prf => EF.Functions.FreeText(String.Join(String.Empty, prf.Skills.Select(s => s.Title)), searchQuery));
+                .Where(prf => EF.Functions.FreeText(String.Join(String.Empty, prf.Skills.Select(s => s.Name)), searchQuery));
         }
 
         public void Update(int profileId, GeekProfile profile)

@@ -4,7 +4,7 @@ namespace GeeksDirectory.SharedTypes.Responses
 {
     public class GeekProfileResponse
     {
-        public int ProfileId { get; set; }
+        public int Id { get; set; }
 
         public string Email { get; set; }
 
