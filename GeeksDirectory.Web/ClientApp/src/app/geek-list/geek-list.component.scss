@@ -1,0 +1,20 @@
+.geek-card {
+    max-width: 280px;
+}
+
+.geek-avatar > mat-icon {
+    font-size: 42px;
+}
+
+mat-card .mat-button {
+    text-transform: uppercase;
+}
+
+.mat-card-actions {
+    text-align: right;
+}
+
+.mat-card-content > p {
+    display: inline-block;
+    margin-right: 22px;
+}
