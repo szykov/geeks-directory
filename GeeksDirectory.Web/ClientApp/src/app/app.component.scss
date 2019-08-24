@@ -1,6 +1,7 @@
 .topbar-icon {
-    margin-right: 10px;
-    font-size: 26px;
+    float: left;
+    margin-right: 15px;
+    font-size: 32px;
 }
 
 .topbar-title {
@@ -8,6 +9,15 @@
     font-weight: 600;
 }
 
+.topbar-nav {
+    cursor: pointer;
+    outline: 0;
+}
+
 .fill-remaining-space {
     flex: 1 1 auto;
+}
+
+.topbar {
+    margin-bottom: 20px;
 }

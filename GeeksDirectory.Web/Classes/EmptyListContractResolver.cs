@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+
 using System.Reflection;
 
 namespace GeeksDirectory.Web.Classes
 {
-    public class EmptyListContractResolver : DefaultContractResolver
+    public class EmptyListContractResolver : CamelCasePropertyNamesContractResolver
     {
 
         protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestService } from '../shared/services';
+
+import { IProfile } from '../shared/interfaces';
 
 @Component({
     selector: 'gd-geek-list',
@@ -6,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./geek-list.component.scss']
 })
 export class GeekListComponent implements OnInit {
-    constructor() {}
+    public profiles: IProfile[];
 
-    ngOnInit() {}
+    constructor(private requestService: RequestService) {}
+
+    ngOnInit() {
+        this.requestService.getProfiles().subscribe(profiles => (this.profiles = profiles));
+    }
 }

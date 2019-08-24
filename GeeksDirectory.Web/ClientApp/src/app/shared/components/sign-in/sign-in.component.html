@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Sign In!</h1>
+<div mat-dialog-content>
+    <form class="sign-form" form #form="ngForm">
+        <mat-form-field>
+            <input
+                type="email"
+                matInput
+                placeholder="Email"
+                [(ngModel)]="model.email"
+                #email="ngModel"
+                id="email"
+                name="email"
+                email
+                required
+            />
+            <mat-error *ngIf="!email.valid && !email.pristine">Email is invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input
+                type="text"
+                matInput
+                placeholder="Password"
+                [type]="hide ? 'password' : 'text'"
+                [(ngModel)]="model.password"
+                id="password"
+                name="password"
+                required
+            />
+            <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+            >
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <div class="sign-form-actions" mat-dialog-actions>
+            <button class="create-account" mat-button (click)="onCreateAccount()">Create Account?</button>
+            <button mat-flat-button (click)="onCancel()">Cancel</button>
+            <button mat-flat-button cdkFocusInitial color="primary" (click)="onSubmit()">Ok</button>
+        </div>
+    </form>
+</div>

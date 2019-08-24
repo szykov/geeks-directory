@@ -1,0 +1,22 @@
+.sign-form {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+}
+
+.sign-form > mat-form-field {
+    width: 100%;
+}
+
+.sign-form-actions {
+    justify-content: flex-end;
+
+    > button {
+        margin-left: 10px;
+    }
+
+    .create-account {
+        float: right;
+        right: 73px;
+    }
+}

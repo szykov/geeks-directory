@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 
 using Newtonsoft.Json;
-
+using Newtonsoft.Json.Serialization;
 using System.Linq;
 
 namespace GeeksDirectory.Web.Configuration
