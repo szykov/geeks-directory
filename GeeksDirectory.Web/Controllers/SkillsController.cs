@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using OpenIddict.Validation;
 
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Controllers
 {
@@ -65,11 +66,13 @@ namespace GeeksDirectory.Web.Controllers
 
         // POST: /api/profiles/{profileId}/skills/{skillName}
         [HttpPost("{profileId}/skills/{skillName}")]
-        public ActionResult SetScore([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
+        public async Task<ActionResult> EvaluateSkill([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
         {
             try
             {
-                this.context.SetScore(profileId, skillName, score);
+                var userName = this.User.Identity.Name;
+                await this.context.EvaluateSkillAsync(profileId, skillName, userName, score);
+
                 return this.NoContent();
             }
             catch (LogicException ex)

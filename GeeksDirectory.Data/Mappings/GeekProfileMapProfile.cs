@@ -4,7 +4,7 @@ using GeeksDirectory.Data.Entities;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
 
-namespace GeeksDirectory.SharedTypes.Mappings
+namespace GeeksDirectory.Data.Mappings
 {
     public class GeekProfileMapProfile : Profile
     {
@@ -15,9 +15,7 @@ namespace GeeksDirectory.SharedTypes.Mappings
 
             this.CreateMap<GeekProfile, GeekProfileResponse>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ProfileId))
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.ApplicationUser.Email));
-
-            this.CreateMap<Skill, SkillResponse>();
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.User.Email));
         }
     }
 }

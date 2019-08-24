@@ -1,4 +1,5 @@
 ﻿using GeeksDirectory.Data.Attributes;
+
 using System.ComponentModel.DataAnnotations;
 
 namespace GeeksDirectory.SharedTypes.Models
@@ -13,8 +14,5 @@ namespace GeeksDirectory.SharedTypes.Models
         [Required]
         [StringLength(maximumLength: 255)]
         public string Description { get; set; }
-
-        [Range(0, 5)]
-        public int Score { get; set; }
     }
 }

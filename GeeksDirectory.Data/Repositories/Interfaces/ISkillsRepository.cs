@@ -1,6 +1,6 @@
 ﻿using GeeksDirectory.Data.Entities;
 
-namespace GeeksDirectory.Data.Repositories
+namespace GeeksDirectory.Data.Repositories.Interfaces
 {
     public interface ISkillsRepository
     {
@@ -10,6 +10,6 @@ namespace GeeksDirectory.Data.Repositories
 
         bool Exists(int profileId, string skillName);
 
-        void SetScore(Skill skill, int score);
+        int RefreshAverageScore(int profileId, string skillName);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 
 using GeeksDirectory.Data.Entities;
-using GeeksDirectory.Data.Repositories;
+using GeeksDirectory.Data.Repositories.Interfaces;
 using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
@@ -28,7 +28,7 @@ namespace GeeksDirectory.Web.Services
         {
             this.repository = repository;
             this.userManager = userManager;
-            this.mapper = mapperService.GetGeekProfileMapper();
+            this.mapper = mapperService.GetDataMapper();
             this.logger = logger;
         }
 
@@ -78,7 +78,7 @@ namespace GeeksDirectory.Web.Services
                 var entity = this.repository.Get(profileId);
                 this.mapper.Map(profile, entity);
 
-                this.repository.Update(profileId, entity);
+                this.repository.Update(entity);
 
                 this.logger.LogInformation("Updated profile {@entity} with {@profile}", entity, profile);
             }
@@ -95,11 +95,11 @@ namespace GeeksDirectory.Web.Services
                 var applicationUser = await CreateUser(model.Email, model.Password);
 
                 var profile = this.mapper.Map<GeekProfile>(model);
-                profile.ApplicationUser = applicationUser;
+                profile.User = applicationUser;
 
                 this.repository.Add(profile);
 
-                this.logger.LogInformation("Added profile {@entity} with {@profile}", profile, model);
+                this.logger.LogInformation("Added profile {@entity}", profile);
 
                 return this.mapper.Map<GeekProfileResponse>(profile);
             }
@@ -119,6 +119,8 @@ namespace GeeksDirectory.Web.Services
 
             var applicationUser = new ApplicationUser { UserName = email, Email = email };
             await this.userManager.CreateAsync(applicationUser, password);
+
+            this.logger.LogInformation("Created user {0}", email);
 
             return applicationUser;
         }

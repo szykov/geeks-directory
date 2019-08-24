@@ -159,7 +159,7 @@ namespace GeeksDirectory.Data.Migrations
                 {
                     ProfileId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ApplicationUserId = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
                     MiddleName = table.Column<string>(nullable: true),
@@ -169,8 +169,8 @@ namespace GeeksDirectory.Data.Migrations
                 {
                     table.PrimaryKey("PK_Profiles", x => x.ProfileId);
                     table.ForeignKey(
-                        name: "FK_Profiles_AspNetUsers_ApplicationUserId",
-                        column: x => x.ApplicationUserId,
+                        name: "FK_Profiles_AspNetUsers_UserName",
+                        column: x => x.UserName,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -184,7 +184,7 @@ namespace GeeksDirectory.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    Score = table.Column<int>(nullable: false),
+                    AverageScore = table.Column<int>(nullable: false),
                     ProfileId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -196,6 +196,33 @@ namespace GeeksDirectory.Data.Migrations
                         principalTable: "Profiles",
                         principalColumn: "ProfileId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Assessments",
+                columns: table => new
+                {
+                    AssessmentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserName = table.Column<string>(nullable: true),
+                    SkillId = table.Column<int>(nullable: false),
+                    Score = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Assessments", x => x.AssessmentId);
+                    table.ForeignKey(
+                        name: "FK_Assessments_Skills_SkillId",
+                        column: x => x.SkillId,
+                        principalTable: "Skills",
+                        principalColumn: "SkillId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Assessments_AspNetUsers_UserName",
+                        column: x => x.UserName,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -238,9 +265,19 @@ namespace GeeksDirectory.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Profiles_ApplicationUserId",
+                name: "IX_Assessments_SkillId",
+                table: "Assessments",
+                column: "SkillId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Assessments_UserName",
+                table: "Assessments",
+                column: "UserName");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Profiles_UserName",
                 table: "Profiles",
-                column: "ApplicationUserId");
+                column: "UserName");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Skills_ProfileId",
@@ -266,10 +303,13 @@ namespace GeeksDirectory.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Skills");
+                name: "Assessments");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Skills");
 
             migrationBuilder.DropTable(
                 name: "Profiles");

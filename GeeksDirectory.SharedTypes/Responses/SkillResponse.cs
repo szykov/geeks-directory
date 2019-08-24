@@ -1,4 +1,6 @@
-﻿namespace GeeksDirectory.SharedTypes.Responses
+﻿using System.Collections.Generic;
+
+namespace GeeksDirectory.SharedTypes.Responses
 {
     public class SkillResponse
     {
@@ -8,6 +10,8 @@
 
         public string Description { get; set; }
 
-        public int Score { get; set; }
+        public int AverageScore { get; set; }
+
+        public IEnumerable<AssessmentResponse> Assessments { get; set; }
     }
 }

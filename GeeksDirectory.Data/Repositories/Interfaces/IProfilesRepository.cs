@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 
-namespace GeeksDirectory.Data.Repositories
+namespace GeeksDirectory.Data.Repositories.Interfaces
 {
     public interface IProfilesRepository
     {
@@ -14,6 +14,6 @@ namespace GeeksDirectory.Data.Repositories
 
         IEnumerable<GeekProfile> Search(string searchQuery);
 
-        void Update(int profileId, GeekProfile profile);
+        void Update(GeekProfile profile);
     }
 }

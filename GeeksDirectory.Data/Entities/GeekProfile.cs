@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GeeksDirectory.Data.Entities
 {
@@ -8,7 +9,10 @@ namespace GeeksDirectory.Data.Entities
         [Key]
         public int ProfileId { get; set; }
 
-        public ApplicationUser ApplicationUser { get; set; }
+        public string UserName { get; set; }
+
+        [ForeignKey("UserName")]
+        public ApplicationUser User { get; set; }
 
         public string Name { get; set; }
 

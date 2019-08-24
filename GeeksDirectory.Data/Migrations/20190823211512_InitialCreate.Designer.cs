@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeeksDirectory.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190822184157_InitialCreate")]
+    [Migration("20190823211512_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,13 +72,32 @@ namespace GeeksDirectory.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("GeeksDirectory.Data.Entities.Assessment", b =>
+                {
+                    b.Property<int>("AssessmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Score");
+
+                    b.Property<int>("SkillId");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("AssessmentId");
+
+                    b.HasIndex("SkillId");
+
+                    b.HasIndex("UserName");
+
+                    b.ToTable("Assessments");
+                });
+
             modelBuilder.Entity("GeeksDirectory.Data.Entities.GeekProfile", b =>
                 {
                     b.Property<int>("ProfileId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ApplicationUserId");
 
                     b.Property<string>("City");
 
@@ -88,9 +107,11 @@ namespace GeeksDirectory.Data.Migrations
 
                     b.Property<string>("Surname");
 
+                    b.Property<string>("UserName");
+
                     b.HasKey("ProfileId");
 
-                    b.HasIndex("ApplicationUserId");
+                    b.HasIndex("UserName");
 
                     b.ToTable("Profiles");
                 });
@@ -101,13 +122,13 @@ namespace GeeksDirectory.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("AverageScore");
+
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
 
                     b.Property<int>("ProfileId");
-
-                    b.Property<int>("Score");
 
                     b.HasKey("SkillId");
 
@@ -226,11 +247,23 @@ namespace GeeksDirectory.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("GeeksDirectory.Data.Entities.Assessment", b =>
+                {
+                    b.HasOne("GeeksDirectory.Data.Entities.Skill", "Skill")
+                        .WithMany("Assessments")
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("GeeksDirectory.Data.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserName");
+                });
+
             modelBuilder.Entity("GeeksDirectory.Data.Entities.GeekProfile", b =>
                 {
-                    b.HasOne("GeeksDirectory.Data.Entities.ApplicationUser", "ApplicationUser")
+                    b.HasOne("GeeksDirectory.Data.Entities.ApplicationUser", "User")
                         .WithMany()
-                        .HasForeignKey("ApplicationUserId");
+                        .HasForeignKey("UserName");
                 });
 
             modelBuilder.Entity("GeeksDirectory.Data.Entities.Skill", b =>

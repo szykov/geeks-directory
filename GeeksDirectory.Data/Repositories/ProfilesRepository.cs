@@ -1,4 +1,5 @@
 ﻿using GeeksDirectory.Data.Entities;
+using GeeksDirectory.Data.Repositories.Interfaces;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -21,21 +22,28 @@ namespace GeeksDirectory.Data.Repositories
         {
             if (take <= 0 || skip < 0)
             {
-                throw new ArgumentException(message: $"{nameof(take)} and/or {nameof(skip)} are invalid.");
+                throw new ArgumentException(message: $"Arguments {nameof(take)}/{nameof(skip)} are invalid.");
             }
 
-            return this.context.Profiles.Include(prf => prf.Skills).Take(take).Skip(skip).ToList();
+            return this.context.Profiles
+                .Include(prf => prf.Skills)
+                .Include(prf => prf.User)
+                .Take(take).Skip(skip)
+                .ToList();
         }
 
-        public GeekProfile Get(int id)
+        public GeekProfile Get(int profileId)
         {
-            if (id == 0)
+            if (profileId == 0)
             {
-                throw new ArgumentException(message: $"{nameof(id)} is invalid.");
+                throw new ArgumentException(message: $"Argument {nameof(profileId)} is invalid.");
             }
 
-            var profile = this.context.Profiles.Include(prf => prf.Skills)
-                .Where(prf => prf.ProfileId == id).SingleOrDefault();
+            var profile = this.context.Profiles
+                .Include(prf => prf.Skills)
+                .Include(prf => prf.User)
+                .Where(prf => prf.ProfileId == profileId)
+                .SingleOrDefault();
 
             if (profile == null)
             {
@@ -60,8 +68,13 @@ namespace GeeksDirectory.Data.Repositories
                 .Where(prf => EF.Functions.FreeText(String.Join(String.Empty, prf.Skills.Select(s => s.Name)), searchQuery));
         }
 
-        public void Update(int profileId, GeekProfile profile)
+        public void Update(GeekProfile profile)
         {
+            if (profile == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(profile));
+            }
+
             this.context.Profiles.Update(profile);
             context.SaveChanges();
         }

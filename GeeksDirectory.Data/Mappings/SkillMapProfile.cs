@@ -4,7 +4,7 @@ using GeeksDirectory.Data.Entities;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
 
-namespace GeeksDirectory.SharedTypes.Mappings
+namespace GeeksDirectory.Data.Mappings
 {
     public class SkillMapProfile : Profile
     {

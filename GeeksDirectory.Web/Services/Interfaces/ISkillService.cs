@@ -1,6 +1,8 @@
 ﻿using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
 
+using System.Threading.Tasks;
+
 namespace GeeksDirectory.Web.Services.Interfaces
 {
     public interface ISkillsService
@@ -9,6 +11,6 @@ namespace GeeksDirectory.Web.Services.Interfaces
 
         SkillResponse Add(int profileId, SkillModel model);
 
-        void SetScore(int profileId, string skillName, int score);
+        Task EvaluateSkillAsync(int profileId, string skillName, string userEmail, int score);
     }
 }

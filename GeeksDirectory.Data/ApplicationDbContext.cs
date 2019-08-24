@@ -11,6 +11,8 @@ namespace GeeksDirectory.Data
 
         public virtual DbSet<Skill> Skills { get; set; }
 
+        public virtual DbSet<Assessment> Assessments { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 

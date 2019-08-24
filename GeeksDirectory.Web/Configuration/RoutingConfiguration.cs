@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using GeeksDirectory.Web.Classes;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,7 @@ namespace GeeksDirectory.Web.Configuration
                 }
             })
             .AddJsonOptions(options => options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore)
+            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new EmptyListContractResolver())
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
             .ConfigureApiBehaviorOptions(options =>
             {

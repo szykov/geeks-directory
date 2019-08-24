@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GeeksDirectory.Data.Entities
@@ -12,7 +13,9 @@ namespace GeeksDirectory.Data.Entities
 
         public string Description { get; set; }
 
-        public int Score { get; set; }
+        public int AverageScore { get; set; }
+
+        public List<Assessment> Assessments { get; set; }
 
         public int ProfileId { get; set; }
 

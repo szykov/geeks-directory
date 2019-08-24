@@ -1,4 +1,7 @@
 ﻿using GeeksDirectory.Data.Entities;
+using GeeksDirectory.Data.Repositories.Interfaces;
+
+using Microsoft.EntityFrameworkCore;
 
 using System;
 using System.Collections.Generic;
@@ -19,11 +22,15 @@ namespace GeeksDirectory.Data.Repositories
         {
             if (profileId == 0 || String.IsNullOrEmpty(skillName))
             {
-                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillName)} are invalid.");
+                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillName)} are invalid.");
             }
 
-            var skill = this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.Name == skillName).SingleOrDefault();
+            var skill = this.context.Skills
+                .Include(s => s.Assessments)
+                .ThenInclude(s => s.User)
+                .Where(s => s.Profile.ProfileId == profileId)
+                .Where(s => s.Name == skillName)
+                .SingleOrDefault();
 
             if (skill == null)
             {
@@ -37,7 +44,7 @@ namespace GeeksDirectory.Data.Repositories
         {
             if (profileId == 0 || String.IsNullOrEmpty(skillName))
             {
-                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skillName)} are invalid.");
+                throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skillName)} are invalid.");
             }
 
             return this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
@@ -48,7 +55,7 @@ namespace GeeksDirectory.Data.Repositories
         {
             if (profileId == 0 || skill == null)
             {
-                throw new ArgumentException(message: $"{nameof(profileId)} or {nameof(skill)} are invalid.");
+                throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skill)} are invalid.");
             }
 
             var profile = this.context.Profiles.Where(prf => prf.ProfileId == profileId).SingleOrDefault()
@@ -60,10 +67,24 @@ namespace GeeksDirectory.Data.Repositories
             this.context.SaveChanges();
         }
 
-        public void SetScore(Skill skill, int score)
+        public int RefreshAverageScore(int profileId, string skillName)
         {
-            skill.Score = score;
+            if (profileId == 0 || String.IsNullOrEmpty(skillName))
+            {
+                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillName)} are invalid.");
+            }
+
+            var skill = this.Get(profileId, skillName);
+            var count = skill.Assessments.Count();
+            var summ = skill.Assessments.Average(a => a.Score);
+            var averageScore = Convert.ToInt32(summ / count);
+
+            skill.AverageScore = averageScore;
+
+            this.context.Skills.Update(skill);
             this.context.SaveChanges();
+
+            return averageScore;
         }
     }
 }
