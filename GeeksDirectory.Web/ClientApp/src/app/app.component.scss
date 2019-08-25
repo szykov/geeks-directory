@@ -18,6 +18,22 @@
     flex: 1 1 auto;
 }
 
-.topbar {
-    margin-bottom: 20px;
+.sidenav-trigger {
+    min-width: 0;
+    width: 25px;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+.sidenav-container {
+    height: 100%;
+}
+
+mat-drawer button {
+    display: block;
+    width: 200px;
+}
+
+.menu-list {
+    margin-top: 20px;
 }

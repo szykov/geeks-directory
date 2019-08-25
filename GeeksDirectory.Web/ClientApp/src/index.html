@@ -1,98 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>GeeksDirectory</title>
-        <base href="/" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+<head>
+    <meta charset="utf-8" />
+    <title>GeeksDirectory</title>
+    <base href="/" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- inline spinner styles to be able to display spinner right away -->
-        <style type="text/css">
-            body,
-            html {
-                background: #303030;
-                min-width: 500px;
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- inline spinner styles to be able to display spinner right away -->
+    <style type="text/css">
+        body,
+        html {
+            background: #303030;
+            min-width: 500px;
+        }
+
+        .app-loading {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .app-loading .spinner {
+            height: 200px;
+            width: 200px;
+            animation: rotate 2s linear infinite;
+            transform-origin: center center;
+        }
+
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+
+        .app-loading .spinner .path {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            animation: dash 1.5s ease-in-out infinite;
+            stroke-linecap: round;
+            stroke: #c2185b;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
             }
+        }
 
-            .app-loading {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-            }
-
-            .app-loading .spinner {
-                height: 200px;
-                width: 200px;
-                animation: rotate 2s linear infinite;
-                transform-origin: center center;
-            }
-
-            .centered {
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                margin-top: -100px;
-                margin-left: -100px;
-            }
-
-            .app-loading .spinner .path {
+        @keyframes dash {
+            0% {
                 stroke-dasharray: 1, 200;
                 stroke-dashoffset: 0;
-                animation: dash 1.5s ease-in-out infinite;
-                stroke-linecap: round;
-                stroke: #c2185b;
             }
 
-            @keyframes rotate {
-                100% {
-                    transform: rotate(360deg);
-                }
+            50% {
+                stroke-dasharray: 89, 200;
+                stroke-dashoffset: -35px;
             }
 
-            @keyframes dash {
-                0% {
-                    stroke-dasharray: 1, 200;
-                    stroke-dashoffset: 0;
-                }
-
-                50% {
-                    stroke-dasharray: 89, 200;
-                    stroke-dashoffset: -35px;
-                }
-
-                100% {
-                    stroke-dasharray: 89, 200;
-                    stroke-dashoffset: -124px;
-                }
+            100% {
+                stroke-dasharray: 89, 200;
+                stroke-dashoffset: -124px;
             }
-        </style>
-    </head>
-    <body>
-        <gd-root>
-            <!-- loading layout replaced by app after startupp -->
-            <div class="app-loading">
-                <div class="logo"></div>
-                <svg class="spinner centered" viewBox="25 25 50 50">
-                    <circle
-                        class="path"
-                        cx="50"
-                        cy="50"
-                        r="20"
-                        fill="none"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                    ></circle>
-                </svg>
-            </div>
-        </gd-root>
-    </body>
+        }
+    </style>
+</head>
+
+<body>
+    <gd-root>
+        <!-- loading layout replaced by app after startupp -->
+        <div class="app-loading">
+            <div class="logo"></div>
+            <svg class="spinner centered" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10">
+                </circle>
+            </svg>
+        </div>
+    </gd-root>
+</body>
+
 </html>

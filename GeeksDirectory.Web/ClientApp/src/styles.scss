@@ -8,5 +8,25 @@ body {
 body {
     margin: 0;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-    background: #303030;
+}
+
+.success-snackbar {
+    background: #00c853;
+    span {
+        color: #000000;
+    }
+}
+
+.error-snackbar {
+    background: #d50000;
+    span {
+        color: #ffffff;
+    }
+}
+
+.warning-snackbar {
+    background: #ffff00;
+    span {
+        color: #000000;
+    }
 }

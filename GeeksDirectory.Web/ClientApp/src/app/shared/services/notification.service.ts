@@ -11,22 +11,28 @@ export class NotificationService {
     constructor(private snackBar: MatSnackBar) {
         this.config.horizontalPosition = 'right';
         this.config.verticalPosition = 'bottom';
-        this.config.duration = 5;
+        this.config.duration = 5000;
     }
 
-    public showSuccess(message: string, title: string) {
-        this.snackBar.open(message, title, this.config);
+    public showSuccess(message: string, actions: string = 'OK') {
+        let config = { ...this.config };
+        config.panelClass = 'success-snackbar';
+        this.snackBar.open(message, actions, config);
     }
 
-    public showError(message: string = 'Something went wrong...', title: string = 'UnknownError') {
-        this.snackBar.open(message, title, this.config);
+    public showError(message: string = 'Something went wrong...', actions: string = 'OK') {
+        let config = { ...this.config };
+        config.panelClass = 'error-snackbar';
+        this.snackBar.open(message, actions, config);
     }
 
-    public showWarning(message: string, title: string) {
-        this.snackBar.open(message, title, this.config);
+    public showWarning(message: string, actions: string = 'OK') {
+        let config = { ...this.config };
+        config.panelClass = 'warning-snackbar';
+        this.snackBar.open(message, actions, config);
     }
 
-    public showInformation(message: string, title: string) {
-        this.snackBar.open(message, title, this.config);
+    public showInformation(message: string, actions: string = 'OK') {
+        this.snackBar.open(message, actions, this.config);
     }
 }

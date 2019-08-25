@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { DialogService } from './shared/services/dialog.service';
 import { takeUntil } from 'rxjs/operators';
 import { DialogChoice } from './shared/common';
+import { NotificationService } from './shared/services';
 
 @Component({
     selector: 'gd-root',
@@ -16,7 +17,12 @@ export class AppComponent implements OnDestroy {
 
     private unsubscribe: Subject<void> = new Subject();
 
-    constructor(private dialogService: DialogService, private route: ActivatedRoute, private router: Router) {
+    constructor(
+        private dialogService: DialogService,
+        private notificationService: NotificationService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) {
         route.queryParams.pipe(takeUntil(this.unsubscribe)).subscribe(params => {
             if (params.signIn) {
                 this.openSignInDialog();
@@ -27,12 +33,18 @@ export class AppComponent implements OnDestroy {
     public openSignInDialog() {
         this.dialogService.openSignInDialog().subscribe(result => {
             if (result.choice === DialogChoice.CreateAccount) {
-                this.router.navigate(['register']);
-            } else {
-                this.router.navigate(['.'], { relativeTo: this.route });
+                return this.router.navigate(['register']);
             }
+
+            if (result.choice === DialogChoice.Ok) {
+                this.notificationService.showSuccess('You have sucessfully signed in.');
+            }
+
+            this.router.navigate([], { relativeTo: this.route });
         });
     }
+
+    public toogleSideNav() {}
 
     ngOnDestroy(): void {
         this.unsubscribe.next();

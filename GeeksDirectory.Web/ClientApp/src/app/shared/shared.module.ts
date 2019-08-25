@@ -15,12 +15,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
+import { PageNotFoundComponent, SignInComponent } from './components';
+import { ViewerContainerComponent } from './components/viewer-container/viewer-container.component';
 
 @NgModule({
-    declarations: [PageNotFoundComponent, SignInComponent],
+    declarations: [PageNotFoundComponent, SignInComponent, ViewerContainerComponent],
     imports: [
         CommonModule,
         FormsModule,
@@ -35,9 +38,13 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
         MatIconModule,
         MatCardModule,
         MatChipsModule,
-        MatDialogModule
+        MatDialogModule,
+        MatAutocompleteModule,
+        MatSidenavModule,
+        MatListModule
     ],
     exports: [
+        FormsModule,
         FlexLayoutModule,
         MatSnackBarModule,
         MatToolbarModule,
@@ -49,7 +56,11 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
         MatIconModule,
         MatCardModule,
         MatChipsModule,
-        PageNotFoundComponent
+        MatAutocompleteModule,
+        MatSidenavModule,
+        MatListModule,
+        PageNotFoundComponent,
+        ViewerContainerComponent
     ],
     entryComponents: [SignInComponent]
 })

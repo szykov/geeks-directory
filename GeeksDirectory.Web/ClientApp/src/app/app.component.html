@@ -1,6 +1,10 @@
 <ng-progress id="progress"></ng-progress>
 
 <mat-toolbar color="primary" class="topbar">
+    <button mat-button class="sidenav-trigger" (click)="sidenav.toggle()">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+
     <div class="topbar-nav" routerLink="/">
         <mat-icon class="topbar-icon" aria-hidden="false" aria-label="Geek icon">recent_actors</mat-icon>
         <span class="topbar-title">{{ title }}</span>
@@ -9,7 +13,20 @@
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
 
-    <button mat-button mat-flat-button color="basic" (click)="openSignInDialog()">Sign In!</button>
+    <button mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true}">Sign In!</button>
+
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-drawer-container class="sidenav-container">
+    <mat-drawer #sidenav position="start" mode='side'>
+        <div class="menu-list">
+            <button mat-button mat-flat-button color="basic" routerLink="/">Home</button>
+            <button mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true}">Sign
+                In</button>
+            <button mat-button mat-flat-button color="basic" [routerLink]="['./register']">Register</button>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

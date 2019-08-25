@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '../common';
 import { IProfile } from '../interfaces';
+import { ProfileModel } from '../models';
 
 @Injectable({
     providedIn: 'root'
@@ -22,5 +23,15 @@ export class RequestService {
         return this.http.get<IProfile[]>(this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfiles), {
             headers: this.headers
         });
+    }
+
+    public registerProfile(profile: ProfileModel): Observable<IProfile> {
+        return this.http.post<IProfile>(
+            this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.registerProfile),
+            profile,
+            {
+                headers: this.headers
+            }
+        );
     }
 }

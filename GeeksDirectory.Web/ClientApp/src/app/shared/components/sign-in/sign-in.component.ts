@@ -20,6 +20,7 @@ export class SignInComponent implements OnInit {
 
     public onSubmit() {
         this.submitted = true;
+
         this.dialogRef.close({ choice: DialogChoice.Ok, data: this.model });
     }
 

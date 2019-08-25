@@ -1,46 +1,32 @@
 <h1 mat-dialog-title>Sign In!</h1>
 <div mat-dialog-content>
-    <form class="sign-form" form #form="ngForm">
+    <form class="sign-form" form #signInForm="ngForm">
         <mat-form-field>
-            <input
-                type="email"
-                matInput
-                placeholder="Email"
-                [(ngModel)]="model.email"
-                #email="ngModel"
-                id="email"
-                name="email"
-                email
-                required
-            />
-            <mat-error *ngIf="!email.valid && !email.pristine">Email is invalid</mat-error>
+            <input type="email" matInput placeholder="Email" [(ngModel)]="model.email" #email="ngModel" id="email"
+                name="email" email required />
+            <mat-error *ngIf="!email.valid && !email.pristine && email.errors['required']">Email is required</mat-error>
+            <mat-error *ngIf="!email.valid && !email.pristine && email.errors['email']">Email is invalid</mat-error>
         </mat-form-field>
         <mat-form-field>
-            <input
-                type="text"
-                matInput
-                placeholder="Password"
-                [type]="hide ? 'password' : 'text'"
-                [(ngModel)]="model.password"
-                id="password"
-                name="password"
-                required
-            />
-            <button
-                mat-icon-button
-                matSuffix
-                (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide"
-            >
+            <input type="text" matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
+                [(ngModel)]="model.password" #password="ngModel" id="password" name="password" minlength="6" required />
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button>
+            <mat-error *ngIf="!password.valid && !password.pristine && password.errors['required']">Password is required
+            </mat-error>
+            <mat-error *ngIf="!password.valid && !password.pristine && password.errors['minlength']">Password must be of
+                minimum 6 characters length
+            </mat-error>
         </mat-form-field>
 
         <div class="sign-form-actions" mat-dialog-actions>
             <button class="create-account" mat-button (click)="onCreateAccount()">Create Account?</button>
             <button mat-flat-button (click)="onCancel()">Cancel</button>
-            <button mat-flat-button cdkFocusInitial color="primary" (click)="onSubmit()">Ok</button>
+            <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="!signInForm.form.valid">
+                Ok
+            </button>
         </div>
     </form>
 </div>

@@ -10,13 +10,17 @@ mat-card .mat-button {
     text-transform: uppercase;
 }
 
-.mat-card-actions {
+.card-actions {
     text-align: right;
 }
 
-.mat-card-content > p {
+.card-content > p {
     display: inline-block;
     margin-right: 22px;
+}
+
+.card-content {
+    min-height: 45px;
 }
 
 .geek-list {
