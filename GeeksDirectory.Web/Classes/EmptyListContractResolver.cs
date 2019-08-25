@@ -15,7 +15,8 @@ namespace GeeksDirectory.Web.Classes
             {
                 if (property.PropertyType.Name.Contains("IEnumerable"))
                 {
-                    return (property.ValueProvider.GetValue(obj) as dynamic).Count > 0;
+                    var prop = (property.ValueProvider.GetValue(obj) as dynamic);
+                    return prop != null ? prop.Count > 0 : false;
                 }
                 return true;
             };

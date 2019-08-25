@@ -29,7 +29,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
             map((event: HttpEvent<any>) => event),
             catchError((error: HttpErrorResponse) => {
                 let exception: IException = error.error;
-                this.notificationService.showError(exception.message, exception.code);
+                this.notificationService.showError(exception.message);
                 return throwError(error);
             }),
             finalize(() => this.loaderService.completeLoading())

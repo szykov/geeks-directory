@@ -111,13 +111,27 @@ namespace GeeksDirectory.Web.Services
 
         private async Task<ApplicationUser> CreateUser(string email, string password)
         {
+            var normalizedEmail = email.Normalize().ToUpperInvariant();
+
             var exists = await this.userManager.FindByEmailAsync(email);
             if (exists != null)
             {
                 throw new ArgumentException("Profile already exists.");
             }
 
-            var applicationUser = new ApplicationUser { UserName = email, Email = email };
+            var applicationUser = new ApplicationUser
+            {
+                UserName = email,
+                Email = email,
+                NormalizedEmail = normalizedEmail,
+                NormalizedUserName = normalizedEmail,
+                Id = Guid.NewGuid().ToString(),
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+
+            var passwordHash = this.userManager.PasswordHasher.HashPassword(applicationUser, password);
+            applicationUser.PasswordHash = passwordHash;
+
             await this.userManager.CreateAsync(applicationUser, password);
 
             this.logger.LogInformation("Created user {0}", email);

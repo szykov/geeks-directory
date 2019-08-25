@@ -5,6 +5,7 @@ import { debounceTime } from 'rxjs/operators';
 import { CreateProfileModel } from '../shared/models';
 import { CITIES } from '../shared/common';
 import { RequestService, NotificationService } from '../shared/services';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'gd-geek-register',
@@ -18,7 +19,11 @@ export class GeekRegisterComponent implements OnInit {
 
     private cityFilter$: Subject<string> = new Subject();
 
-    constructor(private requestService: RequestService, private notificationService: NotificationService) {}
+    constructor(
+        private requestService: RequestService,
+        private notificationService: NotificationService,
+        private router: Router
+    ) {}
 
     ngOnInit() {
         this.cityFilter$.pipe(debounceTime(300)).subscribe(searchTextValue => {
@@ -31,6 +36,7 @@ export class GeekRegisterComponent implements OnInit {
     }
     public onSubmit() {
         this.requestService.registerProfile(this.model).subscribe(result => {
+            this.router.navigate(['/']);
             this.notificationService.showSuccess('You have been registered. Great!');
         });
     }
