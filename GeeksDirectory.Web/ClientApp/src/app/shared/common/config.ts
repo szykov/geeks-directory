@@ -6,6 +6,7 @@ export let CONFIG = {
         port: '5000',
         rootAddress: 'api',
         endpoints: {
+            getToken: 'connect/token',
             getProfiles: 'profiles',
             getProfile: 'profiles/{0}',
             registerProfile: 'profiles',

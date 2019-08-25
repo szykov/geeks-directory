@@ -5,7 +5,8 @@ import { Subject } from 'rxjs';
 import { DialogService } from './shared/services/dialog.service';
 import { takeUntil } from 'rxjs/operators';
 import { DialogChoice } from './shared/common';
-import { NotificationService } from './shared/services';
+import { NotificationService, RequestService } from './shared/services';
+import { RequestToken } from './shared/models';
 
 @Component({
     selector: 'gd-root',
@@ -18,6 +19,7 @@ export class AppComponent implements OnDestroy {
     private unsubscribe: Subject<void> = new Subject();
 
     constructor(
+        private requestService: RequestService,
         private dialogService: DialogService,
         private notificationService: NotificationService,
         private route: ActivatedRoute,
@@ -37,7 +39,10 @@ export class AppComponent implements OnDestroy {
             }
 
             if (result.choice === DialogChoice.Ok) {
-                this.notificationService.showSuccess('You have sucessfully signed in.');
+                let requestToken = new RequestToken(result.data.email, result.data.password);
+                this.requestService.getAuthToken(requestToken).subscribe(result => {
+                    this.notificationService.showSuccess('You have sucessfully signed in.');
+                });
             }
 
             this.router.navigate([], { relativeTo: this.route });
