@@ -1,14 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
+import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-animations';
 
 import { RequestService } from '../shared/services';
 import { IProfile } from '../shared/interfaces';
-import { takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: 'gd-geek-list',
     templateUrl: './geek-list.component.html',
-    styleUrls: ['./geek-list.component.scss']
+    styleUrls: ['./geek-list.component.scss'],
+    animations: [
+        fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' }),
+        fadeOutUpOnLeaveAnimation({ anchor: 'leave', duration: 500, delay: 200, translate: '40px' })
+    ]
 })
 export class GeekListComponent implements OnInit, OnDestroy {
     public profiles: IProfile[];

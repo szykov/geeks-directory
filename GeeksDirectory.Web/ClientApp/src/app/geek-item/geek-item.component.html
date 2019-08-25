@@ -1,0 +1,42 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div *ngIf="profile">
+        <gd-viewer-container [minWidth]="500" title="{{ profile?.fullName }}">
+            <mat-form-field appearance='fill'>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput id="email" name="email" [value]="profile.email" disabled />
+            </mat-form-field>
+
+            <mat-form-field appearance='fill'>
+                <mat-label>Name</mat-label>
+                <input type="name" matInput id="name" name="name" [value]="profile.name" disabled />
+            </mat-form-field>
+
+            <mat-form-field appearance='fill'>
+                <mat-label>Surname</mat-label>
+                <input type="surname" matInput id="surname" name="surname" [value]="profile.surname" disabled />
+            </mat-form-field>
+
+            <mat-form-field appearance='fill' *ngIf="profile.middleName">
+                <mat-label>Middle Name</mat-label>
+                <input type="middleName" matInput id="middleName" name="middleName" [value]="profile.middleName"
+                    disabled />
+            </mat-form-field>
+
+            <mat-form-field appearance='fill'>
+                <mat-label>City</mat-label>
+                <input type="city" matInput id="city" name="city" [value]="profile.city" disabled />
+            </mat-form-field>
+
+            <mat-card-content class="card-content">
+                <p *ngFor="let skill of profile.skills">
+                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small"
+                        matBadgeOverlap="false">{{ skill.name }}</span>
+                </p>
+            </mat-card-content>
+
+            <div class="profile-actions">
+                <button *ngIf="isCurrentUser" mat-flat-button color="primary">Edit</button>
+            </div>
+        </gd-viewer-container>
+    </div>
+</div>

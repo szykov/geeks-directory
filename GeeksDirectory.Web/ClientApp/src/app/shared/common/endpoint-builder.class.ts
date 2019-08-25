@@ -6,13 +6,18 @@ export class EndpointBuilder {
 
     constructor() {
         if (CONFIG.ignoreConneciton) {
-            this.origin = window.location.href;
+            this.origin = window.location.origin;
         } else {
             this.origin = `${this.cfg.protocol}://${this.cfg.hostName}:${this.cfg.port}`;
         }
     }
 
-    public getEndpoint(endpoint: string): string {
+    public getEndpoint(endpoint: string, ...urlParams: string[]): string {
+        if (urlParams) {
+            urlParams.forEach((value, index) => {
+                endpoint = endpoint.replace(`{${index}}`, value);
+            });
+        }
         return new URL(`${this.cfg.rootAddress}/${endpoint}`, this.origin).href;
     }
 }

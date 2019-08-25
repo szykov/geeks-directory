@@ -1,5 +1,5 @@
 <div gdGap="25px" gdColumns="repeat(auto-fill, minmax(280px, 1fr))" class="geek-list">
-    <mat-card class="geek-card" *ngFor="let profile of profiles">
+    <mat-card class="geek-card" *ngFor="let profile of profiles" [@enter] [@leave]>
         <mat-card-header>
             <div mat-card-avatar class="geek-avatar">
                 <mat-icon class="topbar-icon" aria-hidden="false" aria-label="Geek icon">android</mat-icon>
@@ -17,7 +17,7 @@
         </mat-card-content>
 
         <mat-card-actions class="card-actions">
-            <button mat-button>Open</button>
+            <button mat-button [routerLink]="['/profiles', profile.id]">Open</button>
         </mat-card-actions>
     </mat-card>
 </div>

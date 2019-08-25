@@ -1,4 +1,4 @@
-<div class="viewer" [style.max-width.px]="maxWidth">
+<div class="viewer" [@enter] [@leave] [style.max-width.px]="maxWidth" [style.min-width.px]="minWidth">
     <div class="viewer-wrapper">
         <div class="viewer-container">
             <div class="viewer-title">{{ title }}</div>

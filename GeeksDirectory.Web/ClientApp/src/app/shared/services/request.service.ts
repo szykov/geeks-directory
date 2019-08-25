@@ -25,6 +25,12 @@ export class RequestService {
         });
     }
 
+    public getProfile(id: string): Observable<IProfile> {
+        return this.http.get<IProfile>(this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfile, id), {
+            headers: this.headers
+        });
+    }
+
     public registerProfile(profile: ProfileModel): Observable<IProfile> {
         return this.http.post<IProfile>(
             this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.registerProfile),
