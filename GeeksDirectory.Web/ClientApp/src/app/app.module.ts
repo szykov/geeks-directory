@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { NgProgressRouterModule } from '@ngx-progressbar/router';
+import { CookieService } from 'ngx-cookie-service';
 
 import { HttpConfigInterceptor } from './shared/services/httpconfig.interceptor';
 import { AppRoutingModule } from './app-routing.module';
@@ -36,7 +37,8 @@ import { GeekItemComponent } from './geek-item/geek-item.component';
             provide: HTTP_INTERCEPTORS,
             useClass: HttpConfigInterceptor,
             multi: true
-        }
+        },
+        CookieService
     ],
     bootstrap: [AppComponent]
 })

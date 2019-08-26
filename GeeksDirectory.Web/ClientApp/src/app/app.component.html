@@ -13,7 +13,10 @@
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
 
-    <button mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true}">Sign In!</button>
+    <button *ngIf="!isAuthentificated" mat-button mat-flat-button color="basic" [routerLink]="[]"
+        [queryParams]="{ signIn: true}">Sign In!</button>
+    <button *ngIf="isAuthentificated" mat-button mat-flat-button color="basic"
+        [routerLink]="['/profiles']">Profile</button>
 
 </mat-toolbar>
 

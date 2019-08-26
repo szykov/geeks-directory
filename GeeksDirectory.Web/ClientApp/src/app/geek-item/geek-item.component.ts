@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 import { RequestService } from '../shared/services';
 import { IProfile } from '../shared/interfaces';
@@ -9,9 +12,11 @@ import { IProfile } from '../shared/interfaces';
     templateUrl: './geek-item.component.html',
     styleUrls: ['./geek-item.component.scss']
 })
-export class GeekItemComponent implements OnInit {
+export class GeekItemComponent implements OnInit, OnDestroy {
     public isCurrentUser = false;
     public profile: IProfile;
+
+    private unsubscribe: Subject<void> = new Subject();
 
     constructor(private route: ActivatedRoute, private requestService: RequestService) {}
 
@@ -21,8 +26,16 @@ export class GeekItemComponent implements OnInit {
 
     private getProfile() {
         let id = this.route.snapshot.paramMap.get('id');
-        this.requestService.getProfile(id).subscribe(result => {
-            this.profile = result;
-        });
+        this.requestService
+            .getProfile(id)
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe(result => {
+                this.profile = result;
+            });
+    }
+
+    ngOnDestroy(): void {
+        this.unsubscribe.next();
+        this.unsubscribe.complete();
     }
 }
