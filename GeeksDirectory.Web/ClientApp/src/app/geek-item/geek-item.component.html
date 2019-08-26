@@ -35,7 +35,7 @@
             </mat-card-content>
 
             <div class="profile-actions">
-                <button *ngIf="isCurrentUser" mat-flat-button color="primary">Edit</button>
+                <button *ngIf="(authProfile$ | async)?.id == profile.id" mat-flat-button color="primary">Edit</button>
             </div>
         </gd-viewer-container>
     </div>

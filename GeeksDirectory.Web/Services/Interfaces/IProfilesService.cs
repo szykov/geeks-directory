@@ -12,6 +12,8 @@ namespace GeeksDirectory.Web.Services.Interfaces
 
         IEnumerable<GeekProfileResponse> Get(int take, int skip);
 
+        GeekProfileResponse Get(string userName);
+
         IEnumerable<GeekProfileResponse> Search(string searchQuery);
 
         void Update(int profileId, GeekProfileModel model);

@@ -9,6 +9,7 @@ export let CONFIG = {
             getToken: 'connect/token',
             getProfiles: 'profiles',
             getProfile: 'profiles/{0}',
+            getMyProfile: 'profiles/me',
             registerProfile: 'profiles',
             updateProfile: 'profiles/{0}',
             getSkill: 'profiles/{0}/skills',

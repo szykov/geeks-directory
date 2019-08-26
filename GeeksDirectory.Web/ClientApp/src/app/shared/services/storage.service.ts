@@ -5,12 +5,16 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { NotificationService } from './notification.service';
 import { IToken, IProfile } from '../interfaces';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StorageService {
     private prefix = 'gd';
+
+    public isAuthentificated$ = new BehaviorSubject<boolean>(false);
+    public authProfile$ = new BehaviorSubject<IProfile>(null);
 
     constructor(
         private cookieService: CookieService,
@@ -20,25 +24,39 @@ export class StorageService {
         if (!isStorageAvailable(sessionStorage)) {
             this.notificationService.showError('Your browser do not support Local Storage');
         }
+
+        this.isAuthentificated$.next(this.cookieService.check(`${this.prefix}-token`));
     }
 
     public setAuthToken(value: IToken) {
         this.cookieService.set(`${this.prefix}-token`, value.access_token);
+        this.isAuthentificated$.next(true);
     }
 
     public getAuthToken(): string {
         return this.cookieService.get(`${this.prefix}-token`);
     }
 
-    public isAuthentificated(): boolean {
+    public existsAuthToken(): boolean {
         return this.cookieService.check(`${this.prefix}-token`);
+    }
+
+    public clearAuthToken() {
+        this.cookieService.delete(`${this.prefix}-token`);
+        this.isAuthentificated$.next(false);
     }
 
     public setAuthUser(profile: IProfile) {
         this.storage.set(`${this.prefix}-profile`, profile);
+        this.authProfile$.next(profile);
     }
 
     public getAuthUser(): IProfile {
         return this.storage.get(`${this.prefix}-profile`);
+    }
+
+    public clearAuthUser() {
+        this.storage.remove(`${this.prefix}-profile`);
+        this.authProfile$.next(null);
     }
 }

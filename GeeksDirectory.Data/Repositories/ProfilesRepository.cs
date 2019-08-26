@@ -53,6 +53,25 @@ namespace GeeksDirectory.Data.Repositories
             return profile;
         }
 
+        public GeekProfile Get(string userName)
+        {
+            if (String.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentException(message: $"Argument {nameof(userName)} is invalid.");
+            }
+
+            var profile = this.context.Profiles
+                .Where(prf => prf.User.UserName == userName)
+                .SingleOrDefault();
+
+            if (profile == null)
+            {
+                throw new KeyNotFoundException("Profile has not been found.");
+            }
+
+            return profile;
+        }
+
         public IEnumerable<GeekProfile> Search(string searchQuery)
         {
             if (String.IsNullOrEmpty(searchQuery))

@@ -7,15 +7,20 @@ import { catchError, map, finalize, delay } from 'rxjs/operators';
 import { IException } from '../interfaces';
 import { NotificationService } from './notification.service';
 import { LoaderService } from './loader.service';
+import { StorageService } from './storage.service';
 
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
-    constructor(private notificationService: NotificationService, private loaderService: LoaderService) {}
+    constructor(
+        private notificationService: NotificationService,
+        private storage: StorageService,
+        private loaderService: LoaderService
+    ) {}
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.loaderService.startLoading();
 
-        const token: string = localStorage.getItem('token');
-        if (token) {
+        if (this.storage.existsAuthToken()) {
+            let token: string = this.storage.getAuthToken();
             request = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token) });
         }
 

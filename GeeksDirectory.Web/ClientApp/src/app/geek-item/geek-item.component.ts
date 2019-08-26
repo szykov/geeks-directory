@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 
-import { RequestService } from '../shared/services';
+import { RequestService, StorageService } from '../shared/services';
 import { IProfile } from '../shared/interfaces';
 
 @Component({
@@ -13,14 +13,19 @@ import { IProfile } from '../shared/interfaces';
     styleUrls: ['./geek-item.component.scss']
 })
 export class GeekItemComponent implements OnInit, OnDestroy {
-    public isCurrentUser = false;
+    public authProfile$: Observable<IProfile>;
     public profile: IProfile;
 
     private unsubscribe: Subject<void> = new Subject();
 
-    constructor(private route: ActivatedRoute, private requestService: RequestService) {}
+    constructor(
+        private requestService: RequestService,
+        private storage: StorageService,
+        private route: ActivatedRoute
+    ) {}
 
     ngOnInit() {
+        this.authProfile$ = this.storage.authProfile$;
         this.getProfile();
     }
 
@@ -29,9 +34,7 @@ export class GeekItemComponent implements OnInit, OnDestroy {
         this.requestService
             .getProfile(id)
             .pipe(takeUntil(this.unsubscribe))
-            .subscribe(result => {
-                this.profile = result;
-            });
+            .subscribe(result => (this.profile = result));
     }
 
     ngOnDestroy(): void {

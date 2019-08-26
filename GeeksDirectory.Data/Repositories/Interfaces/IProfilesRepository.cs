@@ -10,6 +10,8 @@ namespace GeeksDirectory.Data.Repositories.Interfaces
 
         GeekProfile Get(int id);
 
+        GeekProfile Get(string userName);
+
         IEnumerable<GeekProfile> Get(int take, int skip);
 
         IEnumerable<GeekProfile> Search(string searchQuery);

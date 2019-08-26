@@ -13,10 +13,9 @@
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
 
-    <button *ngIf="!isAuthentificated" mat-button mat-flat-button color="basic" [routerLink]="[]"
+    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]"
         [queryParams]="{ signIn: true}">Sign In!</button>
-    <button *ngIf="isAuthentificated" mat-button mat-flat-button color="basic"
-        [routerLink]="['/profiles']">Profile</button>
+    <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="signOut()">Sign Out!</button>
 
 </mat-toolbar>
 
@@ -24,9 +23,12 @@
     <mat-drawer #sidenav position="start" mode='side'>
         <div class="menu-list">
             <button mat-button mat-flat-button color="basic" routerLink="/">Home</button>
-            <button mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true}">Sign
+            <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]"
+                [queryParams]="{ signIn: true}">Sign
                 In</button>
-            <button mat-button mat-flat-button color="basic" [routerLink]="['./register']">Register</button>
+            <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="signOut()">Sign Out</button>
+            <button *ngIf="!isAuth" mat-button mat-flat-button color="basic"
+                [routerLink]="['./register']">Register</button>
         </div>
     </mat-drawer>
     <mat-drawer-content>

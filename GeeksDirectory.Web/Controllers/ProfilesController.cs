@@ -47,6 +47,24 @@ namespace GeeksDirectory.Web.Controllers
             }
         }
 
+        // GET: /api/profiles/me
+        [HttpGet("me")]
+        public ActionResult<IEnumerable<GeekProfileResponse>> GetMyProfile()
+        {
+            try
+            {
+                var userName = this.User.Identity.Name;
+                var profiles = this.context.Get(userName);
+
+                return this.Ok(profiles);
+            }
+            catch (LogicException ex)
+            {
+                this.logger.LogError(ex, "Unable to fetch list of profiles.");
+                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
+            }
+        }
+
         // GET: /api/profiles/search?query={query}
         [AllowAnonymous]
         [HttpGet("search")]

@@ -58,6 +58,19 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
+        public GeekProfileResponse Get(string userName)
+        {
+            try
+            {
+                var profile = this.repository.Get(userName);
+                return this.mapper.Map<GeekProfileResponse>(profile);
+            }
+            catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
+            {
+                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
+            }
+        }
+
         public IEnumerable<GeekProfileResponse> Search(string searchQuery)
         {
             try
