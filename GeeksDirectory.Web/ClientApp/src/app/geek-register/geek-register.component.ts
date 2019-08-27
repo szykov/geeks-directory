@@ -19,7 +19,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
     public cities = CITIES;
 
     private unsubscribe: Subject<void> = new Subject();
-    private cityFilter$: Subject<string> = new Subject();
+    private cityValue$: Subject<string> = new Subject();
 
     constructor(
         private requestService: RequestService,
@@ -28,17 +28,16 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
-        this.cityFilter$
+        this.cityValue$
             .pipe(debounceTime(300))
             .pipe(takeUntil(this.unsubscribe))
-            .subscribe(searchTextValue => {
-                this.filterCities(searchTextValue);
-            });
+            .subscribe(() => this.filterCities());
     }
 
-    private filterCities(value: string = '') {
+    private filterCities() {
         this.cities = CITIES.filter(option => option.toLowerCase().includes(this.model.city.toLowerCase()));
     }
+
     public onSubmit() {
         this.requestService
             .registerProfile(this.model)
@@ -50,8 +49,8 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
             });
     }
 
-    public onKeyUpCity(value: string) {
-        this.cityFilter$.next(value);
+    public onChangeCity(value: string) {
+        this.cityValue$.next(value);
     }
 
     ngOnDestroy(): void {

@@ -1,39 +1,58 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <div *ngIf="profile" class="profile-container">
-        <gd-viewer-container title="{{ profile?.fullName }}">
+    <div *ngIf="model" class="profile-container">
+        <gd-viewer-container title="{{ profile.fullName }}">
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
                 <input type="email" matInput id="email" name="email" [value]="profile.email" disabled />
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Name</mat-label>
-                <input type="name" matInput id="name" name="name" [value]="profile.name" disabled />
-            </mat-form-field>
+            <form #profForm="ngForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput placeholder="Name" id="name" name="name" [(ngModel)]="model.name"
+                        #name="ngModel" [disabled]="!editMode" required />
+                    <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required
+                    </mat-error>
+                </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>Surname</mat-label>
-                <input type="surname" matInput id="surname" name="surname" [value]="profile.surname" disabled />
-            </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Surname</mat-label>
+                    <input type="text" matInput placeholder="Surname" [(ngModel)]="model.surname" #surname="ngModel"
+                        id="surname" name="surname" [disabled]="!editMode" required />
+                    <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']">Surname is
+                        required
+                    </mat-error>
+                </mat-form-field>
 
-            <mat-form-field appearance="fill" *ngIf="profile.middleName">
-                <mat-label>Middle Name</mat-label>
-                <input type="middleName" matInput id="middleName" name="middleName" [value]="profile.middleName" disabled />
-            </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="model.middleName || editMode">
+                    <mat-label>Middle Name</mat-label>
+                    <input type="text" matInput placeholder="Middle Name" [(ngModel)]="model.middleName"
+                        #middleName="ngModel" id="middleName" name="middleName" [disabled]="!editMode" />
+                </mat-form-field>
 
-            <mat-form-field appearance="fill">
-                <mat-label>City</mat-label>
-                <input type="city" matInput id="city" name="city" [value]="profile.city" disabled />
-            </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input type="text" placeholder="Cities" aria-label="City" matInput [matAutocomplete]="auto"
+                        (keyup)="onChangeCity()" [(ngModel)]="model.city" #city name="city" id="city"
+                        [disabled]="!editMode" required />
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let city of cities" [value]="city">
+                            {{city}}
+                        </mat-option>
+                    </mat-autocomplete>
+                    <mat-error *ngIf="!city.valid && !city.pristine">City is required</mat-error>
+                </mat-form-field>
+            </form>
 
             <mat-card-content class="card-content">
                 <p *ngFor="let skill of profile.skills">
-                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false">{{ skill.name }}</span>
+                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small"
+                        matBadgeOverlap="false">{{ skill.name }}</span>
                 </p>
             </mat-card-content>
 
             <div class="profile-actions">
-                <button *ngIf="(authProfile$ | async)?.id == profile.id" mat-flat-button color="primary">Edit</button>
+                <button *ngIf="editMode" mat-flat-button color="primary" (click)="updateProfile()">Update</button>
             </div>
         </gd-viewer-container>
     </div>

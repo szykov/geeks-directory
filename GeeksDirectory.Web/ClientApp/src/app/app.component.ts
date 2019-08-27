@@ -51,6 +51,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     public onSignOut() {
+        this.router.navigate(['/']);
+
         this.storage.clearAuthToken();
         this.storage.clearAuthUser();
     }

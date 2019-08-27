@@ -3,27 +3,27 @@
         <form class="reg-form" form #regForm="ngForm">
 
             <mat-form-field>
-                <input type="name" matInput placeholder="Name" [(ngModel)]="model.name" #name="ngModel" id="name"
+                <input type="text" matInput placeholder="Name" [(ngModel)]="model.name" #name="ngModel" id="name"
                     name="name" required />
                 <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field>
-                <input type="surname" matInput placeholder="Surname" [(ngModel)]="model.surname" #surname="ngModel"
+                <input type="text" matInput placeholder="Surname" [(ngModel)]="model.surname" #surname="ngModel"
                     id="surname" name="surname" required />
                 <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']">Surname is required
                 </mat-error>
             </mat-form-field>
 
             <mat-form-field>
-                <input type="middleName" matInput placeholder="Middle name" [(ngModel)]="model.middleName"
+                <input type="text" matInput placeholder="Middle Name" [(ngModel)]="model.middleName"
                     #middleName="ngModel" id="middleName" name="middleName" />
             </mat-form-field>
 
-            <mat-form-field class="example-full-width">
+            <mat-form-field>
                 <input type="text" placeholder="Cities" aria-label="City" matInput [matAutocomplete]="auto"
-                    (keyup)="onKeyUpCity($event.value)" [(ngModel)]="model.city" #city name="city" id="city" required />
+                    (keyup)="onChangeCity()" [(ngModel)]="model.city" #city name="city" id="city" required />
                 <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let city of cities" [value]="city">
                         {{city}}

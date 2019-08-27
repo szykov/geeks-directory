@@ -1,11 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { takeUntil } from 'rxjs/operators';
-import { Subject, Observable } from 'rxjs';
+import { takeUntil, debounceTime } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
-import { RequestService, StorageService } from '../shared/services';
+import { RequestService, StorageService, NotificationService } from '../shared/services';
 import { IProfile } from '../shared/interfaces';
+import { CITIES } from '../shared/common';
+import { ProfileModel } from '../shared/models';
 
 @Component({
     selector: 'gd-geek-item',
@@ -13,28 +15,63 @@ import { IProfile } from '../shared/interfaces';
     styleUrls: ['./geek-item.component.scss']
 })
 export class GeekItemComponent implements OnInit, OnDestroy {
-    public authProfile$: Observable<IProfile>;
+    public editMode = false;
+    public model: ProfileModel;
     public profile: IProfile;
+    public cities = CITIES;
 
+    private cityValue$: Subject<string> = new Subject();
     private unsubscribe: Subject<void> = new Subject();
 
     constructor(
         private requestService: RequestService,
         private storage: StorageService,
+        private notificationService: NotificationService,
         private route: ActivatedRoute
     ) {}
 
     ngOnInit() {
-        this.authProfile$ = this.storage.authProfile$;
-        this.getProfile();
+        this.cityValue$
+            .pipe(debounceTime(300))
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe(() => this.filterCities());
+
+        this.fetchProfile();
     }
 
-    private getProfile() {
+    public onChangeCity() {
+        this.cityValue$.next();
+    }
+
+    public updateProfile() {
+        this.requestService.updateProfile(this.profile.id, this.model).subscribe(result => {
+            this.profile = result;
+            this.notificationService.showSuccess('Profile has been updated.');
+        });
+    }
+
+    private filterCities() {
+        this.cities = CITIES.filter(option => option.toLowerCase().includes(this.model.city.toLowerCase()));
+    }
+
+    private fetchProfile() {
         let id = this.route.snapshot.paramMap.get('id');
         this.requestService
-            .getProfile(id)
+            .getProfile(Number(id))
             .pipe(takeUntil(this.unsubscribe))
-            .subscribe(result => (this.profile = result));
+            .subscribe(result => {
+                this.model = ProfileModel.fromProfileResponse(result);
+                this.profile = result;
+                this.calcEditMode();
+            });
+    }
+
+    private calcEditMode() {
+        if (this.storage.existsAuthUser()) {
+            this.storage.authProfile$
+                .pipe(takeUntil(this.unsubscribe))
+                .subscribe(result => (this.editMode = result.id === this.profile.id));
+        }
     }
 
     ngOnDestroy(): void {

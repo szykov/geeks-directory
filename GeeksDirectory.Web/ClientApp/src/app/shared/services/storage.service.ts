@@ -59,4 +59,8 @@ export class StorageService {
         this.storage.remove(`${this.prefix}-profile`);
         this.authProfile$.next(null);
     }
+
+    public existsAuthUser(): boolean {
+        return this.storage.has(`${this.prefix}-profile`);
+    }
 }

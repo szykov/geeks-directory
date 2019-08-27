@@ -10,9 +10,11 @@
     }
 }
 
-.card-content .mat-button {
+.card-content {
     flex-grow: 1;
-    text-transform: uppercase;
+    .mat-button {
+        text-transform: uppercase;
+    }
 }
 
 .card-actions {

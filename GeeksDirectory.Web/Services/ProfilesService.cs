@@ -84,7 +84,7 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public void Update(int profileId, GeekProfileModel profile)
+        public GeekProfileResponse Update(int profileId, GeekProfileModel profile)
         {
             try
             {
@@ -94,6 +94,8 @@ namespace GeeksDirectory.Web.Services
                 this.repository.Update(entity);
 
                 this.logger.LogInformation("Updated profile {@entity} with {@profile}", entity, profile);
+
+                return this.mapper.Map<GeekProfileResponse>(entity);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException || ex is ArgumentNullException)
             {

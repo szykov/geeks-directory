@@ -8,7 +8,9 @@ using GeeksDirectory.Web.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 using OpenIddict.Validation;
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -122,8 +124,8 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                this.context.Update(id, model);
-                return this.NoContent();
+                var profile = this.context.Update(id, model);
+                return this.Ok(profile);
             }
             catch (LogicException ex)
             {

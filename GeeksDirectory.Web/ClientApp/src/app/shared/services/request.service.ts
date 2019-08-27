@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '../common';
 import { IProfile, IToken } from '../interfaces';
-import { ProfileModel, RequestToken } from '../models';
+import { ProfileModel, RequestTokenModel } from '../models';
 
 @Injectable({
     providedIn: 'root'
@@ -24,8 +24,8 @@ export class RequestService {
         return this.http.get<IProfile[]>(url, { headers: this.headers });
     }
 
-    public getProfile(id: string): Observable<IProfile> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfile, id);
+    public getProfile(id: number): Observable<IProfile> {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfile, id.toString());
         return this.http.get<IProfile>(url, { headers: this.headers });
     }
 
@@ -34,12 +34,17 @@ export class RequestService {
         return this.http.get<IProfile>(url, { headers: this.headers });
     }
 
+    public updateProfile(id: number, profile: ProfileModel): Observable<IProfile> {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.updateProfile, id.toString());
+        return this.http.patch<IProfile>(url, profile, { headers: this.headers });
+    }
+
     public registerProfile(profile: ProfileModel): Observable<IProfile> {
         let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.registerProfile);
         return this.http.post<IProfile>(url, profile, { headers: this.headers });
     }
 
-    public getAuthToken(requestToken: RequestToken): Observable<IToken> {
+    public getAuthToken(requestToken: RequestTokenModel): Observable<IToken> {
         let url = this.endpointBuilder.getEndpointFromRoot(CONFIG.connection.endpoints.getToken);
         return this.http.post<IToken>(url, requestToken.encodeToSend(), {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
