@@ -15,9 +15,10 @@ import { SharedModule } from './shared/shared.module';
 import { GeekListComponent } from './geek-list/geek-list.component';
 import { GeekRegisterComponent } from './geek-register/geek-register.component';
 import { GeekItemComponent } from './geek-item/geek-item.component';
+import { TopbarComponent } from './topbar/topbar.component';
 
 @NgModule({
-    declarations: [AppComponent, GeekListComponent, GeekRegisterComponent, GeekItemComponent],
+    declarations: [AppComponent, GeekListComponent, GeekRegisterComponent, GeekItemComponent, TopbarComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,

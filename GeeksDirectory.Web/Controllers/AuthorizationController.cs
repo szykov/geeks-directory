@@ -2,7 +2,7 @@
 using AspNet.Security.OpenIdConnect.Primitives;
 
 using GeeksDirectory.Data.Entities;
-
+using GeeksDirectory.SharedTypes.Responses;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -44,10 +44,10 @@ namespace AuthorizationServer.Controllers
                 var user = await this.userManager.FindByNameAsync(request.Username);
                 if (user == null)
                 {
-                    return BadRequest(new OpenIdConnectResponse
+                    return BadRequest(new ErrorResponse
                     {
-                        Error = OpenIdConnectConstants.Errors.InvalidGrant,
-                        ErrorDescription = "The username/password couple is invalid."
+                        Code = OpenIdConnectConstants.Errors.InvalidGrant,
+                        Message = "The username/password couple is invalid."
                     });
                 }
 
@@ -55,10 +55,10 @@ namespace AuthorizationServer.Controllers
                 var result = await this.signInManager.CheckPasswordSignInAsync(user, request.Password, lockoutOnFailure: true);
                 if (!result.Succeeded)
                 {
-                    return BadRequest(new OpenIdConnectResponse
+                    return BadRequest(new ErrorResponse
                     {
-                        Error = OpenIdConnectConstants.Errors.InvalidGrant,
-                        ErrorDescription = "The username/password couple is invalid."
+                        Code = OpenIdConnectConstants.Errors.InvalidGrant,
+                        Message = "The username/password couple is invalid."
                     });
                 }
 
@@ -68,10 +68,10 @@ namespace AuthorizationServer.Controllers
                 return SignIn(ticket.Principal, ticket.Properties, ticket.AuthenticationScheme);
             }
 
-            return BadRequest(new OpenIdConnectResponse
+            return BadRequest(new ErrorResponse
             {
-                Error = OpenIdConnectConstants.Errors.UnsupportedGrantType,
-                ErrorDescription = "The specified grant type is not supported."
+                Code = OpenIdConnectConstants.Errors.UnsupportedGrantType,
+                Message = "The specified grant type is not supported."
             });
         }
 

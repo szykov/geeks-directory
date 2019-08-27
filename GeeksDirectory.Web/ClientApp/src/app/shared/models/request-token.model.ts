@@ -1,4 +1,4 @@
-export class RequestToken {
+export class RequestTokenModel {
     public grantType: string;
     public username: string;
     public password: string;

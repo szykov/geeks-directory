@@ -1,6 +1,6 @@
-<div fxLayout="row" fxLayoutAlign="center center">
-    <gd-viewer-container [maxWidth]="500" title="Profile registration">
-        <form class="register-form" form #registerForm="ngForm">
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+    <gd-viewer-container title="Profile registration" class="reg-container">
+        <form class="reg-form" form #regForm="ngForm">
 
             <mat-form-field>
                 <input type="name" matInput placeholder="Name" [(ngModel)]="model.name" #name="ngModel" id="name"
@@ -58,8 +58,8 @@
                 </mat-error>
             </mat-form-field>
 
-            <div class="register-actions">
-                <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="!registerForm.form.valid">
+            <div class="reg-actions">
+                <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="!regForm.form.valid">
                     Register
                 </button>
             </div>

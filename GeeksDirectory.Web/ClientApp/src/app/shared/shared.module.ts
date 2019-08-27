@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { PageNotFoundComponent, SignInComponent } from './components';
 import { ViewerContainerComponent } from './components/viewer-container/viewer-container.component';
@@ -41,7 +42,8 @@ import { ViewerContainerComponent } from './components/viewer-container/viewer-c
         MatDialogModule,
         MatAutocompleteModule,
         MatSidenavModule,
-        MatListModule
+        MatListModule,
+        MatDividerModule
     ],
     exports: [
         FormsModule,
@@ -59,6 +61,7 @@ import { ViewerContainerComponent } from './components/viewer-container/viewer-c
         MatAutocompleteModule,
         MatSidenavModule,
         MatListModule,
+        MatDividerModule,
         PageNotFoundComponent,
         ViewerContainerComponent
     ],

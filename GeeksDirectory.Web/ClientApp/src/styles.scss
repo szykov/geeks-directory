@@ -1,32 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/snack-bar';
 
 html,
 body {
     height: 100%;
-    min-width: 500px;
+    min-width: 400px;
 }
 body {
     margin: 0;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
-.success-snackbar {
-    background: #00c853;
-    span {
-        color: #000000;
-    }
-}
-
-.error-snackbar {
-    background: #d50000;
-    span {
-        color: #ffffff;
-    }
-}
-
-.warning-snackbar {
-    background: #ffff00;
-    span {
-        color: #000000;
-    }
 }

@@ -1,3 +1,7 @@
+.profile-container {
+    width: 500px;
+}
+
 .card-content > p {
     display: inline-block;
     margin-right: 22px;
@@ -5,4 +9,14 @@
 
 .profile-actions {
     text-align: right;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .profile-container {
+        width: 100% !important;
+    }
 }

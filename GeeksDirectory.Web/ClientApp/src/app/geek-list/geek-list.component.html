@@ -1,6 +1,6 @@
 <div gdGap="25px" gdColumns="repeat(auto-fill, minmax(280px, 1fr))" class="geek-list">
     <mat-card class="geek-card" *ngFor="let profile of profiles" [@enter] [@leave]>
-        <mat-card-header>
+        <mat-card-header class="card-header">
             <div mat-card-avatar class="geek-avatar">
                 <mat-icon class="topbar-icon" aria-hidden="false" aria-label="Geek icon">android</mat-icon>
             </div>
@@ -10,9 +10,7 @@
 
         <mat-card-content class="card-content">
             <p *ngFor="let skill of profile.skills">
-                <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false">{{
-                    skill.name
-                }}</span>
+                <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false">{{ skill.name }}</span>
             </p>
         </mat-card-content>
 

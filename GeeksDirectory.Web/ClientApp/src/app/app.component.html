@@ -1,34 +1,15 @@
 <ng-progress id="progress"></ng-progress>
 
-<mat-toolbar color="primary" class="topbar">
-    <button mat-button class="sidenav-trigger" (click)="sidenav.toggle()">
-        <mat-icon>more_vert</mat-icon>
-    </button>
+<gd-topbar title="Geeks Directory" [isAuth]="isAuth" (drawerToggle)="drawer.toggle()" (signOut)="onSignOut()"> </gd-topbar>
 
-    <div class="topbar-nav" routerLink="/">
-        <mat-icon class="topbar-icon" aria-hidden="false" aria-label="Geek icon">recent_actors</mat-icon>
-        <span class="topbar-title">{{ title }}</span>
-    </div>
-
-    <!-- This fills the remaining space of the current row -->
-    <span class="fill-remaining-space"></span>
-
-    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]"
-        [queryParams]="{ signIn: true}">Sign In!</button>
-    <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="signOut()">Sign Out!</button>
-
-</mat-toolbar>
-
-<mat-drawer-container class="sidenav-container">
-    <mat-drawer #sidenav position="start" mode='side'>
+<mat-drawer-container class="drawer-container">
+    <mat-drawer #drawer position="start" mode="side">
         <div class="menu-list">
+            <mat-divider></mat-divider>
             <button mat-button mat-flat-button color="basic" routerLink="/">Home</button>
-            <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]"
-                [queryParams]="{ signIn: true}">Sign
-                In</button>
-            <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="signOut()">Sign Out</button>
-            <button *ngIf="!isAuth" mat-button mat-flat-button color="basic"
-                [routerLink]="['./register']">Register</button>
+            <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true }">Sign In</button>
+            <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="onSignOut()">Sign Out</button>
+            <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="['./register']">Register</button>
         </div>
     </mat-drawer>
     <mat-drawer-content>

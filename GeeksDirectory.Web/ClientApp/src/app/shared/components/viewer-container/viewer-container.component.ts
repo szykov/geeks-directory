@@ -13,8 +13,6 @@ import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-ani
 })
 export class ViewerContainerComponent implements OnInit {
     @Input() title: string;
-    @Input() maxWidth: string;
-    @Input() minWidth: string;
 
     constructor() {}
 

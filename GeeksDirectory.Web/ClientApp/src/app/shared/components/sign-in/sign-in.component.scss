@@ -20,3 +20,9 @@
         right: 73px;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .create-account {
+        display: none;
+    }
+}

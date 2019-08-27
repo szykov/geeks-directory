@@ -36,7 +36,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
             });
     }
 
-    private filterCities(value: string) {
+    private filterCities(value: string = '') {
         this.cities = CITIES.filter(option => option.toLowerCase().includes(this.model.city.toLowerCase()));
     }
     public onSubmit() {
@@ -45,6 +45,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(result => {
                 this.router.navigate(['/']);
+
                 this.notificationService.showSuccess('You have been registered. Great!');
             });
     }

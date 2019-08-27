@@ -11,7 +11,7 @@ export class NotificationService {
     constructor(private snackBar: MatSnackBar) {
         this.config.horizontalPosition = 'right';
         this.config.verticalPosition = 'bottom';
-        this.config.duration = 5000;
+        this.config.duration = 115000;
     }
 
     public showSuccess(message: string, actions: string = 'OK') {

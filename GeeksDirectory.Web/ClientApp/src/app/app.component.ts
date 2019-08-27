@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 
@@ -6,9 +6,9 @@ import { DialogService, StorageService } from './shared/services';
 import { takeUntil } from 'rxjs/operators';
 import { DialogChoice } from './shared/common';
 import { NotificationService, RequestService } from './shared/services';
-import { RequestToken } from './shared/models';
-import { SignInModel } from './shared/models/sign-in.model';
+import { RequestTokenModel, SignInModel } from './shared/models';
 import { IProfile } from './shared/interfaces';
+import { MatSidenav, MatDrawer } from '@angular/material/sidenav';
 
 @Component({
     selector: 'gd-root',
@@ -16,7 +16,6 @@ import { IProfile } from './shared/interfaces';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-    public title = 'Geeks Directory';
     public isAuth = false;
     public authProfile$: Observable<IProfile>;
 
@@ -51,7 +50,7 @@ export class AppComponent implements OnInit, OnDestroy {
         });
     }
 
-    public signOut() {
+    public onSignOut() {
         this.storage.clearAuthToken();
         this.storage.clearAuthUser();
     }
@@ -74,7 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     private signIn(model: SignInModel) {
-        let requestToken = new RequestToken(model.email, model.password);
+        let requestToken = new RequestTokenModel(model.email, model.password);
         this.requestService
             .getAuthToken(requestToken)
             .pipe(takeUntil(this.unsubscribe))
