@@ -1,6 +1,6 @@
-<h1 mat-dialog-title>Sign In!</h1>
+<span mat-dialog-title class="title-header">Sign In!</span>
 <div mat-dialog-content>
-    <form class="sign-form" form #signInForm="ngForm">
+    <form class="sign-form" #signInForm="ngForm">
         <mat-form-field>
             <input type="email" matInput placeholder="Email" [(ngModel)]="model.email" #email="ngModel" id="email"
                 name="email" email required />
@@ -21,7 +21,8 @@
         <div class="sign-form-actions" mat-dialog-actions>
             <button class="create-account" mat-button (click)="onCreateAccount()">Create Account?</button>
             <button mat-flat-button (click)="onCancel()">Cancel</button>
-            <button mat-flat-button color="primary" (click)="onSubmit()" [disabled]="!signInForm.form.valid">
+            <button type="submit" mat-flat-button color="primary" (click)="onSubmit()"
+                [disabled]="!signInForm.form.valid">
                 Ok
             </button>
         </div>

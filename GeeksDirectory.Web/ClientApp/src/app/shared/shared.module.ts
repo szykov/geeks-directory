@@ -4,67 +4,50 @@ import { FormsModule } from '@angular/forms';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatBadgeModule } from '@angular/material/badge';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatDividerModule } from '@angular/material/divider';
+import {
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatBadgeModule,
+    MatIconModule,
+    MatCardModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatButtonToggleModule
+} from '@angular/material';
 
-import { PageNotFoundComponent, SignInComponent } from './components';
-import { ViewerContainerComponent } from './components/viewer-container/viewer-container.component';
+import {
+    PageNotFoundComponent,
+    SignInDialogComponent,
+    AddSkillDialogComponent,
+    ViewerContainerComponent
+} from './components';
+
+const MATERIAL_BUNDLE = [
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatBadgeModule,
+    MatIconModule,
+    MatCardModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatAutocompleteModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatButtonToggleModule
+];
 
 @NgModule({
-    declarations: [PageNotFoundComponent, SignInComponent, ViewerContainerComponent],
-    imports: [
-        CommonModule,
-        FormsModule,
-        MatSnackBarModule,
-        FlexLayoutModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatBadgeModule,
-        MatIconModule,
-        MatCardModule,
-        MatChipsModule,
-        MatDialogModule,
-        MatAutocompleteModule,
-        MatSidenavModule,
-        MatListModule,
-        MatDividerModule
-    ],
-    exports: [
-        FormsModule,
-        FlexLayoutModule,
-        MatSnackBarModule,
-        MatToolbarModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatBadgeModule,
-        MatIconModule,
-        MatCardModule,
-        MatChipsModule,
-        MatAutocompleteModule,
-        MatSidenavModule,
-        MatListModule,
-        MatDividerModule,
-        PageNotFoundComponent,
-        ViewerContainerComponent
-    ],
-    entryComponents: [SignInComponent]
+    declarations: [PageNotFoundComponent, SignInDialogComponent, ViewerContainerComponent, AddSkillDialogComponent],
+    imports: [CommonModule, FormsModule, MATERIAL_BUNDLE, MatSnackBarModule, FlexLayoutModule],
+    exports: [FormsModule, FlexLayoutModule, MATERIAL_BUNDLE, PageNotFoundComponent, ViewerContainerComponent],
+    entryComponents: [SignInDialogComponent, AddSkillDialogComponent]
 })
 export class SharedModule {}

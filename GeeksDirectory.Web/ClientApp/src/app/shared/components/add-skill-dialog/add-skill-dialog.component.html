@@ -1,0 +1,35 @@
+<span mat-dialog-title class="title-header">New skill</span>
+<div mat-dialog-content>
+    <form (submit)="onSubmit()" class="skill-form" #skillForm="ngForm">
+        <div class="skill-body">
+            <mat-form-field>
+                <input type="text" matInput placeholder="Name" [(ngModel)]="model.name" #name="ngModel" id="name"
+                    name="name" required />
+                <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="text" matInput placeholder="Description" [(ngModel)]="model.description"
+                    #description="ngModel" id="description" name="description" />
+            </mat-form-field>
+
+            <mat-label class="title-header">Your Evaluation</mat-label>
+            <mat-button-toggle-group class="score" id="score" name="score" [(ngModel)]="model.score">
+                <mat-button-toggle value="0">Zero</mat-button-toggle>
+                <mat-button-toggle value="1">One</mat-button-toggle>
+                <mat-button-toggle value="2">Two</mat-button-toggle>
+                <mat-button-toggle value="3">Three</mat-button-toggle>
+                <mat-button-toggle value="4">Four</mat-button-toggle>
+                <mat-button-toggle value="5">Five</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+
+        <div class="skill-form-actions" mat-dialog-actions>
+            <button mat-flat-button (click)="onCancel()">Cancel</button>
+            <button type="submit" mat-flat-button color="primary" (click)="onSubmit()"
+                [disabled]="!skillForm.form.valid">
+                Ok
+            </button>
+        </div>
+    </form>
+</div>

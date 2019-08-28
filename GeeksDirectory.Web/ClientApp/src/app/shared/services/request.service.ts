@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '../common';
-import { IProfile, IToken } from '../interfaces';
-import { ProfileModel, RequestTokenModel } from '../models';
+import { IProfile, IToken, ISkill } from '../interfaces';
+import { ProfileModel, RequestTokenModel, SkillModel } from '../models';
 
 @Injectable({
     providedIn: 'root'
@@ -24,8 +24,8 @@ export class RequestService {
         return this.http.get<IProfile[]>(url, { headers: this.headers });
     }
 
-    public getProfile(id: number): Observable<IProfile> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfile, id.toString());
+    public getProfile(profileId: number): Observable<IProfile> {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfile, profileId.toString());
         return this.http.get<IProfile>(url, { headers: this.headers });
     }
 
@@ -34,14 +34,19 @@ export class RequestService {
         return this.http.get<IProfile>(url, { headers: this.headers });
     }
 
-    public updateProfile(id: number, profile: ProfileModel): Observable<IProfile> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.updateProfile, id.toString());
+    public updateProfile(profileId: number, profile: ProfileModel): Observable<IProfile> {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.updateProfile, profileId.toString());
         return this.http.patch<IProfile>(url, profile, { headers: this.headers });
     }
 
     public registerProfile(profile: ProfileModel): Observable<IProfile> {
         let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.registerProfile);
         return this.http.post<IProfile>(url, profile, { headers: this.headers });
+    }
+
+    public addSkill(profileId: number, skill: SkillModel): Observable<ISkill> {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.addSkill, profileId.toString());
+        return this.http.post<ISkill>(url, skill, { headers: this.headers });
     }
 
     public getAuthToken(requestToken: RequestTokenModel): Observable<IToken> {

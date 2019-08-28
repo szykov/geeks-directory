@@ -1,14 +1,13 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, throwError } from 'rxjs';
 
 import { DialogService, StorageService } from './shared/services';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, catchError } from 'rxjs/operators';
 import { DialogChoice } from './shared/common';
 import { NotificationService, RequestService } from './shared/services';
 import { RequestTokenModel, SignInModel } from './shared/models';
 import { IProfile } from './shared/interfaces';
-import { MatSidenav, MatDrawer } from '@angular/material/sidenav';
 
 @Component({
     selector: 'gd-root',
@@ -51,15 +50,13 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     public onSignOut() {
-        this.router.navigate(['/']);
-
         this.storage.clearAuthToken();
         this.storage.clearAuthUser();
     }
 
-    public openSignInDialog() {
+    public openSignInDialog(model?: SignInModel) {
         this.dialogService
-            .openSignInDialog()
+            .signInDialog(model)
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(result => {
                 if (result.choice === DialogChoice.CreateAccount) {
@@ -78,7 +75,13 @@ export class AppComponent implements OnInit, OnDestroy {
         let requestToken = new RequestTokenModel(model.email, model.password);
         this.requestService
             .getAuthToken(requestToken)
-            .pipe(takeUntil(this.unsubscribe))
+            .pipe(
+                takeUntil(this.unsubscribe),
+                catchError(error => {
+                    this.openSignInDialog(model);
+                    return throwError;
+                })
+            )
             .subscribe(result => {
                 this.storage.setAuthToken(result);
                 this.notificationService.showSuccess('You have sucessfully signed in.');

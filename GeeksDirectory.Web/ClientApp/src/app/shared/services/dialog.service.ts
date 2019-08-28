@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, race, merge } from 'rxjs';
-
-import { MatDialog } from '@angular/material/dialog';
-
-import { SignInComponent } from '../components/sign-in/sign-in.component';
-import { SignInModel } from '../models/sign-in.model';
-import { DialogChoice } from '../common';
+import { Observable, merge } from 'rxjs';
 import { mapTo, filter } from 'rxjs/operators';
+
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+
+import { SignInModel, SkillModel } from '../models';
+import { DialogChoice } from '../common';
+import { AddSkillDialogComponent, SignInDialogComponent } from '../components';
+import { ComponentType } from '@angular/cdk/portal';
 
 @Injectable({
     providedIn: 'root'
@@ -14,8 +15,16 @@ import { mapTo, filter } from 'rxjs/operators';
 export class DialogService {
     constructor(private dialog: MatDialog) {}
 
-    public openSignInDialog(): Observable<{ choice: DialogChoice; data: SignInModel }> {
-        const dialogRef = this.dialog.open(SignInComponent, { height: '300px', width: '400px' });
+    public signInDialog(model?: SignInModel): Observable<{ choice: DialogChoice; data: SignInModel }> {
+        return this.baseDialog(SignInDialogComponent, { height: '300px', width: '400px', data: model });
+    }
+
+    public addSkillDialog(model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
+        return this.baseDialog(AddSkillDialogComponent, { height: '410px', width: '400px', data: model });
+    }
+
+    private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<{ choice: any; data: any }> {
+        const dialogRef = this.dialog.open(component, config);
         let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
 
         return merge(dialogRef.afterClosed(), backDrop$).pipe(filter(result => result != null));

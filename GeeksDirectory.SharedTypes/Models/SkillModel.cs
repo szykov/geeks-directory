@@ -11,7 +11,6 @@ namespace GeeksDirectory.SharedTypes.Models
         [StringLength(maximumLength: 50)]
         public string Name { get; set; }
 
-        [Required]
         [StringLength(maximumLength: 255)]
         public string Description { get; set; }
     }
