@@ -1,8 +1,9 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, finalize, delay } from 'rxjs/operators';
+import { catchError, map, finalize } from 'rxjs/operators';
 
 import { IException } from '../interfaces';
 import { NotificationService } from './notification.service';
@@ -14,7 +15,8 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     constructor(
         private notificationService: NotificationService,
         private storage: StorageService,
-        private loaderService: LoaderService
+        private loaderService: LoaderService,
+        private router: Router
     ) {}
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.loaderService.startLoading();
@@ -34,10 +36,21 @@ export class HttpConfigInterceptor implements HttpInterceptor {
             map((event: HttpEvent<any>) => event),
             catchError((error: HttpErrorResponse) => {
                 let exception: IException = error.error;
+
+                if (exception.code === 'Unauthorized') {
+                    this.clearSession();
+                }
+
                 this.notificationService.showError(exception.message);
                 return throwError(error);
             }),
             finalize(() => this.loaderService.completeLoading())
         );
+    }
+
+    private clearSession() {
+        this.storage.clearAuthToken();
+        this.storage.clearAuthUser();
+        this.router.navigate(['/'], { queryParams: { signIn: true } });
     }
 }

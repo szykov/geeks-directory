@@ -13,12 +13,24 @@
 }
 
 .mat-drawer button {
+    font-size: 16px;
+    height: 45px;
+    text-align: left;
+    padding-left: 22px;
     display: block;
-    width: 200px;
+    width: 150px;
+    text-transform: uppercase;
+
+    mat-icon {
+        margin-right: 10px;
+        font-size: 25px;
+        margin-bottom: 7px;
+    }
 }
 
 .mat-drawer {
-    box-shadow: 1px 0 10px #e91e63;
+    box-shadow: 0px 2px 1px -1px rgba(252, 228, 236, 0.2), 0px 1px 1px 0px rgba(252, 228, 236, 0.14),
+        0px 1px 3px 0px rgba(252, 228, 236, 0.12);
 }
 
 .menu-list {

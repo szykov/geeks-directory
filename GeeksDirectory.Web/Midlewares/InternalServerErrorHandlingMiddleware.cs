@@ -1,4 +1,4 @@
-﻿using GeeksDirectory.SharedTypes.Responses;
+﻿using GeeksDirectory.SharedTypes.Classes;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -44,12 +44,12 @@ namespace GeeksDirectory.Web.Midlewares
 
                     this.logger.LogError(ex, $"Internal server error");
 
-                    var jsonResult = JsonConvert.SerializeObject(new ErrorResponse() { Code = "InternalServerError", Message = "Oops! Something went wrong." },
-                        new JsonSerializerSettings()
-                        {
-                            ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                            NullValueHandling = NullValueHandling.Ignore,
-                        });
+                    var jsonSerializer = new JsonSerializerSettings()
+                    {
+                        ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                        NullValueHandling = NullValueHandling.Ignore,
+                    };
+                    var jsonResult = JsonConvert.SerializeObject(ExceptionCode.InternalServerError, jsonSerializer);
 
                     await httpContext.Response.WriteAsync(jsonResult);
                 }

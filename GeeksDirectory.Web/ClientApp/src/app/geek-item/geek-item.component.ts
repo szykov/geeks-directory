@@ -70,7 +70,7 @@ export class GeekItemComponent implements OnInit, OnDestroy {
         if (this.storage.existsAuthUser()) {
             this.storage.authProfile$
                 .pipe(takeUntil(this.unsubscribe))
-                .subscribe(result => (this.editMode = result.id === this.profile.id));
+                .subscribe(result => (this.editMode = result && result.id === this.profile.id));
         }
     }
 
