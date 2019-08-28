@@ -4,6 +4,6 @@ export interface ISkill {
     id: number;
     name: string;
     description: string;
-    averageScore: string;
+    averageScore: number;
     assessments: IAssessment[];
 }

@@ -77,7 +77,7 @@ export class AppComponent implements OnInit, OnDestroy {
             .getAuthToken(requestToken)
             .pipe(
                 takeUntil(this.unsubscribe),
-                catchError(error => {
+                catchError(() => {
                     this.openSignInDialog(model);
                     return throwError;
                 })

@@ -51,7 +51,7 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public SkillResponse Add(int profileId, SkillModel model)
+        public async Task<SkillResponse> AddAsync(int profileId, SkillModel model, string userEmail)
         {
             try
             {
@@ -65,6 +65,9 @@ namespace GeeksDirectory.Web.Services
 
                 this.logger.LogInformation("Added skill {@skill} to {@profileId}", skill, profileId);
 
+                var user = await this.userManager.FindByEmailAsync(userEmail);
+                skill.AverageScore = await this.EvaluateSkillAsync(profileId, model.Name, userEmail, model.Score);
+
                 return this.mapper.Map<SkillResponse>(skill);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
@@ -73,7 +76,7 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public async Task EvaluateSkillAsync(int profileId, string skillName, string userEmail, int score)
+        public async Task<int> EvaluateSkillAsync(int profileId, string skillName, string userEmail, int score)
         {
             try
             {
@@ -84,9 +87,9 @@ namespace GeeksDirectory.Web.Services
                 else
                     this.assessmentsRepository.Add(profileId, skillName, user.Id, score);
 
-                this.skillsRepository.RefreshAverageScore(profileId, skillName);
-
                 this.logger.LogInformation("Set skill score for {0} of profile {1} by {2} to {3}", skillName, profileId, userEmail, score);
+
+                return this.skillsRepository.RefreshAverageScore(profileId, skillName);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
             {

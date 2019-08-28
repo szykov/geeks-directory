@@ -1,11 +1,13 @@
+// tslint:disable: no-string-literal
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { takeUntil, debounceTime } from 'rxjs/operators';
-import { Subject, Observable } from 'rxjs';
+import { takeUntil, debounceTime, catchError } from 'rxjs/operators';
+import { Subject, Observable, pipe, throwError } from 'rxjs';
 
 import { RequestService, StorageService, NotificationService, DialogService } from '../shared/services';
-import { IProfile } from '../shared/interfaces';
+import { IProfile, ISkill } from '../shared/interfaces';
 import { CITIES, DialogChoice } from '../shared/common';
 import { ProfileModel, SkillModel } from '../shared/models';
 
@@ -35,8 +37,10 @@ export class GeekItemComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.isAuth$ = this.storage.authProfile$;
         this.cityValue$
-            .pipe(debounceTime(300))
-            .pipe(takeUntil(this.unsubscribe))
+            .pipe(
+                takeUntil(this.unsubscribe),
+                debounceTime(300)
+            )
             .subscribe(() => this.filterCities());
 
         this.fetchProfile();
@@ -47,19 +51,48 @@ export class GeekItemComponent implements OnInit, OnDestroy {
     }
 
     public updateProfile() {
-        this.requestService.updateProfile(this.profile.id, this.model).subscribe(result => {
-            this.profile = result;
-            this.notificationService.showSuccess('Profile has been updated.');
-        });
+        this.requestService
+            .updateProfile(this.profile.id, this.model)
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe(result => {
+                this.profile = result;
+                this.notificationService.showSuccess('Profile has been updated.');
+            });
     }
 
-    public rateSkill() {
-        console.log('rate skill');
-    }
-
-    public openAddSkillDialog() {
+    public openEditSkillDialog(target: HTMLElement) {
+        let id = Number(target.attributes['id'].value);
+        let skill = this.profile.skills.find(s => s.id === id);
         this.dialogService
-            .addSkillDialog()
+            .addSkillDialog(false, new SkillModel(skill.name, skill.description))
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe(result => {
+                if (result.choice === DialogChoice.Ok) {
+                    this.updateSkill(this.profile.id, skill.id, result.data);
+                }
+            });
+    }
+
+    public updateSkill(profileId: number, skillId: number, model: SkillModel) {
+        this.requestService
+            .setSkillScore(profileId, model.name, model.score)
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe(result => {
+                this.refreshAverageScore(skillId, result);
+                this.notificationService.showSuccess('Skill has been updated.');
+            });
+    }
+
+    private refreshAverageScore(skillId: number, score: number) {
+        let index = this.profile.skills.findIndex(s => s.id === skillId);
+        let skills = this.profile.skills.slice(0);
+        skills[index].averageScore = score;
+        this.profile.skills = skills;
+    }
+
+    public openAddSkillDialog(model?: SkillModel) {
+        this.dialogService
+            .addSkillDialog(true, model)
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(result => {
                 if (result.choice === DialogChoice.Ok) {
@@ -68,11 +101,20 @@ export class GeekItemComponent implements OnInit, OnDestroy {
             });
     }
 
-    public addSkill(skill: SkillModel) {
-        this.requestService.addSkill(this.profile.id, skill).subscribe(result => {
-            this.profile.skills.push(result);
-            this.notificationService.showSuccess('Skill has been added');
-        });
+    public addSkill(model: SkillModel) {
+        this.requestService
+            .addSkill(this.profile.id, model)
+            .pipe(
+                takeUntil(this.unsubscribe),
+                catchError(() => {
+                    this.openAddSkillDialog(model);
+                    return throwError;
+                })
+            )
+            .subscribe(result => {
+                this.profile.skills.push(result);
+                this.notificationService.showSuccess('Skill has been added');
+            });
     }
 
     private filterCities() {

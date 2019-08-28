@@ -50,11 +50,13 @@ namespace GeeksDirectory.Web.Controllers
 
         // POST: /api/profiles/{profileId}/skills
         [HttpPost("{profileId}/skills")]
-        public ActionResult<SkillResponse> AddSkill([FromRoute]int profileId, [FromBody]SkillModel model)
+        public async Task<ActionResult<SkillResponse>> AddSkillAsync([FromRoute]int profileId, [FromBody]SkillModel model)
         {
             try
             {
-                var skill = this.context.Add(profileId, model);
+                var userName = this.User.Identity.Name;
+                var skill = await this.context.AddAsync(profileId, model, userName);
+
                 return this.CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
             }
             catch (LogicException ex)
@@ -64,16 +66,14 @@ namespace GeeksDirectory.Web.Controllers
             }
         }
 
-        // POST: /api/profiles/{profileId}/skills/{skillName}
-        [HttpPost("{profileId}/skills/{skillName}")]
-        public async Task<ActionResult> EvaluateSkill([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
+        // POST: /api/profiles/{profileId}/skills/{skillName}/score
+        [HttpPost("{profileId}/skills/{skillName}/score")]
+        public async Task<ActionResult<int>> EvaluateSkill([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
         {
             try
             {
                 var userName = this.User.Identity.Name;
-                await this.context.EvaluateSkillAsync(profileId, skillName, userName, score);
-
-                return this.NoContent();
+                return await this.context.EvaluateSkillAsync(profileId, skillName, userName, score);
             }
             catch (LogicException ex)
             {

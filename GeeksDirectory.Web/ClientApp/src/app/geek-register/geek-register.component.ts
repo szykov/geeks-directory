@@ -29,8 +29,10 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.cityValue$
-            .pipe(debounceTime(300))
-            .pipe(takeUntil(this.unsubscribe))
+            .pipe(
+                takeUntil(this.unsubscribe),
+                debounceTime(300)
+            )
             .subscribe(() => this.filterCities());
     }
 

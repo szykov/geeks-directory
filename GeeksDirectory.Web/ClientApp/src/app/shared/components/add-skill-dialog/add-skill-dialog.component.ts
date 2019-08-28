@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, OnInit, Inject, Optional } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { SkillModel } from '../../models';
 import { DialogChoice } from '../../common';
@@ -10,11 +10,20 @@ import { DialogChoice } from '../../common';
     styleUrls: ['./add-skill-dialog.component.scss']
 })
 export class AddSkillDialogComponent implements OnInit {
+    public isNew = true;
     public model = new SkillModel();
 
-    constructor(public dialogRef: MatDialogRef<AddSkillDialogComponent>) {}
+    constructor(
+        public dialogRef: MatDialogRef<AddSkillDialogComponent>,
+        @Optional() @Inject(MAT_DIALOG_DATA) public data: { isNew: boolean; model: SkillModel }
+    ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.isNew = this.data.isNew;
+        if (this.data.model) {
+            this.model = this.data.model;
+        }
+    }
 
     public onCancel() {
         this.dialogRef.close({ choice: DialogChoice.Canceled });

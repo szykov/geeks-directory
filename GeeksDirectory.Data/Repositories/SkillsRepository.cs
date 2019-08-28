@@ -75,9 +75,7 @@ namespace GeeksDirectory.Data.Repositories
             }
 
             var skill = this.Get(profileId, skillName);
-            var count = skill.Assessments.Count();
-            var summ = skill.Assessments.Average(a => a.Score);
-            var averageScore = Convert.ToInt32(summ / count);
+            var averageScore = Convert.ToInt32(skill.Assessments.Average(a => a.Score));
 
             skill.AverageScore = averageScore;
 

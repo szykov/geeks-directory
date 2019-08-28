@@ -14,7 +14,7 @@ export let CONFIG = {
             updateProfile: 'profiles/{0}',
             getSkill: 'profiles/{0}/skills',
             addSkill: 'profiles/{0}/skills',
-            setSkillScore: 'profiles/{0}/skills/{1}'
+            setSkillScore: 'profiles/{0}/skills/{1}/score'
         }
     }
 };

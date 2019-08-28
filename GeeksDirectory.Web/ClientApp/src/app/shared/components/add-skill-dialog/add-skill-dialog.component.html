@@ -1,16 +1,16 @@
-<span mat-dialog-title class="title-header">New skill</span>
+<span mat-dialog-title class="title-header">{{ isNew ? 'New skill' : 'Update skill' }}</span>
 <div mat-dialog-content>
-    <form (submit)="onSubmit()" class="skill-form" #skillForm="ngForm">
+    <form class="skill-form" #skillForm="ngForm">
         <div class="skill-body">
             <mat-form-field>
                 <input type="text" matInput placeholder="Name" [(ngModel)]="model.name" #name="ngModel" id="name"
-                    name="name" required />
+                    name="name" [disabled]="!isNew" required />
                 <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required</mat-error>
             </mat-form-field>
 
             <mat-form-field>
                 <input type="text" matInput placeholder="Description" [(ngModel)]="model.description"
-                    #description="ngModel" id="description" name="description" />
+                    #description="ngModel" id="description" name="description" [disabled]="!isNew" />
             </mat-form-field>
 
             <mat-label class="title-header">Your Evaluation</mat-label>

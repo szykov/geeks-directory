@@ -9,8 +9,8 @@ namespace GeeksDirectory.Web.Services.Interfaces
     {
         SkillResponse Get(int profileId, string skillName);
 
-        SkillResponse Add(int profileId, SkillModel model);
+        Task<SkillResponse> AddAsync(int profileId, SkillModel model, string userEmail);
 
-        Task EvaluateSkillAsync(int profileId, string skillName, string userEmail, int score);
+        Task<int> EvaluateSkillAsync(int profileId, string skillName, string userEmail, int score);
     }
 }

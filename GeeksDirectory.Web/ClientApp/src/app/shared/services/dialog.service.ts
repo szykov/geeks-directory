@@ -19,8 +19,12 @@ export class DialogService {
         return this.baseDialog(SignInDialogComponent, { height: '300px', width: '400px', data: model });
     }
 
-    public addSkillDialog(model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
-        return this.baseDialog(AddSkillDialogComponent, { height: '410px', width: '400px', data: model });
+    public addSkillDialog(isNew: boolean = true, model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
+        return this.baseDialog(AddSkillDialogComponent, {
+            height: '410px',
+            width: '400px',
+            data: { isNew, model }
+        });
     }
 
     private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<{ choice: any; data: any }> {

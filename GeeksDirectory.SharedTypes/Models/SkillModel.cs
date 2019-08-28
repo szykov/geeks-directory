@@ -13,5 +13,8 @@ namespace GeeksDirectory.SharedTypes.Models
 
         [StringLength(maximumLength: 255)]
         public string Description { get; set; }
+
+        [Range(0, 5)]
+        public int Score { get; set; }
     }
 }

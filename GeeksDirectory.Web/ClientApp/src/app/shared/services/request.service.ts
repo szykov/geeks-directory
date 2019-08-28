@@ -49,6 +49,11 @@ export class RequestService {
         return this.http.post<ISkill>(url, skill, { headers: this.headers });
     }
 
+    public setSkillScore(profileId: number, skillName: string, score: number): Observable<number> {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.setSkillScore, profileId.toString(), skillName);
+        return this.http.post<number>(url, score, { headers: this.headers });
+    }
+
     public getAuthToken(requestToken: RequestTokenModel): Observable<IToken> {
         let url = this.endpointBuilder.getEndpointFromRoot(CONFIG.connection.endpoints.getToken);
         return this.http.post<IToken>(url, requestToken.encodeToSend(), {
