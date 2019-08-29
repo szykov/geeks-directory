@@ -1,20 +1,24 @@
 <mat-toolbar color="primary" class="topbar">
-    <button mat-button class="drawer-trigger" (click)="drawerToggle.emit()">
-        <mat-icon>more_vert</mat-icon>
-    </button>
+    <div class="topbar-logo">
+        <button mat-button class="drawer-trigger" (click)="drawerToggle.emit()">
+            <mat-icon>more_vert</mat-icon>
+        </button>
 
-    <div class="topbar-nav" routerLink="/">
-        <mat-icon class="topbar-icon" aria-hidden="false" aria-label="Geek icon">recent_actors</mat-icon>
-        <span class="topbar-title">{{ title }}</span>
+        <div class="topbar-nav" routerLink="/">
+            <mat-icon class="topbar-icon" aria-hidden="false" aria-label="Geek icon">recent_actors</mat-icon>
+            <span class="topbar-title">{{ title }}</span>
+        </div>
     </div>
 
-    <!-- This fills the remaining space of the current row -->
-    <span class="fill-remaining-space"></span>
+    <div class="fill-empty"></div>
 
-    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true }">
-        Sign In!
-    </button>
-    <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="signOut.emit()">
-        Sign Out!
-    </button>
+    <div class="topbar-actions">
+        <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]"
+            [queryParams]="{ signIn: true }">
+            Sign In!
+        </button>
+        <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="signOut.emit()">
+            Sign Out!
+        </button>
+    </div>
 </mat-toolbar>

@@ -4,8 +4,8 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-animations';
 
-import { RequestService } from '../shared/services';
-import { IProfile } from '../shared/interfaces';
+import { RequestService } from '@app/shared/services';
+import { IProfile } from '@app/shared/interfaces';
 
 @Component({
     selector: 'gd-geek-list',

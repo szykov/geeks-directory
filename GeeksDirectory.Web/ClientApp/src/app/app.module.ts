@@ -12,10 +12,11 @@ import { HttpConfigInterceptor } from './shared/services/httpconfig.interceptor'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { GeekListComponent } from './geek-list/geek-list.component';
-import { GeekRegisterComponent } from './geek-register/geek-register.component';
-import { GeekItemComponent } from './geek-item/geek-item.component';
+import { GeekListComponent } from './components/geek-list/geek-list.component';
+import { GeekRegisterComponent } from './components/geek-register/geek-register.component';
+import { GeekItemComponent } from './components/geek-item/geek-item.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { RootStoreModule } from './root-store/root-store.module';
 
 @NgModule({
     declarations: [AppComponent, GeekListComponent, GeekRegisterComponent, GeekItemComponent, TopbarComponent],
@@ -31,7 +32,8 @@ import { TopbarComponent } from './topbar/topbar.component';
         }),
         NgProgressHttpModule,
         NgProgressRouterModule,
-        SharedModule
+        SharedModule,
+        RootStoreModule
     ],
     providers: [
         {

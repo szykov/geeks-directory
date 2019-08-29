@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent } from './shared/components';
-import { GeekListComponent } from './geek-list/geek-list.component';
+import { GeekListComponent } from './components/geek-list/geek-list.component';
 import { environment } from 'src/environments/environment';
-import { GeekRegisterComponent } from './geek-register/geek-register.component';
-import { GeekItemComponent } from './geek-item/geek-item.component';
+import { GeekRegisterComponent } from './components/geek-register/geek-register.component';
+import { GeekItemComponent } from './components/geek-item/geek-item.component';
 
 const routes: Routes = [
     { path: '', component: GeekListComponent },
