@@ -1,13 +1,13 @@
 // tslint:disable: no-string-literal
 
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChildren, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { takeUntil, debounceTime, catchError } from 'rxjs/operators';
-import { Subject, Observable, pipe, throwError } from 'rxjs';
+import { Subject, Observable, throwError } from 'rxjs';
 
 import { RequestService, StorageService, NotificationService, DialogService } from '../shared/services';
-import { IProfile, ISkill } from '../shared/interfaces';
+import { IProfile } from '../shared/interfaces';
 import { CITIES, DialogChoice } from '../shared/common';
 import { ProfileModel, SkillModel } from '../shared/models';
 
@@ -17,8 +17,10 @@ import { ProfileModel, SkillModel } from '../shared/models';
     styleUrls: ['./geek-item.component.scss']
 })
 export class GeekItemComponent implements OnInit, OnDestroy {
+    @ViewChildren('.skill-chip') aUser: ElementRef[];
+
     public editMode = false;
-    public isAuth$: Observable<IProfile>;
+    public isAuth: boolean;
     public model: ProfileModel;
     public profile: IProfile;
     public cities = CITIES;
@@ -35,7 +37,8 @@ export class GeekItemComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
-        this.isAuth$ = this.storage.authProfile$;
+        this.storage.isAuth$.pipe(takeUntil(this.unsubscribe)).subscribe(result => (this.isAuth = result));
+
         this.cityValue$
             .pipe(
                 takeUntil(this.unsubscribe),

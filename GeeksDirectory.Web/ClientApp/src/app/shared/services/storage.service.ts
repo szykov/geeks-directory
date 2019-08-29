@@ -5,7 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { NotificationService } from './notification.service';
 import { IToken, IProfile } from '../interfaces';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +15,7 @@ export class StorageService {
 
     public isAuthentificated$ = new BehaviorSubject<boolean>(false);
     public authProfile$ = new BehaviorSubject<IProfile>(null);
+    public isAuth$ = new BehaviorSubject<boolean>(false);
 
     constructor(
         private cookieService: CookieService,
@@ -49,6 +50,7 @@ export class StorageService {
     public setAuthUser(profile: IProfile) {
         this.storage.set(`${this.prefix}-profile`, profile);
         this.authProfile$.next(profile);
+        this.isAuth$.next(true);
     }
 
     public getAuthUser(): IProfile {
@@ -58,6 +60,7 @@ export class StorageService {
     public clearAuthUser() {
         this.storage.remove(`${this.prefix}-profile`);
         this.authProfile$.next(null);
+        this.isAuth$.next(false);
     }
 
     public existsAuthUser(): boolean {
