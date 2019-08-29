@@ -27,8 +27,11 @@ http://geeks-directory.azurewebsites.net/
 11. ~~Add Skills adding functionality~~;
 12. ~~Add Skills assessment functionality~~;
 13. ~~Update layout for small screen support~~;
-14. Add more validations for password and skill's name;
-15. Get previous score when evaluate skill.
-16. Add tests.
-17. Refactoring / code review.
+14. Search functionality;
+15. Limit editing profile to personal one on server side;
+16. Add more validations for password and skill's name;
+17. Get previous score when evaluate skill;
+18. Add tests;
+19. Refactoring / code review;
+
 ...
