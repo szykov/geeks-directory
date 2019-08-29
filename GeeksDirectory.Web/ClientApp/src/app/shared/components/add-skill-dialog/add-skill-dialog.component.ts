@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-import { SkillModel } from '../../models';
+import { SkillModel } from '../../../models';
 import { DialogChoice, SCORE_TYPES } from '../../common';
 
 @Component({

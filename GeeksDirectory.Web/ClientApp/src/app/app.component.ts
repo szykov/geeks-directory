@@ -2,12 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Observable, throwError } from 'rxjs';
 
-import { DialogService, StorageService } from './shared/services';
+import { DialogService, StorageService } from './services';
 import { takeUntil, catchError } from 'rxjs/operators';
 import { DialogChoice } from './shared/common';
-import { NotificationService, RequestService } from './shared/services';
-import { RequestTokenModel, SignInModel } from './shared/models';
-import { IProfile } from './shared/interfaces';
+import { NotificationService, RequestService } from './services';
+import { RequestTokenModel, SignInModel } from './models';
+import { IProfile } from './interfaces';
 
 @Component({
     selector: 'gd-root',

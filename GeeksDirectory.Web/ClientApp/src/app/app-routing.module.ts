@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent } from './shared/components';
-import { GeekListComponent } from './components/geek-list/geek-list.component';
+import { GeekListComponent, GeekRegisterComponent, GeekItemComponent } from './components';
 import { environment } from 'src/environments/environment';
-import { GeekRegisterComponent } from './components/geek-register/geek-register.component';
-import { GeekItemComponent } from './components/geek-item/geek-item.component';
 
 const routes: Routes = [
     { path: '', component: GeekListComponent },

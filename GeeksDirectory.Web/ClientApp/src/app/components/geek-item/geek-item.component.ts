@@ -6,10 +6,10 @@ import { ActivatedRoute } from '@angular/router';
 import { takeUntil, debounceTime, catchError } from 'rxjs/operators';
 import { Subject, Observable, throwError } from 'rxjs';
 
-import { RequestService, StorageService, NotificationService, DialogService } from '../../shared/services';
-import { IProfile } from '../../shared/interfaces';
+import { RequestService, StorageService, NotificationService, DialogService } from '../../services';
+import { IProfile } from '../../interfaces';
 import { CITIES, DialogChoice } from '../../shared/common';
-import { ProfileModel, SkillModel } from '../../shared/models';
+import { ProfileModel, SkillModel } from '../../models';
 
 @Component({
     selector: 'gd-geek-item',

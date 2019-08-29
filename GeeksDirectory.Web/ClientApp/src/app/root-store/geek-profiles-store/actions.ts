@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { IProfile } from '@app/shared/interfaces';
+import { IProfile } from '@app/interfaces';
 
 export enum ProfileActionTypes {
     LoadProfiles = '[Profile] Load Profiles',

@@ -6,7 +6,7 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { ProfileActionTypes, LoadProfilesSuccess } from './actions';
-import { RequestService } from '@app/shared/services';
+import { RequestService } from '@app/services';
 
 @Injectable()
 export class ProfileEffects {

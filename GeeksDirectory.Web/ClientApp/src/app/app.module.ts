@@ -8,14 +8,11 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { NgProgressRouterModule } from '@ngx-progressbar/router';
 import { CookieService } from 'ngx-cookie-service';
 
-import { HttpConfigInterceptor } from './shared/services/httpconfig.interceptor';
+import { HttpConfigInterceptor } from './services';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { GeekListComponent } from './components/geek-list/geek-list.component';
-import { GeekRegisterComponent } from './components/geek-register/geek-register.component';
-import { GeekItemComponent } from './components/geek-item/geek-item.component';
-import { TopbarComponent } from './topbar/topbar.component';
+import { GeekListComponent, GeekRegisterComponent, GeekItemComponent, TopbarComponent } from './components';
 import { RootStoreModule } from './root-store/root-store.module';
 
 @NgModule({

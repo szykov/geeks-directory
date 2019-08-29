@@ -5,8 +5,8 @@ import { mapTo, filter } from 'rxjs/operators';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { SignInModel, SkillModel } from '../models';
-import { DialogChoice } from '../common';
-import { AddSkillDialogComponent, SignInDialogComponent } from '../components';
+import { DialogChoice } from '../shared/common';
+import { AddSkillDialogComponent, SignInDialogComponent } from '../shared/components';
 import { ComponentType } from '@angular/cdk/portal';
 
 @Injectable({

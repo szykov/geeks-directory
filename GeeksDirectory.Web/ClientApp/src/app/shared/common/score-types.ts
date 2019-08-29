@@ -1,4 +1,4 @@
-import { ScoreType } from '../interfaces';
+import { ScoreType } from '../../interfaces';
 
 export let SCORE_TYPES: ScoreType[] = [
     { value: 0, name: 'Zero' },

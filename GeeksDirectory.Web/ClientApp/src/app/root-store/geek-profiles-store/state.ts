@@ -1,4 +1,4 @@
-import { IProfile } from '@app/shared/interfaces';
+import { IProfile } from '@app/interfaces';
 
 export const initialState: State = {
     profiles: []

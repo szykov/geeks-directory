@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 
-import { CreateProfileModel } from '../../shared/models';
+import { CreateProfileModel } from '../../models';
 import { CITIES } from '../../shared/common';
-import { RequestService, NotificationService } from '../../shared/services';
+import { RequestService, NotificationService } from '../../services';
 
 @Component({
     selector: 'gd-geek-register',
