@@ -8,6 +8,6 @@ import { ProfileEffects } from './effects';
 
 @NgModule({
     declarations: [],
-    imports: [CommonModule, StoreModule.forFeature('myFeature', reducer), EffectsModule.forFeature([ProfileEffects])]
+    imports: [CommonModule, StoreModule.forFeature('GeekProfiles', reducer), EffectsModule.forFeature([ProfileEffects])]
 })
 export class GeekProfilesStoreModule {}

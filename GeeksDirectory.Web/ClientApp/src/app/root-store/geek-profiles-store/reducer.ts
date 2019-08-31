@@ -1,17 +1,14 @@
-import { initialState, State } from './state';
-import { ProfileActionTypes, ProfileActions } from './actions';
+import { initialState } from './state';
+import { createReducer, on } from '@ngrx/store';
 
-export function reducer(state = initialState, action: ProfileActions): State {
-    switch (action.type) {
-        case ProfileActionTypes.LoadProfilesSuccess: {
-            return {
-                ...state,
-                profiles: action.payload
-            };
-        }
-
-        default: {
-            return state;
-        }
-    }
-}
+import * as ProfileActions from './actions';
+export const reducer = createReducer(
+    initialState,
+    on(ProfileActions.loadProfiles, state => ({
+        ...state
+    })),
+    on(ProfileActions.loadProfilesSuccess, (state, { profiles }) => ({
+        ...state,
+        profiles
+    }))
+);
