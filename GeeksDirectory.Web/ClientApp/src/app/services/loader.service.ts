@@ -9,7 +9,7 @@ export class LoaderService {
     private progressRef: NgProgressRef;
 
     constructor(private progress: NgProgress) {
-        this.progressRef = progress.ref('progress');
+        this.progressRef = this.progress.ref('progress');
     }
 
     startLoading() {

@@ -4,12 +4,12 @@ import { Component, OnInit, OnDestroy, ViewChildren, ElementRef } from '@angular
 import { ActivatedRoute } from '@angular/router';
 
 import { takeUntil, debounceTime, catchError } from 'rxjs/operators';
-import { Subject, Observable, throwError } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
 
-import { RequestService, StorageService, NotificationService, DialogService } from '../../services';
-import { IProfile } from '../../interfaces';
-import { CITIES, DialogChoice } from '../../shared/common';
-import { ProfileModel, SkillModel } from '../../models';
+import { RequestService, StorageService, NotificationService, DialogService } from '../../../services';
+import { IProfile } from '../../../interfaces';
+import { CITIES, DialogChoice } from '@shared/common';
+import { ProfileModel, SkillModel } from '../../../models';
 
 @Component({
     selector: 'gd-geek-item',

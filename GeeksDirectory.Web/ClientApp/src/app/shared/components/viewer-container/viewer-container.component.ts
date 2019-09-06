@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-animations';
 
@@ -11,10 +11,6 @@ import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-ani
         fadeOutUpOnLeaveAnimation({ anchor: 'leave', duration: 500, delay: 200, translate: '40px' })
     ]
 })
-export class ViewerContainerComponent implements OnInit {
+export class ViewerContainerComponent {
     @Input() title: string;
-
-    constructor() {}
-
-    ngOnInit() {}
 }

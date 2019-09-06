@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { StoreModule, RootStoreConfig, Action } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { GeekProfilesStoreModule } from './geek-profiles-store';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 const configWithRuntimeChecks: RootStoreConfig<unknown, Action> = {
     runtimeChecks: {
@@ -20,9 +20,9 @@ const configWithRuntimeChecks: RootStoreConfig<unknown, Action> = {
     declarations: [],
     imports: [
         CommonModule,
-        GeekProfilesStoreModule,
         StoreModule.forRoot({}, environment.development ? configWithRuntimeChecks : {}),
-        EffectsModule.forRoot([])
+        EffectsModule.forRoot([]),
+        environment.development ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : []
     ]
 })
 export class RootStoreModule {}

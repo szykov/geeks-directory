@@ -4,50 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import {
-    MatSnackBarModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatBadgeModule,
-    MatIconModule,
-    MatCardModule,
-    MatChipsModule,
-    MatDialogModule,
-    MatAutocompleteModule,
-    MatSidenavModule,
-    MatDividerModule,
-    MatButtonToggleModule
-} from '@angular/material';
-
-import {
-    PageNotFoundComponent,
-    SignInDialogComponent,
-    AddSkillDialogComponent,
-    ViewerContainerComponent
-} from './components';
-
-const MATERIAL_BUNDLE = [
-    MatToolbarModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatBadgeModule,
-    MatIconModule,
-    MatCardModule,
-    MatChipsModule,
-    MatDialogModule,
-    MatAutocompleteModule,
-    MatSidenavModule,
-    MatDividerModule,
-    MatButtonToggleModule
-];
+import { SignInDialogComponent, AddSkillDialogComponent, ViewerContainerComponent } from './components';
+import { MaterialModule } from './material.module';
 
 @NgModule({
-    declarations: [PageNotFoundComponent, SignInDialogComponent, ViewerContainerComponent, AddSkillDialogComponent],
-    imports: [CommonModule, FormsModule, MATERIAL_BUNDLE, MatSnackBarModule, FlexLayoutModule],
-    exports: [FormsModule, FlexLayoutModule, MATERIAL_BUNDLE, PageNotFoundComponent, ViewerContainerComponent],
+    declarations: [SignInDialogComponent, ViewerContainerComponent, AddSkillDialogComponent],
+    imports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule],
+    exports: [FormsModule, MaterialModule, FlexLayoutModule, ViewerContainerComponent],
     entryComponents: [SignInDialogComponent, AddSkillDialogComponent]
 })
 export class SharedModule {}

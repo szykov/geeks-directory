@@ -3,7 +3,7 @@ import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { mergeMap, map } from 'rxjs/operators';
 
 import { RequestService } from '@app/services';
-import * as ProfileActions from './actions';
+import * as ProfileActions from '../actions/profiles-api.actions';
 
 @Injectable()
 export class ProfileEffects {

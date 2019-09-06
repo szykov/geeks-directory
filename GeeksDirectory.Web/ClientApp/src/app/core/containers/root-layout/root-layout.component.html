@@ -1,0 +1,11 @@
+<gd-topbar title="Geeks Directory" [isAuth]="isAuth" (drawerToggle)="drawer.toggle()" (signOut)="onSignOut()">
+</gd-topbar>
+
+<mat-drawer-container class="drawer-container">
+    <mat-drawer #drawer position="start" mode="side">
+        <gd-left-bar></gd-left-bar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <ng-content></ng-content>
+    </mat-drawer-content>
+</mat-drawer-container>

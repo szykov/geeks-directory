@@ -10,13 +10,13 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { HttpConfigInterceptor } from './services';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from '@shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { RootStoreModule } from './root-store.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { GeekListComponent, GeekRegisterComponent, GeekItemComponent, TopbarComponent } from './components';
-import { RootStoreModule } from './root-store/root-store.module';
 
 @NgModule({
-    declarations: [AppComponent, GeekListComponent, GeekRegisterComponent, GeekItemComponent, TopbarComponent],
+    declarations: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -29,6 +29,7 @@ import { RootStoreModule } from './root-store/root-store.module';
         }),
         NgProgressHttpModule,
         NgProgressRouterModule,
+        CoreModule,
         SharedModule,
         RootStoreModule
     ],

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { EndpointBuilder, CONFIG } from '../shared/common';
+import { EndpointBuilder, CONFIG } from '@shared/common';
 import { IProfile, IToken, ISkill } from '../interfaces';
 import { ProfileModel, RequestTokenModel, SkillModel } from '../models';
 
