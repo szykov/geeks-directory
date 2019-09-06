@@ -13,7 +13,7 @@ export class ProfileEffects {
         this.actions$.pipe(
             ofType(ProfileActions.loadProfiles),
             mergeMap(() =>
-                this.requestService.getProfiles().pipe(map(result => ProfileActions.loadProfilesSuccess({ profiles: result })))
+                this.requestService.getProfiles().pipe(map(result => ProfileActions.loadProfilesSuccess({ collection: result })))
             )
         )
     );

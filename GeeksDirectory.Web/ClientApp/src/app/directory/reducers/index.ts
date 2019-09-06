@@ -8,7 +8,7 @@ export interface ProfilesState {
 }
 
 export interface State extends fromRoot.State {
-    directory: ProfilesState;
+    profiles: ProfilesState;
 }
 
 export function reducers(state: ProfilesState | undefined, action: Action) {
@@ -18,9 +18,9 @@ export function reducers(state: ProfilesState | undefined, action: Action) {
 }
 
 // Selector functions
-const getFeatureState = createFeatureSelector<State, ProfilesState>('directory');
+const getFeatureState = createFeatureSelector<State, ProfilesState>('profiles');
 
-export const getBrands = createSelector(
+export const getProfiles = createSelector(
     getFeatureState,
-    state => state.profiles
+    state => state.profiles.collection
 );

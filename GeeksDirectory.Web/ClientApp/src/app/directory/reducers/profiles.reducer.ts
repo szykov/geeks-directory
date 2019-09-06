@@ -4,11 +4,11 @@ import * as ProfileActions from '../actions/profiles-api.actions';
 import { IProfile } from '@app/interfaces';
 
 export interface State {
-    profiles: IProfile[];
+    collection: IProfile[];
 }
 
 export const initialState: State = {
-    profiles: []
+    collection: []
 };
 
 export const reducer = createReducer(
@@ -16,8 +16,8 @@ export const reducer = createReducer(
     on(ProfileActions.loadProfiles, state => ({
         ...state
     })),
-    on(ProfileActions.loadProfilesSuccess, (state, { profiles }) => ({
+    on(ProfileActions.loadProfilesSuccess, (state, { collection }) => ({
         ...state,
-        profiles
+        collection
     }))
 );
