@@ -3,7 +3,7 @@ import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { mergeMap, map } from 'rxjs/operators';
 
 import { RequestService } from '@app/services';
-import * as ProfileActions from '../actions/profiles-api.actions';
+import * as ProfileActions from '../actions';
 
 @Injectable()
 export class ProfileEffects {
@@ -14,6 +14,17 @@ export class ProfileEffects {
             ofType(ProfileActions.loadProfiles),
             mergeMap(() =>
                 this.requestService.getProfiles().pipe(map(result => ProfileActions.loadProfilesSuccess({ collection: result })))
+            )
+        )
+    );
+
+    loadProfileDetails$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ProfileActions.loadProfileDetails),
+            mergeMap(({ profileId }) =>
+                this.requestService
+                    .getProfile(profileId)
+                    .pipe(map(result => ProfileActions.loadProfileDetailsSuccess({ selected: result })))
             )
         )
     );

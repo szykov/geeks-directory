@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GeekListComponent, GeekRegisterComponent, GeekItemComponent } from './components';
+
+import { GeekListComponent, GeekRegisterComponent, GeekItemDetailsComponent } from './containers';
 
 const routes: Routes = [
     { path: '', component: GeekListComponent },
     { path: 'register', component: GeekRegisterComponent, pathMatch: 'full' },
-    { path: 'profiles/:id', component: GeekItemComponent }
+    { path: 'profiles/:id', component: GeekItemDetailsComponent }
 ];
 
 @NgModule({

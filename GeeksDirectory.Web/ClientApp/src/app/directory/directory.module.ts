@@ -6,18 +6,19 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '@shared/shared.module';
 import { DirectoryRoutingModule } from './directory-routing.module';
-import { GeekItemComponent, GeekListComponent, GeekRegisterComponent } from './components';
+import { GeekItemDetailsComponent } from './components';
+import { GeekListComponent, GeekRegisterComponent } from './containers';
 import { reducers } from './reducers';
 import { ProfileEffects } from './effects';
 import { GeekListItemComponent } from './components/geek-list-item/geek-list-item.component';
 
 @NgModule({
-    declarations: [GeekItemComponent, GeekListComponent, GeekRegisterComponent, GeekListItemComponent],
+    declarations: [GeekItemDetailsComponent, GeekListComponent, GeekRegisterComponent, GeekListItemComponent],
     imports: [
         CommonModule,
         DirectoryRoutingModule,
         SharedModule,
-        StoreModule.forFeature('profiles', reducers),
+        StoreModule.forFeature('directory', reducers),
         EffectsModule.forFeature([ProfileEffects])
     ]
 })

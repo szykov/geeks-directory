@@ -1,24 +1,26 @@
 // tslint:disable: no-string-literal
 
-import { Component, OnInit, OnDestroy, ViewChildren, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { takeUntil, debounceTime, catchError } from 'rxjs/operators';
-import { Subject, throwError } from 'rxjs';
+import { takeUntil, debounceTime, catchError, filter } from 'rxjs/operators';
+import { Subject, throwError, Observable } from 'rxjs';
 
-import { RequestService, StorageService, NotificationService, DialogService } from '../../../services';
-import { IProfile } from '../../../interfaces';
+import { Store, select } from '@ngrx/store';
+import * as fromProfiles from '@app/directory/reducers';
+
+import { RequestService, StorageService, NotificationService, DialogService } from '@app/services';
+import { IProfile } from '@app/interfaces';
 import { CITIES, DialogChoice } from '@shared/common';
-import { ProfileModel, SkillModel } from '../../../models';
+import { ProfileModel, SkillModel } from '@app/models';
+import { loadProfileDetails } from '@app/directory/actions';
 
 @Component({
-    selector: 'gd-geek-item',
-    templateUrl: './geek-item.component.html',
-    styleUrls: ['./geek-item.component.scss']
+    selector: 'gd-geek-item-details',
+    templateUrl: './geek-item-details.component.html',
+    styleUrls: ['./geek-item-details.component.scss']
 })
-export class GeekItemComponent implements OnInit, OnDestroy {
-    @ViewChildren('.skill-chip') aUser: ElementRef[];
-
+export class GeekItemDetailsComponent implements OnInit, OnDestroy {
     public editMode = false;
     public isAuth: boolean;
     public model: ProfileModel;
@@ -29,6 +31,7 @@ export class GeekItemComponent implements OnInit, OnDestroy {
     private unsubscribe: Subject<void> = new Subject();
 
     constructor(
+        private store: Store<fromProfiles.State>,
         private requestService: RequestService,
         private storage: StorageService,
         private notificationService: NotificationService,
@@ -37,6 +40,9 @@ export class GeekItemComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
+        let profileId = Number(this.route.snapshot.paramMap.get('id'));
+        this.fetchProfile(profileId);
+
         this.storage.isAuth$.pipe(takeUntil(this.unsubscribe)).subscribe(result => (this.isAuth = result));
 
         this.cityValue$
@@ -45,8 +51,6 @@ export class GeekItemComponent implements OnInit, OnDestroy {
                 debounceTime(300)
             )
             .subscribe(() => this.filterCities());
-
-        this.fetchProfile();
     }
 
     public onChangeCity() {
@@ -124,11 +128,14 @@ export class GeekItemComponent implements OnInit, OnDestroy {
         this.cities = CITIES.filter(option => option.toLowerCase().includes(this.model.city.toLowerCase()));
     }
 
-    private fetchProfile() {
-        let id = this.route.snapshot.paramMap.get('id');
-        this.requestService
-            .getProfile(Number(id))
-            .pipe(takeUntil(this.unsubscribe))
+    private fetchProfile(profileId: number) {
+        this.store.dispatch(loadProfileDetails({ profileId }));
+        this.store
+            .pipe(
+                select(fromProfiles.getProfileDetails),
+                filter(result => result != null),
+                takeUntil(this.unsubscribe)
+            )
             .subscribe(result => {
                 this.model = ProfileModel.fromProfileResponse(result);
                 this.profile = result;
