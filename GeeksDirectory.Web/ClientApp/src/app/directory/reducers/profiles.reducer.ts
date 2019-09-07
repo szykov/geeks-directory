@@ -5,12 +5,12 @@ import { IProfile } from '@app/responses';
 
 export interface State {
     collection: IProfile[];
-    selected: IProfile;
+    selected: IProfile | null;
 }
 
 export const initialState: State = {
     collection: [],
-    selected: undefined
+    selected: null
 };
 
 export const reducer = createReducer(

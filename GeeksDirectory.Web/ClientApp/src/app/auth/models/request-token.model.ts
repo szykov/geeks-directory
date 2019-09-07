@@ -1,3 +1,5 @@
+import { CredentialsModel } from './credentials.model';
+
 export class RequestTokenModel {
     public grantType: string;
     public username: string;
@@ -8,6 +10,10 @@ export class RequestTokenModel {
         this.password = password;
 
         this.grantType = grantType;
+    }
+
+    public static fromCredentials(credentials: CredentialsModel) {
+        return new RequestTokenModel(credentials.email, credentials.password);
     }
 
     public encodeToSend(): string {

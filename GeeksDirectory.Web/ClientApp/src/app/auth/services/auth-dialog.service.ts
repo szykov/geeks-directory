@@ -6,7 +6,7 @@ import { mapTo, filter } from 'rxjs/operators';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { RegistrationModel } from '../models';
+import { CredentialsModel } from '../models';
 import { DialogChoice } from '@shared/common';
 import { SignInDialogComponent } from '../components';
 
@@ -16,7 +16,7 @@ import { SignInDialogComponent } from '../components';
 export class AuthDialogService {
     constructor(private dialog: MatDialog) {}
 
-    public signIn(model?: RegistrationModel): Observable<{ choice: DialogChoice; data: RegistrationModel }> {
+    public signIn(model?: CredentialsModel): Observable<{ choice: DialogChoice; data: CredentialsModel }> {
         return this.baseDialog(SignInDialogComponent, { height: '300px', width: '400px', data: model });
     }
 

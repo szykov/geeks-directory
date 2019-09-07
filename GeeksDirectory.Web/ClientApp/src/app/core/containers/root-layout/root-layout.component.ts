@@ -6,7 +6,7 @@ import { StorageService } from '@app/services';
 import { takeUntil, catchError } from 'rxjs/operators';
 import { DialogChoice } from '@shared/common';
 import { NotificationService, RequestService } from '@app/services';
-import { RegistrationModel, RequestTokenModel } from '@app/auth/models';
+import { CredentialsModel, RequestTokenModel } from '@app/auth/models';
 import { IProfile } from '@app/responses';
 import { AuthDialogService } from '@app/auth/services/auth-dialog.service';
 import { AuthService } from '@app/auth/services/auth.service';
@@ -57,7 +57,7 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
         this.storage.clearAuthUser();
     }
 
-    public openSignInDialog(model?: RegistrationModel) {
+    public openSignInDialog(model?: CredentialsModel) {
         this.authDialog
             .signIn(model)
             .pipe(takeUntil(this.unsubscribe))
@@ -74,7 +74,7 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
             });
     }
 
-    private signIn(model: RegistrationModel) {
+    private signIn(model: CredentialsModel) {
         let requestToken = new RequestTokenModel(model.email, model.password);
         this.authService
             .getAuthToken(requestToken)
