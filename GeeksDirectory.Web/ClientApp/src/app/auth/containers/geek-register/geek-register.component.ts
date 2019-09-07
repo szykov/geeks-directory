@@ -4,10 +4,14 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 
+import { Store } from '@ngrx/store';
+import * as fromAuth from '@app/auth/reducers';
+
 import { CreateProfileModel } from '../../../models';
 import { CITIES } from '@shared/common';
 import { RequestService, NotificationService } from '../../../services';
 import { AuthService } from '@app/auth/services/auth.service';
+import { RegistrationActions } from '@app/auth/actions';
 
 @Component({
     selector: 'gd-geek-register',
@@ -23,6 +27,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
     private cityValue$: Subject<string> = new Subject();
 
     constructor(
+        private store: Store<fromAuth.State>,
         private authService: AuthService,
         private requestService: RequestService,
         private notificationService: NotificationService,
@@ -47,9 +52,11 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
             .registerProfile(this.model)
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(result => {
-                this.router.navigate(['/']);
-
                 this.notificationService.showSuccess('You have been registered. Great!');
+
+                this.store.dispatch(
+                    RegistrationActions.login({ credentials: { email: this.model.email, password: this.model.password } })
+                );
             });
     }
 

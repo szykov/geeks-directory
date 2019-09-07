@@ -32,4 +32,9 @@ export class AuthService {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         });
     }
+
+    public getMyProfile() {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getMyProfile);
+        return this.http.get<IProfile>(url, { headers: this.headers });
+    }
 }

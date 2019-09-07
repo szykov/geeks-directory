@@ -92,7 +92,7 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
     }
 
     private setPersonalInfo() {
-        this.requestService
+        this.authService
             .getMyProfile()
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(result => this.storage.setAuthUser(result));
