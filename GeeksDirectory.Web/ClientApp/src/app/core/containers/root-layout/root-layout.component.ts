@@ -2,14 +2,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, Observable, throwError } from 'rxjs';
 
-import { DialogService, StorageService } from '@app/services';
+import { StorageService } from '@app/services';
 import { takeUntil, catchError } from 'rxjs/operators';
 import { DialogChoice } from '@shared/common';
 import { NotificationService, RequestService } from '@app/services';
-import { RequestTokenModel } from '@app/models';
-import { RegistrationModel } from '@app/auth/models';
-import { IProfile } from '@app/interfaces';
+import { RegistrationModel, RequestTokenModel } from '@app/auth/models';
+import { IProfile } from '@app/responses';
 import { AuthDialogService } from '@app/auth/services/auth-dialog.service';
+import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
     selector: 'gd-root-layout',
@@ -23,9 +23,9 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
     private unsubscribe: Subject<void> = new Subject();
 
     constructor(
+        private authService: AuthService,
         private requestService: RequestService,
         private authDialog: AuthDialogService,
-        private dialogService: DialogService,
         private notificationService: NotificationService,
         private storage: StorageService,
         private route: ActivatedRoute,
@@ -76,7 +76,7 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
 
     private signIn(model: RegistrationModel) {
         let requestToken = new RequestTokenModel(model.email, model.password);
-        this.requestService
+        this.authService
             .getAuthToken(requestToken)
             .pipe(
                 takeUntil(this.unsubscribe),

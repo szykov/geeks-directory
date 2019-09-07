@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import * as fromProfiles from '@app/directory/reducers';
 
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 import { loadProfiles } from '@app/directory/actions';
 
 @Component({

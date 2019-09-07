@@ -10,7 +10,7 @@ import { Store, select } from '@ngrx/store';
 import * as fromProfiles from '@app/directory/reducers';
 
 import { RequestService, StorageService, NotificationService, DialogService } from '@app/services';
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 import { CITIES, DialogChoice } from '@shared/common';
 import { ProfileModel, SkillModel } from '@app/models';
 import { loadProfileDetails } from '@app/directory/actions';

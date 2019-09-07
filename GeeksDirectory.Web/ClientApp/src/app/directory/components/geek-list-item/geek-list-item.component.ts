@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-animations';
 
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 
 @Component({
     selector: 'gd-geek-list-item',

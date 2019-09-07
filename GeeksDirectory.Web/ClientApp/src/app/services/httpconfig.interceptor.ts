@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, finalize } from 'rxjs/operators';
 
-import { IException } from '../interfaces';
+import { IException } from '../responses';
 import { NotificationService } from './notification.service';
 import { LoaderService } from './loader.service';
 import { StorageService } from './storage.service';

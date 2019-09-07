@@ -7,6 +7,7 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
 import { CreateProfileModel } from '../../../models';
 import { CITIES } from '@shared/common';
 import { RequestService, NotificationService } from '../../../services';
+import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
     selector: 'gd-geek-register',
@@ -22,6 +23,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
     private cityValue$: Subject<string> = new Subject();
 
     constructor(
+        private authService: AuthService,
         private requestService: RequestService,
         private notificationService: NotificationService,
         private router: Router
@@ -41,7 +43,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
     }
 
     public onSubmit() {
-        this.requestService
+        this.authService
             .registerProfile(this.model)
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(result => {

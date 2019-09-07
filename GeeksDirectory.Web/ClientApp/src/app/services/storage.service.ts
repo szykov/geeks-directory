@@ -4,8 +4,9 @@ import { SESSION_STORAGE, isStorageAvailable, StorageService as NgxStorageServic
 import { CookieService } from 'ngx-cookie-service';
 
 import { NotificationService } from './notification.service';
-import { IToken, IProfile } from '../interfaces';
+import { IProfile } from '../responses';
 import { BehaviorSubject } from 'rxjs';
+import { IToken } from '@app/auth/responses';
 
 @Injectable({
     providedIn: 'root'

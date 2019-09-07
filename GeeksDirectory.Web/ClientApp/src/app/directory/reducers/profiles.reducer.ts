@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import * as ProfileActions from '../actions';
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 
 export interface State {
     collection: IProfile[];

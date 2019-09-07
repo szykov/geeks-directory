@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '@shared/common';
-import { IProfile, IToken, ISkill } from '../interfaces';
-import { ProfileModel, RequestTokenModel, SkillModel } from '../models';
+import { IProfile, ISkill } from '../responses';
+import { ProfileModel, SkillModel } from '../models';
 
 @Injectable({
     providedIn: 'root'
@@ -39,11 +39,6 @@ export class RequestService {
         return this.http.patch<IProfile>(url, profile, { headers: this.headers });
     }
 
-    public registerProfile(profile: ProfileModel): Observable<IProfile> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.registerProfile);
-        return this.http.post<IProfile>(url, profile, { headers: this.headers });
-    }
-
     public addSkill(profileId: number, skill: SkillModel): Observable<ISkill> {
         let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.addSkill, profileId.toString());
         return this.http.post<ISkill>(url, skill, { headers: this.headers });
@@ -52,12 +47,5 @@ export class RequestService {
     public setSkillScore(profileId: number, skillName: string, score: number): Observable<number> {
         let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.setSkillScore, profileId.toString(), skillName);
         return this.http.post<number>(url, score, { headers: this.headers });
-    }
-
-    public getAuthToken(requestToken: RequestTokenModel): Observable<IToken> {
-        let url = this.endpointBuilder.getEndpointFromRoot(CONFIG.connection.endpoints.getToken);
-        return this.http.post<IToken>(url, requestToken.encodeToSend(), {
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        });
     }
 }
