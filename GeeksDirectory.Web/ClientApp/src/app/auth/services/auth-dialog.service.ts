@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
+import { ComponentType } from '@angular/cdk/portal';
+
 import { Observable, merge } from 'rxjs';
 import { mapTo, filter } from 'rxjs/operators';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { SkillModel } from '@app/models';
+import { RegistrationModel } from '../models';
 import { DialogChoice } from '@shared/common';
-import { AddSkillDialogComponent } from '@shared/components';
-import { ComponentType } from '@angular/cdk/portal';
+import { SignInDialogComponent } from '../components';
 
 @Injectable({
     providedIn: 'root'
 })
-export class DialogService {
+export class AuthDialogService {
     constructor(private dialog: MatDialog) {}
 
-    public addSkillDialog(isNew: boolean = true, model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
-        return this.baseDialog(AddSkillDialogComponent, {
-            height: '410px',
-            width: '400px',
-            data: { isNew, model }
-        });
+    public signIn(model?: RegistrationModel): Observable<{ choice: DialogChoice; data: RegistrationModel }> {
+        return this.baseDialog(SignInDialogComponent, { height: '300px', width: '400px', data: model });
     }
 
     private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<{ choice: any; data: any }> {

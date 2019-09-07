@@ -6,8 +6,10 @@ import { DialogService, StorageService } from '@app/services';
 import { takeUntil, catchError } from 'rxjs/operators';
 import { DialogChoice } from '@shared/common';
 import { NotificationService, RequestService } from '@app/services';
-import { RequestTokenModel, SignInModel } from '@app/models';
+import { RequestTokenModel } from '@app/models';
+import { RegistrationModel } from '@app/auth/models';
 import { IProfile } from '@app/interfaces';
+import { AuthDialogService } from '@app/auth/services/auth-dialog.service';
 
 @Component({
     selector: 'gd-root-layout',
@@ -22,6 +24,7 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
 
     constructor(
         private requestService: RequestService,
+        private authDialog: AuthDialogService,
         private dialogService: DialogService,
         private notificationService: NotificationService,
         private storage: StorageService,
@@ -54,9 +57,9 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
         this.storage.clearAuthUser();
     }
 
-    public openSignInDialog(model?: SignInModel) {
-        this.dialogService
-            .signInDialog(model)
+    public openSignInDialog(model?: RegistrationModel) {
+        this.authDialog
+            .signIn(model)
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(result => {
                 if (result.choice === DialogChoice.CreateAccount) {
@@ -71,7 +74,7 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
             });
     }
 
-    private signIn(model: SignInModel) {
+    private signIn(model: RegistrationModel) {
         let requestToken = new RequestTokenModel(model.email, model.password);
         this.requestService
             .getAuthToken(requestToken)

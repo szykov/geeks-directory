@@ -8,18 +8,19 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { NgProgressRouterModule } from '@ngx-progressbar/router';
 import { CookieService } from 'ngx-cookie-service';
 
-import { HttpConfigInterceptor } from './services';
-import { AppRoutingModule } from './app-routing.module';
+import { HttpConfigInterceptor } from '@app/services';
+
 import { SharedModule } from '@shared/shared.module';
-import { CoreModule } from './core/core.module';
-import { RootStoreModule } from './root-store.module';
-import { AppComponent } from './app.component';
+import { CoreModule } from '@app/core/core.module';
+import { RootStoreModule } from '@app/root-store.module';
+import { AuthModule } from '@app/auth/auth.module';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { AppComponent } from '@app/app.component';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         BrowserAnimationsModule,
         HttpClientModule,
         NgProgressModule.withConfig({
@@ -31,7 +32,9 @@ import { AppComponent } from './app.component';
         NgProgressRouterModule,
         CoreModule,
         SharedModule,
-        RootStoreModule
+        AuthModule,
+        RootStoreModule,
+        AppRoutingModule
     ],
     providers: [
         {

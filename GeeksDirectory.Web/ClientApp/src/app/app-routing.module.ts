@@ -6,10 +6,11 @@ import { environment } from 'src/environments/environment';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'profiles',
         loadChildren: () => import('./directory/directory.module').then(m => m.DirectoryModule),
         data: { preload: true }
     },
+    { path: '', redirectTo: '/profiles', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];
 

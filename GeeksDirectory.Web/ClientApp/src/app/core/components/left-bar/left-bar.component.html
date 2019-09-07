@@ -9,7 +9,7 @@
     <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="onSignOut()">
         <mat-icon>exit_to_app</mat-icon>Sign Out
     </button>
-    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="['./register']">
-        <mat-icon>person_add</mat-icon>Register
+    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="['./registration']">
+        <mat-icon>person_add</mat-icon>Registration
     </button>
 </div>

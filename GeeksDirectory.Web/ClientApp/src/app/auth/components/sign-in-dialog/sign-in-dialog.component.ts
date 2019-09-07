@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { SignInModel } from '../../../models/sign-in.model';
-import { DialogChoice } from '../../common';
+import { RegistrationModel } from '@app/auth/models';
+import { DialogChoice } from '@shared/common';
 
 @Component({
     selector: 'gd-sign-in-dialog',
@@ -10,12 +10,12 @@ import { DialogChoice } from '../../common';
     styleUrls: ['./sign-in-dialog.component.scss']
 })
 export class SignInDialogComponent implements OnInit {
-    public model: SignInModel = new SignInModel();
+    public model: RegistrationModel = new RegistrationModel();
     public hide = true;
 
     constructor(
         public dialogRef: MatDialogRef<SignInDialogComponent>,
-        @Optional() @Inject(MAT_DIALOG_DATA) public data: SignInModel
+        @Optional() @Inject(MAT_DIALOG_DATA) public data: RegistrationModel
     ) {}
 
     ngOnInit() {

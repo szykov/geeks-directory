@@ -1,4 +1,4 @@
-export class SignInModel {
+export class RegistrationModel {
     public email: string;
     public password: string;
 

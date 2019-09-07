@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { SignInDialogComponent, AddSkillDialogComponent, ViewerContainerComponent } from './components';
+import { AddSkillDialogComponent, ViewerContainerComponent } from './components';
 import { MaterialModule } from './material.module';
 
 @NgModule({
-    declarations: [SignInDialogComponent, ViewerContainerComponent, AddSkillDialogComponent],
+    declarations: [ViewerContainerComponent, AddSkillDialogComponent],
     imports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule],
     exports: [FormsModule, MaterialModule, FlexLayoutModule, ViewerContainerComponent],
-    entryComponents: [SignInDialogComponent, AddSkillDialogComponent]
+    entryComponents: [AddSkillDialogComponent]
 })
 export class SharedModule {}

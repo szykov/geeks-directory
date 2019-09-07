@@ -4,7 +4,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { takeUntil, debounceTime, catchError, filter } from 'rxjs/operators';
-import { Subject, throwError, Observable } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
 
 import { Store, select } from '@ngrx/store';
 import * as fromProfiles from '@app/directory/reducers';
