@@ -81,6 +81,15 @@ export class AuthEffects {
         )
     );
 
+    signInCanceled$ = createEffect(
+        () =>
+            this.actions$.pipe(
+                ofType(AuthActions.signInCanceled),
+                tap(() => this.router.navigate(['/']))
+            ),
+        { dispatch: false }
+    );
+
     signInRedirect$ = createEffect(
         () =>
             this.actions$.pipe(
