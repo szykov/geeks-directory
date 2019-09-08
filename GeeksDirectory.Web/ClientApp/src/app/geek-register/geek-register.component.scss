@@ -1,0 +1,23 @@
+.reg-container {
+    width: 500px;
+}
+
+.reg-actions {
+    margin-top: 25px;
+    text-align: right;
+
+    button {
+        margin-left: 20px;
+    }
+}
+
+mat-form-field {
+    width: 100%;
+    color: white;
+}
+
+@media only screen and (max-width: 500px) {
+    .reg-container {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,32 @@
+.geek-card {
+    flex-direction: column;
+    display: flex;
+    max-width: 280px;
+}
+
+.card-header {
+    .geek-avatar > mat-icon {
+        font-size: 42px;
+    }
+}
+
+.card-content {
+    flex-grow: 1;
+    .mat-button {
+        text-transform: uppercase;
+    }
+}
+
+.card-actions {
+    align-self: flex-end;
+    text-align: right;
+}
+
+.card-content > p {
+    display: inline-block;
+    margin-right: 22px;
+}
+
+.geek-list {
+    margin: 25px;
+}
