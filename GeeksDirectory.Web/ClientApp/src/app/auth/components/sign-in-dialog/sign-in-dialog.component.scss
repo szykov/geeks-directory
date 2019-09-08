@@ -1,0 +1,29 @@
+.mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    min-width: 200px;
+}
+
+.sign-form > mat-form-field {
+    width: 100%;
+}
+
+.sign-form-actions {
+    justify-content: flex-end;
+
+    > button {
+        margin-left: 10px;
+    }
+
+    .create-account {
+        float: right;
+        right: 73px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .create-account {
+        display: none;
+    }
+}

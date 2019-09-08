@@ -1,0 +1,15 @@
+<div class="menu-list">
+    <mat-divider></mat-divider>
+    <button mat-button mat-flat-button color="basic" routerLink="/">
+        <mat-icon>home</mat-icon>Home
+    </button>
+    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true }">
+        <mat-icon>input</mat-icon>Sign In
+    </button>
+    <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="onSignOut()">
+        <mat-icon>exit_to_app</mat-icon>Sign Out
+    </button>
+    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="['./registration']">
+        <mat-icon>person_add</mat-icon>Registration
+    </button>
+</div>

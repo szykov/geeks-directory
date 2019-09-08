@@ -1,0 +1,41 @@
+.topbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.topbar-logo {
+    flex: 0 auto;
+    display: inline-flex;
+
+    .topbar-icon {
+        vertical-align: top;
+        margin-right: 15px;
+        font-size: 32px;
+    }
+
+    .topbar-title {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .topbar-nav {
+        margin-left: 10px;
+        margin-top: 2px;
+        cursor: pointer;
+        outline: 0;
+    }
+
+    .drawer-trigger {
+        width: 25px;
+        min-width: unset;
+        padding: 0;
+    }
+}
+
+.topbar-actions {
+    flex: 0 auto;
+}
+
+.fill-empty {
+    flex: 1 auto;
+}

@@ -1,0 +1,43 @@
+.profile-container {
+    width: 500px;
+}
+
+.card-content > p {
+    display: inline-block;
+    margin-right: 22px;
+}
+
+.profile-actions {
+    text-align: right;
+    margin-top: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.skills-header {
+    margin-bottom: 20px;
+}
+
+.skill-chip {
+    height: 40px;
+    cursor: pointer;
+    .mat-badge {
+        margin-right: 10px;
+    }
+}
+
+.add-skill {
+    margin-left: 10px;
+    mat-icon {
+        width: 40px;
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .profile-container {
+        width: 100%;
+    }
+}

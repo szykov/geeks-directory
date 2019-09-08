@@ -1,0 +1,38 @@
+<span mat-dialog-title class="title-header">{{ isNew ? 'New skill' : 'Update skill' }}</span>
+<div mat-dialog-content>
+    <form class="skill-form" #skillForm="ngForm">
+        <div class="skill-body">
+            <mat-form-field>
+                <input type="text" matInput placeholder="Name" [(ngModel)]="model.name" #name="ngModel" id="name"
+                    name="name" [disabled]="!isNew" required />
+                <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="text" matInput placeholder="Description" [(ngModel)]="model.description"
+                    #description="ngModel" id="description" name="description" [disabled]="!isNew" />
+            </mat-form-field>
+
+            <mat-label class="title-header">Your Evaluation</mat-label>
+            <mat-button-toggle-group class="score" id="score" name="score" #group="matButtonToggleGroup"
+                [value]="model.score" (change)="model.score = group.value">
+                <mat-button-toggle *ngFor="let scoreType of scoreTypes" [checked]="model.score == scoreType.value"
+                    [value]="scoreType.value">{{ scoreType.name }}</mat-button-toggle>
+            </mat-button-toggle-group>
+
+            <mat-button-toggle-group class="mini-score" id="score" name="score" #group="matButtonToggleGroup"
+                [value]="model.score" (change)="model.score = group.value">
+                <mat-button-toggle *ngFor="let scoreType of scoreTypes" [checked]="model.score == scoreType.value"
+                    [value]="scoreType.value">{{ scoreType.value }}</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+
+        <div class="skill-form-actions" mat-dialog-actions>
+            <button mat-flat-button (click)="onCancel()">Cancel</button>
+            <button type="submit" mat-flat-button color="primary" (click)="onSubmit()"
+                [disabled]="!skillForm.form.valid && isNew">
+                Ok
+            </button>
+        </div>
+    </form>
+</div>

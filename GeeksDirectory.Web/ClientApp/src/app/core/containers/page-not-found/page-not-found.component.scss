@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#notfound {
+    position: relative;
+    height: 75vh;
+}
+
+#notfound .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notfound {
+    width: 460px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.notfound .notfound-404 {
+    position: relative;
+    height: 210px;
+    margin-bottom: 20px;
+}
+
+.notfound .notfound-404 h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 252px;
+    font-weight: 800;
+    margin: 0px;
+    color: #c2185b;
+    text-transform: uppercase;
+    letter-spacing: -40px;
+    margin-left: -20px;
+}
+
+.notfound .notfound-404 h1 span {
+    text-shadow: -6px 0px 1px white;
+}
+
+.notfound h3 {
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #c2185b;
+    margin: 0px;
+    letter-spacing: 3px;
+    padding-left: 6px;
+}
+
+.notfound h2 {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #c2185b;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+    .notfound .notfound-404 {
+        height: 200px;
+    }
+
+    .notfound .notfound-404 h1 {
+        font-size: 200px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .notfound .notfound-404 h1 {
+        height: 150px;
+        line-height: 162px;
+    }
+
+    .notfound h2 {
+        font-size: 16px;
+    }
+}
