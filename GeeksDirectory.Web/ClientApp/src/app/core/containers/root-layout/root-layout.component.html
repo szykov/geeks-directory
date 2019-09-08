@@ -1,4 +1,4 @@
-<gd-topbar title="Geeks Directory" [isAuth]="isAuth" (drawerToggle)="drawer.toggle()" (signOut)="onSignOut()">
+<gd-topbar title="Geeks Directory" [isAuth]="isAuth$ | async" (drawerToggle)="drawer.toggle()" (signOut)="onSignOut()">
 </gd-topbar>
 
 <mat-drawer-container class="drawer-container">

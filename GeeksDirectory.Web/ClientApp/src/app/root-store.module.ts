@@ -12,7 +12,7 @@ const configWithRuntimeChecks: RootStoreConfig<unknown, Action> = {
         strictStateImmutability: true,
         strictActionImmutability: true,
         strictStateSerializability: true,
-        strictActionSerializability: true
+        strictActionSerializability: false
     }
 };
 

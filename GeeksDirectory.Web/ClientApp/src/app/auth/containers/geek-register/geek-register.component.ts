@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -9,8 +8,6 @@ import * as fromAuth from '@app/auth/reducers';
 
 import { CreateProfileModel } from '../../../models';
 import { CITIES } from '@shared/common';
-import { RequestService, NotificationService } from '../../../services';
-import { AuthService } from '@app/auth/services/auth.service';
 import { RegistrationActions } from '@app/auth/actions';
 
 @Component({
@@ -26,13 +23,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
     private unsubscribe: Subject<void> = new Subject();
     private cityValue$: Subject<string> = new Subject();
 
-    constructor(
-        private store: Store<fromAuth.State>,
-        private authService: AuthService,
-        private requestService: RequestService,
-        private notificationService: NotificationService,
-        private router: Router
-    ) {}
+    constructor(private store: Store<fromAuth.State>) {}
 
     ngOnInit() {
         this.cityValue$
@@ -48,16 +39,7 @@ export class GeekRegisterComponent implements OnInit, OnDestroy {
     }
 
     public onSubmit() {
-        this.authService
-            .registerProfile(this.model)
-            .pipe(takeUntil(this.unsubscribe))
-            .subscribe(result => {
-                this.notificationService.showSuccess('You have been registered. Great!');
-
-                this.store.dispatch(
-                    RegistrationActions.login({ credentials: { email: this.model.email, password: this.model.password } })
-                );
-            });
+        this.store.dispatch(RegistrationActions.registerProfile({ profile: this.model }));
     }
 
     public onChangeCity(value: string) {
