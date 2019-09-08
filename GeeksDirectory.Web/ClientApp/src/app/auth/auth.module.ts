@@ -11,10 +11,11 @@ import { AuthEffects } from '@app/auth/effects';
 import { SharedModule } from '@app/shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SignInDialogComponent } from './components';
-import { GeekRegisterComponent } from './containers';
+import { RegisterShellComponent } from './containers';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
-    declarations: [SignInDialogComponent, GeekRegisterComponent],
+    declarations: [SignInDialogComponent, RegisterShellComponent, RegisterFormComponent],
     imports: [
         CommonModule,
         FormsModule,

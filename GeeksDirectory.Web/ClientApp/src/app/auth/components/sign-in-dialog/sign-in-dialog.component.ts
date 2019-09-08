@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Optional } from '@angular/core';
+import { Component, OnInit, Inject, Optional, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { CredentialsModel } from '@app/auth/models';
@@ -7,7 +7,8 @@ import { DialogChoice } from '@shared/common';
 @Component({
     selector: 'gd-sign-in-dialog',
     templateUrl: './sign-in-dialog.component.html',
-    styleUrls: ['./sign-in-dialog.component.scss']
+    styleUrls: ['./sign-in-dialog.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignInDialogComponent implements OnInit {
     public model: CredentialsModel = new CredentialsModel();

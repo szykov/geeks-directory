@@ -1,3 +1,5 @@
+// tslint:disable: no-string-literal
+
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -40,8 +42,8 @@ export class AuthEffects {
 
     openDialog$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(SignInDialogActions.openDialog),
-            exhaustMap(({ credentials }) => this.authDialog.signIn(credentials)),
+            ofType(SignInDialogActions.openDialog, SignInDialogActions.openNewDialog),
+            exhaustMap(action => this.authDialog.signIn(action['credentials'])),
             map(result => {
                 switch (result.choice) {
                     case DialogChoice.CreateAccount:

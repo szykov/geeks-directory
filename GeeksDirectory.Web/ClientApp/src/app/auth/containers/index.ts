@@ -1,1 +1,1 @@
-export * from './geek-register/geek-register.component';
+export * from './register-shell/register-shell.component';

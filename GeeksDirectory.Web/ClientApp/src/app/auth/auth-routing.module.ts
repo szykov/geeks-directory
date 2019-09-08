@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { GeekRegisterComponent } from './containers';
+import { RegisterShellComponent } from './containers';
 
-const routes: Routes = [{ path: 'registration', component: GeekRegisterComponent }];
+const routes: Routes = [{ path: 'registration', component: RegisterShellComponent }];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],

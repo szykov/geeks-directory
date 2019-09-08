@@ -3,7 +3,7 @@
 
 <mat-drawer-container class="drawer-container">
     <mat-drawer #drawer position="start" mode="side">
-        <gd-left-bar></gd-left-bar>
+        <gd-left-bar [isAuth]="isAuth$ | async"></gd-left-bar>
     </mat-drawer>
     <mat-drawer-content>
         <ng-content></ng-content>

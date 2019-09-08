@@ -1,11 +1,12 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'gd-topbar',
     templateUrl: './topbar.component.html',
-    styleUrls: ['./topbar.component.scss']
+    styleUrls: ['./topbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TopbarComponent implements OnInit {
+export class TopbarComponent {
     @Input() title: string;
     @Input() isAuth = false;
 
@@ -13,6 +14,4 @@ export class TopbarComponent implements OnInit {
     @Output() drawerToggle = new EventEmitter();
 
     constructor() {}
-
-    ngOnInit() {}
 }

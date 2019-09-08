@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
 
@@ -14,7 +14,8 @@ import { isAuth } from '@app/auth/reducers';
 @Component({
     selector: 'gd-root-layout',
     templateUrl: './root-layout.component.html',
-    styleUrls: ['./root-layout.component.scss']
+    styleUrls: ['./root-layout.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RootLayoutComponent implements OnInit, OnDestroy {
     public isAuth$: Observable<boolean>;
@@ -29,7 +30,7 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
 
         this.route.queryParams.pipe(takeUntil(this.unsubscribe)).subscribe(params => {
             if (params.signIn) {
-                this.store.dispatch(SignInDialogActions.openDialog({ credentials: new CredentialsModel() }));
+                this.store.dispatch(SignInDialogActions.openNewDialog());
             }
         });
     }

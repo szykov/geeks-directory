@@ -1,0 +1,9 @@
+.reg-container {
+    width: 500px;
+}
+
+@media only screen and (max-width: 500px) {
+    .reg-container {
+        width: 100% !important;
+    }
+}
