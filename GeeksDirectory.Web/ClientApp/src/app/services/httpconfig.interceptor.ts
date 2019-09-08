@@ -9,6 +9,7 @@ import { IException } from '../responses';
 import { NotificationService } from './notification.service';
 import { LoaderService } from './loader.service';
 import { StorageService } from './storage.service';
+import { IToken } from '@app/auth/responses';
 
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
@@ -22,8 +23,10 @@ export class HttpConfigInterceptor implements HttpInterceptor {
         this.loaderService.startLoading();
 
         if (this.storage.existsAuthToken()) {
-            let token: string = this.storage.getAuthToken();
-            request = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token) });
+            let token: IToken = this.storage.getAuthToken();
+            request = request.clone({
+                headers: request.headers.set('Authorization', `${token.token_type} ${token.access_token}`)
+            });
         }
 
         if (!request.headers.has('Content-Type')) {

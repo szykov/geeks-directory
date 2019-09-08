@@ -19,6 +19,19 @@ export class AuthEffects {
         private router: Router
     ) {}
 
+    /*restore$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(AuthActions.restore),
+            tap(() => {
+                if (this.storageService.existsAuthToken() && this.storageService.existsAuthUser()) {
+                    let token = this.storageService.getAuthToken();
+                    let profile = this.storageService.getAuthUser();
+                    AuthApiActions.refresh({ token, profile });
+                }
+            })
+        )
+    );*/
+
     login$ = createEffect(() =>
         this.actions$.pipe(
             ofType(SignInDialogActions.login, RegistrationActions.login),
@@ -30,24 +43,22 @@ export class AuthEffects {
         )
     );
 
-    loginSuccess$ = createEffect(
-        () =>
-            this.actions$.pipe(
-                ofType(AuthApiActions.loginSuccess),
-                tap(() => this.router.navigate(['/'])),
-                tap(({ token }) => this.storageService.setAuthToken(token)),
-                mergeMap(() =>
-                    this.authService.getMyProfile().pipe(map(profile => AuthApiActions.personalizeSuccess({ profile })))
-                )
-            ),
-        { dispatch: false }
+    loginSuccess$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(AuthApiActions.loginSuccess),
+            tap(() => this.router.navigate(['/'])),
+            tap(({ token }) => this.storageService.setAuthToken(token)),
+            mergeMap(() => this.authService.getMyProfile().pipe(map(profile => AuthApiActions.personalizeSuccess({ profile }))))
+        )
     );
 
-    personalizeSuccess$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(AuthApiActions.personalizeSuccess),
-            tap(({ profile }) => this.storageService.setAuthUser(profile))
-        )
+    personalizeSuccess$ = createEffect(
+        () =>
+            this.actions$.pipe(
+                ofType(AuthApiActions.personalizeSuccess),
+                tap(({ profile }) => this.storageService.setAuthUser(profile))
+            ),
+        { dispatch: false }
     );
 
     logout$ = createEffect(

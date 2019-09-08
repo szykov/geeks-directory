@@ -8,3 +8,5 @@ export const loginFailure = createAction('[Auth/API] Login Failure', props<{ err
 
 export const personalizeSuccess = createAction('[Auth/API] Personalize Success', props<{ profile: IProfile }>());
 export const personalizeFailure = createAction('[Auth/API] Personalize Failure', props<{ error: any }>());
+
+export const refresh = createAction('[Auth/API] Refresh', props<{ token: IToken; profile: IProfile }>());

@@ -31,12 +31,13 @@ export class StorageService {
     }
 
     public setAuthToken(value: IToken) {
-        this.cookieService.set(`${this.prefix}-token`, value.access_token);
+        this.cookieService.set(`${this.prefix}-token`, JSON.stringify(value));
         this.isAuthentificated$.next(true);
     }
 
-    public getAuthToken(): string {
-        return this.cookieService.get(`${this.prefix}-token`);
+    public getAuthToken(): IToken {
+        let token = this.cookieService.get(`${this.prefix}-token`);
+        return JSON.parse(token);
     }
 
     public existsAuthToken(): boolean {

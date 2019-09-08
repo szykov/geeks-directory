@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+
+import { Store } from '@ngrx/store';
+import * as fromState from './reducers';
+import { AuthActions } from './auth/actions';
 
 @Component({
     selector: 'gd-app',
@@ -10,6 +14,10 @@ import { Component } from '@angular/core';
         </gd-root-layout>
     `
 })
-export class AppComponent {
-    constructor() {}
+export class AppComponent implements AfterViewInit {
+    constructor(private store: Store<fromState.State>) {}
+
+    ngAfterViewInit() {
+        this.store.dispatch(AuthActions.restore());
+    }
 }

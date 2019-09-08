@@ -18,6 +18,7 @@ export const reducer = createReducer(
     initialState,
     on(AuthApiActions.loginSuccess, (state, { token }) => ({ ...state, token })),
     on(AuthApiActions.personalizeSuccess, (state, { profile }) => ({ ...state, profile })),
+    on(AuthApiActions.refresh, (state, { token, profile }) => ({ ...state, token, profile })),
     on(AuthActions.logout, () => initialState)
 );
 
