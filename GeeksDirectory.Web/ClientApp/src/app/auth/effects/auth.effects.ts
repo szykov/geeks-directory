@@ -1,7 +1,7 @@
 // tslint:disable: no-string-literal
 
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { map, tap, mergeMap, catchError, exhaustMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -22,7 +22,8 @@ export class AuthEffects {
         private authDialog: AuthDialogService,
         private storageService: StorageService,
         private notificationService: NotificationService,
-        private router: Router
+        private router: Router,
+        private route: ActivatedRoute
     ) {}
 
     restore$ = createEffect(() =>
@@ -85,7 +86,7 @@ export class AuthEffects {
         () =>
             this.actions$.pipe(
                 ofType(AuthActions.signInCanceled),
-                tap(() => this.router.navigate(['/']))
+                tap(() => this.router.navigate([], { relativeTo: this.route }))
             ),
         { dispatch: false }
     );
