@@ -22,5 +22,9 @@ export const reducer = createReducer(
     on(ProfileActions.loadProfileDetailsSuccess, (state, { selected }) => ({
         ...state,
         selected
+    })),
+    on(ProfileActions.updateProfileSuccess, (state, { selected }) => ({
+        ...state,
+        selected
     }))
 );

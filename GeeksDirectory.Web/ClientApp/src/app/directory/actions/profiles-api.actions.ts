@@ -6,3 +6,5 @@ export const loadProfileDetailsSuccess = createAction(
     '[Profile/API] Load Profile Details Success',
     props<{ selected: IProfile }>()
 );
+
+export const updateProfileSuccess = createAction('[Profile/API] Update Profile Success', props<{ selected: IProfile }>());
