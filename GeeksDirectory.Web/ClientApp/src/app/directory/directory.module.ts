@@ -11,9 +11,10 @@ import { GeekListComponent } from './containers';
 import { reducers } from './reducers';
 import { ProfileEffects } from './effects';
 import { GeekListItemComponent } from './components/geek-list-item/geek-list-item.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
-    declarations: [GeekItemDetailsComponent, GeekListComponent, GeekListItemComponent],
+    declarations: [GeekItemDetailsComponent, GeekListComponent, GeekListItemComponent, EditProfileComponent],
     imports: [
         CommonModule,
         DirectoryRoutingModule,

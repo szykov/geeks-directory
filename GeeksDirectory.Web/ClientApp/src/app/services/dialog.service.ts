@@ -15,15 +15,23 @@ import { ComponentType } from '@angular/cdk/portal';
 export class DialogService {
     constructor(private dialog: MatDialog) {}
 
-    public addSkillDialog(isNew: boolean = true, model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
+    public addSkillDialog(): Observable<{ choice: DialogChoice; data: SkillModel }> {
+        let model = new SkillModel();
         return this.baseDialog(AddSkillDialogComponent, {
-            height: '410px',
-            width: '400px',
-            data: { isNew, model }
+            data: { isNew: true, model }
+        });
+    }
+
+    public editSkillDialog(model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
+        return this.baseDialog(AddSkillDialogComponent, {
+            data: { isNew: false, model }
         });
     }
 
     private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<{ choice: any; data: any }> {
+        config.height = '410px';
+        config.width = '400px';
+
         const dialogRef = this.dialog.open(component, config);
         let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
 

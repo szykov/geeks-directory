@@ -1,69 +1,8 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <div *ngIf="model" class="profile-container">
-        <gd-viewer-container title="{{ profile.fullName }}">
-            <mat-form-field appearance="fill">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput id="email" name="email" [value]="profile.email" disabled />
-            </mat-form-field>
-
-            <form #profForm="ngForm">
-                <mat-form-field appearance="fill">
-                    <mat-label>Name</mat-label>
-                    <input type="text" matInput placeholder="Name" id="name" name="name" [(ngModel)]="model.name"
-                        #name="ngModel" [disabled]="!editMode" required />
-                    <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required
-                    </mat-error>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Surname</mat-label>
-                    <input type="text" matInput placeholder="Surname" [(ngModel)]="model.surname" #surname="ngModel"
-                        id="surname" name="surname" [disabled]="!editMode" required />
-                    <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']">Surname is
-                        required
-                    </mat-error>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill" *ngIf="model.middleName || editMode">
-                    <mat-label>Middle Name</mat-label>
-                    <input type="text" matInput placeholder="Middle Name" [(ngModel)]="model.middleName"
-                        #middleName="ngModel" id="middleName" name="middleName" [disabled]="!editMode" />
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>City</mat-label>
-                    <input type="text" placeholder="Cities" aria-label="City" matInput [matAutocomplete]="auto"
-                        (keyup)="onChangeCity()" [(ngModel)]="model.city" #city name="city" id="city"
-                        [disabled]="!editMode" required />
-                    <mat-autocomplete #auto="matAutocomplete">
-                        <mat-option *ngFor="let city of cities" [value]="city">
-                            {{city}}
-                        </mat-option>
-                    </mat-autocomplete>
-                    <mat-error *ngIf="!city.valid && !city.pristine">City is required</mat-error>
-                </mat-form-field>
-            </form>
-
-            <div class="skills-header">
-                <span class="title-header">Skills</span>
-                <mat-divider></mat-divider>
-            </div>
-
-            <mat-chip-list class="card-content">
-                <mat-chip class="skill-chip" *ngFor="let skill of profile.skills"
-                    (click)="isAuth ? openEditSkillDialog($event.currentTarget.firstChild) : null">
-                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false"
-                        id="{{ skill.id }}">{{ skill.name }}</span>
-                </mat-chip>
-                <button *ngIf="isAuth" class="add-skill" mat-icon-button color="primary" aria-label="Add Skill"
-                    (click)="openAddSkillDialog()">
-                    <mat-icon>add</mat-icon>
-                </button>
-            </mat-chip-list>
-
-            <div class="profile-actions">
-                <button *ngIf="editMode" mat-flat-button color="primary" (click)="updateProfile()">Update</button>
-            </div>
-        </gd-viewer-container>
+    <div class="profile-container">
+        <gd-edit-profile [profile]="profile" [model]="model" [editProfile]="true" [editSkills]="isAuth$ | async"
+            [cities]="filteredCities$ | async" (changedCity)="onChangeCity($event)"
+            (updateProfile)="onUpdateProfile($event)" (newSkill)="onNewSkill()" (editSkill)="onEditSkill($event)">
+        </gd-edit-profile>
     </div>
 </div>

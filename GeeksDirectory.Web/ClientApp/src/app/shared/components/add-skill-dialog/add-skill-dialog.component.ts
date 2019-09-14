@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Optional } from '@angular/core';
+import { Component, OnInit, Inject, Optional, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { SkillModel } from '../../../models';
@@ -7,7 +7,8 @@ import { DialogChoice, SCORE_TYPES } from '../../common';
 @Component({
     selector: 'gd-add-skill-dialog',
     templateUrl: './add-skill-dialog.component.html',
-    styleUrls: ['./add-skill-dialog.component.scss']
+    styleUrls: ['./add-skill-dialog.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddSkillDialogComponent implements OnInit {
     public isNew = true;
