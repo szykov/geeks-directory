@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { takeUntil, debounceTime, filter } from 'rxjs/operators';
@@ -17,7 +17,8 @@ import { ProfilesDetailsActions } from '@app/directory/actions';
 @Component({
     selector: 'gd-geek-item-details',
     templateUrl: './geek-item-details.component.html',
-    styleUrls: ['./geek-item-details.component.scss']
+    styleUrls: ['./geek-item-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class GeekItemDetailsComponent implements OnInit, OnDestroy {
     public currentProfile$: Observable<IProfile>;

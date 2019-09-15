@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Store, select } from '@ngrx/store';
@@ -10,7 +10,8 @@ import { ProfilesListActions } from '@app/directory/actions';
 @Component({
     selector: 'gd-geek-list',
     templateUrl: './geek-list.component.html',
-    styleUrls: ['./geek-list.component.scss']
+    styleUrls: ['./geek-list.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GeekListComponent implements OnInit {
     public profiles$: Observable<IProfile[]>;

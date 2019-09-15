@@ -8,7 +8,7 @@ import { DialogChoice, SCORE_TYPES, ISkillsDialogData, ISkillsDialogResult } fro
     selector: 'gd-add-skill-dialog',
     templateUrl: './add-skill-dialog.component.html',
     styleUrls: ['./add-skill-dialog.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddSkillDialogComponent implements OnInit {
     public isNew: boolean;
