@@ -5,7 +5,7 @@ import { mapTo, filter } from 'rxjs/operators';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { SkillModel } from '@app/models';
-import { DialogChoice } from '@shared/common';
+import { DialogChoice, ISkillsDialogResult, ISkillsDialogData } from '@shared/common';
 import { AddSkillDialogComponent } from '@shared/components';
 import { ComponentType } from '@angular/cdk/portal';
 
@@ -15,20 +15,18 @@ import { ComponentType } from '@angular/cdk/portal';
 export class DialogService {
     constructor(private dialog: MatDialog) {}
 
-    public addSkillDialog(): Observable<{ choice: DialogChoice; data: SkillModel }> {
+    public addSkillDialog(profileId: number): Observable<ISkillsDialogResult> {
         let model = new SkillModel();
-        return this.baseDialog(AddSkillDialogComponent, {
-            data: { isNew: true, model }
-        });
+        let data: ISkillsDialogData = { isNew: true, profileId, model };
+        return this.baseDialog(AddSkillDialogComponent, { data });
     }
 
-    public editSkillDialog(model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
-        return this.baseDialog(AddSkillDialogComponent, {
-            data: { isNew: false, model }
-        });
+    public editSkillDialog(profileId: number, model: SkillModel): Observable<ISkillsDialogResult> {
+        let data: ISkillsDialogData = { isNew: false, profileId, model };
+        return this.baseDialog(AddSkillDialogComponent, { data });
     }
 
-    private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<{ choice: any; data: any }> {
+    private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<ISkillsDialogResult> {
         config.height = '410px';
         config.width = '400px';
 

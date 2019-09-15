@@ -9,7 +9,7 @@ import { DirectoryRoutingModule } from './directory-routing.module';
 import { GeekItemDetailsComponent } from './components';
 import { GeekListComponent } from './containers';
 import { reducers } from './reducers';
-import { ProfileEffects } from './effects';
+import { ProfileEffects, SkillsEffects } from './effects';
 import { GeekListItemComponent } from './components/geek-list-item/geek-list-item.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
@@ -20,7 +20,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
         DirectoryRoutingModule,
         SharedModule,
         StoreModule.forFeature('directory', reducers),
-        EffectsModule.forFeature([ProfileEffects])
+        EffectsModule.forFeature([ProfileEffects, SkillsEffects])
     ]
 })
 export class DirectoryModule {}

@@ -5,7 +5,7 @@ import { Store, select } from '@ngrx/store';
 import * as fromProfiles from '@app/directory/reducers';
 
 import { IProfile } from '@app/responses';
-import { loadProfiles } from '@app/directory/actions';
+import { ProfilesListActions } from '@app/directory/actions';
 
 @Component({
     selector: 'gd-geek-list',
@@ -18,7 +18,7 @@ export class GeekListComponent implements OnInit {
     constructor(private store: Store<fromProfiles.State>) {}
 
     ngOnInit() {
-        this.store.dispatch(loadProfiles());
+        this.store.dispatch(ProfilesListActions.loadProfiles());
         this.profiles$ = this.store.pipe(select(fromProfiles.getProfiles));
     }
 }

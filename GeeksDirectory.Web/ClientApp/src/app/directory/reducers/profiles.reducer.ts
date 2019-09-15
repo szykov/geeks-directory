@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
-import * as ProfileActions from '../actions';
+import { ProfilesApiActions, SkillsApiActions } from '../actions';
 import { IProfile } from '@app/responses';
 
 export interface State {
@@ -15,16 +15,32 @@ export const initialState: State = {
 
 export const reducer = createReducer(
     initialState,
-    on(ProfileActions.loadProfilesSuccess, (state, { collection }) => ({
+    on(ProfilesApiActions.loadProfilesSuccess, (state, { collection }) => ({
         ...state,
         collection
     })),
-    on(ProfileActions.loadProfileDetailsSuccess, (state, { selected }) => ({
+    on(ProfilesApiActions.loadProfileDetailsSuccess, (state, { selected }) => ({
         ...state,
         selected
     })),
-    on(ProfileActions.updateProfileSuccess, (state, { selected }) => ({
+    on(ProfilesApiActions.updateProfileSuccess, (state, { selected }) => ({
         ...state,
         selected
-    }))
+    })),
+    on(SkillsApiActions.addSkillSuccess, (state, { skill }) => {
+        let selected = { ...state.selected };
+        selected.skills = [...selected.skills, skill];
+        return { ...state, selected };
+    }),
+    on(SkillsApiActions.evaluateSkillSuccess, (state, { skillName, averageScore }) => {
+        let selected = { ...state.selected };
+
+        let targetIndex = selected.skills.findIndex(skill => skill.name === skillName);
+        let updatedSkill = { ...selected.skills[targetIndex] };
+        updatedSkill.averageScore = averageScore;
+
+        selected.skills = [...selected.skills.slice(0, targetIndex), updatedSkill, ...selected.skills.slice(targetIndex + 1)];
+
+        return { ...state, selected };
+    })
 );

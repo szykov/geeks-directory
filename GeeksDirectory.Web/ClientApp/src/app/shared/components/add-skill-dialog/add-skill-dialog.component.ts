@@ -2,22 +2,22 @@ import { Component, OnInit, Inject, Optional, ChangeDetectionStrategy } from '@a
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { SkillModel } from '../../../models';
-import { DialogChoice, SCORE_TYPES } from '../../common';
+import { DialogChoice, SCORE_TYPES, ISkillsDialogData, ISkillsDialogResult } from '../../common';
 
 @Component({
     selector: 'gd-add-skill-dialog',
     templateUrl: './add-skill-dialog.component.html',
     styleUrls: ['./add-skill-dialog.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class AddSkillDialogComponent implements OnInit {
-    public isNew = true;
+    public isNew: boolean;
     public model = new SkillModel();
     public scoreTypes = SCORE_TYPES;
 
     constructor(
         public dialogRef: MatDialogRef<AddSkillDialogComponent>,
-        @Optional() @Inject(MAT_DIALOG_DATA) public data: { isNew: boolean; model: SkillModel }
+        @Optional() @Inject(MAT_DIALOG_DATA) public data: ISkillsDialogData
     ) {}
 
     ngOnInit() {
@@ -27,11 +27,17 @@ export class AddSkillDialogComponent implements OnInit {
         }
     }
 
+    public temp(asdf: any) {
+        console.log(asdf);
+    }
+
     public onCancel() {
-        this.dialogRef.close({ choice: DialogChoice.Canceled });
+        let data: ISkillsDialogResult = { choice: DialogChoice.Canceled };
+        this.dialogRef.close(data);
     }
 
     public onSubmit() {
-        this.dialogRef.close({ choice: DialogChoice.Ok, data: this.model });
+        let data: ISkillsDialogResult = { choice: DialogChoice.Ok, profileId: this.data.profileId, model: this.model };
+        this.dialogRef.close(data);
     }
 }
