@@ -15,9 +15,9 @@ import { ProfileModel, SkillModel } from '@app/models';
 import { ProfilesDetailsActions } from '@app/directory/actions';
 
 @Component({
-    selector: 'gd-geek-item-details',
-    templateUrl: './geek-item-details.component.html',
-    styleUrls: ['./geek-item-details.component.scss'],
+    selector: 'gd-profile-details',
+    templateUrl: './profile-details.component.html',
+    styleUrls: ['./profile-details.component.scss'],
     changeDetection: ChangeDetectionStrategy.Default
 })
 export class GeekItemDetailsComponent implements OnInit, OnDestroy {

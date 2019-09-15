@@ -8,9 +8,9 @@ import { IProfile } from '@app/responses';
 import { ProfilesListActions } from '@app/directory/actions';
 
 @Component({
-    selector: 'gd-geek-list',
-    templateUrl: './geek-list.component.html',
-    styleUrls: ['./geek-list.component.scss'],
+    selector: 'gd-profile-list',
+    templateUrl: './profile-list.component.html',
+    styleUrls: ['./profile-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GeekListComponent implements OnInit {

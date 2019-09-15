@@ -10,7 +10,7 @@ import { GeekItemDetailsComponent } from './components';
 import { GeekListComponent } from './containers';
 import { reducers } from './reducers';
 import { ProfileEffects, SkillsEffects } from './effects';
-import { GeekListItemComponent } from './components/geek-list-item/geek-list-item.component';
+import { GeekListItemComponent } from './components/profile-card/profile-card.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({

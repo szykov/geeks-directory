@@ -31,3 +31,8 @@ export const isAuth = createSelector(
     getProfile,
     user => !!user
 );
+
+export const getToken = createSelector(
+    selectAuthStatusState,
+    fromAuth.getToken
+);

@@ -1,9 +1,12 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, finalize } from 'rxjs/operators';
+
+import { Store } from '@ngrx/store';
+import { AuthState } from '@app/auth/reducers';
+import { AuthActions } from '@app/auth/actions';
 
 import { IException } from '../responses';
 import { NotificationService } from './notification.service';
@@ -14,10 +17,10 @@ import { IToken } from '@app/auth/responses';
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
     constructor(
+        private store: Store<AuthState>,
         private notificationService: NotificationService,
         private storage: StorageService,
-        private loaderService: LoaderService,
-        private router: Router
+        private loaderService: LoaderService
     ) {}
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.loaderService.startLoading();
@@ -41,7 +44,7 @@ export class HttpConfigInterceptor implements HttpInterceptor {
                 let exception: IException = error.error;
 
                 if (exception.code === 'Unauthorized') {
-                    this.clearSession();
+                    this.store.dispatch(AuthActions.signOut());
                 }
 
                 this.notificationService.showError(exception.message);
@@ -49,11 +52,5 @@ export class HttpConfigInterceptor implements HttpInterceptor {
             }),
             finalize(() => this.loaderService.completeLoading())
         );
-    }
-
-    private clearSession() {
-        this.storage.clearAuthToken();
-        this.storage.clearAuthUser();
-        this.router.navigate(['/'], { queryParams: { signIn: true } });
     }
 }

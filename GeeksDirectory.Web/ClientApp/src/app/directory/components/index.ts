@@ -1,1 +1,1 @@
-export * from '../containers/geek-item-details/geek-item-details.component';
+export * from '../containers/profile-details/profile-details.component';

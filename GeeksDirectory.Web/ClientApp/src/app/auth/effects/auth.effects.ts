@@ -44,7 +44,7 @@ export class AuthEffects {
     openDialog$ = createEffect(() =>
         this.actions$.pipe(
             ofType(SignInDialogActions.openDialog, SignInDialogActions.openNewDialog),
-            exhaustMap(action => this.authDialog.signIn(action['credentials'])),
+            exhaustMap(action => this.authDialog.signIn({ ...action['credentials'] })),
             map(result => {
                 switch (result.choice) {
                     case DialogChoice.CreateAccount:
@@ -75,7 +75,6 @@ export class AuthEffects {
     signInSuccess$ = createEffect(() =>
         this.actions$.pipe(
             ofType(AuthApiActions.signInSuccess),
-            tap(() => this.router.navigate(['/'])),
             tap(({ token }) => this.storageService.setAuthToken(token)),
             tap(() => this.notificationService.showSuccess('You have sucessfully signed in.')),
             mergeMap(() => this.authService.getMyProfile().pipe(map(profile => AuthApiActions.personalizeSuccess({ profile }))))

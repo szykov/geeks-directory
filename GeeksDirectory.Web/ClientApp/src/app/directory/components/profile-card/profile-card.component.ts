@@ -5,9 +5,9 @@ import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-ani
 import { IProfile } from '@app/responses';
 
 @Component({
-    selector: 'gd-geek-list-item',
-    templateUrl: './geek-list-item.component.html',
-    styleUrls: ['./geek-list-item.component.scss'],
+    selector: 'gd-profile-card',
+    templateUrl: './profile-card.component.html',
+    styleUrls: ['./profile-card.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
         fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' }),
