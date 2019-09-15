@@ -2,6 +2,7 @@ import { createSelector, createFeatureSelector, combineReducers, Action } from '
 
 import * as fromRoot from '@app/reducers';
 import * as fromProfiles from './profiles.reducer';
+import { ProfileModel } from '@app/models';
 
 export interface ProfilesState {
     profiles: fromProfiles.State;
@@ -19,13 +20,22 @@ export function reducers(state: ProfilesState | undefined, action: Action) {
 
 // Selector functions
 const getFeatureState = createFeatureSelector<State, ProfilesState>('directory');
+export const selectProfileState = createSelector(
+    getFeatureState,
+    (state: ProfilesState) => state.profiles
+);
 
 export const getProfiles = createSelector(
-    getFeatureState,
-    state => state.profiles.collection
+    selectProfileState,
+    fromProfiles.getCollection
 );
 
 export const getProfileDetails = createSelector(
-    getFeatureState,
-    state => state.profiles.selected
+    selectProfileState,
+    fromProfiles.getSelectedProfile
+);
+
+export const getProfileModel = createSelector(
+    selectProfileState,
+    fromProfiles.getSelectedProfileModel
 );

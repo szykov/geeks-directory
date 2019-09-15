@@ -1,9 +1,7 @@
-// tslint:disable: no-string-literal
-
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 import { IProfile } from '@app/responses';
-import { ProfileModel } from '@app/models';
+import { ProfileModel, SkillModel } from '@app/models';
 
 @Component({
     selector: 'gd-edit-profile',
@@ -30,9 +28,8 @@ export class EditProfileComponent {
         this.changedCity.emit(this.model.city);
     }
 
-    public onEditSkill(target: HTMLElement) {
-        let skillId = Number(target.attributes['id'].value);
-        this.editSkill.emit(skillId);
+    public onEditSkill(model: SkillModel) {
+        this.editSkill.emit(model);
     }
 
     public onNewSkill() {

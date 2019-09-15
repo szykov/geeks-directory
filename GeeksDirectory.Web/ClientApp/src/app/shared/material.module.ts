@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import {
     MatAutocompleteModule,
     MatBadgeModule,
@@ -13,6 +12,7 @@ import {
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatMenuModule,
     MatSidenavModule,
     MatSnackBarModule,
     MatToolbarModule
@@ -30,6 +30,7 @@ const MATERIAL_BUNDLE = [
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatMenuModule,
     MatSidenavModule,
     MatSnackBarModule,
     MatToolbarModule

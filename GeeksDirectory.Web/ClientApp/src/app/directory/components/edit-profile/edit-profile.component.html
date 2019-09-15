@@ -1,64 +1,20 @@
-<div *ngIf="profile">
+<div *ngIf="profile && model">
     <gd-viewer-container title="{{ profile.fullName }}">
         <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
             <input type="email" matInput id="email" name="email" [value]="profile.email" disabled />
         </mat-form-field>
 
-        <form #profForm="ngForm">
-            <mat-form-field appearance="fill">
-                <mat-label>Name</mat-label>
-                <input type="text" matInput placeholder="Name" id="name" name="name" [(ngModel)]="model.name"
-                    #name="ngModel" [disabled]="!editProfile" required />
-                <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="fill">
-                <mat-label>Surname</mat-label>
-                <input type="text" matInput placeholder="Surname" [(ngModel)]="model.surname" #surname="ngModel"
-                    id="surname" name="surname" [disabled]="!editProfile" required />
-                <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']">Surname is
-                    required
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="fill" *ngIf="model.middleName || editProfile">
-                <mat-label>Middle Name</mat-label>
-                <input type="text" matInput placeholder="Middle Name" [(ngModel)]="model.middleName"
-                    #middleName="ngModel" id="middleName" name="middleName" [disabled]="!editProfile" />
-            </mat-form-field>
-
-            <mat-form-field appearance="fill">
-                <mat-label>City</mat-label>
-                <input type="text" placeholder="Cities" aria-label="City" matInput [matAutocomplete]="auto"
-                    [(ngModel)]="model.city" #city name="city" id="city" [disabled]="!editProfile" required
-                    (keyup)="onChangeCity()" />
-                <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let city of cities" [value]="city">
-                        {{city}}
-                    </mat-option>
-                </mat-autocomplete>
-                <mat-error *ngIf="!city.valid && !city.pristine">City is required</mat-error>
-            </mat-form-field>
-        </form>
+        <gd-profile-form [model]="model" [cities]="cities" [editable]="editProfile" (changeCity)="onChangeCity($event)"
+            (updateProfile)="onSubmit($event)"></gd-profile-form>
 
         <div class="skills-header">
             <span class="title-header">Skills</span>
             <mat-divider></mat-divider>
         </div>
 
-        <mat-chip-list class="card-content">
-            <mat-chip class="skill-chip" *ngFor="let skill of profile.skills"
-                (click)="editSkills ? onEditSkill($event.currentTarget.firstChild) : null">
-                <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false"
-                    id="{{ skill.id }}">{{ skill.name }}</span>
-            </mat-chip>
-            <button *ngIf="editSkills" class="add-skill" mat-icon-button color="primary" aria-label="Add Skill"
-                (click)="onNewSkill()">
-                <mat-icon>add</mat-icon>
-            </button>
-        </mat-chip-list>
+        <gd-profile-skills [skills]="profile.skills" [editable]="editSkills" (editSkill)="onEditSkill($event)"
+            (newSkill)="onNewSkill()"></gd-profile-skills>
 
         <div class="profile-actions">
             <button *ngIf="editProfile" mat-flat-button color="primary" (click)="onSubmit()">Update</button>

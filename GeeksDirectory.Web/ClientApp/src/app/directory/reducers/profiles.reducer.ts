@@ -2,6 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 
 import { ProfilesApiActions, SkillsApiActions } from '../actions';
 import { IProfile } from '@app/responses';
+import { ProfileModel } from '@app/models';
 
 export interface State {
     collection: IProfile[];
@@ -44,3 +45,8 @@ export const reducer = createReducer(
         return { ...state, selected };
     })
 );
+
+export const getCollection = (state: State) => state.collection;
+export const getSelectedProfile = (state: State) => state.selected;
+export const getSelectedProfileModel = (state: State) =>
+    state.selected ? ProfileModel.fromProfileResponse(state.selected) : null;

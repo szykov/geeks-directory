@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { takeUntil, debounceTime, filter } from 'rxjs/operators';
+import { takeUntil, debounceTime, filter, switchMap, tap, map, mergeMap } from 'rxjs/operators';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 import { Store } from '@ngrx/store';
@@ -18,38 +18,36 @@ import { ProfilesDetailsActions } from '@app/directory/actions';
     selector: 'gd-profile-details',
     templateUrl: './profile-details.component.html',
     styleUrls: ['./profile-details.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GeekItemDetailsComponent implements OnInit, OnDestroy {
+    private profileId: number;
+
     public currentProfile$: Observable<IProfile>;
     public isAuth$: Observable<boolean>;
 
     public filteredCities$: BehaviorSubject<string[]> = new BehaviorSubject(CITIES);
 
-    public profile: IProfile;
-    public model: ProfileModel;
+    public profile$: Observable<IProfile>;
+    public model$: Observable<ProfileModel>;
 
     private unsubscribe: Subject<void> = new Subject();
 
     constructor(private store: Store<fromState.State>, private route: ActivatedRoute) {}
 
     ngOnInit() {
-        let profileId = Number(this.route.snapshot.paramMap.get('id'));
-        this.store.dispatch(ProfilesDetailsActions.loadProfileDetails({ profileId }));
+        this.currentProfile$ = this.route.paramMap.pipe(
+            tap((params: ParamMap) => {
+                let profileId = Number(params.get('id'));
+                this.store.dispatch(ProfilesDetailsActions.loadProfileDetails({ profileId }));
+            }),
+            mergeMap(() => this.store.select(fromAuth.getProfile))
+        );
 
-        this.currentProfile$ = this.store.select(fromAuth.getProfile);
         this.isAuth$ = this.store.select(fromAuth.isAuth);
 
-        this.store
-            .select(fromProfiles.getProfileDetails)
-            .pipe(
-                filter(value => value != null),
-                takeUntil(this.unsubscribe)
-            )
-            .subscribe(result => {
-                this.profile = result;
-                this.model = ProfileModel.fromProfileResponse(result);
-            });
+        this.profile$ = this.store.select(fromProfiles.getProfileDetails);
+        this.model$ = this.store.select(fromProfiles.getProfileModel);
 
         this.filteredCities$.pipe(
             takeUntil(this.unsubscribe),
@@ -63,18 +61,16 @@ export class GeekItemDetailsComponent implements OnInit, OnDestroy {
     }
 
     public onUpdateProfile(model: ProfileModel) {
-        this.store.dispatch(ProfilesDetailsActions.updateProfile({ profileId: this.profile.id, model }));
+        this.store.dispatch(ProfilesDetailsActions.updateProfile({ profileId: this.profileId, model }));
     }
 
     public onAddSkill() {
         let model = new SkillModel();
-        this.store.dispatch(ProfilesDetailsActions.openAddSkillDialog({ profileId: this.profile.id, model }));
+        this.store.dispatch(ProfilesDetailsActions.openAddSkillDialog({ profileId: this.profileId, model }));
     }
 
-    public onEditSkill(skillId: number) {
-        let skill = this.profile.skills.find(s => s.id === skillId);
-        let model = new SkillModel(skill.name, skill.description);
-        this.store.dispatch(ProfilesDetailsActions.openEditSkillDialog({ profileId: this.profile.id, model }));
+    public onEditSkill(model: SkillModel) {
+        this.store.dispatch(ProfilesDetailsActions.openEditSkillDialog({ profileId: this.profileId, model }));
     }
 
     ngOnDestroy(): void {

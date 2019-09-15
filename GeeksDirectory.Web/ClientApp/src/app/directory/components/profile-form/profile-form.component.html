@@ -1,0 +1,37 @@
+<form #profForm="ngForm">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Name" id="name" name="name" [(ngModel)]="model.name" #name="ngModel"
+            [disabled]="!editable" required />
+        <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Surname</mat-label>
+        <input type="text" matInput placeholder="Surname" [(ngModel)]="model.surname" #surname="ngModel" id="surname"
+            name="surname" [disabled]="!editable" required />
+        <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']">Surname is
+            required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" *ngIf="model.middleName || editable">
+        <mat-label>Middle Name</mat-label>
+        <input type="text" matInput placeholder="Middle Name" [(ngModel)]="model.middleName" #middleName="ngModel"
+            id="middleName" name="middleName" [disabled]="!editable" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <input type="text" placeholder="Cities" aria-label="City" matInput [matAutocomplete]="auto"
+            [(ngModel)]="model.city" #city name="city" id="city" [disabled]="!editable" required
+            (keyup)="onChangeCity()" />
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let city of cities" [value]="city">
+                {{city}}
+            </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="!city.valid && !city.pristine">City is required</mat-error>
+    </mat-form-field>
+</form>
