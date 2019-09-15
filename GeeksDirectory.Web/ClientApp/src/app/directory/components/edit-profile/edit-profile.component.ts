@@ -24,8 +24,8 @@ export class EditProfileComponent {
 
     constructor() {}
 
-    public onChangeCity() {
-        this.changedCity.emit(this.model.city);
+    public onChangeCity(value: string) {
+        this.changedCity.emit(value);
     }
 
     public onEditSkill(model: SkillModel) {

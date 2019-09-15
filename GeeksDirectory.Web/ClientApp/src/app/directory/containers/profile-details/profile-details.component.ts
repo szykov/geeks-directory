@@ -38,8 +38,8 @@ export class GeekItemDetailsComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.currentProfile$ = this.route.paramMap.pipe(
             tap((params: ParamMap) => {
-                let profileId = Number(params.get('id'));
-                this.store.dispatch(ProfilesDetailsActions.loadProfileDetails({ profileId }));
+                this.profileId = Number(params.get('id'));
+                this.store.dispatch(ProfilesDetailsActions.loadProfileDetails({ profileId: this.profileId }));
             }),
             mergeMap(() => this.store.select(fromAuth.getProfile))
         );

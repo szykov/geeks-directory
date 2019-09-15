@@ -5,8 +5,8 @@
             <input type="email" matInput id="email" name="email" [value]="profile.email" disabled />
         </mat-form-field>
 
-        <gd-profile-form [model]="model" [cities]="cities" [editable]="editProfile" (changeCity)="onChangeCity($event)"
-            (updateProfile)="onSubmit($event)"></gd-profile-form>
+        <gd-profile-form [model]="model" [cities]="cities" [editable]="editProfile" (changeCity)="onChangeCity($event)">
+        </gd-profile-form>
 
         <div class="skills-header">
             <span class="title-header">Skills</span>

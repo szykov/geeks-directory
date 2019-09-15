@@ -13,15 +13,10 @@ export class ProfileFormComponent {
     @Input() cities: string[];
 
     @Output() changeCity = new EventEmitter();
-    @Output() updateProfile = new EventEmitter();
 
     constructor() {}
 
     public onChangeCity() {
         this.changeCity.emit(this.model.city);
-    }
-
-    public onSubmit() {
-        this.updateProfile.emit(this.model);
     }
 }
