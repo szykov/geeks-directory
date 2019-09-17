@@ -10,6 +10,7 @@ export class TopbarComponent {
     @Input() title: string;
     @Input() isAuth = false;
 
+    @Output() goToProfile = new EventEmitter();
     @Output() signOut = new EventEmitter();
     @Output() drawerToggle = new EventEmitter();
 

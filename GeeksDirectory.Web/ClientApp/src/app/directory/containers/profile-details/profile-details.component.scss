@@ -1,0 +1,9 @@
+.profile-container {
+    width: 500px;
+}
+
+@media only screen and (max-width: 500px) {
+    .profile-container {
+        width: 100%;
+    }
+}

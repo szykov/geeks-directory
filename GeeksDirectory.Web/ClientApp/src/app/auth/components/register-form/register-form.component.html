@@ -41,13 +41,29 @@
 
     <mat-form-field>
         <input type="password" matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
-            [(ngModel)]="model.password" #password="ngModel" id="password" name="password" minlength="6" required />
+            [(ngModel)]="model.password" #password="ngModel" id="password" name="password" minlength="6" gdNoWhiteSpace
+            gdHasLowerCase gdHasUpperCase gdHasNumber [gdSpecialCharacter]="true" required />
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
         <mat-error *ngIf="!password.valid && !password.pristine && password.errors['required']">Password
             is required
+        </mat-error>
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['noWhiteSpace']">Password
+            should not have white spaces
+        </mat-error>
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasLowerCase']">Password
+            should have lower case letters
+        </mat-error>
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasUpperCase']">Password
+            should have upper case letters
+        </mat-error>
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasNumber']">Password
+            should have numbers
+        </mat-error>
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['specialCharacter']">Password
+            should have special letters
         </mat-error>
         <mat-error *ngIf="!password.valid && !password.pristine && password.errors['minlength']">
             Password must be of

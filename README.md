@@ -1,10 +1,13 @@
 # GeeksDirectory
+
 Web site for assessment of competence in technology
 
 ## Demo
+
 http://geeks-directory.azurewebsites.net/
 
 ## Functionality
+
 1. Non-authentificated user can see list of others profiles or search for them.
 2. User profile contains: Name, Surname, Middle Name, City, Email and etc.
 3. User can search by Name, Surname, Middle name, City.
@@ -15,23 +18,24 @@ http://geeks-directory.azurewebsites.net/
 8. User is not allowed to remove skills.
 
 ## TODO:
+
 1. ~~Add Web API methods.~~
 2. ~~Make database with EF Core code-first;~~
 3. ~~Add API model validations;~~
 4. ~~Add Oauth Token authentification;~~
-6. ~~Add SignIn page;~~
-7. ~~Add Registration page;~~
-8. ~~Add View Profile page;~~
-9. ~~Add Cookie/LocalStorage support;~~
-10. ~~Add Edit Profile page~~;
-11. ~~Add Skills adding functionality~~;
-12. ~~Add Skills assessment functionality~~;
-13. ~~Update layout for small screen support~~;
-14. Search functionality;
-15. Limit editing profile to personal one on server side;
-16. Add more validations for password and skill's name;
-17. Get previous score when evaluate skill;
-18. Add tests;
-19. Refactoring / code review;
+5. ~~Add SignIn page;~~
+6. ~~Add Registration page;~~
+7. ~~Add View Profile page;~~
+8. ~~Add Cookie/LocalStorage support;~~
+9. ~~Add Edit Profile page~~;
+10. ~~Add Skills adding functionality~~;
+11. ~~Add Skills assessment functionality~~;
+12. ~~Update layout for small screen support~~;
+13. Search functionality;
+14. Limit editing profile to personal one on server side;
+15. ~~Add more validations for password and skill's name~~;
+16. Get previous score when evaluate skill;
+17. Add tests;
+18. Refactoring / code review;
 
 ...

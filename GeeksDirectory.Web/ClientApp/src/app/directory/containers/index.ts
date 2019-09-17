@@ -1,2 +1,2 @@
-export * from './geek-list/geek-list.component';
-export * from './geek-item-details/geek-item-details.component';
+export * from "./profile-list/profile-list.component";
+export * from "./profile-details/profile-details.component";

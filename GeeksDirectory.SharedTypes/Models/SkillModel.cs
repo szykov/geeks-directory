@@ -7,7 +7,8 @@ namespace GeeksDirectory.SharedTypes.Models
     public class SkillModel
     {
         [Required]
-        [NoWhitespaceValidation(ErrorMessage = "The field {0} shouldn't have white spaces.")]
+        [NoWhitespace]
+        [SpecialCharacter(false)]
         [StringLength(maximumLength: 50)]
         public string Name { get; set; }
 

@@ -1,0 +1,20 @@
+.skill-chip {
+    height: 40px;
+    cursor: pointer;
+
+    .mat-badge {
+        margin-right: 10px;
+    }
+
+    .mat-badge-content {
+        right: -18px;
+    }
+}
+
+.add-skill {
+    margin-left: 10px;
+    mat-icon {
+        width: 40px;
+        font-size: 40px;
+    }
+}

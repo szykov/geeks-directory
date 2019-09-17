@@ -1,32 +1,52 @@
-import { Injectable } from '@angular/core';
-import { Observable, merge } from 'rxjs';
-import { mapTo, filter } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { Observable, merge } from "rxjs";
+import { mapTo, filter } from "rxjs/operators";
 
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 
-import { SkillModel } from '@app/models';
-import { DialogChoice } from '@shared/common';
-import { AddSkillDialogComponent } from '@shared/components';
-import { ComponentType } from '@angular/cdk/portal';
+import { SkillModel } from "@app/models";
+import {
+  DialogChoice,
+  ISkillsDialogResult,
+  ISkillsDialogData
+} from "@shared/common";
+import { AddSkillDialogComponent } from "@shared/components";
+import { ComponentType } from "@angular/cdk/portal";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: "root"
 })
 export class DialogService {
-    constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {}
 
-    public addSkillDialog(isNew: boolean = true, model?: SkillModel): Observable<{ choice: DialogChoice; data: SkillModel }> {
-        return this.baseDialog(AddSkillDialogComponent, {
-            height: '410px',
-            width: '400px',
-            data: { isNew, model }
-        });
-    }
+  public addSkillDialog(profileId: number): Observable<ISkillsDialogResult> {
+    let model = new SkillModel();
+    let data: ISkillsDialogData = { isNew: true, profileId, model };
+    return this.baseDialog(AddSkillDialogComponent, { data });
+  }
 
-    private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<{ choice: any; data: any }> {
-        const dialogRef = this.dialog.open(component, config);
-        let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
+  public editSkillDialog(
+    profileId: number,
+    model: SkillModel
+  ): Observable<ISkillsDialogResult> {
+    let data: ISkillsDialogData = { isNew: false, profileId, model };
+    return this.baseDialog(AddSkillDialogComponent, { data });
+  }
 
-        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter(result => result != null));
-    }
+  private baseDialog(
+    component: ComponentType<any>,
+    config: MatDialogConfig
+  ): Observable<ISkillsDialogResult> {
+    config.height = "410px";
+    config.width = "400px";
+
+    const dialogRef = this.dialog.open(component, config);
+    let backDrop$ = dialogRef
+      .backdropClick()
+      .pipe(mapTo({ choice: DialogChoice.Canceled }));
+
+    return merge(dialogRef.afterClosed(), backDrop$).pipe(
+      filter(result => result != null)
+    );
+  }
 }
