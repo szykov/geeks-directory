@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { mergeMap, map, tap, exhaustMap, catchError } from 'rxjs/operators';
 
-import { RequestService, NotificationService, DialogService } from '@app/services';
+import { RequestService, NotificationService } from '@app/services';
+import { DialogService } from '@app/services';
 import { ProfilesDetailsActions, SkillsApiActions, SkillsDialog } from '../actions';
-import { DialogChoice } from '@app/shared/common';
+import { DialogChoice } from '@shared/common';
 import { of } from 'rxjs';
 
 @Injectable()

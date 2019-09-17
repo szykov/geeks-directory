@@ -14,7 +14,7 @@ import { IProfile } from '@app/responses';
         fadeOutUpOnLeaveAnimation({ anchor: 'leave', duration: 500, delay: 200, translate: '40px' })
     ]
 })
-export class GeekListItemComponent {
+export class ProfileCardComponent {
     @Input() profile: IProfile;
 
     constructor() {}

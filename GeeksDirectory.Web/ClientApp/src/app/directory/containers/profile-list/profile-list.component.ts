@@ -13,7 +13,7 @@ import { ProfilesListActions } from '@app/directory/actions';
     styleUrls: ['./profile-list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GeekListComponent implements OnInit {
+export class ProfileListComponent implements OnInit {
     public profiles$: Observable<IProfile[]>;
 
     constructor(private store: Store<fromProfiles.State>) {}

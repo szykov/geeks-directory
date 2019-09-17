@@ -20,7 +20,7 @@ import { ProfilesDetailsActions } from '@app/directory/actions';
     styleUrls: ['./profile-details.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GeekItemDetailsComponent implements OnInit, OnDestroy {
+export class ProfileDetailsComponent implements OnInit, OnDestroy {
     private profileId: number;
 
     public currentProfile$: Observable<IProfile>;
