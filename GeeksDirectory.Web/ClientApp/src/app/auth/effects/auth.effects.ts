@@ -120,15 +120,24 @@ export class AuthEffects {
         { dispatch: false }
     );
 
-    registerProfileSuccess$ = createEffect(() =>
+    registerProfile$ = createEffect(() =>
         this.actions$.pipe(
             ofType(RegistrationActions.registerProfile),
-            tap(() => this.router.navigate(['/'])),
-            tap(() => this.notificationService.showSuccess('You have been registered. Great!')),
             mergeMap(({ profile }) => {
                 let credentials = new CredentialsModel(profile.email, profile.password);
-                return this.authService.registerProfile(profile).pipe(map(() => AuthActions.signInOk({ credentials })));
+                return this.authService
+                    .registerProfile(profile)
+                    .pipe(map(() => AuthApiActions.registerProfileSuccess({ credentials })));
             })
+        )
+    );
+
+    registerProfileSuccess$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(AuthApiActions.registerProfileSuccess),
+            tap(() => this.router.navigate(['/'])),
+            tap(() => this.notificationService.showSuccess('You have been registered. Great!')),
+            map(({ credentials }) => AuthActions.signInOk({ credentials }))
         )
     );
 }

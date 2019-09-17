@@ -8,13 +8,18 @@ namespace GeeksDirectory.SharedTypes.Models
     {
         [Required]
         [EmailAddress]
-        [NoWhitespaceValidation(ErrorMessage = "The field {0} shouldn't have white spaces.")]
+        [NoWhitespace]
         [StringLength(maximumLength: 255)]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [StringLength(maximumLength: 255)]
+        [LowerCase]
+        [UpperCase]
+        [NoWhitespace]
+        [HasNumber]
+        [SpecialCharacter(true)]
+        [StringLength(maximumLength: 255, MinimumLength = 6)]
         public string Password { get; set; }
     }
 }
