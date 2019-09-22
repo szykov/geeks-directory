@@ -1,11 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from 'rxjs';
 
-import { Store, select } from '@ngrx/store';
-import * as fromProfiles from '@app/directory/reducers';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { IProfile } from '@app/responses';
-import { ProfilesListActions } from '@app/directory/actions';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'gd-profile-list',
@@ -16,10 +15,9 @@ import { ProfilesListActions } from '@app/directory/actions';
 export class ProfileListComponent implements OnInit {
     public profiles$: Observable<IProfile[]>;
 
-    constructor(private store: Store<fromProfiles.State>) {}
+    constructor(private route: ActivatedRoute) {}
 
     ngOnInit() {
-        this.store.dispatch(ProfilesListActions.loadProfiles());
-        this.profiles$ = this.store.pipe(select(fromProfiles.getProfiles));
+        this.profiles$ = this.route.data.pipe(map(result => result.data));
     }
 }

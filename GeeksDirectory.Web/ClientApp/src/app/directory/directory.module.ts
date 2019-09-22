@@ -10,6 +10,7 @@ import { SharedModule } from '@shared/shared.module';
 import { DirectoryRoutingModule } from './directory-routing.module';
 import { ProfileListComponent, ProfileDetailsComponent } from './containers';
 import { ProfileCardComponent, EditProfileComponent, ProfileSkillsComponent, ProfileFormComponent } from './components';
+import { ProfileListResolveGuard, ProfileResolveGuard } from './resolvers';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { ProfileCardComponent, EditProfileComponent, ProfileSkillsComponent, Pro
         SharedModule,
         StoreModule.forFeature('directory', reducers),
         EffectsModule.forFeature([ProfileEffects, SkillsEffects])
-    ]
+    ],
+    providers: [ProfileListResolveGuard, ProfileResolveGuard]
 })
 export class DirectoryModule {}
