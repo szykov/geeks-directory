@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { takeUntil, debounceTime, filter, switchMap, tap, map, mergeMap } from 'rxjs/operators';
+import { takeUntil, debounceTime, map } from 'rxjs/operators';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 import { Store } from '@ngrx/store';
@@ -37,6 +37,10 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.currentProfile$ = this.route.data.pipe(map(result => result.data));
+
+        this.route.paramMap.subscribe((params: ParamMap) => {
+            this.profileId = Number(params.get('id'));
+        });
 
         this.isAuth$ = this.store.select(fromAuth.isAuth);
 
