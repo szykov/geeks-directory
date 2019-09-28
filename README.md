@@ -21,8 +21,10 @@ To login use profile's email and password. Password is always `Pa$$w0rd`.
 
 ## Build
 
-1. Check `ConnectionStrings` in `appsettings.development.json`. There will be created a new **sqlite** db when applied migrations;
-2. Open terminal with the path of project `GeeksDirectory.Data`. Update database with migrations `dotnet ef database update -s "../GeeksDirectory.Web"`;
+1. Check `ConnectionStrings` in `appsettings.development.json`. <br />
+There will be created a new **sqlite** db when applied migrations;
+2. Open terminal with the path of project `GeeksDirectory.Data`. <br />
+Update database with migrations `dotnet ef database update -s "../GeeksDirectory.Web"`;
 3. Run angular in watch mode `ng serve` or `npm run start`;
 4. Run in Visual Studio;
 
