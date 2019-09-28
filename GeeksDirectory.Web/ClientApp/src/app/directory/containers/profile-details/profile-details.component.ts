@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { takeUntil, debounceTime, filter, switchMap, tap, map, mergeMap } from 'rxjs/operators';
+import { takeUntil, debounceTime, map } from 'rxjs/operators';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 import { Store } from '@ngrx/store';
@@ -20,7 +20,7 @@ import { ProfilesDetailsActions } from '@app/directory/actions';
     styleUrls: ['./profile-details.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GeekItemDetailsComponent implements OnInit, OnDestroy {
+export class ProfileDetailsComponent implements OnInit, OnDestroy {
     private profileId: number;
 
     public currentProfile$: Observable<IProfile>;
@@ -36,17 +36,15 @@ export class GeekItemDetailsComponent implements OnInit, OnDestroy {
     constructor(private store: Store<fromState.State>, private route: ActivatedRoute) {}
 
     ngOnInit() {
-        this.currentProfile$ = this.route.paramMap.pipe(
-            tap((params: ParamMap) => {
-                this.profileId = Number(params.get('id'));
-                this.store.dispatch(ProfilesDetailsActions.loadProfileDetails({ profileId: this.profileId }));
-            }),
-            mergeMap(() => this.store.select(fromAuth.getProfile))
-        );
+        this.profile$ = this.store.select(fromProfiles.getProfileDetails);
+
+        this.route.paramMap.pipe(takeUntil(this.unsubscribe)).subscribe((params: ParamMap) => {
+            this.profileId = Number(params.get('id'));
+        });
 
         this.isAuth$ = this.store.select(fromAuth.isAuth);
+        this.currentProfile$ = this.store.select(fromAuth.getProfile);
 
-        this.profile$ = this.store.select(fromProfiles.getProfileDetails);
         this.model$ = this.store.select(fromProfiles.getProfileModel);
 
         this.filteredCities$.pipe(
@@ -60,8 +58,8 @@ export class GeekItemDetailsComponent implements OnInit, OnDestroy {
         this.filteredCities$.next(cities);
     }
 
-    public onUpdateProfile(model: ProfileModel) {
-        this.store.dispatch(ProfilesDetailsActions.updateProfile({ profileId: this.profileId, model }));
+    public onUpdatePersonalProfile(model: ProfileModel) {
+        this.store.dispatch(ProfilesDetailsActions.updatePersonalProfile({ model }));
     }
 
     public onAddSkill() {

@@ -61,6 +61,8 @@ namespace GeeksDirectory.Data.Repositories
             }
 
             var profile = this.context.Profiles
+                .Include(prf => prf.Skills)
+                .Include(prf => prf.User)
                 .Where(prf => prf.User.UserName == userName)
                 .SingleOrDefault();
 
@@ -79,12 +81,13 @@ namespace GeeksDirectory.Data.Repositories
                 throw new ArgumentNullException(paramName: nameof(searchQuery));
             }
 
-            return this.context.Profiles.Where(prf => EF.Functions.FreeText(prf.Name, searchQuery))
-                .Where(prf => EF.Functions.FreeText(prf.Surname, searchQuery))
-                .Where(prf => EF.Functions.FreeText(prf.MiddleName, searchQuery))
-                .Where(prf => EF.Functions.FreeText(prf.City, searchQuery))
-                .Where(prf => EF.Functions.FreeText(String.Join(String.Empty, prf.Skills.Select(s => s.Description)), searchQuery))
-                .Where(prf => EF.Functions.FreeText(String.Join(String.Empty, prf.Skills.Select(s => s.Name)), searchQuery));
+            return this.context.Profiles.Where(prf => 
+                EF.Functions.Like(prf.Name, searchQuery) ||
+                EF.Functions.Like(prf.Surname, searchQuery) ||
+                EF.Functions.Like(prf.MiddleName, searchQuery) ||
+                EF.Functions.Like(prf.City, searchQuery) ||
+                EF.Functions.Like(String.Join(" ", prf.Skills.Select(s => s.Description)), searchQuery) ||
+                EF.Functions.Like(String.Join(" ", prf.Skills.Select(s => s.Name)), searchQuery));
         }
 
         public void Update(GeekProfile profile)

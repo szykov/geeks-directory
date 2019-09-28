@@ -84,11 +84,11 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public GeekProfileResponse Update(int profileId, GeekProfileModel profile)
+        public GeekProfileResponse Update(string userName, GeekProfileModel profile)
         {
             try
             {
-                var entity = this.repository.Get(profileId);
+                var entity = this.repository.Get(userName);
                 this.mapper.Map(profile, entity);
 
                 this.repository.Update(entity);

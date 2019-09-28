@@ -12,7 +12,7 @@ import { AuthActions, AuthApiActions, SignInDialogActions, RegistrationActions }
 import { RequestTokenModel, CredentialsModel } from '@app/auth/models';
 import { AuthService, AuthDialogService } from '@app/auth/services';
 import { StorageService, NotificationService } from '@app/services';
-import { DialogChoice } from '@app/shared/common';
+import { DialogChoice } from '@shared/common';
 
 @Injectable()
 export class AuthEffects {

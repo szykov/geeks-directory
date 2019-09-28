@@ -8,6 +8,7 @@ import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from 
 })
 export class TopbarComponent {
     @Input() title: string;
+    @Input() fullName: string;
     @Input() isAuth = false;
 
     @Output() goToProfile = new EventEmitter();

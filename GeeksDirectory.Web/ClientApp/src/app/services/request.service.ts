@@ -29,8 +29,8 @@ export class RequestService {
         return this.http.get<IProfile>(url, { headers: this.headers });
     }
 
-    public updateProfile(profileId: number, profile: ProfileModel): Observable<IProfile> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.updateProfile, profileId.toString());
+    public updatePersonalProfile(profile: ProfileModel): Observable<IProfile> {
+        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.updatePersonalProfile);
         return this.http.patch<IProfile>(url, profile, { headers: this.headers });
     }
 

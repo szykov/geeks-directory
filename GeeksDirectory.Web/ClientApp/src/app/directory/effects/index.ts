@@ -1,2 +1,2 @@
-export * from './profiles.effects';
-export * from './skills.effects';
+export * from "./profiles.effects";
+export * from "./skills.effects";

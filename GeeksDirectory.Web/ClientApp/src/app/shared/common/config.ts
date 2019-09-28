@@ -11,7 +11,7 @@ export let CONFIG = {
             getProfile: 'profiles/{0}',
             getMyProfile: 'profiles/me',
             registerProfile: 'profiles',
-            updateProfile: 'profiles/{0}',
+            updatePersonalProfile: 'profiles/me',
             getSkill: 'profiles/{0}/skills',
             addSkill: 'profiles/{0}/skills',
             setSkillScore: 'profiles/{0}/skills/{1}/score'

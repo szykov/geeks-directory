@@ -7,4 +7,7 @@ export const loadProfileDetailsSuccess = createAction(
     props<{ selected: IProfile }>()
 );
 
-export const updateProfileSuccess = createAction('[Profiles/API] Update Profile Success', props<{ selected: IProfile }>());
+export const updatePersonalProfileSuccess = createAction(
+    '[Profiles/API] Update Personal Profile Success',
+    props<{ selected: IProfile }>()
+);

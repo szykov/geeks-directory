@@ -24,7 +24,7 @@ export const reducer = createReducer(
         ...state,
         selected
     })),
-    on(ProfilesApiActions.updateProfileSuccess, (state, { selected }) => ({
+    on(ProfilesApiActions.updatePersonalProfileSuccess, (state, { selected }) => ({
         ...state,
         selected
     })),

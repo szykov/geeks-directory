@@ -8,8 +8,18 @@ import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-ani
     styleUrls: ['./viewer-container.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
-        fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' }),
-        fadeOutUpOnLeaveAnimation({ anchor: 'leave', duration: 500, delay: 200, translate: '40px' })
+        fadeInUpOnEnterAnimation({
+            anchor: 'enter',
+            duration: 500,
+            delay: 100,
+            translate: '30px'
+        }),
+        fadeOutUpOnLeaveAnimation({
+            anchor: 'leave',
+            duration: 500,
+            delay: 200,
+            translate: '40px'
+        })
     ]
 })
 export class ViewerContainerComponent {

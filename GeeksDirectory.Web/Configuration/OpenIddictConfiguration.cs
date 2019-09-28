@@ -17,7 +17,7 @@ namespace GeeksDirectory.Web.Configuration
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 // Configure the context to use Microsoft SQL Server.
-                options.UseSqlServer(connectionString);
+                options.UseSqlite(connectionString);
 
                 // Register the entity sets needed by OpenIddict.
                 // Note: use the generic overload if you need

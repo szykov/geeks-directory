@@ -8,7 +8,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducers } from '@app/auth/reducers';
 import { AuthEffects } from '@app/auth/effects';
 
-import { SharedModule } from '@app/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SignInDialogComponent } from './components';
 import { RegisterShellComponent } from './containers';
