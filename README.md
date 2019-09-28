@@ -6,6 +6,8 @@ Web site for assessment of competence in technologies.
 
 http://geeks-directory.azurewebsites.net/
 
+To login use profile's email and password. Password is always `Pa$$w0rd`.
+
 ## Functionality
 
 1. Non-authentificated user can see list of others profiles or search for them.
