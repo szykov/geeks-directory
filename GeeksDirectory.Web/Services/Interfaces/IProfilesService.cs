@@ -16,7 +16,7 @@ namespace GeeksDirectory.Web.Services.Interfaces
 
         IEnumerable<GeekProfileResponse> Search(string searchQuery);
 
-        GeekProfileResponse Update(int profileId, GeekProfileModel model);
+        GeekProfileResponse Update(string userName, GeekProfileModel model);
 
         Task<GeekProfileResponse> AddAsync(CreateGeekProfileModel model);
     }

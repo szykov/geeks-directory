@@ -61,6 +61,8 @@ namespace GeeksDirectory.Data.Repositories
             }
 
             var profile = this.context.Profiles
+                .Include(prf => prf.Skills)
+                .Include(prf => prf.User)
                 .Where(prf => prf.User.UserName == userName)
                 .SingleOrDefault();
 

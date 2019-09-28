@@ -118,13 +118,15 @@ namespace GeeksDirectory.Web.Controllers
             }
         }
 
-        // PATCH: /api/profiles/{id}
-        [HttpPatch("{id}")]
-        public ActionResult<GeekProfileResponse> UpdateProfile([FromRoute]int id, [FromBody]GeekProfileModel model)
+        // PATCH: /api/profiles/me
+        [HttpPatch("me")]
+        public ActionResult<GeekProfileResponse> UpdateProfile([FromBody]GeekProfileModel model)
         {
             try
             {
-                var profile = this.context.Update(id, model);
+                var userName = this.User.Identity.Name;
+
+                var profile = this.context.Update(userName, model);
                 return this.Ok(profile);
             }
             catch (LogicException ex)

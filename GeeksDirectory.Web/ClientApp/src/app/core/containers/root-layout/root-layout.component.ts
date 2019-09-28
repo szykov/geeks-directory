@@ -15,11 +15,12 @@ import { IProfile } from '@app/responses';
     selector: 'gd-root-layout',
     templateUrl: './root-layout.component.html',
     styleUrls: ['./root-layout.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class RootLayoutComponent implements OnInit, OnDestroy {
     public isAuth$: Observable<boolean>;
     public personalProfile: IProfile;
+    public fullName: string;
 
     private unsubscribe: Subject<void> = new Subject();
 
@@ -37,7 +38,10 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
         this.store
             .select(fromAuth.getProfile)
             .pipe(takeUntil(this.unsubscribe))
-            .subscribe(result => (this.personalProfile = result));
+            .subscribe(result => {
+                this.personalProfile = result;
+                this.fullName = this.personalProfile.fullName;
+            });
     }
 
     public onSignOut() {

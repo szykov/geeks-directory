@@ -5,13 +5,12 @@ import { mergeMap, map, tap } from 'rxjs/operators';
 import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions } from '@app/directory/actions';
 
 import { RequestService, NotificationService } from '@app/services';
-import { DialogService } from '@app/services';
+import { AuthApiActions } from '@app/auth/actions';
 
 @Injectable()
 export class ProfileEffects {
     constructor(
         private requestService: RequestService,
-        private dialogService: DialogService,
         private notificationService: NotificationService,
         private actions$: Actions
     ) {}
@@ -38,15 +37,22 @@ export class ProfileEffects {
         )
     );
 
-    updateProfile$ = createEffect(() =>
+    updatePersonalProfile$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProfilesDetailsActions.updateProfile),
-            mergeMap(({ profileId, model }) =>
-                this.requestService.updateProfile(profileId, model).pipe(
-                    tap(() => this.notificationService.showSuccess('Profile has been updated.')),
-                    map(result => ProfilesApiActions.updateProfileSuccess({ selected: result }))
+            ofType(ProfilesDetailsActions.updatePersonalProfile),
+            mergeMap(({ model }) =>
+                this.requestService.updatePersonalProfile(model).pipe(
+                    tap(() => this.notificationService.showSuccess('Personal profile has been updated.')),
+                    map(result => ProfilesApiActions.updatePersonalProfileSuccess({ selected: result }))
                 )
             )
+        )
+    );
+
+    updatePersonalProfileSuccess$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ProfilesApiActions.updatePersonalProfileSuccess),
+            map(({ selected }) => AuthApiActions.personalizeSuccess({ profile: selected }))
         )
     );
 }

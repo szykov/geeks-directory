@@ -238,17 +238,17 @@ namespace GeeksDirectory.Data.Seed
 
             var data = new List<SkillSeedModel>()
                 {
-                    new SkillSeedModel() { Name = "csharp", Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do."},
-                    new SkillSeedModel() { Name = "javascript", Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam."},
-                    new SkillSeedModel() { Name = "angular", Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit."},
-                    new SkillSeedModel() { Name = "java", Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam."},
-                    new SkillSeedModel() { Name = "python", Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum."},
-                    new SkillSeedModel() { Name = "cpp", Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum."},
-                    new SkillSeedModel() { Name = "php", Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam."},
-                    new SkillSeedModel() { Name = "swift", Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit."},
-                    new SkillSeedModel() { Name = "ruby", Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum."},
-                    new SkillSeedModel() { Name = "objective_c", Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam."},
-                    new SkillSeedModel() { Name = "sql", Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum."}
+                    new SkillSeedModel() { Name = "csharp", Description = "Lorem ipsum dolor sit amet."},
+                    new SkillSeedModel() { Name = "javascript", Description = "Quis autem eum iur velit esse quam."},
+                    new SkillSeedModel() { Name = "angular", Description = "Nemo enim sit aspernatur aut odit."},
+                    new SkillSeedModel() { Name = "java", Description = "Ut enim ad minima, exercitationem ullam."},
+                    new SkillSeedModel() { Name = "python", Description = "Excepteur sint in culpa id est laborum."},
+                    new SkillSeedModel() { Name = "cpp", Description = "Excepteur occaecat cupida proident, suntid est."},
+                    new SkillSeedModel() { Name = "php", Description = "Quis autem vel eum iure repreherit in ea quam."},
+                    new SkillSeedModel() { Name = "swift", Description = "Nemo enim ipsam voptatem aut odit."},
+                    new SkillSeedModel() { Name = "ruby", Description = "Excepteur sint cupitat, anim id est laborum."},
+                    new SkillSeedModel() { Name = "objective_c", Description = "Ut enim ad exercitationem ullam."},
+                    new SkillSeedModel() { Name = "sql", Description = "Excepteur sint occaecat prodent, est laborum."}
                 };
 
             var length = data.Count - 1;

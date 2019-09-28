@@ -3,7 +3,8 @@
         <gd-edit-profile [profile]="profile$ | async" [model]="model$ | async"
             [editProfile]="(currentProfile$ | async)?.id == (profile$ | async)?.id" [editSkills]="isAuth$ | async"
             [cities]="filteredCities$ | async" (changedCity)="onChangeCity($event)"
-            (updateProfile)="onUpdateProfile($event)" (newSkill)="onAddSkill()" (editSkill)="onEditSkill($event)">
+            (updateProfile)="onUpdatePersonalProfile($event)" (newSkill)="onAddSkill()"
+            (editSkill)="onEditSkill($event)">
         </gd-edit-profile>
     </div>
 </div>

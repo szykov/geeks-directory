@@ -36,9 +36,9 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
     constructor(private store: Store<fromState.State>, private route: ActivatedRoute) {}
 
     ngOnInit() {
-        this.profile$ = this.route.data.pipe(map(result => result.data));
+        this.profile$ = this.store.select(fromProfiles.getProfileDetails);
 
-        this.route.paramMap.subscribe((params: ParamMap) => {
+        this.route.paramMap.pipe(takeUntil(this.unsubscribe)).subscribe((params: ParamMap) => {
             this.profileId = Number(params.get('id'));
         });
 
@@ -58,8 +58,8 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
         this.filteredCities$.next(cities);
     }
 
-    public onUpdateProfile(model: ProfileModel) {
-        this.store.dispatch(ProfilesDetailsActions.updateProfile({ profileId: this.profileId, model }));
+    public onUpdatePersonalProfile(model: ProfileModel) {
+        this.store.dispatch(ProfilesDetailsActions.updatePersonalProfile({ model }));
     }
 
     public onAddSkill() {

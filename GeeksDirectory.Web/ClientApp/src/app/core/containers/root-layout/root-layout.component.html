@@ -1,5 +1,5 @@
-<gd-topbar title="Geeks Directory" [fullName]="personalProfile?.fullName" [isAuth]="isAuth$ | async"
-    (drawerToggle)="drawer.toggle()" (signOut)="onSignOut()" (goToProfile)="onGoToProfile()">
+<gd-topbar title="Geeks Directory" [fullName]="fullName" [isAuth]="isAuth$ | async" (drawerToggle)="drawer.toggle()"
+    (signOut)="onSignOut()" (goToProfile)="onGoToProfile()">
 </gd-topbar>
 
 <mat-drawer-container class="drawer-container">
