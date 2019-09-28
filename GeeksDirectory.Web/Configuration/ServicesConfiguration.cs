@@ -14,7 +14,7 @@ namespace GeeksDirectory.Web.Configuration
         public static IServiceCollection AddPredefinedServices(this IServiceCollection services, string connectionString)
         {
             // Services
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(connectionString));
 
             services.AddScoped<IMapperService, MapperService>();
 

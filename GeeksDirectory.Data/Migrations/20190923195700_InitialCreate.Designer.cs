@@ -3,23 +3,20 @@ using System;
 using GeeksDirectory.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GeeksDirectory.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190921175653_InitialCreate")]
+    [Migration("20190923195700_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
             modelBuilder.Entity("GeeksDirectory.Data.Entities.ApplicationUser", b =>
                 {
@@ -66,8 +63,7 @@ namespace GeeksDirectory.Data.Migrations
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+                        .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
 
@@ -76,15 +72,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "b8eb90fa-e25a-43e1-a5b6-dadfc2bcf2a1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e5fade06-d6a6-4e23-bf56-ab678b5082c1",
+                            ConcurrencyStamp = "dc15ffea-704e-4bc2-819c-2f6e93120692",
                             Email = "sergey.zykov@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "SERGEY.ZYKOV@MAIL.SOME",
                             NormalizedUserName = "SERGEY.ZYKOV@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEACZ58zdtzy3DNmEujYTg6fSy0dpcqgopBzCAYvcRrN2Gz6/g+uJuNIA4m9VsAA/qw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELnOrTUIse1FYOicgj9azB8fg2VDZC6sHgEsUOQvfcPfn0GyruNOsJ5rVNiCLeoh3Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f1549963-5171-45ef-b96f-9ec05d7274a2",
+                            SecurityStamp = "1b4a91bc-d37d-4e13-ac8c-5f0c6fdf5c09",
                             TwoFactorEnabled = false,
                             UserName = "sergey.zykov@mail.some"
                         },
@@ -92,15 +88,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "0a50dbc4-23b5-4e0d-b588-0a7a72df0ed1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4d69d7a-656e-472b-b057-1b37b69213bf",
+                            ConcurrencyStamp = "f0a539c7-527f-4f8d-98c6-efeae6b7d032",
                             Email = "john.smith@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "JOHN.SMITH@MAIL.SOME",
                             NormalizedUserName = "JOHN.SMITH@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB8W5NLTfuXUQB1lDiT4Z0mXjcMHmcGIJjqPDHZ0p8EeXaU6ULXIBne23O/b2la6Sw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPaTyUGwJTpb4cEDcA+7NqoK8WpH+GN/zux41wPII1KHilSch7vC8XMwC8NlynRiRQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "babf4b69-99d7-4f08-aa49-55772f6b09bf",
+                            SecurityStamp = "2ca8d982-623f-4849-86cb-7333d85f1d00",
                             TwoFactorEnabled = false,
                             UserName = "john.smith@mail.some"
                         },
@@ -108,15 +104,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "3fa5371e-5d44-42c6-b71f-daf3d38b2c5b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "26c036d9-5bbd-4b88-8c50-03b20e83db26",
+                            ConcurrencyStamp = "ee1e1cc3-dbad-4e37-b9ee-6dccccf27261",
                             Email = "ivan.ivanov@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "IVAN.IVANOV@MAIL.SOME",
                             NormalizedUserName = "IVAN.IVANOV@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIeDS/oYm0kqJFQgOfTa/K6c160ARrzGRaUndDQuxB5uJMejZ3l6XqdcD5VGCHbKFg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIHEvcfSLH0zdDuszArTNQJHtyppVo6cHMKvqI04fI6XVeX14Nd0uFQPNQ7NYNnIKA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "87f11ffc-4085-4e4a-8619-4af4a7e174c4",
+                            SecurityStamp = "4c0ca75e-a580-42dc-bd79-df1ab42a65df",
                             TwoFactorEnabled = false,
                             UserName = "ivan.ivanov@mail.some"
                         },
@@ -124,15 +120,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "8636b3d5-af78-4a6f-a773-c96404516ba5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "46493b28-30cb-4132-a543-9f00d955d6a0",
+                            ConcurrencyStamp = "c7622e3a-18a1-4fff-bd2f-be680b6c31fd",
                             Email = "dasha.egorova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "DASHA.EGOROVA@MAIL.SOME",
                             NormalizedUserName = "DASHA.EGOROVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJDDVIGa+gqnITTcXyn1zqkPOJTPC7WQzBN/je+wj1jN+FouRVzIULj4Y5KKyp7lFA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEItpQRm863ANEykLHEpbu95ev8nAenp0siB9lLe2d0NSGCkMaNidQlLK3Qklxiplvw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "626f6f95-8cd1-4c0c-86ef-af84206e247e",
+                            SecurityStamp = "e4f40cdb-ecd8-4ba5-9e38-25e21a0a6b8b",
                             TwoFactorEnabled = false,
                             UserName = "dasha.egorova@mail.some"
                         },
@@ -140,15 +136,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "4f99f9b1-b054-455e-9daa-8f0592823568",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e32412d-d2bb-4ceb-8bc1-8a76f91a92cc",
+                            ConcurrencyStamp = "10f0b96f-5fdf-4d63-b2ee-a70a287dc2e8",
                             Email = "andrey.vladimirov@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ANDREY.VLADIMIROV@MAIL.SOME",
                             NormalizedUserName = "ANDREY.VLADIMIROV@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBYMA9NO47YVZvN09QcGi7CE2dt3RQlnu0FWD8dFGL5ap9c7M8xQFSWXLygYd80xiw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEWU+YcEGEoLe1Tgm0+NxODpCURprYfg7Zz6dQXSJ8oTsPNPBekyJ/kb9fvM2l3fSg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a8dcb4ec-ad54-4cb9-aa51-76798838d0fd",
+                            SecurityStamp = "ef994637-f106-428b-88d1-4f9c62099aa5",
                             TwoFactorEnabled = false,
                             UserName = "andrey.vladimirov@mail.some"
                         },
@@ -156,15 +152,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "b270427f-fc46-4fdc-b3d9-3bdc64364d0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "76e868e0-3070-4f7b-863c-6ace2b63de6e",
+                            ConcurrencyStamp = "b70f2a2a-2f91-4196-977c-ed21a236584f",
                             Email = "violeta.kanygina@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "VIOLETA.KANYGINA@MAIL.SOME",
                             NormalizedUserName = "VIOLETA.KANYGINA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJkeKhsDi1L0cSDw4SISWm+GFHYz4zJBRTF6cK3jhLBw7AT0k+d73IkguUDAQiBPJw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKQwDa1b1bKCVkGjKWUL+iEDv8GlLQEhgCouqtahbsCoeNLY012xP8xq60kQyxSzIA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f62ea1bb-c72d-4f4c-be48-44d36a18855f",
+                            SecurityStamp = "31777f87-2c18-4e47-a92b-3fd1bcdacb8c",
                             TwoFactorEnabled = false,
                             UserName = "violeta.kanygina@mail.some"
                         },
@@ -172,15 +168,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "dc440a63-da95-43b0-98aa-3f4c4ff2a053",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "40a9fe4f-d5fe-477b-b6a9-3ac1eb196e76",
+                            ConcurrencyStamp = "db7fbb08-0811-4410-b0e7-2ec3a15b01b2",
                             Email = "arsenia.panova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ARSENIA.PANOVA@MAIL.SOME",
                             NormalizedUserName = "ARSENIA.PANOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEI5MeeiJ8LIcTMLacSpJ0S+wnShZRxiZOV0L3Jy6d44fwECX+gXDdlH76O/NG3xa5Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGIn+YM7oDLtXs2o70VFdkAf/wTT2IdjmyVrh45pu8Hf/3gQbvjRJaq5cIZ93DhcEQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a0269c67-a128-4e61-b9be-efa029e49af3",
+                            SecurityStamp = "cd19d407-2a73-46bf-b9da-b073f454ab24",
                             TwoFactorEnabled = false,
                             UserName = "arsenia.panova@mail.some"
                         },
@@ -188,15 +184,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "964fb987-c3d0-4a17-a417-fb7edce1e3aa",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "650a7ece-9aed-4e00-bc67-c7d05b548491",
+                            ConcurrencyStamp = "43a101c5-cd8a-4a47-b812-9a089e718fe0",
                             Email = "radislav.barsov@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "RADISLAV.BARSOV@MAIL.SOME",
                             NormalizedUserName = "RADISLAV.BARSOV@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAmUAGUgqMzMPmnOzccZAYjrcxLwIB5iei/T882kkZ/W0MC1OtvNNXbVAmo0OKmb7Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDX+X+WWTIPCQL3xPz5quNX/CDAv3Mp9/LmWz0T4aGPiAEWqW/Y47GOXgw6BmBcjJA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "972343c3-c73c-44f6-9787-89d3bd300aa9",
+                            SecurityStamp = "87a94efa-40a7-46a9-9106-94644e1c671c",
                             TwoFactorEnabled = false,
                             UserName = "radislav.barsov@mail.some"
                         },
@@ -204,15 +200,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "46b27f3b-dca0-4b4a-8b2a-ab2b263c1171",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c8552aa6-bb93-4ea5-96dc-7f8da23e215b",
+                            ConcurrencyStamp = "f96c6f33-24b0-4062-b6ba-db60eb060be0",
                             Email = "vasya.alekseev@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "VASYA.ALEKSEEV@MAIL.SOME",
                             NormalizedUserName = "VASYA.ALEKSEEV@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBOYTe4erVX9GrhAJ+H5UZEBaMo8lPoNiHL7NDP+Cx/60RIwOPWgyK0mE6OnBMnD5g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBmqcOYwgTABUKy/ZeZPuMW/+vciTQ++B9oa9MjMwoTs6efdQ1SRBxyrFVkFcbXGVw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8e152985-cb5f-4128-ab8e-696e8cd91779",
+                            SecurityStamp = "0502cd2c-8d0d-44bc-8cc3-d58182ffb2c8",
                             TwoFactorEnabled = false,
                             UserName = "vasya.alekseev@mail.some"
                         },
@@ -220,15 +216,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "1a206a7d-646f-4c48-8578-1d2e6a76df05",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "025bb42b-e330-46f2-9a5c-4d8e8dd4c210",
+                            ConcurrencyStamp = "440d0332-8636-4684-8f00-2f55599f34f9",
                             Email = "zlata.tretyakova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ZLATA.TRETYAKOVA@MAIL.SOME",
                             NormalizedUserName = "ZLATA.TRETYAKOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEENcvyX4vxLIuxlkPBCTRq9QGpNqVL2TeHZ2xnkc6/eG6BLCM9AHhmlxnarb9A/M7A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMD23lnzjb085g7riaLIFprUYicqXbLm672mLTAgV1X+AQRC75b1q3Ct6cgS3CURzw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "19c52718-bd2b-422b-935f-21710e6264ac",
+                            SecurityStamp = "e0a9110e-cb58-4d0d-b35a-400b61502078",
                             TwoFactorEnabled = false,
                             UserName = "zlata.tretyakova@mail.some"
                         },
@@ -236,15 +232,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "64642283-ef5f-4d48-9ef6-9a4e30b8332e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d385f8fb-8fa5-44d3-8277-252c0e46f73b",
+                            ConcurrencyStamp = "19dd5afe-ddd0-44e6-8b4d-bb70af0f704f",
                             Email = "albert.archipov@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ALBERT.ARCHIPOV@MAIL.SOME",
                             NormalizedUserName = "ALBERT.ARCHIPOV@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEFGHu1QBKhXKP2ISGFT+gRlIjuJwR+BNdIbjEv35t9Vwfr6tQqyK3LoA18Baqqpbw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHW3X5gXKVnKPbVjv2q/VZd2SoJPURi2uk7kHkfvQTNtFQhCSCv7AI+ZeAJaNcqvRQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "412937f6-eafe-4c5c-83d2-0a5fee645f16",
+                            SecurityStamp = "a9b87232-7fa0-4ce3-9b2c-f058aa806dd1",
                             TwoFactorEnabled = false,
                             UserName = "albert.archipov@mail.some"
                         },
@@ -252,15 +248,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "bb88c60a-257e-4b84-9a07-45206ccb3aad",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9bcada4e-20da-4afe-87a2-5ab33e816c76",
+                            ConcurrencyStamp = "d2691e8f-7c54-468b-b668-07c2c735d884",
                             Email = "zarina.uvarova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ZARINA.UVAROVA@MAIL.SOME",
                             NormalizedUserName = "ZARINA.UVAROVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBYyb2KDrGfH+mFP7Up51G4VRUK/ryD+MGVFsnSSwnLp+jJpOx+gGC12ULuwgFKxpg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAeAJCZeM5Loh5v9Cz6Oa//SFqnyAWBZS9vy3q7nCtddGoDUF6KUSrbQaVvpGFKJ6w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aabc7d0b-e763-493e-8cf2-acfc47364674",
+                            SecurityStamp = "39c2307e-6d85-4c56-b22b-a02e3fe39c7b",
                             TwoFactorEnabled = false,
                             UserName = "zarina.uvarova@mail.some"
                         },
@@ -268,15 +264,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "ab9f49d7-f20a-4951-88db-f75fcded0fe9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "45bec219-eb76-46ae-970d-d7bc9c67d988",
+                            ConcurrencyStamp = "e2fb8f0b-c65a-4b84-b668-709ec22bc4ab",
                             Email = "nadezda.kolesnikova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NADEZDA.KOLESNIKOVA@MAIL.SOME",
                             NormalizedUserName = "NADEZDA.KOLESNIKOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKKMguXL0CKMs6BdqfLOJ8Gh5tznQl3UPHFCyg975OCx3tGwId6Gn+AGIidEQ28jrw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAbXDlibpRLwMXmDBtnKyfp06YHzfDfQGMxQ0kmRdGrK5CnKT97tVIcc5qtAOyTQ4Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c27999ed-69c0-4e33-ac5d-233eb13a8b71",
+                            SecurityStamp = "dc13897e-3e65-4a9c-be1a-876648911881",
                             TwoFactorEnabled = false,
                             UserName = "nadezda.kolesnikova@mail.some"
                         },
@@ -284,15 +280,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "8bd9b467-e47b-4720-ad89-6eda8d254f86",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8f5ef248-08da-4101-9c1c-00afee3a47a8",
+                            ConcurrencyStamp = "34bc4695-81e4-4789-8a54-b8a80e1dab7e",
                             Email = "alina.lazareva@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ALINA.LAZAREVA@MAIL.SOME",
                             NormalizedUserName = "ALINA.LAZAREVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHVo76x9Kdm3DiWajFSkVPa8Fi5B3x2xTIeFnz39vRMKI4qVUQppVpJXUGR7f49bbg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN2VyIbIlj3wmFvRtetoa28ti8cX9YeugNiRVPq8KN4t87HC27sLAco/61gVilTAcQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fc654304-e722-4cb0-a3f6-3d08a16b6464",
+                            SecurityStamp = "6f994d7f-5c26-404e-8f10-b108dc74f596",
                             TwoFactorEnabled = false,
                             UserName = "alina.lazareva@mail.some"
                         },
@@ -300,15 +296,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "a020921d-a94e-4606-b090-dc96d12ffd95",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8f3b0ad1-dedc-4e15-82f4-e86000d29f1c",
+                            ConcurrencyStamp = "c8f01a99-0354-453f-9a7a-76aacea3cb94",
                             Email = "galena.volkova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "GALENA.VOLKOVA@MAIL.SOME",
                             NormalizedUserName = "GALENA.VOLKOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDRBf3QaS9yANGAxmaLAI+ErIp2hyJVL/S5oP2I3Ac1y8ODm1Ng13Wv/F7KOCElWyQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAYC2LQrv3E7D5grrHji8QQEWrlzFTQznBxJV53kvk7PuG7Eg8glspD5qmN71d4bdQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "59d5525c-7221-41f2-a1ab-0ed307f12860",
+                            SecurityStamp = "311aecf3-4991-4fb2-a4bb-a2fc58053b70",
                             TwoFactorEnabled = false,
                             UserName = "galena.volkova@mail.some"
                         },
@@ -316,15 +312,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "83d419be-12fb-4c32-9079-44a6bf1f0086",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3d5a1655-545e-4175-96bd-3a0a4a7d63d1",
+                            ConcurrencyStamp = "6c65cdce-cd49-4a1a-b640-c118fb9ba254",
                             Email = "vsevolod.lenin@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "VSEVOLOD.LENIN@MAIL.SOME",
                             NormalizedUserName = "VSEVOLOD.LENIN@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKDtp/FrJUqs2f2Dxck70Vqm5OKmjuqOJc3y06ipZ7/UyNAJJir1bnIYD54sXVZFPQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOYMHwMNYgG1ta4JRJmgUgV+dTfVrIwl5Jw4FozDYxjqwLgDnGKOg6XuwLP8kyArHQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1e303ac1-149d-41e5-9409-e1378faf2fc8",
+                            SecurityStamp = "bd080270-1fd1-4e86-a238-5e733c7fd84c",
                             TwoFactorEnabled = false,
                             UserName = "vsevolod.lenin@mail.some"
                         },
@@ -332,15 +328,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "dabe2f8b-5545-4572-8468-5febf3a15a09",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d8af7891-1a58-4280-9d58-17035be05275",
+                            ConcurrencyStamp = "ca7649a1-abfa-49d6-9497-ccb65126ff08",
                             Email = "oskar.kapustin@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "OSKAR.KAPUSTIN@MAIL.SOME",
                             NormalizedUserName = "OSKAR.KAPUSTIN@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGbynSN33QSjtmC1HAkgQrhhQgR9Bjfi6v9b2ihU0cRVhYj0wLjhhzc+9UJnxAORNA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFFA8MQ0CSB2wDszzKR/I4zVdxTynLLMzecy08nwHN052WhGA5RIS6p05z5U06L2wQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2e4bc32a-24f6-4815-b060-57bf0bd57c48",
+                            SecurityStamp = "a58cf444-e330-4688-ad6c-7ee0d65c8c5c",
                             TwoFactorEnabled = false,
                             UserName = "oskar.kapustin@mail.some"
                         },
@@ -348,15 +344,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "4da310b4-87bb-4690-90c8-bf437114ae8e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "87d592bb-0cac-4269-ab64-622ce4b942cf",
+                            ConcurrencyStamp = "8b127f2c-927f-483c-a2ec-b4d150469119",
                             Email = "vladimir.udin@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "VLADIMIR.UDIN@MAIL.SOME",
                             NormalizedUserName = "VLADIMIR.UDIN@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEME6oOkX5D5TWwU2GIS6DtHioxxSOfVCSapzf9ggxPaS530k2WOiPU+s3hM3OLtBKA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJyd8oDdSpASS/H1G0Rb/8ASwgwBxcv18W0NjqN33lrqI8l59DR0b/2OaR8dsUq3LA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e6bdd717-b554-4922-ab3b-c40a212fa2e9",
+                            SecurityStamp = "e3df0db9-6a98-4764-ae51-52e16bb689a2",
                             TwoFactorEnabled = false,
                             UserName = "vladimir.udin@mail.some"
                         },
@@ -364,15 +360,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "73ad683c-7127-4b43-bc6c-c9e2a086d4c1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "04b8aa3b-56ce-487c-959f-0ab85aded04a",
+                            ConcurrencyStamp = "66aa020e-6331-48d1-a1f7-aedd25727351",
                             Email = "lubov.orehova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "LUBOV.OREHOVA@MAIL.SOME",
                             NormalizedUserName = "LUBOV.OREHOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKSH7de5k7h3eRvCgO288ZcDzurX35umCXYOsY/dj8ij/wUGUBHnYUqQ2UE4vbGtWQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAlQh+fItP6SKi5Thupcbeb9oAuEtWJutnEU2ci409cdpVGaTxoILTtxSINWuKdnSA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b23626d2-0cd6-4e09-b302-a501039832e7",
+                            SecurityStamp = "b9443557-ec3a-4b1f-92a4-68d49b3a4866",
                             TwoFactorEnabled = false,
                             UserName = "lubov.orehova@mail.some"
                         },
@@ -380,15 +376,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "ae8f195d-426c-45b3-8f56-17ef57fd3148",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ab1b14f9-6ff7-4fd1-b383-2ea4916581d1",
+                            ConcurrencyStamp = "661d4bd5-7037-4d0e-a086-067d7f801124",
                             Email = "vlada.lipnitskaya@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "VLADA.LIPNITSKAYA@MAIL.SOME",
                             NormalizedUserName = "VLADA.LIPNITSKAYA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIVnSwqZ0IfwBxiakrtLInzj43wz4RVeFqazG7xNNFmvntPmbF/wXwgTUro4oK8sTg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMy0GIub0l20LxYrUdKgoScDUE7nEGdg2lUx/H9kk7MNGYUMrV/1PcsofYZbZQwDWQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5499590c-4c8a-4c9d-a649-183fcd91fb03",
+                            SecurityStamp = "1b2ba1c7-5a23-47e9-89b3-bad7e6a55bdf",
                             TwoFactorEnabled = false,
                             UserName = "vlada.lipnitskaya@mail.some"
                         },
@@ -396,15 +392,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "f61dd9a6-49ee-4c40-ae5a-9b6b9122a38e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c9e66302-43ed-449e-9b19-ed4dd0c006ae",
+                            ConcurrencyStamp = "bcb65171-303a-4150-920a-f4a11f85e96a",
                             Email = "polina.davydova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "POLINA.DAVYDOVA@MAIL.SOME",
                             NormalizedUserName = "POLINA.DAVYDOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDOFhwwbMvVkF4wwabUq4x8eYb5LKgNs7OxHpczdCjSMzo36pkfvIylCYj2op58oZA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBzEUUkSFj+w11JeJLgqrf6lYhPL/d9o3Q8bJytWZVqNl9Cpi8KW3C5TgWmSbcRtMA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ae6808f2-fc54-47cf-aa40-3fe98d6de68e",
+                            SecurityStamp = "0cbc34f9-aa34-45dd-93c9-4b93b74e518f",
                             TwoFactorEnabled = false,
                             UserName = "polina.davydova@mail.some"
                         },
@@ -412,15 +408,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "d5a53242-1c53-42dd-8833-a5072b367d80",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a6a817f3-8e61-4f3c-b6ec-b32d19e2e166",
+                            ConcurrencyStamp = "3dce8241-72c8-4988-9b6c-12ae676b14d6",
                             Email = "vanera.ryabova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "VANERA.RYABOVA@MAIL.SOME",
                             NormalizedUserName = "VANERA.RYABOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKUGxCOP+6KQEnRXJKAYqKS/W3Q9vrbl1Ud6xN1sKTxp6fujDaraDcrj3efwcfAAnQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHGhgCA7uWZm9kwM/4fbuDLOHxM7Rpua82UxOL/EaXlpJtyGf3HzXr4V2C7JqQRDwg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2120090b-2156-4819-ae75-46ff15112b9f",
+                            SecurityStamp = "4bf171da-04cf-4a0b-b8a7-04f45c25ac7b",
                             TwoFactorEnabled = false,
                             UserName = "vanera.ryabova@mail.some"
                         },
@@ -428,15 +424,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "98d7661f-19ac-4909-bf20-e700dd07c19a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "46f82492-77e4-48f8-a0f3-dff47f710893",
+                            ConcurrencyStamp = "d0227bc5-d988-4704-8acc-4e0e6b5a12a7",
                             Email = "anjela.trofimova@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ANJELA.TROFIMOVA@MAIL.SOME",
                             NormalizedUserName = "ANJELA.TROFIMOVA@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE7KKxCc61yTzJwl+mKEZU91PQ7ARDMsxWBWwSiuFO15LtCuvd/u+Ujww0KOBfa4Aw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOYvNOlT/A59Rk0xsnpxBaGnjQpt2jywdlaqz2Glv5kU0yjSIvC/lRbmOXSt7jGy2g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a1669459-e6c8-4e4a-9b4f-2d52d0f81726",
+                            SecurityStamp = "5caee5fc-5399-498f-af7e-f552fea95346",
                             TwoFactorEnabled = false,
                             UserName = "anjela.trofimova@mail.some"
                         },
@@ -444,15 +440,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "511a47e8-9c86-4ce7-996f-9e1a72b53e69",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c44fd2bf-521d-4eee-9bd9-f198369e6daf",
+                            ConcurrencyStamp = "398a8551-2b8f-4fd3-a995-558f5309cf59",
                             Email = "oskar.davtyan@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "OSKAR.DAVTYAN@MAIL.SOME",
                             NormalizedUserName = "OSKAR.DAVTYAN@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEE9d5H0bE1XCdMrKj/flcJsQdRoHldbGqi/L6tEk89hbNR7plRFfIizhvv4wvtcKrg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEB8+k+25cR+EYulU3XHHlHzBGoJIujQX6JAtM6CVehzhpJYZ7oJ1TfsXcTJSkwqJaA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fa77d36b-5a36-468a-ae09-363bb3cf912d",
+                            SecurityStamp = "0e7f44f4-2dd4-4733-bdba-cf8b453d9103",
                             TwoFactorEnabled = false,
                             UserName = "oskar.davtyan@mail.some"
                         },
@@ -460,15 +456,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "e30e2446-ad11-46d6-bc13-68097fae0440",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "deb7911f-7b9b-44b5-b465-d27ee1b80a19",
+                            ConcurrencyStamp = "c2ad7ee5-d009-4ce5-9063-2c5db6be54a5",
                             Email = "nikolay.borisov@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "NIKOLAY.BORISOV@MAIL.SOME",
                             NormalizedUserName = "NIKOLAY.BORISOV@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC1r2/IcWMAuoyYumZppcza4PirmT0J9qumzSyfdHgakhpiosSidmS0EoUsJu4otIQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBVd8wQPfP3oHSsgko/g8QGPBbWt6fUOHM4PPjrVPcLM+FSs1ivjGhoXalodgid+Yw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "586a2159-6980-4512-ab54-59b6a0151c0e",
+                            SecurityStamp = "7cc18e88-7271-4a15-8a19-dc1c29063476",
                             TwoFactorEnabled = false,
                             UserName = "nikolay.borisov@mail.some"
                         },
@@ -476,15 +472,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "a728faec-b5c7-41f4-bd56-162a897ff46f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0d54fa88-9f13-4535-8b47-1df7a8435a1f",
+                            ConcurrencyStamp = "78c03f2b-c279-4da3-99cc-47d44e410017",
                             Email = "donat.latykin@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "DONAT.LATYKIN@MAIL.SOME",
                             NormalizedUserName = "DONAT.LATYKIN@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEuHbC7Uz+89Bibowa0T6THKnZg98aLnaMLS3V/nZyWT6kfbrNLephgnHmRVkeFC+A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMOz6Lp8ZgawwxjzztJW1G21FybGJ6B0WJeCRUlJIgWlJ3n/BhM/vgkm3lHmSTgYcw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1f48bc8a-8c4d-4588-8152-0b338f1ef1ec",
+                            SecurityStamp = "820e23ca-d33c-4b96-8726-f4af9f5fbe8f",
                             TwoFactorEnabled = false,
                             UserName = "donat.latykin@mail.some"
                         },
@@ -492,15 +488,15 @@ namespace GeeksDirectory.Data.Migrations
                         {
                             Id = "b1091cd4-d605-480b-aa23-6f49df0e53ad",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "323240ad-419b-4059-9638-5f9864b2b4c3",
+                            ConcurrencyStamp = "ca7dc424-9c14-4531-9dcf-cb5f30a32347",
                             Email = "maksim.kuzmin@mail.some",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "MAKSIM.KUZMIN@MAIL.SOME",
                             NormalizedUserName = "MAKSIM.KUZMIN@MAIL.SOME",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMvC4RyWUeumNvk4mRB+kjoKGE2vR8+uDeHfqk/K/X1QNXold+pZ0o334K2U+NYArg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJkICa9UgjMnF4WvO9xBNdWakgACNqs0eSQDgqw3TQQTYdSMHA/fD/C1tS9c1VAlFg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1d5764f9-e21f-466e-b0e5-eeea5db5df80",
+                            SecurityStamp = "74a93651-399d-4676-aaef-3c35853e0681",
                             TwoFactorEnabled = false,
                             UserName = "maksim.kuzmin@mail.some"
                         });
@@ -509,8 +505,7 @@ namespace GeeksDirectory.Data.Migrations
             modelBuilder.Entity("GeeksDirectory.Data.Entities.Assessment", b =>
                 {
                     b.Property<int>("AssessmentId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("Score");
 
@@ -530,8 +525,7 @@ namespace GeeksDirectory.Data.Migrations
             modelBuilder.Entity("GeeksDirectory.Data.Entities.GeekProfile", b =>
                 {
                     b.Property<int>("ProfileId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("City");
 
@@ -771,8 +765,7 @@ namespace GeeksDirectory.Data.Migrations
             modelBuilder.Entity("GeeksDirectory.Data.Entities.Skill", b =>
                 {
                     b.Property<int>("SkillId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<int>("AverageScore");
 
@@ -792,30 +785,62 @@ namespace GeeksDirectory.Data.Migrations
                         new
                         {
                             SkillId = 1,
-                            AverageScore = 2,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
+                            AverageScore = 4,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "angular",
                             ProfileId = 1
                         },
                         new
                         {
                             SkillId = 2,
+                            AverageScore = 1,
+                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
+                            Name = "java",
+                            ProfileId = 1
+                        },
+                        new
+                        {
+                            SkillId = 3,
+                            AverageScore = 0,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "python",
+                            ProfileId = 1
+                        },
+                        new
+                        {
+                            SkillId = 4,
+                            AverageScore = 1,
+                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+                            Name = "csharp",
+                            ProfileId = 2
+                        },
+                        new
+                        {
+                            SkillId = 5,
                             AverageScore = 3,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "javascript",
+                            ProfileId = 2
+                        },
+                        new
+                        {
+                            SkillId = 6,
+                            AverageScore = 1,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
                             Name = "angular",
                             ProfileId = 2
                         },
                         new
                         {
-                            SkillId = 3,
-                            AverageScore = 2,
+                            SkillId = 7,
+                            AverageScore = 0,
                             Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
                             Name = "java",
                             ProfileId = 2
                         },
                         new
                         {
-                            SkillId = 4,
+                            SkillId = 8,
                             AverageScore = 4,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "python",
@@ -823,119 +848,215 @@ namespace GeeksDirectory.Data.Migrations
                         },
                         new
                         {
-                            SkillId = 5,
-                            AverageScore = 2,
+                            SkillId = 9,
+                            AverageScore = 3,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "cpp",
                             ProfileId = 2
                         },
                         new
                         {
-                            SkillId = 6,
-                            AverageScore = 0,
+                            SkillId = 10,
+                            AverageScore = 3,
                             Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
                             Name = "php",
+                            ProfileId = 2
+                        },
+                        new
+                        {
+                            SkillId = 11,
+                            AverageScore = 4,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
+                            ProfileId = 2
+                        },
+                        new
+                        {
+                            SkillId = 12,
+                            AverageScore = 0,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "ruby",
+                            ProfileId = 2
+                        },
+                        new
+                        {
+                            SkillId = 13,
+                            AverageScore = 1,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
                             ProfileId = 3
                         },
                         new
                         {
-                            SkillId = 7,
-                            AverageScore = 4,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 4
-                        },
-                        new
-                        {
-                            SkillId = 8,
-                            AverageScore = 0,
+                            SkillId = 14,
+                            AverageScore = 2,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "ruby",
+                            ProfileId = 3
+                        },
+                        new
+                        {
+                            SkillId = 15,
+                            AverageScore = 4,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
                             ProfileId = 4
                         },
                         new
                         {
-                            SkillId = 9,
-                            AverageScore = 1,
+                            SkillId = 16,
+                            AverageScore = 2,
+                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
+                            Name = "java",
+                            ProfileId = 5
+                        },
+                        new
+                        {
+                            SkillId = 17,
+                            AverageScore = 3,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "python",
+                            ProfileId = 5
+                        },
+                        new
+                        {
+                            SkillId = 18,
+                            AverageScore = 0,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "cpp",
+                            ProfileId = 5
+                        },
+                        new
+                        {
+                            SkillId = 19,
+                            AverageScore = 3,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
+                            ProfileId = 5
+                        },
+                        new
+                        {
+                            SkillId = 20,
+                            AverageScore = 2,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
                             Name = "swift",
                             ProfileId = 5
                         },
                         new
                         {
-                            SkillId = 10,
-                            AverageScore = 4,
+                            SkillId = 21,
+                            AverageScore = 3,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "ruby",
+                            ProfileId = 5
+                        },
+                        new
+                        {
+                            SkillId = 22,
+                            AverageScore = 0,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
                             ProfileId = 6
                         },
                         new
                         {
-                            SkillId = 11,
-                            AverageScore = 1,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "ruby",
+                            SkillId = 23,
+                            AverageScore = 4,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
                             ProfileId = 7
                         },
                         new
                         {
-                            SkillId = 12,
-                            AverageScore = 2,
+                            SkillId = 24,
+                            AverageScore = 4,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
+                            ProfileId = 7
+                        },
+                        new
+                        {
+                            SkillId = 25,
+                            AverageScore = 4,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "python",
+                            ProfileId = 8
+                        },
+                        new
+                        {
+                            SkillId = 26,
+                            AverageScore = 3,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "cpp",
                             ProfileId = 8
                         },
                         new
                         {
-                            SkillId = 13,
-                            AverageScore = 0,
+                            SkillId = 27,
+                            AverageScore = 4,
                             Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
                             Name = "php",
                             ProfileId = 8
                         },
                         new
                         {
-                            SkillId = 14,
-                            AverageScore = 1,
+                            SkillId = 28,
+                            AverageScore = 0,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
                             Name = "swift",
                             ProfileId = 8
                         },
                         new
                         {
-                            SkillId = 15,
-                            AverageScore = 1,
+                            SkillId = 29,
+                            AverageScore = 4,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "ruby",
                             ProfileId = 8
                         },
                         new
                         {
-                            SkillId = 16,
-                            AverageScore = 1,
-                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-                            Name = "java",
+                            SkillId = 30,
+                            AverageScore = 4,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
                             ProfileId = 9
                         },
                         new
                         {
-                            SkillId = 17,
+                            SkillId = 31,
+                            AverageScore = 2,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
+                            ProfileId = 9
+                        },
+                        new
+                        {
+                            SkillId = 32,
+                            AverageScore = 2,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "ruby",
+                            ProfileId = 9
+                        },
+                        new
+                        {
+                            SkillId = 33,
+                            AverageScore = 3,
+                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
+                            Name = "java",
+                            ProfileId = 10
+                        },
+                        new
+                        {
+                            SkillId = 34,
                             AverageScore = 0,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "python",
-                            ProfileId = 9
+                            ProfileId = 10
                         },
                         new
                         {
-                            SkillId = 18,
-                            AverageScore = 4,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 9
-                        },
-                        new
-                        {
-                            SkillId = 19,
+                            SkillId = 35,
                             AverageScore = 4,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "cpp",
@@ -943,355 +1064,227 @@ namespace GeeksDirectory.Data.Migrations
                         },
                         new
                         {
-                            SkillId = 20,
+                            SkillId = 36,
                             AverageScore = 4,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
+                            ProfileId = 10
+                        },
+                        new
+                        {
+                            SkillId = 37,
+                            AverageScore = 2,
+                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+                            Name = "csharp",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 38,
+                            AverageScore = 0,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "javascript",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 39,
+                            AverageScore = 0,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "angular",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 40,
+                            AverageScore = 0,
+                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
+                            Name = "java",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 41,
+                            AverageScore = 4,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "python",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 42,
+                            AverageScore = 4,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "cpp",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 43,
+                            AverageScore = 0,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 44,
+                            AverageScore = 0,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
+                            ProfileId = 11
+                        },
+                        new
+                        {
+                            SkillId = 45,
+                            AverageScore = 0,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "ruby",
                             ProfileId = 11
                         },
                         new
                         {
-                            SkillId = 21,
-                            AverageScore = 3,
+                            SkillId = 46,
+                            AverageScore = 2,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
+                            ProfileId = 12
+                        },
+                        new
+                        {
+                            SkillId = 47,
+                            AverageScore = 2,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
                             Name = "swift",
                             ProfileId = 12
                         },
                         new
                         {
-                            SkillId = 22,
+                            SkillId = 48,
                             AverageScore = 3,
-                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-                            Name = "java",
-                            ProfileId = 13
-                        },
-                        new
-                        {
-                            SkillId = 23,
-                            AverageScore = 1,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 13
-                        },
-                        new
-                        {
-                            SkillId = 24,
-                            AverageScore = 0,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 13
-                        },
-                        new
-                        {
-                            SkillId = 25,
-                            AverageScore = 2,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
-                            ProfileId = 13
-                        },
-                        new
-                        {
-                            SkillId = 26,
-                            AverageScore = 0,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 14
-                        },
-                        new
-                        {
-                            SkillId = 27,
-                            AverageScore = 3,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 15
-                        },
-                        new
-                        {
-                            SkillId = 28,
-                            AverageScore = 0,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 15
-                        },
-                        new
-                        {
-                            SkillId = 29,
-                            AverageScore = 2,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
-                            ProfileId = 15
-                        },
-                        new
-                        {
-                            SkillId = 30,
-                            AverageScore = 1,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 15
-                        },
-                        new
-                        {
-                            SkillId = 31,
-                            AverageScore = 2,
-                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-                            Name = "java",
-                            ProfileId = 16
-                        },
-                        new
-                        {
-                            SkillId = 32,
-                            AverageScore = 4,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 16
-                        },
-                        new
-                        {
-                            SkillId = 33,
-                            AverageScore = 1,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 16
-                        },
-                        new
-                        {
-                            SkillId = 34,
-                            AverageScore = 1,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
-                            ProfileId = 16
-                        },
-                        new
-                        {
-                            SkillId = 35,
-                            AverageScore = 3,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 16
-                        },
-                        new
-                        {
-                            SkillId = 36,
-                            AverageScore = 0,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "ruby",
-                            ProfileId = 16
-                        },
-                        new
-                        {
-                            SkillId = 37,
-                            AverageScore = 0,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "angular",
-                            ProfileId = 17
-                        },
-                        new
-                        {
-                            SkillId = 38,
-                            AverageScore = 1,
-                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-                            Name = "java",
-                            ProfileId = 17
-                        },
-                        new
-                        {
-                            SkillId = 39,
-                            AverageScore = 1,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 17
-                        },
-                        new
-                        {
-                            SkillId = 40,
-                            AverageScore = 3,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 17
-                        },
-                        new
-                        {
-                            SkillId = 41,
-                            AverageScore = 1,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
-                            ProfileId = 17
-                        },
-                        new
-                        {
-                            SkillId = 42,
-                            AverageScore = 0,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 17
-                        },
-                        new
-                        {
-                            SkillId = 43,
-                            AverageScore = 2,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 18
-                        },
-                        new
-                        {
-                            SkillId = 44,
-                            AverageScore = 2,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "javascript",
-                            ProfileId = 19
-                        },
-                        new
-                        {
-                            SkillId = 45,
-                            AverageScore = 0,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "angular",
-                            ProfileId = 19
-                        },
-                        new
-                        {
-                            SkillId = 46,
-                            AverageScore = 2,
-                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-                            Name = "java",
-                            ProfileId = 19
-                        },
-                        new
-                        {
-                            SkillId = 47,
-                            AverageScore = 1,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 19
-                        },
-                        new
-                        {
-                            SkillId = 48,
-                            AverageScore = 4,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 19
+                            ProfileId = 12
                         },
                         new
                         {
                             SkillId = 49,
-                            AverageScore = 4,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
-                            ProfileId = 19
+                            AverageScore = 1,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "angular",
+                            ProfileId = 13
                         },
                         new
                         {
                             SkillId = 50,
-                            AverageScore = 0,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 19
+                            AverageScore = 4,
+                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
+                            Name = "java",
+                            ProfileId = 13
                         },
                         new
                         {
                             SkillId = 51,
-                            AverageScore = 0,
+                            AverageScore = 4,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "ruby",
-                            ProfileId = 19
+                            Name = "python",
+                            ProfileId = 13
                         },
                         new
                         {
                             SkillId = 52,
                             AverageScore = 1,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 20
+                            Name = "cpp",
+                            ProfileId = 13
                         },
                         new
                         {
                             SkillId = 53,
-                            AverageScore = 4,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 20
+                            AverageScore = 3,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
+                            ProfileId = 13
                         },
                         new
                         {
                             SkillId = 54,
-                            AverageScore = 1,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
-                            ProfileId = 20
+                            AverageScore = 3,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
+                            ProfileId = 13
                         },
                         new
                         {
                             SkillId = 55,
-                            AverageScore = 0,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 20
+                            AverageScore = 2,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "ruby",
+                            ProfileId = 13
                         },
                         new
                         {
                             SkillId = 56,
-                            AverageScore = 4,
+                            AverageScore = 3,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "ruby",
-                            ProfileId = 20
+                            ProfileId = 14
                         },
                         new
                         {
                             SkillId = 57,
                             AverageScore = 2,
-                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
-                            ProfileId = 21
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "ruby",
+                            ProfileId = 15
                         },
                         new
                         {
                             SkillId = 58,
-                            AverageScore = 1,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
-                            ProfileId = 21
+                            AverageScore = 0,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "python",
+                            ProfileId = 16
                         },
                         new
                         {
                             SkillId = 59,
-                            AverageScore = 1,
-                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "angular",
-                            ProfileId = 22
+                            AverageScore = 2,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "cpp",
+                            ProfileId = 16
                         },
                         new
                         {
                             SkillId = 60,
-                            AverageScore = 1,
-                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-                            Name = "java",
-                            ProfileId = 22
+                            AverageScore = 0,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
+                            ProfileId = 16
                         },
                         new
                         {
                             SkillId = 61,
                             AverageScore = 2,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 22
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
+                            ProfileId = 16
                         },
                         new
                         {
                             SkillId = 62,
                             AverageScore = 4,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 22
+                            Name = "ruby",
+                            ProfileId = 17
                         },
                         new
                         {
                             SkillId = 63,
-                            AverageScore = 3,
+                            AverageScore = 0,
                             Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
                             Name = "php",
-                            ProfileId = 22
+                            ProfileId = 18
                         },
                         new
                         {
@@ -1299,39 +1292,39 @@ namespace GeeksDirectory.Data.Migrations
                             AverageScore = 4,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
                             Name = "swift",
-                            ProfileId = 22
+                            ProfileId = 18
                         },
                         new
                         {
                             SkillId = 65,
-                            AverageScore = 2,
+                            AverageScore = 0,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "ruby",
-                            ProfileId = 22
+                            Name = "cpp",
+                            ProfileId = 19
                         },
                         new
                         {
                             SkillId = 66,
-                            AverageScore = 1,
+                            AverageScore = 2,
                             Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
                             Name = "java",
-                            ProfileId = 23
+                            ProfileId = 20
                         },
                         new
                         {
                             SkillId = 67,
-                            AverageScore = 0,
+                            AverageScore = 2,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "python",
-                            ProfileId = 23
+                            ProfileId = 20
                         },
                         new
                         {
                             SkillId = 68,
-                            AverageScore = 3,
+                            AverageScore = 1,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
                             Name = "cpp",
-                            ProfileId = 23
+                            ProfileId = 20
                         },
                         new
                         {
@@ -1339,51 +1332,115 @@ namespace GeeksDirectory.Data.Migrations
                             AverageScore = 2,
                             Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
                             Name = "php",
-                            ProfileId = 23
+                            ProfileId = 21
                         },
                         new
                         {
                             SkillId = 70,
                             AverageScore = 0,
+                            Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.",
+                            Name = "csharp",
+                            ProfileId = 22
+                        },
+                        new
+                        {
+                            SkillId = 71,
+                            AverageScore = 4,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "javascript",
+                            ProfileId = 22
+                        },
+                        new
+                        {
+                            SkillId = 72,
+                            AverageScore = 2,
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "angular",
+                            ProfileId = 22
+                        },
+                        new
+                        {
+                            SkillId = 73,
+                            AverageScore = 4,
+                            Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
+                            Name = "java",
+                            ProfileId = 22
+                        },
+                        new
+                        {
+                            SkillId = 74,
+                            AverageScore = 3,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "python",
+                            ProfileId = 22
+                        },
+                        new
+                        {
+                            SkillId = 75,
+                            AverageScore = 2,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "cpp",
+                            ProfileId = 22
+                        },
+                        new
+                        {
+                            SkillId = 76,
+                            AverageScore = 3,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "cpp",
+                            ProfileId = 23
+                        },
+                        new
+                        {
+                            SkillId = 77,
+                            AverageScore = 0,
+                            Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
+                            Name = "php",
+                            ProfileId = 23
+                        },
+                        new
+                        {
+                            SkillId = 78,
+                            AverageScore = 3,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
                             Name = "swift",
                             ProfileId = 23
                         },
                         new
                         {
-                            SkillId = 71,
-                            AverageScore = 1,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "ruby",
-                            ProfileId = 23
-                        },
-                        new
-                        {
-                            SkillId = 72,
+                            SkillId = 79,
                             AverageScore = 4,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
                             ProfileId = 24
                         },
                         new
                         {
-                            SkillId = 73,
-                            AverageScore = 2,
+                            SkillId = 80,
+                            AverageScore = 1,
                             Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 25
+                            Name = "ruby",
+                            ProfileId = 24
                         },
                         new
                         {
-                            SkillId = 74,
+                            SkillId = 81,
                             AverageScore = 0,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
+                            Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                            Name = "swift",
                             ProfileId = 25
                         },
                         new
                         {
-                            SkillId = 75,
+                            SkillId = 82,
+                            AverageScore = 1,
+                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
+                            Name = "ruby",
+                            ProfileId = 25
+                        },
+                        new
+                        {
+                            SkillId = 83,
                             AverageScore = 3,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
                             Name = "angular",
@@ -1391,42 +1448,26 @@ namespace GeeksDirectory.Data.Migrations
                         },
                         new
                         {
-                            SkillId = 76,
-                            AverageScore = 3,
+                            SkillId = 84,
+                            AverageScore = 4,
                             Description = "Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
                             Name = "java",
                             ProfileId = 26
                         },
                         new
                         {
-                            SkillId = 77,
+                            SkillId = 85,
                             AverageScore = 0,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "python",
-                            ProfileId = 27
-                        },
-                        new
-                        {
-                            SkillId = 78,
-                            AverageScore = 3,
-                            Description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa anim id est laborum.",
-                            Name = "cpp",
-                            ProfileId = 27
-                        },
-                        new
-                        {
-                            SkillId = 79,
-                            AverageScore = 4,
                             Description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-                            Name = "php",
+                            Name = "javascript",
                             ProfileId = 27
                         },
                         new
                         {
-                            SkillId = 80,
-                            AverageScore = 4,
+                            SkillId = 86,
+                            AverageScore = 0,
                             Description = "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
-                            Name = "swift",
+                            Name = "angular",
                             ProfileId = 27
                         });
                 });
@@ -1449,8 +1490,7 @@ namespace GeeksDirectory.Data.Migrations
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
+                        .HasName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles");
                 });
@@ -1458,8 +1498,7 @@ namespace GeeksDirectory.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType");
 
@@ -1478,8 +1517,7 @@ namespace GeeksDirectory.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("ClaimType");
 
