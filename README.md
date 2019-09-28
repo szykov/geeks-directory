@@ -2,6 +2,13 @@
 
 Web site for assessment of competence in technologies.
 
+## Stack
+* Back-End: .NET Core 2.2 Web API;
+* Front-End: Angular 8 + Angular Material;
+* Storage: Sqlite + EF Core (Code First);
+* Authentification: OpenIdDict (OAuth JWT);
+* Logging: NLog
+
 ## Demo
 
 http://geeks-directory.azurewebsites.net/
@@ -10,14 +17,14 @@ To login use profile's email and password. Password is always `Pa$$w0rd`.
 
 ## Functionality
 
-1. Non-authentificated user can see list of others profiles or search for them.
-2. User profile contains: Name, Surname, Middle Name, City, Email and etc.
-3. User can search by Name, Surname, Middle name, City.
-4. User can sign up and be authentificated.
-5. Authentificated user can add new skills and make assessment to existing ones.
-6. Score assessments for skills is limited to range between 0 to 5.
-7. Each skill can have multiple score assessments. Skill should have an average score.
-8. User is not allowed to remove skills.
+* Non-authentificated user can see list of others profiles or search for them.
+* User profile contains: Name, Surname, Middle Name, City, Email and etc.
+* User can search by Name, Surname, Middle name, City.
+* User can sign up and be authentificated.
+* Authentificated user can add new skills and make assessment to existing ones.
+* Score assessments for skills is limited to range between 0 to 5.
+* Each skill can have multiple score assessments. Skill should have an average score.
+* User is not allowed to remove skills.
 
 ## Build
 
