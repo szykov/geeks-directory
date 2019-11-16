@@ -18,3 +18,13 @@ body {
     letter-spacing: 1px;
     text-shadow: 2px 2px #616161;
 }
+
+.ng-bar-placeholder {
+    top: 64px;
+
+    .ng-meteor {
+        top: 0px !important;
+        transform: rotate(0deg) !important;
+        width: 6px;
+    }
+}

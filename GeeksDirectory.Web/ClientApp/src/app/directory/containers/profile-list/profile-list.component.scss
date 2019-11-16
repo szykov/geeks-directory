@@ -1,3 +1,17 @@
 .profile-list {
     margin: 25px;
 }
+
+@media only screen and (min-width: 1550px) {
+    .profile-list {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media only screen and (min-width: 1750px) {
+    .profile-list {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

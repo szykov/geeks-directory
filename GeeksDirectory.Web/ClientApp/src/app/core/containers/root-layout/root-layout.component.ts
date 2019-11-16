@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subject, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, filter } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
 import * as fromState from '@app/reducers';
@@ -37,7 +37,10 @@ export class RootLayoutComponent implements OnInit, OnDestroy {
 
         this.store
             .select(fromAuth.getProfile)
-            .pipe(takeUntil(this.unsubscribe))
+            .pipe(
+                takeUntil(this.unsubscribe),
+                filter(profile => !!profile)
+            )
             .subscribe(result => {
                 this.personalProfile = result;
                 this.fullName = this.personalProfile.fullName;
