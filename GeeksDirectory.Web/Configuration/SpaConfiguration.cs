@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace GeeksDirectory.Web.Configuration
 {
@@ -17,7 +18,7 @@ namespace GeeksDirectory.Web.Configuration
             return services;
         }
 
-        public static IApplicationBuilder UsePredefinedSpa(this IApplicationBuilder app, IHostingEnvironment env)
+        public static IApplicationBuilder UsePredefinedSpa(this IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseStaticFiles();
             app.UseSpaStaticFiles();

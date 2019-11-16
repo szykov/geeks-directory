@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 using System.Collections.Generic;
 
@@ -14,18 +13,14 @@ namespace GeeksDirectory.Web
 {
     public class Startup
     {
-        private readonly ILogger logger;
         private readonly IConfiguration configuration;
         private readonly IEnumerable<string> origins;
-        private readonly IHostingEnvironment environment;
-        private string connectionString;
+        private readonly string connectionString;
 
-        public Startup(IConfiguration configuration, ILoggerFactory loggerFactory, IHostingEnvironment environment)
+        public Startup(IConfiguration configuration)
         {
-            this.logger = loggerFactory.CreateLogger<Startup>();
             this.configuration = configuration;
             this.origins = this.configuration.GetSection("AllowOrigins").Get<IEnumerable<string>>();
-            this.environment = environment;
             this.connectionString = this.configuration.GetConnectionString("DefaultConnection");
         }
 
@@ -45,11 +40,11 @@ namespace GeeksDirectory.Web
 
             services.AddPredefinedApplicationCookie();
 
-            services.AddPredefinedErrorHandling(this.logger);
+            services.AddPredefinedErrorHandling();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (this.origins.NotNullOrEmpty())
             {

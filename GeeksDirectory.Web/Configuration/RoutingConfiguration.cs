@@ -1,11 +1,8 @@
-﻿using GeeksDirectory.Web.Classes;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using System.Linq;
 
 namespace GeeksDirectory.Web.Configuration
@@ -14,12 +11,12 @@ namespace GeeksDirectory.Web.Configuration
     {
         public static IServiceCollection AddPredefinedRouting(this IServiceCollection services)
         {
-            services.AddMvc(setup =>
+            services.AddControllersWithViews(setup =>
             {
                 setup.ReturnHttpNotAcceptable = true;
 
                 var jsonOutputFormatter = setup.OutputFormatters
-                    .OfType<JsonOutputFormatter>().FirstOrDefault();
+                    .OfType<SystemTextJsonOutputFormatter>().FirstOrDefault();
 
                 if (jsonOutputFormatter != null)
                 {
@@ -31,9 +28,8 @@ namespace GeeksDirectory.Web.Configuration
                     }
                 }
             })
-            .AddJsonOptions(options => options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore)
-            .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new EmptyListContractResolver())
-            .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            .AddJsonOptions(options => options.JsonSerializerOptions.IgnoreNullValues = true)
+            .SetCompatibilityVersion(CompatibilityVersion.Latest)
             .ConfigureApiBehaviorOptions(options =>
             {
                 options.SuppressMapClientErrors = true;
@@ -47,11 +43,15 @@ namespace GeeksDirectory.Web.Configuration
 
         public static IApplicationBuilder UsePredefinedRouting(this IApplicationBuilder app)
         {
-            app.UseMvc(routes =>
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    pattern: "{controller}/{action=Index}/{id?}");
             });
 
             return app;
