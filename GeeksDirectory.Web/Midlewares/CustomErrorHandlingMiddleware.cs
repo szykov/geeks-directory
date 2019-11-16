@@ -5,8 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Midlewares
@@ -39,13 +38,13 @@ namespace GeeksDirectory.Web.Midlewares
                 this.logger.LogWarning("Server returned status code {0}", httpContext.Response.StatusCode);
 
                 var code = (ExceptionCode)httpContext.Response.StatusCode;
-                var jsonSerializer = new JsonSerializerSettings()
+                var jsonSerializerOptions = new JsonSerializerOptions
                 {
-                    ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                    NullValueHandling = NullValueHandling.Ignore,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    IgnoreNullValues = true
                 };
-                var jsonResult = JsonConvert.SerializeObject(new ErrorResponse(code), jsonSerializer);
 
+                var jsonResult = JsonSerializer.Serialize(new ErrorResponse(code), jsonSerializerOptions);
 
                 httpContext.Response.ContentType = "application/json";
 

@@ -4,11 +4,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-
 using System;
 using System.Net.Sockets;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Midlewares
@@ -44,12 +42,13 @@ namespace GeeksDirectory.Web.Midlewares
 
                     this.logger.LogError(ex, $"Internal server error");
 
-                    var jsonSerializer = new JsonSerializerSettings()
+                    var jsonSerializerOptions = new JsonSerializerOptions
                     {
-                        ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                        NullValueHandling = NullValueHandling.Ignore,
+                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                        IgnoreNullValues = true
                     };
-                    var jsonResult = JsonConvert.SerializeObject(ExceptionCode.InternalServerError, jsonSerializer);
+
+                    var jsonResult = JsonSerializer.Serialize(ExceptionCode.InternalServerError, jsonSerializerOptions);
 
                     await httpContext.Response.WriteAsync(jsonResult);
                 }
