@@ -11,25 +11,18 @@ namespace GeeksDirectory.SharedTypes.Extensions
     {
         public static ErrorResponse ToErrorResponse(this ModelStateDictionary modelState)
         {
-            var errorExceptions = new List<ErrorException>();
+            var modelValidationErrors = new List<ModelValidationError>();
             foreach (KeyValuePair<string, ModelStateEntry> modelEntry in modelState)
             {
                 foreach (var modelError in modelEntry.Value.Errors)
                 {
-                    errorExceptions.Add(new ErrorException()
-                    {
-                        Message = modelError.ErrorMessage,
-                        Target = modelEntry.Key
-                    });
-                }
+                    var error = new ModelValidationError(message: modelError.ErrorMessage, target: modelEntry.Key);
+                    modelValidationErrors.Add(error);
+                };
             }
 
-            var errorResponse = new ErrorResponse()
-            {
-                Message = "Model state is invalid",
-                Code = ExceptionCode.UnprocessableEntity.ToString(),
-                Details = errorExceptions
-            };
+            var errorResponse = new ErrorResponse("Model state is invalid", ExceptionCode.UnprocessableEntity.ToString());
+            errorResponse.Details = modelValidationErrors;
 
             return errorResponse;
         }

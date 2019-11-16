@@ -8,6 +8,8 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>GeeksDirectory.SharedTypes</AssemblyName>
     <RootNamespace>GeeksDirectory.SharedTypes</RootNamespace>
+
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

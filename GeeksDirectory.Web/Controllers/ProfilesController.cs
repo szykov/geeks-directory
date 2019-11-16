@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 using OpenIddict.Validation;
-
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -55,7 +55,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name;
+                var userName = this.User.Identity.Name!;
                 var profiles = this.context.Get(userName);
 
                 return this.Ok(profiles);
@@ -124,7 +124,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name;
+                var userName = this.User.Identity.Name!;
 
                 var profile = this.context.Update(userName, model);
                 return this.Ok(profile);

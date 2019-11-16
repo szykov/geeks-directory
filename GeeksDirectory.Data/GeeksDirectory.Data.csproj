@@ -6,6 +6,8 @@
     <PackageId>geeks-directory-data</PackageId>
     <Authors>Sergey Zykov</Authors>
     <Product>Geeks Directory Data</Product>
+
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

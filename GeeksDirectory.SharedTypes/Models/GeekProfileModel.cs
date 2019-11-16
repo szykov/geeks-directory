@@ -6,17 +6,17 @@ namespace GeeksDirectory.SharedTypes.Models
     {
         [Required]
         [StringLength(maximumLength: 255)]
-        public string Name { get; set; }
+        public string Name { get; set; } = default!;
 
         [Required]
         [StringLength(maximumLength: 255)]
-        public string Surname { get; set; }
+        public string Surname { get; set; } = default!;
 
         [StringLength(maximumLength: 255)]
-        public string MiddleName { get; set; }
+        public string? MiddleName { get; set; }
 
         [Required]
         [StringLength(maximumLength: 50)]
-        public string City { get; set; }
+        public string City { get; set; } = default!;
     }
 }

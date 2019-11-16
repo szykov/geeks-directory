@@ -1,4 +1,5 @@
 ﻿using GeeksDirectory.SharedTypes.Classes;
+using GeeksDirectory.SharedTypes.Interfaces;
 
 using System.Collections.Generic;
 
@@ -10,9 +11,7 @@ namespace GeeksDirectory.SharedTypes.Responses
 
         public string Message { get; set; }
 
-        public IEnumerable<ErrorException> Details { get; set; }
-
-        public ErrorResponse() {}
+        public IEnumerable<IErrorDetail>? Details { get; set; }
 
         public ErrorResponse(ExceptionCode code)
         {
@@ -40,6 +39,12 @@ namespace GeeksDirectory.SharedTypes.Responses
                     this.Message = "We can't seem to find the answer you're looking for.";
                     break;
             }
+        }
+
+        public ErrorResponse(string code, string message) 
+        {
+            this.Code = code;
+            this.Message = message;
         }
     }
 }

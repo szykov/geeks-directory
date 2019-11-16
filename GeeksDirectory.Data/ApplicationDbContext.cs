@@ -1,4 +1,6 @@
-﻿using GeeksDirectory.Data.Entities;
+﻿#nullable disable
+
+using GeeksDirectory.Data.Entities;
 using GeeksDirectory.Data.Seed;
 
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

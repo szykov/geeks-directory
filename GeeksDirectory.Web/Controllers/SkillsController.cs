@@ -54,7 +54,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name;
+                var userName = this.User.Identity.Name!;
                 var skill = await this.context.AddAsync(profileId, model, userName);
 
                 return this.CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
@@ -72,7 +72,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name;
+                var userName = this.User.Identity.Name!;
                 return await this.context.EvaluateSkillAsync(profileId, skillName, userName, score);
             }
             catch (LogicException ex)
