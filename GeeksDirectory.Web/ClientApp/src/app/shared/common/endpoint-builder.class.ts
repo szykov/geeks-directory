@@ -1,23 +1,43 @@
 import { CONFIG } from './config';
 
 export class EndpointBuilder {
-    readonly cfg = CONFIG.connection;
-    private readonly origin: string;
+    private readonly cfg = CONFIG.connection;
+    private readonly url: URL;
 
-    constructor() {
-        if (CONFIG.ignoreConneciton) {
-            this.origin = window.location.origin;
-        } else {
-            this.origin = `${this.cfg.protocol}://${this.cfg.hostName}:${this.cfg.port}`;
-        }
+    constructor(endpoint: string) {
+        let origin = CONFIG.ignoreConneciton
+            ? window.location.origin
+            : `${this.cfg.protocol}://${this.cfg.hostName}:${this.cfg.port}`;
+
+        this.url = new URL(`${endpoint}`, origin);
     }
 
+    public setUrlParam(paramName: string, paramValue: string) {
+        let encodedParamName = encodeURIComponent(`{${paramName}}`);
+        if (!this.url.pathname.includes(encodedParamName)) {
+            throw new Error('Endpoint do not have such url param');
+        }
+
+        this.url.pathname = this.url.pathname.replace(`${encodedParamName}`, paramValue);
+        return this;
+    }
+
+    public addQueryParam(queryName: string, queryValue: string) {
+        this.url.searchParams.append(queryName, queryValue);
+        return this;
+    }
+
+    public build() {
+        return this.url.href;
+    }
+
+    /*
     public getEndpoint(endpoint: string, ...urlParams: string[]): string {
         if (urlParams) {
             endpoint = this.addUrlParams(endpoint, urlParams);
         }
 
-        return new URL(`${this.cfg.rootAddress}/${endpoint}`, this.origin).href;
+        return new URL(`${this.cfg.apiRoot}/${endpoint}`, this.origin).href;
     }
 
     public getEndpointFromRoot(endpoint: string, ...urlParams: string[]): string {
@@ -35,4 +55,5 @@ export class EndpointBuilder {
 
         return endpoint;
     }
+    */
 }

@@ -4,17 +4,17 @@ export let CONFIG = {
         protocol: 'http',
         hostName: 'localhost',
         port: '5000',
-        rootAddress: 'api',
+        apiRoot: 'api',
         endpoints: {
             getToken: 'connect/token',
-            getProfiles: 'profiles',
-            getProfile: 'profiles/{0}',
-            getMyProfile: 'profiles/me',
-            registerProfile: 'profiles',
-            updatePersonalProfile: 'profiles/me',
-            getSkill: 'profiles/{0}/skills',
-            addSkill: 'profiles/{0}/skills',
-            setSkillScore: 'profiles/{0}/skills/{1}/score'
+            getProfiles: 'api/profiles',
+            getProfile: 'api/profiles/{profileId}',
+            getMyProfile: 'api/profiles/me',
+            registerProfile: 'api/profiles',
+            updatePersonalProfile: 'api/profiles/me',
+            getSkill: 'api/profiles/{profileId}/skills',
+            addSkill: 'api/profiles/{profileId}/skills',
+            setSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score'
         }
     }
 };

@@ -15,32 +15,44 @@ export class RequestService {
     private endpointBuilder: EndpointBuilder;
 
     constructor(private http: HttpClient) {
-        this.endpointBuilder = new EndpointBuilder();
         this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     }
 
-    public getProfiles(): Observable<IProfile[]> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfiles);
+    public getProfiles(take: number = 16, skip: number = 0): Observable<IProfile[]> {
+        let url = new EndpointBuilder(CONFIG.connection.endpoints.getProfiles)
+            .addQueryParam('take', take.toString())
+            .addQueryParam('skip', skip.toString())
+            .build();
         return this.http.get<IProfile[]>(url, { headers: this.headers });
     }
 
     public getProfile(profileId: number): Observable<IProfile> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.getProfile, profileId.toString());
+        let url = new EndpointBuilder(CONFIG.connection.endpoints.getProfile)
+            .setUrlParam('profileId', profileId.toString())
+            .build();
+
         return this.http.get<IProfile>(url, { headers: this.headers });
     }
 
     public updatePersonalProfile(profile: ProfileModel): Observable<IProfile> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.updatePersonalProfile);
+        let url = new EndpointBuilder(CONFIG.connection.endpoints.updatePersonalProfile).build();
         return this.http.patch<IProfile>(url, profile, { headers: this.headers });
     }
 
     public addSkill(profileId: number, skill: SkillModel): Observable<ISkill> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.addSkill, profileId.toString());
+        let url = new EndpointBuilder(CONFIG.connection.endpoints.addSkill)
+            .setUrlParam('profileId', profileId.toString())
+            .build();
+
         return this.http.post<ISkill>(url, skill, { headers: this.headers });
     }
 
     public setSkillScore(profileId: number, skillName: string, score: number): Observable<number> {
-        let url = this.endpointBuilder.getEndpoint(CONFIG.connection.endpoints.setSkillScore, profileId.toString(), skillName);
+        let url = new EndpointBuilder(CONFIG.connection.endpoints.setSkillScore)
+            .setUrlParam('profileId', profileId.toString())
+            .setUrlParam('skillName', skillName)
+            .build();
+
         return this.http.post<number>(url, score, { headers: this.headers });
     }
 }
