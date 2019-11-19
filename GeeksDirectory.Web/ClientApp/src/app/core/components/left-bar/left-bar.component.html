@@ -1,15 +1,35 @@
-<div class="menu-list">
+<div class="drawer-container" fxLayout="column" fxFlexFill fxLayoutAlign="stretch"
+    [@onSideNavChange]="wideMode ? 'open' : 'close'">
+    <div fxLayout="column" flexLayoutAlign="center center" class="drawer-content">
+        <div class="user-menu" *ngIf="isAuth">
+            <mat-nav-list>
+                <a mat-list-item (click)="goToProfile.emit()">
+                    <mat-icon class="drawer-icon" aria-hidden="false" aria-label="Geek icon">android</mat-icon>
+                    <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ profileName }} </span>
+                </a>
+            </mat-nav-list>
+
+        </div>
+
+        <mat-nav-list>
+            <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let navLink of navLinks" [routerLink]="navLink.routerLink">
+                <mat-icon class="drawer-icon">{{navLink.icon}}</mat-icon>
+                <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ navLink.label }}
+                </span>
+            </mat-list-item>
+        </mat-nav-list>
+    </div>
+
     <mat-divider></mat-divider>
-    <button mat-button mat-flat-button color="basic" routerLink="/">
-        <mat-icon>home</mat-icon>Home
-    </button>
-    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true }">
-        <mat-icon>input</mat-icon>Sign In
-    </button>
-    <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="onSignOut()">
-        <mat-icon>exit_to_app</mat-icon>Sign Out
-    </button>
-    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="['./registration']">
-        <mat-icon>person_add</mat-icon>Registration
-    </button>
+
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <div class="toogle-container">
+            <mat-nav-list class="toogle-container">
+                <mat-list-item (click)="onSinenavToggle()">
+                    <mat-icon class="drawer-icon">{{ wideMode ? 'arrow_left' : 'arrow_right'}}</mat-icon>
+                </mat-list-item>
+            </mat-nav-list>
+        </div>
+    </div>
 </div>
