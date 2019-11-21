@@ -9,9 +9,9 @@ import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from 
 export class TopbarComponent {
     @Input() title: string;
     @Input() fullName: string;
+    @Input() profilePath: string;
     @Input() isAuth = false;
 
-    @Output() goToProfile = new EventEmitter();
     @Output() signOut = new EventEmitter();
     @Output() drawerToggle = new EventEmitter();
 

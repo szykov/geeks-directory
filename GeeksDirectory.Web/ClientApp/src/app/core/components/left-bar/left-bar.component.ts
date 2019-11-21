@@ -13,10 +13,10 @@ import { INavLink } from '@app/core/models/nav-link.model';
 export class LeftBarComponent {
     @Input() isAuth = false;
     @Input() profileName: string;
+    @Input() profilePath: string;
     @Input() navLinks: INavLink[];
 
-    @Output() changedMode = new EventEmitter();
-    @Output() goToProfile = new EventEmitter();
+    @Output() changeMode = new EventEmitter();
 
     public wideMode = false;
     public showNavLabels = false;
@@ -28,7 +28,7 @@ export class LeftBarComponent {
         this.wideMode ? this.enableLabelsWithDelay() : (this.showNavLabels = false);
 
         setTimeout(() => {
-            this.changedMode.emit();
+            this.changeMode.emit();
         }, 300);
     }
 

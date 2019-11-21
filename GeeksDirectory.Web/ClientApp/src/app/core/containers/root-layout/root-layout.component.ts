@@ -1,4 +1,12 @@
-import { Component, OnDestroy, OnInit, ChangeDetectionStrategy, ViewChild, AfterViewInit } from '@angular/core';
+import {
+    Component,
+    OnDestroy,
+    OnInit,
+    ChangeDetectionStrategy,
+    ViewChild,
+    AfterViewInit,
+    ChangeDetectorRef
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDrawerContainer } from '@angular/material';
 
@@ -17,7 +25,7 @@ import { INavLink } from '@app/core/models/nav-link.model';
     selector: 'gd-root-layout',
     templateUrl: './root-layout.component.html',
     styleUrls: ['./root-layout.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('drawerContainer', { static: false }) drawerContainer: MatDrawerContainer;
@@ -30,17 +38,17 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
     private unsubscribe: Subject<void> = new Subject();
 
-    constructor(private store: Store<fromState.State>, private route: ActivatedRoute, private router: Router) {}
+    constructor(private store: Store<fromState.State>, private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}
 
     public ngOnInit() {
         this.isAuth$ = this.store.select(fromAuth.isAuth);
 
         this.isAuth$.subscribe(isAuth => {
             if (isAuth) {
-                this.navLinks = [{ label: 'Home', routerLink: '/', icon: 'home' }];
+                this.navLinks = [{ label: 'Home', routerLink: '/profiles', icon: 'home' }];
             } else {
                 this.navLinks = [
-                    { label: 'Home', routerLink: '/', icon: 'home' },
+                    { label: 'Home', routerLink: '/profiles', icon: 'home' },
                     { label: 'Registration', routerLink: './registration', icon: 'person_add' }
                 ];
             }
@@ -67,6 +75,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     ngAfterViewInit() {
         setTimeout(() => {
             this.drawerIsOpened = true;
+            this.cdr.detectChanges();
         }, 300);
     }
 
@@ -74,9 +83,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
         this.store.dispatch(AuthActions.signOut());
     }
 
-    public onGoToProfile() {
-        this.router.navigate(['/profiles', this.personalProfile.id]);
-    }
+    public getProfilePath = () => (this.personalProfile ? `/profiles/${this.personalProfile.id}` : null);
 
     public ngOnDestroy(): void {
         this.unsubscribe.next();

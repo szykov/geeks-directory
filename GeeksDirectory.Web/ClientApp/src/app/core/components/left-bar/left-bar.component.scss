@@ -23,6 +23,11 @@
     line-height: 30px;
 }
 
+.active-link mat-icon,
+.active-link span {
+    color: #e91e63;
+}
+
 .toogle-container {
     padding: 0;
 }
