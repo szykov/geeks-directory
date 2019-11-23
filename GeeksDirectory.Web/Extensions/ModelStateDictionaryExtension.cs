@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 using System.Collections.Generic;
 
-namespace GeeksDirectory.SharedTypes.Extensions
+namespace GeeksDirectory.Web.Extensions
 {
     public static class ModelStateDictionaryExtension
     {
