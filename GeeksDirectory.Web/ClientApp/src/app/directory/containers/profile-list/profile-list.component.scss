@@ -2,6 +2,34 @@
     margin: 25px;
 }
 
+.profiles-bottom-list {
+    min-height: 60px;
+}
+
+.loading-bar {
+    mat-spinner {
+        left: calc(50% - 25px);
+    }
+}
+
+.end-of-world {
+    height: 70px;
+    text-align: center;
+    span {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .loading-bar,
+    .end-of-world {
+        padding-right: 35px;
+    }
+    .end-of-world {
+        font-size: 13px;
+    }
+}
+
 @media only screen and (min-width: 1550px) {
     .profile-list {
         margin-left: 10%;

@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '@shared/common';
-import { IProfile, ISkill } from '../responses';
+import { IProfile, ISkill, IProfiles } from '../responses';
 import { ProfileModel, SkillModel } from '../models';
 
 @Injectable({
@@ -12,18 +12,17 @@ import { ProfileModel, SkillModel } from '../models';
 })
 export class RequestService {
     private headers: HttpHeaders;
-    private endpointBuilder: EndpointBuilder;
 
     constructor(private http: HttpClient) {
         this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     }
 
-    public getProfiles(take: number = 16, skip: number = 0): Observable<IProfile[]> {
+    public getProfiles(limit: number = 16, offset: number = 0): Observable<IProfiles> {
         let url = new EndpointBuilder(CONFIG.connection.endpoints.getProfiles)
-            .addQueryParam('take', take.toString())
-            .addQueryParam('skip', skip.toString())
+            .addQueryParam('limit', limit.toString())
+            .addQueryParam('offset', offset.toString())
             .build();
-        return this.http.get<IProfile[]>(url, { headers: this.headers });
+        return this.http.get<IProfiles>(url, { headers: this.headers });
     }
 
     public getProfile(profileId: number): Observable<IProfile> {

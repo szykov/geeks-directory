@@ -10,7 +10,7 @@ namespace GeeksDirectory.Web.Services.Interfaces
     {
         GeekProfileResponse Get(int profileId);
 
-        IEnumerable<GeekProfileResponse> Get(int take, int skip);
+        GeekProfileResponses Get(int limit, int offset);
 
         GeekProfileResponse Get(string userName);
 

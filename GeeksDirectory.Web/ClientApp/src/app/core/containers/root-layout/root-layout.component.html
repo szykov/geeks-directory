@@ -9,7 +9,7 @@
         </gd-left-bar>
     </mat-drawer>
 
-    <mat-drawer-content>
+    <mat-drawer-content (scroll)="onScroll($event)">
         <ng-content></ng-content>
     </mat-drawer-content>
 </mat-drawer-container>

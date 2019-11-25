@@ -28,7 +28,7 @@ namespace GeeksDirectory.Data.Repositories
             return this.context.Profiles
                 .Include(prf => prf.Skills)
                 .Include(prf => prf.User)
-                .Take(take).Skip(skip)
+                .Skip(skip).Take(take)
                 .ToList();
         }
 
@@ -110,6 +110,11 @@ namespace GeeksDirectory.Data.Repositories
 
             this.context.Profiles.Add(profile);
             context.SaveChanges();
+        }
+
+        public int Total()
+        {
+            return this.context.Profiles.Count();
         }
     }
 }

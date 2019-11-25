@@ -2,7 +2,7 @@ import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest
 import { Injectable } from '@angular/core';
 
 import { Observable, throwError } from 'rxjs';
-import { catchError, map, finalize } from 'rxjs/operators';
+import { catchError, map, finalize, delay } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
 import { AuthState } from '@app/auth/reducers';
@@ -42,8 +42,12 @@ export class HttpConfigInterceptor implements HttpInterceptor {
             headers: request.headers.set('Accept', 'application/json')
         });
 
+        // It shouldn't be faster than 1s for animation
+        let delayTime = new Date(Date.now() + 500);
+
         return next.handle(request).pipe(
             map((event: HttpEvent<any>) => event),
+            delay(delayTime),
             catchError((error: HttpErrorResponse) => {
                 let exception: IException = error.error;
 

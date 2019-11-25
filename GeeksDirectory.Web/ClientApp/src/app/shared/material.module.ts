@@ -16,7 +16,8 @@ import {
     MatSidenavModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
 } from '@angular/material';
 
 const MATERIAL_BUNDLE = [
@@ -35,7 +36,8 @@ const MATERIAL_BUNDLE = [
     MatSidenavModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
 ];
 
 @NgModule({

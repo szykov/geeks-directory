@@ -7,6 +7,7 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { NgProgressRouterModule } from '@ngx-progressbar/router';
 import { CookieService } from 'ngx-cookie-service';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 import { HttpConfigInterceptor } from '@app/services';
 
@@ -30,6 +31,7 @@ import { AppComponent } from '@app/app.component';
         }),
         NgProgressHttpModule,
         NgProgressRouterModule,
+        DeviceDetectorModule.forRoot(),
         CoreModule,
         SharedModule,
         AuthModule,

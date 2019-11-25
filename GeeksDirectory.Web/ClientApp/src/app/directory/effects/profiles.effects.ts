@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { mergeMap, map, tap } from 'rxjs/operators';
-import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions } from '@app/directory/actions';
+import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions, ProfileActions } from '@app/directory/actions';
 
 import { RequestService, NotificationService } from '@app/services';
 import { AuthApiActions } from '@app/auth/actions';
@@ -18,11 +18,26 @@ export class ProfileEffects {
     loadProfiles$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProfilesListActions.loadProfiles),
-            mergeMap(() =>
+            tap(() => ProfileActions.changeLoadingStatus({ loading: true })),
+            mergeMap(({ limit, offset }) =>
                 this.requestService
-                    .getProfiles()
+                    .getProfiles(limit, offset)
                     .pipe(map(result => ProfilesApiActions.loadProfilesSuccess({ collection: result })))
             )
+        )
+    );
+
+    loadProfilesLoader$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ProfilesListActions.loadProfiles, ProfilesDetailsActions.loadProfileDetails),
+            map(() => ProfileActions.changeLoadingStatus({ loading: true }))
+        )
+    );
+
+    loadProfilesSuccess$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ProfilesApiActions.loadProfilesSuccess, ProfilesApiActions.loadProfileDetailsSuccess),
+            map(() => ProfileActions.changeLoadingStatus({ loading: false }))
         )
     );
 

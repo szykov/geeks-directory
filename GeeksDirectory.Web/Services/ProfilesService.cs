@@ -32,12 +32,19 @@ namespace GeeksDirectory.Web.Services
             this.logger = logger;
         }
 
-        public IEnumerable<GeekProfileResponse> Get(int take, int skip)
+        public GeekProfileResponses Get(int limit, int offset)
         {
             try
             {
-                var profiles = this.repository.Get(take, skip);
-                return this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
+                var profiles = this.repository.Get(limit, offset);
+                var total = this.repository.Total();
+
+                var profileResponses = this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
+                return new GeekProfileResponses()
+                {
+                    Pagination = new PaginationResponse() { Limit = limit, Offset = offset, Total = total },
+                    Data = profileResponses
+                };
             }
             catch (ArgumentException ex)
             {

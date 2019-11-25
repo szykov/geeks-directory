@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 using OpenIddict.Validation;
-using System;
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -32,15 +32,15 @@ namespace GeeksDirectory.Web.Controllers
             this.logger = logger;
         }
 
-        // GET: /api/profiles?take={take}&skip={skip}
+        // GET: /api/profiles?take={limit}&skip={offset}
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult<IEnumerable<GeekProfileResponse>> GetProfiles(int take = 25, int skip = 0)
+        public ActionResult<GeekProfileResponses> GetProfiles(int limit = 25, int offset = 0)
         {
             try
             {
-                var profiles = this.context.Get(take, skip);
-                return this.Ok(profiles);
+                var geekProfileResponses = this.context.Get(limit, offset);
+                return this.Ok(geekProfileResponses);
             }
             catch (LogicException ex)
             {
