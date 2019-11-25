@@ -44,22 +44,16 @@ namespace AuthorizationServer.Controllers
                 var user = await this.userManager.FindByNameAsync(request.Username);
                 if (user == null)
                 {
-                    return BadRequest(new ErrorResponse
-                    {
-                        Code = OpenIdConnectConstants.Errors.InvalidGrant,
-                        Message = "The username/password couple is invalid."
-                    });
+                    var invalidGrantError = new ErrorResponse(OpenIdConnectConstants.Errors.InvalidGrant, "The username/password couple is invalid.");
+                    return BadRequest(invalidGrantError);
                 }
 
                 // Validate the username/password parameters and ensure the account is not locked out.
                 var result = await this.signInManager.CheckPasswordSignInAsync(user, request.Password, lockoutOnFailure: true);
                 if (!result.Succeeded)
                 {
-                    return BadRequest(new ErrorResponse
-                    {
-                        Code = OpenIdConnectConstants.Errors.InvalidGrant,
-                        Message = "The username/password couple is invalid."
-                    });
+                    var invalidGrantError = new ErrorResponse(OpenIdConnectConstants.Errors.InvalidGrant, "The username/password couple is invalid.");
+                    return BadRequest(invalidGrantError);
                 }
 
                 // Create a new authentication ticket.
@@ -68,11 +62,8 @@ namespace AuthorizationServer.Controllers
                 return SignIn(ticket.Principal, ticket.Properties, ticket.AuthenticationScheme);
             }
 
-            return BadRequest(new ErrorResponse
-            {
-                Code = OpenIdConnectConstants.Errors.UnsupportedGrantType,
-                Message = "The specified grant type is not supported."
-            });
+            var unsupportedGrantTypeError = new ErrorResponse(OpenIdConnectConstants.Errors.UnsupportedGrantType, "The specified grant type is not supported.");
+            return BadRequest(unsupportedGrantTypeError);
         }
 
         private async Task<AuthenticationTicket> CreateTicketAsync(OpenIdConnectRequest request, ApplicationUser user)

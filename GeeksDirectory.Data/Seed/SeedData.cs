@@ -270,7 +270,7 @@ namespace GeeksDirectory.Data.Seed
                     NormalizedEmail = profile.NormalizedEmail,
                     Id = profile.Id.ToString(),
                     SecurityStamp = Guid.NewGuid().ToString(),
-                    PasswordHash = this.hasher.HashPassword(null, profile.Password)
+                    PasswordHash = this.hasher.HashPassword(default!, profile.Password)
                 };
             }
         }

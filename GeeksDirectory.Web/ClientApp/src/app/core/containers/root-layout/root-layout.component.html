@@ -1,12 +1,15 @@
-<gd-topbar title="Geeks Directory" [fullName]="fullName" [isAuth]="isAuth$ | async" (drawerToggle)="drawer.toggle()"
-    (signOut)="onSignOut()" (goToProfile)="onGoToProfile()">
+<gd-topbar title="Geeks Directory" [fullName]="fullName" [profilePath]="getProfilePath()" [isAuth]="isAuth$ | async"
+    (drawerToggle)="drawer.toggle()" (signOut)="onSignOut()">
 </gd-topbar>
 
-<mat-drawer-container class="drawer-container">
-    <mat-drawer #drawer position="start" mode="side">
-        <gd-left-bar [isAuth]="isAuth$ | async"></gd-left-bar>
+<mat-drawer-container class="drawer-container" #drawerContainer>
+    <mat-drawer [opened]="drawerIsOpened" #drawer position="start" mode="side">
+        <gd-left-bar [isAuth]="isAuth$ | async" [navLinks]="navLinks" [profileName]="fullName"
+            [profilePath]="getProfilePath()" (changeMode)="drawerContainer.updateContentMargins()">
+        </gd-left-bar>
     </mat-drawer>
-    <mat-drawer-content>
+
+    <mat-drawer-content (scroll)="onScroll($event)">
         <ng-content></ng-content>
     </mat-drawer-content>
 </mat-drawer-container>

@@ -32,15 +32,15 @@ namespace GeeksDirectory.Web.Controllers
             this.logger = logger;
         }
 
-        // GET: /api/profiles?take={take}&skip={skip}
+        // GET: /api/profiles?take={limit}&skip={offset}
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult<IEnumerable<GeekProfileResponse>> GetProfiles(int take = 25, int skip = 0)
+        public ActionResult<GeekProfileResponses> GetProfiles(int limit = 25, int offset = 0)
         {
             try
             {
-                var profiles = this.context.Get(take, skip);
-                return this.Ok(profiles);
+                var geekProfileResponses = this.context.Get(limit, offset);
+                return this.Ok(geekProfileResponses);
             }
             catch (LogicException ex)
             {
@@ -55,7 +55,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name;
+                var userName = this.User.Identity.Name!;
                 var profiles = this.context.Get(userName);
 
                 return this.Ok(profiles);
@@ -124,7 +124,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name;
+                var userName = this.User.Identity.Name!;
 
                 var profile = this.context.Update(userName, model);
                 return this.Ok(profile);

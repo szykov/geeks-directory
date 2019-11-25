@@ -1,15 +1,37 @@
-<div class="menu-list">
+<div class="drawer-container" fxLayout="column" fxFlexFill fxLayoutAlign="stretch"
+    [@onSideNavChange]="wideMode ? 'open' : 'close'">
+    <div fxLayout="column" flexLayoutAlign="center center" class="drawer-content">
+        <div class="user-menu" *ngIf="isAuth">
+            <mat-action-list>
+                <mat-list-item [routerLink]="profilePath" routerLinkActive="active-link"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <mat-icon class="drawer-icon" aria-hidden="false" aria-label="Geek icon">android</mat-icon>
+                    <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ profileName }} </span>
+                </mat-list-item>
+            </mat-action-list>
+
+        </div>
+
+        <mat-action-list>
+            <mat-divider></mat-divider>
+            <mat-list-item *ngFor="let navLink of navLinks" [routerLink]="navLink.routerLink"
+                routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon class="drawer-icon">{{navLink.icon}}</mat-icon>
+                <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ navLink.label }}
+                </span>
+            </mat-list-item>
+        </mat-action-list>
+    </div>
+
     <mat-divider></mat-divider>
-    <button mat-button mat-flat-button color="basic" routerLink="/">
-        <mat-icon>home</mat-icon>Home
-    </button>
-    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]" [queryParams]="{ signIn: true }">
-        <mat-icon>input</mat-icon>Sign In
-    </button>
-    <button *ngIf="isAuth" mat-button mat-flat-button color="basic" (click)="onSignOut()">
-        <mat-icon>exit_to_app</mat-icon>Sign Out
-    </button>
-    <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="['./registration']">
-        <mat-icon>person_add</mat-icon>Registration
-    </button>
+
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <div class="toogle-container">
+            <mat-action-list class="toogle-container">
+                <mat-list-item (click)="onSinenavToggle()">
+                    <mat-icon class="drawer-icon">{{ wideMode ? 'arrow_left' : 'arrow_right'}}</mat-icon>
+                </mat-list-item>
+            </mat-action-list>
+        </div>
+    </div>
 </div>

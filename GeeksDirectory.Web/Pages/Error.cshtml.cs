@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 
 using Microsoft.AspNetCore.Mvc;
@@ -8,9 +9,9 @@ namespace GeeksDirectory.Web.Pages
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel
     {
-        public string RequestId { get; set; }
+        public string? RequestId { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public bool ShowRequestId => !String.IsNullOrEmpty(RequestId);
 
         public void OnGet()
         {

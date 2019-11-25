@@ -1,21 +1,27 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { ProfilesApiActions, SkillsApiActions } from '../actions';
-import { IProfile } from '@app/responses';
+import { ProfilesApiActions, SkillsApiActions, ProfileActions } from '../actions';
+import { IProfile, IProfiles } from '@app/responses';
 import { ProfileModel } from '@app/models';
 
 export interface State {
-    collection: IProfile[];
+    collection: IProfiles;
     selected: IProfile | null;
+    loading: boolean;
 }
 
 export const initialState: State = {
-    collection: [],
-    selected: null
+    collection: null,
+    selected: null,
+    loading: false
 };
 
 export const reducer = createReducer(
     initialState,
+    on(ProfileActions.changeLoadingStatus, (state, { loading }) => ({
+        ...state,
+        loading
+    })),
     on(ProfilesApiActions.loadProfilesSuccess, (state, { collection }) => ({
         ...state,
         collection
@@ -46,6 +52,7 @@ export const reducer = createReducer(
     })
 );
 
+export const getLoadingStatus = (state: State) => state.loading;
 export const getCollection = (state: State) => state.collection;
 export const getSelectedProfile = (state: State) => state.selected;
 export const getSelectedProfileModel = (state: State) =>

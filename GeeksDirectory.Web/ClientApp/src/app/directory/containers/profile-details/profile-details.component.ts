@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
-import { takeUntil, debounceTime, map } from 'rxjs/operators';
+import { takeUntil, debounceTime } from 'rxjs/operators';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 import { Store } from '@ngrx/store';
@@ -47,10 +47,7 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
 
         this.model$ = this.store.select(fromProfiles.getProfileModel);
 
-        this.filteredCities$.pipe(
-            takeUntil(this.unsubscribe),
-            debounceTime(300)
-        );
+        this.filteredCities$.pipe(takeUntil(this.unsubscribe), debounceTime(300));
     }
 
     public onChangeCity(value: string) {

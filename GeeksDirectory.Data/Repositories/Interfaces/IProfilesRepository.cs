@@ -12,10 +12,12 @@ namespace GeeksDirectory.Data.Repositories.Interfaces
 
         GeekProfile Get(string userName);
 
-        IEnumerable<GeekProfile> Get(int take, int skip);
+        IEnumerable<GeekProfile> Get(int limit, int offset);
 
         IEnumerable<GeekProfile> Search(string searchQuery);
 
         void Update(GeekProfile profile);
+
+        int Total();
     }
 }

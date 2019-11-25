@@ -10,7 +10,7 @@ namespace GeeksDirectory.SharedTypes.Models
         [EmailAddress]
         [NoWhitespace]
         [StringLength(maximumLength: 255)]
-        public string Email { get; set; }
+        public string Email { get; set; } = default!;
 
         [Required]
         [DataType(DataType.Password)]
@@ -20,6 +20,6 @@ namespace GeeksDirectory.SharedTypes.Models
         [HasNumber]
         [SpecialCharacter(true)]
         [StringLength(maximumLength: 255, MinimumLength = 6)]
-        public string Password { get; set; }
+        public string Password { get; set; } = default!;
     }
 }

@@ -1,18 +1,41 @@
-button {
-    font-size: 14px;
-    height: 43px;
-    text-align: left;
-    padding-left: 25px;
-    display: block;
-    width: 150px;
-
-    mat-icon {
-        margin-right: 10px;
-        font-size: 25px;
-        margin-bottom: 9px;
-    }
+.drawer-container {
+    min-width: 60px;
 }
 
-.menu-list {
-    margin-top: 20px;
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.drawer-icon {
+    padding-left: 3px;
+}
+
+.drawer-content {
+    height: 100%;
+}
+
+.nav-link {
+    padding-left: 26px;
+    padding-top: 2px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.active-link mat-icon,
+.active-link span {
+    color: #e91e63;
+}
+
+.toogle-container {
+    padding: 0;
+}
+
+.fill-empty {
+    flex: 1 auto;
+}
+
+.mat-list-base {
+    padding-top: 0;
 }

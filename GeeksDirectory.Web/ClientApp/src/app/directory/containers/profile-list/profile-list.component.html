@@ -1,3 +1,14 @@
-<div gdGap="25px" gdColumns="repeat(auto-fill, minmax(280px, 1fr))" class="profile-list">
-    <gd-profile-card *ngFor="let profile of profiles$ | async" [profile]="profile"></gd-profile-card>
+<div *ngIf="profiles.length">
+    <div gdGap="25px" gdColumns="repeat(auto-fill, minmax(280px, 1fr))" fxFlexAlign="center" class="profile-list">
+        <gd-profile-card *ngFor="let profile of profiles" [profile]="profile"></gd-profile-card>
+    </div>
+    <div class="profiles-bottom-list">
+        <div class="loading-bar" *ngIf="laoding$ | async">
+            <mat-spinner [diameter]="50"></mat-spinner>
+        </div>
+        <div class="end-of-world" *ngIf="isLoadedAll()">
+            <span class="title-header">You have reached the world's edge,</span>
+            <span class="title-header">none but devils play past here...</span>
+        </div>
+    </div>
 </div>

@@ -33,6 +33,6 @@ export class DialogService {
         const dialogRef = this.dialog.open(component, config);
         let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
 
-        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter(result => result != null));
+        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter(result => !!result));
     }
 }

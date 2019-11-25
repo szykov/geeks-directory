@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { IProfile } from '@app/responses';
+import { IProfile, IProfiles } from '@app/responses';
 
-export const loadProfilesSuccess = createAction('[Profiles/API] Load Profiles Success', props<{ collection: IProfile[] }>());
+export const loadProfilesSuccess = createAction('[Profiles/API] Load Profiles Success', props<{ collection: IProfiles }>());
 export const loadProfileDetailsSuccess = createAction(
     '[Profiles/API] Load Profile Details Success',
     props<{ selected: IProfile }>()
