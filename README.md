@@ -4,7 +4,7 @@ Web site for assessment of competence in technologies.
 
 ## Stack
 
-- Back-End: .NET Core 2.2 Web API;
+- Back-End: .NET Core 3.0 Web API;
 - Front-End: Angular 8 + Angular Material;
 - Storage: Sqlite + EF Core (Code First);
 - Authentification: OpenIdDict (OAuth JWT);
