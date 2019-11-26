@@ -1,0 +1,15 @@
+.ng-bar-placeholder {
+    top: 63px;
+
+    .ng-meteor {
+        top: 0px !important;
+        transform: rotate(0deg) !important;
+        width: 6px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .ng-bar-placeholder {
+        top: 55px;
+    }
+}

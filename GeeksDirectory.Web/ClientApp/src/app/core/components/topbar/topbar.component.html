@@ -13,11 +13,15 @@
     <div class="fill-empty"></div>
 
     <div class="topbar-actions">
+        <button mat-button class="github-link" (click)="goToGithub()">
+            <mat-icon svgIcon="github"></mat-icon>
+            GitHub
+        </button>
+
         <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]"
             [queryParams]="{ signIn: true }">
             Sign In!
         </button>
-
 
         <div *ngIf="isAuth">
             <div class="welcome-message" [routerLink]="profilePath">

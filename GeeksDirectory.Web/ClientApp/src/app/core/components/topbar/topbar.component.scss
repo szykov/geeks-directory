@@ -51,8 +51,16 @@
     flex: 1 auto;
 }
 
+.github-link {
+    margin-right: 10px;
+    mat-icon {
+        margin-right: 3px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
-    .welcome-message {
+    .welcome-message,
+    .github-link {
         display: none;
     }
 }

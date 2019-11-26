@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import './assets/snack-bar';
+@import './assets/styles/snack-bar';
+@import './assets/styles/ng-bar';
 
 html,
 body {
@@ -16,20 +17,4 @@ body {
     line-height: 30px;
     letter-spacing: 1px;
     text-shadow: 2px 2px #616161;
-}
-
-.ng-bar-placeholder {
-    top: 63px;
-
-    .ng-meteor {
-        top: 0px !important;
-        transform: rotate(0deg) !important;
-        width: 6px;
-    }
-}
-
-@media only screen and (max-width: 640px) {
-    .ng-bar-placeholder {
-        top: 55px;
-    }
 }
