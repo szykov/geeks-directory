@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
 import * as fromProfiles from '@app/directory/reducers';
 import { ProfilesListActions } from '@app/directory/actions';
 
-import { DeviceService } from '@app/services/device.service';
+import { DeviceService } from '@app/services';
 import { IProfile } from '@app/responses';
 
 @Injectable()
@@ -18,6 +18,6 @@ export class ProfileListResolveGuard implements Resolve<IProfile[]> {
         let paginationStep = this.deviceService.getPaginationStep();
         this.store.dispatch(ProfilesListActions.loadProfiles({ limit: paginationStep, offset: 0 }));
 
-        return this.store.select(fromProfiles.getLoadingStatus).pipe(take(2));
+        return this.store.select(fromProfiles.getProfiles).pipe(take(2));
     }
 }

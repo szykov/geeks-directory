@@ -29,14 +29,14 @@ export class ProfileEffects {
 
     loadProfilesLoader$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProfilesListActions.loadProfiles, ProfilesDetailsActions.loadProfileDetails),
+            ofType(ProfilesListActions.loadProfiles),
             map(() => ProfileActions.changeLoadingStatus({ loading: true }))
         )
     );
 
     loadProfilesSuccess$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProfilesApiActions.loadProfilesSuccess, ProfilesApiActions.loadProfileDetailsSuccess),
+            ofType(ProfilesApiActions.loadProfilesSuccess),
             map(() => ProfileActions.changeLoadingStatus({ loading: false }))
         )
     );

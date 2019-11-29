@@ -1,3 +1,5 @@
+@import '~src/assets/styles/variables';
+
 .topbar {
     display: flex;
     flex-direction: row;
@@ -19,7 +21,6 @@
     }
 
     .topbar-nav {
-        margin-left: 10px;
         margin-top: 2px;
         cursor: pointer;
         outline: 0;
@@ -34,17 +35,24 @@
 
 .welcome-message {
     cursor: pointer;
-    display: initial;
+    display: inline;
 
     span {
         font-size: 16px;
         font-weight: 400;
-        margin-right: 10px;
     }
 }
 
 .topbar-actions {
+    > div {
+        display: inline;
+    }
+
     flex: 0 auto;
+
+    button {
+        margin-left: 10px;
+    }
 }
 
 .fill-empty {
@@ -52,13 +60,12 @@
 }
 
 .github-link {
-    margin-right: 10px;
     mat-icon {
         margin-right: 3px;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: $xs) {
     .welcome-message,
     .github-link {
         display: none;

@@ -20,8 +20,8 @@
     </mat-form-field>
 
     <mat-form-field>
-        <input type="text" placeholder="Cities" aria-label="City" matInput [matAutocomplete]="auto"
-            (keyup)="onChangeCity()" [(ngModel)]="model.city" #city name="city" id="city" required />
+        <input type="text" placeholder="Cities" matInput [matAutocomplete]="auto" (keyup)="onChangeCity()"
+            [(ngModel)]="model.city" #city name="city" id="city" required />
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let city of cities" [value]="city">
                 {{city}}
@@ -44,7 +44,7 @@
             [(ngModel)]="model.password" #password="ngModel" id="password" name="password" minlength="6" gdNoWhiteSpace
             gdHasLowerCase gdHasUpperCase gdHasNumber [gdSpecialCharacter]="true" required />
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
+            [attr.aria-pressed]="hide" tabindex="-1">
             <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
         <mat-error *ngIf="!password.valid && !password.pristine && password.errors['required']">Password

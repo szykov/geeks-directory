@@ -1,5 +1,6 @@
 <div *ngIf="profiles.length">
-    <div gdGap="25px" gdColumns="repeat(auto-fill, minmax(280px, 1fr))" fxFlexAlign="center" class="profile-list">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" gdGap="25px"
+        gdColumns.gt-xs="repeat(auto-fill, minmax(280px, 1fr))" class="profile-list">
         <gd-profile-card *ngFor="let profile of profiles" [profile]="profile"></gd-profile-card>
     </div>
     <div class="profiles-bottom-list">

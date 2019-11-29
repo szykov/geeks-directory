@@ -84,18 +84,22 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
     public onScroll(event: Event) {
         let element = event.target as Element;
-        let newScrollPosition = this.identifyScrollPosition(element);
+        this.refreshScrollPosition(element.clientHeight, element.scrollHeight, element.scrollTop);
+    }
+
+    private refreshScrollPosition(clientHeight: number, scrollHeight: number, scrollTop: number) {
+        let newScrollPosition = this.identifyScrollPosition(clientHeight, scrollHeight, scrollTop);
         if (this.scrollPosition !== newScrollPosition) {
             this.store.dispatch(ScrollActions.setScrollPosition({ scrollPosition: newScrollPosition }));
             this.scrollPosition = newScrollPosition;
         }
     }
 
-    public identifyScrollPosition(element: Element): ScrollPosition {
-        let deviation = element.clientHeight * 0.1;
-        if (element.scrollTop < deviation) {
+    private identifyScrollPosition(clientHeight: number, scrollHeight: number, scrollTop: number): ScrollPosition {
+        let deviation = clientHeight * 0.1;
+        if (scrollTop < deviation) {
             return ScrollPosition.Up;
-        } else if (element.scrollHeight - element.scrollTop - deviation < element.clientHeight) {
+        } else if (scrollHeight - scrollTop - deviation < clientHeight) {
             return ScrollPosition.Down;
         } else {
             return ScrollPosition.Middle;

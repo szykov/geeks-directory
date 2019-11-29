@@ -54,7 +54,7 @@ namespace GeeksDirectory.Web
             app.UseAuthentication();
             app.UsePredefinedErrorHandling(env);
             app.UsePredefinedRouting();
-            app.UsePredefinedSpa(env);
+            app.UsePredefinedSpa();
 
 
         }

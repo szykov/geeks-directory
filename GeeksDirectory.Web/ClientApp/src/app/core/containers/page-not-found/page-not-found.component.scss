@@ -1,3 +1,5 @@
+@import '~src/assets/styles/variables';
+
 * {
     box-sizing: border-box;
 }
@@ -20,7 +22,6 @@ body {
 }
 
 .notfound {
-    width: 460px;
     line-height: 1.4;
     text-align: center;
 }
@@ -69,7 +70,7 @@ body {
     margin-bottom: 25px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: $sm) {
     .notfound .notfound-404 {
         height: 200px;
     }
@@ -79,7 +80,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $xs) {
     .notfound .notfound-404 h1 {
         height: 150px;
         line-height: 162px;

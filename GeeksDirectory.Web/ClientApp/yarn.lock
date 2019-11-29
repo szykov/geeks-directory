@@ -873,30 +873,30 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@ngrx/effects@^8.5.1":
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.5.1.tgz#d8ffca66d77db678f6fcdd6a11bc38a433c7bede"
-  integrity sha512-xb5GfXCN13wEUhe5YUN5t9GeP+DzCJYKwtB2pMR94gqMOU2eQdE3qmglRZIMLjsENSAtnFO7i11FPrwG31Jkyw==
+"@ngrx/effects@^8.5.2":
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.5.2.tgz#c4f81947f4028a0d678ed2641101481cdbe11b59"
+  integrity sha512-i2rKLmFcfJmPPQRul1PuXXRuBX2q1g7tK6DbWreNabU/46fYlEwqiiW6lU53t3AgJ3yd6UpeLTR6CHTflkzL+w==
 
-"@ngrx/entity@^8.5.1":
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-8.5.1.tgz#8d9d281ff6a9e45b471dd39a46c707e82ed10456"
-  integrity sha512-v8h0O0sCYSEsbthfGHEFtKX4Sf/tU9dAQz/MtxG2DHL/UDzX47nS9+YmAEtnk+iRNzOlTFTFtoVtQAuCJONHUg==
+"@ngrx/entity@^8.5.2":
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-8.5.2.tgz#548228bbe4ec993dc5d0fa100bd0fe28e38518ed"
+  integrity sha512-9eP6DNbMG0EGTwMbUzSnxAvHdid/D/APmjPn1GPj6AKjsOfLEwhtxB5SF3re1Le0H2JrdhcbEEKaBjJS9JRZRg==
 
-"@ngrx/schematics@^8.5.1":
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-8.5.1.tgz#3b3ebf4d257ffde6bad4e2665e6cc8c61c50b0c7"
-  integrity sha512-H5OrvTEmMo+HhbUerEsN4ZelMrlC0wqRdkHFDbC6gOLSeEhCThNX3q8eQiureFJdi6WiT7HS6NPiXCOwwDMQzw==
+"@ngrx/schematics@^8.5.2":
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-8.5.2.tgz#59088709f6e2a59ff978380bd30acad2e9930030"
+  integrity sha512-5WcuMpd1pHESqn/Ym7SFG13Kj2yfYUGKHP7Yq/DU3jHWVmaiqn52bbAmuzzUYLrucA94Pvi1CAhbVeMbdXcYCw==
 
-"@ngrx/store-devtools@^8.5.1":
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-8.5.1.tgz#17ad7b605ff85d30d7ffbee9bf43f928583cf010"
-  integrity sha512-Eml2tV1GkGA7ctnCH7DGKSaQEKtqbFPdnGjgyVyZilKC1oSonsw6U5+vfG3t11CgGSTyZQvi+wQLbmNiKuqQ/g==
+"@ngrx/store-devtools@^8.5.2":
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-8.5.2.tgz#722b2b9d290f6b64a9bce421d1a0f283970319a3"
+  integrity sha512-3GrAAX3/J39u0AcREgWBiUwuNkZhgei+2K6/bulkAu/BHw+PJaZqq5+c+uQFvi0/aq+/8+9wjNhhCWS4Entk/Q==
 
-"@ngrx/store@^8.5.1":
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.5.1.tgz#5141610bfd67675f5bc7d31edd1fc996c330675a"
-  integrity sha512-KIQ9Ooro0tl3+ohTpSXvvVUlo40TTLWAWFx2Ys8pI1Yqr39O9da3PNWecLA/2q4YmFf1bO072lYmcBTp1+Shvg==
+"@ngrx/store@^8.5.2":
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-8.5.2.tgz#18e4a39f3e7ac2ec8307653837ec3c4153bde04f"
+  integrity sha512-JPlc23Aw3rlEKt6LCkg3a0zlo0tEgkohH3CDHVbUIYSgg3DWOnmNfwztbz4pa2u2wua5PfFCovC7HKTNmapx/w==
 
 "@ngtools/webpack@8.3.19":
   version "8.3.19"
@@ -971,10 +971,10 @@
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.4.0.tgz#018c56db42400c092aae47de21f710b7f04e4b06"
   integrity sha512-6pUnBg6DuSB55xnxJ5+gW9JOkFrPsXkYAuqqEE8oyrpgDiPQ+TZ+1Zt4S+CHcRJcxyNYXeIXG4vHSzdF6y9Uvw==
 
-"@types/jasmine@~3.4.6":
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.4.6.tgz#afcb210af0fa751b85a96b2034eedada65390be1"
-  integrity sha512-hpQHs+lmZ0uuCrGyqypdI1Ho7jRFolOBT6OkNdZPFziLSSEKvWu+VxWU6bGdNEA/hoV4jV8pdDeNx8EWlmfNAw==
+"@types/jasmine@~3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.5.0.tgz#2ad2006c8a937d20df20a8fee86071d0f730ef99"
+  integrity sha512-kGCRI9oiCxFS6soGKlyzhMzDydfcPix9PpTkr7h11huxOxhWwP37Tg7DYBaQ18eQTNreZEuLkhpbGSqVNZPnnw==
 
 "@types/jasminewd2@~2.0.8":
   version "2.0.8"
@@ -993,10 +993,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.2.tgz#c4e63af5e8823ce9cc3f0b34f7b998c2171f0c44"
   integrity sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
 
-"@types/node@~12.12.8":
-  version "12.12.8"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.8.tgz#dab418655af39ce2fa99286a0bed21ef8072ac9d"
-  integrity sha512-XLla8N+iyfjvsa0KKV+BP/iGSoTmwxsu5Ci5sM33z9TjohF72DEz95iNvD6pPmemvbQgxAv/909G73gUn8QR7w==
+"@types/node@~12.12.14":
+  version "12.12.14"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.14.tgz#1c1d6e3c75dba466e0326948d56e8bd72a1903d2"
+  integrity sha512-u/SJDyXwuihpwjXy7hOOghagLEV1KdAST6syfnOk6QZAMzZuWZqXy5aYYZbh8Jdpd4escVFP0MvftHNDb9pruA==
 
 "@types/q@^0.0.32":
   version "0.0.32"
@@ -4566,10 +4566,10 @@ karma-chrome-launcher@~3.1.0:
   dependencies:
     which "^1.2.1"
 
-karma-coverage-istanbul-reporter@~2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-2.1.0.tgz#5f1bcc13c5e14ee1d91821ee8946861674f54c75"
-  integrity sha512-UH0mXPJFJyK5uiK7EkwGtQ8f30lCBAfqRResnZ4pzLJ04SOp4SPlYkmwbbZ6iVJ6sQFVzlDUXlntBEsLRdgZpg==
+karma-coverage-istanbul-reporter@~2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/karma-coverage-istanbul-reporter/-/karma-coverage-istanbul-reporter-2.1.1.tgz#37a775fbfbb3cbe98cebf19605c94c6277c3b88a"
+  integrity sha512-CH8lTi8+kKXGvrhy94+EkEMldLCiUA0xMOiL31vvli9qK0T+qcXJAwWBRVJWnVWxYkTmyWar8lPz63dxX6/z1A==
   dependencies:
     istanbul-api "^2.1.6"
     minimatch "^3.0.4"

@@ -1,10 +1,5 @@
 export let CONFIG = {
     gitHubUrl: 'https://github.com/szykov/GeeksDirectory',
-    pagination: {
-        mobile: 5,
-        tablet: 10,
-        desktop: 20
-    },
     ignoreConneciton: false,
     connection: {
         protocol: 'http',

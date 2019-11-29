@@ -1,5 +1,7 @@
+@import '~src/assets/styles/variables';
+
 .mat-dialog-content {
-    min-width: 200px;
+    min-width: 230px;
     height: 312px;
 }
 
@@ -28,15 +30,19 @@
 .score,
 .mini-score {
     margin-top: 10px;
+    width: 100%;
+    mat-button-toggle {
+        width: 25%;
+    }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $xs) {
     .score {
         display: none;
     }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: $xs) {
     .mini-score {
         display: none;
     }

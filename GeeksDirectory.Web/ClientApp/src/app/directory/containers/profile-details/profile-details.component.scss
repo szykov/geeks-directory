@@ -1,8 +1,10 @@
+@import '~src/assets/styles/variables';
+
 .profile-container {
     width: 500px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: $xs) {
     .profile-container {
         width: 85%;
     }

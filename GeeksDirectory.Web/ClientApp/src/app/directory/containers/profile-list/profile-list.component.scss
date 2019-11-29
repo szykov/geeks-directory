@@ -1,3 +1,5 @@
+@import '~src/assets/styles/variables';
+
 .profile-list {
     margin: 25px;
 }
@@ -20,24 +22,29 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .loading-bar,
-    .end-of-world {
-        padding-right: 35px;
+@media only screen and (max-width: $xs) {
+    .profile-list {
+        margin-left: 0;
     }
     .end-of-world {
         font-size: 13px;
     }
 }
 
-@media only screen and (min-width: 1580px) {
+@media only screen and (min-width: $xs) {
+    gd-profile-card {
+        min-height: 205px;
+    }
+}
+
+@media only screen and (min-width: $lg) {
     .profile-list {
         margin-left: 10%;
         margin-right: 10%;
     }
 }
 
-@media only screen and (min-width: 1750px) {
+@media only screen and (min-width: $xl) {
     .profile-list {
         margin-left: 15%;
         margin-right: 15%;

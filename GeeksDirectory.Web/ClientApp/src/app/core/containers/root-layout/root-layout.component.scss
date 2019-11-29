@@ -1,3 +1,5 @@
+@import '~src/assets/styles/variables';
+
 .drawer-trigger {
     min-width: 0;
     width: 25px;
@@ -21,7 +23,7 @@
         0px 1px 3px 0px rgba(252, 228, 236, 0.12);
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: $xs) {
     .drawer-container {
         top: 56px;
     }

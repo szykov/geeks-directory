@@ -24,9 +24,8 @@
 
     <mat-form-field appearance="fill">
         <mat-label>City</mat-label>
-        <input type="text" placeholder="Cities" aria-label="City" matInput [matAutocomplete]="auto"
-            [(ngModel)]="model.city" #city name="city" id="city" [disabled]="!editable" required
-            (keyup)="onChangeCity()" />
+        <input type="text" placeholder="Cities" matInput [matAutocomplete]="auto" [(ngModel)]="model.city" #city
+            name="city" id="city" [disabled]="!editable" required (keyup)="onChangeCity()" />
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let city of cities" [value]="city">
                 {{city}}

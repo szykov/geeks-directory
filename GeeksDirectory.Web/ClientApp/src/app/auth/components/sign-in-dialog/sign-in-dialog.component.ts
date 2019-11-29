@@ -23,6 +23,8 @@ export class SignInDialogComponent implements OnInit {
         if (this.data) {
             this.model = this.data;
         }
+
+        this.dialogRef.backdropClick().subscribe(() => this.onCancel());
     }
 
     public onSubmit() {
