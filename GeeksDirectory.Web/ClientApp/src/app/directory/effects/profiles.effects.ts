@@ -2,7 +2,13 @@ import { Injectable } from '@angular/core';
 
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { mergeMap, map, tap } from 'rxjs/operators';
-import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions, ProfileActions } from '@app/directory/actions';
+import {
+    ProfilesListActions,
+    ProfilesApiActions,
+    ProfilesDetailsActions,
+    ProfileActions,
+    SearchActions
+} from '@app/directory/actions';
 
 import { RequestService, NotificationService } from '@app/services';
 import { AuthApiActions } from '@app/auth/actions';
@@ -18,7 +24,6 @@ export class ProfileEffects {
     loadProfiles$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProfilesListActions.loadProfiles),
-            tap(() => ProfileActions.changeLoadingStatus({ loading: true })),
             mergeMap(({ limit, offset }) =>
                 this.requestService
                     .getProfiles(limit, offset)
@@ -68,6 +73,23 @@ export class ProfileEffects {
         this.actions$.pipe(
             ofType(ProfilesApiActions.updatePersonalProfileSuccess),
             map(({ selected }) => AuthApiActions.personalizeSuccess({ profile: selected }))
+        )
+    );
+
+    searchProfilesSuccess$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(SearchActions.searchProfiles),
+            mergeMap(({ query }) => {
+                if (query) {
+                    return this.requestService
+                        .searchProfiles(query)
+                        .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
+                } else {
+                    return this.requestService
+                        .getProfiles()
+                        .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result.data })));
+                }
+            })
         )
     );
 }

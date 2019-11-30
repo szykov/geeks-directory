@@ -81,13 +81,14 @@ namespace GeeksDirectory.Data.Repositories
                 throw new ArgumentNullException(paramName: nameof(searchQuery));
             }
 
-            return this.context.Profiles.Where(prf => 
-                EF.Functions.Like(prf.Name, searchQuery) ||
-                EF.Functions.Like(prf.Surname, searchQuery) ||
-                EF.Functions.Like(prf.MiddleName, searchQuery) ||
-                EF.Functions.Like(prf.City, searchQuery) ||
-                EF.Functions.Like(String.Join(" ", prf.Skills.Select(s => s.Description)), searchQuery) ||
-                EF.Functions.Like(String.Join(" ", prf.Skills.Select(s => s.Name)), searchQuery));
+            return this.context.Profiles
+                .Include(prf => prf.Skills)
+                .Include(prf => prf.User)
+                .Where(prf => EF.Functions.Like(prf.Name, searchQuery) ||
+                    EF.Functions.Like(prf.Surname, searchQuery) ||
+                    EF.Functions.Like(prf.MiddleName, searchQuery) ||
+                    EF.Functions.Like(prf.City, searchQuery) ||
+                    prf.Skills.Any(skl => EF.Functions.Like(skl.Name, searchQuery)));
         }
 
         public void Update(GeekProfile profile)

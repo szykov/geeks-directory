@@ -50,7 +50,7 @@ To login use profile's email and password. Password is always `Pa$$w0rd`.
 10. ~~Add Skills adding functionality~~;
 11. ~~Add Skills assessment functionality~~;
 12. ~~Update layout for small screen support~~;
-13. Search functionality on front-end side;
+13. ~~Search functionality on front-end side~~;
 14. ~~Limit editing profile to personal one on server side;~~
 15. ~~Add more validations for password and skill's name~~;
 16. Get previous score when evaluate skill;
@@ -58,4 +58,4 @@ To login use profile's email and password. Password is always `Pa$$w0rd`.
 18. ~~Refactoring / code review~~;
 19. ~~Seed database~~;
 20. ~~Add pagination~~;
-    ...
+21. Add OpenApi;

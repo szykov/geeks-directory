@@ -1,0 +1,12 @@
+<div class="search-container">
+    <mat-form-field class="search-bar animated fadeInUp" [@enter]>
+        <input matInput (keyup)="delaySearch($event.target.value, $event.code)" (keyup.enter)="onSearch(searchBar)"
+            placeholder="Search..." [value]="searchBar">
+        <button class="search-icon" mat-icon-button matSuffix (click)="onSearch(searchBar)">
+            <mat-icon matSuffix>search</mat-icon>
+        </button>
+
+    </mat-form-field>
+
+    <gd-search-table [profiles]="profiles$ | async" (goToProfile)="onGoToProfile($event)"></gd-search-table>
+</div>

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 
+using GeeksDirectory.SharedTypes.Attributes;
 using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
@@ -51,7 +52,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // GET: /api/profiles/me
         [HttpGet("me")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> GetMyProfile()
+        public ActionResult<GeekProfileResponse> GetMyProfile()
         {
             try
             {
@@ -70,7 +71,7 @@ namespace GeeksDirectory.Web.Controllers
         // GET: /api/profiles/search?query={query}
         [AllowAnonymous]
         [HttpGet("search")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles([FromQuery]string query)
+        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles([RequiredFromQuery]string query)
         {
             try
             {

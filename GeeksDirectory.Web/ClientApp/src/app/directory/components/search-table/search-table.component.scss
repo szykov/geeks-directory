@@ -1,0 +1,30 @@
+@import '~src/assets/styles/variables';
+
+.search-table {
+    width: 100%;
+}
+
+.skill-badge {
+    display: inline;
+
+    &:not(:first-child) {
+        margin-left: 18px;
+    }
+}
+
+.st-row:hover {
+    background: #e91e63;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: $sm) {
+    .hide-sm {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: $xs) {
+    .hide-xs {
+        display: none;
+    }
+}

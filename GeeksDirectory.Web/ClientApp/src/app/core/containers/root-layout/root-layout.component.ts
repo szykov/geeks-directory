@@ -52,6 +52,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
             } else {
                 this.navLinks = [
                     { label: 'Home', routerLink: '/profiles', icon: 'home' },
+                    { label: 'Search', routerLink: './profiles/search', icon: 'search' },
                     { label: 'Registration', routerLink: './registration', icon: 'person_add' }
                 ];
             }

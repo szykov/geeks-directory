@@ -3,6 +3,7 @@ using GeeksDirectory.SharedTypes.Responses;
 
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
+using System;
 using System.Collections.Generic;
 
 namespace GeeksDirectory.Web.Extensions
@@ -11,6 +12,11 @@ namespace GeeksDirectory.Web.Extensions
     {
         public static ErrorResponse ToErrorResponse(this ModelStateDictionary modelState)
         {
+            if (modelState is null)
+            {
+                throw new ArgumentNullException(paramName: nameof(modelState));
+            }
+
             var modelValidationErrors = new List<ModelValidationError>();
             foreach (KeyValuePair<string, ModelStateEntry> modelEntry in modelState)
             {

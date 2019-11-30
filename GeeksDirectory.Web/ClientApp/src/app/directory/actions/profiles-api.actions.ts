@@ -11,3 +11,5 @@ export const updatePersonalProfileSuccess = createAction(
     '[Profiles/API] Update Personal Profile Success',
     props<{ selected: IProfile }>()
 );
+
+export const searchProfilesSuccess = createAction('[Profiles/API] Search Profiles Success', props<{ searched: IProfile[] }>());

@@ -13,6 +13,7 @@ export let CONFIG = {
             getMyProfile: 'api/profiles/me',
             registerProfile: 'api/profiles',
             updatePersonalProfile: 'api/profiles/me',
+            searchProfiles: 'api/profiles/search',
             getSkill: 'api/profiles/{profileId}/skills',
             addSkill: 'api/profiles/{profileId}/skills',
             setSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score'

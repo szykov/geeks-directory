@@ -46,6 +46,11 @@ export class RequestService {
         return this.http.post<ISkill>(url, skill, { headers: this.headers });
     }
 
+    public searchProfiles(query: string): Observable<IProfile[]> {
+        let url = new EndpointBuilder(CONFIG.connection.endpoints.searchProfiles).addQueryParam('query', query).build();
+        return this.http.get<IProfile[]>(url, { headers: this.headers });
+    }
+
     public setSkillScore(profileId: number, skillName: string, score: number): Observable<number> {
         let url = new EndpointBuilder(CONFIG.connection.endpoints.setSkillScore)
             .setUrlParam('profileId', profileId.toString())

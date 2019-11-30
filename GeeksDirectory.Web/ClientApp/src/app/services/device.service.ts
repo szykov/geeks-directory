@@ -22,8 +22,6 @@ export class DeviceService {
         let widthCount = Math.round(this.window.innerWidth / 395);
         let heightCount = Math.floor(this.window.innerHeight / 160);
 
-        console.log('widthCount:' + widthCount);
-
         return this.getClosestInRange([1, 2, 3, 4], widthCount) * heightCount;
     }
 

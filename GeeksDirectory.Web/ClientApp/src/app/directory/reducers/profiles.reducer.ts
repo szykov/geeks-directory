@@ -2,17 +2,18 @@ import { createReducer, on } from '@ngrx/store';
 
 import { ProfilesApiActions, SkillsApiActions, ProfileActions } from '../actions';
 import { IProfile, IProfiles } from '@app/responses';
-import { ProfileModel } from '@app/models';
 
 export interface State {
     collection: IProfiles;
     selected: IProfile | null;
+    searched: IProfile[];
     loading: boolean;
 }
 
 export const initialState: State = {
     collection: null,
     selected: null,
+    searched: [],
     loading: false
 };
 
@@ -33,6 +34,10 @@ export const reducer = createReducer(
     on(ProfilesApiActions.updatePersonalProfileSuccess, (state, { selected }) => ({
         ...state,
         selected
+    })),
+    on(ProfilesApiActions.searchProfilesSuccess, (state, { searched }) => ({
+        ...state,
+        searched
     })),
     on(SkillsApiActions.addSkillSuccess, (state, { skill }) => {
         let selected = { ...state.selected };
@@ -55,5 +60,4 @@ export const reducer = createReducer(
 export const getLoadingStatus = (state: State) => state.loading;
 export const getCollection = (state: State) => state.collection;
 export const getSelectedProfile = (state: State) => state.selected;
-export const getSelectedProfileModel = (state: State) =>
-    state.selected ? ProfileModel.fromProfileResponse(state.selected) : null;
+export const getSearchedProfiles = (state: State) => state.searched;

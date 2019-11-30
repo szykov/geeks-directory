@@ -1,0 +1,34 @@
+@import '~src/assets/styles/variables';
+
+.search-container {
+    margin: 10px 25px 35px 25px;
+}
+
+.search-icon {
+    font-size: 30px !important;
+}
+
+.search-bar {
+    font-size: 14px;
+    width: 100%;
+}
+
+@media only screen and (max-width: $xs) {
+    .search-container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: $lg) {
+    .search-container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media only screen and (min-width: $xl) {
+    .search-container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

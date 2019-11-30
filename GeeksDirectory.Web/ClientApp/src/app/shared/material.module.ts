@@ -12,12 +12,15 @@ import {
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatMenuModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatToolbarModule,
-    MatListModule,
-    MatProgressSpinnerModule
+    MatSortModule,
+    MatTableModule,
+    MatToolbarModule
 } from '@angular/material';
 
 const MATERIAL_BUNDLE = [
@@ -32,12 +35,15 @@ const MATERIAL_BUNDLE = [
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatMenuModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatToolbarModule,
-    MatListModule,
-    MatProgressSpinnerModule
+    MatSortModule,
+    MatTableModule,
+    MatToolbarModule
 ];
 
 @NgModule({

@@ -18,8 +18,7 @@
             GitHub
         </button>
 
-        <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" [routerLink]="[]"
-            [queryParams]="{ signIn: true }">
+        <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" (click)="openSignInDialog()">
             Sign In!
         </button>
 
