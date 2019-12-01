@@ -2,7 +2,7 @@
 
 namespace GeeksDirectory.SharedTypes.Responses
 {
-    public class GeekProfileResponses
+    public class GeekProfileResponsesKit
     {
         public PaginationResponse Pagination { get; set; } = new PaginationResponse();
 

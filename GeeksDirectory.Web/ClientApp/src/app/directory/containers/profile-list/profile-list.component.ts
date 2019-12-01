@@ -11,6 +11,7 @@ import { ProfilesListActions } from '@app/directory/actions';
 
 import { IProfile, IPagination } from '@app/responses';
 import { ScrollPosition } from '@app/shared/common';
+import { QueryOptions } from '@app/models';
 
 @Component({
     selector: 'gd-profile-list',
@@ -22,7 +23,7 @@ export class ProfileListComponent implements OnInit, OnDestroy {
     public profiles: IProfile[] = [];
     public loadedProfiles: number;
     public paginationInfo: IPagination;
-    public laoding$: Observable<boolean>;
+    public loading$: Observable<boolean>;
 
     private unsubscribe: Subject<void> = new Subject();
 
@@ -46,13 +47,12 @@ export class ProfileListComponent implements OnInit, OnDestroy {
             )
             .subscribe(() => {
                 if (this.paginationInfo.total > this.profiles.length) {
-                    this.store.dispatch(
-                        ProfilesListActions.loadProfiles({ limit: this.paginationInfo.limit, offset: this.loadedProfiles })
-                    );
+                    let queryOptions = new QueryOptions(null, this.paginationInfo.limit, this.loadedProfiles);
+                    this.store.dispatch(ProfilesListActions.loadProfiles({ queryOptions }));
                 }
             });
 
-        this.laoding$ = this.store.select(fromProfiles.getLoadingStatus);
+        this.loading$ = this.store.select(fromProfiles.getLoadingStatus);
     }
 
     public isLoadedAll(): boolean {

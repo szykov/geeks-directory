@@ -9,6 +9,7 @@ import { ProfilesListActions } from '@app/directory/actions';
 
 import { DeviceService } from '@app/services';
 import { IProfile } from '@app/responses';
+import { QueryOptions } from '@app/models';
 
 @Injectable()
 export class ProfileListResolveGuard implements Resolve<IProfile[]> {
@@ -16,7 +17,8 @@ export class ProfileListResolveGuard implements Resolve<IProfile[]> {
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         let paginationStep = this.deviceService.getPaginationStep();
-        this.store.dispatch(ProfilesListActions.loadProfiles({ limit: paginationStep, offset: 0 }));
+        let queryOptions = new QueryOptions(null, paginationStep);
+        this.store.dispatch(ProfilesListActions.loadProfiles({ queryOptions }));
 
         return this.store.select(fromProfiles.getProfiles).pipe(take(2));
     }

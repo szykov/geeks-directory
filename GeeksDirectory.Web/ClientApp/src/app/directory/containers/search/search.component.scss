@@ -13,6 +13,12 @@
     width: 100%;
 }
 
+.loading-bar {
+    mat-spinner {
+        left: calc(50% - 25px);
+    }
+}
+
 @media only screen and (max-width: $xs) {
     .search-container {
         width: 80%;

@@ -1,5 +1,5 @@
 export interface INavLink {
     label: string;
-    routerLink: string;
+    route: { path: string; exact: boolean };
     icon: string;
 }

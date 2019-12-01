@@ -8,7 +8,6 @@
 .topbar-logo {
     flex: 0 auto;
     display: inline-flex;
-    margin-left: 10px;
 
     .topbar-icon {
         vertical-align: top;
@@ -23,6 +22,7 @@
 
     .topbar-nav {
         margin-top: 2px;
+        margin-left: 10px;
         cursor: pointer;
         outline: 0;
     }

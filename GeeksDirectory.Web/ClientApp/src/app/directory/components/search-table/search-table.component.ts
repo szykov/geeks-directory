@@ -6,13 +6,16 @@ import {
     SimpleChanges,
     Output,
     EventEmitter,
-    ChangeDetectionStrategy
+    ChangeDetectionStrategy,
+    OnInit,
+    SimpleChange
 } from '@angular/core';
-import { MatSort, MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatSort, MatPaginator, MatTableDataSource, PageEvent, Sort } from '@angular/material';
 
 import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
-import { IProfile } from '@app/responses';
+import { IProfile, IProfilesKit } from '@app/responses';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'gd-search-table',
@@ -21,11 +24,17 @@ import { IProfile } from '@app/responses';
     animations: [fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' })],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchTableComponent implements OnChanges {
-    @Input() profiles: IProfile[];
-    @Output() goToProfile = new EventEmitter<number>();
+export class SearchTableComponent implements OnInit, OnChanges {
+    @Input() profiles: IProfilesKit;
+    @Input() pageSize = 10;
+    @Input() loading: boolean;
 
-    public displayedColumns: string[] = ['id', 'email', 'fullName', 'city', 'skills'];
+    @Output() goToProfile = new EventEmitter<number>();
+    @Output() changePageIndex = new EventEmitter<PageEvent>();
+    @Output() changeOrder = new EventEmitter<Sort>();
+
+    public resultsLength = 0;
+    public displayedColumns: string[] = ['ProfileId', 'Email', 'Name', 'Surname', 'City', 'Skills'];
     public dataSource: MatTableDataSource<IProfile>;
 
     @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -33,15 +42,28 @@ export class SearchTableComponent implements OnChanges {
 
     constructor() {}
 
+    ngOnInit() {
+        // If the user changes the sort order, reset back to the first page.
+        this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
+
+        this.paginator.page.subscribe(eventPage => this.changePageIndex.emit(eventPage));
+        this.sort.sortChange.subscribe(sort => this.changeOrder.emit(sort));
+    }
+
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.profiles.previousValue !== changes.profiles.currentValue) {
-            this.dataSource = new MatTableDataSource(this.profiles);
-            this.dataSource.paginator = this.paginator;
+        if (this.isValueChanged(changes.profiles)) {
+            this.dataSource = new MatTableDataSource(this.profiles.data);
             this.dataSource.sort = this.sort;
+
+            this.resultsLength = this.profiles.pagination.total;
         }
     }
 
     public onGoToProfile(profile: IProfile) {
         this.goToProfile.emit(profile.id);
+    }
+
+    private isValueChanged(change: SimpleChange) {
+        return change && !change.isFirstChange() && change.previousValue !== change.currentValue;
     }
 }

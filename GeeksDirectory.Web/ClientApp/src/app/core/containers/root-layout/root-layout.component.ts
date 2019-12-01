@@ -48,12 +48,15 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
         this.isAuth$.subscribe(isAuth => {
             if (isAuth) {
-                this.navLinks = [{ label: 'Home', routerLink: '/profiles', icon: 'home' }];
+                this.navLinks = [
+                    { label: 'Home', route: { path: '/profiles', exact: true }, icon: 'home' },
+                    { label: 'Search', route: { path: './profiles/search', exact: false }, icon: 'search' }
+                ];
             } else {
                 this.navLinks = [
-                    { label: 'Home', routerLink: '/profiles', icon: 'home' },
-                    { label: 'Search', routerLink: './profiles/search', icon: 'search' },
-                    { label: 'Registration', routerLink: './registration', icon: 'person_add' }
+                    { label: 'Home', route: { path: '/profiles', exact: true }, icon: 'home' },
+                    { label: 'Search', route: { path: './profiles/search', exact: false }, icon: 'search' },
+                    { label: 'Registration', route: { path: './registration', exact: false }, icon: 'person_add' }
                 ];
             }
         });

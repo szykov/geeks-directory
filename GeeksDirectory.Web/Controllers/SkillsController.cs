@@ -68,7 +68,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // POST: /api/profiles/{profileId}/skills/{skillName}/score
         [HttpPost("{profileId}/skills/{skillName}/score")]
-        public async Task<ActionResult<int>> EvaluateSkill([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
+        public async Task<ActionResult<int>> EvaluateSkillAsync([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
         {
             try
             {

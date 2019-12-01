@@ -13,6 +13,8 @@ namespace GeeksDirectory.Data.Entities
 
         public string UserName { get; set; }
 
+        public string Email { get; set; }
+
         [ForeignKey("UserName")]
         public ApplicationUser User { get; set; }
 

@@ -1,7 +1,7 @@
 import { IProfile } from './profile.interface';
 import { IPagination } from './pagination.interface';
 
-export interface IProfiles {
+export interface IProfilesKit {
     pagination: IPagination;
     data: IProfile[];
 }

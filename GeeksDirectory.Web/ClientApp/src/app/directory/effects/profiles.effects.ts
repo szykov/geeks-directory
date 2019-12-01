@@ -2,13 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { mergeMap, map, tap } from 'rxjs/operators';
-import {
-    ProfilesListActions,
-    ProfilesApiActions,
-    ProfilesDetailsActions,
-    ProfileActions,
-    SearchActions
-} from '@app/directory/actions';
+import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions, SearchActions } from '@app/directory/actions';
 
 import { RequestService, NotificationService } from '@app/services';
 import { AuthApiActions } from '@app/auth/actions';
@@ -24,9 +18,9 @@ export class ProfileEffects {
     loadProfiles$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProfilesListActions.loadProfiles),
-            mergeMap(({ limit, offset }) =>
+            mergeMap(({ queryOptions }) =>
                 this.requestService
-                    .getProfiles(limit, offset)
+                    .getProfiles(queryOptions)
                     .pipe(map(result => ProfilesApiActions.loadProfilesSuccess({ collection: result })))
             )
         )
@@ -34,15 +28,15 @@ export class ProfileEffects {
 
     loadProfilesLoader$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProfilesListActions.loadProfiles),
-            map(() => ProfileActions.changeLoadingStatus({ loading: true }))
+            ofType(ProfilesListActions.loadProfiles, SearchActions.searchProfiles),
+            map(() => ProfilesListActions.changeLoadingStatus({ loading: true }))
         )
     );
 
     loadProfilesSuccess$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProfilesApiActions.loadProfilesSuccess),
-            map(() => ProfileActions.changeLoadingStatus({ loading: false }))
+            ofType(ProfilesApiActions.loadProfilesSuccess, ProfilesApiActions.searchProfilesSuccess),
+            map(() => ProfilesListActions.changeLoadingStatus({ loading: false }))
         )
     );
 
@@ -79,16 +73,16 @@ export class ProfileEffects {
     searchProfilesSuccess$ = createEffect(() =>
         this.actions$.pipe(
             ofType(SearchActions.searchProfiles),
-            mergeMap(({ query }) => {
-                if (query) {
+            mergeMap(({ queryOptions }) => {
+                if (!queryOptions.query) {
                     return this.requestService
-                        .searchProfiles(query)
+                        .getProfiles(queryOptions)
                         .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
-                } else {
-                    return this.requestService
-                        .getProfiles()
-                        .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result.data })));
                 }
+
+                return this.requestService
+                    .searchProfiles(queryOptions)
+                    .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
             })
         )
     );

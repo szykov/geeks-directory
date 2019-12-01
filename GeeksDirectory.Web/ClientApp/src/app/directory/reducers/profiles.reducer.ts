@@ -1,25 +1,25 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { ProfilesApiActions, SkillsApiActions, ProfileActions } from '../actions';
-import { IProfile, IProfiles } from '@app/responses';
+import { ProfilesApiActions, SkillsApiActions, ProfilesListActions } from '../actions';
+import { IProfile, IProfilesKit } from '@app/responses';
 
 export interface State {
-    collection: IProfiles;
+    collection: IProfilesKit;
     selected: IProfile | null;
-    searched: IProfile[];
+    searched: IProfilesKit;
     loading: boolean;
 }
 
 export const initialState: State = {
     collection: null,
     selected: null,
-    searched: [],
+    searched: null,
     loading: false
 };
 
 export const reducer = createReducer(
     initialState,
-    on(ProfileActions.changeLoadingStatus, (state, { loading }) => ({
+    on(ProfilesListActions.changeLoadingStatus, (state, { loading }) => ({
         ...state,
         loading
     })),

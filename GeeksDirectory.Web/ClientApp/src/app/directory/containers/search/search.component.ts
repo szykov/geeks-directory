@@ -10,7 +10,10 @@ import { Store } from '@ngrx/store';
 import * as fromState from '@app/reducers';
 import * as fromProfiles from '@app/directory/reducers';
 import { SearchActions } from '@app/directory/actions';
-import { IProfile } from '@app/responses';
+
+import { IProfilesKit } from '@app/responses';
+import { PageEvent, Sort } from '@angular/material';
+import { QueryOptions } from '@app/models';
 
 @Component({
     selector: 'gd-search',
@@ -20,39 +23,59 @@ import { IProfile } from '@app/responses';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit {
-    public searchBar: string;
-    public profiles$: Observable<IProfile[]>;
+    public origLimit = 10;
+    public queryOptions: QueryOptions = new QueryOptions();
+
+    public profiles$: Observable<IProfilesKit>;
+    public loading$: Observable<boolean>;
 
     private delaySearch$: Subject<string> = new Subject<string>();
 
     constructor(private store: Store<fromState.State>, private router: Router, private route: ActivatedRoute) {}
 
     ngOnInit() {
-        let queryParam = this.route.snapshot.queryParams.query;
-        this.searchBar = queryParam ? queryParam : '';
+        this.route.queryParamMap.subscribe(params => {
+            let queryParam = params.get('query');
+            this.queryOptions.query = queryParam ? queryParam : null;
+
+            this.onSearch(this.queryOptions);
+        });
 
         this.profiles$ = this.store.select(fromProfiles.getSearchedProfiles);
-
-        this.onSearch(this.searchBar);
+        this.loading$ = this.store.select(fromProfiles.getLoadingStatus);
 
         this.delaySearch$.pipe(debounceTime(1000), distinctUntilChanged()).subscribe(query => {
-            this.onSearch(query);
+            this.router.navigate([], { relativeTo: this.route, queryParams: { query } });
+            this.onSearch(this.queryOptions);
         });
     }
 
-    public delaySearch(query: string, keyCode) {
+    public delaySearch(query: string, keyCode: string) {
         if (keyCode !== 'Enter') {
-            this.delaySearch$.next(query);
+            this.delaySearch$.next(query || null);
         }
     }
 
-    public onSearch(value: string) {
-        let query = value ? value : null;
-        this.router.navigate([], { relativeTo: this.route, queryParams: { query } });
-        this.store.dispatch(SearchActions.searchProfiles({ query }));
+    public onSearch(queryOptions: QueryOptions) {
+        this.store.dispatch(SearchActions.searchProfiles({ queryOptions: { ...queryOptions } }));
     }
 
     public onGoToProfile(profileId: number) {
         this.router.navigate(['/profiles', profileId]);
+    }
+
+    public onChangePage(event: PageEvent) {
+        this.queryOptions.limit = event.pageSize;
+        this.queryOptions.offset = event.pageIndex * this.queryOptions.limit;
+
+        this.onSearch(this.queryOptions);
+    }
+
+    public onChangeOrder(sort: Sort) {
+        this.queryOptions.offset = 0;
+        this.queryOptions.orderBy = sort.active;
+        this.queryOptions.orderDirection = sort.direction;
+
+        this.onSearch(this.queryOptions);
     }
 }

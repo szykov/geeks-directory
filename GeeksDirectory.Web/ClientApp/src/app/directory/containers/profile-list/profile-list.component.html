@@ -4,7 +4,7 @@
         <gd-profile-card *ngFor="let profile of profiles" [profile]="profile"></gd-profile-card>
     </div>
     <div class="profiles-bottom-list">
-        <div class="loading-bar" *ngIf="laoding$ | async">
+        <div class="loading-bar" *ngIf="loading$ | async">
             <mat-spinner [diameter]="50"></mat-spinner>
         </div>
         <div class="end-of-world" *ngIf="isLoadedAll()">

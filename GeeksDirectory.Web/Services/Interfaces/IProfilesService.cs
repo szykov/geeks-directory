@@ -10,11 +10,11 @@ namespace GeeksDirectory.Web.Services.Interfaces
     {
         GeekProfileResponse Get(int profileId);
 
-        GeekProfileResponses Get(int limit, int offset);
+        GeekProfileResponsesKit Get(int limit, int offset, string? orderBy, string? orderDirection);
 
         GeekProfileResponse Get(string userName);
 
-        IEnumerable<GeekProfileResponse> Search(string searchQuery);
+        GeekProfileResponsesKit Search(string query, int limit, int offset, string? orderBy, string? orderDirection);
 
         GeekProfileResponse Update(string userName, GeekProfileModel model);
 

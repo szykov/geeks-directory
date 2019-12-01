@@ -10,7 +10,7 @@ import { SharedModule } from '@shared/shared.module';
 import { DirectoryRoutingModule } from './directory-routing.module';
 import { ProfileListComponent, ProfileDetailsComponent } from './containers';
 import { ProfileCardComponent, EditProfileComponent, ProfileSkillsComponent, ProfileFormComponent } from './components';
-import { ProfileListResolveGuard, ProfileResolveGuard, ProfileSearchResolveGuard } from './resolvers';
+import { ProfileListResolveGuard, ProfileResolveGuard } from './resolvers';
 import { SearchComponent } from './containers/search/search.component';
 import { SearchTableComponent } from './components/search-table/search-table.component';
 
@@ -32,6 +32,6 @@ import { SearchTableComponent } from './components/search-table/search-table.com
         StoreModule.forFeature('directory', reducers),
         EffectsModule.forFeature([ProfileEffects, SkillsEffects])
     ],
-    providers: [ProfileListResolveGuard, ProfileResolveGuard, ProfileSearchResolveGuard]
+    providers: [ProfileListResolveGuard, ProfileResolveGuard]
 })
 export class DirectoryModule {}

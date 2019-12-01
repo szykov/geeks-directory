@@ -36,12 +36,12 @@ namespace GeeksDirectory.Web.Controllers
         // GET: /api/profiles?take={limit}&skip={offset}
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult<GeekProfileResponses> GetProfiles(int limit = 25, int offset = 0)
+        public ActionResult<GeekProfileResponsesKit> GetProfiles(int limit, int offset, string? orderBy, string? orderDirection)
         {
             try
             {
-                var geekProfileResponses = this.context.Get(limit, offset);
-                return this.Ok(geekProfileResponses);
+                var profiles = this.context.Get(limit, offset, orderBy, orderDirection);
+                return this.Ok(profiles);
             }
             catch (LogicException ex)
             {
@@ -57,9 +57,9 @@ namespace GeeksDirectory.Web.Controllers
             try
             {
                 var userName = this.User.Identity.Name!;
-                var profiles = this.context.Get(userName);
+                var profile = this.context.Get(userName);
 
-                return this.Ok(profiles);
+                return this.Ok(profile);
             }
             catch (LogicException ex)
             {
@@ -71,11 +71,11 @@ namespace GeeksDirectory.Web.Controllers
         // GET: /api/profiles/search?query={query}
         [AllowAnonymous]
         [HttpGet("search")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles([RequiredFromQuery]string query)
+        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles([RequiredFromQuery]string query, int limit, int offset, string? orderBy, string? orderDirection)
         {
             try
             {
-                var profiles = this.context.Search(query);
+                var profiles = this.context.Search(query, limit, offset, orderBy, orderDirection);
                 return this.Ok(profiles);
             }
             catch (LogicException ex)
@@ -105,7 +105,7 @@ namespace GeeksDirectory.Web.Controllers
         // POST: /api/profiles
         [AllowAnonymous]
         [HttpPost]
-        public async Task<ActionResult<GeekProfileResponse>> RegisterProfile([FromBody]CreateGeekProfileModel model)
+        public async Task<ActionResult<GeekProfileResponse>> RegisterProfileAsync([FromBody]CreateGeekProfileModel model)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace GeeksDirectory.Web.Controllers
 
         // PATCH: /api/profiles/me
         [HttpPatch("me")]
-        public ActionResult<GeekProfileResponse> UpdateProfile([FromBody]GeekProfileModel model)
+        public ActionResult<GeekProfileResponse> UpdatePersonalProfile([FromBody]GeekProfileModel model)
         {
             try
             {

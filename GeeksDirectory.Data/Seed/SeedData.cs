@@ -284,6 +284,7 @@ namespace GeeksDirectory.Data.Seed
                 yield return new GeekProfile()
                 {
                     ProfileId = counter++,
+                    Email = profile.Email,
                     UserName = profile.Id.ToString(),
                     Name = profile.Name,
                     Surname = profile.Surname,

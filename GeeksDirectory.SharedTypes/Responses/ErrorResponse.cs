@@ -7,11 +7,13 @@ namespace GeeksDirectory.SharedTypes.Responses
 {
     public class ErrorResponse
     {
-        public string Code { get; set; }
+        public string? Code { get; set; }
 
-        public string Message { get; set; }
+        public string? Message { get; set; }
 
         public IEnumerable<IErrorDetail>? Details { get; set; }
+
+        public ErrorResponse() { }
 
         public ErrorResponse(ExceptionCode code)
         {

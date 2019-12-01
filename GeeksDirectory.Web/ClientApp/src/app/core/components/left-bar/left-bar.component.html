@@ -4,7 +4,7 @@
         <div class="user-menu" *ngIf="isAuth">
             <mat-action-list>
                 <mat-list-item [routerLink]="profilePath" routerLinkActive="active-link"
-                    [routerLinkActiveOptions]="{exact: true}">
+                    [routerLinkActiveOptions]="{exact: false}">
                     <mat-icon class="drawer-icon" aria-hidden="false" aria-label="Geek icon">android</mat-icon>
                     <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ profileName }} </span>
                 </mat-list-item>
@@ -13,8 +13,8 @@
 
         <mat-action-list>
             <mat-divider></mat-divider>
-            <mat-list-item *ngFor="let navLink of navLinks" [routerLink]="navLink.routerLink"
-                routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+            <mat-list-item *ngFor="let navLink of navLinks" [routerLink]="navLink.route.path"
+                routerLinkActive="active-link" [routerLinkActiveOptions]="routeIsExact(navLink)">
                 <mat-icon class="drawer-icon">{{navLink.icon}}</mat-icon>
                 <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ navLink.label }}
                 </span>
