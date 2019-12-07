@@ -1,5 +1,7 @@
-import { Component, OnInit, Inject, Optional, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Inject, Optional, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { Subject } from 'rxjs';
 
 import { CredentialsModel } from '@app/auth/models';
 import { DialogChoice } from '@shared/common';
@@ -10,9 +12,11 @@ import { DialogChoice } from '@shared/common';
     styleUrls: ['./sign-in-dialog.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SignInDialogComponent implements OnInit {
+export class SignInDialogComponent implements OnInit, OnDestroy {
     public model: CredentialsModel = new CredentialsModel();
     public hide = true;
+
+    private unsubscribe: Subject<void> = new Subject();
 
     constructor(
         public dialogRef: MatDialogRef<SignInDialogComponent>,
@@ -37,5 +41,10 @@ export class SignInDialogComponent implements OnInit {
 
     public onCreateAccount() {
         this.dialogRef.close({ choice: DialogChoice.CreateAccount });
+    }
+
+    ngOnDestroy(): void {
+        this.unsubscribe.next();
+        this.unsubscribe.complete();
     }
 }

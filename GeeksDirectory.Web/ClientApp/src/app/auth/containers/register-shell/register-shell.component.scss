@@ -3,9 +3,3 @@
 .reg-container {
     width: 450px;
 }
-
-@media only screen and (max-width: $xs) {
-    .reg-container {
-        width: 85%;
-    }
-}

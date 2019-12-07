@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { mergeMap, map, tap } from 'rxjs/operators';
+import { mergeMap, map, tap, distinctUntilChanged } from 'rxjs/operators';
 import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions, SearchActions } from '@app/directory/actions';
 
 import { RequestService, NotificationService } from '@app/services';

@@ -2,7 +2,6 @@
 
 .viewer {
     font-weight: 400;
-    padding: 20px 20px 50px 20px;
 }
 
 .viewer-wrapper {
@@ -35,10 +34,4 @@
     padding: 30px;
     display: flex;
     flex-direction: column;
-}
-
-@media only screen and (max-width: $xs) {
-    .viewer {
-        padding: 20px 20px 50px 0;
-    }
 }

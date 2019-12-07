@@ -8,14 +8,17 @@ import {
     EventEmitter,
     ChangeDetectionStrategy,
     OnInit,
-    SimpleChange
+    SimpleChange,
+    OnDestroy
 } from '@angular/core';
 import { MatSort, MatPaginator, MatTableDataSource, PageEvent, Sort } from '@angular/material';
+
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
 import { IProfile, IProfilesKit } from '@app/responses';
-import { Observable } from 'rxjs';
 
 @Component({
     selector: 'gd-search-table',
@@ -24,7 +27,7 @@ import { Observable } from 'rxjs';
     animations: [fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' })],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SearchTableComponent implements OnInit, OnChanges {
+export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
     @Input() profiles: IProfilesKit;
     @Input() pageSize = 10;
     @Input() loading: boolean;
@@ -40,14 +43,16 @@ export class SearchTableComponent implements OnInit, OnChanges {
     @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
     @ViewChild(MatSort, { static: true }) sort: MatSort;
 
+    private unsubscribe: Subject<void> = new Subject();
+
     constructor() {}
 
     ngOnInit() {
         // If the user changes the sort order, reset back to the first page.
-        this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
+        this.sort.sortChange.pipe(takeUntil(this.unsubscribe)).subscribe(() => (this.paginator.pageIndex = 0));
+        this.sort.sortChange.pipe(takeUntil(this.unsubscribe)).subscribe(sort => this.changeOrder.emit(sort));
 
-        this.paginator.page.subscribe(eventPage => this.changePageIndex.emit(eventPage));
-        this.sort.sortChange.subscribe(sort => this.changeOrder.emit(sort));
+        this.paginator.page.pipe(takeUntil(this.unsubscribe)).subscribe(eventPage => this.changePageIndex.emit(eventPage));
     }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -65,5 +70,10 @@ export class SearchTableComponent implements OnInit, OnChanges {
 
     private isValueChanged(change: SimpleChange) {
         return change && !change.isFirstChange() && change.previousValue !== change.currentValue;
+    }
+
+    ngOnDestroy(): void {
+        this.unsubscribe.next();
+        this.unsubscribe.complete();
     }
 }
