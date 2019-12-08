@@ -1,5 +1,10 @@
-﻿namespace GeeksDirectory.SharedTypes.Responses
+﻿using GeeksDirectory.SharedTypes.SchemaFilters.Responses;
+
+using Swashbuckle.AspNetCore.Annotations;
+
+namespace GeeksDirectory.SharedTypes.Responses
 {
+    [SwaggerSchemaFilter(typeof(AssessmentResponseSchemaFilter))]
     public class AssessmentResponse
     {
         public int Id { get; set; }

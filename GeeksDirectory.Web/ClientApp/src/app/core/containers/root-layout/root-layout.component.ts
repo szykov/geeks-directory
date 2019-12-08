@@ -46,7 +46,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     public ngOnInit() {
         this.isAuth$ = this.store.select(fromAuth.isAuth);
 
-        this.isAuth$.subscribe(isAuth => {
+        this.isAuth$.pipe(takeUntil(this.unsubscribe)).subscribe(isAuth => {
             if (isAuth) {
                 this.navLinks = [
                     { label: 'Home', route: { path: '/profiles', exact: true }, icon: 'home' },

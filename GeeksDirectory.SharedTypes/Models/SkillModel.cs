@@ -1,9 +1,13 @@
 ﻿using GeeksDirectory.Data.Attributes;
+using GeeksDirectory.SharedTypes.SchemaFilters.Models;
+
+using Swashbuckle.AspNetCore.Annotations;
 
 using System.ComponentModel.DataAnnotations;
 
 namespace GeeksDirectory.SharedTypes.Models
 {
+    [SwaggerSchemaFilter(typeof(SkillModelSchemaFilter))]
     public class SkillModel
     {
         [Required]

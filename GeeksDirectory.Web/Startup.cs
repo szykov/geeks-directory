@@ -33,6 +33,8 @@ namespace GeeksDirectory.Web
                 services.AddPredefinedCors(this.origins);
             }
 
+            services.AddPredefinedApiVersioning();
+            services.AddPredefinedSwagger();
             services.AddPredefinedOpenIddict(this.connectionString);
 
             services.AddPredefinedRouting();
@@ -54,6 +56,7 @@ namespace GeeksDirectory.Web
             app.UseAuthentication();
             app.UsePredefinedErrorHandling(env);
             app.UsePredefinedRouting();
+            app.UsePredefinedSwagger();
             app.UsePredefinedSpa();
         }
     }

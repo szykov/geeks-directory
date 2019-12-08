@@ -33,10 +33,19 @@ export class TopbarComponent {
             'github',
             this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/github-circle-white.svg')
         );
+
+        this.matIconRegistry.addSvgIcon(
+            'open-api',
+            this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/swagger-seeklogo.svg')
+        );
     }
 
     public goToGithub() {
         this.document.location.href = CONFIG.gitHubUrl;
+    }
+
+    public goToSpecs() {
+        this.document.location.href = CONFIG.specsUrl;
     }
 
     openSignInDialog() {
