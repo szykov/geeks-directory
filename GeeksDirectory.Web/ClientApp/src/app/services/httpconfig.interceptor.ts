@@ -42,8 +42,8 @@ export class HttpConfigInterceptor implements HttpInterceptor {
             headers: request.headers.set('Accept', 'application/json')
         });
 
-        // It shouldn't be faster than 1s for animation
-        let delayTime = new Date(Date.now() + 500);
+        // For the demo sake, showing animation
+        let delayTime = new Date(Date.now() + 300);
 
         return next.handle(request).pipe(
             map((event: HttpEvent<any>) => event),

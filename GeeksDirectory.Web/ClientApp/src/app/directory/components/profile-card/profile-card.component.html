@@ -7,11 +7,15 @@
         <mat-card-subtitle>{{ profile.email }}</mat-card-subtitle>
     </mat-card-header>
 
+    <mat-card-subtitle>
+        <mat-divider></mat-divider>
+    </mat-card-subtitle>
+
     <mat-card-content class="card-content">
-        <p *ngFor="let skill of profile.skills">
+        <div class="skill-badge" *ngFor="let skill of profile.skills">
             <span matBadge="{{ skill.averageScore }}" matBadgeSize="small"
                 matBadgeOverlap="false">{{ skill.name }}</span>
-        </p>
+        </div>
     </mat-card-content>
 
     <mat-card-actions class="card-actions">

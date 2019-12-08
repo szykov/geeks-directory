@@ -1,5 +1,5 @@
 export * from './profile.interface';
-export * from './profiles.interface';
+export * from './profiles-kit.interface';
 export * from './pagination.interface';
 export * from './skill.interface';
 export * from './assessment.interface';

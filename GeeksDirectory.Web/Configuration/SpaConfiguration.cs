@@ -18,7 +18,7 @@ namespace GeeksDirectory.Web.Configuration
             return services;
         }
 
-        public static IApplicationBuilder UsePredefinedSpa(this IApplicationBuilder app, IWebHostEnvironment env)
+        public static IApplicationBuilder UsePredefinedSpa(this IApplicationBuilder app)
         {
             app.UseStaticFiles();
             app.UseSpaStaticFiles();

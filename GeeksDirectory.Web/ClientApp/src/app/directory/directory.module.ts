@@ -11,6 +11,8 @@ import { DirectoryRoutingModule } from './directory-routing.module';
 import { ProfileListComponent, ProfileDetailsComponent } from './containers';
 import { ProfileCardComponent, EditProfileComponent, ProfileSkillsComponent, ProfileFormComponent } from './components';
 import { ProfileListResolveGuard, ProfileResolveGuard } from './resolvers';
+import { SearchComponent } from './containers/search/search.component';
+import { SearchTableComponent } from './components/search-table/search-table.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { ProfileListResolveGuard, ProfileResolveGuard } from './resolvers';
         ProfileCardComponent,
         EditProfileComponent,
         ProfileSkillsComponent,
-        ProfileFormComponent
+        ProfileFormComponent,
+        SearchComponent,
+        SearchTableComponent
     ],
     imports: [
         CommonModule,

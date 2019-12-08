@@ -1,4 +1,5 @@
 ﻿using GeeksDirectory.Data.Entities;
+using GeeksDirectory.SharedTypes.Classes;
 
 using System.Collections.Generic;
 
@@ -8,13 +9,13 @@ namespace GeeksDirectory.Data.Repositories.Interfaces
     {
         void Add(GeekProfile profile);
 
-        GeekProfile Get(int id);
+        GeekProfile GetProfileById(int id);
 
-        GeekProfile Get(string userName);
+        GeekProfile GetProfileByUserName(string userName);
 
-        IEnumerable<GeekProfile> Get(int limit, int offset);
+        IEnumerable<GeekProfile> GetProfiles(QueryOptions queryOptions);
 
-        IEnumerable<GeekProfile> Search(string searchQuery);
+        IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out int total);
 
         void Update(GeekProfile profile);
 

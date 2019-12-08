@@ -32,15 +32,25 @@ namespace GeeksDirectory.Web.Services
             this.logger = logger;
         }
 
-        public GeekProfileResponses Get(int limit, int offset)
+        public GeekProfileResponsesKit Get(int limit, int offset, string? orderBy, string? orderDirection)
         {
             try
             {
-                var profiles = this.repository.Get(limit, offset);
+                var queryOptionsBuilder = new QueryOptionsBuilder()
+                    .AddLimit(limit)
+                    .AddOffset(offset)
+                    .AddOrderDirection(orderDirection);
+
+                var queryOptions = !String.IsNullOrEmpty(orderBy) ?
+                    queryOptionsBuilder.AddOrderBy<GeekProfile>(orderBy).Build() :
+                    queryOptionsBuilder.Build();
+
+                var profiles = this.repository.GetProfiles(queryOptions);
                 var total = this.repository.Total();
 
                 var profileResponses = this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
-                return new GeekProfileResponses()
+
+                return new GeekProfileResponsesKit()
                 {
                     Pagination = new PaginationResponse() { Limit = limit, Offset = offset, Total = total },
                     Data = profileResponses
@@ -56,7 +66,7 @@ namespace GeeksDirectory.Web.Services
         {
             try
             {
-                var profile = this.repository.Get(profileId);
+                var profile = this.repository.GetProfileById(profileId);
                 return this.mapper.Map<GeekProfileResponse>(profile);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
@@ -69,7 +79,7 @@ namespace GeeksDirectory.Web.Services
         {
             try
             {
-                var profile = this.repository.Get(userName);
+                var profile = this.repository.GetProfileByUserName(userName);
                 return this.mapper.Map<GeekProfileResponse>(profile);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
@@ -78,14 +88,30 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public IEnumerable<GeekProfileResponse> Search(string searchQuery)
+        public GeekProfileResponsesKit Search(string query, int limit, int offset, string? orderBy, string? orderDirection)
         {
             try
             {
-                var profiles = this.repository.Search(searchQuery);
-                return this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
+                var queryOptionsBuilder = new QueryOptionsBuilder()
+                    .AddQuery(query)
+                    .AddLimit(limit)
+                    .AddOffset(offset)
+                    .AddOrderDirection(orderDirection);
+
+                var queryOptions = !String.IsNullOrEmpty(orderBy) ? 
+                    queryOptionsBuilder.AddOrderBy<GeekProfile>(orderBy).Build() : 
+                    queryOptionsBuilder.Build();
+
+                var profiles = this.repository.Search(queryOptions, out var total);
+                var profileResponses = this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
+
+                return new GeekProfileResponsesKit()
+                {
+                    Pagination = new PaginationResponse() { Limit = limit, Offset = offset, Total = total },
+                    Data = profileResponses
+                };
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex) when (ex is ArgumentNullException || ex is ArgumentException)
             {
                 throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
             }
@@ -95,7 +121,7 @@ namespace GeeksDirectory.Web.Services
         {
             try
             {
-                var entity = this.repository.Get(userName);
+                var entity = this.repository.GetProfileByUserName(userName);
                 this.mapper.Map(profile, entity);
 
                 this.repository.Update(entity);

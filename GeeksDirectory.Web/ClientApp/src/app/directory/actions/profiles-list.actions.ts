@@ -1,3 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-export const loadProfiles = createAction('[Profiles List] Load Profiles', props<{ limit: number; offset: number }>());
+import { QueryOptions } from '@app/models';
+
+export const loadProfiles = createAction('[Profiles List] Load Profiles', props<{ queryOptions: QueryOptions }>());
+export const changeLoadingStatus = createAction('[Profile List] Change Loading Status', props<{ loading: boolean }>());

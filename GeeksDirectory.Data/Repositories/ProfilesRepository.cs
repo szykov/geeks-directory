@@ -1,5 +1,6 @@
 ﻿using GeeksDirectory.Data.Entities;
 using GeeksDirectory.Data.Repositories.Interfaces;
+using GeeksDirectory.SharedTypes.Classes;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -18,21 +19,27 @@ namespace GeeksDirectory.Data.Repositories
             this.context = context;
         }
 
-        public IEnumerable<GeekProfile> Get(int take, int skip)
+        public IEnumerable<GeekProfile> GetProfiles(QueryOptions queryOptions)
         {
-            if (take <= 0 || skip < 0)
+            if (queryOptions is null)
             {
-                throw new ArgumentException(message: $"Arguments {nameof(take)}/{nameof(skip)} are invalid.");
+                throw new ArgumentNullException(paramName: nameof(queryOptions));
             }
 
-            return this.context.Profiles
+            var result = this.context.Profiles
                 .Include(prf => prf.Skills)
                 .Include(prf => prf.User)
-                .Skip(skip).Take(take)
-                .ToList();
+                .AsQueryable();
+
+            if (queryOptions.IsSortable())
+            {
+                result = this.Sort(result, queryOptions.OrderDirection, queryOptions.OrderBy!);
+            }
+
+            return result.Skip(queryOptions.Offset).Take(queryOptions.Limit);
         }
 
-        public GeekProfile Get(int profileId)
+        public GeekProfile GetProfileById(int profileId)
         {
             if (profileId == 0)
             {
@@ -53,7 +60,7 @@ namespace GeeksDirectory.Data.Repositories
             return profile;
         }
 
-        public GeekProfile Get(string userName)
+        public GeekProfile GetProfileByUserName(string userName)
         {
             if (String.IsNullOrEmpty(userName))
             {
@@ -74,20 +81,35 @@ namespace GeeksDirectory.Data.Repositories
             return profile;
         }
 
-        public IEnumerable<GeekProfile> Search(string searchQuery)
+        public IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out int total)
         {
-            if (String.IsNullOrEmpty(searchQuery))
+            if (queryOptions is null)
             {
-                throw new ArgumentNullException(paramName: nameof(searchQuery));
+                throw new ArgumentNullException(paramName: nameof(queryOptions));
             }
 
-            return this.context.Profiles.Where(prf => 
-                EF.Functions.Like(prf.Name, searchQuery) ||
-                EF.Functions.Like(prf.Surname, searchQuery) ||
-                EF.Functions.Like(prf.MiddleName, searchQuery) ||
-                EF.Functions.Like(prf.City, searchQuery) ||
-                EF.Functions.Like(String.Join(" ", prf.Skills.Select(s => s.Description)), searchQuery) ||
-                EF.Functions.Like(String.Join(" ", prf.Skills.Select(s => s.Name)), searchQuery));
+            if (String.IsNullOrEmpty(queryOptions.Query))
+            {
+                throw new ArgumentNullException(paramName: nameof(queryOptions.Query));
+            }
+
+            var result = this.context.Profiles
+                .Include(prf => prf.Skills)
+                .Include(prf => prf.User)
+                .Where(prf => EF.Functions.Like(prf.Name, queryOptions.Query) ||
+                    EF.Functions.Like(prf.Surname, queryOptions.Query) ||
+                    EF.Functions.Like(prf.MiddleName, queryOptions.Query) ||
+                    EF.Functions.Like(prf.City, queryOptions.Query) ||
+                    prf.Skills.Any(skl => EF.Functions.Like(skl.Name, queryOptions.Query)));
+
+            total = result.Count();
+
+            if (queryOptions.IsSortable())
+            {
+                result = this.Sort(result, queryOptions.OrderDirection, queryOptions.OrderBy!);
+            }
+
+            return result.Skip(queryOptions.Offset).Take(queryOptions.Limit);
         }
 
         public void Update(GeekProfile profile)
@@ -115,6 +137,18 @@ namespace GeeksDirectory.Data.Repositories
         public int Total()
         {
             return this.context.Profiles.Count();
+        }
+
+        private IQueryable<GeekProfile> Sort(IQueryable<GeekProfile> profiles, OrderDirection orderDirection, string OrderBy)
+        {
+            if (orderDirection == OrderDirection.Ascending)
+            {
+                return profiles.OrderBy(p => EF.Property<object>(p, OrderBy));
+            }
+            else
+            {
+                return profiles.OrderByDescending(p => EF.Property<object>(p, OrderBy));
+            }
         }
     }
 }

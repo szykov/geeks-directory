@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { mergeMap, map, tap } from 'rxjs/operators';
-import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions, ProfileActions } from '@app/directory/actions';
+import { mergeMap, map, tap, distinctUntilChanged } from 'rxjs/operators';
+import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions, SearchActions } from '@app/directory/actions';
 
 import { RequestService, NotificationService } from '@app/services';
 import { AuthApiActions } from '@app/auth/actions';
@@ -18,10 +18,9 @@ export class ProfileEffects {
     loadProfiles$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProfilesListActions.loadProfiles),
-            tap(() => ProfileActions.changeLoadingStatus({ loading: true })),
-            mergeMap(({ limit, offset }) =>
+            mergeMap(({ queryOptions }) =>
                 this.requestService
-                    .getProfiles(limit, offset)
+                    .getProfiles(queryOptions)
                     .pipe(map(result => ProfilesApiActions.loadProfilesSuccess({ collection: result })))
             )
         )
@@ -29,15 +28,15 @@ export class ProfileEffects {
 
     loadProfilesLoader$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProfilesListActions.loadProfiles, ProfilesDetailsActions.loadProfileDetails),
-            map(() => ProfileActions.changeLoadingStatus({ loading: true }))
+            ofType(ProfilesListActions.loadProfiles, SearchActions.searchProfiles),
+            map(() => ProfilesListActions.changeLoadingStatus({ loading: true }))
         )
     );
 
     loadProfilesSuccess$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProfilesApiActions.loadProfilesSuccess, ProfilesApiActions.loadProfileDetailsSuccess),
-            map(() => ProfileActions.changeLoadingStatus({ loading: false }))
+            ofType(ProfilesApiActions.loadProfilesSuccess, ProfilesApiActions.searchProfilesSuccess),
+            map(() => ProfilesListActions.changeLoadingStatus({ loading: false }))
         )
     );
 
@@ -68,6 +67,23 @@ export class ProfileEffects {
         this.actions$.pipe(
             ofType(ProfilesApiActions.updatePersonalProfileSuccess),
             map(({ selected }) => AuthApiActions.personalizeSuccess({ profile: selected }))
+        )
+    );
+
+    searchProfilesSuccess$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(SearchActions.searchProfiles),
+            mergeMap(({ queryOptions }) => {
+                if (!queryOptions.query) {
+                    return this.requestService
+                        .getProfiles(queryOptions)
+                        .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
+                }
+
+                return this.requestService
+                    .searchProfiles(queryOptions)
+                    .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
+            })
         )
     );
 }

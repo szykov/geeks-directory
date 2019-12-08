@@ -1,3 +1,5 @@
+@import '~src/assets/styles/variables';
+
 .mat-dialog-content {
     display: flex;
     flex-direction: column;
@@ -22,7 +24,7 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: $xs) {
     .create-account {
         display: none;
     }

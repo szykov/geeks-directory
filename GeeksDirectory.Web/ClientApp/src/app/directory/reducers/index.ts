@@ -23,5 +23,5 @@ export const selectProfileState = createSelector(getFeatureState, (state: Profil
 
 export const getLoadingStatus = createSelector(selectProfileState, fromProfiles.getLoadingStatus);
 export const getProfiles = createSelector(selectProfileState, fromProfiles.getCollection);
-export const getProfileDetails = createSelector(selectProfileState, fromProfiles.getSelectedProfile);
-export const getProfileModel = createSelector(selectProfileState, fromProfiles.getSelectedProfileModel);
+export const getSelectedProfile = createSelector(selectProfileState, fromProfiles.getSelectedProfile);
+export const getSearchedProfiles = createSelector(selectProfileState, fromProfiles.getSearchedProfiles);

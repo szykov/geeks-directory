@@ -36,7 +36,7 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
     constructor(private store: Store<fromState.State>, private route: ActivatedRoute) {}
 
     ngOnInit() {
-        this.profile$ = this.store.select(fromProfiles.getProfileDetails);
+        this.profile$ = this.store.select(fromProfiles.getSelectedProfile);
 
         this.route.paramMap.pipe(takeUntil(this.unsubscribe)).subscribe((params: ParamMap) => {
             this.profileId = Number(params.get('id'));
@@ -45,7 +45,7 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
         this.isAuth$ = this.store.select(fromAuth.isAuth);
         this.currentProfile$ = this.store.select(fromAuth.getProfile);
 
-        this.model$ = this.store.select(fromProfiles.getProfileModel);
+        this.model$ = this.store.select(fromProfiles.getSelectedProfile);
 
         this.filteredCities$.pipe(takeUntil(this.unsubscribe), debounceTime(300));
     }

@@ -38,4 +38,8 @@ export class LeftBarComponent {
             this.cdr.detectChanges();
         }, 300);
     }
+
+    public routeIsExact(navLink: INavLink) {
+        return navLink.route.exact ? { exact: true } : { exact: false };
+    }
 }

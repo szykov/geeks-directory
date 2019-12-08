@@ -85,7 +85,13 @@ export class AuthEffects {
         () =>
             this.actions$.pipe(
                 ofType(AuthActions.signInCanceled),
-                tap(() => this.router.navigate([], { relativeTo: this.route }))
+                tap(() =>
+                    this.router.navigate([], {
+                        relativeTo: this.route,
+                        queryParams: { signIn: null },
+                        queryParamsHandling: 'merge'
+                    })
+                )
             ),
         { dispatch: false }
     );

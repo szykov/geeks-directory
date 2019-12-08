@@ -11,6 +11,7 @@
 }
 
 .card-content {
+    margin-bottom: 0;
     flex-grow: 1;
     .mat-button {
         text-transform: uppercase;
@@ -22,7 +23,8 @@
     text-align: right;
 }
 
-.card-content > p {
+.card-content > div {
     display: inline-block;
     margin-right: 22px;
+    margin-bottom: 15px;
 }

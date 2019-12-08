@@ -1,0 +1,30 @@
+@import '~src/assets/styles/variables';
+
+.search-icon {
+    font-size: 30px !important;
+}
+
+.search-bar {
+    font-size: 14px;
+    width: 100%;
+}
+
+.loading-bar {
+    mat-spinner {
+        left: calc(50% - 25px);
+    }
+}
+
+@media only screen and (min-width: $lg) {
+    .search-container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media only screen and (min-width: $xl) {
+    .search-container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

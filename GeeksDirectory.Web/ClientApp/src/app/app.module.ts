@@ -9,7 +9,7 @@ import { NgProgressRouterModule } from '@ngx-progressbar/router';
 import { CookieService } from 'ngx-cookie-service';
 import { DeviceDetectorModule } from 'ngx-device-detector';
 
-import { HttpConfigInterceptor } from '@app/services';
+import { HttpConfigInterceptor, WINDOW_PROVIDERS } from '@app/services';
 
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@app/core/core.module';
@@ -39,6 +39,7 @@ import { AppComponent } from '@app/app.component';
         AppRoutingModule
     ],
     providers: [
+        WINDOW_PROVIDERS,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: HttpConfigInterceptor,

@@ -11,7 +11,7 @@
             <input type="password" matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
                 [(ngModel)]="model.password" #password="ngModel" id="password" name="password" required />
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
+                [attr.aria-pressed]="hide" tabindex="-1">
                 <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button>
             <mat-error *ngIf="!password.valid && !password.pristine && password.errors['required']">Password is required

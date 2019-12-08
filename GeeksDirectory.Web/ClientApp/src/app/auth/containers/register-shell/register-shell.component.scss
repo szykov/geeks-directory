@@ -1,9 +1,5 @@
+@import '~src/assets/styles/variables';
+
 .reg-container {
     width: 450px;
-}
-
-@media only screen and (max-width: 500px) {
-    .reg-container {
-        width: 85%;
-    }
 }

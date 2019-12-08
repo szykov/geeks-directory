@@ -18,6 +18,6 @@ export class ProfileResolveGuard implements Resolve<IProfile> {
         let profileId = Number(route.params.id);
         this.store.dispatch(ProfilesDetailsActions.loadProfileDetails({ profileId }));
 
-        return this.store.select(fromProfiles.getLoadingStatus).pipe(take(2));
+        return this.store.select(fromProfiles.getSelectedProfile).pipe(take(2));
     }
 }

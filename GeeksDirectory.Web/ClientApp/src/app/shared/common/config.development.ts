@@ -1,9 +1,5 @@
 export let CONFIG = {
-    pagination: {
-        mobile: 5,
-        tablet: 10,
-        desktop: 20
-    },
+    gitHubUrl: 'https://github.com/szykov/GeeksDirectory',
     ignoreConneciton: false,
     connection: {
         protocol: 'http',
@@ -17,6 +13,7 @@ export let CONFIG = {
             getMyProfile: 'api/profiles/me',
             registerProfile: 'api/profiles',
             updatePersonalProfile: 'api/profiles/me',
+            searchProfiles: 'api/profiles/search',
             getSkill: 'api/profiles/{profileId}/skills',
             addSkill: 'api/profiles/{profileId}/skills',
             setSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score'

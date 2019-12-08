@@ -1,0 +1,36 @@
+@import '~src/assets/styles/variables';
+
+.search-table {
+    width: 100%;
+    max-height: 400px;
+}
+
+.skill-badge {
+    display: inline;
+
+    &:not(:first-child) {
+        margin-left: 18px;
+    }
+}
+
+.st-row:not(.st-row-disabled):hover {
+    background: #e91e63;
+    cursor: pointer;
+}
+
+.st-row-disabled {
+    opacity: 0.6;
+    filter: grayscale(100%);
+}
+
+@media only screen and (max-width: $sm) {
+    .hide-sm {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: $xs) {
+    .hide-xs {
+        display: none;
+    }
+}

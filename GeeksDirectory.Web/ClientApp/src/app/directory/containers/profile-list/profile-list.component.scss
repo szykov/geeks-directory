@@ -1,8 +1,7 @@
-.profile-list {
-    margin: 25px;
-}
+@import '~src/assets/styles/variables';
 
 .profiles-bottom-list {
+    margin: 15px 0 5px 0;
     min-height: 60px;
 }
 
@@ -15,29 +14,40 @@
 .end-of-world {
     height: 70px;
     text-align: center;
+
     span {
         display: block;
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .loading-bar,
-    .end-of-world {
-        padding-right: 35px;
+@media only screen and (max-width: $xs) {
+    .profile-list {
+        margin-left: 0;
     }
+
+    .profile-container {
+        width: 280px;
+    }
+
     .end-of-world {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
-@media only screen and (min-width: 1550px) {
+@media only screen and (min-width: $xs) {
+    .profile-container {
+        min-height: 205px;
+    }
+}
+
+@media only screen and (min-width: $lg) {
     .profile-list {
         margin-left: 10%;
         margin-right: 10%;
     }
 }
 
-@media only screen and (min-width: 1750px) {
+@media only screen and (min-width: $xl) {
     .profile-list {
         margin-left: 15%;
         margin-right: 15%;
