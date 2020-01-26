@@ -1,10 +1,11 @@
 import { Component, OnInit, Inject, Optional, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogChoice } from '@shared/common';
 
 import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { CredentialsModel } from '@app/auth/models';
-import { DialogChoice } from '@shared/common';
 
 @Component({
     selector: 'gd-sign-in-dialog',
@@ -28,7 +29,10 @@ export class SignInDialogComponent implements OnInit, OnDestroy {
             this.model = this.data;
         }
 
-        this.dialogRef.backdropClick().subscribe(() => this.onCancel());
+        this.dialogRef
+            .backdropClick()
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe(() => this.onCancel());
     }
 
     public onSubmit() {

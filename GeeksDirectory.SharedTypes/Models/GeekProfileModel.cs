@@ -1,7 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GeeksDirectory.SharedTypes.SchemaFilters.Models;
+
+using Swashbuckle.AspNetCore.Annotations;
+
+using System.ComponentModel.DataAnnotations;
 
 namespace GeeksDirectory.SharedTypes.Models
 {
+    [SwaggerSchemaFilter(typeof(GeekProfileModelSchemaFilter))]
     public class GeekProfileModel
     {
         [Required]

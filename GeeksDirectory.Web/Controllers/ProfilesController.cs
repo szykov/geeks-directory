@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 
+using GeeksDirectory.Data.Entities;
 using GeeksDirectory.SharedTypes.Attributes;
 using GeeksDirectory.SharedTypes.Classes;
 using GeeksDirectory.SharedTypes.Models;
@@ -7,6 +8,7 @@ using GeeksDirectory.SharedTypes.Responses;
 using GeeksDirectory.Web.Services.Interfaces;
 
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -17,9 +19,16 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Controllers
 {
+    /**
+     * <summary>Profiles controller with actions related to profiles</summary>
+     * <remarks>CRUD operations regarding profiles.</remarks>
+     **/
+    [ApiController]
     [Authorize(AuthenticationSchemes = OpenIddictValidationDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiVersion("1.0")]
+    [Consumes("application/json")]
+    [Produces("application/json")]
     public class ProfilesController : Controller
     {
         private readonly IProfilesService context;
@@ -34,9 +43,24 @@ namespace GeeksDirectory.Web.Controllers
         }
 
         // GET: /api/profiles?take={limit}&skip={offset}
+        /**
+         * <summary>Get profile</summary>
+         * <remarks>Searches profiles in database.</remarks>
+         * <param name="limit">Limit how many matches will be returned</param>
+         * <param name="offset">How many matched users will be skipped</param>
+         * <param name="orderBy">Order by which profile's property</param>
+         * <param name="orderDirection">Either ASC or DESC</param>
+         * <returns>Collecitons of profiles</returns>
+        **/
         [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet]
-        public ActionResult<GeekProfileResponsesKit> GetProfiles(int limit, int offset, string? orderBy, string? orderDirection)
+        public ActionResult<GeekProfileResponsesKit> GetProfiles(
+            int limit = 10,
+            int offset = 0,
+            string? orderBy = nameof(GeekProfile.ProfileId),
+            string? orderDirection = "ASC")
         {
             try
             {
@@ -51,6 +75,13 @@ namespace GeeksDirectory.Web.Controllers
         }
 
         // GET: /api/profiles/me
+        /**
+         * <summary>Get personal profile</summary>
+         * <remarks>Get personal profile based on authenticated credentials.</remarks>
+         * <returns>Profile of authentificated user</returns>
+        **/
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("me")]
         public ActionResult<GeekProfileResponse> GetMyProfile()
         {
@@ -69,9 +100,26 @@ namespace GeeksDirectory.Web.Controllers
         }
 
         // GET: /api/profiles/search?query={query}
+        /**
+         * <summary>Search profiles</summary>
+         * <remarks>Search for profiles based on query.</remarks>
+         * <param name="query">Query for filtering profiles</param>
+         * <param name="limit">Limit how many matches will be returned</param>
+         * <param name="offset">How many matched users will be skipped</param>
+         * <param name="orderBy">Order by which profile's property</param>
+         * <param name="orderDirection">Either ASC or DESC</param>
+         * <returns>Profile of authentificated user</returns>
+        **/
         [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("search")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles([RequiredFromQuery]string query, int limit, int offset, string? orderBy, string? orderDirection)
+        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles(
+            [RequiredFromQuery]string query,
+            int limit = 10,
+            int offset = 0,
+            string? orderBy = nameof(GeekProfile.ProfileId),
+            string? orderDirection = "ASC")
         {
             try
             {
@@ -86,7 +134,15 @@ namespace GeeksDirectory.Web.Controllers
         }
 
         // GET: /api/profiles/{id}
+        /**
+         * <summary>Get profile</summary>
+         * <remarks>Get profile by id.</remarks>
+         * <param name="id">User profile id</param>
+         * <returns>User profile</returns>
+        **/
         [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("{id}", Name = nameof(GetProfile))]
         public ActionResult<GeekProfileResponse> GetProfile([FromRoute]int id)
         {
@@ -103,7 +159,16 @@ namespace GeeksDirectory.Web.Controllers
         }
 
         // POST: /api/profiles
+        /**
+         * <summary>Register profile</summary>
+         * <remarks>Add new profile to database.</remarks>
+         * <param name="model">User profile model</param>
+         * <returns>Created user profile</returns>
+        **/
         [AllowAnonymous]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status409Conflict)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpPost]
         public async Task<ActionResult<GeekProfileResponse>> RegisterProfileAsync([FromBody]CreateGeekProfileModel model)
         {
@@ -120,6 +185,14 @@ namespace GeeksDirectory.Web.Controllers
         }
 
         // PATCH: /api/profiles/me
+        /**
+         * <summary>Update profile</summary>
+         * <remarks>Update user profile in database.</remarks>
+         * <param name="model">User profile model</param>
+         * <returns>Updated user profile</returns>
+        **/
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpPatch("me")]
         public ActionResult<GeekProfileResponse> UpdatePersonalProfile([FromBody]GeekProfileModel model)
         {

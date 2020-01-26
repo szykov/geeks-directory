@@ -1,8 +1,13 @@
-﻿using System;
+﻿using GeeksDirectory.SharedTypes.SchemaFilters.Responses;
+
+using Swashbuckle.AspNetCore.Annotations;
+
+using System;
 using System.Collections.Generic;
 
 namespace GeeksDirectory.SharedTypes.Responses
 {
+    [SwaggerSchemaFilter(typeof(GeekProfileResponseSchemaFilter))]
     public class GeekProfileResponse
     {
         public int Id { get; set; }

@@ -45,7 +45,7 @@
 }
 
 .topbar-actions {
-    > div {
+    >div {
         display: inline;
     }
 
@@ -60,15 +60,20 @@
     flex: 1 auto;
 }
 
-.github-link {
+.github-link,
+.open-api-link {
+    padding: 0 6px 0 6px;
+
     mat-icon {
         margin-right: 3px;
     }
 }
 
 @media only screen and (max-width: $xs) {
+
     .welcome-message,
-    .github-link {
+    .github-link,
+    .open-api-link {
         display: none;
     }
 }
