@@ -1,4 +1,6 @@
-﻿using GeeksDirectory.SharedTypes.Classes;
+﻿#pragma warning disable CA1031
+
+using GeeksDirectory.SharedTypes.Classes;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;

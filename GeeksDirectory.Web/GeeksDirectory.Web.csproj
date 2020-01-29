@@ -22,7 +22,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>GeeksDirectory.Web.xml</DocumentationFile>
-    <NoWarn>1701;1702;1591</NoWarn>
+    <NoWarn>1701;1702;1591;CA2007;CA1303;CA1062</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

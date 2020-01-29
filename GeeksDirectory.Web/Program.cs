@@ -1,3 +1,5 @@
+#pragma warning disable CA1052
+
 using GeeksDirectory.Web.Configuration;
 
 using Microsoft.AspNetCore.Hosting;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿#pragma warning disable 8600, 8602
+
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 

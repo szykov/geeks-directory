@@ -1,4 +1,6 @@
-﻿using GeeksDirectory.SharedTypes.Models;
+﻿#pragma warning disable CA1716
+
+using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
 
 using System.Threading.Tasks;
