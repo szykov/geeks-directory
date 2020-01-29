@@ -9,7 +9,7 @@
 </gd-topbar>
 
 <mat-drawer-container class="drawer-container" #drawerContainer>
-    <mat-drawer [opened]="drawerIsOpened" #drawer position="start" mode="side">
+    <mat-drawer [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="drawerIsOpened" #drawer position="start">
         <gd-left-bar
             [isAuth]="isAuth$ | async"
             [navLinks]="navLinks"

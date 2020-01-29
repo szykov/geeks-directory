@@ -22,6 +22,7 @@ import { IProfile } from '@app/responses';
 import { INavLink } from '@app/core/models/nav-link.model';
 import { ScrollActions } from '@app/core/actions';
 import { ScrollPosition } from '@app/shared/common';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
     selector: 'gd-root-layout',
@@ -32,6 +33,7 @@ import { ScrollPosition } from '@app/shared/common';
 export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('drawerContainer', { static: false }) drawerContainer: MatDrawerContainer;
 
+    public mobileQuery: MediaQueryList;
     public drawerIsOpened: boolean;
     public isAuth$: Observable<boolean>;
     public personalProfile: IProfile;
@@ -40,8 +42,23 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     public scrollPosition = ScrollPosition.Up;
 
     private unsubscribe: Subject<void> = new Subject();
+    private mobileQueryListener: () => void;
 
-    constructor(private store: Store<fromState.State>, private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}
+    constructor(
+        private store: Store<fromState.State>,
+        private route: ActivatedRoute,
+        private cdr: ChangeDetectorRef,
+        private media: MediaMatcher
+    ) {
+        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+        this.mobileQueryListener = () => cdr.detectChanges();
+        this.mobileQuery.addEventListener('change', this.mobileQueryListener);
+
+        this.mobileQuery.onchange = query => {
+            this.drawerIsOpened = !query.matches;
+            this.cdr.detectChanges();
+        };
+    }
 
     public ngOnInit() {
         this.isAuth$ = this.store.select(fromAuth.isAuth);
@@ -80,10 +97,12 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit() {
-        setTimeout(() => {
-            this.drawerIsOpened = true;
-            this.cdr.detectChanges();
-        }, 300);
+        if (!this.mobileQuery.matches) {
+            setTimeout(() => {
+                this.drawerIsOpened = true;
+                this.cdr.detectChanges();
+            }, 300);
+        }
     }
 
     public onScroll(event: Event) {
@@ -119,5 +138,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     public ngOnDestroy(): void {
         this.unsubscribe.next();
         this.unsubscribe.complete();
+
+        this.mobileQuery.removeEventListener('change', this.mobileQueryListener);
     }
 }
