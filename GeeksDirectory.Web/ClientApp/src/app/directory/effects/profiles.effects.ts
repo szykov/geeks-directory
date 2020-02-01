@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { mergeMap, map, tap, distinctUntilChanged } from 'rxjs/operators';
+import { mergeMap, map, tap } from 'rxjs/operators';
 import { ProfilesListActions, ProfilesApiActions, ProfilesDetailsActions, SearchActions } from '@app/directory/actions';
 
 import { RequestService, NotificationService } from '@app/services';
@@ -54,8 +54,8 @@ export class ProfileEffects {
     updatePersonalProfile$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProfilesDetailsActions.updatePersonalProfile),
-            mergeMap(({ model }) =>
-                this.requestService.updatePersonalProfile(model).pipe(
+            mergeMap(({ profileModel }) =>
+                this.requestService.updatePersonalProfile(profileModel).pipe(
                     tap(() => this.notificationService.showSuccess('Personal profile has been updated.')),
                     map(result => ProfilesApiActions.updatePersonalProfileSuccess({ selected: result }))
                 )

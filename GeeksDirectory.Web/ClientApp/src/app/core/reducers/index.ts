@@ -22,4 +22,4 @@ const getFeatureState = createFeatureSelector<State, CoreState>('core');
 export const selectCoreState = createSelector(getFeatureState, (state: CoreState) => state.scroll);
 
 export const getScrollPosition = createSelector(selectCoreState, fromCore.getScrollPosition);
-export const isMobile = createSelector(selectCoreState, fromCore.isMobile);
+export const isMobile = createSelector(selectCoreState, fromCore.getIsMobileFlag);

@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import { AuthState } from '@app/auth/reducers';
 import { AuthActions } from '@app/auth/actions';
 
-import { IException } from '../interfaces';
+import { IException } from '../responses';
 import { NotificationService } from './notification.service';
 import { LoaderService } from './loader.service';
 import { StorageService } from './storage.service';

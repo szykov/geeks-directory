@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { mergeMap, map, tap, exhaustMap, catchError } from 'rxjs/operators';
+import { mergeMap, map, tap, exhaustMap, catchError, concatMap } from 'rxjs/operators';
 
 import { RequestService, NotificationService } from '@app/services';
 import { DialogService } from '@app/services';
@@ -21,10 +21,10 @@ export class SkillsEffects {
         this.actions$.pipe(
             ofType(ProfilesDetailsActions.openAddSkillDialog),
             exhaustMap(({ profileId }) => this.dialogService.addSkillDialog(profileId)),
-            map(({ choice, profileId, model }) => {
+            map(({ choice, profileId, skillModel }) => {
                 switch (choice) {
                     case DialogChoice.Ok:
-                        return SkillsDialog.addSkillOk({ profileId, model });
+                        return SkillsDialog.addSkillOk({ profileId, skillModel });
 
                     default:
                         return SkillsDialog.addSkillCanceled();
@@ -36,12 +36,12 @@ export class SkillsEffects {
     addSkill$ = createEffect(() =>
         this.actions$.pipe(
             ofType(SkillsDialog.addSkillOk),
-            mergeMap(({ profileId, model }) =>
-                this.requestService.addSkill(profileId, model).pipe(
+            mergeMap(({ profileId, skillModel }) =>
+                this.requestService.addSkill(profileId, skillModel).pipe(
                     tap(() => this.notificationService.showSuccess('Skill has been added.')),
                     map(
                         result => SkillsApiActions.addSkillSuccess({ skill: result }),
-                        catchError(() => of(ProfilesDetailsActions.openAddSkillDialog({ profileId, model })))
+                        catchError(() => of(ProfilesDetailsActions.openAddSkillDialog({ profileId, skillModel })))
                     )
                 )
             )
@@ -51,11 +51,20 @@ export class SkillsEffects {
     editAddSkillDialog$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProfilesDetailsActions.openEditSkillDialog),
-            exhaustMap(({ profileId, model }) => this.dialogService.editSkillDialog(profileId, { ...model })),
-            map(({ choice, profileId, model }) => {
+            concatMap(({ skillModel, profileId }) =>
+                this.requestService
+                    .getMySkillEvaluation(profileId, skillModel.name)
+                    .pipe(map(assessment => ({ skillModel, profileId, assessment })))
+            ),
+            exhaustMap(({ skillModel, profileId, assessment }) => {
+                let model = { ...skillModel };
+                model.score = assessment.score;
+                return this.dialogService.editSkillDialog(profileId, { ...model });
+            }),
+            map(({ choice, profileId, skillModel }) => {
                 switch (choice) {
                     case DialogChoice.Ok:
-                        return SkillsDialog.editSkillOk({ profileId, model });
+                        return SkillsDialog.editSkillOk({ profileId, skillModel });
 
                     default:
                         return SkillsDialog.editSkillCanceled();
@@ -67,12 +76,12 @@ export class SkillsEffects {
     editSkill$ = createEffect(() =>
         this.actions$.pipe(
             ofType(SkillsDialog.editSkillOk),
-            mergeMap(({ profileId, model }) =>
-                this.requestService.setSkillScore(profileId, model.name, { score: model.score }).pipe(
+            mergeMap(({ profileId, skillModel }) =>
+                this.requestService.setSkillScore(profileId, skillModel.name, { score: skillModel.score }).pipe(
                     tap(() => this.notificationService.showSuccess('Skill has been evaluated.')),
                     map(
-                        result => SkillsApiActions.evaluateSkillSuccess({ skill: result }),
-                        catchError(() => of(ProfilesDetailsActions.openAddSkillDialog({ profileId, model })))
+                        skill => SkillsApiActions.evaluateSkillSuccess({ skill }),
+                        catchError(() => of(ProfilesDetailsActions.openAddSkillDialog({ profileId, skillModel })))
                     )
                 )
             )

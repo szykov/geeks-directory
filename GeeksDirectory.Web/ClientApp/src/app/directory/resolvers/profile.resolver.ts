@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import * as fromProfiles from '@app/directory/reducers';
 import { ProfilesDetailsActions } from '@app/directory/actions';
 
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 
 @Injectable()
 export class ProfileResolveGuard implements Resolve<IProfile> {

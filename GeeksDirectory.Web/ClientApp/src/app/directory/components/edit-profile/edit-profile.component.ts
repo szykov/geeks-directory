@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 import { ProfileModel, SkillModel } from '@app/models';
 
 @Component({

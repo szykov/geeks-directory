@@ -1,4 +1,4 @@
-import { IProfile } from '../interfaces';
+import { IProfile } from '../responses';
 
 export class ProfileModel {
     public name: string;

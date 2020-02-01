@@ -26,4 +26,4 @@ export const reducer = createReducer(
 );
 
 export const getScrollPosition = (state: State) => state.scrollPosition;
-export const isMobile = (state: State) => state.isMobile;
+export const getIsMobileFlag = (state: State) => state.isMobile;

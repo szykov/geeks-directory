@@ -14,5 +14,7 @@ namespace GeeksDirectory.Web.Services.Interfaces
         Task<SkillResponse> AddAsync(int profileId, SkillModel model, string userEmail);
 
         Task<SkillResponse> EvaluateSkillAsync(int profileId, string skillName, string userEmail, SkillEvaluationModel model);
+
+        Task<AssessmentResponse?> TryGetMySkillEvaluationAsync(int profileId, string skillName, string userEmail);
     }
 }

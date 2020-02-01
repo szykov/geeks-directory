@@ -25,9 +25,7 @@ export class SignInDialogComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
-        if (this.data) {
-            this.model = this.data;
-        }
+        this.model = this.data || new CredentialsModel();
 
         this.dialogRef
             .backdropClick()

@@ -2,7 +2,7 @@
 
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
-import { ISkill } from '@app/interfaces';
+import { ISkill } from '@app/responses';
 import { SkillModel } from '@app/models';
 
 @Component({

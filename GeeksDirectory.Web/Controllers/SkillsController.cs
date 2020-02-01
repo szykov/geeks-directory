@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 
 using OpenIddict.Validation;
 
-using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Controllers
@@ -36,7 +35,7 @@ namespace GeeksDirectory.Web.Controllers
         public SkillsController(ISkillsService context, IMapperService mapperService, ILogger<ProfilesController> logger)
         {
             this.context = context;
-            this.mapper = mapperService.GetExceptionMapper();
+            mapper = mapperService.GetExceptionMapper();
             this.logger = logger;
         }
 
@@ -56,12 +55,12 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                return this.context.Get(profileId, skillName);
+                return context.Get(profileId, skillName);
             }
             catch (LogicException ex)
             {
-                this.logger.LogError(ex, "Unable to fetch list of profiles.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
+                logger.LogError(ex, "Unable to fetch list of profiles.");
+                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
             }
         }
 
@@ -81,15 +80,15 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name!;
-                var skill = await this.context.AddAsync(profileId, model, userName);
+                var userName = User.Identity.Name!;
+                var skill = await context.AddAsync(profileId, model, userName);
 
-                return this.CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
+                return CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
             }
             catch (LogicException ex)
             {
-                this.logger.LogError(ex, "Unable to fetch list of profiles.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
+                logger.LogError(ex, "Unable to fetch list of profiles.");
+                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
             }
         }
 
@@ -109,13 +108,38 @@ namespace GeeksDirectory.Web.Controllers
         {
             try
             {
-                var userName = this.User.Identity.Name!;
-                return await this.context.EvaluateSkillAsync(profileId, skillName, userName, model);
+                var userName = User.Identity.Name!;
+                return await context.EvaluateSkillAsync(profileId, skillName, userName, model);
             }
             catch (LogicException ex)
             {
-                this.logger.LogError(ex, "Unable to fetch list of profiles.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
+                logger.LogError(ex, "Unable to fetch list of profiles.");
+                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
+            }
+        }
+
+        // GET: /api/profiles/{profileId}/skills/{skillName}/score
+        /**
+         * <summary>Get my skill evaluation</summary>
+         * <remarks>Can get your skill evaluation score if it exists</remarks>
+         * <param name="profileId">User profile id</param>
+         * <param name="skillName">Skill's name</param>
+         * <returns>Assessment data with your score</returns>
+        **/
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
+        [HttpGet("{profileId}/skills/{skillName}/score")]
+        public async Task<ActionResult<AssessmentResponse?>> GetMySkillEvaluationAsync([FromRoute]int profileId, [FromRoute]string skillName)
+        {
+            try
+            {
+                var userName = User.Identity.Name!;
+                return await context.TryGetMySkillEvaluationAsync(profileId, skillName, userName);
+            }
+            catch (LogicException ex)
+            {
+                logger.LogError(ex, "Unable to fetch list of profiles.");
+                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
             }
         }
     }

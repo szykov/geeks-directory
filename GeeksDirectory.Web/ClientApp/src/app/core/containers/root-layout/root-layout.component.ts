@@ -19,7 +19,7 @@ import * as fromState from '@app/reducers';
 import * as fromAuth from '@app/auth/reducers';
 import * as fromCore from '@app/core/reducers';
 
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 import { INavLink } from '@app/core/models/nav-link.model';
 import { ScrollService } from '@app/services';
 
@@ -103,7 +103,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public get personalProfilePath() {
-        return `/profiles/${this.personalProfile.id}`;
+        return this.personalProfile && `/profiles/${this.personalProfile.id}`;
     }
 
     public ngOnDestroy(): void {

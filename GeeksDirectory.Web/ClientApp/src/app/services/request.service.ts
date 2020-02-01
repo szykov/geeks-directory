@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '@shared/common';
-import { IProfile, ISkill, IProfilesKit } from '../interfaces';
+import { IProfile, ISkill, IProfilesKit, IAssessment } from '../responses';
 import { ProfileModel, SkillModel, QueryOptions, SkillEvaluationModel } from '../models';
 
 @Injectable({
@@ -78,5 +78,14 @@ export class RequestService {
             .build();
 
         return this.http.post<ISkill>(url, skillEvaluation, { headers: this.headers });
+    }
+
+    public getMySkillEvaluation(profileId: number, skillName: string): Observable<IAssessment> {
+        let url = new EndpointBuilder(CONFIG.connection.endpoints.getSkillScore)
+            .setUrlParam('profileId', profileId.toString())
+            .setUrlParam('skillName', skillName)
+            .build();
+
+        return this.http.get<IAssessment>(url, { headers: this.headers });
     }
 }

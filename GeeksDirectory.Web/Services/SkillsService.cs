@@ -99,5 +99,15 @@ namespace GeeksDirectory.Web.Services
                 throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
             }
         }
+
+        public async Task<AssessmentResponse?> TryGetMySkillEvaluationAsync(int profileId, string skillName, string userEmail)
+        {
+            var user = await this.userManager.FindByEmailAsync(userEmail);
+
+            if (this.assessmentsRepository.Exists(profileId, skillName, user.Id))
+                return this.mapper.Map<AssessmentResponse>(this.assessmentsRepository.Get(profileId, skillName, user.Id));
+
+            return null;
+        }
     }
 }

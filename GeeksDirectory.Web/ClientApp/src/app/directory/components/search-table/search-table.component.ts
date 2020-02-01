@@ -18,7 +18,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
-import { IProfile, IProfilesKit } from '@app/interfaces';
+import { IProfile, IProfilesKit } from '@app/responses';
 
 @Component({
     selector: 'gd-search-table',

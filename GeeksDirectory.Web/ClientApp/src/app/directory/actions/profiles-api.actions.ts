@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IProfile, IProfilesKit } from '@app/interfaces';
+import { IProfile, IProfilesKit } from '@app/responses';
 
 export const loadProfilesSuccess = createAction('[Profiles/API] Load Profiles Success', props<{ collection: IProfilesKit }>());
 export const loadProfileDetailsSuccess = createAction(

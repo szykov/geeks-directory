@@ -8,15 +8,15 @@ import * as fromProfiles from '@app/directory/reducers';
 import { ProfilesListActions } from '@app/directory/actions';
 
 import { PaginationService } from '@app/services';
-import { IProfile } from '@app/interfaces';
+import { IProfile } from '@app/responses';
 import { QueryOptions } from '@app/models';
 
 @Injectable()
 export class ProfileListResolveGuard implements Resolve<IProfile[]> {
-    constructor(private store: Store<fromProfiles.State>, private PaginationService: PaginationService) {}
+    constructor(private store: Store<fromProfiles.State>, private paginationService: PaginationService) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-        let paginationStep = this.PaginationService.getPaginationStep();
+        let paginationStep = this.paginationService.getPaginationStep();
         let queryOptions = new QueryOptions(null, paginationStep);
         this.store.dispatch(ProfilesListActions.loadProfiles({ queryOptions }));
 

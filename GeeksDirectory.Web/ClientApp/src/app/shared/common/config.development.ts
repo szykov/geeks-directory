@@ -1,4 +1,4 @@
-export let CONFIG = {
+export const CONFIG = {
     gitHubUrl: 'https://github.com/szykov/GeeksDirectory',
     specsUrl: 'https://redocly.github.io/redoc/?url=http://geeks-directory.azurewebsites.net/swagger/1.0/swagger.json',
     ignoreConneciton: false,
@@ -17,7 +17,8 @@ export let CONFIG = {
             searchProfiles: 'api/profiles/search',
             getSkill: 'api/profiles/{profileId}/skills',
             addSkill: 'api/profiles/{profileId}/skills',
-            setSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score'
+            setSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score',
+            getSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score'
         }
     }
 };
