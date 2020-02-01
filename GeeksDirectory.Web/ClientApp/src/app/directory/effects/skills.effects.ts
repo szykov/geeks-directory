@@ -68,10 +68,10 @@ export class SkillsEffects {
         this.actions$.pipe(
             ofType(SkillsDialog.editSkillOk),
             mergeMap(({ profileId, model }) =>
-                this.requestService.setSkillScore(profileId, model.name, model.score).pipe(
+                this.requestService.setSkillScore(profileId, model.name, { score: model.score }).pipe(
                     tap(() => this.notificationService.showSuccess('Skill has been evaluated.')),
                     map(
-                        result => SkillsApiActions.evaluateSkillSuccess({ skillName: model.name, averageScore: result }),
+                        result => SkillsApiActions.evaluateSkillSuccess({ skill: result }),
                         catchError(() => of(ProfilesDetailsActions.openAddSkillDialog({ profileId, model })))
                     )
                 )

@@ -10,6 +10,6 @@ namespace GeeksDirectory.Data.Repositories.Interfaces
 
         bool Exists(int profileId, string skillName);
 
-        int RefreshAverageScore(int profileId, string skillName);
+        Skill RefreshAverageScore(int profileId, string skillName);
     }
 }

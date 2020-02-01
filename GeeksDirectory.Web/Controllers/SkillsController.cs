@@ -99,18 +99,18 @@ namespace GeeksDirectory.Web.Controllers
          * <remarks>Evaluate skill for profile.</remarks>
          * <param name="profileId">User profile id</param>
          * <param name="skillName">Skill's name</param>
-         * <param name="score">New score for skill</param>
+         * <param name="model">Skill Evaluation model</param>
          * <returns>Updated skill's average score</returns>
         **/
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpPost("{profileId}/skills/{skillName}/score")]
-        public async Task<ActionResult<int>> EvaluateSkillAsync([FromRoute]int profileId, [FromRoute]string skillName, [FromBody, Range(0, 5)]int score)
+        public async Task<ActionResult<SkillResponse>> EvaluateSkillAsync([FromRoute]int profileId, [FromRoute]string skillName, [FromBody]SkillEvaluationModel model)
         {
             try
             {
                 var userName = this.User.Identity.Name!;
-                return await this.context.EvaluateSkillAsync(profileId, skillName, userName, score);
+                return await this.context.EvaluateSkillAsync(profileId, skillName, userName, model);
             }
             catch (LogicException ex)
             {

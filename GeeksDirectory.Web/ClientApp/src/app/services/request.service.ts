@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '@shared/common';
 import { IProfile, ISkill, IProfilesKit } from '../responses';
-import { ProfileModel, SkillModel, QueryOptions } from '../models';
+import { ProfileModel, SkillModel, QueryOptions, SkillEvaluationModel } from '../models';
 
 @Injectable({
     providedIn: 'root'
@@ -71,12 +71,12 @@ export class RequestService {
         return this.http.get<IProfilesKit>(urlBulder.build(), { headers: this.headers });
     }
 
-    public setSkillScore(profileId: number, skillName: string, score: number): Observable<number> {
+    public setSkillScore(profileId: number, skillName: string, skillEvaluation: SkillEvaluationModel): Observable<ISkill> {
         let url = new EndpointBuilder(CONFIG.connection.endpoints.setSkillScore)
             .setUrlParam('profileId', profileId.toString())
             .setUrlParam('skillName', skillName)
             .build();
 
-        return this.http.post<number>(url, score, { headers: this.headers });
+        return this.http.post<ISkill>(url, skillEvaluation, { headers: this.headers });
     }
 }

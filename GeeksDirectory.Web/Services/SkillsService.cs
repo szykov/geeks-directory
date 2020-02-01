@@ -66,9 +66,11 @@ namespace GeeksDirectory.Web.Services
                 this.logger.LogInformation("Added skill {@skill} to {@profileId}", skill, profileId);
 
                 var user = await this.userManager.FindByEmailAsync(userEmail);
-                skill.AverageScore = await this.EvaluateSkillAsync(profileId, model.Name, userEmail, model.Score);
 
-                return this.mapper.Map<SkillResponse>(skill);
+                var skillEvaluation = new SkillEvaluationModel() { Score = model.Score };
+                var updatedSkill = await this.EvaluateSkillAsync(profileId, model.Name, userEmail, skillEvaluation);
+
+                return this.mapper.Map<SkillResponse>(updatedSkill);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
             {
@@ -76,20 +78,21 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public async Task<int> EvaluateSkillAsync(int profileId, string skillName, string userEmail, int score)
+        public async Task<SkillResponse> EvaluateSkillAsync(int profileId, string skillName, string userEmail, SkillEvaluationModel model)
         {
             try
             {
                 var user = await this.userManager.FindByEmailAsync(userEmail);
 
                 if (this.assessmentsRepository.Exists(profileId, skillName, user.Id))
-                    this.assessmentsRepository.Update(profileId, skillName, user.Id, score);
+                    this.assessmentsRepository.Update(profileId, skillName, user.Id, model.Score);
                 else
-                    this.assessmentsRepository.Add(profileId, skillName, user.Id, score);
+                    this.assessmentsRepository.Add(profileId, skillName, user.Id, model.Score);
 
-                this.logger.LogInformation("Set skill score for {0} of profile {1} by {2} to {3}", skillName, profileId, userEmail, score);
+                this.logger.LogInformation("Set skill score for {0} of profile {1} by {2} to {3}", skillName, profileId, userEmail, model);
 
-                return this.skillsRepository.RefreshAverageScore(profileId, skillName);
+                var skill = this.skillsRepository.RefreshAverageScore(profileId, skillName);
+                return this.mapper.Map<SkillResponse>(skill);
             }
             catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
             {

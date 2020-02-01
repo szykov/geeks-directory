@@ -44,14 +44,10 @@ export const reducer = createReducer(
         selected.skills = [...selected.skills, skill];
         return { ...state, selected };
     }),
-    on(SkillsApiActions.evaluateSkillSuccess, (state, { skillName, averageScore }) => {
+    on(SkillsApiActions.evaluateSkillSuccess, (state, { skill }) => {
         let selected = { ...state.selected };
-
-        let targetIndex = selected.skills.findIndex(skill => skill.name === skillName);
-        let updatedSkill = { ...selected.skills[targetIndex] };
-        updatedSkill.averageScore = averageScore;
-
-        selected.skills = [...selected.skills.slice(0, targetIndex), updatedSkill, ...selected.skills.slice(targetIndex + 1)];
+        let index = selected.skills.findIndex(s => s.name === skill.name);
+        selected.skills = [...selected.skills.slice(0, index), skill, ...selected.skills.slice(index + 1)];
 
         return { ...state, selected };
     })
