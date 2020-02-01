@@ -1,23 +1,12 @@
 import { Injectable, Inject } from '@angular/core';
 
-import { DeviceDetectorService, DeviceInfo } from 'ngx-device-detector';
-
 import { WINDOW } from './window.service';
 
 @Injectable({
     providedIn: 'root'
 })
-export class DeviceService {
-    constructor(private deviceService: DeviceDetectorService, @Inject(WINDOW) private window: Window) {}
-
-    public getDeviceInfo = (): DeviceInfo => this.deviceService.getDeviceInfo();
-
-    public isMobile = (): boolean => this.deviceService.isMobile();
-
-    public isTablet = (): boolean => this.deviceService.isTablet();
-
-    public isDesktop = (): boolean => this.deviceService.isDesktop();
-
+export class PaginationService {
+    constructor(@Inject(WINDOW) private window: Window) {}
     public getPaginationStep(): number {
         let widthCount = Math.round(this.window.innerWidth / 395);
         let heightCount = Math.floor(this.window.innerHeight / 160);

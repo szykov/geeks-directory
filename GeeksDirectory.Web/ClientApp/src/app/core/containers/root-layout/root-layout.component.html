@@ -1,7 +1,7 @@
 <gd-topbar
     title="Geeks Directory"
     [fullName]="fullName"
-    [profilePath]="getProfilePath()"
+    [profilePath]="personalProfilePath"
     [isAuth]="isAuth$ | async"
     (drawerToggle)="drawer.toggle()"
     (signOut)="onSignOut()"
@@ -9,13 +9,14 @@
 </gd-topbar>
 
 <mat-drawer-container class="drawer-container" #drawerContainer>
-    <mat-drawer [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="drawerIsOpened" #drawer position="start">
+    <mat-drawer [mode]="isMobile ? 'over' : 'side'" [opened]="drawerIsOpened" #drawer position="start">
         <gd-left-bar
             [isAuth]="isAuth$ | async"
-            [navLinks]="navLinks"
+            [navLinks]="(isAuth$ | async) ? navAuthLinks : navLinks"
             [profileName]="fullName"
-            [profilePath]="getProfilePath()"
+            [profilePath]="personalProfilePath"
             (changeMode)="drawerContainer.updateContentMargins()"
+            (linkEnter)="isMobile ? drawer.toggle() : null"
         >
         </gd-left-bar>
     </mat-drawer>

@@ -9,7 +9,7 @@ import * as fromProfiles from '@app/directory/reducers';
 import * as fromCore from '@app/core/reducers';
 import { ProfilesListActions } from '@app/directory/actions';
 
-import { IProfile, IPagination } from '@app/responses';
+import { IProfile, IPagination } from '@app/interfaces';
 import { ScrollPosition } from '@app/shared/common';
 import { QueryOptions } from '@app/models';
 

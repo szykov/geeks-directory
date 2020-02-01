@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-animations';
 
-import { IProfile } from '@app/responses';
+import { IProfile } from '@app/interfaces';
 
 @Component({
     selector: 'gd-profile-card',

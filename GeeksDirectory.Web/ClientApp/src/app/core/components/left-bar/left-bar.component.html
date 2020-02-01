@@ -5,10 +5,12 @@
     fxLayoutAlign="stretch"
     [@onSideNavChange]="wideMode ? 'open' : 'close'"
 >
+    <mat-divider></mat-divider>
     <div fxLayout="column" flexLayoutAlign="center center" class="drawer-content">
         <div class="user-menu" *ngIf="isAuth">
             <mat-action-list>
                 <mat-list-item
+                    (click)="linkEnter.emit()"
                     [routerLink]="profilePath"
                     routerLinkActive="active-link"
                     [routerLinkActiveOptions]="{ exact: false }"
@@ -20,8 +22,8 @@
         </div>
 
         <mat-action-list>
-            <mat-divider></mat-divider>
             <mat-list-item
+                (click)="linkEnter.emit()"
                 *ngFor="let navLink of navLinks"
                 [routerLink]="navLink.route.path"
                 routerLinkActive="active-link"

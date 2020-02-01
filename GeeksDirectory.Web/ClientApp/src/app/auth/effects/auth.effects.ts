@@ -109,7 +109,14 @@ export class AuthEffects {
         () =>
             this.actions$.pipe(
                 ofType(AuthApiActions.personalizeSuccess),
-                tap(({ profile }) => this.storageService.setAuthUser(profile))
+                tap(({ profile }) => this.storageService.setAuthUser(profile)),
+                tap(() =>
+                    this.router.navigate(['/profiles', this.storageService.getAuthUser().id], {
+                        relativeTo: this.route,
+                        queryParams: { signIn: null },
+                        queryParamsHandling: 'merge'
+                    })
+                )
             ),
         { dispatch: false }
     );

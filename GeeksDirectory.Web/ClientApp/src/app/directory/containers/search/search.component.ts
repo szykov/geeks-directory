@@ -11,7 +11,7 @@ import * as fromState from '@app/reducers';
 import * as fromProfiles from '@app/directory/reducers';
 import { SearchActions } from '@app/directory/actions';
 
-import { IProfilesKit } from '@app/responses';
+import { IProfilesKit } from '@app/interfaces';
 import { PageEvent, Sort } from '@angular/material';
 import { QueryOptions } from '@app/models';
 

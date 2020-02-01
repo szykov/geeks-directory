@@ -4,7 +4,7 @@ import { SESSION_STORAGE, isStorageAvailable, StorageService as NgxStorageServic
 import { CookieService } from 'ngx-cookie-service';
 
 import { NotificationService } from './notification.service';
-import { IProfile } from '../responses';
+import { IProfile } from '../interfaces';
 import { BehaviorSubject } from 'rxjs';
 import { IToken } from '@app/auth/responses';
 

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { ProfileModel } from '@app/models';
 import { CONFIG, EndpointBuilder } from '@shared/common';
-import { IProfile } from '@app/responses';
+import { IProfile } from '@app/interfaces';
 import { RequestTokenModel } from '@app/auth/models';
 import { IToken } from '@app/auth/responses';
 

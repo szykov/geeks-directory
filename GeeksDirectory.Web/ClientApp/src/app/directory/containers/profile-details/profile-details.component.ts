@@ -9,7 +9,7 @@ import * as fromState from '@app/reducers';
 import * as fromProfiles from '@app/directory/reducers';
 import * as fromAuth from '@app/auth/reducers';
 
-import { IProfile } from '@app/responses';
+import { IProfile } from '@app/interfaces';
 import { CITIES } from '@shared/common';
 import { ProfileModel, SkillModel } from '@app/models';
 import { ProfilesDetailsActions } from '@app/directory/actions';

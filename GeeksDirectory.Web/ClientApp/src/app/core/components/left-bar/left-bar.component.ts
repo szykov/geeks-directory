@@ -17,6 +17,7 @@ export class LeftBarComponent {
     @Input() navLinks: INavLink[];
 
     @Output() changeMode = new EventEmitter();
+    @Output() linkEnter = new EventEmitter();
 
     public wideMode = false;
     public showAddInfo = false;

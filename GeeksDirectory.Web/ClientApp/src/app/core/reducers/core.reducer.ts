@@ -5,10 +5,12 @@ import { ScrollActions } from '../actions';
 
 export interface State {
     scrollPosition: ScrollPosition;
+    isMobile: boolean;
 }
 
 export const initialState: State = {
-    scrollPosition: ScrollPosition.Up
+    scrollPosition: ScrollPosition.Up,
+    isMobile: false
 };
 
 export const reducer = createReducer(
@@ -16,7 +18,12 @@ export const reducer = createReducer(
     on(ScrollActions.setScrollPosition, (state, { scrollPosition }) => ({
         ...state,
         scrollPosition
+    })),
+    on(ScrollActions.setIsMobileFlag, (state, { isMobile }) => ({
+        ...state,
+        isMobile
     }))
 );
 
 export const getScrollPosition = (state: State) => state.scrollPosition;
+export const isMobile = (state: State) => state.isMobile;

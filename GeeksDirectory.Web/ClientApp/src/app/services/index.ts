@@ -4,5 +4,6 @@ export * from './dialog.service';
 export * from './storage.service';
 export * from './httpconfig.interceptor';
 export * from './dialog.service';
-export * from './device.service';
+export * from './pagination.service';
 export * from './window.service';
+export * from './scroll.service';

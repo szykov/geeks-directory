@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '@shared/common';
-import { IProfile, ISkill, IProfilesKit } from '../responses';
+import { IProfile, ISkill, IProfilesKit } from '../interfaces';
 import { ProfileModel, SkillModel, QueryOptions, SkillEvaluationModel } from '../models';
 
 @Injectable({
