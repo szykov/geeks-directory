@@ -1,6 +1,5 @@
 .skill-chip {
     height: 40px;
-    cursor: pointer;
 
     .mat-badge {
         margin-right: 10px;
@@ -11,8 +10,13 @@
     }
 }
 
+.skill-chip.editable {
+    cursor: pointer;
+}
+
 .add-skill {
     margin-left: 10px;
+
     mat-icon {
         width: 40px;
         font-size: 40px;

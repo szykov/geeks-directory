@@ -27,7 +27,7 @@ export class ScrollService {
             updateIsMobileFlag(query.matches);
         };
 
-        this.displayPosition$.pipe(debounceTime(300)).subscribe(displayPosition => {
+        this.displayPosition$.pipe(debounceTime(100)).subscribe(displayPosition => {
             let scrollPosition = this.identifyScrollPosition(displayPosition);
             this.currentPosition$.next(scrollPosition);
         });

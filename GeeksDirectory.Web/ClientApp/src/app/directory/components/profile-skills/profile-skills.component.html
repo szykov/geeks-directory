@@ -1,11 +1,16 @@
 <mat-chip-list class="card-content">
-    <mat-chip class="skill-chip" *ngFor="let skill of skills"
-        (click)="editable ? onEditSkill($event.currentTarget.firstChild) : null">
-        <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false"
-            id="{{ skill.id }}">{{ skill.name }}</span>
+    <mat-chip
+        [disableRipple]="!editable"
+        class="skill-chip"
+        [ngClass]="{ editable: editable }"
+        *ngFor="let skill of skills"
+        (click)="editable ? onEditSkill($event.currentTarget.firstChild) : null"
+    >
+        <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false" id="{{ skill.id }}">{{
+            skill.name
+        }}</span>
     </mat-chip>
-    <button *ngIf="editable" class="add-skill" mat-icon-button color="primary" aria-label="Add Skill"
-        (click)="newSkill.emit()">
+    <button *ngIf="editable" class="add-skill" mat-icon-button color="primary" aria-label="Add Skill" (click)="newSkill.emit()">
         <mat-icon>add</mat-icon>
     </button>
 </mat-chip-list>

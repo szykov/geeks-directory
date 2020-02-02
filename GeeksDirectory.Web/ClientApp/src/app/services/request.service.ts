@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '@shared/common';
-import { IProfile, ISkill, IProfilesKit, IAssessment } from '../responses';
-import { ProfileModel, SkillModel, QueryOptions, SkillEvaluationModel } from '../models';
+import { IProfile, ISkill, IProfilesKit, IAssessment } from '@app/responses';
+import { ProfileModel, SkillModel, QueryOptions, SkillEvaluationModel } from '@app/models';
 
 @Injectable({
     providedIn: 'root'
