@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Actions, ofType, createEffect } from '@ngrx/effects';
+
+import { of } from 'rxjs';
 import { mergeMap, map, tap, exhaustMap, catchError, concatMap } from 'rxjs/operators';
+
+import { Actions, ofType, createEffect } from '@ngrx/effects';
 
 import { RequestService, NotificationService } from '@app/services';
 import { DialogService } from '@app/services';
-import { ProfilesDetailsActions, SkillsApiActions, SkillsDialog } from '../actions';
+import { ProfilesDetailsActions, SkillsApiActions, SkillsDialog } from '@app/directory/actions';
 import { DialogChoice } from '@shared/common';
-import { of } from 'rxjs';
 
 @Injectable()
 export class SkillsEffects {
@@ -58,7 +60,7 @@ export class SkillsEffects {
             ),
             exhaustMap(({ skillModel, profileId, assessment }) => {
                 let model = { ...skillModel };
-                model.score = assessment.score;
+                model.score = assessment ? assessment.score : null;
                 return this.dialogService.editSkillDialog(profileId, { ...model });
             }),
             map(({ choice, profileId, skillModel }) => {

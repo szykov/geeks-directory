@@ -6,9 +6,9 @@ import { mapTo, filter } from 'rxjs/operators';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { CredentialsModel } from '../models';
+import { CredentialsModel } from '@app/auth/models';
 import { DialogChoice } from '@shared/common';
-import { SignInDialogComponent } from '../components';
+import { SignInDialogComponent } from '@app/auth/components';
 
 @Injectable({
     providedIn: 'root'

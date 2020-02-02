@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { ScrollPosition } from '@app/shared/common';
 import { MediaMatcher } from '@angular/cdk/layout';
 
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { distinctUntilChanged, debounceTime } from 'rxjs/operators';
+import { distinctUntilChanged } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
 import * as fromState from '@app/reducers';
 import { ScrollActions } from '@app/core/actions';
+
+import { ScrollPosition, throunceTime } from '@app/shared/common';
 import { IDisplayPosition } from '@app/models';
 
 @Injectable({
@@ -27,7 +28,7 @@ export class ScrollService {
             updateIsMobileFlag(query.matches);
         };
 
-        this.displayPosition$.pipe(debounceTime(300)).subscribe(displayPosition => {
+        this.displayPosition$.pipe(throunceTime(100)).subscribe((displayPosition: IDisplayPosition) => {
             let scrollPosition = this.identifyScrollPosition(displayPosition);
             this.currentPosition$.next(scrollPosition);
         });
