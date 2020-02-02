@@ -25,7 +25,7 @@ namespace GeeksDirectory.Web.Midlewares
         public async Task Invoke(HttpContext httpContext)
         {
             await this.next.Invoke(httpContext);
-
+            
             if (httpContext.Response.StatusCode == StatusCodes.Status404NotFound)
             {
                 this.logger.LogWarning("Client tried to access unavailable resource. {0}", httpContext.Request.Path);

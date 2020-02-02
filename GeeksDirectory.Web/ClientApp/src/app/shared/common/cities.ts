@@ -1,4 +1,4 @@
-export let CITIES = [
+export const CITIES = [
     'Adak',
     'Apia',
     'Pago Pago',

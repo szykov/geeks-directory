@@ -13,15 +13,13 @@
     <div class="fill-empty"></div>
 
     <div class="topbar-actions">
-        <button mat-button class="open-api-link" (click)="goToSpecs()">
-            <mat-icon svgIcon="open-api"></mat-icon>
-            OpenAPI
-        </button>
-
-        <button mat-button class="github-link" (click)="goToGithub()">
-            <mat-icon svgIcon="github"></mat-icon>
-            GitHub
-        </button>
+        <gd-open-api-link class="open-api-link" [showText]="true"></gd-open-api-link>
+        <gd-github-link
+            class="github-link"
+            iconName="github"
+            iconUrl="github-circle-white.svg"
+            [showText]="true"
+        ></gd-github-link>
 
         <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" (click)="openSignInDialog()">
             Sign In!

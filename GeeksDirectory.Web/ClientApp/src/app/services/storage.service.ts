@@ -1,11 +1,12 @@
 import { Injectable, Inject } from '@angular/core';
 
+import { BehaviorSubject } from 'rxjs';
+
 import { SESSION_STORAGE, isStorageAvailable, StorageService as NgxStorageService } from 'ngx-webstorage-service';
 import { CookieService } from 'ngx-cookie-service';
 
 import { NotificationService } from './notification.service';
-import { IProfile } from '../responses';
-import { BehaviorSubject } from 'rxjs';
+import { IProfile } from '@app/responses';
 import { IToken } from '@app/auth/responses';
 
 @Injectable({

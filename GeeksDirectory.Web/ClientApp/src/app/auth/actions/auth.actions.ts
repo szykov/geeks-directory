@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { CredentialsModel } from '../models';
+import { CredentialsModel } from '@app/auth/models';
 
 export const signInOk = createAction('[Auth] Sign In', props<{ credentials: CredentialsModel }>());
 export const signInRedirect = createAction('[Auth] Sign In Redirect');

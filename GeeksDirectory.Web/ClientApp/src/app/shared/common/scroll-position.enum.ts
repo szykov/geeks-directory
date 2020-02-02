@@ -1,4 +1,4 @@
-export enum ScrollPosition {
+export const enum ScrollPosition {
     Up,
     Middle,
     Down

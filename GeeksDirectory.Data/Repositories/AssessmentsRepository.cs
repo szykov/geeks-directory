@@ -18,6 +18,21 @@ namespace GeeksDirectory.Data.Repositories
             this.context = context;
         }
 
+        public Assessment Get(int profileId, string skillName, string userName)
+        {
+            if (String.IsNullOrEmpty(skillName) || profileId == 0 || String.IsNullOrEmpty(userName))
+            {
+                throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userName)} are invalid.");
+            }
+
+            var skill = this.GetSkill(profileId, skillName);
+
+            var assessment = skill.Assessments.Where(s => s.UserName == userName).SingleOrDefault()
+                ?? throw new KeyNotFoundException("Assessment has not been found.");
+
+            return assessment;
+        }
+
         public void Add(int profileId, string skillName, string userName, int score)
         {
             if (String.IsNullOrEmpty(skillName) || profileId == 0 || String.IsNullOrEmpty(userName))

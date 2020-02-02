@@ -1,4 +1,4 @@
-export enum DialogChoice {
+export const enum DialogChoice {
     Ok,
     Canceled,
     CreateAccount

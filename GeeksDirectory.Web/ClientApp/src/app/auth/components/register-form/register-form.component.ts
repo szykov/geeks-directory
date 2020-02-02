@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { CreateProfileModel } from '@app/models';
 
@@ -8,7 +8,7 @@ import { CreateProfileModel } from '@app/models';
     styleUrls: ['./register-form.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RegisterFormComponent implements OnInit {
+export class RegisterFormComponent {
     public hide = false;
 
     @Input() model: CreateProfileModel;
@@ -18,8 +18,6 @@ export class RegisterFormComponent implements OnInit {
     @Output() register = new EventEmitter();
 
     constructor() {}
-
-    ngOnInit() {}
 
     public onChangeCity() {
         this.changedCity.emit(this.model.city);

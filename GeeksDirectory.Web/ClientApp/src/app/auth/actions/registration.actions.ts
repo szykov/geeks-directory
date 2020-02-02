@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { CredentialsModel } from '../models';
+import { CredentialsModel } from '@app/auth/models';
 import { CreateProfileModel } from '@app/models';
 
 export const signIn = createAction('[Registration] Sign In', props<{ credentials: CredentialsModel }>());

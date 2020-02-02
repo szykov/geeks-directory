@@ -17,11 +17,11 @@ import { Store } from '@ngrx/store';
 import { AuthActions, SignInDialogActions } from '@app/auth/actions';
 import * as fromState from '@app/reducers';
 import * as fromAuth from '@app/auth/reducers';
+import * as fromCore from '@app/core/reducers';
 
 import { IProfile } from '@app/responses';
 import { INavLink } from '@app/core/models/nav-link.model';
-import { ScrollActions } from '@app/core/actions';
-import { ScrollPosition } from '@app/shared/common';
+import { ScrollService } from '@app/services';
 
 @Component({
     selector: 'gd-root-layout',
@@ -31,35 +31,34 @@ import { ScrollPosition } from '@app/shared/common';
 })
 export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('drawerContainer', { static: false }) drawerContainer: MatDrawerContainer;
-
-    public drawerIsOpened: boolean;
     public isAuth$: Observable<boolean>;
-    public personalProfile: IProfile;
-    public fullName: string;
-    public navLinks: INavLink[];
-    public scrollPosition = ScrollPosition.Up;
 
+    public isMobile: boolean;
+    public drawerIsOpened: boolean;
+    public fullName: string;
+
+    public navLinks: INavLink[] = [
+        { label: 'Home', route: { path: '/profiles', exact: true }, icon: 'home' },
+        { label: 'Search', route: { path: './profiles/search', exact: false }, icon: 'search' },
+        { label: 'Registration', route: { path: './registration', exact: false }, icon: 'person_add' }
+    ];
+    public navAuthLinks: INavLink[] = [
+        { label: 'Home', route: { path: '/profiles', exact: true }, icon: 'home' },
+        { label: 'Search', route: { path: './profiles/search', exact: false }, icon: 'search' }
+    ];
+
+    private personalProfile: IProfile;
     private unsubscribe: Subject<void> = new Subject();
 
-    constructor(private store: Store<fromState.State>, private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}
+    constructor(
+        private store: Store<fromState.State>,
+        private scrollService: ScrollService,
+        private route: ActivatedRoute,
+        private cdr: ChangeDetectorRef
+    ) {}
 
     public ngOnInit() {
         this.isAuth$ = this.store.select(fromAuth.isAuth);
-
-        this.isAuth$.pipe(takeUntil(this.unsubscribe)).subscribe(isAuth => {
-            if (isAuth) {
-                this.navLinks = [
-                    { label: 'Home', route: { path: '/profiles', exact: true }, icon: 'home' },
-                    { label: 'Search', route: { path: './profiles/search', exact: false }, icon: 'search' }
-                ];
-            } else {
-                this.navLinks = [
-                    { label: 'Home', route: { path: '/profiles', exact: true }, icon: 'home' },
-                    { label: 'Search', route: { path: './profiles/search', exact: false }, icon: 'search' },
-                    { label: 'Registration', route: { path: './registration', exact: false }, icon: 'person_add' }
-                ];
-            }
-        });
 
         this.route.queryParams.pipe(takeUntil(this.unsubscribe)).subscribe(params => {
             if (params.signIn) {
@@ -80,41 +79,32 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit() {
-        setTimeout(() => {
-            this.drawerIsOpened = true;
-            this.cdr.detectChanges();
-        }, 300);
+        this.store
+            .select(fromCore.isMobile)
+            .pipe(takeUntil(this.unsubscribe))
+            .subscribe(result => {
+                this.isMobile = result;
+                this.drawerIsOpened = !result;
+                this.cdr.detectChanges();
+            });
     }
 
     public onScroll(event: Event) {
         let element = event.target as Element;
-        this.refreshScrollPosition(element.clientHeight, element.scrollHeight, element.scrollTop);
-    }
-
-    private refreshScrollPosition(clientHeight: number, scrollHeight: number, scrollTop: number) {
-        let newScrollPosition = this.identifyScrollPosition(clientHeight, scrollHeight, scrollTop);
-        if (this.scrollPosition !== newScrollPosition) {
-            this.store.dispatch(ScrollActions.setScrollPosition({ scrollPosition: newScrollPosition }));
-            this.scrollPosition = newScrollPosition;
-        }
-    }
-
-    private identifyScrollPosition(clientHeight: number, scrollHeight: number, scrollTop: number): ScrollPosition {
-        let deviation = clientHeight * 0.1;
-        if (scrollTop < deviation) {
-            return ScrollPosition.Up;
-        } else if (scrollHeight - scrollTop - deviation < clientHeight) {
-            return ScrollPosition.Down;
-        } else {
-            return ScrollPosition.Middle;
-        }
+        this.scrollService.setPosition({
+            clientHeight: element.clientHeight,
+            scrollHeight: element.scrollHeight,
+            scrollTop: element.scrollTop
+        });
     }
 
     public onSignOut() {
         this.store.dispatch(AuthActions.signOut());
     }
 
-    public getProfilePath = () => (this.personalProfile ? `/profiles/${this.personalProfile.id}` : null);
+    public get personalProfilePath() {
+        return this.personalProfile && `/profiles/${this.personalProfile.id}`;
+    }
 
     public ngOnDestroy(): void {
         this.unsubscribe.next();

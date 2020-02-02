@@ -1,20 +1,15 @@
 @import '~src/assets/styles/variables';
 
-* {
+.notfound-container * {
     box-sizing: border-box;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-}
-
-#notfound {
+.notfound-container {
     position: relative;
     height: 75vh;
 }
 
-#notfound .notfound {
+.notfound {
     position: absolute;
     left: 50%;
     top: 50%;

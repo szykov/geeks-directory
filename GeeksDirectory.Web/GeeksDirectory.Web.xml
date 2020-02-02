@@ -78,13 +78,21 @@
                      * <returns>Added skill</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.EvaluateSkillAsync(System.Int32,System.String,System.Int32)">
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.EvaluateSkillAsync(System.Int32,System.String,GeeksDirectory.SharedTypes.Models.SkillEvaluationModel)">
                      * <summary>Evaluate skill</summary>
                      * <remarks>Evaluate skill for profile.</remarks>
                      * <param name="profileId">User profile id</param>
                      * <param name="skillName">Skill's name</param>
-                     * <param name="score">New score for skill</param>
+                     * <param name="model">Skill Evaluation model</param>
                      * <returns>Updated skill's average score</returns>
+                    *
+        </member>
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.GetMySkillEvaluationAsync(System.Int32,System.String)">
+                     * <summary>Get my skill evaluation</summary>
+                     * <remarks>Can get your skill evaluation score if it exists</remarks>
+                     * <param name="profileId">User profile id</param>
+                     * <param name="skillName">Skill's name</param>
+                     * <returns>Assessment data with your score</returns>
                     *
         </member>
         <member name="T:AuthorizationServer.Controllers.AuthorizationController">

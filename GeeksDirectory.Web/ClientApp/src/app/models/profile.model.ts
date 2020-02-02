@@ -1,4 +1,4 @@
-import { IProfile } from '../responses';
+import { IProfile } from '@app/responses';
 
 export class ProfileModel {
     public name: string;

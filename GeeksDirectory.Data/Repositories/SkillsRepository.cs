@@ -67,7 +67,7 @@ namespace GeeksDirectory.Data.Repositories
             this.context.SaveChanges();
         }
 
-        public int RefreshAverageScore(int profileId, string skillName)
+        public Skill RefreshAverageScore(int profileId, string skillName)
         {
             if (profileId == 0 || String.IsNullOrEmpty(skillName))
             {
@@ -82,7 +82,7 @@ namespace GeeksDirectory.Data.Repositories
             this.context.Skills.Update(skill);
             this.context.SaveChanges();
 
-            return averageScore;
+            return skill;
         }
     }
 }

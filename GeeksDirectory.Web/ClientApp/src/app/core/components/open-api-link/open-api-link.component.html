@@ -1,0 +1,4 @@
+<button [style.width]="width" [style.height]="height" mat-button (click)="goToSpecs()">
+    <mat-icon [ngStyle]="{ 'padding-right.px': showText ? 6 : 0 }" svgIcon="open-api"></mat-icon>
+    {{ showText ? 'OpenAPI' : null }}
+</button>

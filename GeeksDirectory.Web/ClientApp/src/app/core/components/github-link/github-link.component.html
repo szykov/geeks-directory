@@ -1,0 +1,4 @@
+<button [style.width]="width" [style.height]="height" mat-button (click)="goToGithub()">
+    <mat-icon [ngStyle]="{ 'padding-right.px': showText ? 6 : 0 }" svgIcon="github"></mat-icon>
+    {{ showText ? 'GitHub' : null }}
+</button>

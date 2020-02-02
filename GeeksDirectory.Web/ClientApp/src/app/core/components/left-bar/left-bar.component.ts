@@ -17,24 +17,25 @@ export class LeftBarComponent {
     @Input() navLinks: INavLink[];
 
     @Output() changeMode = new EventEmitter();
+    @Output() linkEnter = new EventEmitter();
 
     public wideMode = false;
-    public showNavLabels = false;
+    public showAddInfo = false;
 
     constructor(private cdr: ChangeDetectorRef) {}
 
     public onSinenavToggle() {
         this.wideMode = !this.wideMode;
-        this.wideMode ? this.enableLabelsWithDelay() : (this.showNavLabels = false);
+        this.wideMode ? this.expandWithDelay() : (this.showAddInfo = false);
 
         setTimeout(() => {
             this.changeMode.emit();
         }, 300);
     }
 
-    public enableLabelsWithDelay() {
+    private expandWithDelay() {
         setTimeout(() => {
-            this.showNavLabels = this.wideMode;
+            this.showAddInfo = this.wideMode;
             this.cdr.detectChanges();
         }, 300);
     }

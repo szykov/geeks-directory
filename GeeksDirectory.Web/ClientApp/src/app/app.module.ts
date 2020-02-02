@@ -7,9 +7,9 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { NgProgressRouterModule } from '@ngx-progressbar/router';
 import { CookieService } from 'ngx-cookie-service';
-import { DeviceDetectorModule } from 'ngx-device-detector';
 
-import { HttpConfigInterceptor, WINDOW_PROVIDERS } from '@app/services';
+import { WINDOW_PROVIDERS } from './shared/common';
+import { AuthInterceptor, LoaderInterceptor, HttpConfigInterceptor, NotFoundInterceptor } from '@app/interceptors';
 
 import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from '@app/core/core.module';
@@ -31,7 +31,6 @@ import { AppComponent } from '@app/app.component';
         }),
         NgProgressHttpModule,
         NgProgressRouterModule,
-        DeviceDetectorModule.forRoot(),
         CoreModule,
         SharedModule,
         AuthModule,
@@ -43,6 +42,21 @@ import { AppComponent } from '@app/app.component';
         {
             provide: HTTP_INTERCEPTORS,
             useClass: HttpConfigInterceptor,
+            multi: true
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: LoaderInterceptor,
+            multi: true
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: NotFoundInterceptor,
             multi: true
         },
         CookieService

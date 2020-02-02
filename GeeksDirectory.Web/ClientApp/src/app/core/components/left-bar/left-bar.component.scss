@@ -8,8 +8,9 @@
     object-fit: cover;
     border-radius: 50%;
 }
+
 .drawer-icon {
-    padding-left: 3px;
+    padding-left: 5px;
 }
 
 .drawer-content {
@@ -23,9 +24,10 @@
     line-height: 30px;
 }
 
-.active-link mat-icon,
-.active-link span {
-    color: #e91e63;
+.active-link {
+    outline-style: solid;
+    outline-width: thin;
+    background-color: #e91e63 !important;
 }
 
 .toogle-container {

@@ -55,17 +55,17 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
         this.filteredCities$.next(cities);
     }
 
-    public onUpdatePersonalProfile(model: ProfileModel) {
-        this.store.dispatch(ProfilesDetailsActions.updatePersonalProfile({ model }));
+    public onUpdatePersonalProfile(profileModel: ProfileModel) {
+        this.store.dispatch(ProfilesDetailsActions.updatePersonalProfile({ profileModel }));
     }
 
     public onAddSkill() {
-        let model = new SkillModel();
-        this.store.dispatch(ProfilesDetailsActions.openAddSkillDialog({ profileId: this.profileId, model }));
+        let skillModel = new SkillModel();
+        this.store.dispatch(ProfilesDetailsActions.openAddSkillDialog({ profileId: this.profileId, skillModel }));
     }
 
-    public onEditSkill(model: SkillModel) {
-        this.store.dispatch(ProfilesDetailsActions.openEditSkillDialog({ profileId: this.profileId, model }));
+    public onEditSkill(skillModel: SkillModel) {
+        this.store.dispatch(ProfilesDetailsActions.openEditSkillDialog({ profileId: this.profileId, skillModel }));
     }
 
     ngOnDestroy(): void {

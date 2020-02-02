@@ -4,6 +4,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 using System;
 using System.Text.Json.Serialization;
+#pragma warning disable CS8618
 
 namespace GeeksDirectory.SharedTypes.Responses
 {

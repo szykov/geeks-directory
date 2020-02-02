@@ -18,6 +18,7 @@
     .topbar-title {
         font-size: 25px;
         font-weight: 600;
+        margin-right: 20px;
     }
 
     .topbar-nav {
@@ -37,6 +38,7 @@
 .welcome-message {
     cursor: pointer;
     display: inline;
+    margin-left: 15px;
 
     span {
         font-size: 16px;
@@ -62,8 +64,6 @@
 
 .github-link,
 .open-api-link {
-    padding: 0 6px 0 6px;
-
     mat-icon {
         margin-right: 3px;
     }

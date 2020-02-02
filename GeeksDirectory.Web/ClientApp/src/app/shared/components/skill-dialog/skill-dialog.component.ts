@@ -27,10 +27,6 @@ export class SkillDialogComponent implements OnInit {
         }
     }
 
-    public temp(asdf: any) {
-        console.log(asdf);
-    }
-
     public onCancel() {
         let data: ISkillsDialogResult = { choice: DialogChoice.Canceled };
         this.dialogRef.close(data);
@@ -40,7 +36,7 @@ export class SkillDialogComponent implements OnInit {
         let data: ISkillsDialogResult = {
             choice: DialogChoice.Ok,
             profileId: this.data.profileId,
-            model: this.model
+            skillModel: this.model
         };
         this.dialogRef.close(data);
     }

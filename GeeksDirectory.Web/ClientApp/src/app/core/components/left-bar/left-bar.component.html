@@ -1,25 +1,43 @@
-<div class="drawer-container" fxLayout="column" fxFlexFill fxLayoutAlign="stretch"
-    [@onSideNavChange]="wideMode ? 'open' : 'close'">
+<div
+    class="drawer-container"
+    fxLayout="column"
+    fxFlexFill
+    fxLayoutAlign="stretch"
+    [@onSideNavChange]="wideMode ? 'open' : 'close'"
+>
+    <mat-divider></mat-divider>
     <div fxLayout="column" flexLayoutAlign="center center" class="drawer-content">
         <div class="user-menu" *ngIf="isAuth">
             <mat-action-list>
-                <mat-list-item [routerLink]="profilePath" routerLinkActive="active-link"
-                    [routerLinkActiveOptions]="{exact: false}">
+                <mat-list-item
+                    (click)="linkEnter.emit()"
+                    [routerLink]="profilePath"
+                    routerLinkActive="active-link"
+                    [routerLinkActiveOptions]="{ exact: false }"
+                >
                     <mat-icon class="drawer-icon" aria-hidden="false" aria-label="Geek icon">android</mat-icon>
-                    <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ profileName }} </span>
+                    <span class="nav-link" [@animateText]="showAddInfo ? 'show' : 'hide'">{{ profileName }} </span>
                 </mat-list-item>
             </mat-action-list>
         </div>
 
         <mat-action-list>
-            <mat-divider></mat-divider>
-            <mat-list-item *ngFor="let navLink of navLinks" [routerLink]="navLink.route.path"
-                routerLinkActive="active-link" [routerLinkActiveOptions]="routeIsExact(navLink)">
-                <mat-icon class="drawer-icon">{{navLink.icon}}</mat-icon>
-                <span class="nav-link" [@animateText]="showNavLabels ? 'show' : 'hide'">{{ navLink.label }}
-                </span>
+            <mat-list-item
+                (click)="linkEnter.emit()"
+                *ngFor="let navLink of navLinks"
+                [routerLink]="navLink.route.path"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="routeIsExact(navLink)"
+            >
+                <mat-icon class="drawer-icon">{{ navLink.icon }}</mat-icon>
+                <span class="nav-link" [@animateText]="showAddInfo ? 'show' : 'hide'">{{ navLink.label }} </span>
             </mat-list-item>
         </mat-action-list>
+    </div>
+
+    <div [fxLayout]="showAddInfo ? 'row' : 'column'" fxLayoutAlign="stretch">
+        <gd-open-api-link height="50px" [showText]="showAddInfo" width="100%"></gd-open-api-link>
+        <gd-github-link height="50px" [showText]="showAddInfo" width="100%"></gd-github-link>
     </div>
 
     <mat-divider></mat-divider>
@@ -28,7 +46,7 @@
         <div class="toogle-container">
             <mat-action-list class="toogle-container">
                 <mat-list-item (click)="onSinenavToggle()">
-                    <mat-icon class="drawer-icon">{{ wideMode ? 'arrow_left' : 'arrow_right'}}</mat-icon>
+                    <mat-icon class="drawer-icon">{{ wideMode ? 'arrow_left' : 'arrow_right' }}</mat-icon>
                 </mat-list-item>
             </mat-action-list>
         </div>

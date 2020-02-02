@@ -1,6 +1,6 @@
-import { ScoreType } from '../../responses';
+import { ScoreType } from '@app/responses';
 
-export let SCORE_TYPES: ScoreType[] = [
+export const SCORE_TYPES: ScoreType[] = [
     { value: 0, name: 'Zero' },
     { value: 1, name: 'One' },
     { value: 2, name: 'Two' },
