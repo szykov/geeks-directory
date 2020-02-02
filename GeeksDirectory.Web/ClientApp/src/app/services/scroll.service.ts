@@ -27,7 +27,6 @@ export class ScrollService {
         this.mobileQuery.onchange = query => {
             updateIsMobileFlag(query.matches);
         };
-
         this.displayPosition$.pipe(throunceTime(100)).subscribe((displayPosition: IDisplayPosition) => {
             let scrollPosition = this.identifyScrollPosition(displayPosition);
             this.currentPosition$.next(scrollPosition);
