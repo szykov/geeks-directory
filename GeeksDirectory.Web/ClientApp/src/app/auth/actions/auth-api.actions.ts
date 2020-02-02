@@ -1,8 +1,8 @@
 import { props, createAction } from '@ngrx/store';
 
-import { IToken } from '../responses';
+import { IToken } from '@app/auth/responses';
 import { IProfile } from '@app/responses';
-import { CredentialsModel } from '../models';
+import { CredentialsModel } from '@app/auth/models';
 
 export const signInSuccess = createAction('[Auth/API] Sign In Success', props<{ token: IToken }>());
 
