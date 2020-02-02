@@ -20,7 +20,8 @@ import {
     MatSnackBarModule,
     MatSortModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRippleModule
 } from '@angular/material';
 
 const MATERIAL_BUNDLE = [
@@ -43,7 +44,8 @@ const MATERIAL_BUNDLE = [
     MatSnackBarModule,
     MatSortModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRippleModule
 ];
 
 @NgModule({

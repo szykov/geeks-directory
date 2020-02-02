@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { ScrollPosition } from '@app/shared/common';
-import { ScrollActions } from '../actions';
+import { ScrollActions } from '@app/core/actions';
 
 export interface State {
     scrollPosition: ScrollPosition;

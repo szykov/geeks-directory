@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { AuthApiActions, AuthActions } from '@app/auth/actions';
 
 import { IProfile } from '@app/responses';
-import { IToken } from '../responses';
+import { IToken } from '@app/auth/responses';
 
 export interface State {
     profile: IProfile | null;
