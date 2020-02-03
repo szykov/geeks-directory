@@ -1,14 +1,11 @@
 ﻿#pragma warning disable CA1031
 
-using GeeksDirectory.SharedTypes.Classes;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
 using System;
 using System.Net.Sockets;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Midlewares
@@ -29,30 +26,19 @@ namespace GeeksDirectory.Web.Midlewares
         {
             try
             {
-                await this.next(httpContext);
+                await next(httpContext);
             }
             catch (Exception ex) when (ex.GetBaseException() is SocketException)
             {
                 httpContext.Response.StatusCode = StatusCodes.Status404NotFound;
+                this.logger.LogWarning("Client tried to access unavailable resource. {0}", httpContext.Request.Path);
             }
             catch (Exception ex)
             {
                 if (!httpContext.Response.HasStarted)
                 {
                     httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                    httpContext.Response.ContentType = "application/json";
-
-                    this.logger.LogError(ex, $"Internal server error");
-
-                    var jsonSerializerOptions = new JsonSerializerOptions
-                    {
-                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-                        IgnoreNullValues = true
-                    };
-
-                    var jsonResult = JsonSerializer.Serialize(ExceptionCode.InternalServerError, jsonSerializerOptions);
-
-                    await httpContext.Response.WriteAsync(jsonResult);
+                    logger.LogError(ex, $"Internal server error");
                 }
             }
         }

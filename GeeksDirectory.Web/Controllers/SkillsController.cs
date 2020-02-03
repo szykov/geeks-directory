@@ -53,15 +53,7 @@ namespace GeeksDirectory.Web.Controllers
         [HttpGet("{profileId}/skills/{skillName}", Name = "GetSkill")]
         public ActionResult<SkillResponse> GetSkill([FromRoute]int profileId, [FromRoute]string skillName)
         {
-            try
-            {
-                return context.Get(profileId, skillName);
-            }
-            catch (LogicException ex)
-            {
-                logger.LogError(ex, "Unable to fetch list of profiles.");
-                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
-            }
+            return context.Get(profileId, skillName);
         }
 
         // POST: /api/profiles/{profileId}/skills
@@ -78,18 +70,10 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPost("{profileId}/skills")]
         public async Task<ActionResult<SkillResponse>> AddSkillAsync([FromRoute]int profileId, [FromBody]SkillModel model)
         {
-            try
-            {
-                var userName = User.Identity.Name!;
-                var skill = await context.AddAsync(profileId, model, userName);
+            var userName = User.Identity.Name!;
+            var skill = await context.AddAsync(profileId, model, userName);
 
-                return CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
-            }
-            catch (LogicException ex)
-            {
-                logger.LogError(ex, "Unable to fetch list of profiles.");
-                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
-            }
+            return CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
         }
 
         // POST: /api/profiles/{profileId}/skills/{skillName}/score
@@ -106,16 +90,8 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPost("{profileId}/skills/{skillName}/score")]
         public async Task<ActionResult<SkillResponse>> EvaluateSkillAsync([FromRoute]int profileId, [FromRoute]string skillName, [FromBody]SkillEvaluationModel model)
         {
-            try
-            {
-                var userName = User.Identity.Name!;
-                return await context.EvaluateSkillAsync(profileId, skillName, userName, model);
-            }
-            catch (LogicException ex)
-            {
-                logger.LogError(ex, "Unable to fetch list of profiles.");
-                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
-            }
+            var userName = User.Identity.Name!;
+            return await context.EvaluateSkillAsync(profileId, skillName, userName, model);
         }
 
         // GET: /api/profiles/{profileId}/skills/{skillName}/score
@@ -131,16 +107,8 @@ namespace GeeksDirectory.Web.Controllers
         [HttpGet("{profileId}/skills/{skillName}/score")]
         public async Task<ActionResult<AssessmentResponse?>> GetMySkillEvaluationAsync([FromRoute]int profileId, [FromRoute]string skillName)
         {
-            try
-            {
-                var userName = User.Identity.Name!;
-                return await context.TryGetMySkillEvaluationAsync(profileId, skillName, userName);
-            }
-            catch (LogicException ex)
-            {
-                logger.LogError(ex, "Unable to fetch list of profiles.");
-                return StatusCode(ex.StatusCode, mapper.Map<ErrorResponse>(ex));
-            }
+            var userName = User.Identity.Name!;
+            return await context.TryGetMySkillEvaluationAsync(profileId, skillName, userName);
         }
     }
 }
