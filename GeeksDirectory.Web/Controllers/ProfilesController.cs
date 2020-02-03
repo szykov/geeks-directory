@@ -62,16 +62,8 @@ namespace GeeksDirectory.Web.Controllers
             string? orderBy = nameof(GeekProfile.ProfileId),
             string? orderDirection = "ASC")
         {
-            try
-            {
-                var profiles = this.context.Get(limit, offset, orderBy, orderDirection);
-                return this.Ok(profiles);
-            }
-            catch (LogicException ex)
-            {
-                this.logger.LogError(ex, "Unable to fetch list of profiles.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
-            }
+            var profiles = this.context.Get(limit, offset, orderBy, orderDirection);
+            return this.Ok(profiles);
         }
 
         // GET: /api/profiles/me
@@ -85,18 +77,10 @@ namespace GeeksDirectory.Web.Controllers
         [HttpGet("me")]
         public ActionResult<GeekProfileResponse> GetMyProfile()
         {
-            try
-            {
-                var userName = this.User.Identity.Name!;
-                var profile = this.context.Get(userName);
+            var userName = this.User.Identity.Name!;
+            var profile = this.context.Get(userName);
 
-                return this.Ok(profile);
-            }
-            catch (LogicException ex)
-            {
-                this.logger.LogError(ex, "Unable to fetch list of profiles.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
-            }
+            return this.Ok(profile);
         }
 
         // GET: /api/profiles/search?query={query}
@@ -121,16 +105,8 @@ namespace GeeksDirectory.Web.Controllers
             string? orderBy = nameof(GeekProfile.ProfileId),
             string? orderDirection = "ASC")
         {
-            try
-            {
-                var profiles = this.context.Search(query, limit, offset, orderBy, orderDirection);
-                return this.Ok(profiles);
-            }
-            catch (LogicException ex)
-            {
-                this.logger.LogError(ex, "Unable to search in profiles.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
-            }
+            var profiles = this.context.Search(query, limit, offset, orderBy, orderDirection);
+            return this.Ok(profiles);
         }
 
         // GET: /api/profiles/{id}
@@ -146,16 +122,8 @@ namespace GeeksDirectory.Web.Controllers
         [HttpGet("{id}", Name = nameof(GetProfile))]
         public ActionResult<GeekProfileResponse> GetProfile([FromRoute]int id)
         {
-            try
-            {
-                var profile = this.context.Get(id);
-                return this.Ok(profile);
-            }
-            catch (LogicException ex)
-            {
-                this.logger.LogError(ex, "Unable to get profile.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
-            }
+            var profile = this.context.Get(id);
+            return this.Ok(profile);
         }
 
         // POST: /api/profiles
@@ -172,16 +140,8 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPost]
         public async Task<ActionResult<GeekProfileResponse>> RegisterProfileAsync([FromBody]CreateGeekProfileModel model)
         {
-            try
-            {
-                var profile = await this.context.AddAsync(model);
-                return this.CreatedAtRoute(nameof(GetProfile), new { profile.Id }, profile);
-            }
-            catch (LogicException ex)
-            {
-                this.logger.LogError(ex, "Unable to update profile.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
-            }
+            var profile = await this.context.AddAsync(model);
+            return this.CreatedAtRoute(nameof(GetProfile), new { profile.Id }, profile);
         }
 
         // PATCH: /api/profiles/me
@@ -196,18 +156,10 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPatch("me")]
         public ActionResult<GeekProfileResponse> UpdatePersonalProfile([FromBody]GeekProfileModel model)
         {
-            try
-            {
-                var userName = this.User.Identity.Name!;
+            var userName = this.User.Identity.Name!;
 
-                var profile = this.context.Update(userName, model);
-                return this.Ok(profile);
-            }
-            catch (LogicException ex)
-            {
-                this.logger.LogError(ex, "Unable to update profile.");
-                return this.StatusCode(ex.StatusCode, this.mapper.Map<ErrorResponse>(ex));
-            }
+            var profile = this.context.Update(userName, model);
+            return this.Ok(profile);
         }
     }
 }

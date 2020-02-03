@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 namespace GeeksDirectory.Web.Midlewares
 {
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
-    public class CustomErrorHandlingMiddleware
+    public class EnvelopeErrorHandlingMiddleware
     {
         private readonly RequestDelegate next;
         private readonly ILogger logger;
 
-        public CustomErrorHandlingMiddleware(RequestDelegate next, ILogger<InternalServerErrorHandlingMiddleware> logger)
+        public EnvelopeErrorHandlingMiddleware(RequestDelegate next, ILogger<InternalServerErrorHandlingMiddleware> logger)
         {
             this.next = next;
             this.logger = logger;
@@ -25,13 +25,6 @@ namespace GeeksDirectory.Web.Midlewares
         public async Task Invoke(HttpContext httpContext)
         {
             await this.next.Invoke(httpContext);
-            
-            if (httpContext.Response.StatusCode == StatusCodes.Status404NotFound)
-            {
-                this.logger.LogWarning("Client tried to access unavailable resource. {0}", httpContext.Request.Path);
-
-                return;
-            }
 
             if (!httpContext.Response.HasStarted)
             {
@@ -54,11 +47,11 @@ namespace GeeksDirectory.Web.Midlewares
     }
 
     // Extension method used to add the middleware to the HTTP request pipeline.
-    public static class CustomErrorHandlingMiddlewareExtensions
+    public static class EnvelopeErrorHandlingMiddlewareExtensions
     {
-        public static IApplicationBuilder UseCustomErrorHandlingMiddleware(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseEnvelopeErrorHandlingMiddleware(this IApplicationBuilder builder)
         {
-            return builder.UseMiddleware<CustomErrorHandlingMiddleware>();
+            return builder.UseMiddleware<EnvelopeErrorHandlingMiddleware>();
         }
     }
 }

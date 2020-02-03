@@ -39,8 +39,9 @@ namespace GeeksDirectory.Web.Configuration
                 app.UseExceptionHandler("/Error");
             }
 
-            app.UseCustomErrorHandlingMiddleware();
+            app.UseEnvelopeErrorHandlingMiddleware();
             app.UseInternalServerErrorHandlingMiddleware();
+            app.UseLogicErrorHandlingMiddleware();
 
             return app;
         }
