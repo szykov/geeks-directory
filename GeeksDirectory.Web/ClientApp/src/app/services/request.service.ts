@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { EndpointBuilder, CONFIG } from '@shared/common';
-import { IProfile, ISkill, IProfilesKit, IAssessment } from '@app/responses';
+import { IProfile, ISkill, IProfilesEnvelope, IAssessment } from '@app/responses';
 import { ProfileModel, SkillModel, QueryOptions, SkillEvaluationModel } from '@app/models';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class RequestService {
         this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     }
 
-    public getProfiles(queryOptions: QueryOptions): Observable<IProfilesKit> {
+    public getProfiles(queryOptions: QueryOptions): Observable<IProfilesEnvelope> {
         let urlBulder = new EndpointBuilder(CONFIG.connection.endpoints.getProfiles)
             .addQueryParam('limit', queryOptions.limit.toString())
             .addQueryParam('offset', queryOptions.offset.toString());
@@ -30,7 +30,7 @@ export class RequestService {
             urlBulder.addQueryParam('orderDirection', queryOptions.orderDirection);
         }
 
-        return this.http.get<IProfilesKit>(urlBulder.build(), { headers: this.headers });
+        return this.http.get<IProfilesEnvelope>(urlBulder.build(), { headers: this.headers });
     }
 
     public getProfile(profileId: number): Observable<IProfile> {
@@ -54,7 +54,7 @@ export class RequestService {
         return this.http.post<ISkill>(url, skill, { headers: this.headers });
     }
 
-    public searchProfiles(queryOptions: QueryOptions): Observable<IProfilesKit> {
+    public searchProfiles(queryOptions: QueryOptions): Observable<IProfilesEnvelope> {
         let urlBulder = new EndpointBuilder(CONFIG.connection.endpoints.searchProfiles)
             .addQueryParam('query', queryOptions.query)
             .addQueryParam('limit', queryOptions.limit.toString())
@@ -68,7 +68,7 @@ export class RequestService {
             urlBulder.addQueryParam('orderDirection', queryOptions.orderDirection);
         }
 
-        return this.http.get<IProfilesKit>(urlBulder.build(), { headers: this.headers });
+        return this.http.get<IProfilesEnvelope>(urlBulder.build(), { headers: this.headers });
     }
 
     public setSkillScore(profileId: number, skillName: string, skillEvaluation: SkillEvaluationModel): Observable<ISkill> {

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace GeeksDirectory.SharedTypes.Responses
 {
     [SwaggerSchemaFilter(typeof(GeekProfileResponsesKitSchemaFilter))]
-    public class GeekProfileResponsesKit
+    public class GeekProfileResponsesEnvelope
     {
         public PaginationResponse Pagination { get; set; } = new PaginationResponse();
 

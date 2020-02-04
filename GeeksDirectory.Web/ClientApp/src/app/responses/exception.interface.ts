@@ -1,4 +1,4 @@
-import { IExceptionDetail } from './exception-detail.interface';
+import { IExceptionDetail } from '.';
 
 export interface IException {
     code: string;

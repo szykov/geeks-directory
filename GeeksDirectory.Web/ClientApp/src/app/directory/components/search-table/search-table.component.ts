@@ -18,7 +18,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
-import { IProfile, IProfilesKit } from '@app/responses';
+import { IProfile, IProfilesEnvelope } from '@app/responses';
 
 @Component({
     selector: 'gd-search-table',
@@ -28,7 +28,7 @@ import { IProfile, IProfilesKit } from '@app/responses';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
-    @Input() profiles: IProfilesKit;
+    @Input() profiles: IProfilesEnvelope;
     @Input() pageSize = 10;
     @Input() loading: boolean;
 
@@ -37,7 +37,7 @@ export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
     @Output() changeOrder = new EventEmitter<Sort>();
 
     public resultsLength = 0;
-    public displayedColumns: string[] = ['ProfileId', 'Email', 'Name', 'Surname', 'City', 'Skills'];
+    public displayedColumns: string[] = ['profileId', 'email', 'name', 'surname', 'city', 'skills'];
     public dataSource: MatTableDataSource<IProfile>;
 
     @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

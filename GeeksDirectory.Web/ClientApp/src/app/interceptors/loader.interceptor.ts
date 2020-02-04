@@ -15,12 +15,8 @@ export class LoaderInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.loaderService.startLoading();
 
-        // for the sake of the demo. showing an animation and etc...
-        let delayTime = new Date(Date.now() + 300);
-
         return next.handle(request).pipe(
             map((event: HttpEvent<any>) => event),
-            delay(delayTime),
             catchError((response: HttpErrorResponse) => {
                 let exception: IException = response.error;
                 this.notificationService.showError(exception.message);

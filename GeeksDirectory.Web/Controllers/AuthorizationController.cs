@@ -67,7 +67,7 @@ namespace AuthorizationServer.Controllers
             if (request.IsPasswordGrantType())
             {
                 var user = await userManager.FindByNameAsync(request.Username);
-                if (user == null)
+                if (user is null)
                 {
                     var invalidGrantError = new ErrorResponse(OpenIdConnectConstants.Errors.InvalidGrant, "The username/password couple is invalid.");
                     return BadRequest(invalidGrantError);
@@ -119,9 +119,7 @@ namespace AuthorizationServer.Controllers
             {
                 // Never include the security stamp in the access and identity tokens, as it's a secret value.
                 if (claim.Type == identityOptions.Value.ClaimsIdentity.SecurityStampClaimType)
-                {
                     continue;
-                }
 
                 var destinations = new List<string>
                 {

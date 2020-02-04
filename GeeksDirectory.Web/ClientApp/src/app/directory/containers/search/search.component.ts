@@ -11,7 +11,7 @@ import * as fromState from '@app/reducers';
 import * as fromProfiles from '@app/directory/reducers';
 import { SearchActions } from '@app/directory/actions';
 
-import { IProfilesKit } from '@app/responses';
+import { IProfilesEnvelope } from '@app/responses';
 import { PageEvent, Sort } from '@angular/material';
 import { QueryOptions } from '@app/models';
 
@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         return this.queryOptions.query;
     }
 
-    public profiles$: Observable<IProfilesKit>;
+    public profiles$: Observable<IProfilesEnvelope>;
     public loading$: Observable<boolean>;
 
     private queryOptions: QueryOptions = new QueryOptions();

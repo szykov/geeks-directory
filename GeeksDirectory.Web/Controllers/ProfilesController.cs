@@ -56,7 +56,7 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet]
-        public ActionResult<GeekProfileResponsesKit> GetProfiles(
+        public ActionResult<GeekProfileResponsesEnvelope> GetProfiles(
             int limit = 10,
             int offset = 0,
             string? orderBy = nameof(GeekProfile.ProfileId),

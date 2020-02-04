@@ -16,9 +16,7 @@ namespace GeeksDirectory.Data.Attributes
         public override void AddValidation(ClientModelValidationContext context)
         {
             if (context is null)
-            {
                 throw new ArgumentNullException(nameof(context));
-            }
 
             MergeAttribute(context.Attributes, "data-val", "true");
             MergeAttribute(context.Attributes, "data-val-nowhitespace", this.GetErrorMessage(context));

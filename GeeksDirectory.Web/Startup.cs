@@ -28,10 +28,9 @@ namespace GeeksDirectory.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPredefinedServices(this.connectionString);
+
             if (this.origins.NotNullOrEmpty())
-            {
                 services.AddPredefinedCors(this.origins);
-            }
 
             services.AddPredefinedApiVersioning();
             services.AddPredefinedSwagger();
@@ -49,9 +48,7 @@ namespace GeeksDirectory.Web
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (this.origins.NotNullOrEmpty())
-            {
                 app.UsePredefinedCors();
-            }
 
             app.UseAuthentication();
             app.UsePredefinedErrorHandling(env);

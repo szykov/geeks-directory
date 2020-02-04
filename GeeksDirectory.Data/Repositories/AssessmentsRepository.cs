@@ -21,12 +21,9 @@ namespace GeeksDirectory.Data.Repositories
         public Assessment Get(int profileId, string skillName, string userName)
         {
             if (String.IsNullOrEmpty(skillName) || profileId == 0 || String.IsNullOrEmpty(userName))
-            {
                 throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userName)} are invalid.");
-            }
 
             var skill = this.GetSkill(profileId, skillName);
-
             var assessment = skill.Assessments.Where(s => s.UserName == userName).SingleOrDefault()
                 ?? throw new KeyNotFoundException("Assessment has not been found.");
 
@@ -36,12 +33,9 @@ namespace GeeksDirectory.Data.Repositories
         public void Add(int profileId, string skillName, string userName, int score)
         {
             if (String.IsNullOrEmpty(skillName) || profileId == 0 || String.IsNullOrEmpty(userName))
-            {
                 throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userName)} are invalid.");
-            }
 
             var skill = this.GetSkill(profileId, skillName);
-
             var assessment = new Assessment() { SkillId = skill.SkillId, UserName = userName, Score = score };
 
             this.context.Assessments.Add(assessment);
@@ -51,12 +45,9 @@ namespace GeeksDirectory.Data.Repositories
         public void Update(int profileId, string skillName, string userName, int score)
         {
             if (String.IsNullOrEmpty(skillName) || profileId == 0 || String.IsNullOrEmpty(userName))
-            {
                 throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userName)} are invalid.");
-            }
 
             var skill = this.GetSkill(profileId, skillName);
-
             var assessment = skill.Assessments.Where(s => s.UserName == userName).SingleOrDefault()
                 ?? throw new KeyNotFoundException("Assessment has not been found.");
 
@@ -69,9 +60,7 @@ namespace GeeksDirectory.Data.Repositories
         public bool Exists(int profileId, string skillName, string userName)
         {
             if (profileId == 0 || String.IsNullOrEmpty(skillName) || String.IsNullOrEmpty(userName))
-            {
                 throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userName)} are invalid.");
-            }
 
             Skill skill = this.GetSkill(profileId, skillName);
 

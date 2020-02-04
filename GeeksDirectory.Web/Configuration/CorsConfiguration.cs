@@ -14,22 +14,20 @@ namespace GeeksDirectory.Web.Configuration
 
         public static IServiceCollection AddPredefinedCors(this IServiceCollection services, IEnumerable<string> webUrls)
         {
-            if (webUrls.IsNullOrEmpty())
+            if (!webUrls.IsNullOrEmpty())
             {
-                return services;
-            }
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(policyName,
-                builder =>
+                services.AddCors(options =>
                 {
-                    builder.WithOrigins(webUrls.ToArray())
-                        .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials();
+                    options.AddPolicy(policyName,
+                    builder =>
+                    {
+                        builder.WithOrigins(webUrls.ToArray())
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials();
+                    });
                 });
-            });
+            }
 
             return services;
         }
