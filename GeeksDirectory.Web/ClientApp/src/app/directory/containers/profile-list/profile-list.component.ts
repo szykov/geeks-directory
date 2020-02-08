@@ -59,7 +59,7 @@ export class ProfileListComponent implements OnInit, OnDestroy {
         return this.profiles.length >= this.paginationInfo.total;
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

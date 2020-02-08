@@ -8,19 +8,21 @@ import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
 import { Store } from '@ngrx/store';
 import * as fromState from '@app/reducers';
-import * as fromProfiles from '@app/directory/reducers';
-import { SearchActions } from '@app/directory/actions';
 
-import { IProfilesEnvelope } from '@app/responses';
 import { PageEvent } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
+
+import * as fromProfiles from '@app/directory/reducers';
+import { SearchActions } from '@app/directory/actions';
+import { IProfilesEnvelope } from '@app/responses';
 import { QueryOptions } from '@app/models';
+import { ANIMATION } from '@app/shared/common';
 
 @Component({
     selector: 'gd-search',
     templateUrl: './search.component.html',
     styleUrls: ['./search.component.scss'],
-    animations: [fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' })],
+    animations: [fadeInUpOnEnterAnimation(ANIMATION.fadeInUpOnEnterAnimation)],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit, OnDestroy {
@@ -91,7 +93,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         this.router.navigate(['/profiles', profileId]);
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

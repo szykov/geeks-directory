@@ -21,12 +21,13 @@ import { takeUntil } from 'rxjs/operators';
 import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
 import { IProfile, IProfilesEnvelope } from '@app/responses';
+import { ANIMATION } from '@app/shared/common';
 
 @Component({
     selector: 'gd-search-table',
     templateUrl: './search-table.component.html',
     styleUrls: ['./search-table.component.scss'],
-    animations: [fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' })],
+    animations: [fadeInUpOnEnterAnimation(ANIMATION.fadeInUpOnEnterAnimation)],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
@@ -74,7 +75,7 @@ export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
         return change && !change.isFirstChange() && change.previousValue !== change.currentValue;
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

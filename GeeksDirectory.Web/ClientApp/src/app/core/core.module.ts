@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { reducers } from './reducers';
+import { CoreEffects } from './effects';
 
 import { SharedModule } from '@shared/shared.module';
 import { throwIfAlreadyLoaded } from '@shared/guards/throw-if-already-loaded.guard';
@@ -24,7 +26,13 @@ import { OpenApiLinkComponent } from './components/open-api-link/open-api-link.c
         GithubLinkComponent,
         OpenApiLinkComponent
     ],
-    imports: [CommonModule, RouterModule, SharedModule, StoreModule.forFeature('core', reducers)],
+    imports: [
+        CommonModule,
+        RouterModule,
+        SharedModule,
+        StoreModule.forFeature('core', reducers),
+        EffectsModule.forFeature([CoreEffects])
+    ],
     exports: [PageNotFoundComponent, TopbarComponent, LeftBarComponent, RootLayoutComponent]
 })
 export class CoreModule {

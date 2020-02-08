@@ -68,7 +68,7 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
         this.store.dispatch(ProfilesDetailsActions.openEditSkillDialog({ profileId: this.profileId, skillModel }));
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

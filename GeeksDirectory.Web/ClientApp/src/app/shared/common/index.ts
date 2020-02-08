@@ -9,3 +9,4 @@ export * from './scroll-position.enum';
 export * from './window-provider';
 export * from './exception-code.enum';
 export * from './throunceTime.operator';
+export * from './anitmation.config';

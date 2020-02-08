@@ -6,7 +6,7 @@ import { distinctUntilChanged } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
 import * as fromState from '@app/reducers';
-import { ScrollActions } from '@app/core/actions';
+import { ScrollActions, LayoutActions } from '@app/core/actions';
 
 import { ScrollPosition, throunceTime } from '@app/shared/common';
 import { IDisplayPosition } from '@app/models';
@@ -22,11 +22,12 @@ export class ScrollService {
 
     constructor(private store: Store<fromState.State>, private media: MediaMatcher) {
         this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
-        let updateIsMobileFlag = (isMobile: boolean) => this.store.dispatch(ScrollActions.setIsMobileFlag({ isMobile }));
+        let updateIsMobileFlag = (isMobile: boolean) => this.store.dispatch(LayoutActions.setIsMobileFlag({ isMobile }));
         updateIsMobileFlag(this.mobileQuery.matches);
         this.mobileQuery.onchange = query => {
             updateIsMobileFlag(query.matches);
         };
+
         this.displayPosition$.pipe(throunceTime(100)).subscribe((displayPosition: IDisplayPosition) => {
             let scrollPosition = this.identifyScrollPosition(displayPosition);
             this.currentPosition$.next(scrollPosition);

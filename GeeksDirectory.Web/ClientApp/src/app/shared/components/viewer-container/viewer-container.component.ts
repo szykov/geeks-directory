@@ -1,6 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-animations';
+import { ANIMATION } from '@app/shared/common';
 
 @Component({
     selector: 'gd-viewer-container',
@@ -8,18 +9,8 @@ import { fadeInUpOnEnterAnimation, fadeOutUpOnLeaveAnimation } from 'angular-ani
     styleUrls: ['./viewer-container.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     animations: [
-        fadeInUpOnEnterAnimation({
-            anchor: 'enter',
-            duration: 500,
-            delay: 100,
-            translate: '30px'
-        }),
-        fadeOutUpOnLeaveAnimation({
-            anchor: 'leave',
-            duration: 500,
-            delay: 200,
-            translate: '40px'
-        })
+        fadeInUpOnEnterAnimation(ANIMATION.fadeInUpOnEnterAnimation),
+        fadeOutUpOnLeaveAnimation(ANIMATION.fadeOutUpOnLeaveAnimation)
     ]
 })
 export class ViewerContainerComponent {
