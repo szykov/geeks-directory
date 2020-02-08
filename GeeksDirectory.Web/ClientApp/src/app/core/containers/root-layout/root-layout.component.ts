@@ -8,7 +8,7 @@ import {
     ChangeDetectorRef
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MatDrawerContainer } from '@angular/material';
+import { MatDrawerContainer } from '@angular/material/sidenav';
 
 import { Subject, Observable } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
@@ -30,7 +30,7 @@ import { ScrollService } from '@app/services';
     changeDetection: ChangeDetectionStrategy.Default
 })
 export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
-    @ViewChild('drawerContainer', { static: false }) drawerContainer: MatDrawerContainer;
+    @ViewChild('drawerContainer') drawerContainer: MatDrawerContainer;
     public isAuth$: Observable<boolean>;
 
     public isMobile: boolean;

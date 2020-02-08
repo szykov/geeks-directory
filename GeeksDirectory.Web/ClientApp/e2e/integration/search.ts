@@ -10,7 +10,7 @@ describe('Search', () => {
         cy.wait('@profilesApi');
     });
 
-    it.only('enter profile', () => {
+    it('enter profile', () => {
         cy.get('[data-cy=searchTable] tbody tr:nth-child(1)').click();
         cy.url().should('include', 'profiles/1');
 

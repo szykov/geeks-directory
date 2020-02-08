@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material/icon';
 
 import { CONFIG } from '@app/shared/common/config';
 

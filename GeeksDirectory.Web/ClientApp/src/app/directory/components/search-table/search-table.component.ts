@@ -11,7 +11,9 @@ import {
     SimpleChange,
     OnDestroy
 } from '@angular/core';
-import { MatSort, MatPaginator, MatTableDataSource, PageEvent, Sort } from '@angular/material';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

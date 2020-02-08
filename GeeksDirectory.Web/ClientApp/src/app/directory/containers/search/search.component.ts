@@ -12,7 +12,8 @@ import * as fromProfiles from '@app/directory/reducers';
 import { SearchActions } from '@app/directory/actions';
 
 import { IProfilesEnvelope } from '@app/responses';
-import { PageEvent, Sort } from '@angular/material';
+import { PageEvent } from '@angular/material/paginator';
+import { Sort } from '@angular/material/sort';
 import { QueryOptions } from '@app/models';
 
 @Component({
