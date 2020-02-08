@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, Optional, ChangeDetectionStrategy } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { SkillModel } from '@app/models';
 import { DialogChoice, SCORE_TYPES, ISkillsDialogData, ISkillsDialogResult } from '@shared/common';

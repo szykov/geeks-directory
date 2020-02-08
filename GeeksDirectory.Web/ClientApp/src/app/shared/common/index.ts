@@ -6,7 +6,7 @@ export * from './score-types';
 export * from './skill-dialog-result.interface';
 export * from './skill-dialog-data.interface';
 export * from './scroll-position.enum';
-export * from './pagination.interface';
 export * from './window-provider';
 export * from './exception-code.enum';
 export * from './throunceTime.operator';
+export * from './anitmation.config';

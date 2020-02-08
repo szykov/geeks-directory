@@ -1,51 +1,55 @@
 <div [@enter]>
-    <table mat-table matSort [dataSource]="dataSource" class="search-table mat-elevation-z8">
+    <table data-cy="searchTable" mat-table matSort [dataSource]="dataSource" class="search-table mat-elevation-z8">
         <!-- Profile Id Column -->
-        <ng-container matColumnDef="ProfileId">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
-            <td mat-cell *matCellDef="let profile"> {{ profile.id }} </td>
+        <ng-container matColumnDef="profileId">
+            <th data-cy="id" mat-header-cell *matHeaderCellDef mat-sort-header>Id.</th>
+            <td mat-cell *matCellDef="let profile">{{ profile.id }}</td>
         </ng-container>
 
         <!-- Email Column -->
-        <ng-container matColumnDef="Email">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-            <td mat-cell *matCellDef="let profile"> {{ profile.email }} </td>
+        <ng-container matColumnDef="email">
+            <th data-cy="email" mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let profile">{{ profile.email }}</td>
         </ng-container>
 
         <!-- Name Column -->
-        <ng-container matColumnDef="Name">
-            <th class="hide-xs" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-            <td class="hide-xs" mat-cell *matCellDef="let profile"> {{ profile.name }} </td>
+        <ng-container matColumnDef="name">
+            <th data-cy="name" class="hide-xs" mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td class="hide-xs" mat-cell *matCellDef="let profile">{{ profile.name }}</td>
         </ng-container>
 
         <!-- Surname Column -->
-        <ng-container matColumnDef="Surname">
-            <th class="hide-xs" mat-header-cell *matHeaderCellDef mat-sort-header> Surname </th>
-            <td class="hide-xs" mat-cell *matCellDef="let profile"> {{ profile.surname }} </td>
+        <ng-container matColumnDef="surname">
+            <th data-cy="surname" class="hide-xs" mat-header-cell *matHeaderCellDef mat-sort-header>Surname</th>
+            <td class="hide-xs" mat-cell *matCellDef="let profile">{{ profile.surname }}</td>
         </ng-container>
 
         <!-- City Column -->
-        <ng-container matColumnDef="City">
-            <th class="hide-xs" mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
-            <td class="hide-xs" mat-cell *matCellDef="let profile"> {{ profile.city }} </td>
+        <ng-container matColumnDef="city">
+            <th data-cy="city" class="hide-xs" mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+            <td class="hide-xs" mat-cell *matCellDef="let profile">{{ profile.city }}</td>
         </ng-container>
 
         <!-- Skills Column -->
-        <ng-container matColumnDef="Skills">
-            <th class="hide-sm" mat-header-cell *matHeaderCellDef> Skills </th>
+        <ng-container matColumnDef="skills">
+            <th data-cy="skill" class="hide-sm" mat-header-cell *matHeaderCellDef>Skills</th>
             <td class="hide-sm" mat-cell *matCellDef="let profile">
                 <div class="skill-badge" *ngFor="let skill of profile.skills">
-                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small"
-                        matBadgeOverlap="false">{{ skill.name }}</span>
+                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false">{{ skill.name }}</span>
                 </div>
             </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr class="st-row" [class.st-row-disabled]="loading" mat-row *matRowDef="let row; columns: displayedColumns;"
-            (click)="!loading && onGoToProfile(row)"></tr>
+        <tr
+            class="st-row"
+            [class.st-row-disabled]="loading"
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="!loading && onGoToProfile(row)"
+        ></tr>
     </table>
 
-    <mat-paginator [length]="resultsLength" [pageSizeOptions]="[pageSize, pageSize*2, pageSize*3]" showFirstLastButtons>
+    <mat-paginator [length]="resultsLength" [pageSizeOptions]="[pageSize, pageSize * 2, pageSize * 3]" showFirstLastButtons>
     </mat-paginator>
 </div>

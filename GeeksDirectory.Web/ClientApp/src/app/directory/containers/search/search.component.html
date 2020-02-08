@@ -4,10 +4,18 @@
             matInput
             (keyup)="onKeyUpQuery($event.target.value, $event.code)"
             (keyup.enter)="onChangeQuery(queryValue)"
+            data-cy="search"
             placeholder="Search..."
             [value]="queryValue"
         />
-        <button class="search-icon" mat-icon-button matSuffix (click)="onChangeQuery(queryValue)">
+        <button
+            class="search-icon"
+            data-cy="submit"
+            mat-icon-button
+            matSuffix
+            (click)="onChangeQuery(queryValue)"
+            aria-label="search"
+        >
             <mat-icon matSuffix>search</mat-icon>
         </button>
     </mat-form-field>

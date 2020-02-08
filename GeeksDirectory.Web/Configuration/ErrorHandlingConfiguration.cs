@@ -30,14 +30,10 @@ namespace GeeksDirectory.Web.Configuration
         public static IApplicationBuilder UsePredefinedErrorHandling(this IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
             if (env.IsProduction())
-            {
                 app.UseExceptionHandler("/Error");
-            }
 
             app.UseEnvelopeErrorHandlingMiddleware();
             app.UseInternalServerErrorHandlingMiddleware();

@@ -9,8 +9,8 @@ import * as fromProfiles from '@app/directory/reducers';
 import * as fromCore from '@app/core/reducers';
 import { ProfilesListActions } from '@app/directory/actions';
 
-import { IProfile } from '@app/responses';
-import { ScrollPosition, IPagination } from '@app/shared/common';
+import { IProfile, IPagination } from '@app/responses';
+import { ScrollPosition } from '@app/shared/common';
 import { QueryOptions } from '@app/models';
 
 @Component({
@@ -59,7 +59,7 @@ export class ProfileListComponent implements OnInit, OnDestroy {
         return this.profiles.length >= this.paginationInfo.total;
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

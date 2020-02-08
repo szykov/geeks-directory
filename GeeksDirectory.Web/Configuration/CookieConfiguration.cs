@@ -19,13 +19,10 @@ namespace GeeksDirectory.Web.Configuration
                     OnRedirectToLogin = ctx =>
                     {
                         if (ctx.Request.Path.StartsWithSegments("/api"))
-                        {
                             ctx.Response.StatusCode = (int)ExceptionCode.Unauthorized;
-                        }
                         else
-                        {
                             ctx.Response.Redirect(ctx.RedirectUri);
-                        }
+
                         return Task.FromResult(0);
                     }
                 };

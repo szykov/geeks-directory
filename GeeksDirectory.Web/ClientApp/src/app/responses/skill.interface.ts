@@ -1,4 +1,4 @@
-import { IAssessment } from './assessment.interface';
+import { IAssessment } from '.';
 
 export interface ISkill {
     id: number;

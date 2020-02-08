@@ -1,0 +1,294 @@
+{
+    "pagination": { "offset": 0, "limit": 10, "total": 27 },
+    "data": [
+        {
+            "id": 1,
+            "email": "sergey.zykov@mail.some",
+            "name": "Sergey",
+            "surname": "Zykov",
+            "fullName": "Sergey Zykov",
+            "city": "Moscow",
+            "skills": [
+                {
+                    "id": 1,
+                    "name": "python",
+                    "description": "Excepteur sint in culpa id est laborum.",
+                    "averageScore": 5,
+                    "assessments": []
+                },
+                {
+                    "id": 2,
+                    "name": "cpp",
+                    "description": "Excepteur occaecat cupida proident, suntid est.",
+                    "averageScore": 1,
+                    "assessments": []
+                },
+                {
+                    "id": 3,
+                    "name": "php",
+                    "description": "Quis autem vel eum iure repreherit in ea quam.",
+                    "averageScore": 4,
+                    "assessments": []
+                },
+                {
+                    "id": 4,
+                    "name": "swift",
+                    "description": "Nemo enim ipsam voptatem aut odit.",
+                    "averageScore": 5,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "email": "john.smith@mail.some",
+            "name": "John",
+            "surname": "Smith",
+            "fullName": "John Smith",
+            "city": "Ekaterinburg",
+            "skills": [
+                {
+                    "id": 5,
+                    "name": "swift",
+                    "description": "Nemo enim ipsam voptatem aut odit.",
+                    "averageScore": 3,
+                    "assessments": []
+                },
+                {
+                    "id": 6,
+                    "name": "ruby",
+                    "description": "Excepteur sint cupitat, anim id est laborum.",
+                    "averageScore": 3,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "email": "ivan.ivanov@mail.some",
+            "name": "Ivan",
+            "surname": "Ivanov",
+            "fullName": "Ivan Ivanov",
+            "city": "St. Petersburg",
+            "skills": [
+                {
+                    "id": 7,
+                    "name": "cpp",
+                    "description": "Excepteur occaecat cupida proident, suntid est.",
+                    "averageScore": 2,
+                    "assessments": []
+                },
+                {
+                    "id": 8,
+                    "name": "php",
+                    "description": "Quis autem vel eum iure repreherit in ea quam.",
+                    "averageScore": 3,
+                    "assessments": []
+                },
+                {
+                    "id": 9,
+                    "name": "swift",
+                    "description": "Nemo enim ipsam voptatem aut odit.",
+                    "averageScore": 4,
+                    "assessments": []
+                },
+                {
+                    "id": 10,
+                    "name": "ruby",
+                    "description": "Excepteur sint cupitat, anim id est laborum.",
+                    "averageScore": 3,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "email": "dasha.egorova@mail.some",
+            "name": "Dasha",
+            "surname": "Egorova",
+            "fullName": "Dasha Egorova",
+            "city": "Deport",
+            "skills": [
+                {
+                    "id": 11,
+                    "name": "python",
+                    "description": "Excepteur sint in culpa id est laborum.",
+                    "averageScore": 0,
+                    "assessments": []
+                },
+                {
+                    "id": 12,
+                    "name": "cpp",
+                    "description": "Excepteur occaecat cupida proident, suntid est.",
+                    "averageScore": 1,
+                    "assessments": []
+                },
+                {
+                    "id": 13,
+                    "name": "php",
+                    "description": "Quis autem vel eum iure repreherit in ea quam.",
+                    "averageScore": 3,
+                    "assessments": []
+                },
+                {
+                    "id": 14,
+                    "name": "swift",
+                    "description": "Nemo enim ipsam voptatem aut odit.",
+                    "averageScore": 0,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "email": "andrey.vladimirov@mail.some",
+            "name": "Andrey",
+            "surname": "Vladimirov",
+            "fullName": "Andrey Vladimirov",
+            "city": "Landmark",
+            "skills": [
+                {
+                    "id": 15,
+                    "name": "javascript",
+                    "description": "Quis autem eum iur velit esse quam.",
+                    "averageScore": 1,
+                    "assessments": []
+                },
+                {
+                    "id": 16,
+                    "name": "angular",
+                    "description": "Nemo enim sit aspernatur aut odit.",
+                    "averageScore": 0,
+                    "assessments": []
+                },
+                {
+                    "id": 17,
+                    "name": "java",
+                    "description": "Ut enim ad minima, exercitationem ullam.",
+                    "averageScore": 1,
+                    "assessments": []
+                },
+                {
+                    "id": 18,
+                    "name": "python",
+                    "description": "Excepteur sint in culpa id est laborum.",
+                    "averageScore": 0,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "email": "violeta.kanygina@mail.some",
+            "name": "Violeta",
+            "surname": "Kanygina",
+            "fullName": "Violeta Kanygina",
+            "city": "New Preston",
+            "skills": [
+                {
+                    "id": 19,
+                    "name": "php",
+                    "description": "Quis autem vel eum iure repreherit in ea quam.",
+                    "averageScore": 2,
+                    "assessments": []
+                },
+                {
+                    "id": 20,
+                    "name": "swift",
+                    "description": "Nemo enim ipsam voptatem aut odit.",
+                    "averageScore": 0,
+                    "assessments": []
+                },
+                {
+                    "id": 21,
+                    "name": "ruby",
+                    "description": "Excepteur sint cupitat, anim id est laborum.",
+                    "averageScore": 0,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "email": "arsenia.panova@mail.some",
+            "name": "Arsenia",
+            "surname": "Panova",
+            "fullName": "Arsenia Panova",
+            "city": "Dupree",
+            "skills": [
+                {
+                    "id": 22,
+                    "name": "ruby",
+                    "description": "Excepteur sint cupitat, anim id est laborum.",
+                    "averageScore": 0,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "email": "radislav.barsov@mail.some",
+            "name": "Radislav",
+            "surname": "Barsov",
+            "fullName": "Radislav Barsov",
+            "city": "Kenton Vale",
+            "skills": [
+                {
+                    "id": 23,
+                    "name": "javascript",
+                    "description": "Quis autem eum iur velit esse quam.",
+                    "averageScore": 2,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "email": "vasya.alekseev@mail.some",
+            "name": "Vasya",
+            "surname": "Alekseev",
+            "fullName": "Vasya Alekseev",
+            "city": "Walnut Park",
+            "skills": [
+                {
+                    "id": 24,
+                    "name": "swift",
+                    "description": "Nemo enim ipsam voptatem aut odit.",
+                    "averageScore": 1,
+                    "assessments": []
+                },
+                {
+                    "id": 25,
+                    "name": "ruby",
+                    "description": "Excepteur sint cupitat, anim id est laborum.",
+                    "averageScore": 3,
+                    "assessments": []
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "email": "zlata.tretyakova@mail.some",
+            "name": "Zlata",
+            "surname": "Tretyakova",
+            "fullName": "Zlata Tretyakova",
+            "city": "Karaichev",
+            "skills": [
+                {
+                    "id": 26,
+                    "name": "cpp",
+                    "description": "Excepteur occaecat cupida proident, suntid est.",
+                    "averageScore": 2,
+                    "assessments": []
+                },
+                {
+                    "id": 27,
+                    "name": "php",
+                    "description": "Quis autem vel eum iure repreherit in ea quam.",
+                    "averageScore": 4,
+                    "assessments": []
+                }
+            ]
+        }
+    ]
+}

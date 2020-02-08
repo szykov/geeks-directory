@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="topbar">
     <div class="topbar-logo">
-        <button mat-button class="drawer-trigger" (click)="drawerToggle.emit()">
+        <button mat-button class="drawer-trigger" (click)="drawerToggle.emit()" aria-label="toogle">
             <mat-icon>more_vert</mat-icon>
         </button>
 
@@ -21,7 +21,7 @@
             [showText]="true"
         ></gd-github-link>
 
-        <button *ngIf="!isAuth" mat-button mat-flat-button color="basic" (click)="openSignInDialog()">
+        <button *ngIf="!isAuth" data-cy="signIn" mat-button mat-flat-button color="basic" (click)="openSignInDialog()">
             Sign In!
         </button>
 

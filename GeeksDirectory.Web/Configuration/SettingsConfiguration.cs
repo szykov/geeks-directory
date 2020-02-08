@@ -13,6 +13,9 @@ namespace GeeksDirectory.Web.Configuration
         {
             builder.ConfigureAppConfiguration((hostingContext, config) =>
             {
+                if (args != null)
+                    config.AddCommandLine(args);
+
                 var env = hostingContext.HostingEnvironment;
 
                 config.SetBasePath(env.ContentRootPath);
@@ -29,11 +32,6 @@ namespace GeeksDirectory.Web.Configuration
                 }
 
                 config.AddEnvironmentVariables();
-
-                if (args != null)
-                {
-                    config.AddCommandLine(args);
-                }
             });
 
             return builder;

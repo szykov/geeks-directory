@@ -3,7 +3,7 @@
     [fullName]="fullName"
     [profilePath]="personalProfilePath"
     [isAuth]="isAuth$ | async"
-    (drawerToggle)="drawer.toggle()"
+    (drawerToggle)="onDrawerToogle()"
     (signOut)="onSignOut()"
 >
 </gd-topbar>
@@ -12,16 +12,17 @@
     <mat-drawer [mode]="isMobile ? 'over' : 'side'" [opened]="drawerIsOpened" #drawer position="start">
         <gd-left-bar
             [isAuth]="isAuth$ | async"
+            [wideMode]="(sidebar$ | async).mode"
             [navLinks]="(isAuth$ | async) ? navAuthLinks : navLinks"
             [profileName]="fullName"
             [profilePath]="personalProfilePath"
-            (changeMode)="drawerContainer.updateContentMargins()"
-            (linkEnter)="isMobile ? drawer.toggle() : null"
+            (toogleMode)="onDrawerModeToogle()"
+            (linkEnter)="isMobile ? onDrawerToogle() : null"
         >
         </gd-left-bar>
     </mat-drawer>
 
-    <mat-drawer-content (scroll)="onScroll($event)">
+    <mat-drawer-content (scroll)="onScroll($event.target)">
         <div class="drawer-content">
             <ng-content></ng-content>
         </div>

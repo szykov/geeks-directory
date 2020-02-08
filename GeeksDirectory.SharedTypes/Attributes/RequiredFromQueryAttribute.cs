@@ -15,7 +15,11 @@ namespace GeeksDirectory.SharedTypes.Attributes
         {
             if (parameter.Action.Selectors != null && parameter.Action.Selectors.Any())
             {
-                parameter.Action.Selectors.Last().ActionConstraints.Add(new RequiredFromQueryActionConstraint(parameter.BindingInfo?.BinderModelName ?? parameter.ParameterName));
+                parameter.Action
+                    .Selectors
+                    .Last()
+                    .ActionConstraints
+                    .Add(new RequiredFromQueryActionConstraint(parameter.BindingInfo?.BinderModelName ?? parameter.ParameterName));
             }
         }
     }

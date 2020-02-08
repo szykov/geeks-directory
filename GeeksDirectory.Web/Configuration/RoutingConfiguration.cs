@@ -29,15 +29,10 @@ namespace GeeksDirectory.Web.Configuration
                 var jsonOutputFormatter = setup.OutputFormatters
                     .OfType<SystemTextJsonOutputFormatter>().FirstOrDefault();
 
-                if (jsonOutputFormatter != null)
-                {
-                    // remove text/json as it isn't the approved media type
-                    // for working with JSON at API level
-                    if (jsonOutputFormatter.SupportedMediaTypes.Contains("text/json"))
-                    {
-                        jsonOutputFormatter.SupportedMediaTypes.Remove("text/json");
-                    }
-                }
+                // remove text/json as it isn't the approved media type
+                // for working with JSON at API level
+                if (jsonOutputFormatter != null && jsonOutputFormatter.SupportedMediaTypes.Contains("text/json"))
+                    jsonOutputFormatter.SupportedMediaTypes.Remove("text/json");
             })
             .AddJsonOptions(options => options.JsonSerializerOptions.IgnoreNullValues = true)
             .SetCompatibilityVersion(CompatibilityVersion.Latest)

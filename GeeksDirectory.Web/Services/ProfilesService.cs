@@ -3,6 +3,7 @@
 using GeeksDirectory.Data.Entities;
 using GeeksDirectory.Data.Repositories.Interfaces;
 using GeeksDirectory.SharedTypes.Classes;
+using GeeksDirectory.SharedTypes.Extensions;
 using GeeksDirectory.SharedTypes.Models;
 using GeeksDirectory.SharedTypes.Responses;
 using GeeksDirectory.Web.Services.Interfaces;
@@ -32,7 +33,7 @@ namespace GeeksDirectory.Web.Services
             this.logger = logger;
         }
 
-        public GeekProfileResponsesKit Get(int limit, int offset, string? orderBy, string? orderDirection)
+        public GeekProfileResponsesEnvelope Get(int limit, int offset, string? orderBy, string? orderDirection)
         {
             try
             {
@@ -42,7 +43,7 @@ namespace GeeksDirectory.Web.Services
                     .AddOrderDirection(orderDirection);
 
                 var queryOptions = !String.IsNullOrEmpty(orderBy) ?
-                    queryOptionsBuilder.AddOrderBy<GeekProfile>(orderBy).Build() :
+                    queryOptionsBuilder.AddOrderBy<GeekProfile>(orderBy.FirstCharToUpper()).Build() :
                     queryOptionsBuilder.Build();
 
                 var profiles = this.repository.GetProfiles(queryOptions);
@@ -50,7 +51,7 @@ namespace GeeksDirectory.Web.Services
 
                 var profileResponses = this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
 
-                return new GeekProfileResponsesKit()
+                return new GeekProfileResponsesEnvelope()
                 {
                     Pagination = new PaginationResponse() { Limit = limit, Offset = offset, Total = total },
                     Data = profileResponses
@@ -88,7 +89,7 @@ namespace GeeksDirectory.Web.Services
             }
         }
 
-        public GeekProfileResponsesKit Search(string query, int limit, int offset, string? orderBy, string? orderDirection)
+        public GeekProfileResponsesEnvelope Search(string query, int limit, int offset, string? orderBy, string? orderDirection)
         {
             try
             {
@@ -105,7 +106,7 @@ namespace GeeksDirectory.Web.Services
                 var profiles = this.repository.Search(queryOptions, out var total);
                 var profileResponses = this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
 
-                return new GeekProfileResponsesKit()
+                return new GeekProfileResponsesEnvelope()
                 {
                     Pagination = new PaginationResponse() { Limit = limit, Offset = offset, Total = total },
                     Data = profileResponses
@@ -161,11 +162,8 @@ namespace GeeksDirectory.Web.Services
         {
             var normalizedEmail = email.Normalize().ToUpperInvariant();
 
-            var exists = await this.userManager.FindByEmailAsync(email);
-            if (exists != null)
-            {
-                throw new ArgumentException("Profile already exists.");
-            }
+            _ = await this.userManager.FindByEmailAsync(email) ?? 
+                throw new ArgumentException("Profile already exists."); 
 
             var applicationUser = new ApplicationUser
             {

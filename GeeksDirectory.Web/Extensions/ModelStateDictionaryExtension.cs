@@ -13,9 +13,7 @@ namespace GeeksDirectory.Web.Extensions
         public static ErrorResponse ToErrorResponse(this ModelStateDictionary modelState)
         {
             if (modelState is null)
-            {
                 throw new ArgumentNullException(paramName: nameof(modelState));
-            }
 
             var modelValidationErrors = new List<ModelValidationError>();
             foreach (KeyValuePair<string, ModelStateEntry> modelEntry in modelState)

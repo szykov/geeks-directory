@@ -43,15 +43,11 @@ namespace GeeksDirectory.Web.Configuration
                     var actionApiVersionModel = apiDescription.ActionDescriptor
                         .GetApiVersionModel(ApiVersionMapping.Explicit | ApiVersionMapping.Implicit);
 
-                    if (actionApiVersionModel == null)
-                    {
+                    if (actionApiVersionModel is null)
                         return true;
-                    }
 
                     if (actionApiVersionModel.DeclaredApiVersions.Any())
-                    {
                         return actionApiVersionModel.DeclaredApiVersions.Any(v => v.ToString() == documentName);
-                    }
 
                     return actionApiVersionModel.ImplementedApiVersions.Any(v => v.ToString() == documentName);
                 });

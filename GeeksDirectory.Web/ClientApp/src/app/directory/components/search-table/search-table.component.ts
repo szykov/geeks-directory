@@ -11,24 +11,27 @@ import {
     SimpleChange,
     OnDestroy
 } from '@angular/core';
-import { MatSort, MatPaginator, MatTableDataSource, PageEvent, Sort } from '@angular/material';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
-import { IProfile, IProfilesKit } from '@app/responses';
+import { IProfile, IProfilesEnvelope } from '@app/responses';
+import { ANIMATION } from '@app/shared/common';
 
 @Component({
     selector: 'gd-search-table',
     templateUrl: './search-table.component.html',
     styleUrls: ['./search-table.component.scss'],
-    animations: [fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 500, delay: 100, translate: '30px' })],
+    animations: [fadeInUpOnEnterAnimation(ANIMATION.fadeInUpOnEnterAnimation)],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
-    @Input() profiles: IProfilesKit;
+    @Input() profiles: IProfilesEnvelope;
     @Input() pageSize = 10;
     @Input() loading: boolean;
 
@@ -37,7 +40,7 @@ export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
     @Output() changeOrder = new EventEmitter<Sort>();
 
     public resultsLength = 0;
-    public displayedColumns: string[] = ['ProfileId', 'Email', 'Name', 'Surname', 'City', 'Skills'];
+    public displayedColumns: string[] = ['profileId', 'email', 'name', 'surname', 'city', 'skills'];
     public dataSource: MatTableDataSource<IProfile>;
 
     @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -72,7 +75,7 @@ export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {
         return change && !change.isFirstChange() && change.previousValue !== change.currentValue;
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

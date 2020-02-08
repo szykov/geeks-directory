@@ -22,9 +22,7 @@ namespace GeeksDirectory.Data.Repositories
         public IEnumerable<GeekProfile> GetProfiles(QueryOptions queryOptions)
         {
             if (queryOptions is null)
-            {
                 throw new ArgumentNullException(paramName: nameof(queryOptions));
-            }
 
             var result = this.context.Profiles
                 .Include(prf => prf.Skills)
@@ -32,9 +30,7 @@ namespace GeeksDirectory.Data.Repositories
                 .AsQueryable();
 
             if (queryOptions.IsSortable())
-            {
                 result = this.Sort(result, queryOptions.OrderDirection, queryOptions.OrderBy!);
-            }
 
             return result.Skip(queryOptions.Offset).Take(queryOptions.Limit);
         }
@@ -42,9 +38,7 @@ namespace GeeksDirectory.Data.Repositories
         public GeekProfile GetProfileById(int profileId)
         {
             if (profileId == 0)
-            {
                 throw new ArgumentException(message: $"Argument {nameof(profileId)} is invalid.");
-            }
 
             var profile = this.context.Profiles
                 .Include(prf => prf.Skills)
@@ -52,10 +46,8 @@ namespace GeeksDirectory.Data.Repositories
                 .Where(prf => prf.ProfileId == profileId)
                 .SingleOrDefault();
 
-            if (profile == null)
-            {
+            if (profile is null)
                 throw new KeyNotFoundException("Profile has not been found.");
-            }
 
             return profile;
         }
@@ -63,9 +55,7 @@ namespace GeeksDirectory.Data.Repositories
         public GeekProfile GetProfileByUserName(string userName)
         {
             if (String.IsNullOrEmpty(userName))
-            {
                 throw new ArgumentException(message: $"Argument {nameof(userName)} is invalid.");
-            }
 
             var profile = this.context.Profiles
                 .Include(prf => prf.Skills)
@@ -73,10 +63,8 @@ namespace GeeksDirectory.Data.Repositories
                 .Where(prf => prf.User.UserName == userName)
                 .SingleOrDefault();
 
-            if (profile == null)
-            {
+            if (profile is null)
                 throw new KeyNotFoundException("Profile has not been found.");
-            }
 
             return profile;
         }
@@ -84,14 +72,11 @@ namespace GeeksDirectory.Data.Repositories
         public IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out int total)
         {
             if (queryOptions is null)
-            {
                 throw new ArgumentNullException(paramName: nameof(queryOptions));
-            }
 
             if (String.IsNullOrEmpty(queryOptions.Query))
-            {
                 throw new ArgumentNullException(paramName: nameof(queryOptions.Query));
-            }
+
 
             var result = this.context.Profiles
                 .Include(prf => prf.Skills)
@@ -105,19 +90,15 @@ namespace GeeksDirectory.Data.Repositories
             total = result.Count();
 
             if (queryOptions.IsSortable())
-            {
                 result = this.Sort(result, queryOptions.OrderDirection, queryOptions.OrderBy!);
-            }
 
             return result.Skip(queryOptions.Offset).Take(queryOptions.Limit);
         }
 
         public void Update(GeekProfile profile)
         {
-            if (profile == null)
-            {
+            if (profile is null)
                 throw new ArgumentNullException(paramName: nameof(profile));
-            }
 
             this.context.Profiles.Update(profile);
             context.SaveChanges();
@@ -125,10 +106,8 @@ namespace GeeksDirectory.Data.Repositories
 
         public void Add(GeekProfile profile)
         {
-            if (profile == null)
-            {
+            if (profile is null)
                 throw new ArgumentNullException(paramName: nameof(profile));
-            }
 
             this.context.Profiles.Add(profile);
             context.SaveChanges();
@@ -141,14 +120,9 @@ namespace GeeksDirectory.Data.Repositories
 
         private IQueryable<GeekProfile> Sort(IQueryable<GeekProfile> profiles, OrderDirection orderDirection, string OrderBy)
         {
-            if (orderDirection == OrderDirection.Ascending)
-            {
-                return profiles.OrderBy(p => EF.Property<object>(p, OrderBy));
-            }
-            else
-            {
-                return profiles.OrderByDescending(p => EF.Property<object>(p, OrderBy));
-            }
+            return orderDirection == OrderDirection.Ascending ? 
+                profiles.OrderBy(p => EF.Property<object>(p, OrderBy)) : 
+                profiles.OrderByDescending(p => EF.Property<object>(p, OrderBy));
         }
     }
 }

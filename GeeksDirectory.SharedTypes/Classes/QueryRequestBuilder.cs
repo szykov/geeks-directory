@@ -11,9 +11,7 @@ namespace GeeksDirectory.SharedTypes.Classes
         public QueryOptionsBuilder AddQuery(string query)
         {
             if (String.IsNullOrEmpty(query))
-            {
                 throw new ArgumentException($"The {nameof(query)} cannot be null or empty.");
-            }
 
             this.queryOptions.Query = query;
             return this;
@@ -22,9 +20,7 @@ namespace GeeksDirectory.SharedTypes.Classes
         public QueryOptionsBuilder AddLimit(int limit)
         {
             if (limit < 0)
-            {
                 throw new ArgumentException($"The {nameof(limit)} cannot be negative number.");
-            }
 
             this.queryOptions.Limit = limit;
             return this;
@@ -33,9 +29,7 @@ namespace GeeksDirectory.SharedTypes.Classes
         public QueryOptionsBuilder AddOffset(int offset)
         {
             if (offset < 0)
-            {
                 throw new ArgumentException($"The {nameof(offset)} cannot be negative number.");
-            }
 
             this.queryOptions.Offset = offset;
             return this;
@@ -44,9 +38,7 @@ namespace GeeksDirectory.SharedTypes.Classes
         public QueryOptionsBuilder AddOrderBy<T>(string orderBy) where T: class
         {
             if (!orderBy.All(Char.IsLetter))
-            {
                 throw new ArgumentException($"The {nameof(orderBy)} has invalid format.");
-            }
 
             EnsurePropertyExists<T>(orderBy);
 
@@ -80,9 +72,7 @@ namespace GeeksDirectory.SharedTypes.Classes
             var haveProperty = type.GetProperties().Where(prp => prp.Name.Equals(orderBy)).Any();
 
             if (!haveProperty)
-            {
                 throw new ArgumentException($"The {type.Name} doesn't contain {orderBy} property.");
-            }
         }
     }
 }

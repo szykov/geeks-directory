@@ -1,13 +1,13 @@
-import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
-import { onSideNavChange, animateText } from './left-bar.animations';
+import { onSideNavChange } from './left-bar.animations';
 import { INavLink } from '@app/core/models/nav-link.model';
 
 @Component({
     selector: 'gd-left-bar',
     templateUrl: './left-bar.component.html',
     styleUrls: ['./left-bar.component.scss'],
-    animations: [onSideNavChange, animateText],
+    animations: [onSideNavChange],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LeftBarComponent {
@@ -15,29 +15,15 @@ export class LeftBarComponent {
     @Input() profileName: string;
     @Input() profilePath: string;
     @Input() navLinks: INavLink[];
+    @Input() wideMode: boolean;
 
-    @Output() changeMode = new EventEmitter();
+    @Output() toogleMode = new EventEmitter();
     @Output() linkEnter = new EventEmitter();
 
-    public wideMode = false;
-    public showAddInfo = false;
+    constructor() {}
 
-    constructor(private cdr: ChangeDetectorRef) {}
-
-    public onSinenavToggle() {
-        this.wideMode = !this.wideMode;
-        this.wideMode ? this.expandWithDelay() : (this.showAddInfo = false);
-
-        setTimeout(() => {
-            this.changeMode.emit();
-        }, 300);
-    }
-
-    private expandWithDelay() {
-        setTimeout(() => {
-            this.showAddInfo = this.wideMode;
-            this.cdr.detectChanges();
-        }, 300);
+    public onToggle() {
+        this.toogleMode.emit();
     }
 
     public routeIsExact(navLink: INavLink) {

@@ -45,7 +45,7 @@ export class SignInDialogComponent implements OnInit, OnDestroy {
         this.dialogRef.close({ choice: DialogChoice.CreateAccount });
     }
 
-    ngOnDestroy(): void {
+    ngOnDestroy() {
         this.unsubscribe.next();
         this.unsubscribe.complete();
     }

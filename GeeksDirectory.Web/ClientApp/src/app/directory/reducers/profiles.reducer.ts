@@ -1,12 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { ProfilesApiActions, SkillsApiActions, ProfilesListActions } from '@app/directory/actions';
-import { IProfile, IProfilesKit } from '@app/responses';
+import { IProfile, IProfilesEnvelope } from '@app/responses';
 
 export interface State {
-    collection: IProfilesKit;
+    collection: IProfilesEnvelope;
     selected: IProfile | null;
-    searched: IProfilesKit;
+    searched: IProfilesEnvelope;
     loading: boolean;
 }
 
