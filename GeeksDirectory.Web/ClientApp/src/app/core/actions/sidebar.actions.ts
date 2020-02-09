@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 
-import { ISideBar } from '@app/services';
+import { ISideBar } from '@shared/common';
 
-export const initSidebar = createAction('[Core] Sidebar Init', props<{ sidebar: ISideBar }>());
-export const toogleModeSidebar = createAction('[Core] Sidebar Mode Toogled');
-export const toogleStatusSidebar = createAction('[Core] Sidebar Status Toogled');
+export const initSidebar = createAction('[Sidebar] Sidebar Init', props<{ sidebar: ISideBar }>());
+export const toogleModeSidebar = createAction('[Sidebar] Sidebar Mode Toogled');
+export const toogleStatusSidebar = createAction('[Sidebar] Sidebar Status Toogled');

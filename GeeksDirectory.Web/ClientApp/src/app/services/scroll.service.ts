@@ -1,52 +1,62 @@
 import { Injectable } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { map, distinctUntilChanged } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
 import * as fromState from '@app/reducers';
-import { ScrollActions, LayoutActions } from '@app/core/actions';
+import { ScrollActions } from '@app/core/actions';
 
-import { ScrollPosition, throunceTime } from '@app/shared/common';
+import { ScrollPosition, throunceTime } from '@shared/common';
 import { IDisplayPosition } from '@app/models';
+import { CONFIG } from '@shared/config';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ScrollService {
-    private currentPosition$ = new BehaviorSubject<ScrollPosition>(ScrollPosition.Up);
-    private displayPosition$ = new Subject<IDisplayPosition>();
+    private position$ = new Subject<IDisplayPosition>();
+    private isMobile$ = new BehaviorSubject<boolean>(false);
 
     private mobileQuery: MediaQueryList;
 
     constructor(private store: Store<fromState.State>, private media: MediaMatcher) {
-        this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
-        let updateIsMobileFlag = (isMobile: boolean) => this.store.dispatch(LayoutActions.setIsMobileFlag({ isMobile }));
-        updateIsMobileFlag(this.mobileQuery.matches);
-        this.mobileQuery.onchange = query => {
-            updateIsMobileFlag(query.matches);
-        };
+        this.mobileQuery = this.media.matchMedia(`(max-width: ${CONFIG.mobileWidth})`);
+        this.mobileQuery.onchange = query => this.isMobile$.next(query.matches);
 
-        this.displayPosition$.pipe(throunceTime(100)).subscribe((displayPosition: IDisplayPosition) => {
-            let scrollPosition = this.identifyScrollPosition(displayPosition);
-            this.currentPosition$.next(scrollPosition);
-        });
-
-        this.currentPosition$.pipe(distinctUntilChanged()).subscribe(scrollPosition => {
-            this.store.dispatch(ScrollActions.setScrollPosition({ scrollPosition }));
-        });
+        this.position$
+            .pipe(
+                throunceTime(100),
+                map(position => this.locateScrollPosition(position)),
+                distinctUntilChanged()
+            )
+            .subscribe((scrollPosition: ScrollPosition) => {
+                this.store.dispatch(ScrollActions.setScrollPosition({ scrollPosition }));
+            });
     }
 
-    public getPosition(): Observable<ScrollPosition> {
-        return this.currentPosition$.asObservable();
+    public get mobileQueryMatches(): boolean {
+        return this.mobileQuery.matches;
+    }
+
+    public get isMobile(): Observable<boolean> {
+        return this.isMobile$.asObservable();
+    }
+
+    public setIsMobile(isMobile: boolean) {
+        this.isMobile$.next(isMobile);
+    }
+
+    public get scrollPosition(): Observable<ScrollPosition> {
+        return this.position$.pipe(map(position => this.locateScrollPosition(position)));
     }
 
     public setPosition(position: IDisplayPosition) {
-        this.displayPosition$.next(position);
+        this.position$.next(position);
     }
 
-    private identifyScrollPosition(position: IDisplayPosition): ScrollPosition {
+    private locateScrollPosition(position: IDisplayPosition): ScrollPosition {
         let deviation = position.clientHeight * 0.1;
         if (position.scrollTop < deviation) {
             return ScrollPosition.Up;

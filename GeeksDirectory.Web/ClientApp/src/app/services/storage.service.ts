@@ -5,13 +5,12 @@ import { CookieService } from 'ngx-cookie-service';
 
 import { IProfile } from '@app/responses';
 import { IToken } from '@app/auth/responses';
+import { CONFIG } from '@shared/config';
 
 @Injectable({
     providedIn: 'root'
 })
 export class StorageService {
-    private prefix = 'gd';
-
     constructor(private cookieService: CookieService, @Inject(SESSION_STORAGE) private storage: NgxStorageService) {
         if (!isStorageAvailable(sessionStorage)) {
             throw new Error('Your browser do not support Local Storage');
@@ -19,35 +18,35 @@ export class StorageService {
     }
 
     public setAuthToken(value: IToken) {
-        this.cookieService.set(`${this.prefix}-token`, JSON.stringify(value));
+        this.cookieService.set(`${CONFIG.prefix}-token`, JSON.stringify(value));
     }
 
     public getAuthToken(): IToken {
-        let token = this.cookieService.get(`${this.prefix}-token`);
+        let token = this.cookieService.get(`${CONFIG.prefix}-token`);
         return JSON.parse(token);
     }
 
     public existsAuthToken(): boolean {
-        return this.cookieService.check(`${this.prefix}-token`);
+        return this.cookieService.check(`${CONFIG.prefix}-token`);
     }
 
     public clearAuthToken() {
-        this.cookieService.delete(`${this.prefix}-token`);
+        this.cookieService.delete(`${CONFIG.prefix}-token`);
     }
 
     public setAuthUser(profile: IProfile) {
-        this.storage.set(`${this.prefix}-profile`, profile);
+        this.storage.set(`${CONFIG.prefix}-profile`, profile);
     }
 
     public getAuthUser(): IProfile {
-        return this.storage.get(`${this.prefix}-profile`);
+        return this.storage.get(`${CONFIG.prefix}-profile`);
     }
 
     public clearAuthUser() {
-        this.storage.remove(`${this.prefix}-profile`);
+        this.storage.remove(`${CONFIG.prefix}-profile`);
     }
 
     public existsAuthUser(): boolean {
-        return this.storage.has(`${this.prefix}-profile`);
+        return this.storage.has(`${CONFIG.prefix}-profile`);
     }
 }

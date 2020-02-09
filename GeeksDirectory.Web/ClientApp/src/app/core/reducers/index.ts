@@ -22,5 +22,4 @@ const getFeatureState = createFeatureSelector<State, CoreState>('core');
 
 export const selectCoreState = createSelector(getFeatureState, (state: CoreState) => state.layout);
 export const getScrollPosition = createSelector(selectCoreState, fromCore.getScrollPosition);
-export const isMobile = createSelector(selectCoreState, fromCore.getIsMobileFlag);
 export const getSidebar = createSelector(selectCoreState, fromCore.getSidebar);

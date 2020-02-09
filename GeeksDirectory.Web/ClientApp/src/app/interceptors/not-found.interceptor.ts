@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { ExceptionCode } from '@app/shared/common';
+import { ExceptionCode } from '@shared/common';
 
 @Injectable()
 export class NotFoundInterceptor implements HttpInterceptor {

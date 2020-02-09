@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
 
-import { ScrollPosition } from '@app/shared/common';
+import { ScrollPosition } from '@shared/common';
 
-export const setScrollPosition = createAction('[Core] Scroll Postion Changed', props<{ scrollPosition: ScrollPosition }>());
+export const setScrollPosition = createAction('[Scroll] Scroll Postion Changed', props<{ scrollPosition: ScrollPosition }>());

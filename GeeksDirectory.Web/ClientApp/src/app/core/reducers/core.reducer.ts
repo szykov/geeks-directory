@@ -1,8 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { ScrollPosition } from '@app/shared/common';
-import { ScrollActions, LayoutActions, SidebarActions } from '@app/core/actions';
-import { ISideBar } from '@app/services';
+import { ScrollPosition, ISideBar } from '@shared/common';
+import { ScrollActions, SidebarActions } from '@app/core/actions';
 
 export interface State {
     scrollPosition: ScrollPosition;
@@ -21,10 +20,6 @@ export const reducer = createReducer(
     on(ScrollActions.setScrollPosition, (state, { scrollPosition }) => ({
         ...state,
         scrollPosition
-    })),
-    on(LayoutActions.setIsMobileFlag, (state, { isMobile }) => ({
-        ...state,
-        isMobile
     })),
     on(SidebarActions.initSidebar, (state, { sidebar }) => ({
         ...state,

@@ -10,7 +10,7 @@ import * as fromCore from '@app/core/reducers';
 import { ProfilesListActions } from '@app/directory/actions';
 
 import { IProfile, IPagination } from '@app/responses';
-import { ScrollPosition } from '@app/shared/common';
+import { ScrollPosition } from '@shared/common';
 import { QueryOptions } from '@app/models';
 
 @Component({
