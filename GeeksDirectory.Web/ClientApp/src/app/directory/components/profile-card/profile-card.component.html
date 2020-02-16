@@ -1,4 +1,4 @@
-<mat-card class="profile-card" [@enter] [@leave]>
+<mat-card data-id="{{ profile.id }}" data-cy="profileCard" class="profile-card" [@enter] [@leave]>
     <mat-card-header class="card-header">
         <div mat-card-avatar class="geek-avatar">
             <mat-icon class="topbar-icon" aria-hidden="false" aria-label="Geek icon">android</mat-icon>
@@ -19,6 +19,6 @@
     </mat-card-content>
 
     <mat-card-actions class="card-actions">
-        <button mat-button [routerLink]="['/profiles', profile.id]">Open</button>
+        <button data-cy="openProfile" mat-button [routerLink]="['/profiles', profile.id]">Open</button>
     </mat-card-actions>
 </mat-card>

@@ -12,7 +12,6 @@ export class RegisterFormComponent {
     public hide = false;
 
     @Input() model: CreateProfileModel;
-    @Input() cities: string[];
 
     @Output() changedCity = new EventEmitter();
     @Output() register = new EventEmitter();

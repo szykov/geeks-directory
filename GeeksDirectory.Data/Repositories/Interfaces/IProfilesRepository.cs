@@ -13,6 +13,8 @@ namespace GeeksDirectory.Data.Repositories.Interfaces
 
         GeekProfile GetProfileByUserName(string userName);
 
+        bool UserExists(string userName);
+
         IEnumerable<GeekProfile> GetProfiles(QueryOptions queryOptions);
 
         IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out int total);

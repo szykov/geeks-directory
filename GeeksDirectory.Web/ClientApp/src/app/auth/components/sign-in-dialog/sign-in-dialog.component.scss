@@ -7,14 +7,10 @@
     min-width: 200px;
 }
 
-.sign-form > mat-form-field {
-    width: 100%;
-}
-
 .sign-form-actions {
     justify-content: flex-end;
 
-    > button {
+    >button {
         margin-left: 10px;
     }
 

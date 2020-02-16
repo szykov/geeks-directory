@@ -25,6 +25,11 @@ describe('Sign In', () => {
 
         cy.contains('You have sucessfully signed in.');
         cy.get('[data-cy=title]').contains('Sergey Zykov');
+
+        cy.get('[data-cy=topMenu]').click();
+        cy.get('[data-cy=signOut]').click();
+
+        cy.contains('You have sucessfully signed out.');
     });
 
     it('sign in with wrong password', () => {

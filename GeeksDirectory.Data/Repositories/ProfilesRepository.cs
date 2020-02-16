@@ -69,6 +69,16 @@ namespace GeeksDirectory.Data.Repositories
             return profile;
         }
 
+        public bool UserExists(string email)
+        {
+            if (String.IsNullOrEmpty(email))
+                throw new ArgumentException(message: $"Argument {nameof(email)} is invalid.");
+
+            return this.context.Profiles
+                .Where(prf => prf.User.NormalizedEmail == email.Normalize().ToUpperInvariant())
+                .Any();
+        }
+
         public IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out int total)
         {
             if (queryOptions is null)

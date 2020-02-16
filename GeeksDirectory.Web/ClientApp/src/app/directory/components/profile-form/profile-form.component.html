@@ -1,36 +1,32 @@
-<form #profForm="ngForm">
-    <mat-form-field appearance="fill">
+<form [formGroup]="profileForm" novalidate>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input data-cy="email" type="email" matInput id="email" name="email" [value]="profileForm.controls.email.value"
+            disabled />
+    </mat-form-field>
+
+    <mat-form-field>
         <mat-label>Name</mat-label>
-        <input type="text" matInput placeholder="Name" id="name" name="name" [(ngModel)]="model.name" #name="ngModel"
-            [disabled]="!editable" required />
-        <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required
+        <input data-cy="name" type="text" matInput id="name" name="name" formControlName="name" />
+        <mat-error *ngIf="profileForm.controls['name'].invalid">
+            Name is required
         </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field>
         <mat-label>Surname</mat-label>
-        <input type="text" matInput placeholder="Surname" [(ngModel)]="model.surname" #surname="ngModel" id="surname"
-            name="surname" [disabled]="!editable" required />
-        <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']">Surname is
-            required
+        <input data-cy="surname" type="text" matInput placeholder="Surname" formControlName="surname" id="surname"
+            name="surname" />
+        <mat-error *ngIf="profileForm.controls['surname'].invalid">
+            Surname is required
         </mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill" *ngIf="model.middleName || editable">
+    <mat-form-field *ngIf="profileForm.controls['middleName'] || editable">
         <mat-label>Middle Name</mat-label>
-        <input type="text" matInput placeholder="Middle Name" [(ngModel)]="model.middleName" #middleName="ngModel"
-            id="middleName" name="middleName" [disabled]="!editable" />
+        <input data-cy="middleName" type="text" matInput placeholder="Middle Name" formControlName="middleName"
+            id="middleName" name="middleName" />
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-        <mat-label>City</mat-label>
-        <input type="text" placeholder="Cities" matInput [matAutocomplete]="auto" [(ngModel)]="model.city" #city
-            name="city" id="city" [disabled]="!editable" required (keyup)="onChangeCity()" />
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let city of cities" [value]="city">
-                {{city}}
-            </mat-option>
-        </mat-autocomplete>
-        <mat-error *ngIf="!city.valid && !city.pristine">City is required</mat-error>
-    </mat-form-field>
+    <gd-city-select formControlName="city" id="city" name="city" required></gd-city-select>
 </form>

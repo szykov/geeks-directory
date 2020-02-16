@@ -1,4 +1,4 @@
-import { IProfilesEnvelope, IProfile } from '../responses';
+import { IProfilesEnvelope, IProfile, IToken } from '../responses';
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -70,6 +70,26 @@ Cypress.Commands.add('search', (query: string, fieldName: string) => {
     });
 });
 
+Cypress.Commands.add('login', (userName: string, password: string) => {
+    cy.request({
+        method: 'POST',
+        url: 'connect/token',
+        body: `grant_type=password&username=${userName}&password=${password}`,
+        headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+        form: true
+    }).then(xhr => {
+        let jwt: IToken = xhr.body;
+        cy.setCookie('gd-token', JSON.stringify(xhr.body));
+        cy.request({
+            method: 'GET',
+            url: 'api/profiles/me',
+            headers: { Authorization: `Bearer ${jwt.access_token}` }
+        }).then(xhr => {
+            sessionStorage.setItem(`gd-profile`, JSON.stringify(xhr.body));
+        });
+    });
+});
+
 // tslint:disable-next-line: no-namespace
 declare global {
     namespace Cypress {
@@ -77,6 +97,7 @@ declare global {
             sort(name: string, compareFn?: (a: any, b: any) => number): Chainable<void>;
             reverse(name: string, compareFn?: (a: any, b: any) => number): Chainable<void>;
             search(query: string, fieldName: string): Chainable<void>;
+            login(userName: string, password: string): void;
         }
     }
 }
