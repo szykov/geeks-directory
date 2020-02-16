@@ -1,5 +1,6 @@
 <mat-chip-list class="card-content">
     <mat-chip
+        data-cy="skill"
         [disableRipple]="!editable"
         class="skill-chip"
         [ngClass]="{ editable: editable }"
@@ -10,7 +11,15 @@
             skill.name
         }}</span>
     </mat-chip>
-    <button *ngIf="editable" class="add-skill" mat-icon-button color="primary" aria-label="Add Skill" (click)="newSkill.emit()">
+    <button
+        data-cy="addSkill"
+        *ngIf="editable"
+        class="add-skill"
+        mat-icon-button
+        color="primary"
+        aria-label="Add Skill"
+        (click)="newSkill.emit()"
+    >
         <mat-icon>add</mat-icon>
     </button>
 </mat-chip-list>

@@ -21,13 +21,13 @@ import { takeUntil } from 'rxjs/operators';
 import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
 import { IProfile, IProfilesEnvelope } from '@app/responses';
-import { ANIMATION } from '@app/shared/common';
+import { CONFIG } from '@shared/config';
 
 @Component({
     selector: 'gd-search-table',
     templateUrl: './search-table.component.html',
     styleUrls: ['./search-table.component.scss'],
-    animations: [fadeInUpOnEnterAnimation(ANIMATION.fadeInUpOnEnterAnimation)],
+    animations: [fadeInUpOnEnterAnimation(CONFIG.animation.fadeInUpOnEnterAnimation)],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchTableComponent implements OnInit, OnChanges, OnDestroy {

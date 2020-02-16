@@ -3,5 +3,6 @@
         "dist": true,
         "node_modules": true,
         "*.lock": true
-    }
+	},
+	"explorer.compactFolders": false
 }

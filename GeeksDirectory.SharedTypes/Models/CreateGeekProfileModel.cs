@@ -23,7 +23,7 @@ namespace GeeksDirectory.SharedTypes.Models
         [NoWhitespace]
         [HasNumber]
         [SpecialCharacter(true)]
-        [StringLength(maximumLength: 255, MinimumLength = 6)]
+        [StringLength(maximumLength: 255, MinimumLength = 8)]
         public string Password { get; set; } = default!;
     }
 }

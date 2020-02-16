@@ -52,10 +52,10 @@ namespace AuthorizationServer.Controllers
         /// http://geeks-directory.azurewebsites.net/ \
         /// -H 'Content-Type: application/x-www-form-urlencoded' \
         /// -H 'cache-control: no-cache' \
-        /// -d 'grant_type=client_credentials%26client_id=my-client%26client_secret=my-secret%26scope=manage_users_groups'
+        /// -d 'grant_type=password%26username=your_name%26password=your_password'
         /// </remarks>
         /// <example>
-        /// grant_type:client_credentials&amp;client_id:my-client&amp;client_secret:my-secret&amp;scope:manage_users
+        /// grant_type=password&amp;username=your_name&amp;password=your_password
         /// </example>
         /// <param name="request">Request with clientID, clientSecret, scope and etc</param>
         /// <returns>Returns JWT token</returns>

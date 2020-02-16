@@ -1,6 +1,4 @@
-export const CONFIG = {
-    gitHubUrl: 'https://github.com/szykov/GeeksDirectory',
-    specsUrl: 'https://redocly.github.io/redoc/?url=http://geeks-directory.azurewebsites.net/swagger/1.0/swagger.json',
+export const API = {
     ignoreConneciton: true,
     connection: {
         protocol: 'http',

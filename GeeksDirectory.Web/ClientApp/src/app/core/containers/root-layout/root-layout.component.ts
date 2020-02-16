@@ -14,7 +14,8 @@ import * as fromCore from '@app/core/reducers';
 
 import { IProfile } from '@app/responses';
 import { INavLink } from '@app/core/models/nav-link.model';
-import { ScrollService, ISideBar } from '@app/services';
+import { ScrollService } from '@app/services';
+import { ISideBar } from '@shared/common';
 
 @Component({
     selector: 'gd-root-layout',
@@ -71,25 +72,17 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit() {
-        this.drawerContainer.backdropClick.subscribe(() => {
-            this.onDrawerToogle();
+        this.drawerContainer.backdropClick.subscribe(() => this.onDrawerToogle());
+        this.scrollService.isMobile.pipe(takeUntil(this.unsubscribe)).subscribe(result => {
+            this.isMobile = result;
         });
-
-        this.store
-            .select(fromCore.isMobile)
-            .pipe(takeUntil(this.unsubscribe))
-            .subscribe(result => {
-                this.isMobile = result;
-            });
 
         this.store
             .select(fromCore.getSidebar)
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(sidebar => {
                 this.drawer.toggle(sidebar.status);
-                setTimeout(() => {
-                    this.drawerContainer.updateContentMargins();
-                }, 300);
+                setTimeout(() => this.drawerContainer.updateContentMargins(), 300);
             });
     }
 

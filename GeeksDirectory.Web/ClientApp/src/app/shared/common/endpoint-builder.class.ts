@@ -1,11 +1,11 @@
-import { CONFIG } from './config';
+import { CONFIG } from '../config';
 
 export class EndpointBuilder {
-    private readonly cfg = CONFIG.connection;
+    private readonly cfg = CONFIG.api.connection;
     private readonly url: URL;
 
     constructor(endpoint: string) {
-        let origin = CONFIG.ignoreConneciton
+        let origin = CONFIG.api.ignoreConneciton
             ? window.location.origin
             : `${this.cfg.protocol}://${this.cfg.hostName}:${this.cfg.port}`;
 

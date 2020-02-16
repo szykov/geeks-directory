@@ -15,14 +15,10 @@
     flex-grow: 1;
 }
 
-.skill-body > mat-form-field {
-    width: 100%;
-}
-
 .skill-form-actions {
     justify-content: flex-end;
 
-    > button {
+    >button {
         margin-left: 10px;
     }
 }
@@ -31,6 +27,7 @@
 .mini-score {
     margin-top: 10px;
     width: 100%;
+
     mat-button-toggle {
         width: 25%;
     }

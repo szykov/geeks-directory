@@ -1,23 +1,21 @@
-<div *ngIf="profile && model">
+<div *ngIf="profile && profileModel">
     <gd-viewer-container title="{{ profile.fullName }}">
-        <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput id="email" name="email" [value]="profile.email" disabled />
-        </mat-form-field>
-
-        <gd-profile-form [model]="model" [cities]="cities" [editable]="editProfile" (changeCity)="onChangeCity($event)">
-        </gd-profile-form>
+        <ng-container>
+            <gd-profile-form [model]="profileModel" [editable]="editableProfile" (valid)="onValidChange($event)">
+            </gd-profile-form>
+        </ng-container>
 
         <div class="skills-header">
             <span class="title-header">Skills</span>
             <mat-divider></mat-divider>
         </div>
 
-        <gd-profile-skills [skills]="profile.skills" [editable]="editSkills" (editSkill)="onEditSkill($event)"
+        <gd-profile-skills [skills]="profile.skills" [editable]="editableSkills" (editSkill)="onEditSkill($event)"
             (newSkill)="onNewSkill()"></gd-profile-skills>
 
-        <div class="profile-actions">
-            <button *ngIf="editProfile" mat-flat-button color="primary" (click)="onSubmit()">Update</button>
+        <div class="profile-actions" data-cy="update">
+            <button data-cy="submit" *ngIf="editableProfile" mat-flat-button color="primary" (click)="onSubmit()"
+                [disabled]="!isValid">Update</button>
         </div>
     </gd-viewer-container>
 </div>

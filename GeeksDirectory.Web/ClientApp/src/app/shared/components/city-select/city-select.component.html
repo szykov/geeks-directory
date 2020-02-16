@@ -1,0 +1,10 @@
+<mat-form-field>
+    <mat-label>City</mat-label>
+    <input data-cy="city" type="text" placeholder="Cities" matInput [matAutocomplete]="auto" [disabled]="disabled"
+        [(ngModel)]="value" #city required />
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let city of cities" [value]="city">
+            {{city}}
+        </mat-option>
+    </mat-autocomplete>
+</mat-form-field>

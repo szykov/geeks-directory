@@ -1,7 +1,8 @@
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 
 import { IProfile } from '@app/responses';
 import { ProfileModel, SkillModel } from '@app/models';
+import { ProfileFormComponent } from '../profile-form/profile-form.component';
 
 @Component({
     selector: 'gd-edit-profile',
@@ -11,22 +12,16 @@ import { ProfileModel, SkillModel } from '@app/models';
 })
 export class EditProfileComponent {
     @Input() profile: IProfile;
-    @Input() model: ProfileModel;
-    @Input() cities: string[];
+    @Input() profileModel: ProfileModel;
 
-    @Input() editSkills: boolean;
-    @Input() editProfile: boolean;
+    @Input() editableSkills: boolean;
+    @Input() editableProfile: boolean;
 
-    @Output() changedCity = new EventEmitter();
     @Output() newSkill = new EventEmitter();
     @Output() editSkill = new EventEmitter();
     @Output() updateProfile = new EventEmitter();
 
-    constructor() {}
-
-    public onChangeCity(value: string) {
-        this.changedCity.emit(value);
-    }
+    public isValid: boolean;
 
     public onEditSkill(model: SkillModel) {
         this.editSkill.emit(model);
@@ -36,7 +31,11 @@ export class EditProfileComponent {
         this.newSkill.emit();
     }
 
+    public onValidChange(status: 'VALID' | 'INVALID') {
+        this.isValid = status === 'VALID';
+    }
+
     public onSubmit() {
-        this.updateProfile.emit(this.model);
+        this.updateProfile.emit(this.profileModel);
     }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -27,6 +28,8 @@ import { SearchTableComponent } from './components/search-table/search-table.com
     ],
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
         DirectoryRoutingModule,
         SharedModule,
         StoreModule.forFeature('directory', reducers),

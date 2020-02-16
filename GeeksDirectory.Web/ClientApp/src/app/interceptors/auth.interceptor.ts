@@ -11,7 +11,7 @@ import { AuthActions, SignInDialogActions } from '@app/auth/actions';
 import { IException } from '@app/responses';
 import { StorageService } from '@app/services/storage.service';
 import { IToken } from '@app/auth/responses';
-import { ExceptionCode } from '@app/shared/common';
+import { ExceptionCode } from '@shared/common';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/styles/form';
 @import './assets/styles/snack-bar';
 @import './assets/styles/ng-bar';
 
@@ -12,10 +13,6 @@ body {
     font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-.title-header {
-    text-transform: uppercase;
-    font-weight: 800;
-    line-height: 30px;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px #616161;
+.mat-drawer-inner-container {
+    overflow: hidden !important;
 }

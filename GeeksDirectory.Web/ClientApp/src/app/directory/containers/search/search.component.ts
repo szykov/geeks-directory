@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { PageEvent } from '@angular/material/paginator';
+import { Sort } from '@angular/material/sort';
 
 import { Subject, Observable } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -8,21 +10,18 @@ import { fadeInUpOnEnterAnimation } from 'angular-animations';
 
 import { Store } from '@ngrx/store';
 import * as fromState from '@app/reducers';
-
-import { PageEvent } from '@angular/material/paginator';
-import { Sort } from '@angular/material/sort';
-
 import * as fromProfiles from '@app/directory/reducers';
 import { SearchActions } from '@app/directory/actions';
+
+import { CONFIG } from '@shared/config';
 import { IProfilesEnvelope } from '@app/responses';
 import { QueryOptions } from '@app/models';
-import { ANIMATION } from '@app/shared/common';
 
 @Component({
     selector: 'gd-search',
     templateUrl: './search.component.html',
     styleUrls: ['./search.component.scss'],
-    animations: [fadeInUpOnEnterAnimation(ANIMATION.fadeInUpOnEnterAnimation)],
+    animations: [fadeInUpOnEnterAnimation(CONFIG.animation.fadeInUpOnEnterAnimation)],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit, OnDestroy {

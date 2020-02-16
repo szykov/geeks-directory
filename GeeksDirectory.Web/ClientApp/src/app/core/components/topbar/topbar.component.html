@@ -14,30 +14,26 @@
 
     <div class="topbar-actions">
         <gd-open-api-link class="open-api-link" [showText]="true"></gd-open-api-link>
-        <gd-github-link
-            class="github-link"
-            iconName="github"
-            iconUrl="github-circle-white.svg"
-            [showText]="true"
-        ></gd-github-link>
+        <gd-github-link class="github-link" iconName="github" iconUrl="github-circle-white.svg" [showText]="true">
+        </gd-github-link>
 
         <button *ngIf="!isAuth" data-cy="signIn" mat-button mat-flat-button color="basic" (click)="openSignInDialog()">
             Sign In!
         </button>
 
         <div *ngIf="isAuth">
-            <div class="welcome-message" [routerLink]="profilePath">
+            <div data-cy="welcomeMessage" class="welcome-message" [routerLink]="profilePath">
                 <span>Hello, {{ fullName }}</span>
             </div>
-            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+            <button data-cy="topMenu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
                 <mat-icon>menu</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item [routerLink]="profilePath">
+                <button data-cy="myProfile" mat-menu-item [routerLink]="profilePath">
                     <mat-icon>account_box</mat-icon>
                     <span>Profile</span>
                 </button>
-                <button mat-menu-item (click)="signOut.emit()">
+                <button data-cy="signOut" mat-menu-item (click)="signOut.emit()">
                     <mat-icon>exit_to_app</mat-icon>
                     <span>Sign Out!</span>
                 </button>

@@ -1,8 +1,7 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center">
     <div class="profile-container">
-        <gd-edit-profile [profile]="profile$ | async" [model]="model$ | async"
-            [editProfile]="(currentProfile$ | async)?.id == (profile$ | async)?.id" [editSkills]="isAuth$ | async"
-            [cities]="filteredCities$ | async" (changedCity)="onChangeCity($event)"
+        <gd-edit-profile [profile]="profile" [profileModel]="profileModel"
+            [editableProfile]="(currentProfile$ | async)?.id == profile?.id" [editableSkills]="isAuth$ | async"
             (updateProfile)="onUpdatePersonalProfile($event)" (newSkill)="onAddSkill()"
             (editSkill)="onEditSkill($event)">
         </gd-edit-profile>

@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 
-import { WINDOW } from '@app/shared/common';
+import { WINDOW } from '@shared/common';
 
 @Injectable({
     providedIn: 'root'

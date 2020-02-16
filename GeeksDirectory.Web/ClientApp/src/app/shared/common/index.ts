@@ -1,4 +1,3 @@
-export * from './config';
 export * from './endpoint-builder.class';
 export * from './dialog-choices.enum';
 export * from './cities';
@@ -9,4 +8,4 @@ export * from './scroll-position.enum';
 export * from './window-provider';
 export * from './exception-code.enum';
 export * from './throunceTime.operator';
-export * from './anitmation.config';
+export * from './sidebar.interface';

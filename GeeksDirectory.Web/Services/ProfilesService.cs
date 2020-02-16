@@ -162,7 +162,7 @@ namespace GeeksDirectory.Web.Services
         {
             var normalizedEmail = email.Normalize().ToUpperInvariant();
 
-            _ = await this.userManager.FindByEmailAsync(email) ?? 
+            if (this.repository.UserExists(email))
                 throw new ArgumentException("Profile already exists."); 
 
             var applicationUser = new ApplicationUser
