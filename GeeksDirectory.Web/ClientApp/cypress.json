@@ -3,6 +3,7 @@
     "fixturesFolder": "e2e/fixtures",
     "integrationFolder": "e2e/integration",
     "pluginsFile": "e2e/plugins/index.js",
+    "projectId": "9q9ix4",
     "screenshotsFolder": "e2e/screenshots",
     "supportFile": "e2e/support/index.ts",
     "videosFolder": "e2e/videos"

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace GeeksDirectory.Web.Services.Interfaces
+namespace GeeksDirectory.Services.Mappings
 {
     public interface IMapperService
     {

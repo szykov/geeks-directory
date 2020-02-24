@@ -28,7 +28,7 @@
         <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.SearchProfiles(System.String,System.Int32,System.Int32,System.String,System.String)">
                      * <summary>Search profiles</summary>
                      * <remarks>Search for profiles based on query.</remarks>
-                     * <param name="query">Query for filtering profiles</param>
+                     * <param name="filter">Text for filtering profiles</param>
                      * <param name="limit">Limit how many matches will be returned</param>
                      * <param name="offset">How many matched users will be skipped</param>
                      * <param name="orderBy">Order by which profile's property</param>
@@ -70,7 +70,7 @@
                      * <returns>Matched skill</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.AddSkillAsync(System.Int32,GeeksDirectory.SharedTypes.Models.SkillModel)">
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.RegisterSkillAsync(System.Int32,GeeksDirectory.SharedTypes.Models.SkillModel)">
                      * <summary>Add skill</summary>
                      * <remarks>Add skill to profile.</remarks>
                      * <param name="profileId">User profile id</param>

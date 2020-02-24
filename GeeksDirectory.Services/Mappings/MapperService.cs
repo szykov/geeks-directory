@@ -2,9 +2,8 @@
 
 using GeeksDirectory.Data.Mappings;
 using GeeksDirectory.SharedTypes.Mappings;
-using GeeksDirectory.Web.Services.Interfaces;
 
-namespace GeeksDirectory.Web.Services
+namespace GeeksDirectory.Services.Mappings
 {
     public class MapperService : IMapperService
     {

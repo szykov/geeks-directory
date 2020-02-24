@@ -74,8 +74,10 @@ namespace GeeksDirectory.Data.Repositories
             if (String.IsNullOrEmpty(email))
                 throw new ArgumentException(message: $"Argument {nameof(email)} is invalid.");
 
+            var normalizedEmail = email.Normalize().ToUpperInvariant();
+
             return this.context.Profiles
-                .Where(prf => prf.User.NormalizedEmail == email.Normalize().ToUpperInvariant())
+                .Where(prf => prf.User.NormalizedEmail == normalizedEmail)
                 .Any();
         }
 
@@ -100,7 +102,7 @@ namespace GeeksDirectory.Data.Repositories
             total = result.Count();
 
             if (queryOptions.IsSortable())
-                result = this.Sort(result, queryOptions.OrderDirection, queryOptions.OrderBy!);
+                result = this.Sort(result, (OrderDirection)queryOptions.OrderDirection, queryOptions.OrderBy!);
 
             return result.Skip(queryOptions.Offset).Take(queryOptions.Limit);
         }
