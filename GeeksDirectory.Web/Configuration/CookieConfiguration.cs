@@ -1,6 +1,6 @@
 ﻿#pragma warning disable CA1307
 
-using GeeksDirectory.SharedTypes.Classes;
+using GeeksDirectory.Domain.Classes;
 
 using Microsoft.Extensions.DependencyInjection;
 

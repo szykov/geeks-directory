@@ -1,5 +1,5 @@
-﻿using GeeksDirectory.SharedTypes.Classes;
-using GeeksDirectory.SharedTypes.Responses;
+﻿using GeeksDirectory.Domain.Classes;
+using GeeksDirectory.Domain.Responses;
 
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -15,12 +15,12 @@ namespace GeeksDirectory.Web.Extensions
             if (modelState is null)
                 throw new ArgumentNullException(paramName: nameof(modelState));
 
-            var modelValidationErrors = new List<ModelValidationError>();
+            var modelValidationErrors = new List<ErrorDetail>();
             foreach (KeyValuePair<string, ModelStateEntry> modelEntry in modelState)
             {
                 foreach (var modelError in modelEntry.Value.Errors)
                 {
-                    var error = new ModelValidationError(message: modelError.ErrorMessage, target: modelEntry.Key);
+                    var error = new ErrorDetail(message: modelError.ErrorMessage, target: modelEntry.Key);
                     modelValidationErrors.Add(error);
                 };
             }

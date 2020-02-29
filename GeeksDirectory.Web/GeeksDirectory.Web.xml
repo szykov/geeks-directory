@@ -4,6 +4,29 @@
         <name>GeeksDirectory.Web</name>
     </assembly>
     <members>
+        <member name="T:GeeksDirectory.Web.Controllers.AuthorizationController">
+                 * <summary>Authorization Controller for generating JWT Oauth2 tokens</summary>
+                 * <remarks>Methods related to authorization and authentication.</remarks>
+                *
+        </member>
+        <member name="M:GeeksDirectory.Web.Controllers.AuthorizationController.Exchange(AspNet.Security.OpenIdConnect.Primitives.OpenIdConnectRequest)">
+             <summary>Generate JWT token</summary>
+             <remarks>Creates **Oauth2** token with **client credentials** flow scheme and **Bearer** token type.
+             **grant_type** should be always specified as **client_credentials**.
+             For **clientId** and **clientSecret** please send a request to the administrator. Send different request for each required scope.
+            
+             curl -X POST
+             http://geeks-directory.azurewebsites.net/ \
+             -H 'Content-Type: application/x-www-form-urlencoded' \
+             -H 'cache-control: no-cache' \
+             -d 'grant_type=password%26username=your_name%26password=your_password'
+             </remarks>
+             <example>
+             grant_type=password&amp;username=your_name&amp;password=your_password
+             </example>
+             <param name="request">Request with clientID, clientSecret, scope and etc</param>
+             <returns>Returns JWT token</returns>
+        </member>
         <member name="T:GeeksDirectory.Web.Controllers.ProfilesController">
              <summary>Profiles controller with actions related to profiles</summary>
              <remarks>CRUD operations regarding profiles.</remarks>
@@ -43,14 +66,14 @@
                      * <returns>User profile</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.RegisterProfileAsync(GeeksDirectory.SharedTypes.Models.CreateGeekProfileModel)">
+        <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.RegisterProfileAsync(GeeksDirectory.Domain.Models.CreateGeekProfileModel)">
                      * <summary>Register profile</summary>
                      * <remarks>Add new profile to database.</remarks>
                      * <param name="model">User profile model</param>
                      * <returns>Created user profile</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.UpdatePersonalProfile(GeeksDirectory.SharedTypes.Models.GeekProfileModel)">
+        <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.UpdatePersonalProfile(GeeksDirectory.Domain.Models.GeekProfileModel)">
                      * <summary>Update profile</summary>
                      * <remarks>Update user profile in database.</remarks>
                      * <param name="model">User profile model</param>
@@ -70,7 +93,7 @@
                      * <returns>Matched skill</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.RegisterSkillAsync(System.Int32,GeeksDirectory.SharedTypes.Models.SkillModel)">
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.RegisterSkillAsync(System.Int32,GeeksDirectory.Domain.Models.SkillModel)">
                      * <summary>Add skill</summary>
                      * <remarks>Add skill to profile.</remarks>
                      * <param name="profileId">User profile id</param>
@@ -78,7 +101,7 @@
                      * <returns>Added skill</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.EvaluateSkillAsync(System.Int32,System.String,GeeksDirectory.SharedTypes.Models.SkillEvaluationModel)">
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.EvaluateSkillAsync(System.Int32,System.String,GeeksDirectory.Domain.Models.SkillEvaluationModel)">
                      * <summary>Evaluate skill</summary>
                      * <remarks>Evaluate skill for profile.</remarks>
                      * <param name="profileId">User profile id</param>
@@ -94,29 +117,6 @@
                      * <param name="skillName">Skill's name</param>
                      * <returns>Assessment data with your score</returns>
                     *
-        </member>
-        <member name="T:AuthorizationServer.Controllers.AuthorizationController">
-                 * <summary>Authorization Controller for generating JWT Oauth2 tokens</summary>
-                 * <remarks>Methods related to authorization and authentication.</remarks>
-                *
-        </member>
-        <member name="M:AuthorizationServer.Controllers.AuthorizationController.Exchange(AspNet.Security.OpenIdConnect.Primitives.OpenIdConnectRequest)">
-             <summary>Generate JWT token</summary>
-             <remarks>Creates **Oauth2** token with **client credentials** flow scheme and **Bearer** token type.
-             **grant_type** should be always specified as **client_credentials**.
-             For **clientId** and **clientSecret** please send a request to the administrator. Send different request for each required scope.
-            
-             curl -X POST
-             http://geeks-directory.azurewebsites.net/ \
-             -H 'Content-Type: application/x-www-form-urlencoded' \
-             -H 'cache-control: no-cache' \
-             -d 'grant_type=password%26username=your_name%26password=your_password'
-             </remarks>
-             <example>
-             grant_type=password&amp;username=your_name&amp;password=your_password
-             </example>
-             <param name="request">Request with clientID, clientSecret, scope and etc</param>
-             <returns>Returns JWT token</returns>
         </member>
     </members>
 </doc>

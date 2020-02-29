@@ -1,4 +1,4 @@
-﻿using GeeksDirectory.SharedTypes.Responses;
+﻿using GeeksDirectory.Domain.Responses;
 
 using MediatR;
 

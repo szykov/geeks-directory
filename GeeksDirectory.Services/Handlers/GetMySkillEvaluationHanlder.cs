@@ -4,11 +4,11 @@ using AutoMapper;
 
 using FluentResults;
 
-using GeeksDirectory.Data.Entities;
-using GeeksDirectory.Data.Repositories.Interfaces;
+using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Domain.Interfaces;
 using GeeksDirectory.Services.Mappings;
 using GeeksDirectory.Services.Queries;
-using GeeksDirectory.SharedTypes.Responses;
+using GeeksDirectory.Domain.Responses;
 
 using MediatR;
 
@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class GetMySkillEvaluationHanlder : IRequestHandler<GetMySkillEvaluationQuery, Result<AssessmentResponse>>
+    public class GetMySkillEvaluationHanlder : IRequestHandler<GetMySkillEvaluationQuery, AssessmentResponse?>
     {
         private readonly HttpContext httpContext;
         private readonly UserManager<ApplicationUser> userManager;
@@ -39,17 +39,12 @@ namespace GeeksDirectory.Services.Handlers
             this.repository = repository;
         }
 
-        public async Task<Result<AssessmentResponse>> Handle(GetMySkillEvaluationQuery request, CancellationToken cancellationToken)
+        public async Task<AssessmentResponse?> Handle(GetMySkillEvaluationQuery request, CancellationToken cancellationToken)
         {
             var user = await this.userManager.GetUserAsync(httpContext.User);
 
-            if (!this.repository.Exists(request.ProfileId, request.SkillName, user.Id))
-            {
-                return Results.Fail("Assesment doesn't exist.");
-            }
-
-            var assesment = this.mapper.Map<AssessmentResponse>(this.repository.Get(request.ProfileId, request.SkillName, user.Id));
-            return Results.Ok(assesment);
+            var assesment = this.repository.Get(request.ProfileId, request.SkillName, user.Id);
+            return this.mapper.Map<AssessmentResponse>(assesment);
         }
     }
 }

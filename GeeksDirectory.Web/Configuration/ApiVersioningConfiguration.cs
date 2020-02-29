@@ -1,4 +1,4 @@
-﻿using GeeksDirectory.SharedTypes.Classes;
+﻿using GeeksDirectory.Domain.Classes;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;

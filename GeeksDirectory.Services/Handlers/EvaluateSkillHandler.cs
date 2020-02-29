@@ -1,7 +1,7 @@
 ﻿#pragma warning disable CS1998
 
-using GeeksDirectory.Data.Entities;
-using GeeksDirectory.Data.Repositories.Interfaces;
+using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Domain.Interfaces;
 using GeeksDirectory.Services.Notifications;
 
 using MediatR;

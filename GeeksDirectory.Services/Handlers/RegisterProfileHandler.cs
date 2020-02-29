@@ -4,15 +4,13 @@ using AutoMapper;
 
 using FluentResults;
 
-using GeeksDirectory.Data.Entities;
-using GeeksDirectory.Data.Repositories.Interfaces;
+using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Domain.Interfaces;
 using GeeksDirectory.Services.Commands;
 using GeeksDirectory.Services.Mappings;
-using GeeksDirectory.SharedTypes.Classes;
 
 using MediatR;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 
 using System;
@@ -39,24 +37,17 @@ namespace GeeksDirectory.Services.Handlers
 
         public async Task<Result<int>> Handle(RegisterProfileCommand request, CancellationToken cancellationToken)
         {
-            try
-            {
-                if (this.repository.UserExists(request.Profile.Email))
-                    return Results.Fail<int>("Profile already exists.");
+            if (this.repository.UserExists(request.Profile.Email))
+                return Results.Fail<int>("Profile already exists.");
 
-                var applicationUser = await this.CreateUser(request.Profile.Email, request.Profile.Password);
+            var applicationUser = await this.CreateUser(request.Profile.Email, request.Profile.Password);
 
-                var profile = this.mapper.Map<GeekProfile>(request.Profile);
-                profile.User = applicationUser;
+            var profile = this.mapper.Map<GeekProfile>(request.Profile);
+            profile.User = applicationUser;
 
-                this.repository.Add(profile);
+            this.repository.Add(profile);
 
-                return Results.Ok(profile.ProfileId);
-            }
-            catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException)
-            {
-                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
-            }
+            return Results.Ok(profile.ProfileId);
         }
 
 

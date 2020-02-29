@@ -1,4 +1,4 @@
-﻿using GeeksDirectory.SharedTypes.DocumentFilters;
+﻿using GeeksDirectory.Domain.DocumentFilters;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Abstractions;
@@ -70,7 +70,7 @@ namespace GeeksDirectory.Web.Configuration
                 });
 
                 setup.IncludeXmlComments(GetAssemblyFullPath(nameof(GeeksDirectory), nameof(Web)));
-                setup.IncludeXmlComments(GetAssemblyFullPath(nameof(GeeksDirectory), nameof(SharedTypes)));
+                setup.IncludeXmlComments(GetAssemblyFullPath(nameof(GeeksDirectory), nameof(Domain)));
 
                 setup.EnableAnnotations();
             });

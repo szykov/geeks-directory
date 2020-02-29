@@ -2,12 +2,12 @@
 
 using AutoMapper;
 
-using GeeksDirectory.Data.Entities;
-using GeeksDirectory.Data.Repositories.Interfaces;
+using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Domain.Interfaces;
 using GeeksDirectory.Services.Mappings;
 using GeeksDirectory.Services.Queries;
-using GeeksDirectory.SharedTypes.Classes;
-using GeeksDirectory.SharedTypes.Responses;
+using GeeksDirectory.Domain.Classes;
+using GeeksDirectory.Domain.Responses;
 
 using MediatR;
 
@@ -42,17 +42,10 @@ namespace GeeksDirectory.Services.Handlers
 
         public async Task<GeekProfileResponse> Handle(GetPersonalProfileQuery request, CancellationToken cancellationToken)
         {
-            try
-            {
-                var userName = await this.userManager.GetUserAsync(httpContext.User);
+            var userName = await this.userManager.GetUserAsync(httpContext.User);
 
-                var profile = this.repository.GetProfileByUserName(userName.Email);
-                return this.mapper.Map<GeekProfileResponse>(profile);
-            }
-            catch (Exception ex) when (ex is KeyNotFoundException || ex is ArgumentException)
-            {
-                throw new LogicException(ex.Message, ex) { StatusCode = StatusCodes.Status422UnprocessableEntity };
-            }
+            var profile = this.repository.GetProfileByUserName(userName.Email);
+            return this.mapper.Map<GeekProfileResponse>(profile);
         }
     }
 }

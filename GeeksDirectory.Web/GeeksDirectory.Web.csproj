@@ -73,9 +73,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GeeksDirectory.Data\GeeksDirectory.Data.csproj" />
+    <ProjectReference Include="..\GeeksDirectory.Domain\GeeksDirectory.Domain.csproj" />
+    <ProjectReference Include="..\GeeksDirectory.Infrastructure\GeeksDirectory.Infrastructure.csproj" />
     <ProjectReference Include="..\GeeksDirectory.Services\GeeksDirectory.Services.csproj" />
-    <ProjectReference Include="..\GeeksDirectory.SharedTypes\GeeksDirectory.SharedTypes.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-using GeeksDirectory.SharedTypes.Models;
+using GeeksDirectory.Domain.Models;
 
 using MediatR;
 

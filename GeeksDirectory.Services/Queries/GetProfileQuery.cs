@@ -1,10 +1,10 @@
-﻿using GeeksDirectory.SharedTypes.Responses;
+﻿using GeeksDirectory.Domain.Responses;
 
 using MediatR;
 
 namespace GeeksDirectory.Services.Queries
 {
-    public class GetProfileQuery : IRequest<GeekProfileResponse> 
+    public class GetProfileQuery : IRequest<GeekProfileResponse?> 
     {
         public readonly int ProfileId;
 

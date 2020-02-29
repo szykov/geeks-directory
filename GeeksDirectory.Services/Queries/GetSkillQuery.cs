@@ -1,4 +1,4 @@
-﻿using GeeksDirectory.SharedTypes.Responses;
+﻿using GeeksDirectory.Domain.Responses;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GeeksDirectory.Services.Queries
 {
-    public class GetSkillQuery : IRequest<SkillResponse>
+    public class GetSkillQuery : IRequest<SkillResponse?>
     {
         public readonly int ProfileId;
         public readonly string SkillName;

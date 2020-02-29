@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 
-using GeeksDirectory.Data.Mappings;
-using GeeksDirectory.SharedTypes.Mappings;
+using GeeksDirectory.Domain.Mappings;
 
 namespace GeeksDirectory.Services.Mappings
 {

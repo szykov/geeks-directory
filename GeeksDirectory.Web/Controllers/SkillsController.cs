@@ -1,8 +1,8 @@
 ﻿using GeeksDirectory.Services.Commands;
 using GeeksDirectory.Services.Notifications;
 using GeeksDirectory.Services.Queries;
-using GeeksDirectory.SharedTypes.Models;
-using GeeksDirectory.SharedTypes.Responses;
+using GeeksDirectory.Domain.Models;
+using GeeksDirectory.Domain.Responses;
 
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -75,6 +75,13 @@ namespace GeeksDirectory.Web.Controllers
             var command = new RegisterSkillCommand(profileId, model);
             var result = await this.mediator.Send(command);
 
+            if (result.IsFailed)
+                return this.UnprocessableEntity(result);
+
+            var skillEvaluation = new SkillEvaluationModel() { Score = model.Score };
+            var notification = new EvaluateSkillNotification(profileId, model.Name, skillEvaluation);
+            await this.mediator.Publish(notification);
+
             var query = new GetSkillQuery(profileId, model.Name);
             var skill = await this.mediator.Send(query);
 
@@ -118,9 +125,9 @@ namespace GeeksDirectory.Web.Controllers
         public async Task<ActionResult<AssessmentResponse?>> GetMySkillEvaluationAsync([FromRoute]int profileId, [FromRoute]string skillName)
         {
             var query = new GetMySkillEvaluationQuery(profileId, skillName);
-            var result = await this.mediator.Send(query);
+            var assessment = await this.mediator.Send(query);
 
-            return result.ValueOrDefault;
+            return this.Ok(assessment);
         }
     }
 }

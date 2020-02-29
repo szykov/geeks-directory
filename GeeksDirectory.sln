@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.Web", "GeeksDirectory.Web\GeeksDirectory.Web.csproj", "{0E352F00-FAF8-4B16-BF4A-53F2AC7436CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.SharedTypes", "GeeksDirectory.SharedTypes\GeeksDirectory.SharedTypes.csproj", "{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.Domain", "GeeksDirectory.Domain\GeeksDirectory.Domain.csproj", "{22C7C56A-D8B0-42C3-8D76-92EA81E8CA11}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.Data", "GeeksDirectory.Data\GeeksDirectory.Data.csproj", "{0FBF71F3-08E2-4D99-921B-CD567CB1CC6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.Infrastructure", "GeeksDirectory.Infrastructure\GeeksDirectory.Infrastructure.csproj", "{0FBF71F3-08E2-4D99-921B-CD567CB1CC6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeeksDirectory.Services", "GeeksDirectory.Services\GeeksDirectory.Services.csproj", "{1002A10A-8510-4A29-92C7-DE629E38B8F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeeksDirectory.Services", "GeeksDirectory.Services\GeeksDirectory.Services.csproj", "{1002A10A-8510-4A29-92C7-DE629E38B8F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

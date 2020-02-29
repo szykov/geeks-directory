@@ -1,9 +1,9 @@
-﻿using GeeksDirectory.Data.Entities;
+﻿using GeeksDirectory.Domain.Entities;
 using GeeksDirectory.Services.Commands;
 using GeeksDirectory.Services.Queries;
-using GeeksDirectory.SharedTypes.Attributes;
-using GeeksDirectory.SharedTypes.Models;
-using GeeksDirectory.SharedTypes.Responses;
+using GeeksDirectory.Domain.Attributes;
+using GeeksDirectory.Domain.Models;
+using GeeksDirectory.Domain.Responses;
 
 using MediatR;
 
@@ -14,7 +14,6 @@ using Microsoft.Extensions.Logging;
 
 using OpenIddict.Validation;
 
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Controllers
@@ -29,7 +28,7 @@ namespace GeeksDirectory.Web.Controllers
     [ApiVersion("1.0")]
     [Consumes("application/json")]
     [Produces("application/json")]
-    public class ProfilesController : Controller
+    public class ProfilesController : ControllerBase
     {
         private readonly IMediator mediator;
         private readonly ILogger logger;
@@ -40,7 +39,7 @@ namespace GeeksDirectory.Web.Controllers
             this.logger = logger;
         }
 
-        // GET: /api/profiles?take={limit}&skip={offset}
+        // GET: /api/profiles?limit={limit}&offset={offset}
         /**
          * <summary>Get profile</summary>
          * <remarks>Searches profiles in database.</remarks>
@@ -55,10 +54,10 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet]
         public async Task<ActionResult<GeekProfilesResponse>> GetProfiles(
-            int limit = 10,
-            int offset = 0,
-            string? orderBy = nameof(GeekProfile.ProfileId),
-            string? orderDirection = "asc")
+            int limit,
+            int offset,
+            string? orderDirection,
+            string? orderBy = nameof(GeekProfile.ProfileId))
         {
             var query = new GetProfilesQuery(limit, offset, orderBy, orderDirection);
             var profile = await this.mediator.Send(query);
@@ -81,7 +80,7 @@ namespace GeeksDirectory.Web.Controllers
             return this.Ok(profile);
         }
 
-        // GET: /api/profiles/search?query={query}
+        // GET: /api/profiles/search?filter={filter}
         /**
          * <summary>Search profiles</summary>
          * <remarks>Search for profiles based on query.</remarks>
@@ -96,12 +95,12 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("search")]
-        public async Task<ActionResult<IEnumerable<GeekProfileResponse>>> SearchProfiles(
+        public async Task<ActionResult<GeekProfilesResponse>> SearchProfiles(
             [RequiredFromQuery]string filter,
-            int limit = 10,
-            int offset = 0,
-            string? orderBy = nameof(GeekProfile.ProfileId),
-            string? orderDirection = "asc")
+            int limit,
+            int offset,
+            string? orderDirection,
+            string? orderBy = nameof(GeekProfile.ProfileId))
         {
             var query = new SearchQuery(filter, limit, offset, orderBy, orderDirection);
             var profile = await this.mediator.Send(query);
@@ -143,6 +142,9 @@ namespace GeeksDirectory.Web.Controllers
             var query = new RegisterProfileCommand(model);
             var result = await this.mediator.Send(query);
 
+            if (result.IsFailed)
+                return this.UnprocessableEntity(result);
+
             var profile = new GetProfileQuery(result.Value);
             return this.CreatedAtRoute(nameof(GetProfile), new { result.Value }, profile);
         }
@@ -161,6 +163,9 @@ namespace GeeksDirectory.Web.Controllers
         {
             var query = new UpdatePersonalProfileCommand(model);
             var result = await this.mediator.Send(query);
+
+            if (result.IsFailed)
+                return this.UnprocessableEntity(result);
 
             var profile = new GetProfileQuery(result.Value);
             return this.Ok(profile);

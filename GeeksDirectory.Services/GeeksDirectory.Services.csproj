@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GeeksDirectory.Data\GeeksDirectory.Data.csproj" />
-    <ProjectReference Include="..\GeeksDirectory.SharedTypes\GeeksDirectory.SharedTypes.csproj" />
+    <ProjectReference Include="..\GeeksDirectory.Infrastructure\GeeksDirectory.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

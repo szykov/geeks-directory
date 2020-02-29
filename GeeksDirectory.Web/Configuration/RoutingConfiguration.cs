@@ -1,4 +1,4 @@
-﻿using GeeksDirectory.SharedTypes.Responses;
+﻿using GeeksDirectory.Domain.Responses;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
