@@ -57,16 +57,16 @@ Cypress.Commands.add('reverse', (name: string, compareFn?: (a: any, b: any) => n
     });
 });
 
-Cypress.Commands.add('search', (query: string, fieldName: string) => {
-    cy.get('[data-cy=search').type(query);
+Cypress.Commands.add('search', (filter: string, fieldName: string) => {
+    cy.get('[data-cy=search').type(filter);
 
-    cy.url().should('include', `query=${query}`);
+    cy.url().should('include', `filter=${filter}`);
     cy.wait('@searchApi').then(xhr => {
         let response = xhr.response.body as IProfilesEnvelope;
-        let count = response.data.filter((p: any) => p[fieldName].includes(query)).length;
+        let count = response.data.filter((p: any) => p[fieldName].includes(filter)).length;
         expect(response.data.length).to.greaterThan(0);
         expect(response.data.length).to.equal(count);
-        expect(xhr.url).to.include(`query=${query}`);
+        expect(xhr.url).to.include(`filter=${filter}`);
     });
 });
 
@@ -96,7 +96,7 @@ declare global {
         interface Chainable<Subject = any> {
             sort(name: string, compareFn?: (a: any, b: any) => number): Chainable<void>;
             reverse(name: string, compareFn?: (a: any, b: any) => number): Chainable<void>;
-            search(query: string, fieldName: string): Chainable<void>;
+            search(filter: string, fieldName: string): Chainable<void>;
             login(userName: string, password: string): void;
         }
     }

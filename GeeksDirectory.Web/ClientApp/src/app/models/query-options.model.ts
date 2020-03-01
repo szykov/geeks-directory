@@ -1,5 +1,5 @@
 export class QueryOptions {
-    public query: string;
+    public filter: string;
 
     public limit: number;
 
@@ -10,13 +10,13 @@ export class QueryOptions {
     public orderDirection: string;
 
     constructor(
-        query: string = null,
+        filter: string = null,
         limit: number = 10,
         offset: number = 0,
         orderBy: string = null,
         orderDirection: string = null
     ) {
-        this.query = query;
+        this.filter = filter;
         this.limit = limit;
         this.offset = offset;
         this.orderBy = orderBy;

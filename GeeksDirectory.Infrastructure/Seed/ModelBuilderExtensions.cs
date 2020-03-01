@@ -10,9 +10,10 @@ namespace GeeksDirectory.Infrastructure.Seed
         {
             var data = new SeedData();
 
-            modelBuilder.Entity<ApplicationUser>().HasData(data.GetApplicationUsers());
-            modelBuilder.Entity<GeekProfile>().HasData(data.GetGeekProfiles());
-            modelBuilder.Entity<Skill>().HasData(data.GetSkills());
+            modelBuilder.Entity<ApplicationUser>().HasData(data.ApplicationUsers);
+            modelBuilder.Entity<GeekProfile>().HasData(data.GeekProfiles);
+            modelBuilder.Entity<Skill>().HasData(data.Skills);
+            modelBuilder.Entity<Assessment>().HasData(data.Assessments);
         }
     }
 }

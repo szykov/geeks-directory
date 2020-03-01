@@ -67,6 +67,7 @@ namespace GeeksDirectory.Infrastructure.Repositories
             var normalizedEmail = email.Normalize().ToUpperInvariant();
 
             return this.context.Profiles
+                .Include(prf => prf.User)
                 .Where(prf => prf.User.NormalizedEmail == normalizedEmail)
                 .Any();
         }

@@ -1,7 +1,7 @@
 export class SkillModel {
     public name: string;
     public description: string;
-    public score: number;
+    public score;
 
     constructor(name?: string, description?: string, score: number = 0) {
         this.name = name;

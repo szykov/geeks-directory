@@ -1,22 +1,18 @@
 ﻿#nullable disable
 
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GeeksDirectory.Domain.Entities
 {
     public class GeekProfile
     {
-        [Key]
         public int ProfileId { get; set; }
 
-        public string UserName { get; set; }
+        public string UserId { get; set; }
+
+        public ApplicationUser User { get; set; }
 
         public string Email { get; set; }
-
-        [ForeignKey("UserName")]
-        public ApplicationUser User { get; set; }
 
         public string Name { get; set; }
 

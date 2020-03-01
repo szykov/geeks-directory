@@ -29,7 +29,7 @@ namespace GeeksDirectory.Web.Controllers
     [ApiVersion("1.0")]
     [Consumes("application/x-www-form-urlencoded")]
     [Produces("application/json")]
-    public class AuthorizationController : ControllerBase
+    public class AuthorizationController : BaseApiController
     {
         private readonly IOptions<IdentityOptions> identityOptions;
         private readonly SignInManager<ApplicationUser> signInManager;

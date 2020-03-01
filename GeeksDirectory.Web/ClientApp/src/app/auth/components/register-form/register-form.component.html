@@ -57,7 +57,7 @@
     </mat-form-field>
 
     <div class="register-actions">
-        <button data-cy="submit" mat-flat-button color="primary" (click)="onSubmit()" [disabled]="!regForm.form.valid">
+        <button data-cy="submit" mat-flat-button color="primary" (click)="onSubmit()" [disabled]="regForm.form.invalid">
             Register
         </button>
     </div>

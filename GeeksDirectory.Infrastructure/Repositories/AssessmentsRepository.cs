@@ -25,16 +25,16 @@ namespace GeeksDirectory.Infrastructure.Repositories
 
             var skill = this.GetSkill(profileId, skillName);
 
-            return skill.Assessments.Where(s => s.UserName == userName).SingleOrDefault();
+            return skill.Assessments.Where(s => s.User.UserName == userName).SingleOrDefault();
         }
 
-        public void Add(int profileId, string skillName, string userName, int score)
+        public void Add(int profileId, string skillName, string userId, int score)
         {
-            if (String.IsNullOrEmpty(skillName) || profileId == 0 || String.IsNullOrEmpty(userName))
-                throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userName)} are invalid.");
+            if (String.IsNullOrEmpty(skillName) || profileId == 0 || String.IsNullOrEmpty(userId))
+                throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userId)} are invalid.");
 
             var skill = this.GetSkill(profileId, skillName);
-            var assessment = new Assessment() { SkillId = skill.SkillId, UserName = userName, Score = score };
+            var assessment = new Assessment() { SkillId = skill.SkillId, UserId = userId, Score = score };
 
             this.context.Assessments.Add(assessment);
             this.context.SaveChanges();
@@ -46,7 +46,7 @@ namespace GeeksDirectory.Infrastructure.Repositories
                 throw new ArgumentException(message: $"Arguments {nameof(skillName)}/{nameof(profileId)}/{nameof(userName)} are invalid.");
 
             var skill = this.GetSkill(profileId, skillName);
-            var assessment = skill.Assessments.Where(s => s.UserName == userName).SingleOrDefault()
+            var assessment = skill.Assessments.Where(s => s.User.UserName == userName).SingleOrDefault()
                 ?? throw new KeyNotFoundException("Assessment has not been found.");
 
             assessment.Score = score;
@@ -62,13 +62,14 @@ namespace GeeksDirectory.Infrastructure.Repositories
 
             Skill skill = this.GetSkill(profileId, skillName);
 
-            return skill.Assessments.Where(a => a.UserName == userName).Any();
+            return skill.Assessments.Where(a => a.User.UserName == userName).Any();
         }
 
         private Skill GetSkill(int profileId, string skillName)
         {
             return this.context.Skills
                 .Include(s => s.Assessments)
+                .ThenInclude(s => s.User)
                 .Where(s => s.ProfileId == profileId)
                 .Where(s => s.Name == skillName).SingleOrDefault()
                 ?? throw new KeyNotFoundException("Skill has not been found.");

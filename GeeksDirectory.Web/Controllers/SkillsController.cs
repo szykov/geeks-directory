@@ -27,7 +27,7 @@ namespace GeeksDirectory.Web.Controllers
     [ApiVersion("1.0")]
     [Consumes("application/json")]
     [Produces("application/json")]
-    public class SkillsController : ControllerBase
+    public class SkillsController : BaseApiController
     {
         private readonly IMediator mediator;
         private readonly ILogger logger;

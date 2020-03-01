@@ -39,7 +39,7 @@
         <div class="skill-form-actions" mat-dialog-actions>
             <button data-cy="skillCancel" mat-flat-button (click)="onCancel()">Cancel</button>
             <button data-cy="skillOk" type="submit" mat-flat-button color="primary" (click)="onSubmit()"
-                [disabled]="!skillForm.form.valid && isNew">
+                [disabled]="skillForm.form.invalid && isNew">
                 Ok
             </button>
         </div>

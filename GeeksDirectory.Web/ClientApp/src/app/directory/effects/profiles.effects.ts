@@ -74,7 +74,7 @@ export class ProfileEffects {
         this.actions$.pipe(
             ofType(SearchActions.searchProfiles),
             mergeMap(({ queryOptions }) => {
-                if (!queryOptions.query) {
+                if (!queryOptions.filter) {
                     return this.requestService
                         .getProfiles(queryOptions)
                         .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));

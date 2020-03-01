@@ -57,7 +57,7 @@ export class RequestService {
 
     public searchProfiles(queryOptions: QueryOptions): Observable<IProfilesEnvelope> {
         let urlBulder = new EndpointBuilder(CONFIG.api.connection.endpoints.searchProfiles)
-            .addQueryParam('query', queryOptions.query)
+            .addQueryParam('filter', queryOptions.filter)
             .addQueryParam('limit', queryOptions.limit.toString())
             .addQueryParam('offset', queryOptions.offset.toString());
 

@@ -28,7 +28,7 @@ namespace GeeksDirectory.Web.Controllers
     [ApiVersion("1.0")]
     [Consumes("application/json")]
     [Produces("application/json")]
-    public class ProfilesController : ControllerBase
+    public class ProfilesController : BaseApiController
     {
         private readonly IMediator mediator;
         private readonly ILogger logger;

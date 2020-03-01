@@ -6,7 +6,7 @@ namespace GeeksDirectory.Domain.Interfaces
     {
         Assessment? Get(int profileId, string skillName, string userName);
 
-        void Add(int profileId, string skillName, string userName, int score);
+        void Add(int profileId, string skillName, string userId, int score);
 
         bool Exists(int profileId, string skillName, string userName);
 

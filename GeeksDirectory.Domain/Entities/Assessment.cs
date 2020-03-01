@@ -1,23 +1,17 @@
 ﻿#nullable disable
 
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace GeeksDirectory.Domain.Entities
 {
     public class Assessment
     {
-        [Key]
         public int AssessmentId { get; set; }
 
-        public string UserName { get; set; }
+        public string UserId { get; set; }
 
-        [ForeignKey("UserName")]
         public ApplicationUser User { get; set; }
 
         public int SkillId { get; set; }
 
-        [ForeignKey("SkillId")]
         public Skill Skill { get; set; }
 
         public int Score { get; set; }

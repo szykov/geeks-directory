@@ -1,14 +1,11 @@
 ﻿#nullable disable
 
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GeeksDirectory.Domain.Entities
 {
     public class Skill
     {
-        [Key]
         public int SkillId { get; set; }
 
         public string Name { get; set; }
@@ -21,7 +18,6 @@ namespace GeeksDirectory.Domain.Entities
 
         public int ProfileId { get; set; }
 
-        [ForeignKey("ProfileId")]
         public GeekProfile Profile { get; set; }
     }
 }

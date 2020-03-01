@@ -1,32 +1,16 @@
 <div class="search-container">
     <mat-form-field class="search-bar animated fadeInUp" [@enter]>
-        <input
-            matInput
-            (keyup)="onKeyUpQuery($event.target.value, $event.code)"
-            (keyup.enter)="onChangeQuery(queryValue)"
-            data-cy="search"
-            placeholder="Search..."
-            [value]="queryValue"
-        />
-        <button
-            class="search-icon"
-            data-cy="submit"
-            mat-icon-button
-            matSuffix
-            (click)="onChangeQuery(queryValue)"
-            aria-label="search"
-        >
+        <input matInput (keyup)="onKeyUpFilter($event.target.value, $event.code)"
+            (keyup.enter)="onChangeFilter(filterValue)" data-cy="search" placeholder="Search..."
+            [value]="filterValue" />
+        <button class="search-icon" data-cy="submit" mat-icon-button matSuffix (click)="onChangeFilter(filterValue)"
+            aria-label="search">
             <mat-icon matSuffix>search</mat-icon>
         </button>
     </mat-form-field>
 
-    <gd-search-table
-        [loading]="loading$ | async"
-        [pageSize]="originLimit"
-        [profiles]="profiles$ | async"
-        (goToProfile)="onGoToProfile($event)"
-        (changePageIndex)="onChangePage($event)"
-        (changeOrder)="onChangeOrder($event)"
-    >
+    <gd-search-table [loading]="loading$ | async" [pageSize]="originLimit" [profiles]="profiles$ | async"
+        (goToProfile)="onGoToProfile($event)" (changePageIndex)="onChangePage($event)"
+        (changeOrder)="onChangeOrder($event)">
     </gd-search-table>
 </div>
