@@ -127,6 +127,9 @@ namespace GeeksDirectory.Web.Controllers
             var query = new GetMySkillEvaluationQuery(profileId, skillName);
             var assessment = await this.mediator.Send(query);
 
+            if (assessment == null) 
+                return this.NoContent();
+
             return this.Ok(assessment);
         }
     }

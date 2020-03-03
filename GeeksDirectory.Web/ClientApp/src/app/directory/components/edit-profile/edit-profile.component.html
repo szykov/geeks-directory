@@ -1,21 +1,45 @@
-<div *ngIf="profile && profileModel">
-    <gd-viewer-container title="{{ profile.fullName }}">
-        <ng-container>
-            <gd-profile-form [model]="profileModel" [editable]="editableProfile" (valid)="onValidChange($event)">
-            </gd-profile-form>
-        </ng-container>
+<form [formGroup]="profileForm" novalidate>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input data-cy="email" type="email" matInput id="email" name="email" [value]="profileForm.controls.email.value"
+            disabled />
+    </mat-form-field>
 
-        <div class="skills-header">
-            <span class="title-header">Skills</span>
-            <mat-divider></mat-divider>
-        </div>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input data-cy="name" type="text" matInput id="name" name="name" formControlName="name" />
+        <mat-error *ngIf="profileForm.controls['name'].invalid">
+            Name is required
+        </mat-error>
+    </mat-form-field>
 
-        <gd-profile-skills [skills]="profile.skills" [editable]="editableSkills" (editSkill)="onEditSkill($event)"
-            (newSkill)="onNewSkill()"></gd-profile-skills>
+    <mat-form-field>
+        <mat-label>Surname</mat-label>
+        <input data-cy="surname" type="text" matInput placeholder="Surname" formControlName="surname" id="surname"
+            name="surname" />
+        <mat-error *ngIf="profileForm.controls['surname'].invalid">
+            Surname is required
+        </mat-error>
+    </mat-form-field>
 
-        <div class="profile-actions" data-cy="update">
-            <button data-cy="submit" *ngIf="editableProfile" mat-flat-button color="primary" (click)="onSubmit()"
-                [disabled]="!isValid">Update</button>
-        </div>
-    </gd-viewer-container>
+    <mat-form-field *ngIf="profileForm.controls['middleName'] || editableProfile">
+        <mat-label>Middle Name</mat-label>
+        <input data-cy="middleName" type="text" matInput placeholder="Middle Name" formControlName="middleName"
+            id="middleName" name="middleName" />
+    </mat-form-field>
+
+    <gd-city-select formControlName="city" id="city" name="city" required></gd-city-select>
+</form>
+
+<div class="skills-header">
+    <span class="title-header">Skills</span>
+    <mat-divider></mat-divider>
+</div>
+
+<gd-profile-skills [skills]="skills" [editable]="editableSkills" (editSkill)="onEditSkill($event)"
+    (newSkill)="onNewSkill()"></gd-profile-skills>
+
+<div class="profile-actions" data-cy="update">
+    <button data-cy="submit" *ngIf="editableProfile" mat-flat-button color="primary" (click)="onSubmit()"
+        [disabled]="profileForm.invalid">Update</button>
 </div>

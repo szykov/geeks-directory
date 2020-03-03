@@ -6,7 +6,7 @@ using MediatR;
 
 namespace GeeksDirectory.Services.Queries
 {
-    public class GetMySkillEvaluationQuery : IRequest<AssessmentResponse>
+    public class GetMySkillEvaluationQuery : IRequest<AssessmentResponse?>
     {
         public readonly int ProfileId;
         public readonly string SkillName;

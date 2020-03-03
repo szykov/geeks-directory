@@ -161,13 +161,15 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPatch("me")]
         public async Task<ActionResult<GeekProfileResponse>> UpdatePersonalProfile([FromBody]GeekProfileModel model)
         {
-            var query = new UpdatePersonalProfileCommand(model);
-            var result = await this.mediator.Send(query);
+            var command = new UpdatePersonalProfileCommand(model);
+            var result = await this.mediator.Send(command);
 
             if (result.IsFailed)
                 return this.UnprocessableEntity(result);
 
-            var profile = new GetProfileQuery(result.Value);
+            var query = new GetProfileQuery(result.Value);
+            var profile = await this.mediator.Send(query);
+
             return this.Ok(profile);
         }
     }

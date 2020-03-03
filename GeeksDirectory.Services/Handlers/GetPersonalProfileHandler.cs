@@ -42,9 +42,9 @@ namespace GeeksDirectory.Services.Handlers
 
         public async Task<GeekProfileResponse> Handle(GetPersonalProfileQuery request, CancellationToken cancellationToken)
         {
-            var userName = await this.userManager.GetUserAsync(httpContext.User);
+            var user = await this.userManager.GetUserAsync(httpContext.User);
 
-            var profile = this.repository.GetProfileByUserName(userName.Email);
+            var profile = this.repository.GetProfileByUserName(user.Email);
             return this.mapper.Map<GeekProfileResponse>(profile);
         }
     }

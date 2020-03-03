@@ -26,7 +26,6 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
     public isAuth$: Observable<boolean>;
 
     public profile: IProfile;
-    public profileModel: ProfileModel;
 
     private unsubscribe: Subject<void> = new Subject();
 
@@ -38,7 +37,6 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.unsubscribe))
             .subscribe(profile => {
                 this.profile = { ...profile };
-                this.profileModel = ProfileModel.fromProfileResponse(profile);
                 this.cdr.detectChanges();
             });
 
@@ -55,12 +53,11 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
     }
 
     public onAddSkill() {
-        let skillModel = new SkillModel();
-        this.store.dispatch(ProfilesDetailsActions.openAddSkillDialog({ profileId: this.profileId, skillModel }));
+        this.store.dispatch(ProfilesDetailsActions.openAddSkillDialog({ profileId: this.profileId }));
     }
 
     public onEditSkill(skillModel: SkillModel) {
-        this.store.dispatch(ProfilesDetailsActions.openEditSkillDialog({ profileId: this.profileId, skillModel }));
+        this.store.dispatch(ProfilesDetailsActions.evaluateSkillDialog({ profileId: this.profileId, skillModel }));
     }
 
     ngOnDestroy() {

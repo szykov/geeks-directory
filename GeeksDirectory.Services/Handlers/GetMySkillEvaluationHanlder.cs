@@ -44,7 +44,7 @@ namespace GeeksDirectory.Services.Handlers
             var user = await this.userManager.GetUserAsync(httpContext.User);
 
             var assesment = this.repository.Get(request.ProfileId, request.SkillName, user.Id);
-            return this.mapper.Map<AssessmentResponse>(assesment);
+            return this.mapper.Map<AssessmentResponse?>(assesment);
         }
     }
 }

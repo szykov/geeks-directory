@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { ViewerContainerComponent, SkillDialogComponent, CitySelectComponent } from './components';
+import { ViewerContainerComponent, AddSkillDialogComponent, EvaluateSkillScoreComponent } from './components';
 import { MaterialModule } from './material.module';
 import {
     HasLowerCaseDirective,
@@ -13,6 +13,7 @@ import {
     NoWhiteSpaceDirective,
     SpecialCharacterDirective
 } from './validators';
+import { SkillScoreComponent, CitySelectComponent } from './controls';
 
 const VALIDATORS = [
     HasLowerCaseDirective,
@@ -23,9 +24,24 @@ const VALIDATORS = [
 ];
 
 @NgModule({
-    declarations: [ViewerContainerComponent, SkillDialogComponent, CitySelectComponent, VALIDATORS],
+    declarations: [
+        ViewerContainerComponent,
+        AddSkillDialogComponent,
+        EvaluateSkillScoreComponent,
+        CitySelectComponent,
+        SkillScoreComponent,
+        VALIDATORS
+    ],
     imports: [CommonModule, FormsModule, MaterialModule, FlexLayoutModule],
-    exports: [FormsModule, MaterialModule, FlexLayoutModule, ViewerContainerComponent, CitySelectComponent, VALIDATORS],
-    entryComponents: [SkillDialogComponent]
+    exports: [
+        FormsModule,
+        MaterialModule,
+        FlexLayoutModule,
+        ViewerContainerComponent,
+        SkillScoreComponent,
+        CitySelectComponent,
+        VALIDATORS
+    ],
+    entryComponents: [AddSkillDialogComponent, EvaluateSkillScoreComponent]
 })
 export class SharedModule {}

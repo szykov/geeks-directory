@@ -3,7 +3,7 @@ export class SkillModel {
     public description: string;
     public score;
 
-    constructor(name?: string, description?: string, score: number = 0) {
+    constructor(name?: string, description?: string, score?: number) {
         this.name = name;
         this.description = description;
         this.score = score;

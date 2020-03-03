@@ -1,7 +1,6 @@
 import { SkillModel } from '@app/models';
 
-export interface ISkillsDialogData {
-    isNew: boolean;
+export interface ISkillDialogData {
     profileId: number;
-    model: SkillModel;
+    model?: SkillModel;
 }

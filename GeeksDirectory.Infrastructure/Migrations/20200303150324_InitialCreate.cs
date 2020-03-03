@@ -228,1752 +228,1752 @@ namespace GeeksDirectory.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ee29ff17-1d92-4a35-ac7d-447424a5380b", 0, "426f0787-314c-464c-b636-9b596c588981", "sergey.zykov@mail.some", false, false, null, "SERGEY.ZYKOV@MAIL.SOME", "SERGEY.ZYKOV@MAIL.SOME", "AQAAAAEAACcQAAAAELNPWVS4j6We3qpkA9Sq91uPd0HWBGurkBtrRkQjRnmmmwnrCfTaWlng2zsLwTkXSA==", null, false, "8ed2d826-679e-4f4e-a2c0-492b4a7f5677", false, "sergey.zykov@mail.some" });
+                values: new object[] { "ee29ff17-1d92-4a35-ac7d-447424a5380b", 0, "91c9d581-4c0e-4d11-b5ce-769038c0085a", "sergey.zykov@mail.some", false, false, null, "SERGEY.ZYKOV@MAIL.SOME", "SERGEY.ZYKOV@MAIL.SOME", "AQAAAAEAACcQAAAAEHZjZqazeDBmIuvCa0YLpTiS/bhym8Poed4TpcH+wP1TXV1M2NcnnGPj8MJ4Phq/GA==", null, false, "8ed2d826-679e-4f4e-a2c0-492b4a7f5677", false, "sergey.zykov@mail.some" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "00472c98-79dc-46c8-938b-d14b388efeb4", 0, "ff82d58b-c02d-4579-a386-7df8e5cdf940", "sjaksic6l@pinterest.com", false, false, null, "SJAKSIC6L@PINTEREST.COM", "SJAKSIC6L@PINTEREST.COM", "AQAAAAEAACcQAAAAEPNm7tZuRyT+lwcrHtO+HHRGykEh6BeaJUwPyLWUd1CwWhFJwh86WwBg61MHhRJlug==", null, false, "624238cb-3f8e-4132-8e09-2e334b7f9d62", false, "sjaksic6l@pinterest.com" });
+                values: new object[] { "00472c98-79dc-46c8-938b-d14b388efeb4", 0, "73686782-15f1-4333-a032-8a3e8a3f3454", "sjaksic6l@pinterest.com", false, false, null, "SJAKSIC6L@PINTEREST.COM", "SJAKSIC6L@PINTEREST.COM", "AQAAAAEAACcQAAAAEA+/L00tgB+zG4M9NnsiC3pwfbf8XoONR5ARTOI7JJqv+GT5ffiMI55WQvRqbMDWfw==", null, false, "624238cb-3f8e-4132-8e09-2e334b7f9d62", false, "sjaksic6l@pinterest.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2df66934-18e8-4e4b-baa6-9b9adb43153f", 0, "2d3b23b7-57e6-4457-a933-444aae3a27fe", "wweerdenburg6k@zimbio.com", false, false, null, "WWEERDENBURG6K@ZIMBIO.COM", "WWEERDENBURG6K@ZIMBIO.COM", "AQAAAAEAACcQAAAAEEfF5SI42NHLt1H61YMy/Y+F2oYCxzOFL5A7lRd7sV99HqUqHucGgg7McgBvvAhjlw==", null, false, "8bc15d0d-ba41-4d98-97d5-1468925e82ef", false, "wweerdenburg6k@zimbio.com" });
+                values: new object[] { "2df66934-18e8-4e4b-baa6-9b9adb43153f", 0, "3a2f8fc1-d626-45d8-9a4a-4b8ee0e2e00d", "wweerdenburg6k@zimbio.com", false, false, null, "WWEERDENBURG6K@ZIMBIO.COM", "WWEERDENBURG6K@ZIMBIO.COM", "AQAAAAEAACcQAAAAEKBKaObEiMAXmdEkZ73YeRvi/CMFQozYHsIqhlvwLi0rMhliQgZ7MQX+st1yNvGxOw==", null, false, "8bc15d0d-ba41-4d98-97d5-1468925e82ef", false, "wweerdenburg6k@zimbio.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ea565245-850d-493d-9c56-08de622d7ad4", 0, "6ee431c6-dd17-4128-ab20-b54f6c24e547", "aricards6j@sogou.com", false, false, null, "ARICARDS6J@SOGOU.COM", "ARICARDS6J@SOGOU.COM", "AQAAAAEAACcQAAAAEEQd59h2hIc5kOzaVviPHdJKNbddY4EMNme8o6cJ3Q7cX3FSEz/QtD2g4P9kVwJpyg==", null, false, "9ab0a4d1-bf59-4261-9dea-2cefedd19b7f", false, "aricards6j@sogou.com" });
+                values: new object[] { "ea565245-850d-493d-9c56-08de622d7ad4", 0, "6b049916-c6cb-4666-b2f2-3249f8e856e2", "aricards6j@sogou.com", false, false, null, "ARICARDS6J@SOGOU.COM", "ARICARDS6J@SOGOU.COM", "AQAAAAEAACcQAAAAEP94aXz/aJKt7SoifRelouVuBgWG3Ny6DTmXR3DBmGvYoXLNp36p8W81lXej/+LWbA==", null, false, "9ab0a4d1-bf59-4261-9dea-2cefedd19b7f", false, "aricards6j@sogou.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5c05718f-45b5-44ea-8b21-477f87a6eb7b", 0, "f456aba8-f01a-4653-b905-0e9ff16dfa38", "mtruder6i@irs.gov", false, false, null, "MTRUDER6I@IRS.GOV", "MTRUDER6I@IRS.GOV", "AQAAAAEAACcQAAAAENPqq/ljAvlPO9bVsXJPXKMsof1zxcTH2ItM84UDFSSqs5m0dFUEZJbvahl8sdh5bA==", null, false, "60d362ae-1a68-447f-98f4-7f61b117f360", false, "mtruder6i@irs.gov" });
+                values: new object[] { "5c05718f-45b5-44ea-8b21-477f87a6eb7b", 0, "be8e8382-a65e-4545-9b2c-3d69daf2fd4f", "mtruder6i@irs.gov", false, false, null, "MTRUDER6I@IRS.GOV", "MTRUDER6I@IRS.GOV", "AQAAAAEAACcQAAAAEPQxj3tWXKc62rqmBBZygDpKP7CqnzziK2+1hH3YkEL47dtpOQC/KercteAgbIcU+A==", null, false, "60d362ae-1a68-447f-98f4-7f61b117f360", false, "mtruder6i@irs.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "64c4ebfb-6a43-4cc5-99db-53d751c8c830", 0, "84351e3e-c860-43d0-b1df-3dd2fc86dba0", "breily6h@accuweather.com", false, false, null, "BREILY6H@ACCUWEATHER.COM", "BREILY6H@ACCUWEATHER.COM", "AQAAAAEAACcQAAAAEMFmAvkZXeWBZ+gvpOiRztL/Y+CTU2nyXP5fq/hRgzeiy7mFzM5opoUpRENflxAGwQ==", null, false, "a2edbc8e-af9c-42eb-ace5-354383c5de12", false, "breily6h@accuweather.com" });
+                values: new object[] { "64c4ebfb-6a43-4cc5-99db-53d751c8c830", 0, "574a9a58-cc87-4e3a-9a6e-d27d9f648685", "breily6h@accuweather.com", false, false, null, "BREILY6H@ACCUWEATHER.COM", "BREILY6H@ACCUWEATHER.COM", "AQAAAAEAACcQAAAAEKXO9GgTLuOSc/cMqFztb1/XXRAkdJeF7G1i5u8N2qHjuDf0YSqgZXzQZs254PzeVw==", null, false, "a2edbc8e-af9c-42eb-ace5-354383c5de12", false, "breily6h@accuweather.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "babaf225-408d-4b31-a5a3-d06325766d60", 0, "ebc7923a-3a37-42ab-8f51-249c7717f77e", "fsetterfield6g@gov.uk", false, false, null, "FSETTERFIELD6G@GOV.UK", "FSETTERFIELD6G@GOV.UK", "AQAAAAEAACcQAAAAEBmOCpDhgYTBRXOBqUSLG3eK58HFEmwPB4P4268EfLiVpmbM8oDp7T+FZtFy7eqciw==", null, false, "bac2820c-5e26-4b56-b02c-459bf83a4bdc", false, "fsetterfield6g@gov.uk" });
+                values: new object[] { "babaf225-408d-4b31-a5a3-d06325766d60", 0, "e55c3ef3-994f-42c4-9c0a-07db1618502c", "fsetterfield6g@gov.uk", false, false, null, "FSETTERFIELD6G@GOV.UK", "FSETTERFIELD6G@GOV.UK", "AQAAAAEAACcQAAAAEK7BlIQd8oKo5+855BfhLqxQpW9sWctViDMiJ0uDpUvwIzrngbHJOKqmn6AY0YXvCA==", null, false, "bac2820c-5e26-4b56-b02c-459bf83a4bdc", false, "fsetterfield6g@gov.uk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6e15cae0-e819-4c6b-863e-d6e46348c80a", 0, "c015baf3-61b0-45c1-a40d-0ebd770b5590", "rpagnin6f@etsy.com", false, false, null, "RPAGNIN6F@ETSY.COM", "RPAGNIN6F@ETSY.COM", "AQAAAAEAACcQAAAAEP4sK2TLgt8SM5kvX/6kdkGfpZ6iqrtOejND6nIrwt5B1yTQzvpir7PJLvMdnHkRtg==", null, false, "3f94b114-841d-4a75-962b-ca60b34f7d38", false, "rpagnin6f@etsy.com" });
+                values: new object[] { "6e15cae0-e819-4c6b-863e-d6e46348c80a", 0, "09270568-76cf-424f-8f51-a0034c609fe0", "rpagnin6f@etsy.com", false, false, null, "RPAGNIN6F@ETSY.COM", "RPAGNIN6F@ETSY.COM", "AQAAAAEAACcQAAAAEDbsC2Vtcvbp8/SBxk/NSX2xucIm90BnycFeSOhe5nBrh+1nntKocdzrStcL/ylMTg==", null, false, "3f94b114-841d-4a75-962b-ca60b34f7d38", false, "rpagnin6f@etsy.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2b703a56-221a-4e28-9b75-95112f324170", 0, "2b19893b-0cf4-4da8-80d1-270d8ce94b0c", "brosenbarg6e@goo.ne.jp", false, false, null, "BROSENBARG6E@GOO.NE.JP", "BROSENBARG6E@GOO.NE.JP", "AQAAAAEAACcQAAAAEJTt1pqxPmt/qNivlGG6fho8h7nzSW2PPiSxxK4EbaJSneqkaaDMCjkBosMRTwEyFA==", null, false, "4da37d17-9e72-42f0-9be9-eea6ec985c64", false, "brosenbarg6e@goo.ne.jp" });
+                values: new object[] { "2b703a56-221a-4e28-9b75-95112f324170", 0, "53bb8844-ce4b-483c-bb2e-24499d64f4fd", "brosenbarg6e@goo.ne.jp", false, false, null, "BROSENBARG6E@GOO.NE.JP", "BROSENBARG6E@GOO.NE.JP", "AQAAAAEAACcQAAAAECzfdK9TQA4HFgjWC2Pa58f6QMNnWN+YZARbCVxz4MauBx4jhyuluby29lQManR5hA==", null, false, "4da37d17-9e72-42f0-9be9-eea6ec985c64", false, "brosenbarg6e@goo.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5df7c883-7327-49ac-a4c8-4744f271d01f", 0, "b29bfc96-38d4-4b73-ae76-c65d63771fcc", "gmarqyes6d@blogger.com", false, false, null, "GMARQYES6D@BLOGGER.COM", "GMARQYES6D@BLOGGER.COM", "AQAAAAEAACcQAAAAEM4cqKeEHSUQMUCs1l0pR4eOoqBWYqbn0bt3P9EoK6ereLD0K1jm5y0pPz+05CXYQg==", null, false, "e762aa47-0561-4f16-b83d-31e2ca21d5ac", false, "gmarqyes6d@blogger.com" });
+                values: new object[] { "5df7c883-7327-49ac-a4c8-4744f271d01f", 0, "1a061cc0-c16e-48d7-ba84-7712807206c8", "gmarqyes6d@blogger.com", false, false, null, "GMARQYES6D@BLOGGER.COM", "GMARQYES6D@BLOGGER.COM", "AQAAAAEAACcQAAAAELVygF4cIUe2GOA4znshyRqRfrV2kQDDaUUd1q515gfDvIdZVcbfg6rpx4eQJDtaeg==", null, false, "e762aa47-0561-4f16-b83d-31e2ca21d5ac", false, "gmarqyes6d@blogger.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0969766d-5bcf-4232-b1d9-f1bb511f0516", 0, "539f21a7-77c7-49c7-8285-56b015c60fa2", "wstearne6c@flickr.com", false, false, null, "WSTEARNE6C@FLICKR.COM", "WSTEARNE6C@FLICKR.COM", "AQAAAAEAACcQAAAAEBuUeKSGeMyOgUeM6cyHFfI/nBhcw70bL9Vv+yGMermi4hqaY46Mbe6CvvbeBw/OJQ==", null, false, "f26c6109-f627-4c8f-a34b-beb5890bf545", false, "wstearne6c@flickr.com" });
+                values: new object[] { "0969766d-5bcf-4232-b1d9-f1bb511f0516", 0, "c2f07b9b-73f5-4c93-98e0-3139305edbb1", "wstearne6c@flickr.com", false, false, null, "WSTEARNE6C@FLICKR.COM", "WSTEARNE6C@FLICKR.COM", "AQAAAAEAACcQAAAAEI6RXKb5xguJQy1rQpZriKYAHhypSY2B1NchKFp74dJo8KIyQFLlYaemQ1FK1q71Vg==", null, false, "f26c6109-f627-4c8f-a34b-beb5890bf545", false, "wstearne6c@flickr.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f10c7bc8-015e-454e-adc8-ec816bde5ccc", 0, "9fddc8bf-4e16-4f8c-958a-a5d9680f7cbd", "lvango6b@hibu.com", false, false, null, "LVANGO6B@HIBU.COM", "LVANGO6B@HIBU.COM", "AQAAAAEAACcQAAAAEFrI+muHLrHxMWo0lL2je2eMhFxQEiQW18IpqqlA2cGZlJC9jVbEobiH3CwCbunr0Q==", null, false, "1dd477e2-c9b2-4444-a749-2cb51b9ebf88", false, "lvango6b@hibu.com" });
+                values: new object[] { "f10c7bc8-015e-454e-adc8-ec816bde5ccc", 0, "a651e8d3-1580-419f-bcd5-2a4d041ba51b", "lvango6b@hibu.com", false, false, null, "LVANGO6B@HIBU.COM", "LVANGO6B@HIBU.COM", "AQAAAAEAACcQAAAAEFkFpokQYltXLjMJefQZZeanBr3PDugoTMxkr5dQYorEwZ6RPNVV8+uh3V7I9YUMEg==", null, false, "1dd477e2-c9b2-4444-a749-2cb51b9ebf88", false, "lvango6b@hibu.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "af19630d-a40b-42e6-99cd-5633578c64c0", 0, "dfe92ef7-f318-4d29-ad5e-b7ecfda436c8", "nscotney6a@phoca.cz", false, false, null, "NSCOTNEY6A@PHOCA.CZ", "NSCOTNEY6A@PHOCA.CZ", "AQAAAAEAACcQAAAAELGe2MDBWZyT8QrSQYKLJVLiRDj4epIz6U5neUidqlPlHkH7So+Jw2YVIjND0IEULA==", null, false, "f741c615-529f-47c7-9f9b-f88c15bdea2b", false, "nscotney6a@phoca.cz" });
+                values: new object[] { "af19630d-a40b-42e6-99cd-5633578c64c0", 0, "37e718b3-e3d1-4db5-bf33-a64d365d540a", "nscotney6a@phoca.cz", false, false, null, "NSCOTNEY6A@PHOCA.CZ", "NSCOTNEY6A@PHOCA.CZ", "AQAAAAEAACcQAAAAEHbSBCEe6LZ1LtgsF0XRGtjhNrVG/PIIe3EWhyDoH6dU07zKKmrQ1hRa3satjf5oHA==", null, false, "f741c615-529f-47c7-9f9b-f88c15bdea2b", false, "nscotney6a@phoca.cz" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d7306c14-e4de-4ac3-847e-231b0d4a85a7", 0, "950af05a-831c-478b-a009-0b0381476599", "dscarffe69@ezinearticles.com", false, false, null, "DSCARFFE69@EZINEARTICLES.COM", "DSCARFFE69@EZINEARTICLES.COM", "AQAAAAEAACcQAAAAEMstyLFQpcD5YqkRijFLr4w/EyLJwdg+1jVIW6dKSezbBCf4r1/eari/drN1xW5bXQ==", null, false, "6d4d69c6-422f-4454-9b12-c13038342298", false, "dscarffe69@ezinearticles.com" });
+                values: new object[] { "d7306c14-e4de-4ac3-847e-231b0d4a85a7", 0, "420e4fcd-1ece-4f87-89e1-11003f612764", "dscarffe69@ezinearticles.com", false, false, null, "DSCARFFE69@EZINEARTICLES.COM", "DSCARFFE69@EZINEARTICLES.COM", "AQAAAAEAACcQAAAAEJ/BJ07DOgJ2Z5U8YE5wSC9fpc4m/D+HryO42HhgBJ9U/0Ln8jHzgH9FDrLFa+0XQg==", null, false, "6d4d69c6-422f-4454-9b12-c13038342298", false, "dscarffe69@ezinearticles.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5f8645f2-c3d9-4c69-acde-90750ceb59dc", 0, "85922af9-401d-4eaa-90e3-e35323f2d1c1", "ckearn68@nyu.edu", false, false, null, "CKEARN68@NYU.EDU", "CKEARN68@NYU.EDU", "AQAAAAEAACcQAAAAECGpPNO+I2Vq3btLn6t5LFLPRb18Aq8I0SvopxUQK72kd05rQ+OvX1disuPcAfPknA==", null, false, "b0da9e09-ae42-4c8e-9946-aca61dbd530a", false, "ckearn68@nyu.edu" });
+                values: new object[] { "5f8645f2-c3d9-4c69-acde-90750ceb59dc", 0, "bff1c20e-4f05-45a3-abba-97b552460ad7", "ckearn68@nyu.edu", false, false, null, "CKEARN68@NYU.EDU", "CKEARN68@NYU.EDU", "AQAAAAEAACcQAAAAEOQNpPvC+FKB8VX33VNt84f9RbqdDexTJa2LQGaiY7rOJmwoBfIJw9c6eRUC5YkM6w==", null, false, "b0da9e09-ae42-4c8e-9946-aca61dbd530a", false, "ckearn68@nyu.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3e453235-7ef6-47c9-920a-aa2555b6f2e4", 0, "7ec75595-a546-4a5e-8a36-01190c032314", "copdenort67@go.com", false, false, null, "COPDENORT67@GO.COM", "COPDENORT67@GO.COM", "AQAAAAEAACcQAAAAEDBOqTpGMi5WX2vMAlrVYArudekx+FnyH+1EjslzVm1dFC+mtqOGsYdWvvG8pwsSkw==", null, false, "0e74da3b-0c6e-468c-adfc-154a3720180c", false, "copdenort67@go.com" });
+                values: new object[] { "3e453235-7ef6-47c9-920a-aa2555b6f2e4", 0, "0dcb89ce-67d7-4161-bf00-b9c8ed92a68c", "copdenort67@go.com", false, false, null, "COPDENORT67@GO.COM", "COPDENORT67@GO.COM", "AQAAAAEAACcQAAAAEEKWfQ4Nyxlhel7jEleiJMu+BGMK2Rmwpw8NCwOI88b+BghqLUsyFNMSECzJFlDtow==", null, false, "0e74da3b-0c6e-468c-adfc-154a3720180c", false, "copdenort67@go.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1b956f9b-94bc-44fc-8af1-95553da08317", 0, "863746b1-8e51-4b50-bb86-b570173ab222", "daverall66@google.pl", false, false, null, "DAVERALL66@GOOGLE.PL", "DAVERALL66@GOOGLE.PL", "AQAAAAEAACcQAAAAEINBZ7lpwwNnZa3W5/7055rfbms26IRERY2Ia+H+RYkJSnRHv/alSbQp1JTY0Gz51g==", null, false, "7abc2a91-630d-4450-82a5-db15b6a52c97", false, "daverall66@google.pl" });
+                values: new object[] { "1b956f9b-94bc-44fc-8af1-95553da08317", 0, "c62b3d5b-0cb9-458d-b17b-f1e3742e8c9b", "daverall66@google.pl", false, false, null, "DAVERALL66@GOOGLE.PL", "DAVERALL66@GOOGLE.PL", "AQAAAAEAACcQAAAAEN5SZ5hxH/q1Zqpl/nYN00S44DSUrT+nHM0M7hQp4sW7XFOpL69vWcGwtlV7UXJqFA==", null, false, "7abc2a91-630d-4450-82a5-db15b6a52c97", false, "daverall66@google.pl" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4a0ceea7-091e-4028-9a8b-2fe8581a97b7", 0, "834c00f2-2e81-4802-9244-de6594b4638b", "dpigott65@mashable.com", false, false, null, "DPIGOTT65@MASHABLE.COM", "DPIGOTT65@MASHABLE.COM", "AQAAAAEAACcQAAAAEAsM0lQVr3+Z724Bx9/xBTnOCpBeBgzB31+DIiUompteCFTxFlyySXO0U5UtJp2X4A==", null, false, "a4820aea-fbd4-4a86-98ee-6d0898e4f842", false, "dpigott65@mashable.com" });
+                values: new object[] { "4a0ceea7-091e-4028-9a8b-2fe8581a97b7", 0, "df85c25b-198e-4884-b86b-305b53b907c4", "dpigott65@mashable.com", false, false, null, "DPIGOTT65@MASHABLE.COM", "DPIGOTT65@MASHABLE.COM", "AQAAAAEAACcQAAAAEN3D+1JV7sGGY9BBqEeUU3QpeETPMeggNs92vERHHUK8R3LotZeI6CtsKbRpAswRDA==", null, false, "a4820aea-fbd4-4a86-98ee-6d0898e4f842", false, "dpigott65@mashable.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "aa9a69a7-9e90-4db0-8bb6-cbfe36de40f1", 0, "70b2fea9-7993-4127-b560-735999f01496", "gbarke6m@sciencedirect.com", false, false, null, "GBARKE6M@SCIENCEDIRECT.COM", "GBARKE6M@SCIENCEDIRECT.COM", "AQAAAAEAACcQAAAAEIf5D/0k0vomNmw9C9PJKJFZ6hpkjVo4M9uBTaf+HVMbfN+HlJ0yRk++WigGw6OLIQ==", null, false, "4e734d6d-a329-405d-8f02-4e7b39e85476", false, "gbarke6m@sciencedirect.com" });
+                values: new object[] { "aa9a69a7-9e90-4db0-8bb6-cbfe36de40f1", 0, "538605e3-8490-4295-894d-4ec6da1782b1", "gbarke6m@sciencedirect.com", false, false, null, "GBARKE6M@SCIENCEDIRECT.COM", "GBARKE6M@SCIENCEDIRECT.COM", "AQAAAAEAACcQAAAAECHTvbc5Joe3A90Gj/yfxjVkwlAlxlRqgrLI6AuQTCKpZBjIrh6DODrdJEeOh5/Gqw==", null, false, "4e734d6d-a329-405d-8f02-4e7b39e85476", false, "gbarke6m@sciencedirect.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e3c2135e-1714-4bfa-844c-ea0bedcfbda0", 0, "67de084a-124b-405f-9232-613c957290c5", "harling6n@theglobeandmail.com", false, false, null, "HARLING6N@THEGLOBEANDMAIL.COM", "HARLING6N@THEGLOBEANDMAIL.COM", "AQAAAAEAACcQAAAAEFZ98L2eElNfTc8UsI0CvxIEmIZes9wIC8Ql5jNr9AmvAURaZb3nnBNdUE/NVqI+tA==", null, false, "d8c438e8-6964-48d4-939e-be2e30931a16", false, "harling6n@theglobeandmail.com" });
+                values: new object[] { "e3c2135e-1714-4bfa-844c-ea0bedcfbda0", 0, "f2b81490-1d89-4683-8ce6-dc9a2c40b4e8", "harling6n@theglobeandmail.com", false, false, null, "HARLING6N@THEGLOBEANDMAIL.COM", "HARLING6N@THEGLOBEANDMAIL.COM", "AQAAAAEAACcQAAAAEEhaxruzPtvR0wnDdC+6Jw//iGLG+QEzxLFX7O5V8vHLjWSXZ6TiejdrBNJBDFvkRw==", null, false, "d8c438e8-6964-48d4-939e-be2e30931a16", false, "harling6n@theglobeandmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e72eeedc-e367-44ba-8bbb-f6703c48f6a1", 0, "fcb7dab7-03b8-48b9-b66a-26c842d47ca9", "gbeek6o@360.cn", false, false, null, "GBEEK6O@360.CN", "GBEEK6O@360.CN", "AQAAAAEAACcQAAAAEKkVpQixCiCQ4HnSHQsS7UeFxzCKDLkN9SxGYtyetJfkB3HNlCVUMprCNsJ60m55og==", null, false, "3badfac1-a7ad-4df9-9e94-56bb56b0a445", false, "gbeek6o@360.cn" });
+                values: new object[] { "e72eeedc-e367-44ba-8bbb-f6703c48f6a1", 0, "5dc427c7-59ee-44d3-9057-ba09e083abc6", "gbeek6o@360.cn", false, false, null, "GBEEK6O@360.CN", "GBEEK6O@360.CN", "AQAAAAEAACcQAAAAEPsZqzQcZpbOW6F/l4qq3NCnJULwmWjbzCAnpCGraYzSkRSDLWWN4qFcRbdhSfjMug==", null, false, "3badfac1-a7ad-4df9-9e94-56bb56b0a445", false, "gbeek6o@360.cn" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6daabfae-0eef-453d-846b-f4ff0800ef59", 0, "2025b904-850f-4c1c-ace1-697d1a3c43ea", "ibache6p@netvibes.com", false, false, null, "IBACHE6P@NETVIBES.COM", "IBACHE6P@NETVIBES.COM", "AQAAAAEAACcQAAAAEP+6iBBYpyBYKbiE8QTIHQlRFomztE/RydA8agWaGISPpjbhMb9O9+SsMKT8j4uoPw==", null, false, "20a8de44-442c-4280-980f-1f89d3842e79", false, "ibache6p@netvibes.com" });
+                values: new object[] { "6daabfae-0eef-453d-846b-f4ff0800ef59", 0, "0fdd8f9b-b19c-4469-88ea-fd0600641002", "ibache6p@netvibes.com", false, false, null, "IBACHE6P@NETVIBES.COM", "IBACHE6P@NETVIBES.COM", "AQAAAAEAACcQAAAAEJjT/OrM0urOSMP3RJ50pq6YXzhv5KdxLdmrJFd1khM0k7m9y9JkdkDHBPcy77GwAQ==", null, false, "20a8de44-442c-4280-980f-1f89d3842e79", false, "ibache6p@netvibes.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "50a55d26-7b1b-464b-9a49-78f3ebb19f7b", 0, "41649c69-a87b-4954-87d7-5caf8fc11e99", "oargue77@jugem.jp", false, false, null, "OARGUE77@JUGEM.JP", "OARGUE77@JUGEM.JP", "AQAAAAEAACcQAAAAEO7D8DZRXFhzDgBdCSwCsu7NUsLCBrdIiNHi8L40w20wQghXi1NMaruqpwZ6EqJOoA==", null, false, "08b64ad8-8fcc-458d-9d12-0a7eb379f69d", false, "oargue77@jugem.jp" });
+                values: new object[] { "50a55d26-7b1b-464b-9a49-78f3ebb19f7b", 0, "348e350f-ae24-47d2-a680-72f3d5c835f5", "oargue77@jugem.jp", false, false, null, "OARGUE77@JUGEM.JP", "OARGUE77@JUGEM.JP", "AQAAAAEAACcQAAAAEE4c6eyucRE3OO/xnDliEkLlXKaWXlFcAWZe88+WuJQIzummgl/lVqmeyGZbZQFMYQ==", null, false, "08b64ad8-8fcc-458d-9d12-0a7eb379f69d", false, "oargue77@jugem.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e624c321-9c64-4a42-bb78-be56e28815f0", 0, "340bd399-71ba-4a74-92c9-a0d0fd0245cd", "chuddlestone76@blogtalkradio.com", false, false, null, "CHUDDLESTONE76@BLOGTALKRADIO.COM", "CHUDDLESTONE76@BLOGTALKRADIO.COM", "AQAAAAEAACcQAAAAEME3iQXb9q94P5MtG5R5IMYRrZGJT1VCpfUlwhDhZkBtIKuR+U11bEMU/JyiUh+o5g==", null, false, "f605b31a-75fd-4fda-bd39-b7cbc7953c24", false, "chuddlestone76@blogtalkradio.com" });
+                values: new object[] { "e624c321-9c64-4a42-bb78-be56e28815f0", 0, "4fdf4b04-ba90-4ba9-8924-70deadd667e7", "chuddlestone76@blogtalkradio.com", false, false, null, "CHUDDLESTONE76@BLOGTALKRADIO.COM", "CHUDDLESTONE76@BLOGTALKRADIO.COM", "AQAAAAEAACcQAAAAEH2Rclyfv0DNPwtwyGx8xT2D7fjaaI/uJ32+LUtvkyh/gnC6bUxZ1nEidm6oFL9hZw==", null, false, "f605b31a-75fd-4fda-bd39-b7cbc7953c24", false, "chuddlestone76@blogtalkradio.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e5e528e6-6d8d-41ad-9725-611c134eed5f", 0, "4f6656ba-8d68-4fa4-8076-37930e582d9e", "epatillo75@nih.gov", false, false, null, "EPATILLO75@NIH.GOV", "EPATILLO75@NIH.GOV", "AQAAAAEAACcQAAAAEPCiTllvaHTmJtQxH0+4embz2BpS7qUkJS6D37jq7ppr88wdjpaDZHALRCXDcsSavw==", null, false, "8ad911d7-c93a-4e0e-8de9-929450b7e23f", false, "epatillo75@nih.gov" });
+                values: new object[] { "e5e528e6-6d8d-41ad-9725-611c134eed5f", 0, "f07ee473-7193-4712-bab4-93cecb1a550f", "epatillo75@nih.gov", false, false, null, "EPATILLO75@NIH.GOV", "EPATILLO75@NIH.GOV", "AQAAAAEAACcQAAAAEBu88iPYW8OjeCIpgyrwcOQ86E12eqPylj7/s9I3dsCUA0MnqQkWAwp6Vw6J7gMNvQ==", null, false, "8ad911d7-c93a-4e0e-8de9-929450b7e23f", false, "epatillo75@nih.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a2785664-015c-4f0e-81bd-139cbdd05818", 0, "8deb85cc-9ad5-4dbf-8238-2ae72532d348", "igwyther74@tuttocitta.it", false, false, null, "IGWYTHER74@TUTTOCITTA.IT", "IGWYTHER74@TUTTOCITTA.IT", "AQAAAAEAACcQAAAAEKNnv8HNXUMExT8DguxOAx+5jVKirjzU6za805aDGbETGRPN+Enp6bTDd59M69h5tQ==", null, false, "49ac6f9b-fece-4145-9384-0035ab49b53d", false, "igwyther74@tuttocitta.it" });
+                values: new object[] { "a2785664-015c-4f0e-81bd-139cbdd05818", 0, "7ca97c3d-1e2a-4fb5-af32-4f7b99db1289", "igwyther74@tuttocitta.it", false, false, null, "IGWYTHER74@TUTTOCITTA.IT", "IGWYTHER74@TUTTOCITTA.IT", "AQAAAAEAACcQAAAAEDqVtU8LZQvmSeHGvIlYz32UNYKuebKb0ysG8s1PI2/dHGpGijSWL/EIM3dL6Mrh5w==", null, false, "49ac6f9b-fece-4145-9384-0035ab49b53d", false, "igwyther74@tuttocitta.it" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "20214263-f965-405d-bbb4-e521e95df499", 0, "58c070cd-8f1f-4dd9-8805-f770343c0f2b", "ahechlin73@live.com", false, false, null, "AHECHLIN73@LIVE.COM", "AHECHLIN73@LIVE.COM", "AQAAAAEAACcQAAAAEO3wx/bPH1JpKP7DDtO7gf4s/0qvFJVECx8zCxSgFN7jt7sJVryjgdzAgl+mhf5cGA==", null, false, "d44a3b24-d34b-41cc-a553-c8303047a69a", false, "ahechlin73@live.com" });
+                values: new object[] { "20214263-f965-405d-bbb4-e521e95df499", 0, "cf87282d-1908-4be8-9957-6e7c41245bcd", "ahechlin73@live.com", false, false, null, "AHECHLIN73@LIVE.COM", "AHECHLIN73@LIVE.COM", "AQAAAAEAACcQAAAAEG0fudUI4fvBlhtIby4yt2jFKDv1AZ8I9F/u+K3aSK6w1OTYKMzJE4yg3QVtvRopKQ==", null, false, "d44a3b24-d34b-41cc-a553-c8303047a69a", false, "ahechlin73@live.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "78446df1-040e-48fa-a8ff-bc7a01b7e732", 0, "de356e6a-f670-4288-adc9-16bb34be054d", "hthaine72@blogs.com", false, false, null, "HTHAINE72@BLOGS.COM", "HTHAINE72@BLOGS.COM", "AQAAAAEAACcQAAAAEGRcsrcOEEETFksbalWtOdY4yyVYAT0gt0UAl9uKhp3CsZ68rVf9hQEo7rTnrgcd6w==", null, false, "ccdfde8c-c994-4839-babf-c84dce267faa", false, "hthaine72@blogs.com" });
+                values: new object[] { "78446df1-040e-48fa-a8ff-bc7a01b7e732", 0, "5cf3658e-1bee-403a-b537-a9ae6d17c6a7", "hthaine72@blogs.com", false, false, null, "HTHAINE72@BLOGS.COM", "HTHAINE72@BLOGS.COM", "AQAAAAEAACcQAAAAEKpmF/SWU3ze8koY2a+EPVpcuE0+HJgJrSUb6GNutceKpoNV2DGl4IaewJlMo37StA==", null, false, "ccdfde8c-c994-4839-babf-c84dce267faa", false, "hthaine72@blogs.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "784d9e07-d6ee-4589-a34a-57c140fa6026", 0, "8aa997d7-f918-4d81-92e1-99fdfd9adccf", "fryburn71@jalbum.net", false, false, null, "FRYBURN71@JALBUM.NET", "FRYBURN71@JALBUM.NET", "AQAAAAEAACcQAAAAEFhlDEcDwjNuJJbuavbktemB05lkIy9UGrJ2O0tg9fWJdguU5YpONV7RRN5neRlS5g==", null, false, "bf30a6f7-cf1f-4aaa-8bde-bb3b7bf0eeda", false, "fryburn71@jalbum.net" });
+                values: new object[] { "784d9e07-d6ee-4589-a34a-57c140fa6026", 0, "16e278f2-4091-4115-b497-bfff2f0e81d3", "fryburn71@jalbum.net", false, false, null, "FRYBURN71@JALBUM.NET", "FRYBURN71@JALBUM.NET", "AQAAAAEAACcQAAAAEGebutOXFdc9d4YLe6phnwnk/9raInZs51j+yoc2L0T+mRStDev61V5ZdX4a1Rh7tA==", null, false, "bf30a6f7-cf1f-4aaa-8bde-bb3b7bf0eeda", false, "fryburn71@jalbum.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2d6a5ddb-7ed5-426d-a19f-f9deb629e2cc", 0, "b03ff937-2d3d-42f8-9c45-f536dfe014be", "lmailey70@abc.net.au", false, false, null, "LMAILEY70@ABC.NET.AU", "LMAILEY70@ABC.NET.AU", "AQAAAAEAACcQAAAAEJ5pkojQ4znwuemgKsUoCM6GipU43K3rE2aFcjA0FWkfcLG+8pRTqM6jxH/LjVtL1g==", null, false, "08d5e56d-a4b2-4334-8f49-84c43e5c3a5a", false, "lmailey70@abc.net.au" });
+                values: new object[] { "2d6a5ddb-7ed5-426d-a19f-f9deb629e2cc", 0, "d031cdb1-1d11-40fe-ab64-3a5bf4fdb627", "lmailey70@abc.net.au", false, false, null, "LMAILEY70@ABC.NET.AU", "LMAILEY70@ABC.NET.AU", "AQAAAAEAACcQAAAAEABe4R2ZBBsGW0/68jt0oHaoXdef8j6ZCb8eDedxz20LY1xeGqyKNaetFdHAEpLrQw==", null, false, "08d5e56d-a4b2-4334-8f49-84c43e5c3a5a", false, "lmailey70@abc.net.au" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "72e10181-6a59-4f50-8176-92ae6cf68c61", 0, "e9e942e4-ff84-44f1-8713-17721053ddcd", "cwaliszek64@sciencedirect.com", false, false, null, "CWALISZEK64@SCIENCEDIRECT.COM", "CWALISZEK64@SCIENCEDIRECT.COM", "AQAAAAEAACcQAAAAEKZe8OziYce412U77IOISy2jLfh2p2MltyfKanILSpy7pgzOsDeBy2rjoTtwTMR2Zg==", null, false, "7f055500-2cb5-4e57-94d4-d334b13c90f4", false, "cwaliszek64@sciencedirect.com" });
+                values: new object[] { "72e10181-6a59-4f50-8176-92ae6cf68c61", 0, "a07e6509-850d-4159-be62-0a6b22b010fe", "cwaliszek64@sciencedirect.com", false, false, null, "CWALISZEK64@SCIENCEDIRECT.COM", "CWALISZEK64@SCIENCEDIRECT.COM", "AQAAAAEAACcQAAAAEMfGqRrgPqLpsvUOVx7i4A3DCQpdqmwIUfIidwDdrQEwfuiD90W/NrFAQXYlzz86Ng==", null, false, "7f055500-2cb5-4e57-94d4-d334b13c90f4", false, "cwaliszek64@sciencedirect.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e4d366c7-89f9-49b5-964b-3e272bce17e1", 0, "760894d0-4244-43bb-ab89-ecb090887cd8", "dwestfrimley6z@fema.gov", false, false, null, "DWESTFRIMLEY6Z@FEMA.GOV", "DWESTFRIMLEY6Z@FEMA.GOV", "AQAAAAEAACcQAAAAEDZJLb/tRX+2JmDFKV3S3UiGwS+heYaRAzeQZO8kV+otcIWHyIcuQthzWXETbrC7wA==", null, false, "331e73dc-a49b-47b3-85d0-9ae021bf299b", false, "dwestfrimley6z@fema.gov" });
+                values: new object[] { "e4d366c7-89f9-49b5-964b-3e272bce17e1", 0, "46a1f783-64bc-457c-900d-49af95e673d2", "dwestfrimley6z@fema.gov", false, false, null, "DWESTFRIMLEY6Z@FEMA.GOV", "DWESTFRIMLEY6Z@FEMA.GOV", "AQAAAAEAACcQAAAAEKEtVr1N5BYgqySP0vGi/H/FN3wsrL5lg+tqQ9ysIdUtDjk6ph9Xex99WBCv2sQNUw==", null, false, "331e73dc-a49b-47b3-85d0-9ae021bf299b", false, "dwestfrimley6z@fema.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2f927b46-b733-4b2e-ad52-9cd69f6bc043", 0, "b53a2d74-bee4-43c5-ab45-cce9e87945f1", "istockney6x@simplemachines.org", false, false, null, "ISTOCKNEY6X@SIMPLEMACHINES.ORG", "ISTOCKNEY6X@SIMPLEMACHINES.ORG", "AQAAAAEAACcQAAAAEKR1QOs/XvSbO7khGDXOe96K1TCDjLLP6W7YfpszqN7gxkCooxl2KYWakxSt+EjaiQ==", null, false, "2f1f1aaa-514f-4627-9446-53602d8e0d25", false, "istockney6x@simplemachines.org" });
+                values: new object[] { "2f927b46-b733-4b2e-ad52-9cd69f6bc043", 0, "6151021b-f5be-4bcf-a8fc-9688dd07b860", "istockney6x@simplemachines.org", false, false, null, "ISTOCKNEY6X@SIMPLEMACHINES.ORG", "ISTOCKNEY6X@SIMPLEMACHINES.ORG", "AQAAAAEAACcQAAAAEMIbcSWaPMhyBf7ztE/MSkHsXqSB9/hPjogTSgKYtPgdAonZT3yRr4m6IwvQdVVMpg==", null, false, "2f1f1aaa-514f-4627-9446-53602d8e0d25", false, "istockney6x@simplemachines.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "44390801-9b92-45d1-aa91-c2d5da322744", 0, "a382ac23-cced-4c1f-9ea0-62b9013af8d8", "fide6w@ucla.edu", false, false, null, "FIDE6W@UCLA.EDU", "FIDE6W@UCLA.EDU", "AQAAAAEAACcQAAAAECf2/9S9ODZiBSTgKiS99cTrV0IpEB12CKHq5Pv3/nUc/HSeJ55RqN0f5Jx9cvavPg==", null, false, "4093d68c-fc30-4ce9-a9dc-fbccad7a7b3f", false, "fide6w@ucla.edu" });
+                values: new object[] { "44390801-9b92-45d1-aa91-c2d5da322744", 0, "e990aee6-e9cd-4967-9063-c9b59a341984", "fide6w@ucla.edu", false, false, null, "FIDE6W@UCLA.EDU", "FIDE6W@UCLA.EDU", "AQAAAAEAACcQAAAAELaFk1/tAjQSBKwpoEZ9JEPkDKSHQOlx8lr8IiiZBIsBtpo6yl8RS7MeDP0Fl4lsOg==", null, false, "4093d68c-fc30-4ce9-a9dc-fbccad7a7b3f", false, "fide6w@ucla.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "80a618d8-daec-4cc6-8160-0746e5c5f22f", 0, "c3256998-56f2-4486-8508-32dca81cca30", "tswaffield6v@icio.us", false, false, null, "TSWAFFIELD6V@ICIO.US", "TSWAFFIELD6V@ICIO.US", "AQAAAAEAACcQAAAAEH2WBFs8jj9GgR3LgbyhOXc+TwGtJAb8vR4c11u6XrI2RoiuI0MeziMgHvefuzytEw==", null, false, "628e11d4-29c4-4059-9ed8-de5c97669fdd", false, "tswaffield6v@icio.us" });
+                values: new object[] { "80a618d8-daec-4cc6-8160-0746e5c5f22f", 0, "7e53416b-e977-4486-a976-78f40661cd36", "tswaffield6v@icio.us", false, false, null, "TSWAFFIELD6V@ICIO.US", "TSWAFFIELD6V@ICIO.US", "AQAAAAEAACcQAAAAEPebd1+v+rTSxXFahs+M+sh9++626/BAJdQs3t5jJ98d5C4/Wrhh7gi1RNa2hvaI1A==", null, false, "628e11d4-29c4-4059-9ed8-de5c97669fdd", false, "tswaffield6v@icio.us" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "04870663-877c-4908-9984-d43c117a6a7a", 0, "713a3fcf-9302-4e53-8add-882e6b98706a", "dworgen6u@cargocollective.com", false, false, null, "DWORGEN6U@CARGOCOLLECTIVE.COM", "DWORGEN6U@CARGOCOLLECTIVE.COM", "AQAAAAEAACcQAAAAEKVm5bTYcPjnElAiw/WntoIyCE1BqjdP8GQWM+GZ8dNaDDQMGeTJV6+AmgJO5KxrNQ==", null, false, "00bd10a9-e207-4811-b614-c42395f25a87", false, "dworgen6u@cargocollective.com" });
+                values: new object[] { "04870663-877c-4908-9984-d43c117a6a7a", 0, "25e6e33c-9871-448a-afa7-4a851b48f7b5", "dworgen6u@cargocollective.com", false, false, null, "DWORGEN6U@CARGOCOLLECTIVE.COM", "DWORGEN6U@CARGOCOLLECTIVE.COM", "AQAAAAEAACcQAAAAEKbvpU2xFiz8xBfNlCzZaCLXFJAxrfpaFg93m74UR8DUGqvWZW85LNYoCZv9L8C8Sg==", null, false, "00bd10a9-e207-4811-b614-c42395f25a87", false, "dworgen6u@cargocollective.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d4ee85cc-b02a-4443-b8f7-dae17b6f5bf9", 0, "500dc938-bfb0-4969-b832-11704948869d", "brudledge6t@unesco.org", false, false, null, "BRUDLEDGE6T@UNESCO.ORG", "BRUDLEDGE6T@UNESCO.ORG", "AQAAAAEAACcQAAAAEIcApvHtZHkQDUYhu1bvyegj3U5Zp81n3i6uUAF93ZeBphDPnOlBa6pamwFCln6t3A==", null, false, "c71445d7-0e71-4d87-b64b-ba12646e3ae7", false, "brudledge6t@unesco.org" });
+                values: new object[] { "d4ee85cc-b02a-4443-b8f7-dae17b6f5bf9", 0, "000f741d-2ecd-4677-906b-816d1faa55b2", "brudledge6t@unesco.org", false, false, null, "BRUDLEDGE6T@UNESCO.ORG", "BRUDLEDGE6T@UNESCO.ORG", "AQAAAAEAACcQAAAAEBempclh40l/BhNasOXb3zDdnTrftE1LqNl1PA+LF9fsrtL8+Fazk0lsWOaFDX1lgA==", null, false, "c71445d7-0e71-4d87-b64b-ba12646e3ae7", false, "brudledge6t@unesco.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1aa5bc29-63e7-4119-aedb-d900605c3c79", 0, "144cbafe-44ee-44fb-a80d-4577b1f5278c", "socorr6s@twitpic.com", false, false, null, "SOCORR6S@TWITPIC.COM", "SOCORR6S@TWITPIC.COM", "AQAAAAEAACcQAAAAEL5M72ipqrQByTnO9EcFvUcHHOYl8xX+OuI7QmOQzKYrSxoTVXL6st/DSKxaV0B5vQ==", null, false, "e9672a83-11ab-40ca-bdae-7fdea42c21ec", false, "socorr6s@twitpic.com" });
+                values: new object[] { "1aa5bc29-63e7-4119-aedb-d900605c3c79", 0, "0f39f898-407f-4afa-8c67-50a64f8ebbe6", "socorr6s@twitpic.com", false, false, null, "SOCORR6S@TWITPIC.COM", "SOCORR6S@TWITPIC.COM", "AQAAAAEAACcQAAAAEIGvCCDAdq71eynQ+uUr0KWyq8DQUURP9eZ5kZuptxY7fS9UQ5Q76hLyvtaedFXOMg==", null, false, "e9672a83-11ab-40ca-bdae-7fdea42c21ec", false, "socorr6s@twitpic.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "bc79ab6b-4071-4b09-8de0-fb3a11f5e818", 0, "10bce014-5496-4200-983f-6d0cddf82445", "agunthorpe6r@nbcnews.com", false, false, null, "AGUNTHORPE6R@NBCNEWS.COM", "AGUNTHORPE6R@NBCNEWS.COM", "AQAAAAEAACcQAAAAEFvMVHMSiCVyz3Ogtenc/SqZ/jo6140muWsJLNG/FXWrMuXuKRndZ0OKKs92OX2w9g==", null, false, "ee84b2a3-a80f-41c9-a789-419a4f4fc620", false, "agunthorpe6r@nbcnews.com" });
+                values: new object[] { "bc79ab6b-4071-4b09-8de0-fb3a11f5e818", 0, "1eb7dc45-cc2d-4e1b-a694-e3e9cce87c3e", "agunthorpe6r@nbcnews.com", false, false, null, "AGUNTHORPE6R@NBCNEWS.COM", "AGUNTHORPE6R@NBCNEWS.COM", "AQAAAAEAACcQAAAAEFjf2iCwLLae9XvyMda2GMrhVAAiTxLElth//gf5yfATRjbue3knCcy0nJUCCGOrIQ==", null, false, "ee84b2a3-a80f-41c9-a789-419a4f4fc620", false, "agunthorpe6r@nbcnews.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fd4f127a-b239-4291-ab3e-48577aabac54", 0, "bab62067-c91f-4da1-85c5-657eb95b93dc", "gkersey6q@hostgator.com", false, false, null, "GKERSEY6Q@HOSTGATOR.COM", "GKERSEY6Q@HOSTGATOR.COM", "AQAAAAEAACcQAAAAELuM1NcxpnuwtpTTfr1/ha1jz9c0GuuJqU1w6hh3nTM2IUAf8mHY8ljNj5oD6NiZKw==", null, false, "100553dd-e0f6-4742-a7f5-b14eb4d8e806", false, "gkersey6q@hostgator.com" });
+                values: new object[] { "fd4f127a-b239-4291-ab3e-48577aabac54", 0, "541ca419-ca22-4de0-8ec0-7eb4645d5d03", "gkersey6q@hostgator.com", false, false, null, "GKERSEY6Q@HOSTGATOR.COM", "GKERSEY6Q@HOSTGATOR.COM", "AQAAAAEAACcQAAAAEGvn49+uZhQ0OsEF6mT937yyzrS1sT4Z+f30sux4OakYAw/ChkZkfE78mhqUJA4ZmA==", null, false, "100553dd-e0f6-4742-a7f5-b14eb4d8e806", false, "gkersey6q@hostgator.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d6489159-41d0-4f79-b0b9-cb30727ec24a", 0, "621f3a7e-f6b4-46f4-870e-1100ab293e12", "tglenny6y@moonfruit.com", false, false, null, "TGLENNY6Y@MOONFRUIT.COM", "TGLENNY6Y@MOONFRUIT.COM", "AQAAAAEAACcQAAAAENzTwLCibcnch1gp4VwAAbtnaBD1Tt0GxOImeR9iJaEbRhtjMpCzuYlJCQ5xlgNUDQ==", null, false, "9dd83cde-b55e-4c00-b727-237b7b5f185c", false, "tglenny6y@moonfruit.com" });
+                values: new object[] { "d6489159-41d0-4f79-b0b9-cb30727ec24a", 0, "6b2c6946-2c8a-4e20-9ea0-c4f0b20eca41", "tglenny6y@moonfruit.com", false, false, null, "TGLENNY6Y@MOONFRUIT.COM", "TGLENNY6Y@MOONFRUIT.COM", "AQAAAAEAACcQAAAAEIAsgZ9a+HoGGI+hDJ9NK11TSlS8ktnWgwMdpbdfLo3rozDaAPcV3xS5lKK8jRrBhQ==", null, false, "9dd83cde-b55e-4c00-b727-237b7b5f185c", false, "tglenny6y@moonfruit.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6cb98458-cd19-4a67-9370-fbd4e9e9d354", 0, "3f6c7885-73ac-4eaf-8633-f8565e970744", "dhatliff63@imdb.com", false, false, null, "DHATLIFF63@IMDB.COM", "DHATLIFF63@IMDB.COM", "AQAAAAEAACcQAAAAEN/RDKi638QAMI27NkYiZHmpDpExATs/KuyR6EowFKXux1/u6PpVfbdxjtFtyDcrKQ==", null, false, "0ed69f50-b441-4b8f-b04c-5ff89d4e43d1", false, "dhatliff63@imdb.com" });
+                values: new object[] { "6cb98458-cd19-4a67-9370-fbd4e9e9d354", 0, "56b715ca-e96f-4371-a4e3-b0b3cdab801f", "dhatliff63@imdb.com", false, false, null, "DHATLIFF63@IMDB.COM", "DHATLIFF63@IMDB.COM", "AQAAAAEAACcQAAAAEL/dnkasT9slq3Me/hWylNGbphbD8xTySzfKdrukmwa+5bVAqNw6OhE1mgwxJlBqnA==", null, false, "0ed69f50-b441-4b8f-b04c-5ff89d4e43d1", false, "dhatliff63@imdb.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "28618392-0013-4270-96cc-7d3de5308ee2", 0, "c5219d5c-7f90-4077-9dca-572f166cb6d6", "jrubinchik62@sbwire.com", false, false, null, "JRUBINCHIK62@SBWIRE.COM", "JRUBINCHIK62@SBWIRE.COM", "AQAAAAEAACcQAAAAECKbrIMQ9f8hIvcTTy0j61uX6zAhtCFZ0th/HzPbKLkRp7JLb1H1zA1+zrVOHtd9sA==", null, false, "1b42fc38-7973-40bf-aa54-7d0f25e55e00", false, "jrubinchik62@sbwire.com" });
+                values: new object[] { "28618392-0013-4270-96cc-7d3de5308ee2", 0, "03dd5ac1-7544-4d3c-8300-18ba79ab0f7d", "jrubinchik62@sbwire.com", false, false, null, "JRUBINCHIK62@SBWIRE.COM", "JRUBINCHIK62@SBWIRE.COM", "AQAAAAEAACcQAAAAEG2D4aNKxydFVzUkHa8PcNP30dyfd7hzOmDTstFabQQ92pBAE04rLgO1bDhfRsgasQ==", null, false, "1b42fc38-7973-40bf-aa54-7d0f25e55e00", false, "jrubinchik62@sbwire.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "97123760-1885-4d97-83e6-4a3f91e270dd", 0, "7835b8f0-f5c2-4b01-b7a6-42d0abe91ae0", "gbalazs61@wiley.com", false, false, null, "GBALAZS61@WILEY.COM", "GBALAZS61@WILEY.COM", "AQAAAAEAACcQAAAAEGFowEmutegOvdBeKXbSwm4YPqzeEIXSl+eiidzTHX4K6BBGrMuQGUTUSvQyr6RKbg==", null, false, "72f3406f-7e80-4cfb-bd5c-9a06f28d008c", false, "gbalazs61@wiley.com" });
+                values: new object[] { "97123760-1885-4d97-83e6-4a3f91e270dd", 0, "b4208826-94ad-49ae-a46a-c2771b3413d5", "gbalazs61@wiley.com", false, false, null, "GBALAZS61@WILEY.COM", "GBALAZS61@WILEY.COM", "AQAAAAEAACcQAAAAEAPWjzTbYJlvDSB/ioWaS4KhmQqQqUo63ZGIQ9tXSfemYEzfhobSOyoypZRgG7tlnw==", null, false, "72f3406f-7e80-4cfb-bd5c-9a06f28d008c", false, "gbalazs61@wiley.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "7a84b304-5c69-4df5-a0d8-e41a329e9038", 0, "4f52dc00-b81d-4603-8bc6-c2e260056bef", "dloyns5e@devhub.com", false, false, null, "DLOYNS5E@DEVHUB.COM", "DLOYNS5E@DEVHUB.COM", "AQAAAAEAACcQAAAAEHCbsubSP9rhX1YXQ6rYKe9hRlc260nEMy0CeTQN+aFvJ+Uu1JrRQnLkShdxKzLrNA==", null, false, "cff1e753-c96d-4841-9ff6-193ef46e6c50", false, "dloyns5e@devhub.com" });
+                values: new object[] { "7a84b304-5c69-4df5-a0d8-e41a329e9038", 0, "56f89fea-ce83-467d-b44c-be07bf04eb77", "dloyns5e@devhub.com", false, false, null, "DLOYNS5E@DEVHUB.COM", "DLOYNS5E@DEVHUB.COM", "AQAAAAEAACcQAAAAEEhWFB/kuMTbLCwWFCPWj9MaDJAKl//yNi+ueEYOPwJssLgBBxSs2soNW6g5CMw7PQ==", null, false, "cff1e753-c96d-4841-9ff6-193ef46e6c50", false, "dloyns5e@devhub.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "bd2b11cb-73fe-4a54-b94e-0d71b442d771", 0, "53bdb092-7bd5-447c-878e-0b5e9faa35a5", "stribbeck5d@wsj.com", false, false, null, "STRIBBECK5D@WSJ.COM", "STRIBBECK5D@WSJ.COM", "AQAAAAEAACcQAAAAEHdIjkR/mZs935HmgbDjRMtyUHSxjgThUpNBvM1kk/kr+rckCBgb6mK/V1HdItnsgw==", null, false, "7087c341-3e09-4d13-86e4-7ff1877df090", false, "stribbeck5d@wsj.com" });
+                values: new object[] { "bd2b11cb-73fe-4a54-b94e-0d71b442d771", 0, "a081deec-50cb-47ec-ac45-2d6f87951edf", "stribbeck5d@wsj.com", false, false, null, "STRIBBECK5D@WSJ.COM", "STRIBBECK5D@WSJ.COM", "AQAAAAEAACcQAAAAEI0si17Lk65VSTXkbwkOqPe1TWUMYKCZDQDx3yQ2VOKF3VRGBzDD3X2tZ+lonQO4pw==", null, false, "7087c341-3e09-4d13-86e4-7ff1877df090", false, "stribbeck5d@wsj.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "158ad203-597c-4142-8836-b05e4665cb0f", 0, "c0a51dd4-9ba5-4813-a63c-6fdb7ed58bc5", "lharston5c@devhub.com", false, false, null, "LHARSTON5C@DEVHUB.COM", "LHARSTON5C@DEVHUB.COM", "AQAAAAEAACcQAAAAELzh6erMAXqUlSOu8hBa9I65wv7LixoSqFXGdoVMdZxstuqFYqJPRy3V0OidV46Xcg==", null, false, "888c5cdb-e28f-40e1-bda6-faebaf9135d5", false, "lharston5c@devhub.com" });
+                values: new object[] { "158ad203-597c-4142-8836-b05e4665cb0f", 0, "b019feea-497d-4c60-a58f-035c111e9437", "lharston5c@devhub.com", false, false, null, "LHARSTON5C@DEVHUB.COM", "LHARSTON5C@DEVHUB.COM", "AQAAAAEAACcQAAAAEO7+vxqMhcAJ3sBBNSuPRqstoZQn4xxFnK8vGLKo7u9ezzflKFWvX0nxAPwWABimag==", null, false, "888c5cdb-e28f-40e1-bda6-faebaf9135d5", false, "lharston5c@devhub.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "812a1d8c-b936-49b3-afa6-17b5a93f5e01", 0, "fc8948f7-335d-447d-b8b6-c0976929780d", "sleguey5b@state.gov", false, false, null, "SLEGUEY5B@STATE.GOV", "SLEGUEY5B@STATE.GOV", "AQAAAAEAACcQAAAAENIcia/nl1HGZrskLnFJ+av7bf5GsXtK9VE+/uWLeJYjwDslMve+S9cD4u0pWAJyzA==", null, false, "3ce65119-5d0e-48dd-99ff-61ad5d6011c4", false, "sleguey5b@state.gov" });
+                values: new object[] { "812a1d8c-b936-49b3-afa6-17b5a93f5e01", 0, "6737a70a-231e-4ff3-a5cc-0fb1593abf01", "sleguey5b@state.gov", false, false, null, "SLEGUEY5B@STATE.GOV", "SLEGUEY5B@STATE.GOV", "AQAAAAEAACcQAAAAEA4wkSlHlLVilfNFkDY4VHutj7yj9GvnHVY6xhXNKaLD/w2qilQGLI1i9T/47XWoYg==", null, false, "3ce65119-5d0e-48dd-99ff-61ad5d6011c4", false, "sleguey5b@state.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef9803e0-536b-4f36-92a6-b42321ba3583", 0, "d9a8d366-6fe7-4f5e-be04-2db815a15f8a", "oduplock5a@histats.com", false, false, null, "ODUPLOCK5A@HISTATS.COM", "ODUPLOCK5A@HISTATS.COM", "AQAAAAEAACcQAAAAEM3BSAMGziIime0Wl0iukMOHgfhALP5LufcB33HXLhbYhxyqNvIxeGjG2HSwMpqITQ==", null, false, "74e4cbdd-f267-44fd-b746-1d3c4864edd2", false, "oduplock5a@histats.com" });
+                values: new object[] { "ef9803e0-536b-4f36-92a6-b42321ba3583", 0, "1845d4d4-22da-4df4-8196-b8b5986ccf3d", "oduplock5a@histats.com", false, false, null, "ODUPLOCK5A@HISTATS.COM", "ODUPLOCK5A@HISTATS.COM", "AQAAAAEAACcQAAAAEF0jSqcrfk0BC48xVaXACzzJwkfVVSrZmQ0ORG3KGzGlqMEkrsardi8P4y1y0ivJOQ==", null, false, "74e4cbdd-f267-44fd-b746-1d3c4864edd2", false, "oduplock5a@histats.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "429c4d67-9b5d-4ed9-af55-a6fadbf29000", 0, "e3622154-6155-4c92-99cb-1dccc001965d", "mgreeve59@ebay.co.uk", false, false, null, "MGREEVE59@EBAY.CO.UK", "MGREEVE59@EBAY.CO.UK", "AQAAAAEAACcQAAAAEKxMgSOMs/6JFULmwSrCK05rtBSWIL0xO23dcs/rx4aJRTKInBunmOdvrxOlP/cKvw==", null, false, "a2345674-3340-4fa8-99d8-5235966ff540", false, "mgreeve59@ebay.co.uk" });
+                values: new object[] { "429c4d67-9b5d-4ed9-af55-a6fadbf29000", 0, "1141489b-95df-42fa-a0c6-72cd897686db", "mgreeve59@ebay.co.uk", false, false, null, "MGREEVE59@EBAY.CO.UK", "MGREEVE59@EBAY.CO.UK", "AQAAAAEAACcQAAAAEK7YDEagoWptSeZPl/ojmQ+j434bLzt8ou/yCn6bogN16hsWABDZPjoN35wKrKl7zg==", null, false, "a2345674-3340-4fa8-99d8-5235966ff540", false, "mgreeve59@ebay.co.uk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fe578aae-eb97-4c1b-9442-057f606febee", 0, "8de895cd-081c-4713-9a0a-20389c24ecf7", "hrobottham58@reference.com", false, false, null, "HROBOTTHAM58@REFERENCE.COM", "HROBOTTHAM58@REFERENCE.COM", "AQAAAAEAACcQAAAAEIPxeEnZnzlCMTxWQAiQ8hKSMGb+hoqV+0RFf4cwMkxys13G6l3vp6YfoP7FQKpYXQ==", null, false, "c9771bff-8b24-4621-b7ce-0559e4b38977", false, "hrobottham58@reference.com" });
+                values: new object[] { "fe578aae-eb97-4c1b-9442-057f606febee", 0, "ebf85e74-cb7b-47b4-bcdb-7ed0dd7e02b8", "hrobottham58@reference.com", false, false, null, "HROBOTTHAM58@REFERENCE.COM", "HROBOTTHAM58@REFERENCE.COM", "AQAAAAEAACcQAAAAEBeNoVgCkisHMElR+Y2/S8V8pAyVun2/IHlKec3N3gKpxfiUa6aVd+S0E6MM6lXwXw==", null, false, "c9771bff-8b24-4621-b7ce-0559e4b38977", false, "hrobottham58@reference.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cc5115d4-0848-4003-974b-e53831bb1464", 0, "e09703c0-4b90-43b8-842d-303713ccc176", "jhalgarth57@sourceforge.net", false, false, null, "JHALGARTH57@SOURCEFORGE.NET", "JHALGARTH57@SOURCEFORGE.NET", "AQAAAAEAACcQAAAAEMxC/uoJA1f38N6bHk08h5YRffni9sWHVwDAEaeLEb80FiLwTVMSoHvZYoYcAHlUdQ==", null, false, "37edbc06-4aab-4901-9778-79d2bb1d1a3f", false, "jhalgarth57@sourceforge.net" });
+                values: new object[] { "cc5115d4-0848-4003-974b-e53831bb1464", 0, "1361e0be-0f95-49c4-bdb3-18201eb5f5f7", "jhalgarth57@sourceforge.net", false, false, null, "JHALGARTH57@SOURCEFORGE.NET", "JHALGARTH57@SOURCEFORGE.NET", "AQAAAAEAACcQAAAAEE8R2RaitauXWKgGnHyi780eMp8pkTaTaP7d1ceWoQ/ufQ5HAdPtGvlQDWImwIMyXw==", null, false, "37edbc06-4aab-4901-9778-79d2bb1d1a3f", false, "jhalgarth57@sourceforge.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8e82ac58-4de7-4755-ae7e-676b114c3633", 0, "7b4a9e60-fda3-41cc-a24d-ab6e7a4a1556", "aramage5f@vkontakte.ru", false, false, null, "ARAMAGE5F@VKONTAKTE.RU", "ARAMAGE5F@VKONTAKTE.RU", "AQAAAAEAACcQAAAAEA/Xf5HqOErSef/+PU9PGeInTJHDNnd4IGK0fcwUgifQ73D7k3m0ZF3k23eFt8Cnnw==", null, false, "00e9d338-5f99-4e7c-853b-52531b03ca23", false, "aramage5f@vkontakte.ru" });
+                values: new object[] { "8e82ac58-4de7-4755-ae7e-676b114c3633", 0, "e538a32b-423c-45a5-8493-6615fe753942", "aramage5f@vkontakte.ru", false, false, null, "ARAMAGE5F@VKONTAKTE.RU", "ARAMAGE5F@VKONTAKTE.RU", "AQAAAAEAACcQAAAAEDtaTnSE6JhbiDYvK58sgbZshTbze1CV00Y2LyCpHzC0By9AyymsptvT2npPw5kOSw==", null, false, "00e9d338-5f99-4e7c-853b-52531b03ca23", false, "aramage5f@vkontakte.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e60b4dc6-6017-4390-9309-ae0c135a3967", 0, "17da7b60-51c4-4313-ad40-21eeca2d4533", "gourry56@scribd.com", false, false, null, "GOURRY56@SCRIBD.COM", "GOURRY56@SCRIBD.COM", "AQAAAAEAACcQAAAAECTqTGhRJ8PId/o378go8BgXFxdDFH6EEIBVtu65FYAcHMWDkHpZUaGK5aZvRG1ntg==", null, false, "51b25b65-31d2-41e8-b90f-7dc66babc719", false, "gourry56@scribd.com" });
+                values: new object[] { "e60b4dc6-6017-4390-9309-ae0c135a3967", 0, "14010788-c478-4bba-b166-f5c6c3b87999", "gourry56@scribd.com", false, false, null, "GOURRY56@SCRIBD.COM", "GOURRY56@SCRIBD.COM", "AQAAAAEAACcQAAAAEFCsGrHdRAce4Mt5Zcj3TYq01gY/iwm9nOSiTA8fqC6rXLjzu3UgngQfrkl6G3azjw==", null, false, "51b25b65-31d2-41e8-b90f-7dc66babc719", false, "gourry56@scribd.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3e70b21d-3360-4339-915b-329ad9e729b4", 0, "0ba74d0e-bf21-47d8-8930-4e91ae66b57f", "mnemchinov54@twitpic.com", false, false, null, "MNEMCHINOV54@TWITPIC.COM", "MNEMCHINOV54@TWITPIC.COM", "AQAAAAEAACcQAAAAEO2Kq+stkQ7PbVkA++dhWgqlt3hdR+giD6RQ4Yd+HrkA5T8fyv8qyk1pjfGeIZyq5A==", null, false, "9c329fd2-ca75-4166-8383-1f68a8945a5e", false, "mnemchinov54@twitpic.com" });
+                values: new object[] { "3e70b21d-3360-4339-915b-329ad9e729b4", 0, "2fdfef42-f2af-4616-a861-7d8b532fe691", "mnemchinov54@twitpic.com", false, false, null, "MNEMCHINOV54@TWITPIC.COM", "MNEMCHINOV54@TWITPIC.COM", "AQAAAAEAACcQAAAAEMjt/45V07shn/mRiEkMSXhZAScLRCAETebi/AardJxGB5mAmpfJuRa8PC/nfYtGKg==", null, false, "9c329fd2-ca75-4166-8383-1f68a8945a5e", false, "mnemchinov54@twitpic.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "438dc369-c4b2-47e9-8207-d6d34f55ae71", 0, "d5be29f5-6887-4cf5-a4a6-45eef5dbb311", "terdes53@soup.io", false, false, null, "TERDES53@SOUP.IO", "TERDES53@SOUP.IO", "AQAAAAEAACcQAAAAEOXuwJhlQXJhhhU3FtOWbzab1zf+T37P+xQR6sjIRQR9tL2dDhS76i3LlxxjVkPglw==", null, false, "ea4a8dfa-a3f6-4fb3-8a52-ae5fc8d1d11a", false, "terdes53@soup.io" });
+                values: new object[] { "438dc369-c4b2-47e9-8207-d6d34f55ae71", 0, "e325c258-d50a-4c27-9983-1781bbcde016", "terdes53@soup.io", false, false, null, "TERDES53@SOUP.IO", "TERDES53@SOUP.IO", "AQAAAAEAACcQAAAAEJaY6Gklmcds+jzTsxGoNi7PDCvPc3t9SRNJnigar9Mo3F2AGUUzLOjiyQufMcdYFw==", null, false, "ea4a8dfa-a3f6-4fb3-8a52-ae5fc8d1d11a", false, "terdes53@soup.io" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5978227d-8851-460e-a42e-7ecbdd949053", 0, "8de461a6-a4a9-449f-9273-2a137f50631e", "rcrady52@unblog.fr", false, false, null, "RCRADY52@UNBLOG.FR", "RCRADY52@UNBLOG.FR", "AQAAAAEAACcQAAAAEBz5IerMmMfUqyCBAgMs6muq+A890eB348JhhuTpvKjJ/Vgq7IS9o7AkyjoTTGsD4Q==", null, false, "c0aba7f6-8608-46d6-b8d1-41472907fb10", false, "rcrady52@unblog.fr" });
+                values: new object[] { "5978227d-8851-460e-a42e-7ecbdd949053", 0, "0d5a26e5-f13f-4f2b-8626-4dc504038fc9", "rcrady52@unblog.fr", false, false, null, "RCRADY52@UNBLOG.FR", "RCRADY52@UNBLOG.FR", "AQAAAAEAACcQAAAAEF51Sa+8QvqLJS0Y7T93iBhBtxQGv/DaywvX6oKWamD7+beLwaAD/SOHZM+wxBg7rQ==", null, false, "c0aba7f6-8608-46d6-b8d1-41472907fb10", false, "rcrady52@unblog.fr" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a3bee7fb-344d-4dcb-8723-7eb91466e4bf", 0, "da15def5-f7d0-4382-9260-a42a10513160", "npieter51@arstechnica.com", false, false, null, "NPIETER51@ARSTECHNICA.COM", "NPIETER51@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAEEyftuxogMJR6NS/4sNwbCKxLa+12HL33aJEeeZOdiqgLRq5xZk29PcjeZ+4wkPjfw==", null, false, "f1fdcdeb-c4e5-44ad-932f-53016585bb01", false, "npieter51@arstechnica.com" });
+                values: new object[] { "a3bee7fb-344d-4dcb-8723-7eb91466e4bf", 0, "def2c283-9994-46f9-9f64-a446722e24b1", "npieter51@arstechnica.com", false, false, null, "NPIETER51@ARSTECHNICA.COM", "NPIETER51@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAEJTMeQc/PB04fbB45M/tjswPnkrTIO4m4qwJbBkUZNWX0cCxvmPrEkhejYCNarr6JA==", null, false, "f1fdcdeb-c4e5-44ad-932f-53016585bb01", false, "npieter51@arstechnica.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "84295d5a-e155-4c64-a053-741802a5332e", 0, "7821276e-cc27-426c-90d4-64817adb5a96", "grumsby50@marketwatch.com", false, false, null, "GRUMSBY50@MARKETWATCH.COM", "GRUMSBY50@MARKETWATCH.COM", "AQAAAAEAACcQAAAAEJX7Ybp1xYcPqjAqbRl3G4CpHfih9TdZClNlwFqp89ab2HtloQ+MGFJJR4myl96Lig==", null, false, "afcff336-1a5b-44cb-a4ef-0e7b030e651e", false, "grumsby50@marketwatch.com" });
+                values: new object[] { "84295d5a-e155-4c64-a053-741802a5332e", 0, "08b43107-f481-409a-a098-e3076afe883d", "grumsby50@marketwatch.com", false, false, null, "GRUMSBY50@MARKETWATCH.COM", "GRUMSBY50@MARKETWATCH.COM", "AQAAAAEAACcQAAAAEK2fxjOCweriDnS8S9/h90Qk/caNd/mGLu1tv3dxw9tba4Mmz3u3fgEKHr9NOXj5YQ==", null, false, "afcff336-1a5b-44cb-a4ef-0e7b030e651e", false, "grumsby50@marketwatch.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f849b822-8d1e-442b-a87b-014029324985", 0, "d5a04300-53d9-438f-b2ec-9944e8b5104e", "dbahl4z@apache.org", false, false, null, "DBAHL4Z@APACHE.ORG", "DBAHL4Z@APACHE.ORG", "AQAAAAEAACcQAAAAEE5lMR4hkhsUCGF7DBvBIz+QLJyANNfz90kmEpfQUon7NNM911Yk4SBJBs0Vau8cTQ==", null, false, "e58bbf11-f895-4385-a252-4fdafae73af1", false, "dbahl4z@apache.org" });
+                values: new object[] { "f849b822-8d1e-442b-a87b-014029324985", 0, "77f317a5-7d72-44a3-b720-c109d7edf070", "dbahl4z@apache.org", false, false, null, "DBAHL4Z@APACHE.ORG", "DBAHL4Z@APACHE.ORG", "AQAAAAEAACcQAAAAEF2iCihDw5CO1lQ1M16vjSo2hn0LDJR+jQw33DiVThfXoL5h9Iyo6Nqvw8p4TtBSvg==", null, false, "e58bbf11-f895-4385-a252-4fdafae73af1", false, "dbahl4z@apache.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "60d27bfa-44b7-4405-a87c-18a4ac520840", 0, "0103ada0-77f3-488e-ac59-649e3782a45b", "mmcdermott4y@skyrock.com", false, false, null, "MMCDERMOTT4Y@SKYROCK.COM", "MMCDERMOTT4Y@SKYROCK.COM", "AQAAAAEAACcQAAAAEJ34rgRMfANnBsFifprTbG1SwHWiP/jGkkGtXbYo9DxIDjUXEePtOclSHmDPrQanoQ==", null, false, "ee99548a-8e21-4ead-9e17-bf5356ec18ec", false, "mmcdermott4y@skyrock.com" });
+                values: new object[] { "60d27bfa-44b7-4405-a87c-18a4ac520840", 0, "3845255d-7990-4d64-bcaf-8aa80c3f978a", "mmcdermott4y@skyrock.com", false, false, null, "MMCDERMOTT4Y@SKYROCK.COM", "MMCDERMOTT4Y@SKYROCK.COM", "AQAAAAEAACcQAAAAEJHNNAzs55fQOHVyh5XJN32w4mwNCSRwKbc7mNSwiXzMubLYmYErzwNWwq//BRL/NQ==", null, false, "ee99548a-8e21-4ead-9e17-bf5356ec18ec", false, "mmcdermott4y@skyrock.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cd431c07-7f17-4050-bad1-461defed2e88", 0, "2783232d-8da2-4b7a-b7f9-b6dc127e9541", "mrhymes4x@who.int", false, false, null, "MRHYMES4X@WHO.INT", "MRHYMES4X@WHO.INT", "AQAAAAEAACcQAAAAEJYc6aMG57pmfhrlmCDdRbvpnOt1G/3RQeEh2oBIhxpkXATZKsn0eTT7I79WYyswRg==", null, false, "1db71b4c-0386-41e7-aafe-3e6cbdbd3fd1", false, "mrhymes4x@who.int" });
+                values: new object[] { "cd431c07-7f17-4050-bad1-461defed2e88", 0, "a09de796-67ee-4e83-89f4-2c66f3198d9f", "mrhymes4x@who.int", false, false, null, "MRHYMES4X@WHO.INT", "MRHYMES4X@WHO.INT", "AQAAAAEAACcQAAAAEGH58lW/+KOJTd6Df70uZa0K9BSpPmljIf8SrkVNpXp8xCnAIyzsYjRb0dg5xrqcCg==", null, false, "1db71b4c-0386-41e7-aafe-3e6cbdbd3fd1", false, "mrhymes4x@who.int" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "12433c67-199c-4722-a2f3-06f1bf54642d", 0, "7be62ff3-07a8-4b0b-810e-58b98e2c183e", "ejenkyn55@weather.com", false, false, null, "EJENKYN55@WEATHER.COM", "EJENKYN55@WEATHER.COM", "AQAAAAEAACcQAAAAEJcUT85hxinZ0kHjJGgcGLmVebnmcixNtLjbUsC2hEm1DH02W8jp1eqx6szqOXJ3Yw==", null, false, "b3a5095f-6a54-4977-b527-e9a735f2450a", false, "ejenkyn55@weather.com" });
+                values: new object[] { "12433c67-199c-4722-a2f3-06f1bf54642d", 0, "104130ed-4d49-47a7-a296-34173ff0820d", "ejenkyn55@weather.com", false, false, null, "EJENKYN55@WEATHER.COM", "EJENKYN55@WEATHER.COM", "AQAAAAEAACcQAAAAEE+w2d9tRpv8rHwtYdawnqDFrxIBkju+rY4O2hHA1EPzWzvbCb7SQUmnnLTr5XMZ7A==", null, false, "b3a5095f-6a54-4977-b527-e9a735f2450a", false, "ejenkyn55@weather.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "13b4533c-8ff7-4825-963c-32c7faf3b5ac", 0, "d09fade0-7259-4427-b8f4-77de2f0f8bef", "tbraams78@irs.gov", false, false, null, "TBRAAMS78@IRS.GOV", "TBRAAMS78@IRS.GOV", "AQAAAAEAACcQAAAAEN01RGbm6Vltp1BHOrbHPyNUT+CS5UblE5+3HSdipnEc0Nie/A8XLE6GLJzWGsJ7LA==", null, false, "7242dc02-6b19-41c3-8ed8-89ae798b4482", false, "tbraams78@irs.gov" });
+                values: new object[] { "13b4533c-8ff7-4825-963c-32c7faf3b5ac", 0, "7d5b4c4d-64d8-471a-aca3-dea446caad85", "tbraams78@irs.gov", false, false, null, "TBRAAMS78@IRS.GOV", "TBRAAMS78@IRS.GOV", "AQAAAAEAACcQAAAAEPIbjFSPODeYAC6Y1lTItQ76F1aWj6wMvEvF9j6/X0QC+6Zr+pEeWT/s6FrXmoRMzg==", null, false, "7242dc02-6b19-41c3-8ed8-89ae798b4482", false, "tbraams78@irs.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ea7d34a9-b987-475f-8865-f475c9306ab3", 0, "3b6c7499-d7db-4308-ae74-d71878b4a5e6", "jbruyns5g@nps.gov", false, false, null, "JBRUYNS5G@NPS.GOV", "JBRUYNS5G@NPS.GOV", "AQAAAAEAACcQAAAAEFG3dgPxhcRCaYGdxxwwpdyho/dPKtppn7gZ1Fq7g13zIPycXQonEIPvnfpDa35UlA==", null, false, "9d20bbfb-32ea-4fd2-aa6e-64cd64ccfb1f", false, "jbruyns5g@nps.gov" });
+                values: new object[] { "ea7d34a9-b987-475f-8865-f475c9306ab3", 0, "8369f0a1-aa4b-4c7a-8f6c-792043e314d8", "jbruyns5g@nps.gov", false, false, null, "JBRUYNS5G@NPS.GOV", "JBRUYNS5G@NPS.GOV", "AQAAAAEAACcQAAAAECqMlzqvfp4hgPC15Ap6TAnu3jIuy5+L+O0xnUQy/xm54LgvYdiN/YXPUaL9bYTxKg==", null, false, "9d20bbfb-32ea-4fd2-aa6e-64cd64ccfb1f", false, "jbruyns5g@nps.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "03bfcb70-e034-4dc4-9459-92fcdecf6822", 0, "4f1dbbff-2217-4112-92ec-70a6b443c298", "epitkeathly5i@army.mil", false, false, null, "EPITKEATHLY5I@ARMY.MIL", "EPITKEATHLY5I@ARMY.MIL", "AQAAAAEAACcQAAAAELHYKgKNC2wZ124I0nNZxQ5OQZl2hyPQ+HV/RnYqH4ga9mpQ78e1B9W5T4q2y40FTw==", null, false, "4554cea8-881f-4690-8dd0-806a6227e50e", false, "epitkeathly5i@army.mil" });
+                values: new object[] { "03bfcb70-e034-4dc4-9459-92fcdecf6822", 0, "78d114bf-815d-420f-9aa7-828fc713309a", "epitkeathly5i@army.mil", false, false, null, "EPITKEATHLY5I@ARMY.MIL", "EPITKEATHLY5I@ARMY.MIL", "AQAAAAEAACcQAAAAEFijqc762WKypbk+KD0PBenWD9Pp16/kx+roD9IRY8I4/YScT/QGy/EeRHwHHoqH8g==", null, false, "4554cea8-881f-4690-8dd0-806a6227e50e", false, "epitkeathly5i@army.mil" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a83f9105-1b40-4413-94ba-1e091f12551d", 0, "2081d4f8-8310-4ea5-9bd8-e0d465e248f0", "zgrammer60@netlog.com", false, false, null, "ZGRAMMER60@NETLOG.COM", "ZGRAMMER60@NETLOG.COM", "AQAAAAEAACcQAAAAEGVZy7e6ir9r5+jYwuXas7x4N2TiebQwaNjiohB8g+AhgO4E4cBsEqjaK2q0NIzvGQ==", null, false, "fbb47c54-81ad-4d97-b477-0aac9ac2b4ae", false, "zgrammer60@netlog.com" });
+                values: new object[] { "a83f9105-1b40-4413-94ba-1e091f12551d", 0, "19cf60fc-9100-4a15-bb96-8ae7774a135b", "zgrammer60@netlog.com", false, false, null, "ZGRAMMER60@NETLOG.COM", "ZGRAMMER60@NETLOG.COM", "AQAAAAEAACcQAAAAEMSnEiQqfTv3TSXAZ0zuZoj1KiQW2nxWnXLCVaYnFF3dJ2UdCfIzcWzcSVo8Po3fvg==", null, false, "fbb47c54-81ad-4d97-b477-0aac9ac2b4ae", false, "zgrammer60@netlog.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0387e56b-85a7-46f3-8b65-42ea1877e275", 0, "4fd0a919-a78c-4543-b455-4b59ec99bbe1", "bflowers5z@weebly.com", false, false, null, "BFLOWERS5Z@WEEBLY.COM", "BFLOWERS5Z@WEEBLY.COM", "AQAAAAEAACcQAAAAEKJOvHD2BynhvCdtRJXFcpRCpiotIg3kVRgCsuyElhNGHmB4SvReekKaN+JzOLbVHA==", null, false, "bbcc1ee8-7608-4b49-9ce3-c2f20e0b65a1", false, "bflowers5z@weebly.com" });
+                values: new object[] { "0387e56b-85a7-46f3-8b65-42ea1877e275", 0, "67c484ae-64bd-4fe8-a11c-15596db31d04", "bflowers5z@weebly.com", false, false, null, "BFLOWERS5Z@WEEBLY.COM", "BFLOWERS5Z@WEEBLY.COM", "AQAAAAEAACcQAAAAEC1mRgnZogv9cBoWHf8eTBZ3tOj9Ajhqk+H3hMBxoP61TOYWNIConH5w9DUBvYDKfQ==", null, false, "bbcc1ee8-7608-4b49-9ce3-c2f20e0b65a1", false, "bflowers5z@weebly.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "93d04f67-a8df-4894-907a-a48606d78997", 0, "aad7594b-5f9e-4c67-a62a-4a822dbf03e0", "dbragginton5y@i2i.jp", false, false, null, "DBRAGGINTON5Y@I2I.JP", "DBRAGGINTON5Y@I2I.JP", "AQAAAAEAACcQAAAAEObrmAD2T0b5eDncUgd2hulXwczaiN+SACil7NHOE07NnLCNl1rjbrOF8LdUKI0Yng==", null, false, "85ad5602-89c8-4f96-a3af-a0a3dd713147", false, "dbragginton5y@i2i.jp" });
+                values: new object[] { "93d04f67-a8df-4894-907a-a48606d78997", 0, "5c06d6d7-f64b-48f8-958a-8d4cf60e1d37", "dbragginton5y@i2i.jp", false, false, null, "DBRAGGINTON5Y@I2I.JP", "DBRAGGINTON5Y@I2I.JP", "AQAAAAEAACcQAAAAEPCKvoEWNln/Wg4ErSXEFSGt6kGQ7F78I8rkvyCjSG/K0HIpLM1TjzTrWW8thGgR1g==", null, false, "85ad5602-89c8-4f96-a3af-a0a3dd713147", false, "dbragginton5y@i2i.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "be2f905f-a735-4349-bf8d-fb2ad921b9f9", 0, "2f3bb6bf-bb22-4ac5-ae45-245e7560041d", "mlamonby5x@java.com", false, false, null, "MLAMONBY5X@JAVA.COM", "MLAMONBY5X@JAVA.COM", "AQAAAAEAACcQAAAAEKunJZ8q6XKAl1uCJnSUzVxLbDautBmF+z1ND7nSPWb4WbxJU+QSV+8bbF6HMREx4A==", null, false, "dd837846-ba24-4f35-a2c6-95232ed3f32f", false, "mlamonby5x@java.com" });
+                values: new object[] { "be2f905f-a735-4349-bf8d-fb2ad921b9f9", 0, "75daad4b-ae5f-4a53-940e-acbf484cb0c0", "mlamonby5x@java.com", false, false, null, "MLAMONBY5X@JAVA.COM", "MLAMONBY5X@JAVA.COM", "AQAAAAEAACcQAAAAEApgIJA60sIjGD8esMy1jRIN1HMTVb8SHwOguAmCNZeLZs/jR/nykO30dmZY9nf79w==", null, false, "dd837846-ba24-4f35-a2c6-95232ed3f32f", false, "mlamonby5x@java.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "069e2b12-0dd3-4fb4-b932-6f421eaef2b4", 0, "6db541e1-f379-4910-ab96-4b291dc921e8", "aclewarth5w@oakley.com", false, false, null, "ACLEWARTH5W@OAKLEY.COM", "ACLEWARTH5W@OAKLEY.COM", "AQAAAAEAACcQAAAAEFj5T6sITHCzYP5S1+GnqM9cnvAfagdVomgwNHJfHeo9rth+1+gOYHXuGWYLueDyEQ==", null, false, "9823639b-4b42-4e57-9f12-b0e25856a772", false, "aclewarth5w@oakley.com" });
+                values: new object[] { "069e2b12-0dd3-4fb4-b932-6f421eaef2b4", 0, "4a3ffdd3-b7de-406e-97f2-73845a23bedb", "aclewarth5w@oakley.com", false, false, null, "ACLEWARTH5W@OAKLEY.COM", "ACLEWARTH5W@OAKLEY.COM", "AQAAAAEAACcQAAAAEHAF9Ciz8q5goNkqN2RsGJYSoshDpxrFxzJyP9XXnpC1eQWhnO0MdKsYPK3pRk/vbA==", null, false, "9823639b-4b42-4e57-9f12-b0e25856a772", false, "aclewarth5w@oakley.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "190230b3-92b1-4a82-8880-28fa762d40c7", 0, "8b8e624a-f83c-4129-ba08-9784f3894f2f", "vtinker5v@tinypic.com", false, false, null, "VTINKER5V@TINYPIC.COM", "VTINKER5V@TINYPIC.COM", "AQAAAAEAACcQAAAAEETBFFFJEJCe+6xrcsd4fjOaDOvt2F5zBGASrUtHhT4MQexIF8LpjZ6TbSUQjxznwA==", null, false, "343b572c-aa06-491f-9d75-5d6165b8c314", false, "vtinker5v@tinypic.com" });
+                values: new object[] { "190230b3-92b1-4a82-8880-28fa762d40c7", 0, "c6365007-2d9c-4e86-b703-ba60223b6c69", "vtinker5v@tinypic.com", false, false, null, "VTINKER5V@TINYPIC.COM", "VTINKER5V@TINYPIC.COM", "AQAAAAEAACcQAAAAEF6cnR3+MfaYfAiijTwEnO8lOBwdjAJwXkGPHj0k7TlZ/JbonjbBDLoOkmyhLg3QfA==", null, false, "343b572c-aa06-491f-9d75-5d6165b8c314", false, "vtinker5v@tinypic.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6e18757e-a87a-47b2-bfbf-7ecabd124a4e", 0, "204f293c-d5fb-4562-a47d-a77bf450520c", "ldeuss5u@netscape.com", false, false, null, "LDEUSS5U@NETSCAPE.COM", "LDEUSS5U@NETSCAPE.COM", "AQAAAAEAACcQAAAAELYWw7YS1BRg3RCamjb953RD/BjsL3l2uFHgiywqy4GZXK64sWTjNa3l007bDRWroQ==", null, false, "2b5dc8a5-087f-44e7-87d6-04eccdf2797f", false, "ldeuss5u@netscape.com" });
+                values: new object[] { "6e18757e-a87a-47b2-bfbf-7ecabd124a4e", 0, "0afb5c3f-bbcb-4ac3-b06d-4819b7fab6a7", "ldeuss5u@netscape.com", false, false, null, "LDEUSS5U@NETSCAPE.COM", "LDEUSS5U@NETSCAPE.COM", "AQAAAAEAACcQAAAAEHVMmzabxgmOgh7H36arFFPbPzkH/PpsMq0qhdZOMWKVG4VegzqlAQVplDzeWhUBDQ==", null, false, "2b5dc8a5-087f-44e7-87d6-04eccdf2797f", false, "ldeuss5u@netscape.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "53f2462b-265c-4e16-b664-62a5ae3ed9cc", 0, "d829f21b-6ef2-4618-99b9-b7ba7648e10e", "toldford5t@zdnet.com", false, false, null, "TOLDFORD5T@ZDNET.COM", "TOLDFORD5T@ZDNET.COM", "AQAAAAEAACcQAAAAEC0HP0CKRJX/oaDobJAhGDCXQtRV/bGLGO2PzHwFP7lgHsNhhOb02zwhRISM6gqg1g==", null, false, "212fbd3c-43de-41a0-8e2d-4934fcb425b6", false, "toldford5t@zdnet.com" });
+                values: new object[] { "53f2462b-265c-4e16-b664-62a5ae3ed9cc", 0, "f0ce36e6-a8b0-4852-9a9d-7534bf944241", "toldford5t@zdnet.com", false, false, null, "TOLDFORD5T@ZDNET.COM", "TOLDFORD5T@ZDNET.COM", "AQAAAAEAACcQAAAAEHt1oJxPZlogT1Gi+2HfV+yNViMjL7g0VwRtiPP8E7MOT/yy9RAV14hzLkXiUN/MVA==", null, false, "212fbd3c-43de-41a0-8e2d-4934fcb425b6", false, "toldford5t@zdnet.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "59c16f1e-b405-4afa-be2a-d6b2610afae0", 0, "d9cd0ee1-b85a-4f80-b243-ee5832c82197", "mlindblad5h@vk.com", false, false, null, "MLINDBLAD5H@VK.COM", "MLINDBLAD5H@VK.COM", "AQAAAAEAACcQAAAAEPwxHrUGJaWeigsAs7wcUH8Sov2TBtmv8ff6WI7yfTEQ1DLYKofl2fEP1c1YxmRjmA==", null, false, "08ec0e8d-090b-47d8-80d3-2bd75443e8f6", false, "mlindblad5h@vk.com" });
+                values: new object[] { "59c16f1e-b405-4afa-be2a-d6b2610afae0", 0, "a9033943-4f26-482f-9ae8-7807d5b91d14", "mlindblad5h@vk.com", false, false, null, "MLINDBLAD5H@VK.COM", "MLINDBLAD5H@VK.COM", "AQAAAAEAACcQAAAAENatRQM/HCc8mV8XP+AEoBMVD33ZEW6PcAHrGNl9JAz294tEj1sGHjpouOMgBDSdig==", null, false, "08ec0e8d-090b-47d8-80d3-2bd75443e8f6", false, "mlindblad5h@vk.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a8d00379-9f05-4e3d-9db9-a872d146278d", 0, "09fe31bd-0d52-4cc9-b420-dae8b4759ec2", "breboul5s@ed.gov", false, false, null, "BREBOUL5S@ED.GOV", "BREBOUL5S@ED.GOV", "AQAAAAEAACcQAAAAEEvD/2XDEF6YpwJrFTZDc8Vm761KVhVIoEILqPLDgc2wYkY0hOXzmpL354eQ/f6Z+A==", null, false, "6ec6c428-d00c-41c4-8f76-355bb8907392", false, "breboul5s@ed.gov" });
+                values: new object[] { "a8d00379-9f05-4e3d-9db9-a872d146278d", 0, "4ee281ee-c4a4-4c43-acfb-02a4a84519f6", "breboul5s@ed.gov", false, false, null, "BREBOUL5S@ED.GOV", "BREBOUL5S@ED.GOV", "AQAAAAEAACcQAAAAEAt6/wiLZfxN17+JlWK3wMRWvaHfmTKHTOLkcPLHyP8YK3WBZJxI7IcgTiN15KKlXg==", null, false, "6ec6c428-d00c-41c4-8f76-355bb8907392", false, "breboul5s@ed.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "80c7c9c6-7820-426b-8977-831ac5e84df5", 0, "e58cd2f1-b69a-41de-af0b-0c3b88327027", "gmccraw5q@gnu.org", false, false, null, "GMCCRAW5Q@GNU.ORG", "GMCCRAW5Q@GNU.ORG", "AQAAAAEAACcQAAAAEN+XfyXUARG8huuM3eG4rYnyNC9mL7wAIF9bBXsBY6Oci15NWS2NzrEpQTK4IH9x9A==", null, false, "4c8cf541-1a1f-4b8b-bd4c-0795b1b4e7b8", false, "gmccraw5q@gnu.org" });
+                values: new object[] { "80c7c9c6-7820-426b-8977-831ac5e84df5", 0, "37d68732-58e1-48b3-a1fe-e51ac664955f", "gmccraw5q@gnu.org", false, false, null, "GMCCRAW5Q@GNU.ORG", "GMCCRAW5Q@GNU.ORG", "AQAAAAEAACcQAAAAEOpt7S2QgelT0gjBFq461E2hfwrRnV28auaqGeiRKs+3zJTPS/sh6bVc/U285YCbdQ==", null, false, "4c8cf541-1a1f-4b8b-bd4c-0795b1b4e7b8", false, "gmccraw5q@gnu.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "01bb3f1e-0042-4072-9c02-74b7d0cea5b5", 0, "4ed12a37-4de5-485a-9d07-698bbeb665fd", "cdebruijne5p@home.pl", false, false, null, "CDEBRUIJNE5P@HOME.PL", "CDEBRUIJNE5P@HOME.PL", "AQAAAAEAACcQAAAAEE7TK3bejq7u4/+B8Bul6RRkwQc9q5e3k3Zghw2gODnLun8YYsVxHDPxJl91eveBOA==", null, false, "b935a342-cd51-4c94-8771-39f6342eac45", false, "cdebruijne5p@home.pl" });
+                values: new object[] { "01bb3f1e-0042-4072-9c02-74b7d0cea5b5", 0, "0d4ef53b-c565-4f07-9c58-e669486f0b0b", "cdebruijne5p@home.pl", false, false, null, "CDEBRUIJNE5P@HOME.PL", "CDEBRUIJNE5P@HOME.PL", "AQAAAAEAACcQAAAAEAgjb9Y6UpjvexxXCqhT9D8z/QPTF1AYh59M/LV0sJwh43OR4hKAQPs44Dso/ZYaHQ==", null, false, "b935a342-cd51-4c94-8771-39f6342eac45", false, "cdebruijne5p@home.pl" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e59ef772-02d0-4ba4-8e6e-4944ffe4029d", 0, "dcd0e2d5-abc8-48f7-a9ea-2245fd4a3077", "jlabell5o@weibo.com", false, false, null, "JLABELL5O@WEIBO.COM", "JLABELL5O@WEIBO.COM", "AQAAAAEAACcQAAAAEIHeioKvgTBlzMQYTQyOUC0cIAC3oVViZ0o6SlBnOO7dCZbUPNAJq3gPTBYHWJQE0w==", null, false, "332d7790-cb2d-454a-b092-4d90cd68100b", false, "jlabell5o@weibo.com" });
+                values: new object[] { "e59ef772-02d0-4ba4-8e6e-4944ffe4029d", 0, "887cf715-7925-4457-8808-900b84bbbd1b", "jlabell5o@weibo.com", false, false, null, "JLABELL5O@WEIBO.COM", "JLABELL5O@WEIBO.COM", "AQAAAAEAACcQAAAAEPan4QVNsiV4ICerchUxsMth5RW5bIau+h4KnD2I30JZIOn7F2hrAtOjOC1qq8ZUUA==", null, false, "332d7790-cb2d-454a-b092-4d90cd68100b", false, "jlabell5o@weibo.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1e5dcdc8-6977-43e7-9c6d-3c4df41b2c0b", 0, "ccf6c42d-79f8-43cc-8499-af79e0ef089b", "rrunge5n@nifty.com", false, false, null, "RRUNGE5N@NIFTY.COM", "RRUNGE5N@NIFTY.COM", "AQAAAAEAACcQAAAAEFInQIW0ca8U5g6hxcX3+vI+E4GEinLxJKE8xeM8ommR8BUhqf8mv9feZK5kBQHTKw==", null, false, "0c7ea123-770e-4768-b1c3-9c3a4fcc2f5c", false, "rrunge5n@nifty.com" });
+                values: new object[] { "1e5dcdc8-6977-43e7-9c6d-3c4df41b2c0b", 0, "924bd47c-93b9-4842-8ff6-4dfffe414b44", "rrunge5n@nifty.com", false, false, null, "RRUNGE5N@NIFTY.COM", "RRUNGE5N@NIFTY.COM", "AQAAAAEAACcQAAAAEEljOpNyGE5I72+0Rz3z4skpF8bVqGRFcshOQWm1YY4Z1r3dBgJX9HdJh4czFzzPeQ==", null, false, "0c7ea123-770e-4768-b1c3-9c3a4fcc2f5c", false, "rrunge5n@nifty.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d86f973a-9e3c-4b31-b926-1c40fb01be07", 0, "9707f46e-00a5-4790-865c-8254c618319f", "ganshell5m@163.com", false, false, null, "GANSHELL5M@163.COM", "GANSHELL5M@163.COM", "AQAAAAEAACcQAAAAEHefwerjNp/F4+x9jjHdApuC7DmBSBvcittEUgUF1q2CM2jHvFIS1rjmjUjOIJGyPg==", null, false, "bdeccd6b-c553-4e50-b03c-419c660e287f", false, "ganshell5m@163.com" });
+                values: new object[] { "d86f973a-9e3c-4b31-b926-1c40fb01be07", 0, "8d2a8b3b-985b-4065-8dda-24afbf0b7fec", "ganshell5m@163.com", false, false, null, "GANSHELL5M@163.COM", "GANSHELL5M@163.COM", "AQAAAAEAACcQAAAAELCN4rHAyAuCk3b5ZDe6hiKNdaoJeUrt2cxZBMtn78ZgrEb5vhbDl7YkDS3WNTpCJg==", null, false, "bdeccd6b-c553-4e50-b03c-419c660e287f", false, "ganshell5m@163.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "568eb4b4-973f-41af-84f4-f7aceef24e40", 0, "b9fca218-be86-4fb0-8cc3-ccca8cab2e17", "cchaffyn5l@google.fr", false, false, null, "CCHAFFYN5L@GOOGLE.FR", "CCHAFFYN5L@GOOGLE.FR", "AQAAAAEAACcQAAAAELS+ujjjXcf1woTYMWNEg6UpV+l6mduoixiL5b0LSNylXK+axNO5Hsj+ZRtTEok7Pw==", null, false, "bb4e0a8b-6a44-401a-b766-370109ba8eda", false, "cchaffyn5l@google.fr" });
+                values: new object[] { "568eb4b4-973f-41af-84f4-f7aceef24e40", 0, "6ae5b1c4-9636-418c-801b-fa7b7e14cf22", "cchaffyn5l@google.fr", false, false, null, "CCHAFFYN5L@GOOGLE.FR", "CCHAFFYN5L@GOOGLE.FR", "AQAAAAEAACcQAAAAECJgS3Ro9/kdCMxqrI/fUewlnDoeTiBDTQlJdlc6EPhBTLzrtU1V3uHMqnMIQzDbVw==", null, false, "bb4e0a8b-6a44-401a-b766-370109ba8eda", false, "cchaffyn5l@google.fr" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5e27e785-4563-4a98-8d1b-bf3cd710bd4e", 0, "76193219-9bc7-4e4e-ab3c-ada88b2f4f75", "nstanton5k@mit.edu", false, false, null, "NSTANTON5K@MIT.EDU", "NSTANTON5K@MIT.EDU", "AQAAAAEAACcQAAAAEHNz3qp+za9lV0JQjstpIc1omRrH4KNfZAQkh3DxTxws/15IZKzhYZisApIh6REyZA==", null, false, "075c0b6e-ae86-4c68-b2a7-0024f5d6d93b", false, "nstanton5k@mit.edu" });
+                values: new object[] { "5e27e785-4563-4a98-8d1b-bf3cd710bd4e", 0, "b499071e-2292-4809-b666-52b4b1f11844", "nstanton5k@mit.edu", false, false, null, "NSTANTON5K@MIT.EDU", "NSTANTON5K@MIT.EDU", "AQAAAAEAACcQAAAAEEvbPzKyADESUKCvVDK37m6j74+GQIAzp4SnZ2dCG7WYfBbRGs8TY7kezG43XAo+iQ==", null, false, "075c0b6e-ae86-4c68-b2a7-0024f5d6d93b", false, "nstanton5k@mit.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "62010590-2e32-4bf6-ba4d-b187240bcfb0", 0, "8adb9720-f432-404a-bc17-c6debe53938b", "fdukesbury5j@ameblo.jp", false, false, null, "FDUKESBURY5J@AMEBLO.JP", "FDUKESBURY5J@AMEBLO.JP", "AQAAAAEAACcQAAAAEH6k2nXSbjQV+OtysFsygOR9gwEHSsDUNHJksbygpVTR4d+5CAFi52aaBeDQhGnJzw==", null, false, "82dce73e-5c34-419b-9e01-c274b9b6f8f2", false, "fdukesbury5j@ameblo.jp" });
+                values: new object[] { "62010590-2e32-4bf6-ba4d-b187240bcfb0", 0, "432c2583-e282-4d71-8c0e-42b4ac864c94", "fdukesbury5j@ameblo.jp", false, false, null, "FDUKESBURY5J@AMEBLO.JP", "FDUKESBURY5J@AMEBLO.JP", "AQAAAAEAACcQAAAAEASkkecyuyxm4GYsZshQe0jPmZP2iDq1BUQr0Y/5HzSYb0ziVVsMLuOmJOLCSNNbyg==", null, false, "82dce73e-5c34-419b-9e01-c274b9b6f8f2", false, "fdukesbury5j@ameblo.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a396cb9b-890b-4c27-b98f-50fe9aafb014", 0, "02f3d330-93e0-4e14-86fd-39558a9b88c2", "mdomke5r@princeton.edu", false, false, null, "MDOMKE5R@PRINCETON.EDU", "MDOMKE5R@PRINCETON.EDU", "AQAAAAEAACcQAAAAEEkhevpKM7S35VxmW/XDI/66kK9idzOSNIj3lLKfYbWt8inV96x0h/4fV8xD+haRzA==", null, false, "cc937838-7405-4a20-aa54-ff52bd034ecc", false, "mdomke5r@princeton.edu" });
+                values: new object[] { "a396cb9b-890b-4c27-b98f-50fe9aafb014", 0, "7fb29ce0-af91-41a9-b99d-68635f9436e8", "mdomke5r@princeton.edu", false, false, null, "MDOMKE5R@PRINCETON.EDU", "MDOMKE5R@PRINCETON.EDU", "AQAAAAEAACcQAAAAEKc3gwZZlSZnBbvafrxebzZdJLYEtVfsyZUMvTBZ3LSFnPcUFP1Dx79/hDJiXbBcGg==", null, false, "cc937838-7405-4a20-aa54-ff52bd034ecc", false, "mdomke5r@princeton.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "aaa23c0a-f7b6-493e-ba1f-c7b4f660f6af", 0, "74e998c0-6464-48ad-9b3e-1449f8dfd937", "dboreham79@baidu.com", false, false, null, "DBOREHAM79@BAIDU.COM", "DBOREHAM79@BAIDU.COM", "AQAAAAEAACcQAAAAEAYZmsx3oaYdJHKUiFH95T19bVBmEuqYtEgawxvL18QEJ5hfoHpH2FPl7bNeutYZGQ==", null, false, "db2534c9-1a20-4bc2-807d-20581db50a58", false, "dboreham79@baidu.com" });
+                values: new object[] { "aaa23c0a-f7b6-493e-ba1f-c7b4f660f6af", 0, "496315bb-9f5d-4de1-8d56-d1c472ea75ad", "dboreham79@baidu.com", false, false, null, "DBOREHAM79@BAIDU.COM", "DBOREHAM79@BAIDU.COM", "AQAAAAEAACcQAAAAEJJwxlrI4Q9McBpc7ng2d4TSwLtJB6e46Wzwzw6n10Gsni7RpR+9Pv/geBcyN15veQ==", null, false, "db2534c9-1a20-4bc2-807d-20581db50a58", false, "dboreham79@baidu.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5f14a6dd-5a95-4526-b784-d38608ddf576", 0, "2c26c091-4d7a-410c-8fea-0510b1e291fa", "rrounce7a@prweb.com", false, false, null, "RROUNCE7A@PRWEB.COM", "RROUNCE7A@PRWEB.COM", "AQAAAAEAACcQAAAAEN/3bMs8np7CRo7qO0NUTjNoTHCxfYmuYp9G/SlH2VhluWXzmYVjkEXH7qNimgAicg==", null, false, "33073b6d-d8fc-4808-b553-188fb4aeddcb", false, "rrounce7a@prweb.com" });
+                values: new object[] { "5f14a6dd-5a95-4526-b784-d38608ddf576", 0, "9da88c03-87cd-40a8-af0c-b39f88f23a28", "rrounce7a@prweb.com", false, false, null, "RROUNCE7A@PRWEB.COM", "RROUNCE7A@PRWEB.COM", "AQAAAAEAACcQAAAAEMSE/VIPisMmVUJOfuZjNES/9ouctGdXkphPPIsm8dltPHAnMyRi1knON0EaYmNkKg==", null, false, "33073b6d-d8fc-4808-b553-188fb4aeddcb", false, "rrounce7a@prweb.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0de3c2d1-6b55-4856-8d6f-d81e19997c16", 0, "fcabd6c7-4374-46a1-aeb1-13141dd7a738", "akirkup7b@nifty.com", false, false, null, "AKIRKUP7B@NIFTY.COM", "AKIRKUP7B@NIFTY.COM", "AQAAAAEAACcQAAAAEL99BaHxbBF+18sHqbWeoEYm9ffKOB3ieMHO6hCcDXiJYLKpp5TpvuZAm/2bBCgLQw==", null, false, "fa6dfcf2-3e17-4d76-97fe-5f91f862ecf6", false, "akirkup7b@nifty.com" });
+                values: new object[] { "0de3c2d1-6b55-4856-8d6f-d81e19997c16", 0, "502998af-19c6-4d2e-aa49-00e01108c4e0", "akirkup7b@nifty.com", false, false, null, "AKIRKUP7B@NIFTY.COM", "AKIRKUP7B@NIFTY.COM", "AQAAAAEAACcQAAAAEJztbCuPZxoFAMT7qDbokPA52jAVBnURsZAn79ZN/JTeDDUcWli3DweHO7jFbd5R7g==", null, false, "fa6dfcf2-3e17-4d76-97fe-5f91f862ecf6", false, "akirkup7b@nifty.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ed9848b4-86c7-4db4-bc89-0b05251d84f7", 0, "89c7232d-de3a-48c9-8760-c76f16cecb67", "clumsdall91@mapy.cz", false, false, null, "CLUMSDALL91@MAPY.CZ", "CLUMSDALL91@MAPY.CZ", "AQAAAAEAACcQAAAAEJZ78G4KXWrrJ0JDtHlYfNn1EdwWn/qtuDViCFvW86o6gxTgovt3CA1cwbHFsQdh8w==", null, false, "1cebb0a7-393b-4782-8982-6473434d5304", false, "clumsdall91@mapy.cz" });
+                values: new object[] { "ed9848b4-86c7-4db4-bc89-0b05251d84f7", 0, "c054375c-27aa-4854-be5a-268538402e51", "clumsdall91@mapy.cz", false, false, null, "CLUMSDALL91@MAPY.CZ", "CLUMSDALL91@MAPY.CZ", "AQAAAAEAACcQAAAAELGhEjyeUbm22+BSCSHtpZKK5wjscCzu2XqGbcuO85UydwBAEfr+lDrBZEIT1kwBBw==", null, false, "1cebb0a7-393b-4782-8982-6473434d5304", false, "clumsdall91@mapy.cz" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e94baf00-98c6-43be-80ae-3a95415518fb", 0, "b8680ea3-25ba-495a-a47c-a224a24e8a94", "cparkman90@stumbleupon.com", false, false, null, "CPARKMAN90@STUMBLEUPON.COM", "CPARKMAN90@STUMBLEUPON.COM", "AQAAAAEAACcQAAAAEChAmeAjXtRE33KPvLzAt8qVZqVFGA9aNBzoRYGRi5C3YJ2yACoN+7VgtWjn9xw7sQ==", null, false, "5dfc5b9c-e903-4159-8bc5-c61a10f6d5f8", false, "cparkman90@stumbleupon.com" });
+                values: new object[] { "e94baf00-98c6-43be-80ae-3a95415518fb", 0, "7e51e3b4-5706-4ec3-9e4a-5327c06b8b2c", "cparkman90@stumbleupon.com", false, false, null, "CPARKMAN90@STUMBLEUPON.COM", "CPARKMAN90@STUMBLEUPON.COM", "AQAAAAEAACcQAAAAEDtxuL5ZY49t+tTnRDEkYC0wO7Gr+VpP/YXP79RMjBhEXM/BGnlvZHdkesjFvAuxrA==", null, false, "5dfc5b9c-e903-4159-8bc5-c61a10f6d5f8", false, "cparkman90@stumbleupon.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "df054af5-036e-4247-be37-860ed1e2a2aa", 0, "83a671c2-1001-4778-a951-038dd3f57a92", "jfernandez8z@sogou.com", false, false, null, "JFERNANDEZ8Z@SOGOU.COM", "JFERNANDEZ8Z@SOGOU.COM", "AQAAAAEAACcQAAAAEGej6qvcURgFk+tc+/eej9PfAPWiIFKprwrnt67fY2eqQtn6rW3gJ2tc9iuRZWmsKA==", null, false, "63aea88a-9684-4a59-b6ba-e98ffa5d7d3b", false, "jfernandez8z@sogou.com" });
+                values: new object[] { "df054af5-036e-4247-be37-860ed1e2a2aa", 0, "4351f51f-50c2-47c5-b3c4-4ce99cd89473", "jfernandez8z@sogou.com", false, false, null, "JFERNANDEZ8Z@SOGOU.COM", "JFERNANDEZ8Z@SOGOU.COM", "AQAAAAEAACcQAAAAEEKWHxs31lKJ91penJEYoSyAmb3hs1nLV5EmmPa4b7XoaML6N070Ecp6JR5OIIR/tg==", null, false, "63aea88a-9684-4a59-b6ba-e98ffa5d7d3b", false, "jfernandez8z@sogou.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "07d82baf-7c56-46ac-ac5b-aae163820d20", 0, "0a06a97b-de4c-4db2-84ce-efc7eecad6b8", "jskally8y@sciencedirect.com", false, false, null, "JSKALLY8Y@SCIENCEDIRECT.COM", "JSKALLY8Y@SCIENCEDIRECT.COM", "AQAAAAEAACcQAAAAEGraBP7HzSn6u18gHh3Ffcckl/QWkCXY7+fNcK8d6EGclEHnd6kRDLohJYdXyAdSeA==", null, false, "40a4a43b-8a42-4bcd-b077-7aced97c4d4d", false, "jskally8y@sciencedirect.com" });
+                values: new object[] { "07d82baf-7c56-46ac-ac5b-aae163820d20", 0, "98fb64df-c548-4809-8a0a-e4c19cc856b5", "jskally8y@sciencedirect.com", false, false, null, "JSKALLY8Y@SCIENCEDIRECT.COM", "JSKALLY8Y@SCIENCEDIRECT.COM", "AQAAAAEAACcQAAAAEM3Lu+6EjjynR50WnE9By48CbhLkgn79YSEtASNdnG3hiT7YNByFeNU9WCmiyfX3Mw==", null, false, "40a4a43b-8a42-4bcd-b077-7aced97c4d4d", false, "jskally8y@sciencedirect.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8e863265-f916-439e-a34a-79c79ad49876", 0, "ddc80d8e-8159-47bb-a368-8884d5db6a08", "tmuggach8x@studiopress.com", false, false, null, "TMUGGACH8X@STUDIOPRESS.COM", "TMUGGACH8X@STUDIOPRESS.COM", "AQAAAAEAACcQAAAAEC7UqXLRaj6u+n/e4dtCbZznERFytA/TVou4kAlJwiUyCuYopXJkUfsAxz80r+ffkA==", null, false, "5027227a-3288-4c1b-8221-83d882b9161d", false, "tmuggach8x@studiopress.com" });
+                values: new object[] { "8e863265-f916-439e-a34a-79c79ad49876", 0, "27a11a80-62ad-47b1-9e09-2e9e4fb0caeb", "tmuggach8x@studiopress.com", false, false, null, "TMUGGACH8X@STUDIOPRESS.COM", "TMUGGACH8X@STUDIOPRESS.COM", "AQAAAAEAACcQAAAAEEMVENBK1EkwNA62UxQhEoYHldqDMjAX5kjTmDr2QNOWY7YG6n7wAdGcmvFiHp5g2w==", null, false, "5027227a-3288-4c1b-8221-83d882b9161d", false, "tmuggach8x@studiopress.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3157b637-7d9d-426f-ba12-3f70b1e16a6d", 0, "bcb2fa04-8235-4940-8b03-e9becee7a4e9", "nprewett8w@tiny.cc", false, false, null, "NPREWETT8W@TINY.CC", "NPREWETT8W@TINY.CC", "AQAAAAEAACcQAAAAEHOf4ov22oOmilUFzSi/Y1eRhhKDnBP87g3elI5jtIGn20zrKK/y2+5Cwc/UxrCl4w==", null, false, "0c4c2e86-d400-4514-8744-6e5e1a0703e7", false, "nprewett8w@tiny.cc" });
+                values: new object[] { "3157b637-7d9d-426f-ba12-3f70b1e16a6d", 0, "ece9ec2a-ba8e-4423-8e6d-b5f3f7906ba8", "nprewett8w@tiny.cc", false, false, null, "NPREWETT8W@TINY.CC", "NPREWETT8W@TINY.CC", "AQAAAAEAACcQAAAAEB3e9vJVBUOZHM/awCZH1yobMmuIGuMcWQUNKudGGwklMoFeUHeeYnYyNz6PzKAV0A==", null, false, "0c4c2e86-d400-4514-8744-6e5e1a0703e7", false, "nprewett8w@tiny.cc" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1b5393a9-1d11-4e2e-8b8b-4596c49ccb3f", 0, "15070bdf-e6fd-44a7-a0d7-45b7e3142c6c", "ejorgesen8v@booking.com", false, false, null, "EJORGESEN8V@BOOKING.COM", "EJORGESEN8V@BOOKING.COM", "AQAAAAEAACcQAAAAEF0p5nZsj4W9w3kAh+YQs7PXWyfSU/mvX/wqJjfbKf4pc8bNijmpHD0Tzc38FMZxJw==", null, false, "de8a8d7d-62ff-4836-9d67-2f58811897a7", false, "ejorgesen8v@booking.com" });
+                values: new object[] { "1b5393a9-1d11-4e2e-8b8b-4596c49ccb3f", 0, "b48a9216-c809-4f23-86d6-7bfd8c66ba69", "ejorgesen8v@booking.com", false, false, null, "EJORGESEN8V@BOOKING.COM", "EJORGESEN8V@BOOKING.COM", "AQAAAAEAACcQAAAAELLV7VtlfT3Ja53qQME3240pGShBsGHf/5cOIfv5OgvzIWUnBhiGyLzCsMETwoqh/Q==", null, false, "de8a8d7d-62ff-4836-9d67-2f58811897a7", false, "ejorgesen8v@booking.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3a001f36-4808-4355-971f-5a167c61aab1", 0, "02b89ab3-e0dd-45fd-8d16-9df732606868", "aedgecombe8u@deliciousdays.com", false, false, null, "AEDGECOMBE8U@DELICIOUSDAYS.COM", "AEDGECOMBE8U@DELICIOUSDAYS.COM", "AQAAAAEAACcQAAAAECPcgfqJFIyyuBUyIIq86O0jUC0s1t13iWcbUWP0lV4+CN2hY52Yhl3uKSr72BDH+Q==", null, false, "9b60a900-05e5-422a-812c-c75bccc5937a", false, "aedgecombe8u@deliciousdays.com" });
+                values: new object[] { "3a001f36-4808-4355-971f-5a167c61aab1", 0, "e648029b-9d33-4eac-98ac-1677220e30b6", "aedgecombe8u@deliciousdays.com", false, false, null, "AEDGECOMBE8U@DELICIOUSDAYS.COM", "AEDGECOMBE8U@DELICIOUSDAYS.COM", "AQAAAAEAACcQAAAAEJRP0PSa6QtRxfpOL/RFupIijz0zEdWE2qP8sHJvv9DNPyQaQk3Ya0uep9tk1VH4rA==", null, false, "9b60a900-05e5-422a-812c-c75bccc5937a", false, "aedgecombe8u@deliciousdays.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1e162aa3-2146-49ac-a6ad-a3443988dda5", 0, "0f21ab86-4748-4573-abc4-c66114ee416a", "mmyott92@symantec.com", false, false, null, "MMYOTT92@SYMANTEC.COM", "MMYOTT92@SYMANTEC.COM", "AQAAAAEAACcQAAAAECecsP088vqSbBiBpm6ShX0mvLTTLwMqToRrHS/gFIG8sL6YTwIYOMYUxdzVA88lLA==", null, false, "f721a570-fce7-4e24-a348-ce34f4726522", false, "mmyott92@symantec.com" });
+                values: new object[] { "1e162aa3-2146-49ac-a6ad-a3443988dda5", 0, "e7a7c238-d343-4130-ad19-0b41f7ad2548", "mmyott92@symantec.com", false, false, null, "MMYOTT92@SYMANTEC.COM", "MMYOTT92@SYMANTEC.COM", "AQAAAAEAACcQAAAAEO+1poaEfXVlKJV4861yjywmxe/UTM9mJOn5PqBeJc4QQHJQ0A6RftBPeKAeqoXOvA==", null, false, "f721a570-fce7-4e24-a348-ce34f4726522", false, "mmyott92@symantec.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "20624271-c465-411d-b3c0-4f6f63415db1", 0, "ada5fdca-86c6-4fb4-a578-eec191c743ad", "gvigne8t@plala.or.jp", false, false, null, "GVIGNE8T@PLALA.OR.JP", "GVIGNE8T@PLALA.OR.JP", "AQAAAAEAACcQAAAAEIJiNaSG9gJHmFYDpkRBRZhFxnJbmcUdCN/EfGZ9qqNSWdIrU06m/KMZcHil2D7YIQ==", null, false, "9a018c38-ddcd-46a6-9c8d-e85779658c3a", false, "gvigne8t@plala.or.jp" });
+                values: new object[] { "20624271-c465-411d-b3c0-4f6f63415db1", 0, "e9e1fb86-d59b-4619-b007-f6edc42b7ff9", "gvigne8t@plala.or.jp", false, false, null, "GVIGNE8T@PLALA.OR.JP", "GVIGNE8T@PLALA.OR.JP", "AQAAAAEAACcQAAAAEFmub/MdoUgeWAWjWZJVXFqJKayS2MZLR9t8fkS4aDEqOge1qws5XYHo1MIvVBoyiw==", null, false, "9a018c38-ddcd-46a6-9c8d-e85779658c3a", false, "gvigne8t@plala.or.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d62b52fb-aab3-4c1c-ad06-e08d25d51407", 0, "dce16e76-f947-4b67-b0e2-287845a10a17", "kgwilt8r@ezinearticles.com", false, false, null, "KGWILT8R@EZINEARTICLES.COM", "KGWILT8R@EZINEARTICLES.COM", "AQAAAAEAACcQAAAAENTUGr/LnDWuqKeu2pgKynJbZm45rNOe25JblkwPLOSQYuVxeqehggc1wgs1oJ7h3w==", null, false, "bbe92b63-cfe3-4814-86e5-da31d7f8781a", false, "kgwilt8r@ezinearticles.com" });
+                values: new object[] { "d62b52fb-aab3-4c1c-ad06-e08d25d51407", 0, "0586d382-2251-4111-9890-c43fca522c3e", "kgwilt8r@ezinearticles.com", false, false, null, "KGWILT8R@EZINEARTICLES.COM", "KGWILT8R@EZINEARTICLES.COM", "AQAAAAEAACcQAAAAEFSKf4CLhORSQBXlG/eFc+u7LheidPbR00DejIWgVO/YjVs4iMgXjcMRBo50Dm6tHA==", null, false, "bbe92b63-cfe3-4814-86e5-da31d7f8781a", false, "kgwilt8r@ezinearticles.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6e49146b-ef73-4fe5-b804-85c4c1301b52", 0, "57eac608-3f3a-4155-a956-ca0ca4cb2ebb", "jpoag8q@biglobe.ne.jp", false, false, null, "JPOAG8Q@BIGLOBE.NE.JP", "JPOAG8Q@BIGLOBE.NE.JP", "AQAAAAEAACcQAAAAEJykpXLj2KpeZev2seL5+7Nrx4YZGtOlYwKdUal+NY9am/JegZ4ORfo+y2uHe2LIOQ==", null, false, "09f1356f-1c64-4ce4-a412-93c942ddcb7a", false, "jpoag8q@biglobe.ne.jp" });
+                values: new object[] { "6e49146b-ef73-4fe5-b804-85c4c1301b52", 0, "5a773cd1-73f7-435f-977e-fbe9079e6163", "jpoag8q@biglobe.ne.jp", false, false, null, "JPOAG8Q@BIGLOBE.NE.JP", "JPOAG8Q@BIGLOBE.NE.JP", "AQAAAAEAACcQAAAAEBCvPWTZjeEKWGeUlfuv4nomgkd6jRTBHgS9M2tg0AOt1GuRvvaRh8Q/GYBu0UHSww==", null, false, "09f1356f-1c64-4ce4-a412-93c942ddcb7a", false, "jpoag8q@biglobe.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9d1bde1e-dc37-46fd-8bf4-ee15b74d4607", 0, "23a979d6-9db6-4d5f-b91b-bf13e20a7f40", "ccousens8p@chronoengine.com", false, false, null, "CCOUSENS8P@CHRONOENGINE.COM", "CCOUSENS8P@CHRONOENGINE.COM", "AQAAAAEAACcQAAAAEH2dcZbAdvaZh+s7eKS6oklh3iKX6vdvo4d15nMza1T0ohqjwTUMQQ4DfyalK6srTg==", null, false, "bb75fac4-47d9-45d3-b408-21b0980a2bdb", false, "ccousens8p@chronoengine.com" });
+                values: new object[] { "9d1bde1e-dc37-46fd-8bf4-ee15b74d4607", 0, "e24be191-6da7-4d30-a310-0931c0b073e3", "ccousens8p@chronoengine.com", false, false, null, "CCOUSENS8P@CHRONOENGINE.COM", "CCOUSENS8P@CHRONOENGINE.COM", "AQAAAAEAACcQAAAAENpW3PZvM4xx8VpDFfKxMKF8kuevKj/QuAhvsj+xVwIPxcc9yZtR6/OFEVgl7KaYhA==", null, false, "bb75fac4-47d9-45d3-b408-21b0980a2bdb", false, "ccousens8p@chronoengine.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ab0bd1e7-db97-4b2f-a713-782dc1d88da3", 0, "4d810ebc-dd32-4278-a8d0-0b42610baeb0", "ltipper8o@booking.com", false, false, null, "LTIPPER8O@BOOKING.COM", "LTIPPER8O@BOOKING.COM", "AQAAAAEAACcQAAAAEJoV0Y5t2UmUq0ewIRPuvH7tLq6SK9F7NTp15npbKM+qjNiidjK0nLPUTvuMkydI9g==", null, false, "d8fba1e4-6673-497e-ad0b-76e03aa88cf3", false, "ltipper8o@booking.com" });
+                values: new object[] { "ab0bd1e7-db97-4b2f-a713-782dc1d88da3", 0, "d593f9ea-9260-4e5c-9292-1a2458f51b00", "ltipper8o@booking.com", false, false, null, "LTIPPER8O@BOOKING.COM", "LTIPPER8O@BOOKING.COM", "AQAAAAEAACcQAAAAEEC37Ljed0EFU3Sd4VsvParjeV1y3YjHTu3aClD4tU0vuSunbG0HnuvVuqDfsna/sQ==", null, false, "d8fba1e4-6673-497e-ad0b-76e03aa88cf3", false, "ltipper8o@booking.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e8b8da52-0919-4d18-8a8d-e7e88e115ff2", 0, "7bc13053-9080-40ed-b5fb-b15f0b606652", "dbosley8n@cafepress.com", false, false, null, "DBOSLEY8N@CAFEPRESS.COM", "DBOSLEY8N@CAFEPRESS.COM", "AQAAAAEAACcQAAAAEAbRayeXdIxmrAsLD+ra2sIz/wUCtQtItb3WNDEs283eZ00/TGSw463sTJxU7Heong==", null, false, "e1cd5874-2747-4fc7-9b95-3f6182a799d0", false, "dbosley8n@cafepress.com" });
+                values: new object[] { "e8b8da52-0919-4d18-8a8d-e7e88e115ff2", 0, "193f7234-9730-4283-96db-ab23a464f2b5", "dbosley8n@cafepress.com", false, false, null, "DBOSLEY8N@CAFEPRESS.COM", "DBOSLEY8N@CAFEPRESS.COM", "AQAAAAEAACcQAAAAEMszmtqcXj8nK1KFXNYaCjfkk88+/L0K2I0WY7Wu8KVDtFWRxknL2DfZCpa2Gib9qw==", null, false, "e1cd5874-2747-4fc7-9b95-3f6182a799d0", false, "dbosley8n@cafepress.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8f1b4904-1266-48ca-94a6-0bd0eae17750", 0, "6e78697b-ea3c-4c2a-ac63-0106009792f7", "dcampelli8m@flavors.me", false, false, null, "DCAMPELLI8M@FLAVORS.ME", "DCAMPELLI8M@FLAVORS.ME", "AQAAAAEAACcQAAAAEGP1hh3TfgyZ/AtwU7XwHsWOhOQMpgVk7Vu4236DCixn7H7J0yxqAdQZsbKbXgTCjA==", null, false, "0a7cdab6-e564-4d9a-835f-73beacd4c13c", false, "dcampelli8m@flavors.me" });
+                values: new object[] { "8f1b4904-1266-48ca-94a6-0bd0eae17750", 0, "8ce1195b-4280-4cd7-8bb8-fc8115fa42f2", "dcampelli8m@flavors.me", false, false, null, "DCAMPELLI8M@FLAVORS.ME", "DCAMPELLI8M@FLAVORS.ME", "AQAAAAEAACcQAAAAEAAlVERPBeHuM66Ty3HNjK2iSAuIrhuBtmrYcMtM3vlUsE6JCM/Obn/D0Pgv+/ufAw==", null, false, "0a7cdab6-e564-4d9a-835f-73beacd4c13c", false, "dcampelli8m@flavors.me" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f671e79b-0bdf-4c4c-a221-cba15194596e", 0, "9b51c382-9941-434c-bbae-47507d00ccd3", "cboissier8l@plala.or.jp", false, false, null, "CBOISSIER8L@PLALA.OR.JP", "CBOISSIER8L@PLALA.OR.JP", "AQAAAAEAACcQAAAAEGiTq2jGkKACNn25B0mTeEGj3bXPU0DGy0I9qR7Pwl/6zC8STVVhIBWS0zjw3mRdGA==", null, false, "2aef36b9-a70d-4569-8f7c-71c6b5739805", false, "cboissier8l@plala.or.jp" });
+                values: new object[] { "f671e79b-0bdf-4c4c-a221-cba15194596e", 0, "7c1febc2-198f-4b3f-b2f8-6c6b3f42f1c1", "cboissier8l@plala.or.jp", false, false, null, "CBOISSIER8L@PLALA.OR.JP", "CBOISSIER8L@PLALA.OR.JP", "AQAAAAEAACcQAAAAECilbxSdpNlOR7MMng2UE8wC46ft3SGQ0mDe7KOqsZu6miiZzZUKnRJrmvGGO7wkkQ==", null, false, "2aef36b9-a70d-4569-8f7c-71c6b5739805", false, "cboissier8l@plala.or.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d2391353-586a-4f1c-ab67-c8d172e7f64b", 0, "12e77f4f-f5ff-4efc-8eec-dcb132e31997", "jrude8k@mapquest.com", false, false, null, "JRUDE8K@MAPQUEST.COM", "JRUDE8K@MAPQUEST.COM", "AQAAAAEAACcQAAAAEDT5SH7XK74yCZnbVe39aeZy9Encj8Ft135/IcCKddb8lFMwGKUpSyrBxz2SBGd/Bg==", null, false, "899f8149-0e8c-4058-95dd-a039b9456ba3", false, "jrude8k@mapquest.com" });
+                values: new object[] { "d2391353-586a-4f1c-ab67-c8d172e7f64b", 0, "0161c259-9dd8-433e-ae1a-1e122b858b49", "jrude8k@mapquest.com", false, false, null, "JRUDE8K@MAPQUEST.COM", "JRUDE8K@MAPQUEST.COM", "AQAAAAEAACcQAAAAEKZhLRJOd5MWyO1IZBV76GAR5QplEJAvaJjx6gEKSekHQBJ7bb5fWaUb2esYxEw7dQ==", null, false, "899f8149-0e8c-4058-95dd-a039b9456ba3", false, "jrude8k@mapquest.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "17093609-c194-46ca-b5ee-d9db4f1b09c7", 0, "43b20f0d-f3f8-4b27-b219-14b0fa4aa014", "nmanilow8s@usgs.gov", false, false, null, "NMANILOW8S@USGS.GOV", "NMANILOW8S@USGS.GOV", "AQAAAAEAACcQAAAAEA2mQvO1EhLmrV4B5SiD+OEOmkiehxZftjQX1WJu0pHTlXcpxYtjvy4k+e/Ww2lkSQ==", null, false, "8c371191-c7d8-4c84-9061-1c29c514a228", false, "nmanilow8s@usgs.gov" });
+                values: new object[] { "17093609-c194-46ca-b5ee-d9db4f1b09c7", 0, "65d98c50-5063-4b9d-9883-fa1a66c1db15", "nmanilow8s@usgs.gov", false, false, null, "NMANILOW8S@USGS.GOV", "NMANILOW8S@USGS.GOV", "AQAAAAEAACcQAAAAELrVoousl40D82WdS9PQkx+mdMRAdaT/pVEnZRFCyAKDtH5jgJU2QvTJ4bPlSR4Bbw==", null, false, "8c371191-c7d8-4c84-9061-1c29c514a228", false, "nmanilow8s@usgs.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8eeb7a87-919d-45c3-8aa0-814331865bb9", 0, "d604ecf6-0d99-49aa-a301-55fb26ffacc5", "ddingate8j@mail.ru", false, false, null, "DDINGATE8J@MAIL.RU", "DDINGATE8J@MAIL.RU", "AQAAAAEAACcQAAAAENWgylrfuvFBNJPvOsI6wwyC1uCDKGN7aGx8gOVzIDyppU1UPtvSG7r2sfErrNfyaA==", null, false, "e635eab9-005e-4a34-9772-b8f2418e91be", false, "ddingate8j@mail.ru" });
+                values: new object[] { "8eeb7a87-919d-45c3-8aa0-814331865bb9", 0, "47bba2c1-13b5-4ece-bb7e-ffb553d73f53", "ddingate8j@mail.ru", false, false, null, "DDINGATE8J@MAIL.RU", "DDINGATE8J@MAIL.RU", "AQAAAAEAACcQAAAAEOxhYp7HJpaazzJYnNwTalQvEH+95axtkq1mUuZ2C3OQJWNOoRUExkGWIIM5jMWpFg==", null, false, "e635eab9-005e-4a34-9772-b8f2418e91be", false, "ddingate8j@mail.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5c86cb21-875b-4d05-88b6-69c1b2060e3c", 0, "a55703df-39c3-4bbe-8b7a-3f0902f438a7", "rbayne93@cdc.gov", false, false, null, "RBAYNE93@CDC.GOV", "RBAYNE93@CDC.GOV", "AQAAAAEAACcQAAAAEHUqJGDGHeb0nvi33Ss4PU3JoIeNGFU5CuFecZA3UrH2x9YTJpWMu8c0A7WMPyoesg==", null, false, "0fca618a-e84b-458e-a519-2922dec1d9cb", false, "rbayne93@cdc.gov" });
+                values: new object[] { "5c86cb21-875b-4d05-88b6-69c1b2060e3c", 0, "874ecaf7-4177-48c5-b7de-553eb073c65a", "rbayne93@cdc.gov", false, false, null, "RBAYNE93@CDC.GOV", "RBAYNE93@CDC.GOV", "AQAAAAEAACcQAAAAEP6YU/DZNzveAbvuhs3tv0GmB77Mg3tSCZ5pbp+xt6I8lduCFcUWRjSDUznw56smOA==", null, false, "0fca618a-e84b-458e-a519-2922dec1d9cb", false, "rbayne93@cdc.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "612b94f1-67a2-4866-befa-4634aa5131aa", 0, "99fd1994-48c1-4fe8-a128-3eeb92d84736", "eculverhouse95@51.la", false, false, null, "ECULVERHOUSE95@51.LA", "ECULVERHOUSE95@51.LA", "AQAAAAEAACcQAAAAECCC4JD/ks0GtSwhU7rqEvLQnIsrD6zKyE9G2x18GaFWKMAdJjqd2wPt0LO6nywzrQ==", null, false, "0f6e7189-ffb3-4a27-b107-6223fc335aa1", false, "eculverhouse95@51.la" });
+                values: new object[] { "612b94f1-67a2-4866-befa-4634aa5131aa", 0, "66eb3bc6-e75a-44a0-918a-fcd497710179", "eculverhouse95@51.la", false, false, null, "ECULVERHOUSE95@51.LA", "ECULVERHOUSE95@51.LA", "AQAAAAEAACcQAAAAEJ05leNYIJ1kh06sImOHmXY5c3OEfD3CYe2CiLj3F0f6FRt+MewM2+ByVKOKvGIqMA==", null, false, "0f6e7189-ffb3-4a27-b107-6223fc335aa1", false, "eculverhouse95@51.la" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5749a439-5b05-4c48-b220-f7aa4161e100", 0, "39777bd1-9e87-4335-862e-e01d92581c9f", "ndiable9n@ebay.co.uk", false, false, null, "NDIABLE9N@EBAY.CO.UK", "NDIABLE9N@EBAY.CO.UK", "AQAAAAEAACcQAAAAEPvCWFXqrYu3HEoVo6rDuznE/SEIgqi6BGr6djdn61SgGAUWpMts7NWvR4DXTBl/CA==", null, false, "354c34a5-b75e-4b71-8fa6-6e166ce2544e", false, "ndiable9n@ebay.co.uk" });
+                values: new object[] { "5749a439-5b05-4c48-b220-f7aa4161e100", 0, "ad0588fa-07a1-4faf-a0a7-eecad40ef1be", "ndiable9n@ebay.co.uk", false, false, null, "NDIABLE9N@EBAY.CO.UK", "NDIABLE9N@EBAY.CO.UK", "AQAAAAEAACcQAAAAECjU0nFZiNRT2N7WoIC8gDVOgiHnsVSuRhkxv7VGE6cdJZDcwS7YCD3zFqGY5xbaDw==", null, false, "354c34a5-b75e-4b71-8fa6-6e166ce2544e", false, "ndiable9n@ebay.co.uk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "579928c2-7928-4b40-b370-f0745861f7ba", 0, "bc900d72-2653-4771-99bd-048c82ac66d2", "apetricek9m@shop-pro.jp", false, false, null, "APETRICEK9M@SHOP-PRO.JP", "APETRICEK9M@SHOP-PRO.JP", "AQAAAAEAACcQAAAAEMYCyHuIoOXqVH0hL/8uOfb7jBN2+/wmlKTiW8SN+Y+dus+I/BGcua6O+4AOlpA4OA==", null, false, "cf6e5bf0-3189-4451-b8b5-2bc1ceece9aa", false, "apetricek9m@shop-pro.jp" });
+                values: new object[] { "579928c2-7928-4b40-b370-f0745861f7ba", 0, "1b3bfbe5-db50-4f82-849f-d08899336db7", "apetricek9m@shop-pro.jp", false, false, null, "APETRICEK9M@SHOP-PRO.JP", "APETRICEK9M@SHOP-PRO.JP", "AQAAAAEAACcQAAAAEM7SDyl3j0dkbb1DWe7WgUGAW2YL+8V7bZmTtD9+R0K5mAnliyR3ftvmntwQfjWoWw==", null, false, "cf6e5bf0-3189-4451-b8b5-2bc1ceece9aa", false, "apetricek9m@shop-pro.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "823439b2-cb04-4540-902a-6cb08cd075e9", 0, "7dc8a57d-f550-4223-a90c-c0be601ce542", "gmaccaffery9l@biglobe.ne.jp", false, false, null, "GMACCAFFERY9L@BIGLOBE.NE.JP", "GMACCAFFERY9L@BIGLOBE.NE.JP", "AQAAAAEAACcQAAAAEI+wIZkxMLKvK8cGiJmIgJPYTjh4xnfN5DQyoTxBO15OpUPmad0jnBSx1b/L1rLplg==", null, false, "0a1575eb-d44e-46cd-8740-1fc09bf07c6d", false, "gmaccaffery9l@biglobe.ne.jp" });
+                values: new object[] { "823439b2-cb04-4540-902a-6cb08cd075e9", 0, "c1d663be-6a02-4ecf-a345-32a8034bb531", "gmaccaffery9l@biglobe.ne.jp", false, false, null, "GMACCAFFERY9L@BIGLOBE.NE.JP", "GMACCAFFERY9L@BIGLOBE.NE.JP", "AQAAAAEAACcQAAAAECkanPQ1SFTSmtnO3f8gO4CxGwPD1+mOtQG+UWikS2nf89wq5EPy9o+C5edZg1mxpw==", null, false, "0a1575eb-d44e-46cd-8740-1fc09bf07c6d", false, "gmaccaffery9l@biglobe.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cfd40edc-dd05-4e97-8599-e2a0f54e3af3", 0, "1b764d94-ebc8-482c-93bd-20f82433eeec", "nsainz9k@goo.gl", false, false, null, "NSAINZ9K@GOO.GL", "NSAINZ9K@GOO.GL", "AQAAAAEAACcQAAAAEEJEfOyKO5hCjh4NIBE1XbEBCJ3OrBLmjOw1aXXh4auxoNyv889wr4+smSnpl3sthQ==", null, false, "5aa8a4af-7dee-48ac-a704-449cde0e6811", false, "nsainz9k@goo.gl" });
+                values: new object[] { "cfd40edc-dd05-4e97-8599-e2a0f54e3af3", 0, "e13c0506-014d-4533-b9d5-4cef3ca341bf", "nsainz9k@goo.gl", false, false, null, "NSAINZ9K@GOO.GL", "NSAINZ9K@GOO.GL", "AQAAAAEAACcQAAAAEJ8oIPFrE1NlGee77wtfA0ilI/6xEcxpK0G6drBB5uSVI7F0dO6VEbc3biZbsAW6Tg==", null, false, "5aa8a4af-7dee-48ac-a704-449cde0e6811", false, "nsainz9k@goo.gl" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "25f90ba5-42b2-4855-9110-0c748fc2a2e0", 0, "8680dd63-2e3e-41e9-b08d-94489701202d", "rdufore9j@ucoz.ru", false, false, null, "RDUFORE9J@UCOZ.RU", "RDUFORE9J@UCOZ.RU", "AQAAAAEAACcQAAAAEJzmGPyXUKD3E9vjJjjvLCuyYaDmBOrt6DoyO5aXm02U258jgnxF3aXKh+KoVvOMmQ==", null, false, "6dc50150-2107-4a11-abb8-d18925478f15", false, "rdufore9j@ucoz.ru" });
+                values: new object[] { "25f90ba5-42b2-4855-9110-0c748fc2a2e0", 0, "e9de32eb-ea28-46b3-b76c-9d22e9788f0e", "rdufore9j@ucoz.ru", false, false, null, "RDUFORE9J@UCOZ.RU", "RDUFORE9J@UCOZ.RU", "AQAAAAEAACcQAAAAEG3sr4fEWK5urLCBmiZUroE17X1Wnh9GFDF4kaUXITPNmc4prKjhRY1xhxGXX8Hsuw==", null, false, "6dc50150-2107-4a11-abb8-d18925478f15", false, "rdufore9j@ucoz.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ee5bcfe7-5f1f-4be5-99ee-35ec030c0d44", 0, "e1ac41fa-7141-4dba-b3f7-3e11662780e6", "ntalman9i@digg.com", false, false, null, "NTALMAN9I@DIGG.COM", "NTALMAN9I@DIGG.COM", "AQAAAAEAACcQAAAAEFJLybXG6LGR1RAn/Ffj5wlV5lHs7m3xjMcRA5Ozo3s8sNPdv+LvcDD3pIe2isIS1A==", null, false, "2399a7f8-cd5d-4b8f-808f-d2de4411737a", false, "ntalman9i@digg.com" });
+                values: new object[] { "ee5bcfe7-5f1f-4be5-99ee-35ec030c0d44", 0, "a3413ae0-348a-41f8-9905-c4344cbfdf54", "ntalman9i@digg.com", false, false, null, "NTALMAN9I@DIGG.COM", "NTALMAN9I@DIGG.COM", "AQAAAAEAACcQAAAAEKOZvg5xDoovsBMqMW6c2wKe5bXODY2wf97nR4pnLqF8jLCpNU27w1CPmUw+Cz3KOg==", null, false, "2399a7f8-cd5d-4b8f-808f-d2de4411737a", false, "ntalman9i@digg.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "7e2a3d1d-e919-444e-9fb1-2081c59bc308", 0, "cafc4d7d-ea34-49c8-933b-8774aec713e8", "dwhitehall9h@so-net.ne.jp", false, false, null, "DWHITEHALL9H@SO-NET.NE.JP", "DWHITEHALL9H@SO-NET.NE.JP", "AQAAAAEAACcQAAAAEBq3Cz8nuCZrP8LOC8V7O6qOBGyZ2EYFl0imL3gLDpQdaLSTEgzrhXpikt/xzUUzVw==", null, false, "16dc49ba-7c25-4fc4-9115-d43bda133978", false, "dwhitehall9h@so-net.ne.jp" });
+                values: new object[] { "7e2a3d1d-e919-444e-9fb1-2081c59bc308", 0, "8e8c8dab-dc7c-46d8-bb43-b6c4cce8051c", "dwhitehall9h@so-net.ne.jp", false, false, null, "DWHITEHALL9H@SO-NET.NE.JP", "DWHITEHALL9H@SO-NET.NE.JP", "AQAAAAEAACcQAAAAEPBUuh8TPxallXybrDr1wqJkX8Bz5HNgB2bYu/F10rsxWleJTcbYjR5xL8ZFaXsv3g==", null, false, "16dc49ba-7c25-4fc4-9115-d43bda133978", false, "dwhitehall9h@so-net.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fd94747c-9b38-4751-92e1-23aed77f1604", 0, "62dc72a7-3ca6-4e4e-b1c1-0300fa8ff59a", "tmarzella9g@themeforest.net", false, false, null, "TMARZELLA9G@THEMEFOREST.NET", "TMARZELLA9G@THEMEFOREST.NET", "AQAAAAEAACcQAAAAEOd+6lFSIE7tGYatN6BZwCDwkSTudetVUtZGumQuBVNx78AYuzQTzfpKzW1NcTMYOQ==", null, false, "9afc9ede-2531-40b9-96bd-78e7cd62be13", false, "tmarzella9g@themeforest.net" });
+                values: new object[] { "fd94747c-9b38-4751-92e1-23aed77f1604", 0, "44f9b102-f7f9-4e2a-8657-4f0dd9e6f99e", "tmarzella9g@themeforest.net", false, false, null, "TMARZELLA9G@THEMEFOREST.NET", "TMARZELLA9G@THEMEFOREST.NET", "AQAAAAEAACcQAAAAED8pDDg/ARODZ7F0+8JBtjuKYSpVUr9gKBhVblrytb2zFxkX5sQmtYN1dVi4PosfCg==", null, false, "9afc9ede-2531-40b9-96bd-78e7cd62be13", false, "tmarzella9g@themeforest.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "04bc85da-f416-41c8-9a1d-f256f61e8c68", 0, "92aa64d0-f578-4d6c-9e92-a3fa26883cca", "fbampkin94@comcast.net", false, false, null, "FBAMPKIN94@COMCAST.NET", "FBAMPKIN94@COMCAST.NET", "AQAAAAEAACcQAAAAEI5bQYpBW9lBG4rhqmbGdK+e1sAn9wYcfqgjFGBjRRLG8xdga1kb7asMBAM59OHlNw==", null, false, "af9d030d-b1e5-4b64-8479-c571da523c4a", false, "fbampkin94@comcast.net" });
+                values: new object[] { "04bc85da-f416-41c8-9a1d-f256f61e8c68", 0, "89404607-98d0-466a-b2a1-41133bdee92e", "fbampkin94@comcast.net", false, false, null, "FBAMPKIN94@COMCAST.NET", "FBAMPKIN94@COMCAST.NET", "AQAAAAEAACcQAAAAEK+gAOOOh6AAi/nBG6vbo1jdY3vTtAneWUYfn5yg6sSXGuulePaDd4PctFOKa2DyWQ==", null, false, "af9d030d-b1e5-4b64-8479-c571da523c4a", false, "fbampkin94@comcast.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f10753c5-55a5-43ef-9c9a-fea4c4c2ac0e", 0, "1b91eb58-84c3-4a84-a47a-64916f1b90fd", "ckharchinski9f@google.co.uk", false, false, null, "CKHARCHINSKI9F@GOOGLE.CO.UK", "CKHARCHINSKI9F@GOOGLE.CO.UK", "AQAAAAEAACcQAAAAEAAYrkjkJ4VNJnCsq7x+boOV3Pql4ehBMiNGlT8rpwHPLM3pRUdCpMYPInF95n2WFg==", null, false, "76a3c1fd-4a6d-4273-9a06-4a995ab3b3ee", false, "ckharchinski9f@google.co.uk" });
+                values: new object[] { "f10753c5-55a5-43ef-9c9a-fea4c4c2ac0e", 0, "797b8109-18ab-4d97-bc0d-9dcc4f476cba", "ckharchinski9f@google.co.uk", false, false, null, "CKHARCHINSKI9F@GOOGLE.CO.UK", "CKHARCHINSKI9F@GOOGLE.CO.UK", "AQAAAAEAACcQAAAAEAueb99IWUR8Yi0gg0Ap4XyWO4OcMUi6j9c2uz/PtjUiD2E6WAzFg8jDL8p3l/drRA==", null, false, "76a3c1fd-4a6d-4273-9a06-4a995ab3b3ee", false, "ckharchinski9f@google.co.uk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ca17684e-772a-4844-aed5-72acc406ed2d", 0, "4cad994e-1e9d-4640-8c24-a8ad1203c92d", "lcurtis9d@gmpg.org", false, false, null, "LCURTIS9D@GMPG.ORG", "LCURTIS9D@GMPG.ORG", "AQAAAAEAACcQAAAAEDC5JxL95vWHzWFyxTcxdduGBtjd3wZ4iyQRRqqIOveqgzFteTBTYIHa2VWfNOSb2Q==", null, false, "7a4916e2-e4fc-4585-a6c0-43b2fb196794", false, "lcurtis9d@gmpg.org" });
+                values: new object[] { "ca17684e-772a-4844-aed5-72acc406ed2d", 0, "6dbad2a2-fda5-4c27-9b3e-1d63d239bb17", "lcurtis9d@gmpg.org", false, false, null, "LCURTIS9D@GMPG.ORG", "LCURTIS9D@GMPG.ORG", "AQAAAAEAACcQAAAAEJb9PYzcg7yIuyMT96rzc/0uzUa47tu9nLgLVNC2ikYHKDI6rFAhHXLZgm6t8Xe2xg==", null, false, "7a4916e2-e4fc-4585-a6c0-43b2fb196794", false, "lcurtis9d@gmpg.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "be277c46-57ae-4cb9-b0db-82ed4b1b48a0", 0, "39c6411e-e75d-45b8-b00f-6f8e26f6ff31", "ndeguerre9c@example.com", false, false, null, "NDEGUERRE9C@EXAMPLE.COM", "NDEGUERRE9C@EXAMPLE.COM", "AQAAAAEAACcQAAAAEL2a3emDlzqQJk+FbS9DLFflWoKrmqxj5JJbydXTok4zGLBQew1ZjCDEHjkhkmUDIA==", null, false, "d4237282-db84-4666-a61c-063d4a597e5a", false, "ndeguerre9c@example.com" });
+                values: new object[] { "be277c46-57ae-4cb9-b0db-82ed4b1b48a0", 0, "d8fb55e2-1f73-43fb-beea-c1bcfca27f85", "ndeguerre9c@example.com", false, false, null, "NDEGUERRE9C@EXAMPLE.COM", "NDEGUERRE9C@EXAMPLE.COM", "AQAAAAEAACcQAAAAEADpkS2bGC3xirlPyB1Dev/6sAjf95BZo4aasEilem8jd/NQpsn/aFr6OejNscFhIQ==", null, false, "d4237282-db84-4666-a61c-063d4a597e5a", false, "ndeguerre9c@example.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "aaf7b9c9-86e4-4f65-b366-841482f0976a", 0, "557e988d-f3e7-4155-bc67-4a975b8cde72", "mlucio9b@google.ca", false, false, null, "MLUCIO9B@GOOGLE.CA", "MLUCIO9B@GOOGLE.CA", "AQAAAAEAACcQAAAAEPthkVmhW/H54Ac3pdeMs30jJGvM1JsqNqMEEugjt66JhcEuIdLYKWng9gtRDVyK5Q==", null, false, "befb4971-6ce0-44cf-8c9c-da95df1869e2", false, "mlucio9b@google.ca" });
+                values: new object[] { "aaf7b9c9-86e4-4f65-b366-841482f0976a", 0, "eceb1f7b-5687-4b07-b478-60e2414f01cb", "mlucio9b@google.ca", false, false, null, "MLUCIO9B@GOOGLE.CA", "MLUCIO9B@GOOGLE.CA", "AQAAAAEAACcQAAAAEHQtjXWJMqFcrkHWNex2IStKpcNfPkc8VkdVjwpwN/YPqFmtQEYgi0eKJxFufq3lDg==", null, false, "befb4971-6ce0-44cf-8c9c-da95df1869e2", false, "mlucio9b@google.ca" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fed66c02-3f4a-4cb0-a5c8-21d034b0d950", 0, "50944907-b8d8-473a-921e-bc6894671ffe", "lblatcher9a@jalbum.net", false, false, null, "LBLATCHER9A@JALBUM.NET", "LBLATCHER9A@JALBUM.NET", "AQAAAAEAACcQAAAAEI1LSvyrcsRXwwpbJ6hjXKeb/nsisSDUZ0mzezKhXsxv4MfCT6OFfzWAlWbkRjz7NQ==", null, false, "0b6f5192-e33c-45e8-a7d0-696601be8e72", false, "lblatcher9a@jalbum.net" });
+                values: new object[] { "fed66c02-3f4a-4cb0-a5c8-21d034b0d950", 0, "2c61993d-6a6c-4745-8391-5ff6432b608f", "lblatcher9a@jalbum.net", false, false, null, "LBLATCHER9A@JALBUM.NET", "LBLATCHER9A@JALBUM.NET", "AQAAAAEAACcQAAAAEA+Tx0hw5gH9q2z8zM00XR9eWXubD32ovJ+CLqJEk40thp5b7SA1NjS7vm2CYnWUhg==", null, false, "0b6f5192-e33c-45e8-a7d0-696601be8e72", false, "lblatcher9a@jalbum.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ed233e64-1b62-4f12-aad0-0e2def383570", 0, "92beb679-a98f-4421-9a55-bb2b7983df56", "wmitkov99@tripadvisor.com", false, false, null, "WMITKOV99@TRIPADVISOR.COM", "WMITKOV99@TRIPADVISOR.COM", "AQAAAAEAACcQAAAAEDwe1Sd63XSvzN7tHv9pjBR45/c6w1+d8I/KiMStLxG2vL5xx4dfOzORSeAL9NnfAg==", null, false, "5e481c2f-38ba-4d2b-b022-b95eb6076bff", false, "wmitkov99@tripadvisor.com" });
+                values: new object[] { "ed233e64-1b62-4f12-aad0-0e2def383570", 0, "aa3aac6f-c29d-49d9-886e-7a033ca445bd", "wmitkov99@tripadvisor.com", false, false, null, "WMITKOV99@TRIPADVISOR.COM", "WMITKOV99@TRIPADVISOR.COM", "AQAAAAEAACcQAAAAEIMmzNQIPV+oFdsLG6h1Qxi+vpRfF1uUoyzuTqriyzVPzJpY7UAzRZkcsY8ruJVzOQ==", null, false, "5e481c2f-38ba-4d2b-b022-b95eb6076bff", false, "wmitkov99@tripadvisor.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f4ef7c05-57e9-4daa-a72a-f389fbac0455", 0, "a632eb4e-54dc-4950-a367-15de2e9a1f1b", "tpepper98@aol.com", false, false, null, "TPEPPER98@AOL.COM", "TPEPPER98@AOL.COM", "AQAAAAEAACcQAAAAEPbj5v6616h0FOgipztHWut257T1wh++/QXOPhGxtRXwPMT3plZ3ZdE0eWi+7AAFIA==", null, false, "9f60d62f-ffdf-4105-ac32-f93b45d03d37", false, "tpepper98@aol.com" });
+                values: new object[] { "f4ef7c05-57e9-4daa-a72a-f389fbac0455", 0, "e1741f54-a28d-4000-82c6-fea9f8dcd6fd", "tpepper98@aol.com", false, false, null, "TPEPPER98@AOL.COM", "TPEPPER98@AOL.COM", "AQAAAAEAACcQAAAAEOezHj0tTcZfBO69asX5vKu9nhApcWDNVZLYZqyC3StuZ/C+SPknDjhrNl9/+bZMgA==", null, false, "9f60d62f-ffdf-4105-ac32-f93b45d03d37", false, "tpepper98@aol.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "65710dd3-b22a-4230-82aa-bf8a3d129069", 0, "098f2180-2180-4cb8-ac50-394ab2248af7", "aperrinchief97@csmonitor.com", false, false, null, "APERRINCHIEF97@CSMONITOR.COM", "APERRINCHIEF97@CSMONITOR.COM", "AQAAAAEAACcQAAAAEND/7eyAmHy3OXtrHGRZM1/O9xLNoTCTXHXPC2j5vbJOaV/72ByXHaslMgBTrrm3KQ==", null, false, "39a2050d-1bbf-4397-8468-0f60cf9eed4b", false, "aperrinchief97@csmonitor.com" });
+                values: new object[] { "65710dd3-b22a-4230-82aa-bf8a3d129069", 0, "d8bbf82a-f643-4757-bdda-d0ec0a319c11", "aperrinchief97@csmonitor.com", false, false, null, "APERRINCHIEF97@CSMONITOR.COM", "APERRINCHIEF97@CSMONITOR.COM", "AQAAAAEAACcQAAAAEDpT15KzzuSTHLZfy5KBflhM6eNmrvrG+WLGnErguGIXQGuVeGZGvzfCztg1320qGg==", null, false, "39a2050d-1bbf-4397-8468-0f60cf9eed4b", false, "aperrinchief97@csmonitor.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "04ea0139-88d1-421e-a0a7-abad9947bf47", 0, "8349346f-b6cb-4e0c-b6ad-82a780e6fffa", "lhadwick96@arstechnica.com", false, false, null, "LHADWICK96@ARSTECHNICA.COM", "LHADWICK96@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAEAyHo90RXv9V5DEMUXBqATVCx25svk8D4faAtRics26RU4QlQuJrpDbg91Y+uPgbCw==", null, false, "926375c8-9a4e-446e-aeb1-cd201ef192d5", false, "lhadwick96@arstechnica.com" });
+                values: new object[] { "04ea0139-88d1-421e-a0a7-abad9947bf47", 0, "55be300c-8b7b-4270-9e17-b60c0663c571", "lhadwick96@arstechnica.com", false, false, null, "LHADWICK96@ARSTECHNICA.COM", "LHADWICK96@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAEAksCM0zrAiU8n77PhomYOdhpC+mnZabRJo02GCwM+myYHjcjQpkB0sEr4Fo80eeqA==", null, false, "926375c8-9a4e-446e-aeb1-cd201ef192d5", false, "lhadwick96@arstechnica.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "70004356-778c-47a6-aa9c-c5c8459e2896", 0, "82bf7494-59df-4cf2-9cb0-eb59cdb3dbc1", "isheavills9e@ning.com", false, false, null, "ISHEAVILLS9E@NING.COM", "ISHEAVILLS9E@NING.COM", "AQAAAAEAACcQAAAAEI7cAOjWR2yGn4NUDEnIbB5yTAjmbUHgqbgMR//r3wb2jhTF0b7Yd+xGWynplJEXyg==", null, false, "724b0138-c545-4c26-a4b0-4b2ab59a5102", false, "isheavills9e@ning.com" });
+                values: new object[] { "70004356-778c-47a6-aa9c-c5c8459e2896", 0, "34fd172c-15ef-40c5-b311-028588b1ff15", "isheavills9e@ning.com", false, false, null, "ISHEAVILLS9E@NING.COM", "ISHEAVILLS9E@NING.COM", "AQAAAAEAACcQAAAAEA6JTydmxMR+PsbZ/3aPnGH5fqw9EQFlmQNCbyfLils/mkS6gpb0qZTGu/y2dejYSA==", null, false, "724b0138-c545-4c26-a4b0-4b2ab59a5102", false, "isheavills9e@ning.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2cedca12-e885-4f92-8188-3030061004e2", 0, "afa9d191-2486-4587-83bc-ed13755a471a", "gbalog4w@toplist.cz", false, false, null, "GBALOG4W@TOPLIST.CZ", "GBALOG4W@TOPLIST.CZ", "AQAAAAEAACcQAAAAELMiVtEka7Lx72Jny0RcpNBWsMZiUgsdB2YgR+wq1JTa90vmGAiitUKn7FlqParbqA==", null, false, "b2fbd91d-f327-45b5-b467-1330c998804c", false, "gbalog4w@toplist.cz" });
+                values: new object[] { "2cedca12-e885-4f92-8188-3030061004e2", 0, "ddde5398-91f2-464a-9f6b-466175b9af56", "gbalog4w@toplist.cz", false, false, null, "GBALOG4W@TOPLIST.CZ", "GBALOG4W@TOPLIST.CZ", "AQAAAAEAACcQAAAAEGtUgxLD/qtKkg042cbgi6u39YA/xsI0psr+fMZL2QSW8SCSoWcFwBanMHGj5GSaLA==", null, false, "b2fbd91d-f327-45b5-b467-1330c998804c", false, "gbalog4w@toplist.cz" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1cd8d5b6-0178-4942-bef4-4be720f952de", 0, "d714f740-a622-4f7a-97d8-0b2a1bab7f3d", "mkornyakov8i@opera.com", false, false, null, "MKORNYAKOV8I@OPERA.COM", "MKORNYAKOV8I@OPERA.COM", "AQAAAAEAACcQAAAAEG76omvJtV6zsHqyCmdW5VwOrL0dQQKvVN4aIHuRPqwb7xMwS2NRJRm3QmHjexvPYQ==", null, false, "33df12e6-d1d2-429b-b41e-d65f10bbc236", false, "mkornyakov8i@opera.com" });
+                values: new object[] { "1cd8d5b6-0178-4942-bef4-4be720f952de", 0, "93dcf850-2e31-4d31-b03b-4730e09f566d", "mkornyakov8i@opera.com", false, false, null, "MKORNYAKOV8I@OPERA.COM", "MKORNYAKOV8I@OPERA.COM", "AQAAAAEAACcQAAAAEIrlkut7KmxVLEYNShIfIvI5NwsT9SQgPyRjDemQEbP4l2VAHm06tI/UvFryOIPS+A==", null, false, "33df12e6-d1d2-429b-b41e-d65f10bbc236", false, "mkornyakov8i@opera.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "94f2ec48-dbff-4103-bdb9-9c9952bf4032", 0, "ca5cbb12-454c-4c84-ba07-83568a16943a", "hstuther8g@yellowbook.com", false, false, null, "HSTUTHER8G@YELLOWBOOK.COM", "HSTUTHER8G@YELLOWBOOK.COM", "AQAAAAEAACcQAAAAEOMF81su0zJuOnGLamM+JB229O+NqbOBjC/gXXBofqsmkEiRbEnvQLtYPo6NxAUqoQ==", null, false, "91b0281b-9539-42a2-afaa-77de90f3df4b", false, "hstuther8g@yellowbook.com" });
+                values: new object[] { "94f2ec48-dbff-4103-bdb9-9c9952bf4032", 0, "7a7629cd-fead-471d-a9d4-d6751971b71e", "hstuther8g@yellowbook.com", false, false, null, "HSTUTHER8G@YELLOWBOOK.COM", "HSTUTHER8G@YELLOWBOOK.COM", "AQAAAAEAACcQAAAAELTbDR5Ff1GRUF6C9FrN273okjAwV2vQ5c2lB2fhOKN1OeeQ7PnM16GNasXQxoBUjQ==", null, false, "91b0281b-9539-42a2-afaa-77de90f3df4b", false, "hstuther8g@yellowbook.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2d2823db-8822-451b-a588-e044684849ee", 0, "0e6a3faa-88ee-4e88-a20a-ac56c9bf8ebf", "dreveley7t@chicagotribune.com", false, false, null, "DREVELEY7T@CHICAGOTRIBUNE.COM", "DREVELEY7T@CHICAGOTRIBUNE.COM", "AQAAAAEAACcQAAAAEH1pfli70qYJjT6CeqbS/BmA0B/Qj6w+EXnUegAreAqDZvzhscTX9zZQM8AvjOoADw==", null, false, "28a666ee-5631-4bc8-a1f5-e21377ad464c", false, "dreveley7t@chicagotribune.com" });
+                values: new object[] { "2d2823db-8822-451b-a588-e044684849ee", 0, "3feab534-79c4-4438-b01f-f51068e1f9da", "dreveley7t@chicagotribune.com", false, false, null, "DREVELEY7T@CHICAGOTRIBUNE.COM", "DREVELEY7T@CHICAGOTRIBUNE.COM", "AQAAAAEAACcQAAAAEI9HEkLOukwsZlwz3gERQ8l+hoCeq23Jtz7iLuzLlslgNRKO6XGqT/1gHvFPp4tZOw==", null, false, "28a666ee-5631-4bc8-a1f5-e21377ad464c", false, "dreveley7t@chicagotribune.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "684e2745-45bf-45bc-8fc6-df3afd5eb8ec", 0, "5f19d9a7-f471-4752-9be5-593074d29e40", "nsidry7s@yahoo.com", false, false, null, "NSIDRY7S@YAHOO.COM", "NSIDRY7S@YAHOO.COM", "AQAAAAEAACcQAAAAEDNyd8spWon+Rgknf0l/Rj2viRi6DRulpwpSOy1YoHF0nPvuqb9GFFEduO7+5dzQiA==", null, false, "72eeaed5-90a0-4a0f-acbd-6ca30d8c69c0", false, "nsidry7s@yahoo.com" });
+                values: new object[] { "684e2745-45bf-45bc-8fc6-df3afd5eb8ec", 0, "90313a77-1045-40af-96dc-2046b8926edb", "nsidry7s@yahoo.com", false, false, null, "NSIDRY7S@YAHOO.COM", "NSIDRY7S@YAHOO.COM", "AQAAAAEAACcQAAAAEMYHsKtX7KpWdNZ57R0UuHbmYv8gjif7ZelUosFABY1SeItbyQK8USaLarNDjiCRsQ==", null, false, "72eeaed5-90a0-4a0f-acbd-6ca30d8c69c0", false, "nsidry7s@yahoo.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "553b2088-242d-4919-bb33-8683f0de8eaf", 0, "fc4db3e7-78f2-4e40-afdf-0e53e21a0730", "pcoveley7r@yellowpages.com", false, false, null, "PCOVELEY7R@YELLOWPAGES.COM", "PCOVELEY7R@YELLOWPAGES.COM", "AQAAAAEAACcQAAAAEMqJP1RdqmczXtfaHnc1NMIrS+TaEwnsP07YCpLRBZsO7X4w17ROitJh2oo4sTCojQ==", null, false, "c912b585-802b-4fa4-b960-b2b2b02c250e", false, "pcoveley7r@yellowpages.com" });
+                values: new object[] { "553b2088-242d-4919-bb33-8683f0de8eaf", 0, "2ed1cbd0-a725-49aa-a4b0-0c74fe9584c5", "pcoveley7r@yellowpages.com", false, false, null, "PCOVELEY7R@YELLOWPAGES.COM", "PCOVELEY7R@YELLOWPAGES.COM", "AQAAAAEAACcQAAAAENGD1bhSoMs0rZGsWdocQrfS7JA6VK7Ls1wG2mzZpzpkqA3Ud80jW3lJ+bc3sHDuiA==", null, false, "c912b585-802b-4fa4-b960-b2b2b02c250e", false, "pcoveley7r@yellowpages.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "53505f4d-7340-483a-b5a3-d2dc90504af5", 0, "e0a3372a-cfeb-466e-9e20-8a63091c954a", "ffanthom7q@amazonaws.com", false, false, null, "FFANTHOM7Q@AMAZONAWS.COM", "FFANTHOM7Q@AMAZONAWS.COM", "AQAAAAEAACcQAAAAEIuIQRwIEUHXVFfEUfX0b6okU2YMiFwbHEWEhxrFj1gzgpb7XOed68wJA7MGnDZBOg==", null, false, "220e731e-5854-40a8-b7b2-774ce49d509b", false, "ffanthom7q@amazonaws.com" });
+                values: new object[] { "53505f4d-7340-483a-b5a3-d2dc90504af5", 0, "5694d2b4-880c-462f-83b6-9ae3ec57d732", "ffanthom7q@amazonaws.com", false, false, null, "FFANTHOM7Q@AMAZONAWS.COM", "FFANTHOM7Q@AMAZONAWS.COM", "AQAAAAEAACcQAAAAEAzvuo0u1Z36TV7kF2vnNxEe6cW1XRCOydBgJiikabL1rTVHxLbwiv+/VgIkoR5ePw==", null, false, "220e731e-5854-40a8-b7b2-774ce49d509b", false, "ffanthom7q@amazonaws.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0d79a64f-06ed-4ac2-a773-fb917c6ba199", 0, "d54aad27-6de3-4f93-befb-529e34c05bf6", "fhendriksen7p@redcross.org", false, false, null, "FHENDRIKSEN7P@REDCROSS.ORG", "FHENDRIKSEN7P@REDCROSS.ORG", "AQAAAAEAACcQAAAAEOzvQZ6jvP3VFhLc1oyYC5OvoJUfBzN+VuMaQfZzsx/U2qPr/v+CjnPnC+MlDARkeQ==", null, false, "f7199fab-c3d4-415a-97e4-e9f85d6518b6", false, "fhendriksen7p@redcross.org" });
+                values: new object[] { "0d79a64f-06ed-4ac2-a773-fb917c6ba199", 0, "9f792668-4ba8-49bd-8ca2-5e055f5c596b", "fhendriksen7p@redcross.org", false, false, null, "FHENDRIKSEN7P@REDCROSS.ORG", "FHENDRIKSEN7P@REDCROSS.ORG", "AQAAAAEAACcQAAAAEFDO3YW1furnVMV3EoIOfsU0ZzzwRaz4tTjlS4PD6Eu75kq3GNgCR6HlyxJOHmkZ8w==", null, false, "f7199fab-c3d4-415a-97e4-e9f85d6518b6", false, "fhendriksen7p@redcross.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "75c6ed2a-c7bc-44ee-8358-6e18511aee61", 0, "bc798272-36b9-43b7-918d-fe9d0a1df392", "ckremer7o@zimbio.com", false, false, null, "CKREMER7O@ZIMBIO.COM", "CKREMER7O@ZIMBIO.COM", "AQAAAAEAACcQAAAAEIi359JofiDKuMIMhATV5OZj9lkT/phXVTaPPNU7wuvcr+LEqIcxry+JsT/aScMHQA==", null, false, "b293c202-3ca2-4d1e-82f1-30a80a76943a", false, "ckremer7o@zimbio.com" });
+                values: new object[] { "75c6ed2a-c7bc-44ee-8358-6e18511aee61", 0, "e236021d-a7b8-439e-8a17-3763aec4094c", "ckremer7o@zimbio.com", false, false, null, "CKREMER7O@ZIMBIO.COM", "CKREMER7O@ZIMBIO.COM", "AQAAAAEAACcQAAAAEBhJIiN84vbzWtxV9gI2/ecByHAhracb9m6mEmeA7pgxiAN0xQh2NJ5IIqz7Z3a6Ug==", null, false, "b293c202-3ca2-4d1e-82f1-30a80a76943a", false, "ckremer7o@zimbio.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4e5045d7-4f2f-4301-afb1-568713020506", 0, "0ad1267a-122a-4f73-9520-040c5cc52b3b", "mhartopp7n@cocolog-nifty.com", false, false, null, "MHARTOPP7N@COCOLOG-NIFTY.COM", "MHARTOPP7N@COCOLOG-NIFTY.COM", "AQAAAAEAACcQAAAAECHoHUK0PGLLOD2R7tJ1el6XqSjwTUCA3FJFnnI1NJPiJ7ppfm1OtSiGv7Zw6zRCYQ==", null, false, "e8da978c-c395-4e94-a2c4-6f8c2b6aae25", false, "mhartopp7n@cocolog-nifty.com" });
+                values: new object[] { "4e5045d7-4f2f-4301-afb1-568713020506", 0, "6dd1f0b3-1314-4506-975d-82e0de63cd6c", "mhartopp7n@cocolog-nifty.com", false, false, null, "MHARTOPP7N@COCOLOG-NIFTY.COM", "MHARTOPP7N@COCOLOG-NIFTY.COM", "AQAAAAEAACcQAAAAEBc0QrJlfNSBYGoEZfjj1IodPiq31ja1YUPfzQlk1JoxbEUCrcxualbeO9O6pYcWkg==", null, false, "e8da978c-c395-4e94-a2c4-6f8c2b6aae25", false, "mhartopp7n@cocolog-nifty.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d800edd0-db5a-4e27-85ad-eef10f805b99", 0, "077fb5bf-08e5-454b-bcdd-6b4446150a36", "jmccrillis7m@squidoo.com", false, false, null, "JMCCRILLIS7M@SQUIDOO.COM", "JMCCRILLIS7M@SQUIDOO.COM", "AQAAAAEAACcQAAAAEEP0rsuLnUiKnS3pSCAO/n6bHN74XP3NE97Y+7Lq8eFxjWZtsW4lF+4aejos4ts/Uw==", null, false, "90ad8295-e184-4faa-bce1-6389256abda0", false, "jmccrillis7m@squidoo.com" });
+                values: new object[] { "d800edd0-db5a-4e27-85ad-eef10f805b99", 0, "c808d37f-e36c-4daa-8b4d-87d7d3a5b39e", "jmccrillis7m@squidoo.com", false, false, null, "JMCCRILLIS7M@SQUIDOO.COM", "JMCCRILLIS7M@SQUIDOO.COM", "AQAAAAEAACcQAAAAEPWFtNr5deiIVlmrB7TpXctfYv044SyETQAm5vD6PjJsBs1X1eNMqQYJqfNKydl5wA==", null, false, "90ad8295-e184-4faa-bce1-6389256abda0", false, "jmccrillis7m@squidoo.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a5a0fbca-ed6d-4730-97a9-0bdf75382f61", 0, "9f3d57f6-5bf5-4684-b186-aa2decbfa399", "amasey7u@edublogs.org", false, false, null, "AMASEY7U@EDUBLOGS.ORG", "AMASEY7U@EDUBLOGS.ORG", "AQAAAAEAACcQAAAAEPu8VwjDkNWRVD6cQ7lLf1xAwEX2Q8tzp4lXUmMbZLBhkh3d6ps+KKCzcWnXYbDDHg==", null, false, "20b8489f-1cb3-4574-a3f5-83149aae5a7c", false, "amasey7u@edublogs.org" });
+                values: new object[] { "a5a0fbca-ed6d-4730-97a9-0bdf75382f61", 0, "e661813c-50ee-4bb2-b5d8-a826a4c4ca4f", "amasey7u@edublogs.org", false, false, null, "AMASEY7U@EDUBLOGS.ORG", "AMASEY7U@EDUBLOGS.ORG", "AQAAAAEAACcQAAAAEGjDHu21TH7E7qyoPmmaHgKRlws1v27svGWQOoa5qU731OkwOoWbONV4CKOPksSKvg==", null, false, "20b8489f-1cb3-4574-a3f5-83149aae5a7c", false, "amasey7u@edublogs.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "49393458-5d85-49f8-92d0-c95be10e9695", 0, "959fb644-caa3-4f14-ad0a-e92bc1376176", "slippiett7l@gravatar.com", false, false, null, "SLIPPIETT7L@GRAVATAR.COM", "SLIPPIETT7L@GRAVATAR.COM", "AQAAAAEAACcQAAAAEP3AIp6BRKUv71v2ZhqJurjxLRb5XkoPYNRN3tRS2K/iAxIiPHfJwMgTsfpaVMToLQ==", null, false, "ac5596d9-6eb3-44b4-bd66-e3c88b67943c", false, "slippiett7l@gravatar.com" });
+                values: new object[] { "49393458-5d85-49f8-92d0-c95be10e9695", 0, "5295b8b9-3667-45fa-ab72-6ba266ed424f", "slippiett7l@gravatar.com", false, false, null, "SLIPPIETT7L@GRAVATAR.COM", "SLIPPIETT7L@GRAVATAR.COM", "AQAAAAEAACcQAAAAENEHpXZzj6z7qF7r26vnRvKeoGj0haHLsDJj8JTAFnUh9+pB9gV7lhZW0H24ncnbGA==", null, false, "ac5596d9-6eb3-44b4-bd66-e3c88b67943c", false, "slippiett7l@gravatar.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5c4107dd-8c40-40ce-ba0c-f891b7e866ec", 0, "68c0b95a-2154-4445-96be-9e796962c9d6", "jreddington7j@google.com.hk", false, false, null, "JREDDINGTON7J@GOOGLE.COM.HK", "JREDDINGTON7J@GOOGLE.COM.HK", "AQAAAAEAACcQAAAAENgjMC86iaSaUl+6U7cUrk38BNlt2wPXnRxZ6FVndoUquJegjd1wKCeQbnYEoNsZJQ==", null, false, "b2890e8a-92be-4902-b46c-5ab0e2f65088", false, "jreddington7j@google.com.hk" });
+                values: new object[] { "5c4107dd-8c40-40ce-ba0c-f891b7e866ec", 0, "ed69cc7c-d1ac-4847-b5c6-a268d11e6e6d", "jreddington7j@google.com.hk", false, false, null, "JREDDINGTON7J@GOOGLE.COM.HK", "JREDDINGTON7J@GOOGLE.COM.HK", "AQAAAAEAACcQAAAAEBuQID2Vy5w3fc+GrDPD+Jnn2Uh2Z7aNS9zS+03cB6HqAqD0COxKITF8k52OWP+XoA==", null, false, "b2890e8a-92be-4902-b46c-5ab0e2f65088", false, "jreddington7j@google.com.hk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1570e07f-8e59-4b67-906f-876e132cc050", 0, "00cc7f4f-f3ba-4881-950d-03f22f410a20", "ballwood7i@blogtalkradio.com", false, false, null, "BALLWOOD7I@BLOGTALKRADIO.COM", "BALLWOOD7I@BLOGTALKRADIO.COM", "AQAAAAEAACcQAAAAENeqYzjbW7D8vBQy1/w7eKIZ4OZvwU5w+UotxYW/zHmIoheTfS4fghjkv/PHZY5S1w==", null, false, "879fdf7d-e024-4963-950e-edb858cef9e2", false, "ballwood7i@blogtalkradio.com" });
+                values: new object[] { "1570e07f-8e59-4b67-906f-876e132cc050", 0, "76a15388-7134-4647-b31e-44bf24af826f", "ballwood7i@blogtalkradio.com", false, false, null, "BALLWOOD7I@BLOGTALKRADIO.COM", "BALLWOOD7I@BLOGTALKRADIO.COM", "AQAAAAEAACcQAAAAEO0m2Kx6Avia7B/EvJr3V36YSJ7jb+7+9VfGP2z6NLwP5wWZ8xG8Jd0j1WZrvTQYUA==", null, false, "879fdf7d-e024-4963-950e-edb858cef9e2", false, "ballwood7i@blogtalkradio.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c51e3f49-3d0c-4c0b-b681-1fe9d5d00eff", 0, "646f2e7b-a8e9-4b31-ba3c-651ee8f174b3", "mclowser7h@yellowbook.com", false, false, null, "MCLOWSER7H@YELLOWBOOK.COM", "MCLOWSER7H@YELLOWBOOK.COM", "AQAAAAEAACcQAAAAEDkN3AU797dPbmofSQyPujH3Xq5uWM+2MFGVR84Yu9skQz8sx3/3ySm4r29d8qEhCg==", null, false, "945d6283-f9dc-46a6-a729-fa3c10ecadb6", false, "mclowser7h@yellowbook.com" });
+                values: new object[] { "c51e3f49-3d0c-4c0b-b681-1fe9d5d00eff", 0, "18645544-5a8b-4263-bb0a-d0bbc3eb5826", "mclowser7h@yellowbook.com", false, false, null, "MCLOWSER7H@YELLOWBOOK.COM", "MCLOWSER7H@YELLOWBOOK.COM", "AQAAAAEAACcQAAAAEFsIw3HxBeMdut0rdT1BRLmt014KMa7+ce9mid+rVAFeUc3O5YyF86GuWEtvi4ugPQ==", null, false, "945d6283-f9dc-46a6-a729-fa3c10ecadb6", false, "mclowser7h@yellowbook.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "84ee9df7-9dca-45af-b4a3-5a92f8b6d942", 0, "c563eb57-9d4d-43ed-8a48-49cade024ec6", "ddewinton7g@uiuc.edu", false, false, null, "DDEWINTON7G@UIUC.EDU", "DDEWINTON7G@UIUC.EDU", "AQAAAAEAACcQAAAAEHSLEtmDlEpB/uPUX2UxBb8qqKNbt4zzU8tgGKFGJaUVdaiWA26DUW1h9ldcDIaobw==", null, false, "8172229c-9a89-4fd0-8778-3a2fe7127ccd", false, "ddewinton7g@uiuc.edu" });
+                values: new object[] { "84ee9df7-9dca-45af-b4a3-5a92f8b6d942", 0, "805c6c39-1ec2-4fc8-bb7f-b94a4465fc18", "ddewinton7g@uiuc.edu", false, false, null, "DDEWINTON7G@UIUC.EDU", "DDEWINTON7G@UIUC.EDU", "AQAAAAEAACcQAAAAEIcFu1j6WNcisPRS6eJiYjJa5sRkMeIjdqzrQDK4oLv6wgt/lHTM+4uvQsVBuJaQ/A==", null, false, "8172229c-9a89-4fd0-8778-3a2fe7127ccd", false, "ddewinton7g@uiuc.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ba39c5e5-0606-4277-ac94-666a82b4f50c", 0, "f5cb248c-8dd3-4416-961a-ad714f353ba5", "kwisam7f@imgur.com", false, false, null, "KWISAM7F@IMGUR.COM", "KWISAM7F@IMGUR.COM", "AQAAAAEAACcQAAAAEOWJAxwEzxzCpz0jLF3o1Td70RrYG7D2EoANJ/3pm99izjX24RXnGbKReQs8nXZY/A==", null, false, "0e1f8cd4-184c-4617-9bea-b84021535734", false, "kwisam7f@imgur.com" });
+                values: new object[] { "ba39c5e5-0606-4277-ac94-666a82b4f50c", 0, "68320ef2-2a36-4757-8758-e9bf717b1a30", "kwisam7f@imgur.com", false, false, null, "KWISAM7F@IMGUR.COM", "KWISAM7F@IMGUR.COM", "AQAAAAEAACcQAAAAEEUWY3pe+sLX5PWKlypx/c8xO2VZejMF574DwIXiL2TCvWyTZiKtmCeJ98ywTsd0uQ==", null, false, "0e1f8cd4-184c-4617-9bea-b84021535734", false, "kwisam7f@imgur.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5dfea24d-6c28-4052-9a4e-a6bff8605d04", 0, "de287fd7-59ff-4d55-bf9a-38d20cc93ccf", "tnewbatt7e@illinois.edu", false, false, null, "TNEWBATT7E@ILLINOIS.EDU", "TNEWBATT7E@ILLINOIS.EDU", "AQAAAAEAACcQAAAAEKQeupADN5EkKI4NSCfKizhy/p6LV/0RXgxH/AYv60ubhKZ2B5fMuo8AS4kN04KUAQ==", null, false, "eaa89394-d90d-429e-9789-cbe245e83e0a", false, "tnewbatt7e@illinois.edu" });
+                values: new object[] { "5dfea24d-6c28-4052-9a4e-a6bff8605d04", 0, "482c795a-2bab-4e97-8307-02c56b7fea7f", "tnewbatt7e@illinois.edu", false, false, null, "TNEWBATT7E@ILLINOIS.EDU", "TNEWBATT7E@ILLINOIS.EDU", "AQAAAAEAACcQAAAAEHU95gz0AROnzPkZN/imaaHAi2pzUhw1ByQmbC14PbSruIpdcn7xAVZY3WY3FdshRg==", null, false, "eaa89394-d90d-429e-9789-cbe245e83e0a", false, "tnewbatt7e@illinois.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "64e85740-c8fa-400b-b7d1-a7fdc9db03fe", 0, "7fe487ae-7822-4bbb-8bd0-f79dcd541d6d", "fbenazet7d@state.gov", false, false, null, "FBENAZET7D@STATE.GOV", "FBENAZET7D@STATE.GOV", "AQAAAAEAACcQAAAAEG/jW4M2liQB2uP4j/MHciZH2CdV/qxzslltaRtNSEFYXXl4Saocyrfmm8COdSxmTQ==", null, false, "e01ec773-bfda-460e-b766-3658b755472a", false, "fbenazet7d@state.gov" });
+                values: new object[] { "64e85740-c8fa-400b-b7d1-a7fdc9db03fe", 0, "8847791d-e9dc-434e-bce8-af1292af245a", "fbenazet7d@state.gov", false, false, null, "FBENAZET7D@STATE.GOV", "FBENAZET7D@STATE.GOV", "AQAAAAEAACcQAAAAEMuYS86YhE/I1wbZvEL3bvVA0z2jk6meZSGdLrh/OAygjWpQtyOK02xIczVAjK28jg==", null, false, "e01ec773-bfda-460e-b766-3658b755472a", false, "fbenazet7d@state.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f8245b6e-0f39-475c-9868-32f8127dae76", 0, "e4b7e53b-0226-4240-b362-8f6c067b046a", "agreenman7c@state.gov", false, false, null, "AGREENMAN7C@STATE.GOV", "AGREENMAN7C@STATE.GOV", "AQAAAAEAACcQAAAAEHQzYW+gh252AZ2rFd6ff7esEkE2Qf+k34Kf57Bn5BKQ+tPZV+MJQWloXA9nX6l9rQ==", null, false, "0e82d32d-9976-4d17-b356-7f403f53eef6", false, "agreenman7c@state.gov" });
+                values: new object[] { "f8245b6e-0f39-475c-9868-32f8127dae76", 0, "46d153d4-f8ad-411d-a86b-1a0698e52287", "agreenman7c@state.gov", false, false, null, "AGREENMAN7C@STATE.GOV", "AGREENMAN7C@STATE.GOV", "AQAAAAEAACcQAAAAEKq7e7pXrFimPg+lhcX18S1PRbPldwGSo8no006rlR4TSb7t5iuigByG+ujxt/4QSg==", null, false, "0e82d32d-9976-4d17-b356-7f403f53eef6", false, "agreenman7c@state.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c06a4654-5963-4233-ad44-8eb229d33b55", 0, "a2c40b3a-543d-467f-bf58-fd9ac465f238", "wpearson7k@wix.com", false, false, null, "WPEARSON7K@WIX.COM", "WPEARSON7K@WIX.COM", "AQAAAAEAACcQAAAAEFjcWTawWKVGwrMbgjP4LLW/R2akmyRUQ7Qz6t0VykDcj8gK5EssiKvcBNWBbXcENQ==", null, false, "6eb032fc-f86c-4634-9a0e-9465581fbb67", false, "wpearson7k@wix.com" });
+                values: new object[] { "c06a4654-5963-4233-ad44-8eb229d33b55", 0, "903c7e09-b564-4408-a0db-9a3b1e05464c", "wpearson7k@wix.com", false, false, null, "WPEARSON7K@WIX.COM", "WPEARSON7K@WIX.COM", "AQAAAAEAACcQAAAAEKMny1M97S7F35TbU9b2MyC6MPwyfdApyvZIJv8hqgX+hfxPAKBAjlr3wD/eyVorCA==", null, false, "6eb032fc-f86c-4634-9a0e-9465581fbb67", false, "wpearson7k@wix.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5f3b0629-9ef0-4077-a7bd-e733a083a443", 0, "3bdda9b7-ea59-4d1c-b556-642b71242feb", "sdioniso8h@comcast.net", false, false, null, "SDIONISO8H@COMCAST.NET", "SDIONISO8H@COMCAST.NET", "AQAAAAEAACcQAAAAEClyRtx0had1k6r/ZrYh8GbxjG2Ivq24IW+oY23zGBxnWynl1JdBeOGb2cLZQDf6EA==", null, false, "7c7296b2-aa6e-44b8-8a01-afc249d91082", false, "sdioniso8h@comcast.net" });
+                values: new object[] { "5f3b0629-9ef0-4077-a7bd-e733a083a443", 0, "213fcbfd-b598-4fe1-9e3d-b8c7f272298c", "sdioniso8h@comcast.net", false, false, null, "SDIONISO8H@COMCAST.NET", "SDIONISO8H@COMCAST.NET", "AQAAAAEAACcQAAAAELc7+oPiV7zMruvOUOpU2BGF2dbBlgpFbMNwTgef1bOs6bM+/mnw6Ryl/+9uoxUVIA==", null, false, "7c7296b2-aa6e-44b8-8a01-afc249d91082", false, "sdioniso8h@comcast.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "625ccb6a-5f78-4dc5-8417-3fe8d5eefce9", 0, "df12e5b8-d125-4da4-b700-ede53901744a", "lalleyn7v@addtoany.com", false, false, null, "LALLEYN7V@ADDTOANY.COM", "LALLEYN7V@ADDTOANY.COM", "AQAAAAEAACcQAAAAEJv2UE0RwcJ811TcalG9Vq8SDO86xc42c7PYVGnKglaA0i4SgfdlNn9s/PweoONoyA==", null, false, "f520f782-b7ad-402d-a877-214e0241b282", false, "lalleyn7v@addtoany.com" });
+                values: new object[] { "625ccb6a-5f78-4dc5-8417-3fe8d5eefce9", 0, "f0be9aeb-734e-4240-acc8-7886121e0492", "lalleyn7v@addtoany.com", false, false, null, "LALLEYN7V@ADDTOANY.COM", "LALLEYN7V@ADDTOANY.COM", "AQAAAAEAACcQAAAAEDgFBcKz3Te11YYLmDdUBNgcjroVzoX0hSS/gAEpTNVW6IL+L2Ut8AloUQ445tpx6A==", null, false, "f520f782-b7ad-402d-a877-214e0241b282", false, "lalleyn7v@addtoany.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "428b069a-3d53-4a4d-b54a-e4a1daa6118f", 0, "e9819b8d-ab4c-487e-a58d-7b32c3182b6b", "ndurward7x@goo.gl", false, false, null, "NDURWARD7X@GOO.GL", "NDURWARD7X@GOO.GL", "AQAAAAEAACcQAAAAENbKeZEfVVE11i4mezgbRzP1d7Sqffpb+JNjJv0hAFu900wQm4aYtoGMY6E5euZm9Q==", null, false, "d7579e63-458d-4d04-81bb-f5df4d17fde8", false, "ndurward7x@goo.gl" });
+                values: new object[] { "428b069a-3d53-4a4d-b54a-e4a1daa6118f", 0, "787a9d7e-a61d-4aec-bbc0-c8ce5dab6868", "ndurward7x@goo.gl", false, false, null, "NDURWARD7X@GOO.GL", "NDURWARD7X@GOO.GL", "AQAAAAEAACcQAAAAEA6qnxzpPIHWaZ5T15qjGyPbHg1Sag9UwHmXDNjyFXXimWg4I8+5N+YaJrGCRDkLig==", null, false, "d7579e63-458d-4d04-81bb-f5df4d17fde8", false, "ndurward7x@goo.gl" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "007ad91f-6052-4572-bc92-f06dbc4fcbcb", 0, "4b9221dc-6c73-41f1-882a-cae5eff44273", "tvenable8f@ehow.com", false, false, null, "TVENABLE8F@EHOW.COM", "TVENABLE8F@EHOW.COM", "AQAAAAEAACcQAAAAEG7TnZ6/mGp6jrd+BuhRZdCMXrkX+kjxVtl0/if74wdoQa5J6s6i5asdgBFtgbwczg==", null, false, "f15c0a0a-cafc-44a0-b6e3-ea9bfe61a5d5", false, "tvenable8f@ehow.com" });
+                values: new object[] { "007ad91f-6052-4572-bc92-f06dbc4fcbcb", 0, "21ce9262-526a-4e68-bac0-845fe68d2a81", "tvenable8f@ehow.com", false, false, null, "TVENABLE8F@EHOW.COM", "TVENABLE8F@EHOW.COM", "AQAAAAEAACcQAAAAENRKZGD5ZLb5kFYNfhhNAA4nOPqDzlc9dMBscDsQdUgv8OyJK2p7Xhp16sdMCtsJvQ==", null, false, "f15c0a0a-cafc-44a0-b6e3-ea9bfe61a5d5", false, "tvenable8f@ehow.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "67edfd00-df89-4958-b3cf-848cc0450de3", 0, "bd4beb1d-4ccd-498d-94b9-effa48b4a6cc", "bbernardin8e@wsj.com", false, false, null, "BBERNARDIN8E@WSJ.COM", "BBERNARDIN8E@WSJ.COM", "AQAAAAEAACcQAAAAEGQSnbAmXkfFajQLaNk8uLzoTTzp36YOJzrA2wIYcYbJDJ9um6q3GyS4z2FVWgo+/g==", null, false, "991e99b1-dcef-4e6e-846b-e7f834ad2643", false, "bbernardin8e@wsj.com" });
+                values: new object[] { "67edfd00-df89-4958-b3cf-848cc0450de3", 0, "295ef2c3-136a-4190-bf5b-30c3a3bf98d0", "bbernardin8e@wsj.com", false, false, null, "BBERNARDIN8E@WSJ.COM", "BBERNARDIN8E@WSJ.COM", "AQAAAAEAACcQAAAAELl2NY4ESnVK7hUYilHe2wHtZhSu1BV6uD1PFnS4nFTgRzd0/UeO52Gox4gocAua7A==", null, false, "991e99b1-dcef-4e6e-846b-e7f834ad2643", false, "bbernardin8e@wsj.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1ff58e13-330a-49ee-8a30-fe6cff075e35", 0, "e834c283-c5c5-4f4d-9b1b-539aeb76f969", "mlavall8d@amazon.co.uk", false, false, null, "MLAVALL8D@AMAZON.CO.UK", "MLAVALL8D@AMAZON.CO.UK", "AQAAAAEAACcQAAAAENOk3KCVDqy0CfrG/tMrfCn4RDNCVwJwLUt3+Q7AKbPqttjtp5Xx9zR33WZc8fusbA==", null, false, "3936cc6e-d07d-4d2d-99f3-bb8f6f9407d9", false, "mlavall8d@amazon.co.uk" });
+                values: new object[] { "1ff58e13-330a-49ee-8a30-fe6cff075e35", 0, "1e92aef1-7be7-4412-a126-27f0bc2d84e0", "mlavall8d@amazon.co.uk", false, false, null, "MLAVALL8D@AMAZON.CO.UK", "MLAVALL8D@AMAZON.CO.UK", "AQAAAAEAACcQAAAAEH5M8BnfGRqgBokQoWQRsm/ondF5LmgMeBYXVsfcQTqjJkcGvrDEUDcdLEUCC60Bzg==", null, false, "3936cc6e-d07d-4d2d-99f3-bb8f6f9407d9", false, "mlavall8d@amazon.co.uk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3e60f92d-2db2-4dfd-9320-08f88bdcaf67", 0, "cf3cb46c-d2cb-4e66-bf5b-59fd30310116", "gzarfat8c@weebly.com", false, false, null, "GZARFAT8C@WEEBLY.COM", "GZARFAT8C@WEEBLY.COM", "AQAAAAEAACcQAAAAED+gdtiNzoEh9UAxDBgX+tkxqJB7qW9O/1W5i6KKPcYEnCdCjc0CW910oNGok9h2Wg==", null, false, "64b107a6-75bd-496b-9a62-b92ea926fb4c", false, "gzarfat8c@weebly.com" });
+                values: new object[] { "3e60f92d-2db2-4dfd-9320-08f88bdcaf67", 0, "e53c02c6-1bde-41f3-8221-fedad2469dd0", "gzarfat8c@weebly.com", false, false, null, "GZARFAT8C@WEEBLY.COM", "GZARFAT8C@WEEBLY.COM", "AQAAAAEAACcQAAAAEC+g3tMeVHjeLxDdmvLEnpG5cgzOYTmAbG+1nTdTJkCH07XcIUk3+iCEzVlPPugJhg==", null, false, "64b107a6-75bd-496b-9a62-b92ea926fb4c", false, "gzarfat8c@weebly.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f5ce9ad0-1f89-4f72-851a-f088d32540fc", 0, "82e5bf0f-981b-420d-bee1-ceec9d10457d", "mmacnab8b@histats.com", false, false, null, "MMACNAB8B@HISTATS.COM", "MMACNAB8B@HISTATS.COM", "AQAAAAEAACcQAAAAEGj1Av7BXSVJzFso47fdLUSqYEkCU8p/LX9ZLbgk7qOXjxD35bsbTL7TIz03cXwXsQ==", null, false, "2820e782-3bde-4e84-8162-d45f8201da43", false, "mmacnab8b@histats.com" });
+                values: new object[] { "f5ce9ad0-1f89-4f72-851a-f088d32540fc", 0, "bf17ef08-ea73-462b-86f7-3d7ec4c73db2", "mmacnab8b@histats.com", false, false, null, "MMACNAB8B@HISTATS.COM", "MMACNAB8B@HISTATS.COM", "AQAAAAEAACcQAAAAENvYRhmp4nO2FIaSaW8gFmJrYvAtJSTGbs+Vp/00wrVJ/yCLJpqt4XaZjtyCJCHErg==", null, false, "2820e782-3bde-4e84-8162-d45f8201da43", false, "mmacnab8b@histats.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0ea7c455-32cd-446a-858f-7649b5f361d2", 0, "b0f170d5-fd46-49bb-bd3c-4cd72c7e7d71", "splevey8a@ifeng.com", false, false, null, "SPLEVEY8A@IFENG.COM", "SPLEVEY8A@IFENG.COM", "AQAAAAEAACcQAAAAECr8Gufu0PhMcq6lC2tGaBmEfvRdGS+2Ge/wgOgJ2CjnuN2/q2hgUHCB8MhcAAg9Yg==", null, false, "9b5c462c-0e93-4e70-8051-373d9c04d19e", false, "splevey8a@ifeng.com" });
+                values: new object[] { "0ea7c455-32cd-446a-858f-7649b5f361d2", 0, "fdea2667-365f-484a-9efd-f964e068100d", "splevey8a@ifeng.com", false, false, null, "SPLEVEY8A@IFENG.COM", "SPLEVEY8A@IFENG.COM", "AQAAAAEAACcQAAAAEPgYAExTq3N+pwALJGzjk86gDL5v8xSDm3cMgSQPwu/dBPGgQ9YZN/EhBr0SvGcvJQ==", null, false, "9b5c462c-0e93-4e70-8051-373d9c04d19e", false, "splevey8a@ifeng.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "70c23159-d4c1-4bce-bf04-0b0616b9cea5", 0, "7883de56-6dfa-4d66-abbf-3ad0550d16ae", "obailes89@miitbeian.gov.cn", false, false, null, "OBAILES89@MIITBEIAN.GOV.CN", "OBAILES89@MIITBEIAN.GOV.CN", "AQAAAAEAACcQAAAAEIZ65j+8hBnj+YUtW1mZc6I/D/4Nkxh8Tsv4EpGj95KYN5OGqegmPh7oriBbxRV/LQ==", null, false, "30090539-461a-4c70-a65e-e0f0ed3281eb", false, "obailes89@miitbeian.gov.cn" });
+                values: new object[] { "70c23159-d4c1-4bce-bf04-0b0616b9cea5", 0, "5310eb8b-3823-4a68-8703-4da41b7f412a", "obailes89@miitbeian.gov.cn", false, false, null, "OBAILES89@MIITBEIAN.GOV.CN", "OBAILES89@MIITBEIAN.GOV.CN", "AQAAAAEAACcQAAAAELLN2zI3Je/xhN4dIsCZNps7/k+0h469ye2dhPfyVVGpTZkTKHstVxnDR/yUtxQo8Q==", null, false, "30090539-461a-4c70-a65e-e0f0ed3281eb", false, "obailes89@miitbeian.gov.cn" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "285a3408-5ebe-47da-b336-f1053fffe7fc", 0, "068c472b-7082-4719-9280-f2d5df868aa5", "tridgeway88@hostgator.com", false, false, null, "TRIDGEWAY88@HOSTGATOR.COM", "TRIDGEWAY88@HOSTGATOR.COM", "AQAAAAEAACcQAAAAEHHUCjadrPDvID7T7bYVdup0ZLXsSNo4mKDNQO6r0OvU+nue4ZqnEpuK9kLEtpMEZw==", null, false, "fa574190-2bbb-4db3-bc8b-585ab61f4b3d", false, "tridgeway88@hostgator.com" });
+                values: new object[] { "285a3408-5ebe-47da-b336-f1053fffe7fc", 0, "6d3114e2-d015-479c-bd63-cef9bfd0770d", "tridgeway88@hostgator.com", false, false, null, "TRIDGEWAY88@HOSTGATOR.COM", "TRIDGEWAY88@HOSTGATOR.COM", "AQAAAAEAACcQAAAAEHDAUr0TKsFH+MayF0SrL8pChDsJyY3PJBQgCJaY0Y6qEzgog1V95y2sNXs6lWE7Og==", null, false, "fa574190-2bbb-4db3-bc8b-585ab61f4b3d", false, "tridgeway88@hostgator.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9f7b0a8b-3a87-4eb0-960d-a2e2b233b45f", 0, "66015979-4629-4bf6-b7b1-8a607a0b87ca", "ofreezer7w@ed.gov", false, false, null, "OFREEZER7W@ED.GOV", "OFREEZER7W@ED.GOV", "AQAAAAEAACcQAAAAEHB0aZy/kOSbesSyPCAtstVwkRGp/OZwUZkwNkSwgIymE1LcFCz9muqftQPQtEaa1A==", null, false, "66bb03f5-0502-44f4-9abe-bbb922ef2f35", false, "ofreezer7w@ed.gov" });
+                values: new object[] { "9f7b0a8b-3a87-4eb0-960d-a2e2b233b45f", 0, "32b22799-d06e-4143-8196-8a32e391046d", "ofreezer7w@ed.gov", false, false, null, "OFREEZER7W@ED.GOV", "OFREEZER7W@ED.GOV", "AQAAAAEAACcQAAAAEIUp2gUWfob+LQOEjWTXQlrDj5s6RqewbmEWec37ZPLf1VbbP0lOjzaC7hRWzj5d/w==", null, false, "66bb03f5-0502-44f4-9abe-bbb922ef2f35", false, "ofreezer7w@ed.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "79df6154-599a-400a-99be-a962e032ad69", 0, "f3cb4072-5906-4cd2-811f-a483405fbcf2", "aharvey87@list-manage.com", false, false, null, "AHARVEY87@LIST-MANAGE.COM", "AHARVEY87@LIST-MANAGE.COM", "AQAAAAEAACcQAAAAENSMqve99UyPckn4vSoSr2gkHTq2tR4doZiv0n2TdwCi7hG37M198qKsyJHezsGz2g==", null, false, "77bffa4d-8e98-4d6a-b4f5-bd26b546a94c", false, "aharvey87@list-manage.com" });
+                values: new object[] { "79df6154-599a-400a-99be-a962e032ad69", 0, "ad912698-3cf6-4b89-a136-3b1b221c7f8a", "aharvey87@list-manage.com", false, false, null, "AHARVEY87@LIST-MANAGE.COM", "AHARVEY87@LIST-MANAGE.COM", "AQAAAAEAACcQAAAAECNmQfpYrNmM6jOZRh8kR8zlXFQBTCVxZSL6RbG6PD24asFyeDy5s9FIpgG8PgEepw==", null, false, "77bffa4d-8e98-4d6a-b4f5-bd26b546a94c", false, "aharvey87@list-manage.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "216ce7d8-2325-4020-b60d-9680a45adb08", 0, "6ee3e9fb-926b-45d5-80ce-f22a9a0f753d", "dbolino85@gmpg.org", false, false, null, "DBOLINO85@GMPG.ORG", "DBOLINO85@GMPG.ORG", "AQAAAAEAACcQAAAAEPS8GsAcILjdBro5anaoibCmZqTRihieOIBontrZ4ex3mC61UnU/PPULrn/As5waqw==", null, false, "91abb5eb-ba7e-41c6-bf5f-254fbbc19b41", false, "dbolino85@gmpg.org" });
+                values: new object[] { "216ce7d8-2325-4020-b60d-9680a45adb08", 0, "642cb379-ec64-4a32-ad5e-900b6ac9c5e4", "dbolino85@gmpg.org", false, false, null, "DBOLINO85@GMPG.ORG", "DBOLINO85@GMPG.ORG", "AQAAAAEAACcQAAAAENXOQSj5dy8xBrbdWcW4My59GMmRiXyUo1yRh1oMSSOI03OpmralCY/ZBA71E1bcow==", null, false, "91abb5eb-ba7e-41c6-bf5f-254fbbc19b41", false, "dbolino85@gmpg.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "33c7af52-0a24-4ea8-a070-0da035dab068", 0, "2fc699dc-33f6-452a-9279-189feece5558", "gstroobant84@hugedomains.com", false, false, null, "GSTROOBANT84@HUGEDOMAINS.COM", "GSTROOBANT84@HUGEDOMAINS.COM", "AQAAAAEAACcQAAAAEPyTS+7uWHzppBUIjPCk9v1ibgr5WID7dMvQxV/Om+YVGQPBd0g1f69T1nbvtxEvcw==", null, false, "234be0f3-6fd4-442c-990a-0ee091e3a50c", false, "gstroobant84@hugedomains.com" });
+                values: new object[] { "33c7af52-0a24-4ea8-a070-0da035dab068", 0, "690e77d9-aca5-44fe-a829-40a7ba6217ee", "gstroobant84@hugedomains.com", false, false, null, "GSTROOBANT84@HUGEDOMAINS.COM", "GSTROOBANT84@HUGEDOMAINS.COM", "AQAAAAEAACcQAAAAEPhGSgz3L9fQInxA6QFOqXmOfMMtdYzjvHr9mtYp8xE+c2JjL8uNbXWngP1rXzX4uw==", null, false, "234be0f3-6fd4-442c-990a-0ee091e3a50c", false, "gstroobant84@hugedomains.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "dc3f56ec-a0cf-4abb-9181-4dffffa89eae", 0, "021c6fb3-2618-4b99-b053-f692927c0ac2", "aforseith83@friendfeed.com", false, false, null, "AFORSEITH83@FRIENDFEED.COM", "AFORSEITH83@FRIENDFEED.COM", "AQAAAAEAACcQAAAAEBNTBYl6AXBnsIkQeVrBZrtW59wqQGRgY7h3NDKqrp1dhHT4PYepakVxI70WBhU9KA==", null, false, "941920b7-9a27-4567-ab1e-9dbf7f2cce28", false, "aforseith83@friendfeed.com" });
+                values: new object[] { "dc3f56ec-a0cf-4abb-9181-4dffffa89eae", 0, "3af6dc2f-eb84-495e-b6d1-3668650fd3bb", "aforseith83@friendfeed.com", false, false, null, "AFORSEITH83@FRIENDFEED.COM", "AFORSEITH83@FRIENDFEED.COM", "AQAAAAEAACcQAAAAEG0y4S4D46aQfW/wGq/ZDCROtV5pj6Dgo6s/jnb6rVP2WG8Zxtd6ySt/Hc4DDatvng==", null, false, "941920b7-9a27-4567-ab1e-9dbf7f2cce28", false, "aforseith83@friendfeed.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a0c02293-d050-4987-91da-2e4a80f8b0dd", 0, "e5eb0629-1053-4855-8bd7-0f7dd76a308d", "nhaysar82@stanford.edu", false, false, null, "NHAYSAR82@STANFORD.EDU", "NHAYSAR82@STANFORD.EDU", "AQAAAAEAACcQAAAAEBj9atz02k+c8urfYiwz7t3DrAcJCdBCDuPen4UI4xcxuZfSFmk/Uoct89D6AZJpnA==", null, false, "047fc46b-efb7-491c-bd01-c7df60b91061", false, "nhaysar82@stanford.edu" });
+                values: new object[] { "a0c02293-d050-4987-91da-2e4a80f8b0dd", 0, "9babd0fc-8209-4f6d-a770-8990b3d5d37f", "nhaysar82@stanford.edu", false, false, null, "NHAYSAR82@STANFORD.EDU", "NHAYSAR82@STANFORD.EDU", "AQAAAAEAACcQAAAAEDTlNDWhmlHtyUdwMMwtPzcQkvLyaBbhTINOxz6HedMTJAtKG6QShODkoibS5tkfog==", null, false, "047fc46b-efb7-491c-bd01-c7df60b91061", false, "nhaysar82@stanford.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "988ee2ea-baec-41a9-b5c7-dcde15d43edc", 0, "07f0c63e-e948-4750-9ac3-222f9a53ae67", "epeatman81@archive.org", false, false, null, "EPEATMAN81@ARCHIVE.ORG", "EPEATMAN81@ARCHIVE.ORG", "AQAAAAEAACcQAAAAELmbOpzT4i+E0h2s59hjwnohRi3+HF24JLYQPbdnNMsTYu4fI/fKcVXTS0KvCBK39Q==", null, false, "175538d9-2f83-4cc7-8dbf-74d88093008f", false, "epeatman81@archive.org" });
+                values: new object[] { "988ee2ea-baec-41a9-b5c7-dcde15d43edc", 0, "82955a79-0b68-4799-98df-3bca8dfaf96e", "epeatman81@archive.org", false, false, null, "EPEATMAN81@ARCHIVE.ORG", "EPEATMAN81@ARCHIVE.ORG", "AQAAAAEAACcQAAAAEIMnJdJdLzjG2KRbSE+cARfk9wxYzN/SpPzXcYHXP3wTlNGkpz4A9tWrfKlPVZ0vJw==", null, false, "175538d9-2f83-4cc7-8dbf-74d88093008f", false, "epeatman81@archive.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ff80e083-f4a9-4415-9b21-864cfc094580", 0, "e49b413b-d652-45ea-a27d-73cb33b6efe2", "qtuckley80@mail.ru", false, false, null, "QTUCKLEY80@MAIL.RU", "QTUCKLEY80@MAIL.RU", "AQAAAAEAACcQAAAAEDsbnmqHbRU3ORpZ4L+UFj1A3KSuc5WRdKhkDDUF14s9HRlndTonqxOsohQbARd9lA==", null, false, "9bff5831-f876-49e6-a13e-441512fd2d97", false, "qtuckley80@mail.ru" });
+                values: new object[] { "ff80e083-f4a9-4415-9b21-864cfc094580", 0, "f3e4bc6c-1c74-41ff-8b95-4d21f510f720", "qtuckley80@mail.ru", false, false, null, "QTUCKLEY80@MAIL.RU", "QTUCKLEY80@MAIL.RU", "AQAAAAEAACcQAAAAEAZzv3mOM5xN/srQGi/wMHvy8u7zHXpfcaZtcZED9Pul8B5KNDELmcYGkIRFCIgXVA==", null, false, "9bff5831-f876-49e6-a13e-441512fd2d97", false, "qtuckley80@mail.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "00e04d4a-56c0-454c-94b3-76863e9e7944", 0, "330eadaf-e55e-4e73-ac9a-29ea141d0748", "jbroader7z@wiley.com", false, false, null, "JBROADER7Z@WILEY.COM", "JBROADER7Z@WILEY.COM", "AQAAAAEAACcQAAAAECg6o3x0i9L8yA8EM90uT/W7vb2G2C6hswyH9dnVTFSy78Oeobz2fnLpDJdutEDXjw==", null, false, "7e502715-1ce2-4d18-8025-d058435c68f9", false, "jbroader7z@wiley.com" });
+                values: new object[] { "00e04d4a-56c0-454c-94b3-76863e9e7944", 0, "653bba06-727a-49bd-a5f4-b00c8060fa8a", "jbroader7z@wiley.com", false, false, null, "JBROADER7Z@WILEY.COM", "JBROADER7Z@WILEY.COM", "AQAAAAEAACcQAAAAEKIlFnNVltti3J9D2gldvkoYwPNr2epDTOn6y6kxKt1Z1yit8nOm7xiJCChu6qU5Iw==", null, false, "7e502715-1ce2-4d18-8025-d058435c68f9", false, "jbroader7z@wiley.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4971fc0d-5c46-4a98-95aa-a6ed018851bb", 0, "c2137fb7-7718-48b7-8249-2130fe3578d8", "vferson7y@netscape.com", false, false, null, "VFERSON7Y@NETSCAPE.COM", "VFERSON7Y@NETSCAPE.COM", "AQAAAAEAACcQAAAAEImlHi2FI+/jnRV2a/sm8B23j1bBAvR3oP5g2gDjN7MqBGY8PRORf8RxGO/NH5UyAQ==", null, false, "1b04fb04-c2c1-46f7-8749-00f4b5d5867a", false, "vferson7y@netscape.com" });
+                values: new object[] { "4971fc0d-5c46-4a98-95aa-a6ed018851bb", 0, "454f4fe7-2fd0-4010-a1f2-964e9d8383d1", "vferson7y@netscape.com", false, false, null, "VFERSON7Y@NETSCAPE.COM", "VFERSON7Y@NETSCAPE.COM", "AQAAAAEAACcQAAAAEAu23QPMuafBoFA6yhHWbwPm57rZCQELWVYf26+XlPRfTbSF7HoLwgtxTEXBBnf8CA==", null, false, "1b04fb04-c2c1-46f7-8749-00f4b5d5867a", false, "vferson7y@netscape.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0d300f55-cd2c-4d3a-bd56-fffcc1189148", 0, "8fda1b66-0155-4bbe-a399-368899fc96e4", "aswanne86@ed.gov", false, false, null, "ASWANNE86@ED.GOV", "ASWANNE86@ED.GOV", "AQAAAAEAACcQAAAAEFbGeIOgA6eZI6vFUZUc4+13IeqmtjyuZLvUrv0pLIZnKXDr0ScPSR734e85LOMy7A==", null, false, "b535b993-88ed-4389-a026-a16163f49c72", false, "aswanne86@ed.gov" });
+                values: new object[] { "0d300f55-cd2c-4d3a-bd56-fffcc1189148", 0, "1e1ef64c-adc7-49d1-a68b-32059e8d9d23", "aswanne86@ed.gov", false, false, null, "ASWANNE86@ED.GOV", "ASWANNE86@ED.GOV", "AQAAAAEAACcQAAAAEJoq1pkSmSO9RcVjwXTWsvvX+HtNyZ8dJKwc9bgTr+mIFQn6TGupdHLguQ/nEdlIzg==", null, false, "b535b993-88ed-4389-a026-a16163f49c72", false, "aswanne86@ed.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "458c500e-168f-4afe-9dda-d487f243c38f", 0, "57dfde04-25b3-4e37-9875-6516e5c268f3", "itrebbett4v@over-blog.com", false, false, null, "ITREBBETT4V@OVER-BLOG.COM", "ITREBBETT4V@OVER-BLOG.COM", "AQAAAAEAACcQAAAAEADlMnQNCLAVcT+iLzAy9hu0yqW4PHNwMATrqoaZGEQ6kFDneOqk2XsnDDAjZJ/9IQ==", null, false, "75cda747-0e62-461b-b0cb-bf68986770b4", false, "itrebbett4v@over-blog.com" });
+                values: new object[] { "458c500e-168f-4afe-9dda-d487f243c38f", 0, "b7f78fe6-e80f-49c5-bb3f-81fc0936229b", "itrebbett4v@over-blog.com", false, false, null, "ITREBBETT4V@OVER-BLOG.COM", "ITREBBETT4V@OVER-BLOG.COM", "AQAAAAEAACcQAAAAEJ5LzziR0PPGvTBr/lqJs7VESqLnIGaTUObHo2y7Et7eZ3TPWSQ7cFUHTvKT9m6XXQ==", null, false, "75cda747-0e62-461b-b0cb-bf68986770b4", false, "itrebbett4v@over-blog.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "16272728-6696-4e9c-9992-41c9e2441961", 0, "b2be7050-ee6a-41dc-88d6-e070ffd9b02a", "gdanihelka4u@arizona.edu", false, false, null, "GDANIHELKA4U@ARIZONA.EDU", "GDANIHELKA4U@ARIZONA.EDU", "AQAAAAEAACcQAAAAEBD1+SAgaZR62yFITuufSyVZZx4eAlYYOpz9U+yXMzl5pD8VIijNP/TR8RbU+vlXEA==", null, false, "5b72a3a2-b79d-4ac7-8e5e-49865294401c", false, "gdanihelka4u@arizona.edu" });
+                values: new object[] { "16272728-6696-4e9c-9992-41c9e2441961", 0, "821edda5-5d3f-4ee5-97f5-60cb15f91f5d", "gdanihelka4u@arizona.edu", false, false, null, "GDANIHELKA4U@ARIZONA.EDU", "GDANIHELKA4U@ARIZONA.EDU", "AQAAAAEAACcQAAAAEO4CCECRZvFBzySTUlK7IrlsyzItOH8Nk56HXCisMjpSPUVCJ0/alpLrzs0iEe8Qhw==", null, false, "5b72a3a2-b79d-4ac7-8e5e-49865294401c", false, "gdanihelka4u@arizona.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fadd417b-26a1-477b-9ab5-f4034e961f60", 0, "d6957194-5d7c-4b09-a382-cc27e6cc088d", "fanfrey4t@dyndns.org", false, false, null, "FANFREY4T@DYNDNS.ORG", "FANFREY4T@DYNDNS.ORG", "AQAAAAEAACcQAAAAENNuthU8aflroX8PFIpbie4MVLYxBPFIbcPm7qSqHkl048PvP3vcVgGGv1i3RM/5UQ==", null, false, "783dc209-7da8-4094-b796-ce15cfd57bd6", false, "fanfrey4t@dyndns.org" });
+                values: new object[] { "fadd417b-26a1-477b-9ab5-f4034e961f60", 0, "3f457b9f-688d-475d-be78-337f8780b174", "fanfrey4t@dyndns.org", false, false, null, "FANFREY4T@DYNDNS.ORG", "FANFREY4T@DYNDNS.ORG", "AQAAAAEAACcQAAAAEI2+reLDl76WAVK/QtN7f1OoFqnYktvpmygDBDJ5HLB/TpbsT4pl9ezBZ5i02Hk1CQ==", null, false, "783dc209-7da8-4094-b796-ce15cfd57bd6", false, "fanfrey4t@dyndns.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "b1a0cf3e-4d92-45a0-8544-cd9575d037c8", 0, "3e84efde-59ad-4281-a0e5-1fa67500e3dc", "kfruin1q@chronoengine.com", false, false, null, "KFRUIN1Q@CHRONOENGINE.COM", "KFRUIN1Q@CHRONOENGINE.COM", "AQAAAAEAACcQAAAAEFzBmhCohYVuaahmNqCaWfGuPi9F8Jh872Y/Ouwu22rPEgDdde8uTtCXgE2W42cwQA==", null, false, "5f8a0fc9-9e04-4792-b563-d460d69bb40e", false, "kfruin1q@chronoengine.com" });
+                values: new object[] { "b1a0cf3e-4d92-45a0-8544-cd9575d037c8", 0, "aefc5325-bd09-4207-8c1f-b1a6c75fe4b8", "kfruin1q@chronoengine.com", false, false, null, "KFRUIN1Q@CHRONOENGINE.COM", "KFRUIN1Q@CHRONOENGINE.COM", "AQAAAAEAACcQAAAAEExQFxmlguvqiQ7evpjPvQylGPnOJRzq7YsYcteKLktF5nZdsvvCC96tJquSJsnZmg==", null, false, "5f8a0fc9-9e04-4792-b563-d460d69bb40e", false, "kfruin1q@chronoengine.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "26bd6541-8413-4aef-9dea-45479c8d0b8d", 0, "1e0542a3-a3ad-4284-8d74-dade76cd2760", "mprout1p@statcounter.com", false, false, null, "MPROUT1P@STATCOUNTER.COM", "MPROUT1P@STATCOUNTER.COM", "AQAAAAEAACcQAAAAEE7RJ/3+bvWCLjYrmFdd2lNggus8h1bqmW1fwJrDqDjVGwBjGBeCgQlyXFsgv0yOFw==", null, false, "d4878d3a-f265-4651-9852-985b745aafe6", false, "mprout1p@statcounter.com" });
+                values: new object[] { "26bd6541-8413-4aef-9dea-45479c8d0b8d", 0, "8f6b38be-666a-49b6-8156-39cce1252b32", "mprout1p@statcounter.com", false, false, null, "MPROUT1P@STATCOUNTER.COM", "MPROUT1P@STATCOUNTER.COM", "AQAAAAEAACcQAAAAEEmSeATfUsrskf6ZuR4q1yMtZgoYMbQmUvEB36l354kNkGNK0ArbAiajaXhh0vOHoA==", null, false, "d4878d3a-f265-4651-9852-985b745aafe6", false, "mprout1p@statcounter.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "17c28f9f-1b02-43fa-900f-7ce95d3d7d93", 0, "d7fb7791-5c2e-4704-89fa-0a9ec2d9eeeb", "nfry1o@google.com.br", false, false, null, "NFRY1O@GOOGLE.COM.BR", "NFRY1O@GOOGLE.COM.BR", "AQAAAAEAACcQAAAAEOV4yTpEnl1teYeALDlLCPBBrI540sg/bUql/tSihreeR8KacX9RXpCVC4Dbn2btvg==", null, false, "6c684a20-3ffd-43d3-9d9d-dcc04fc9c51c", false, "nfry1o@google.com.br" });
+                values: new object[] { "17c28f9f-1b02-43fa-900f-7ce95d3d7d93", 0, "3c66c5e5-a567-4ad0-a69b-e2cb03436d0d", "nfry1o@google.com.br", false, false, null, "NFRY1O@GOOGLE.COM.BR", "NFRY1O@GOOGLE.COM.BR", "AQAAAAEAACcQAAAAEGS5QDDrqcuD5++fUV5+230bupzXYUR2l1vODFlNbYSgiFmF8v/Bv401r8/r/uHqFA==", null, false, "6c684a20-3ffd-43d3-9d9d-dcc04fc9c51c", false, "nfry1o@google.com.br" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2d6ce601-09ea-4a97-9d3a-ce81b80e47e5", 0, "643be1d6-77d9-47ec-854f-011ef40a2f73", "astork1n@squidoo.com", false, false, null, "ASTORK1N@SQUIDOO.COM", "ASTORK1N@SQUIDOO.COM", "AQAAAAEAACcQAAAAEGJC/nSi9silk/7yncKaGwCttQITjDNZaqi/cXQAwSNNh3jX+4unwu98RXuF5GMWuA==", null, false, "7ee178a5-2b91-4a3e-8637-4423b67f36de", false, "astork1n@squidoo.com" });
+                values: new object[] { "2d6ce601-09ea-4a97-9d3a-ce81b80e47e5", 0, "380ecee3-6d6e-4182-b8ce-207c9ee3e795", "astork1n@squidoo.com", false, false, null, "ASTORK1N@SQUIDOO.COM", "ASTORK1N@SQUIDOO.COM", "AQAAAAEAACcQAAAAENnbRINUX8REhsbw5K/5gqmpoF6RalcJWIabdXbkmrbn2JtMGaPktGC2s2olETCJHw==", null, false, "7ee178a5-2b91-4a3e-8637-4423b67f36de", false, "astork1n@squidoo.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "04c68c41-b2c6-4fe8-947c-a6177eed3b7c", 0, "8e6f812d-b743-413c-a39f-78a8453c6535", "tsculley1m@auda.org.au", false, false, null, "TSCULLEY1M@AUDA.ORG.AU", "TSCULLEY1M@AUDA.ORG.AU", "AQAAAAEAACcQAAAAEIdpC2lBxW7eIcNuVl9n8sjp2fcB3KKC6r5ZsRmzyKz/VskKnXjqK+++5FxF1UdGgg==", null, false, "ff95dc46-cda1-4c27-b2f9-c0f00962ffd9", false, "tsculley1m@auda.org.au" });
+                values: new object[] { "04c68c41-b2c6-4fe8-947c-a6177eed3b7c", 0, "e9484fbc-6bd7-484d-b2d0-fdd828a29df0", "tsculley1m@auda.org.au", false, false, null, "TSCULLEY1M@AUDA.ORG.AU", "TSCULLEY1M@AUDA.ORG.AU", "AQAAAAEAACcQAAAAEJoTDBojCakRKM+/TIRCzBZyGa5x1cFnEPpTFJTKHhN1JHiO+9muHahGy5rviBuUQg==", null, false, "ff95dc46-cda1-4c27-b2f9-c0f00962ffd9", false, "tsculley1m@auda.org.au" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a8e60908-fcaf-4382-b979-3e9b74b9ff3c", 0, "5034a55d-8e4e-435a-a177-723fa0878fde", "dvolett1l@godaddy.com", false, false, null, "DVOLETT1L@GODADDY.COM", "DVOLETT1L@GODADDY.COM", "AQAAAAEAACcQAAAAEHa4FzF4mKddTLB4vSLjUWujKv+JTafjiD6UpRsv93abWILzV01iRYy3do30sUUx3g==", null, false, "b47ffd31-63a5-406d-a964-d1fcf5ef7e63", false, "dvolett1l@godaddy.com" });
+                values: new object[] { "a8e60908-fcaf-4382-b979-3e9b74b9ff3c", 0, "6a11b19d-947c-406e-a505-4075420b0d86", "dvolett1l@godaddy.com", false, false, null, "DVOLETT1L@GODADDY.COM", "DVOLETT1L@GODADDY.COM", "AQAAAAEAACcQAAAAECYSDnIJiuFEUVtKSxm5q2N3Xv5ogo2QWydSvbjYGBCn5k/V07+zVYuax43XgzXlBA==", null, false, "b47ffd31-63a5-406d-a964-d1fcf5ef7e63", false, "dvolett1l@godaddy.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5a08615d-f749-4006-a637-fde6ef90697e", 0, "2496a50f-26ff-40c4-8108-f9b682d45019", "jbeecroft1k@addtoany.com", false, false, null, "JBEECROFT1K@ADDTOANY.COM", "JBEECROFT1K@ADDTOANY.COM", "AQAAAAEAACcQAAAAEAuEUL2mU/WwSv1knmgaGrKiKjGaQiAva3064CVtxa3IJnkHgDqGc5sFuESAlA4iMA==", null, false, "e415e3af-dc1c-43f3-bd1b-d303535b14c7", false, "jbeecroft1k@addtoany.com" });
+                values: new object[] { "5a08615d-f749-4006-a637-fde6ef90697e", 0, "924f866a-60ea-498a-bcc6-609046c33558", "jbeecroft1k@addtoany.com", false, false, null, "JBEECROFT1K@ADDTOANY.COM", "JBEECROFT1K@ADDTOANY.COM", "AQAAAAEAACcQAAAAEA/jTVw6oEG5PqPoOEMaEzANlxZn4oy6id64T8EebAZe/igMJySCvj8OggkFssT91Q==", null, false, "e415e3af-dc1c-43f3-bd1b-d303535b14c7", false, "jbeecroft1k@addtoany.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "afd800d8-6225-498a-ab92-e76bba734526", 0, "c2a3ccf1-baa1-4481-9c5c-8fb115dfa0da", "eveazey1j@netscape.com", false, false, null, "EVEAZEY1J@NETSCAPE.COM", "EVEAZEY1J@NETSCAPE.COM", "AQAAAAEAACcQAAAAENmPA9gUtOnWZyJNGlQqjKMgWvS4EmS+PrwfyZffTG1ovjE3pozWH8lFzd2NjMqsNA==", null, false, "13b5e620-ab58-44ab-9bb7-6f8685cb7ffb", false, "eveazey1j@netscape.com" });
+                values: new object[] { "afd800d8-6225-498a-ab92-e76bba734526", 0, "e909f828-cd14-499a-87a2-e1616a9c5ab0", "eveazey1j@netscape.com", false, false, null, "EVEAZEY1J@NETSCAPE.COM", "EVEAZEY1J@NETSCAPE.COM", "AQAAAAEAACcQAAAAEL3Vv3onb2DugjUlSwZ4/sXHvcpvsKsJRrOJsJGK/1zam5skldp5F/IjiT1IQHaPJg==", null, false, "13b5e620-ab58-44ab-9bb7-6f8685cb7ffb", false, "eveazey1j@netscape.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2b01ab19-5e28-4f4d-b884-fa073210fbf7", 0, "1e90f47a-0277-40dd-9e4e-dc46caab99ee", "enornasell1r@aol.com", false, false, null, "ENORNASELL1R@AOL.COM", "ENORNASELL1R@AOL.COM", "AQAAAAEAACcQAAAAEG+lgXPUH1SmdiJIlsliiAQqeL08QH68mNZeCJhMIAEIs8teffv0UXFHpo2JxNEejQ==", null, false, "0a6fd941-4d9b-4f1b-94c3-7dfe0bcc0475", false, "enornasell1r@aol.com" });
+                values: new object[] { "2b01ab19-5e28-4f4d-b884-fa073210fbf7", 0, "0936f3c6-5387-4214-981d-90ef23cd5471", "enornasell1r@aol.com", false, false, null, "ENORNASELL1R@AOL.COM", "ENORNASELL1R@AOL.COM", "AQAAAAEAACcQAAAAEMzBTD6nN232mX8lBCiNV50ZJDvCgeM0lIJ+Ao0f+GTyQXgbtXNsxwhB0ZlXoGmFEw==", null, false, "0a6fd941-4d9b-4f1b-94c3-7dfe0bcc0475", false, "enornasell1r@aol.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d4bcc18f-d938-4972-8562-0c169204ae79", 0, "7855523b-4592-42fe-8957-ae40690e62f8", "dmitchel1i@ftc.gov", false, false, null, "DMITCHEL1I@FTC.GOV", "DMITCHEL1I@FTC.GOV", "AQAAAAEAACcQAAAAEMRes6QQ1jZE+gnClVzqFsCZQtgPt3sV2fXFHOHb5qLOjFjTE+zWs2nDCIOP8XpGJA==", null, false, "f25da1df-ccde-4080-8c15-33f99fa5d895", false, "dmitchel1i@ftc.gov" });
+                values: new object[] { "d4bcc18f-d938-4972-8562-0c169204ae79", 0, "779b52a9-4b78-418f-9e1d-54b940c4e57d", "dmitchel1i@ftc.gov", false, false, null, "DMITCHEL1I@FTC.GOV", "DMITCHEL1I@FTC.GOV", "AQAAAAEAACcQAAAAEEOqtEF2InRwnGwnJsmleFcETWGYAkEnBwjY3kTVPE8M9hinZ/w1BPg/TtLiEZ0xNw==", null, false, "f25da1df-ccde-4080-8c15-33f99fa5d895", false, "dmitchel1i@ftc.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "aca094fa-ceb7-426a-a792-6bbf8c49d734", 0, "6db1f0b5-5a76-4170-9b22-83eb3e20f5d6", "mtynan1g@huffingtonpost.com", false, false, null, "MTYNAN1G@HUFFINGTONPOST.COM", "MTYNAN1G@HUFFINGTONPOST.COM", "AQAAAAEAACcQAAAAEG1jWzxy3eoKVZ2eMuGe+ptl/BW/ZZzNFIdB1mLg+xKu/7Tzd/LdDoYsockC43NwjA==", null, false, "470d5601-439d-4688-b3d7-02462cf87794", false, "mtynan1g@huffingtonpost.com" });
+                values: new object[] { "aca094fa-ceb7-426a-a792-6bbf8c49d734", 0, "2d146ac6-48c2-4a20-ac27-4bfc87df896d", "mtynan1g@huffingtonpost.com", false, false, null, "MTYNAN1G@HUFFINGTONPOST.COM", "MTYNAN1G@HUFFINGTONPOST.COM", "AQAAAAEAACcQAAAAEHrwjMPkeSy2lcGgPzIh3eXdq169ciG8EfmcGjX9ELJukt1JcIKg8mpYTKVayQziXw==", null, false, "470d5601-439d-4688-b3d7-02462cf87794", false, "mtynan1g@huffingtonpost.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "189d349c-1f66-42cf-aa30-f39b7ddb08b9", 0, "6b74f1d2-1dfa-4c05-aa78-f71d31d2f543", "cgioani1f@etsy.com", false, false, null, "CGIOANI1F@ETSY.COM", "CGIOANI1F@ETSY.COM", "AQAAAAEAACcQAAAAEPt2/Nf3TK6CTWI2b0qCjK7gzXRpSrB/bgnn3FlQihSW3g8K9Kl1M4gluLmIywUuEw==", null, false, "9032202f-0701-48b4-94db-be4a61aa1daa", false, "cgioani1f@etsy.com" });
+                values: new object[] { "189d349c-1f66-42cf-aa30-f39b7ddb08b9", 0, "bdcf63ff-8836-4bac-899c-748a9fd0153d", "cgioani1f@etsy.com", false, false, null, "CGIOANI1F@ETSY.COM", "CGIOANI1F@ETSY.COM", "AQAAAAEAACcQAAAAEAmYKc8ewoG8ZmlQ8GdraUXebPLv2tn9AZqFee5/+seSWMm3WFaohWOJFfOwko/RfA==", null, false, "9032202f-0701-48b4-94db-be4a61aa1daa", false, "cgioani1f@etsy.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8c85f495-4cbc-4d88-9297-53bec78e0a1e", 0, "4018fc5d-e8b9-4706-bde4-0deb6781896d", "sbeidebeke1e@reverbnation.com", false, false, null, "SBEIDEBEKE1E@REVERBNATION.COM", "SBEIDEBEKE1E@REVERBNATION.COM", "AQAAAAEAACcQAAAAEFv8yOsTtRDHfFDQJ+wCDhjG+Euyml1SZeJzN/CoF753QSTSDOmpJddQUSmryqzPUA==", null, false, "45fc5928-317e-4be1-a9b1-2a1824e7a5db", false, "sbeidebeke1e@reverbnation.com" });
+                values: new object[] { "8c85f495-4cbc-4d88-9297-53bec78e0a1e", 0, "a4061c44-b042-40f9-949f-591bb12a99a0", "sbeidebeke1e@reverbnation.com", false, false, null, "SBEIDEBEKE1E@REVERBNATION.COM", "SBEIDEBEKE1E@REVERBNATION.COM", "AQAAAAEAACcQAAAAEOPfGx2iLZMfc5gQ9ZpFAiPQ9126RZvfpLgPe8t4JhrJaArpD1eGgvzUU/qMqYdzMg==", null, false, "45fc5928-317e-4be1-a9b1-2a1824e7a5db", false, "sbeidebeke1e@reverbnation.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6fd4b8b1-932e-475f-8c3a-5ed807395cbc", 0, "703a6ebf-5825-4815-bd43-2c8e0e1f45cf", "ajimes1d@fc2.com", false, false, null, "AJIMES1D@FC2.COM", "AJIMES1D@FC2.COM", "AQAAAAEAACcQAAAAEDr6ACqANJfAO8ivcitnVRJ3sQ8/4bjAGf3lpGYb2r5Z+LI5xgKQGOB8i4BhPyDuGQ==", null, false, "2307c99f-75a0-4641-b35d-b34edcf577ef", false, "ajimes1d@fc2.com" });
+                values: new object[] { "6fd4b8b1-932e-475f-8c3a-5ed807395cbc", 0, "7b114162-eb53-4ffa-ba4f-e5743d3cfb2c", "ajimes1d@fc2.com", false, false, null, "AJIMES1D@FC2.COM", "AJIMES1D@FC2.COM", "AQAAAAEAACcQAAAAEJEmVKwYyyfJqtt+0TJ/tDT6Qj3bxmy6p/J1pnIF5QlMgiwnyn/SVpa2wHm8bgqhJQ==", null, false, "2307c99f-75a0-4641-b35d-b34edcf577ef", false, "ajimes1d@fc2.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "23b5aa58-1586-449d-8b34-6e98e0ccce83", 0, "cc115927-5ceb-4df6-8201-8257d9478c45", "fughelli1c@home.pl", false, false, null, "FUGHELLI1C@HOME.PL", "FUGHELLI1C@HOME.PL", "AQAAAAEAACcQAAAAEPbDIHROywZ0H07tqwb2whGTxJrPKmGUUzxaOfo2erchmO82fbv/VE5m9tkrRPCm9w==", null, false, "3d17e46b-4d22-4003-9dc2-492df54c904c", false, "fughelli1c@home.pl" });
+                values: new object[] { "23b5aa58-1586-449d-8b34-6e98e0ccce83", 0, "0c29f627-aada-466d-997d-244586555567", "fughelli1c@home.pl", false, false, null, "FUGHELLI1C@HOME.PL", "FUGHELLI1C@HOME.PL", "AQAAAAEAACcQAAAAEEP8EleMIzApyNDbs294qMOr2IlHVucqg/UWBGo2AxUv7X/6wgpejt/QCh4AWvMaag==", null, false, "3d17e46b-4d22-4003-9dc2-492df54c904c", false, "fughelli1c@home.pl" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "07811e8b-b352-4960-bfd0-7cfaa168e55f", 0, "28938ec1-f75b-4a8f-8d88-a7ccd9edbc59", "epallin1b@hatena.ne.jp", false, false, null, "EPALLIN1B@HATENA.NE.JP", "EPALLIN1B@HATENA.NE.JP", "AQAAAAEAACcQAAAAEE/gqmRw5WpuZXQEvkOSQybDvbIDCv7EDuHo7FUdvZKuSqrLXVIytg4ipNgOUPvdTg==", null, false, "fdcf3fd4-fedd-42d9-933d-22a5351b2b17", false, "epallin1b@hatena.ne.jp" });
+                values: new object[] { "07811e8b-b352-4960-bfd0-7cfaa168e55f", 0, "afb61db2-c0fb-4b83-be4c-817a8f7fe68a", "epallin1b@hatena.ne.jp", false, false, null, "EPALLIN1B@HATENA.NE.JP", "EPALLIN1B@HATENA.NE.JP", "AQAAAAEAACcQAAAAEPtZLPcVcxDRaXQrWo5w3rczkZjSCJ124VavOq78fGLiJVioQbCacugFdJht5+D07Q==", null, false, "fdcf3fd4-fedd-42d9-933d-22a5351b2b17", false, "epallin1b@hatena.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ced7f915-b2a3-4bbe-8947-23edac0a1fae", 0, "2bf445c7-8ee9-4104-9390-b7756d683f19", "destabrook1a@mit.edu", false, false, null, "DESTABROOK1A@MIT.EDU", "DESTABROOK1A@MIT.EDU", "AQAAAAEAACcQAAAAEIDrBuNc8sqHoK49Ol6tkb7C4HdihxHvKnExaWJAlANGi9bWqC/7kHdpRZS0ME0vhw==", null, false, "9fb0fefa-f893-4b35-80a1-f7bc61e8f0be", false, "destabrook1a@mit.edu" });
+                values: new object[] { "ced7f915-b2a3-4bbe-8947-23edac0a1fae", 0, "2d77002a-912e-46b3-b6e0-848898b36eac", "destabrook1a@mit.edu", false, false, null, "DESTABROOK1A@MIT.EDU", "DESTABROOK1A@MIT.EDU", "AQAAAAEAACcQAAAAEFpx3Plv/Va/7wOTyuPQWQYDVKYBIbn/bwhF/JvxjiAYNKcjzFec3USvggGPRmAiVA==", null, false, "9fb0fefa-f893-4b35-80a1-f7bc61e8f0be", false, "destabrook1a@mit.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8e5303ec-765b-4c57-980c-ee1e38a7711a", 0, "145873eb-48de-494a-8674-32661e7b0dd1", "rgolley19@amazon.de", false, false, null, "RGOLLEY19@AMAZON.DE", "RGOLLEY19@AMAZON.DE", "AQAAAAEAACcQAAAAELMpbDNjvOECJaaMIbS6ZquXIDSwTatWuNXOD6ixvKy3XlGmJ1tAvpcpiKtKoucGsw==", null, false, "cf39f0ee-04c5-4416-95a7-c4adedc5ea0b", false, "rgolley19@amazon.de" });
+                values: new object[] { "8e5303ec-765b-4c57-980c-ee1e38a7711a", 0, "82c9023b-de53-443d-9d30-8f608d62072d", "rgolley19@amazon.de", false, false, null, "RGOLLEY19@AMAZON.DE", "RGOLLEY19@AMAZON.DE", "AQAAAAEAACcQAAAAEGd4I4dxRBe1jGcAvJwnftHeWeNY6qkYUOaQ9n9NlIAyCYaHtSY327IV3hg99DvK2A==", null, false, "cf39f0ee-04c5-4416-95a7-c4adedc5ea0b", false, "rgolley19@amazon.de" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2b4f8827-1493-4aa0-9611-1c8a18164ea3", 0, "378963b4-cb6a-4d20-9b00-ddfa79068d92", "cpiel1h@linkedin.com", false, false, null, "CPIEL1H@LINKEDIN.COM", "CPIEL1H@LINKEDIN.COM", "AQAAAAEAACcQAAAAEAjzT7SV3/C7fMMmYEb+bhGlGvBG4HVstnzvEZYKmhn3kaxQj0qF7kxXHOEHQtLAQA==", null, false, "67dd1f69-fe03-4708-9143-8a2bb759028a", false, "cpiel1h@linkedin.com" });
+                values: new object[] { "2b4f8827-1493-4aa0-9611-1c8a18164ea3", 0, "2f972671-47b3-471d-aefb-b0344f743178", "cpiel1h@linkedin.com", false, false, null, "CPIEL1H@LINKEDIN.COM", "CPIEL1H@LINKEDIN.COM", "AQAAAAEAACcQAAAAEFYvAQ+x2sxLeHITwHWOQBjlQYViIbP2S7MJArTjVFeW3+DcNUR6VWPICPVHu7ej7g==", null, false, "67dd1f69-fe03-4708-9143-8a2bb759028a", false, "cpiel1h@linkedin.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c95cb793-0a7c-4ccc-8e75-5632ed6371b4", 0, "0a57c5ad-9015-48dc-9fcc-6efbf39f80e0", "hblaik18@merriam-webster.com", false, false, null, "HBLAIK18@MERRIAM-WEBSTER.COM", "HBLAIK18@MERRIAM-WEBSTER.COM", "AQAAAAEAACcQAAAAEA8L3KdIkSNzOZM0iora7U41VjhgBAEmy4BbLh1FqqQgRdtRJ1EmCnyUYjcKCpdFoQ==", null, false, "48fe7702-95a7-4677-b6f1-3c98d3ee49df", false, "hblaik18@merriam-webster.com" });
+                values: new object[] { "c95cb793-0a7c-4ccc-8e75-5632ed6371b4", 0, "81f0eee6-b8b3-4fe1-b898-646941a043ac", "hblaik18@merriam-webster.com", false, false, null, "HBLAIK18@MERRIAM-WEBSTER.COM", "HBLAIK18@MERRIAM-WEBSTER.COM", "AQAAAAEAACcQAAAAEGw2X1Ahw0tSZVRjILzLmfr6IeqiW5qxnnTSGhnWNPnB2li5z15qlkgAtJ9TcMKhmQ==", null, false, "48fe7702-95a7-4677-b6f1-3c98d3ee49df", false, "hblaik18@merriam-webster.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c9f4d1b0-d640-41c3-8c42-ac544b8ccdde", 0, "70b118cc-1839-4717-bc33-07bdfd23d75f", "jluckcock1s@mail.ru", false, false, null, "JLUCKCOCK1S@MAIL.RU", "JLUCKCOCK1S@MAIL.RU", "AQAAAAEAACcQAAAAEA2qMphhlm6gmY5iyf62jRK1XaRMQzglxDup5BUdh25EbxcVDhx6b8ndwIdV0nyR5w==", null, false, "de7f68dc-a652-4529-91dc-f64490d981d3", false, "jluckcock1s@mail.ru" });
+                values: new object[] { "c9f4d1b0-d640-41c3-8c42-ac544b8ccdde", 0, "87cba6c3-5d52-4d08-9371-65f35cef2322", "jluckcock1s@mail.ru", false, false, null, "JLUCKCOCK1S@MAIL.RU", "JLUCKCOCK1S@MAIL.RU", "AQAAAAEAACcQAAAAEP2arfL4RQCi2DU1E8hL37b+c/d7Iuqjj6UjbBLmDc+fedtpcYxUZ8R1AGfwANteIA==", null, false, "de7f68dc-a652-4529-91dc-f64490d981d3", false, "jluckcock1s@mail.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ae852c65-e11b-44fd-a360-8228d953b75c", 0, "1b827e32-88e6-4065-ad63-9c4b3aede640", "jadamini1u@shutterfly.com", false, false, null, "JADAMINI1U@SHUTTERFLY.COM", "JADAMINI1U@SHUTTERFLY.COM", "AQAAAAEAACcQAAAAEF38K5RbfK44ixNxFNODGkrgHswbYtXa3bkjGdhJBqaP3j3NKywcC1JVQzG5R/t36Q==", null, false, "7a095d04-6331-46cb-aba5-99b68ec71291", false, "jadamini1u@shutterfly.com" });
+                values: new object[] { "ae852c65-e11b-44fd-a360-8228d953b75c", 0, "ea47ff47-7fc1-4723-bd9e-f116455d009b", "jadamini1u@shutterfly.com", false, false, null, "JADAMINI1U@SHUTTERFLY.COM", "JADAMINI1U@SHUTTERFLY.COM", "AQAAAAEAACcQAAAAEDcjSPHiS4IKQ18T+ZuBToKGOdZyXh4y6Ur6gm8P7OkopXplgXDq5W7kNb/x4M2MWw==", null, false, "7a095d04-6331-46cb-aba5-99b68ec71291", false, "jadamini1u@shutterfly.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "893b6576-8bdc-4d04-8053-4200ec7a5800", 0, "a3a43519-a1a4-4e53-b239-b7734914a5ad", "mbiggs2c@t-online.de", false, false, null, "MBIGGS2C@T-ONLINE.DE", "MBIGGS2C@T-ONLINE.DE", "AQAAAAEAACcQAAAAEJRJtBhHTwX3Bnr7AYoYZ2CEsYCUtshsOgBVE7pfH0WNuEHBiSLFT4lfoyat7zkvjQ==", null, false, "b2c126ae-7ddf-4369-8a63-ba66b4ed82b1", false, "mbiggs2c@t-online.de" });
+                values: new object[] { "893b6576-8bdc-4d04-8053-4200ec7a5800", 0, "49d5f64c-169e-47b1-be2a-66ac61e6e556", "mbiggs2c@t-online.de", false, false, null, "MBIGGS2C@T-ONLINE.DE", "MBIGGS2C@T-ONLINE.DE", "AQAAAAEAACcQAAAAEDml8leUSPf02stfVKPtv1vU7vGaMwSbvSDAEPOU383KQsbzpKkVTMevclwk0J82rA==", null, false, "b2c126ae-7ddf-4369-8a63-ba66b4ed82b1", false, "mbiggs2c@t-online.de" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3780efb6-d693-4a79-aaa3-20c2a55deabf", 0, "66d5087b-c106-4443-a1ba-90742fd99816", "kcolum2b@ucoz.com", false, false, null, "KCOLUM2B@UCOZ.COM", "KCOLUM2B@UCOZ.COM", "AQAAAAEAACcQAAAAEEOM2VNi62coT7gkTvHx3JojngEljPjDTu0aMYIL0uX+E/se5RI3OR+gLCZ3ff/Tew==", null, false, "b7509be9-c291-4a58-a4ba-8017c9f0bbb7", false, "kcolum2b@ucoz.com" });
+                values: new object[] { "3780efb6-d693-4a79-aaa3-20c2a55deabf", 0, "3df70f6d-ff90-4aad-a8e9-e7ea83d2c1fb", "kcolum2b@ucoz.com", false, false, null, "KCOLUM2B@UCOZ.COM", "KCOLUM2B@UCOZ.COM", "AQAAAAEAACcQAAAAEIaNGTF3WMCkt50rkY8b6z52RWvjy9teu0h8ZuFPBONQcfLvBO+rPXMGaEvt/PUOaQ==", null, false, "b7509be9-c291-4a58-a4ba-8017c9f0bbb7", false, "kcolum2b@ucoz.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "029b6a95-7d0c-4ac5-bed6-e42b911aba5b", 0, "7abcbe9d-7576-4713-a9f5-3ab0b39d33c4", "hovery2a@live.com", false, false, null, "HOVERY2A@LIVE.COM", "HOVERY2A@LIVE.COM", "AQAAAAEAACcQAAAAEN4j9V37hedm1FN1El0N4bXPmR2/75FxwlzKI1Wt7nwg5OApFBv+V5tPgve8wJDPSA==", null, false, "81418e17-a9eb-49df-ae92-a4c806835584", false, "hovery2a@live.com" });
+                values: new object[] { "029b6a95-7d0c-4ac5-bed6-e42b911aba5b", 0, "c00cf665-62b5-4277-85c0-0d3e546b03b4", "hovery2a@live.com", false, false, null, "HOVERY2A@LIVE.COM", "HOVERY2A@LIVE.COM", "AQAAAAEAACcQAAAAEBFneYhCi2075sNX8KlnEsY5lmdLLUWn7vCTwfmcCkaHnmsltWNHvrARsdyQGIF0Cw==", null, false, "81418e17-a9eb-49df-ae92-a4c806835584", false, "hovery2a@live.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "48601c9a-1c0f-41da-8767-64ff4e5dec82", 0, "4abed176-d62f-4d20-93af-66e9478ce193", "fguidelli29@cbsnews.com", false, false, null, "FGUIDELLI29@CBSNEWS.COM", "FGUIDELLI29@CBSNEWS.COM", "AQAAAAEAACcQAAAAELRJkF4pCNgjTbQbYoQ8MnQyUZZw7SAPKNZL49qip5jkOmdr3s5rfgCUuhezZttbww==", null, false, "b099354b-ba2c-457c-b448-db8c1d2440b4", false, "fguidelli29@cbsnews.com" });
+                values: new object[] { "48601c9a-1c0f-41da-8767-64ff4e5dec82", 0, "b060aa02-27d3-46a5-a286-11353f651876", "fguidelli29@cbsnews.com", false, false, null, "FGUIDELLI29@CBSNEWS.COM", "FGUIDELLI29@CBSNEWS.COM", "AQAAAAEAACcQAAAAEJXlXYIb3whV7e7YyLe7SaafbvKgwCwVthuSbumoCYElXmcF0++vYKF4WN8k9olvRg==", null, false, "b099354b-ba2c-457c-b448-db8c1d2440b4", false, "fguidelli29@cbsnews.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ca41fe85-c1fb-4422-bcc7-09d41ecfb5c0", 0, "ecc7bf5f-f934-4fc6-845d-f57487ff2dae", "craff28@mit.edu", false, false, null, "CRAFF28@MIT.EDU", "CRAFF28@MIT.EDU", "AQAAAAEAACcQAAAAEJ85m/9h/D0pgMxFZFTYGCqF04IrelZdyvADZFDDApvjTG0qdjMNBQMRp+mK+Z3bfg==", null, false, "68298ccb-b174-446b-976c-4448e5e9bb49", false, "craff28@mit.edu" });
+                values: new object[] { "ca41fe85-c1fb-4422-bcc7-09d41ecfb5c0", 0, "e5584572-bf6f-46e7-b31d-9f5a558f371a", "craff28@mit.edu", false, false, null, "CRAFF28@MIT.EDU", "CRAFF28@MIT.EDU", "AQAAAAEAACcQAAAAEF7rMOFHXTAocl84EDgWMhk1cQa1Q7siGH0MqWwBEhr54Hsk+W7kWfrfu88J1e6hNA==", null, false, "68298ccb-b174-446b-976c-4448e5e9bb49", false, "craff28@mit.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "207701ab-0c6c-472c-a4ed-73b9f3ab882e", 0, "88cb7dd5-fe6a-4a37-a317-d08406430237", "slogie27@example.com", false, false, null, "SLOGIE27@EXAMPLE.COM", "SLOGIE27@EXAMPLE.COM", "AQAAAAEAACcQAAAAEBoN/mykzLDcHdXJn3EX8H7U+courU9gVJjzldFJs3N/pWUeZcmhn1ID9kRImlprlQ==", null, false, "2cbfa884-de7b-4cc1-baaa-dfeffa405ec7", false, "slogie27@example.com" });
+                values: new object[] { "207701ab-0c6c-472c-a4ed-73b9f3ab882e", 0, "0478097f-e4eb-4853-b952-bef4902ddb6a", "slogie27@example.com", false, false, null, "SLOGIE27@EXAMPLE.COM", "SLOGIE27@EXAMPLE.COM", "AQAAAAEAACcQAAAAEKTAMyzWXLFx2ronIa+2w6+202zR3wbMOLpYyWnGeOESz5vdED5j1b2RrOnXjZaJew==", null, false, "2cbfa884-de7b-4cc1-baaa-dfeffa405ec7", false, "slogie27@example.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "243015ae-fc80-4d1f-8dff-4cf328a2db38", 0, "b43889a9-846e-4845-b15a-2f5dc6cb0177", "atolotti26@huffingtonpost.com", false, false, null, "ATOLOTTI26@HUFFINGTONPOST.COM", "ATOLOTTI26@HUFFINGTONPOST.COM", "AQAAAAEAACcQAAAAEHZ9n769po2vhNc6B/4DZQ65y5gYY+7QrwjMN91yFblQLrXxqoXJ86tl20KOei+FuQ==", null, false, "aef03f7e-25e9-416b-becf-a718eb797fb8", false, "atolotti26@huffingtonpost.com" });
+                values: new object[] { "243015ae-fc80-4d1f-8dff-4cf328a2db38", 0, "ee84930f-625d-4539-a58f-bc73720d82f5", "atolotti26@huffingtonpost.com", false, false, null, "ATOLOTTI26@HUFFINGTONPOST.COM", "ATOLOTTI26@HUFFINGTONPOST.COM", "AQAAAAEAACcQAAAAEPpXhuzm/4E5jB20DWWbFG06RMH+yWcoXesnBAo4ksFa1gYqIOryXutdTNLDpM07nQ==", null, false, "aef03f7e-25e9-416b-becf-a718eb797fb8", false, "atolotti26@huffingtonpost.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1e72e617-dcc1-4bd2-b09c-0735ed3b9977", 0, "e06b7200-fdad-4888-b60b-7256ddd74ffb", "nleverich25@ning.com", false, false, null, "NLEVERICH25@NING.COM", "NLEVERICH25@NING.COM", "AQAAAAEAACcQAAAAEEdh2Yse7tj/A15hVomvXL5dLg+/XztvuRRCx24+UK9IWm5idwooDFwi2WNccCdEIg==", null, false, "024de6ab-f094-4c43-9cd2-4b1ea0cb0cb0", false, "nleverich25@ning.com" });
+                values: new object[] { "1e72e617-dcc1-4bd2-b09c-0735ed3b9977", 0, "2adffb97-97fc-42eb-a168-09013e4240a0", "nleverich25@ning.com", false, false, null, "NLEVERICH25@NING.COM", "NLEVERICH25@NING.COM", "AQAAAAEAACcQAAAAEPNJijRr1gtrg5SjhMOwq8o1Y6r6ekJpb+RYBzJ8q4coJKw2qM8r2RYAgOO4p5E8BQ==", null, false, "024de6ab-f094-4c43-9cd2-4b1ea0cb0cb0", false, "nleverich25@ning.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "257a54c2-5851-478a-880d-a1e0f38a4236", 0, "83adc805-2963-44b7-a22a-5fcf19d1620b", "mcamillo1t@slashdot.org", false, false, null, "MCAMILLO1T@SLASHDOT.ORG", "MCAMILLO1T@SLASHDOT.ORG", "AQAAAAEAACcQAAAAEO+G+HEhS+VGdNZZP5hhXZjnmvHEJFSzIPwbhnd2MRjB9WTfgXJNNLBGoy4Gvt745Q==", null, false, "478e92a5-2f82-4d02-88b3-9ff227a58830", false, "mcamillo1t@slashdot.org" });
+                values: new object[] { "257a54c2-5851-478a-880d-a1e0f38a4236", 0, "a9cd1ee6-91a1-4328-b9ea-947b66faf757", "mcamillo1t@slashdot.org", false, false, null, "MCAMILLO1T@SLASHDOT.ORG", "MCAMILLO1T@SLASHDOT.ORG", "AQAAAAEAACcQAAAAEI+yHXuBuZozA7/vR6XuhO2AnZ/vZTNRxHb4wj+6fI4357SgJYJ8tTXT9VyQKcm4pg==", null, false, "478e92a5-2f82-4d02-88b3-9ff227a58830", false, "mcamillo1t@slashdot.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8f48b076-23fe-404f-a0da-2bb8da918e93", 0, "758e730b-e808-4bc7-a204-83c426b9b017", "btearney24@abc.net.au", false, false, null, "BTEARNEY24@ABC.NET.AU", "BTEARNEY24@ABC.NET.AU", "AQAAAAEAACcQAAAAEEmfkFCkG2K4JoResC5bgdh3o1KbRFx0CuHbvsj5p3WGYSblpowJR3jXsZQfbmfdTA==", null, false, "2a8e6480-77e6-4f76-964c-491a4e703865", false, "btearney24@abc.net.au" });
+                values: new object[] { "8f48b076-23fe-404f-a0da-2bb8da918e93", 0, "5d51ec34-b8e7-4fa5-9338-cbec2ccabeba", "btearney24@abc.net.au", false, false, null, "BTEARNEY24@ABC.NET.AU", "BTEARNEY24@ABC.NET.AU", "AQAAAAEAACcQAAAAEMhYkQBE9lY0zH/d3z49wT9kJBMu/7xUQfJ4h5oHDRnrNgTz+5vzo88+0CdOKayy3A==", null, false, "2a8e6480-77e6-4f76-964c-491a4e703865", false, "btearney24@abc.net.au" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c892f276-9514-40ba-bcef-1a71da332288", 0, "4e0fba06-9db4-4088-8ff8-6fe591bddf9a", "mmattiello22@psu.edu", false, false, null, "MMATTIELLO22@PSU.EDU", "MMATTIELLO22@PSU.EDU", "AQAAAAEAACcQAAAAEDhjKuc+qnCLBRUg0qTUz+Rglll7ByM9kO5GtIVLOR4crcid0SyvwcZyA6aV5B7UHA==", null, false, "4f5cefec-d93b-4893-a445-66e1b843f6e3", false, "mmattiello22@psu.edu" });
+                values: new object[] { "c892f276-9514-40ba-bcef-1a71da332288", 0, "5eefcf92-7b69-448e-af6f-c475ec12b3c7", "mmattiello22@psu.edu", false, false, null, "MMATTIELLO22@PSU.EDU", "MMATTIELLO22@PSU.EDU", "AQAAAAEAACcQAAAAEFvIq2SfshGbTG5a74KjaiFhTySOq7JiSWsYMRPRaII9tu5neGDldGpjKUBKOc5NDw==", null, false, "4f5cefec-d93b-4893-a445-66e1b843f6e3", false, "mmattiello22@psu.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "58d1a891-1730-4937-9fff-58db6b76a739", 0, "62ea7e88-fa4f-420c-b669-f2331377a7c5", "tbeedon21@geocities.com", false, false, null, "TBEEDON21@GEOCITIES.COM", "TBEEDON21@GEOCITIES.COM", "AQAAAAEAACcQAAAAEC4Mxc7nCZglTk9UtMumNPUQQplB0ERONWGdbJw92aYkzwc8bduEoO+XTm+g78Ra+Q==", null, false, "3447b76d-3626-4853-aac4-a7105b35d856", false, "tbeedon21@geocities.com" });
+                values: new object[] { "58d1a891-1730-4937-9fff-58db6b76a739", 0, "c2f0ea31-e0b7-4470-a9cf-c73e0b05268c", "tbeedon21@geocities.com", false, false, null, "TBEEDON21@GEOCITIES.COM", "TBEEDON21@GEOCITIES.COM", "AQAAAAEAACcQAAAAEGVWNlpDrVuk3PLuU/CI+k/SPyuw0xjYwb/x+nKO/UzcrLBRD1I7rwNu/MPERtAgCg==", null, false, "3447b76d-3626-4853-aac4-a7105b35d856", false, "tbeedon21@geocities.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "20850e7f-5588-4297-b106-7153c2e274ed", 0, "1a620cc0-c1b5-43aa-9360-9353af0765da", "smathevon20@ted.com", false, false, null, "SMATHEVON20@TED.COM", "SMATHEVON20@TED.COM", "AQAAAAEAACcQAAAAEHi0F0TJTISPcYAvME050ze5JPQB2/L8uxsIBd2d4li8wdwM1KGq7v5UywA8fvB9qA==", null, false, "f05d6a02-a219-4108-baa9-02ced4046082", false, "smathevon20@ted.com" });
+                values: new object[] { "20850e7f-5588-4297-b106-7153c2e274ed", 0, "e2a22ddd-1c2a-4fff-a7ca-f057ef837bd4", "smathevon20@ted.com", false, false, null, "SMATHEVON20@TED.COM", "SMATHEVON20@TED.COM", "AQAAAAEAACcQAAAAEOmon5aBjWZET5VD3jRSjlGDbfJnRsWXgRzjTjfv+xb96iCfjaPn1FxK0ywlrRv4TQ==", null, false, "f05d6a02-a219-4108-baa9-02ced4046082", false, "smathevon20@ted.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4dc24101-09ec-4338-9abb-64e24bc4ba11", 0, "ae34fcb9-53e4-4f29-adf7-79a7f876f64f", "elewty1z@nasa.gov", false, false, null, "ELEWTY1Z@NASA.GOV", "ELEWTY1Z@NASA.GOV", "AQAAAAEAACcQAAAAEH8i6S2SAMmpCp+aeiGIDrp+i1KMItQehOpy65b70TzYE1lv5q37nQDSp7RTrcce0Q==", null, false, "b1f747fb-ae44-4bf9-8aa0-eabe5ec15702", false, "elewty1z@nasa.gov" });
+                values: new object[] { "4dc24101-09ec-4338-9abb-64e24bc4ba11", 0, "ce25e5f7-3ea3-4e4a-b38f-c310d7a11808", "elewty1z@nasa.gov", false, false, null, "ELEWTY1Z@NASA.GOV", "ELEWTY1Z@NASA.GOV", "AQAAAAEAACcQAAAAEDNu6JOUWLQhOdE9I8XnRPuVh7CqMpl9N81qAgnIFA1sma0kZ7R3cHfiNOu/xUWyQQ==", null, false, "b1f747fb-ae44-4bf9-8aa0-eabe5ec15702", false, "elewty1z@nasa.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "36d22975-49e2-4db0-8091-328a0f5da0c7", 0, "195ddb56-f63a-48d1-a0b1-6cafc41298be", "btomovic1y@godaddy.com", false, false, null, "BTOMOVIC1Y@GODADDY.COM", "BTOMOVIC1Y@GODADDY.COM", "AQAAAAEAACcQAAAAELfKxp47+gImmvw9SSqHXzpykUMBEGmFoUMcrMx5VlHg5/XLHDvoMmE0xDJyl7/AfA==", null, false, "735abbb5-5b7f-47a5-bc83-506a71e310b2", false, "btomovic1y@godaddy.com" });
+                values: new object[] { "36d22975-49e2-4db0-8091-328a0f5da0c7", 0, "59d7f3fe-a95e-41dd-a4ad-5e97a605db58", "btomovic1y@godaddy.com", false, false, null, "BTOMOVIC1Y@GODADDY.COM", "BTOMOVIC1Y@GODADDY.COM", "AQAAAAEAACcQAAAAEGSEX8CdOztws90WBunGnoGK6GCJcu8YF6hswzBkjnQCr+CdOY+lNWQLN3zH4WA9iQ==", null, false, "735abbb5-5b7f-47a5-bc83-506a71e310b2", false, "btomovic1y@godaddy.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a92ee91f-f6df-4623-84ec-3e7ff705e629", 0, "efc1e5a6-1294-440b-acbf-2c52059536f9", "ncarlton1x@bbc.co.uk", false, false, null, "NCARLTON1X@BBC.CO.UK", "NCARLTON1X@BBC.CO.UK", "AQAAAAEAACcQAAAAEKvb6WRplqpwRei4iMTGkTObEuGFmS5FyAFOXjHMREz0k+rh5MiiZPJsiL9V8EYx6Q==", null, false, "c0a267d2-f3f1-47ef-be94-4ae4ee67322c", false, "ncarlton1x@bbc.co.uk" });
+                values: new object[] { "a92ee91f-f6df-4623-84ec-3e7ff705e629", 0, "c80cdc3c-1f2e-4a6c-ad1e-365263cc9088", "ncarlton1x@bbc.co.uk", false, false, null, "NCARLTON1X@BBC.CO.UK", "NCARLTON1X@BBC.CO.UK", "AQAAAAEAACcQAAAAEAMcuOxmKkYekJ4xNW/GiJ0zyA/vqhVP7KC3+PtW9RJ+++dKF4a/kPJ6jBvEYYPYyQ==", null, false, "c0a267d2-f3f1-47ef-be94-4ae4ee67322c", false, "ncarlton1x@bbc.co.uk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "19a6d84c-c65d-4638-b183-9cbfc4d82176", 0, "636e3b6d-de07-4245-a051-28d03c4a2215", "csilley1w@ustream.tv", false, false, null, "CSILLEY1W@USTREAM.TV", "CSILLEY1W@USTREAM.TV", "AQAAAAEAACcQAAAAEBuvm3nCxEymbOXZ3+QJrACor7OdKMmrx0pfcYO1Dl94zuTYTqexiqgQn8tC29nrOw==", null, false, "fcf984a0-b4c3-459b-b3c1-e64092a35f02", false, "csilley1w@ustream.tv" });
+                values: new object[] { "19a6d84c-c65d-4638-b183-9cbfc4d82176", 0, "ca99306c-d839-47ef-9228-d5d09fe2179b", "csilley1w@ustream.tv", false, false, null, "CSILLEY1W@USTREAM.TV", "CSILLEY1W@USTREAM.TV", "AQAAAAEAACcQAAAAEBIf+eXAKAcv3RiU6/itRZzYMNu5/bCJ3VzO9lMv8dDMWTKtqAyQP7iE+A+vC8RCYg==", null, false, "fcf984a0-b4c3-459b-b3c1-e64092a35f02", false, "csilley1w@ustream.tv" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "18230ae7-3e93-4797-9c1d-466d56062777", 0, "521b34b7-1482-42dd-a215-d638d3e29d9b", "hlernihan1v@hatena.ne.jp", false, false, null, "HLERNIHAN1V@HATENA.NE.JP", "HLERNIHAN1V@HATENA.NE.JP", "AQAAAAEAACcQAAAAEJZH/kKJ8BHm/Qif+s7Ln4HJNzUxPKu3j89xHZ5geCe4Pi7hzUr+9r2Na7XY3VhYMQ==", null, false, "1fa0ff3a-3ba0-46fd-aba0-0fb7aeaaefef", false, "hlernihan1v@hatena.ne.jp" });
+                values: new object[] { "18230ae7-3e93-4797-9c1d-466d56062777", 0, "3e132cfa-2976-4e42-b471-75b3bc91c2f5", "hlernihan1v@hatena.ne.jp", false, false, null, "HLERNIHAN1V@HATENA.NE.JP", "HLERNIHAN1V@HATENA.NE.JP", "AQAAAAEAACcQAAAAEAsHw6eP2qa0GfA59xxlVQzqL2CP4Av6SxESAReP2jPVLQoRCPLEUSl8NNtk1LV4OQ==", null, false, "1fa0ff3a-3ba0-46fd-aba0-0fb7aeaaefef", false, "hlernihan1v@hatena.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "bbc5613f-9ea4-41f4-b053-e3ab9577b5e9", 0, "08a6a450-555c-4679-866d-0ba29eb43698", "epetrushka23@sfgate.com", false, false, null, "EPETRUSHKA23@SFGATE.COM", "EPETRUSHKA23@SFGATE.COM", "AQAAAAEAACcQAAAAEHYiHD7On0ychd0efkV6jZchKeyW7knVM7itEOjKhZF5UbON9LRf1vm9ir4ofuchQg==", null, false, "b72a62ad-f3a7-4c9b-ac19-30e7941c1476", false, "epetrushka23@sfgate.com" });
+                values: new object[] { "bbc5613f-9ea4-41f4-b053-e3ab9577b5e9", 0, "ad95f1e5-5b8f-4182-8c7b-860560702618", "epetrushka23@sfgate.com", false, false, null, "EPETRUSHKA23@SFGATE.COM", "EPETRUSHKA23@SFGATE.COM", "AQAAAAEAACcQAAAAEOQTipm9qaLVbQ6mp8Xtx3RTBhzytMIZ6r+U1nWbZtbMdhXwQHB7V79+A8sBPf25wQ==", null, false, "b72a62ad-f3a7-4c9b-ac19-30e7941c1476", false, "epetrushka23@sfgate.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1d8a5b73-6812-4eeb-bc81-797a02249000", 0, "13b15121-7d93-4dd2-9b66-ec0fa17204cf", "gaizic2d@etsy.com", false, false, null, "GAIZIC2D@ETSY.COM", "GAIZIC2D@ETSY.COM", "AQAAAAEAACcQAAAAEFXCm0XZtWRb1SUfZhIRmP6m576F7azZnFcY5zXEAqCci6M+Wyk5gIyVWhY81Sf8Yw==", null, false, "758b83b5-7227-4a75-9088-28f29692e8cc", false, "gaizic2d@etsy.com" });
+                values: new object[] { "1d8a5b73-6812-4eeb-bc81-797a02249000", 0, "8d8a40b3-da7a-43ec-adcf-dad988e808d1", "gaizic2d@etsy.com", false, false, null, "GAIZIC2D@ETSY.COM", "GAIZIC2D@ETSY.COM", "AQAAAAEAACcQAAAAEJi1yXSQGKlNf9anvxhg1z1jwjf3gLep3sw68G+0pPZTUkXfkVnWkw+y6tCGGXjLyQ==", null, false, "758b83b5-7227-4a75-9088-28f29692e8cc", false, "gaizic2d@etsy.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6dd1e1cb-30d3-4d9d-b023-8be2214ba5a4", 0, "44eee00a-fb66-4a3e-a40e-c9513fbe807b", "jbrigshaw17@cdc.gov", false, false, null, "JBRIGSHAW17@CDC.GOV", "JBRIGSHAW17@CDC.GOV", "AQAAAAEAACcQAAAAEBnp4BqXdCByAMsM3Ts9phGWr509vYbg5ELCbrRiu2OKs2/iiEF78UIIFMyZYFZBlg==", null, false, "1916b68c-fa5a-4cf2-95f8-4bb87845d512", false, "jbrigshaw17@cdc.gov" });
+                values: new object[] { "6dd1e1cb-30d3-4d9d-b023-8be2214ba5a4", 0, "1bb256a7-34c1-4dfa-a31f-7476f8f3f104", "jbrigshaw17@cdc.gov", false, false, null, "JBRIGSHAW17@CDC.GOV", "JBRIGSHAW17@CDC.GOV", "AQAAAAEAACcQAAAAEO/xnFmXUMWMq5hdct8X6zChDcnz0wG1/ftbeKQebc8/MBxBWR9YpT+xVZgMBy24LA==", null, false, "1916b68c-fa5a-4cf2-95f8-4bb87845d512", false, "jbrigshaw17@cdc.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "bfe2cc25-2f38-4644-9afb-9780fb748129", 0, "17d24785-1d9d-45e3-9bd0-cfba9e71c7f0", "kburdas15@vinaora.com", false, false, null, "KBURDAS15@VINAORA.COM", "KBURDAS15@VINAORA.COM", "AQAAAAEAACcQAAAAEPaEWLOL93IJB+fBtnD3Iy8U0aFQfootuBWHj+ozwi4GcqMZoVVgFXWp1OrYZEl7EA==", null, false, "c7818251-8a7b-4dd9-8f2f-6e61b38c7635", false, "kburdas15@vinaora.com" });
+                values: new object[] { "bfe2cc25-2f38-4644-9afb-9780fb748129", 0, "3616f1e4-3d6d-4081-86fc-cd4680cdd473", "kburdas15@vinaora.com", false, false, null, "KBURDAS15@VINAORA.COM", "KBURDAS15@VINAORA.COM", "AQAAAAEAACcQAAAAEJ+302pVfvCgxe5d6w1kvfn8U5GUGnmFgYqj5pvt8HPxshDsApW3Q0/Hb2psZz/nfQ==", null, false, "c7818251-8a7b-4dd9-8f2f-6e61b38c7635", false, "kburdas15@vinaora.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "702f662e-1f27-4478-a66c-866f60701521", 0, "65146acd-e962-438e-8fde-b66f1a0b6a24", "bpierpointi@is.gd", false, false, null, "BPIERPOINTI@IS.GD", "BPIERPOINTI@IS.GD", "AQAAAAEAACcQAAAAEMYNXhhJTUNnt8cR84s3FCPL7vg2M1PtL3IAMWuQkaknKzt1FBxP3XNGIpQlwrTS3w==", null, false, "e1f48c71-6fbc-4828-8dc1-08ddbe819309", false, "bpierpointi@is.gd" });
+                values: new object[] { "702f662e-1f27-4478-a66c-866f60701521", 0, "172a32c8-e173-4007-9fd3-6770f741d862", "bpierpointi@is.gd", false, false, null, "BPIERPOINTI@IS.GD", "BPIERPOINTI@IS.GD", "AQAAAAEAACcQAAAAEJvaaabgzzDNHJaLjEK8gCOoyMlWNnHOxfaPGtJxvljLipbS+VJ6X1ceDUkyFkQS3g==", null, false, "e1f48c71-6fbc-4828-8dc1-08ddbe819309", false, "bpierpointi@is.gd" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "53f1fec2-ef1a-45a2-9e66-d36f6420a059", 0, "99bd2bbd-084e-44f4-bbeb-30ef8a18d5a5", "aosgarh@imdb.com", false, false, null, "AOSGARH@IMDB.COM", "AOSGARH@IMDB.COM", "AQAAAAEAACcQAAAAEBJaSe/R2sAAtycRr0pSpxp17y1zjU1Q0f1ba6qmpecWYXVwG6H8bP53AgV6agirmg==", null, false, "01577791-2340-4214-a31e-08cb79affbeb", false, "aosgarh@imdb.com" });
+                values: new object[] { "53f1fec2-ef1a-45a2-9e66-d36f6420a059", 0, "404306bb-7d57-4c58-9d12-ff0f9b9bbd25", "aosgarh@imdb.com", false, false, null, "AOSGARH@IMDB.COM", "AOSGARH@IMDB.COM", "AQAAAAEAACcQAAAAEFaGOaUfwJXYFaAfiILH2OS+7/9SMCRSn6gNqy84YqevsDpFDdevKMXeQwc64yrVlw==", null, false, "01577791-2340-4214-a31e-08cb79affbeb", false, "aosgarh@imdb.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "277fcb4e-4c57-48fe-90e8-462ced4372d4", 0, "ab6a68a9-858b-4e85-aebd-1905f0280182", "ssircombg@godaddy.com", false, false, null, "SSIRCOMBG@GODADDY.COM", "SSIRCOMBG@GODADDY.COM", "AQAAAAEAACcQAAAAEJwVgcY4L4vraqoTp1mOPfGGAtfjDKBS5lV5q8VR4fjgmYcmPuysc8M3883jaTgzCg==", null, false, "7c537827-a43a-41a0-83d5-6fbd5c17cef9", false, "ssircombg@godaddy.com" });
+                values: new object[] { "277fcb4e-4c57-48fe-90e8-462ced4372d4", 0, "9501310a-ba63-43b6-bfc0-3f5b9bef3171", "ssircombg@godaddy.com", false, false, null, "SSIRCOMBG@GODADDY.COM", "SSIRCOMBG@GODADDY.COM", "AQAAAAEAACcQAAAAEO2zRM0UfvVBtsuGTc7bW/idtf4L6oN0uD57v1JEdB++19d1lOvMko7VH+q5x6C3uA==", null, false, "7c537827-a43a-41a0-83d5-6fbd5c17cef9", false, "ssircombg@godaddy.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "eca95024-e1bb-4472-a7c9-1be4a1451155", 0, "08e1f766-355c-4dab-9df3-9d49805b2320", "igosnollf@comcast.net", false, false, null, "IGOSNOLLF@COMCAST.NET", "IGOSNOLLF@COMCAST.NET", "AQAAAAEAACcQAAAAECukI/0v6m89KjkEV5UaVAmYU56bfd1FQNrBwEdFvpnKHhH5R2IEUSVxNlOBmqQZoA==", null, false, "31a61b18-3fbb-4559-9562-cac960b732b5", false, "igosnollf@comcast.net" });
+                values: new object[] { "eca95024-e1bb-4472-a7c9-1be4a1451155", 0, "15d3c7bb-dd9c-4909-844a-2a787fb4a944", "igosnollf@comcast.net", false, false, null, "IGOSNOLLF@COMCAST.NET", "IGOSNOLLF@COMCAST.NET", "AQAAAAEAACcQAAAAEL6PhLEmvCXSUAkfIfcfIbyRItX7rRfUn7BlAomK9rDxdiUVWnklx/xTI/DvfxIEKg==", null, false, "31a61b18-3fbb-4559-9562-cac960b732b5", false, "igosnollf@comcast.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1bf5282b-4de0-4f2a-b88b-2326b9e5c770", 0, "f6a3c697-3fa3-4f41-8279-ba5ab73ff00b", "muphille@mayoclinic.com", false, false, null, "MUPHILLE@MAYOCLINIC.COM", "MUPHILLE@MAYOCLINIC.COM", "AQAAAAEAACcQAAAAEEODlq5Fi/q/xjNQ5y7Z1Cy6GCvU0Rmtxhah2IZcxbsDpsG2VIm4tWt328L2ybvwew==", null, false, "452459e7-276d-4ffb-81fd-fb1330cd5190", false, "muphille@mayoclinic.com" });
+                values: new object[] { "1bf5282b-4de0-4f2a-b88b-2326b9e5c770", 0, "40d9ba0e-b2b6-4e9d-9c19-fd8feafd65a9", "muphille@mayoclinic.com", false, false, null, "MUPHILLE@MAYOCLINIC.COM", "MUPHILLE@MAYOCLINIC.COM", "AQAAAAEAACcQAAAAEO7zOQUK1yc81RnOZDTPDM9Bfz+YoLNKEfLVFWG7yTTJXt0FbTHqMEu1zow8NLVlSA==", null, false, "452459e7-276d-4ffb-81fd-fb1330cd5190", false, "muphille@mayoclinic.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "15c83341-e4d1-46e4-86d1-82fca1940e6c", 0, "4282e686-c2e2-45a8-920e-3a6b1dad96d7", "fspiaggiad@soup.io", false, false, null, "FSPIAGGIAD@SOUP.IO", "FSPIAGGIAD@SOUP.IO", "AQAAAAEAACcQAAAAECsKt7TodTKn5cdfVTUngEUZp/txv9+sQOEENIAMWF8MlxSXc7LIxRAUOenU5QlKGA==", null, false, "8c42fbca-ae0c-4729-9676-4050f5a7bd87", false, "fspiaggiad@soup.io" });
+                values: new object[] { "15c83341-e4d1-46e4-86d1-82fca1940e6c", 0, "114f75e7-f791-444f-9e78-aca6c45b3f07", "fspiaggiad@soup.io", false, false, null, "FSPIAGGIAD@SOUP.IO", "FSPIAGGIAD@SOUP.IO", "AQAAAAEAACcQAAAAEHiYRSawx34OwKZm+lYB+F3v+OHkuKyZ5y+lzL1aO4cKv9XIstLkJFewq9zWb2Isgg==", null, false, "8c42fbca-ae0c-4729-9676-4050f5a7bd87", false, "fspiaggiad@soup.io" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8ef4385d-7e68-48ef-96af-729c5e28c66f", 0, "1b8ce7f5-3dd5-4734-a817-f0f4db1bd542", "lgianielloc@wsj.com", false, false, null, "LGIANIELLOC@WSJ.COM", "LGIANIELLOC@WSJ.COM", "AQAAAAEAACcQAAAAEHjNAlYYpOSZkGcOCeo3dkaDwNuxDtXlmKx8ooeXqq8ocztjFFvpw4eG3+WBa6i9vA==", null, false, "6c0ef003-acaf-4f18-9a32-581f55798d63", false, "lgianielloc@wsj.com" });
+                values: new object[] { "8ef4385d-7e68-48ef-96af-729c5e28c66f", 0, "ae9cc4ae-190a-441b-9586-a10cddb29e01", "lgianielloc@wsj.com", false, false, null, "LGIANIELLOC@WSJ.COM", "LGIANIELLOC@WSJ.COM", "AQAAAAEAACcQAAAAEMDjIkTOuznhv7fXt5g1laC8a9KO7sJe/ZaNhkm4AqpIpfbvMPaDHeHRCfBF+DYPbQ==", null, false, "6c0ef003-acaf-4f18-9a32-581f55798d63", false, "lgianielloc@wsj.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "384cfc02-df61-4016-b4aa-2700c6c3f16c", 0, "32efe3eb-ea37-4e06-a42a-e6721618f064", "soveryb@dion.ne.jp", false, false, null, "SOVERYB@DION.NE.JP", "SOVERYB@DION.NE.JP", "AQAAAAEAACcQAAAAELRqtdeGSOVAg9udFBQOxZwtFOwPsybBUPQfGTCh6is0npC+N9AMybzyhEKblf43UA==", null, false, "5e104e8f-a236-47ea-aacb-f86a99e08a44", false, "soveryb@dion.ne.jp" });
+                values: new object[] { "384cfc02-df61-4016-b4aa-2700c6c3f16c", 0, "76e6f40d-bbe1-4be9-8964-9834d5ddcb2a", "soveryb@dion.ne.jp", false, false, null, "SOVERYB@DION.NE.JP", "SOVERYB@DION.NE.JP", "AQAAAAEAACcQAAAAEIiOTnGJGr7Hx/QR6Wz3n8oEJDD+N7VfO1VcL10pzRQJfXKWTbzefaAkcq6jE684AA==", null, false, "5e104e8f-a236-47ea-aacb-f86a99e08a44", false, "soveryb@dion.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c55bc99c-2deb-4790-ac3b-1e2ad16e8201", 0, "97a30bd4-fffd-40b4-9f3c-4f5c4c39c216", "sdinapolij@huffingtonpost.com", false, false, null, "SDINAPOLIJ@HUFFINGTONPOST.COM", "SDINAPOLIJ@HUFFINGTONPOST.COM", "AQAAAAEAACcQAAAAEJuUQ95MR4AOzWJh7M4o+2WTOh2ihVaH7wh0KEnZEhX3uXaOmlBzLidko8lEbmGj8A==", null, false, "20a893fb-2736-4870-a803-cd3a0dc415ad", false, "sdinapolij@huffingtonpost.com" });
+                values: new object[] { "c55bc99c-2deb-4790-ac3b-1e2ad16e8201", 0, "73e94d8b-10fa-4812-998f-641bcde4130b", "sdinapolij@huffingtonpost.com", false, false, null, "SDINAPOLIJ@HUFFINGTONPOST.COM", "SDINAPOLIJ@HUFFINGTONPOST.COM", "AQAAAAEAACcQAAAAECjm486VDfJeCD2a5BDngRAsLrm/ayKsCn8wjEo24KsbwzPH3XU7eIBFS+Tdpa9Y0Q==", null, false, "20a893fb-2736-4870-a803-cd3a0dc415ad", false, "sdinapolij@huffingtonpost.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6761800e-4966-4fef-b377-489b515271dd", 0, "aa3f41a4-81d8-4cf6-a7af-b06cb1f5c9d2", "belmhirsta@state.gov", false, false, null, "BELMHIRSTA@STATE.GOV", "BELMHIRSTA@STATE.GOV", "AQAAAAEAACcQAAAAEMIg35qXvzGeE75JcOGWvVy8+3rtn7uw6SHwh+KIyDTNpK/Ixwak2bPUHtd7jrXAhg==", null, false, "fdcf907e-6a19-4b1f-b1fc-0fc6aed4644b", false, "belmhirsta@state.gov" });
+                values: new object[] { "6761800e-4966-4fef-b377-489b515271dd", 0, "01cf0111-ffdc-4856-85f3-fcad053f5821", "belmhirsta@state.gov", false, false, null, "BELMHIRSTA@STATE.GOV", "BELMHIRSTA@STATE.GOV", "AQAAAAEAACcQAAAAEAgOBmDZAt1IM0lMR9SU+AzdNVovTiPA86P6g0AXyfpj8Ttexmo1X4pV62873sf8eg==", null, false, "fdcf907e-6a19-4b1f-b1fc-0fc6aed4644b", false, "belmhirsta@state.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5feb8dff-a2f6-45a3-8f90-c3dfe12ffbec", 0, "2b4adb2d-5dfa-41a7-a5c0-3b7a2cee09f3", "mlorente8@admin.ch", false, false, null, "MLORENTE8@ADMIN.CH", "MLORENTE8@ADMIN.CH", "AQAAAAEAACcQAAAAEECwh65+OPtoMKaB4BeHXmneL8von6YNcYmv/uQD828XJWWU+HPyUxrMge2RaLOmew==", null, false, "f6adc431-1418-4588-80ef-c1716cd78693", false, "mlorente8@admin.ch" });
+                values: new object[] { "5feb8dff-a2f6-45a3-8f90-c3dfe12ffbec", 0, "4499f771-da5e-436d-a2aa-656abac1a76c", "mlorente8@admin.ch", false, false, null, "MLORENTE8@ADMIN.CH", "MLORENTE8@ADMIN.CH", "AQAAAAEAACcQAAAAEJD5SeE2EE9PPTQrs3zEbsHYHudC3sQ5/Af78qaOP775R1vtmRFGFI+/L7oO1ZS3yg==", null, false, "f6adc431-1418-4588-80ef-c1716cd78693", false, "mlorente8@admin.ch" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0d63d31e-70a5-456b-971c-6682680dc91c", 0, "64c73c3e-d466-465d-a67e-809cbae6c20c", "pcerith7@slashdot.org", false, false, null, "PCERITH7@SLASHDOT.ORG", "PCERITH7@SLASHDOT.ORG", "AQAAAAEAACcQAAAAEGgc+f5UhbNWI2mEZcHq8dELjCWo9P4HsKbjTPhtkiLbR9MgjEEotM0qaOQcSw3aSg==", null, false, "072f8e5e-b3a8-413c-a55a-6580f1365a90", false, "pcerith7@slashdot.org" });
+                values: new object[] { "0d63d31e-70a5-456b-971c-6682680dc91c", 0, "60754d2f-7f23-4c18-8e33-e00713175052", "pcerith7@slashdot.org", false, false, null, "PCERITH7@SLASHDOT.ORG", "PCERITH7@SLASHDOT.ORG", "AQAAAAEAACcQAAAAEHwACgXG+6BOl3vkMl43bXgJrJEV/+OqEksD2fQmC4H35jtLDymaQhhKaTwHQSGpMA==", null, false, "072f8e5e-b3a8-413c-a55a-6580f1365a90", false, "pcerith7@slashdot.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ab9bc6c1-e342-48a0-a233-839ceac5cd0a", 0, "e2dd4450-3855-474d-93ec-6baa01ff6f7f", "rpengilley6@bing.com", false, false, null, "RPENGILLEY6@BING.COM", "RPENGILLEY6@BING.COM", "AQAAAAEAACcQAAAAEF5jZRgnD6tTnoVUULlN7e+cKrlUDDRUxEtCW/Lr94wkIorAs7N5bQJ2giEqxVpaxg==", null, false, "4b4e203d-cb94-46eb-bd76-629a7941bee7", false, "rpengilley6@bing.com" });
+                values: new object[] { "ab9bc6c1-e342-48a0-a233-839ceac5cd0a", 0, "08866e53-c1eb-49c4-98dc-7c2276b12d0c", "rpengilley6@bing.com", false, false, null, "RPENGILLEY6@BING.COM", "RPENGILLEY6@BING.COM", "AQAAAAEAACcQAAAAEDtZPHIX5iaoF3kvDU7DF8A/BjnPhhDm55fC7SRscVdsYkMpiiYIan4g91wKOogv7Q==", null, false, "4b4e203d-cb94-46eb-bd76-629a7941bee7", false, "rpengilley6@bing.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c5d04428-aa4c-4933-ba37-02a7d3f0debd", 0, "0b70cdee-d448-49d3-bc7d-730a9df31886", "jmatticci5@alexa.com", false, false, null, "JMATTICCI5@ALEXA.COM", "JMATTICCI5@ALEXA.COM", "AQAAAAEAACcQAAAAEOzQTB5Du2Gqvu1WiPM//1wJ3igTt6ys1sbSUPB2GOYpkaQPmxIfRERDfTCOXVSxoQ==", null, false, "929dc425-f5af-4907-92ad-dc5103600afd", false, "jmatticci5@alexa.com" });
+                values: new object[] { "c5d04428-aa4c-4933-ba37-02a7d3f0debd", 0, "a24cd961-0ef0-411c-b53d-3dcdf602d1d1", "jmatticci5@alexa.com", false, false, null, "JMATTICCI5@ALEXA.COM", "JMATTICCI5@ALEXA.COM", "AQAAAAEAACcQAAAAEHXVwLhnCPptWYQkKQ40mXpI8DN1JQhx/kNocmY6wL8TMI5eAe1k4HuTYT4zFu5y4Q==", null, false, "929dc425-f5af-4907-92ad-dc5103600afd", false, "jmatticci5@alexa.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d10b1890-11c9-4293-bc19-2ea857a498b8", 0, "13cbbcaa-ca60-4d58-bba6-d7628c72a6fd", "esudlow4@sohu.com", false, false, null, "ESUDLOW4@SOHU.COM", "ESUDLOW4@SOHU.COM", "AQAAAAEAACcQAAAAELWnil3mERVv3Pgnl9OVedRV5XZqT/toE2ISFqvFu4pFYv8QEgROObcl4G03SGN/8A==", null, false, "38c488cb-d1d8-4d3d-8009-080111ce5815", false, "esudlow4@sohu.com" });
+                values: new object[] { "d10b1890-11c9-4293-bc19-2ea857a498b8", 0, "ca591abb-5286-4dc0-82e8-0298ccd80970", "esudlow4@sohu.com", false, false, null, "ESUDLOW4@SOHU.COM", "ESUDLOW4@SOHU.COM", "AQAAAAEAACcQAAAAEK80xE3CgHwADF8fqGVHUQ6aUSCMWcaHL0bt7ny4IT5pRD7R7RMuvbexbKtArR/TXA==", null, false, "38c488cb-d1d8-4d3d-8009-080111ce5815", false, "esudlow4@sohu.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5b0771ca-dc01-4dcd-b048-20c04bad5d1d", 0, "97bea489-95f2-4c1a-9f9d-a072bca11d7a", "cbricklebank3@ifeng.com", false, false, null, "CBRICKLEBANK3@IFENG.COM", "CBRICKLEBANK3@IFENG.COM", "AQAAAAEAACcQAAAAEFzvNWMQ5p7Gyrrzoychn+/ZiAdX5fq4+uw3IaSRq4Z1BDoaxgot7T52z0wlV/ArBA==", null, false, "843fc2ba-adf9-4d7d-b70a-456490c083f2", false, "cbricklebank3@ifeng.com" });
+                values: new object[] { "5b0771ca-dc01-4dcd-b048-20c04bad5d1d", 0, "b38bb2f1-ea62-4201-ba41-7321dca0b3c8", "cbricklebank3@ifeng.com", false, false, null, "CBRICKLEBANK3@IFENG.COM", "CBRICKLEBANK3@IFENG.COM", "AQAAAAEAACcQAAAAELxtmCdMk2pWtJ01ZwtH2lOEHmKbOqDhb8I5T4jOWx0qAHqlnaI9/a7qtPimS5Bk7g==", null, false, "843fc2ba-adf9-4d7d-b70a-456490c083f2", false, "cbricklebank3@ifeng.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9281f268-1250-448e-a682-88d5ec17b38a", 0, "bcd855c1-6536-446c-abd8-7de26cb24c83", "wtitcombe2@whitehouse.gov", false, false, null, "WTITCOMBE2@WHITEHOUSE.GOV", "WTITCOMBE2@WHITEHOUSE.GOV", "AQAAAAEAACcQAAAAEDQ+m1sfgD9E0E/BTUIQuhKtd11gB8dDmYAYst+WO81pyMm8Aa6w6Ra+q9zfv53WNw==", null, false, "3f40eaaf-ec4e-45e7-999b-cfebc65cf144", false, "wtitcombe2@whitehouse.gov" });
+                values: new object[] { "9281f268-1250-448e-a682-88d5ec17b38a", 0, "fd7ddcf6-d3c6-438b-a556-00ace939a097", "wtitcombe2@whitehouse.gov", false, false, null, "WTITCOMBE2@WHITEHOUSE.GOV", "WTITCOMBE2@WHITEHOUSE.GOV", "AQAAAAEAACcQAAAAENaEREkV4Oy/lpG5L/qmz2QczEo5Cj6QIbdDMvuWE4G2qZFtYb+6oaYHRxLaUtBVDQ==", null, false, "3f40eaaf-ec4e-45e7-999b-cfebc65cf144", false, "wtitcombe2@whitehouse.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5805b787-a708-4046-837f-a6c98e903633", 0, "d7250d83-1fa5-4a46-a4a8-2bb60550a842", "mkamiyama1@xrea.com", false, false, null, "MKAMIYAMA1@XREA.COM", "MKAMIYAMA1@XREA.COM", "AQAAAAEAACcQAAAAEJ5Oh5lteqhTPv3dZ1WoXsYaZhiOw7wlBVRbSQPsH1N1irVF4dF28jB0uHXqJOAG1Q==", null, false, "a4dc8edc-5160-44bd-9a08-2a3e0bfddbe1", false, "mkamiyama1@xrea.com" });
+                values: new object[] { "5805b787-a708-4046-837f-a6c98e903633", 0, "acc973ed-8d40-4601-b4c6-c635bd7ab172", "mkamiyama1@xrea.com", false, false, null, "MKAMIYAMA1@XREA.COM", "MKAMIYAMA1@XREA.COM", "AQAAAAEAACcQAAAAEGfLjyNuQgC9w/9ba7UbNGWo4pTTWLrKNtiBxaNJ5OZFVhj732VQ8reePghyKMh7/Q==", null, false, "a4dc8edc-5160-44bd-9a08-2a3e0bfddbe1", false, "mkamiyama1@xrea.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3320b221-a878-4a6b-8322-51ce9f207832", 0, "8fcba67d-d1bd-43e4-b6f6-4a920d91686a", "aallsebrook9@oracle.com", false, false, null, "AALLSEBROOK9@ORACLE.COM", "AALLSEBROOK9@ORACLE.COM", "AQAAAAEAACcQAAAAEFgZIdtYYPEEsoiJ+BB+aB+3qwvCNlbCQneHYdQiK0gQAMump6kWGP5DJdGiGCxTVw==", null, false, "244c472d-ea9f-455e-8131-1561a2a0a9a0", false, "aallsebrook9@oracle.com" });
+                values: new object[] { "3320b221-a878-4a6b-8322-51ce9f207832", 0, "1fbb395a-9630-40f9-ad78-8189cf8e2201", "aallsebrook9@oracle.com", false, false, null, "AALLSEBROOK9@ORACLE.COM", "AALLSEBROOK9@ORACLE.COM", "AQAAAAEAACcQAAAAENOr0zeOqmx+ZWyRfu1LopMt9eNVJMpm0kMC2SljmGrCz9bsmUDIuk8f8WaXM06wxg==", null, false, "244c472d-ea9f-455e-8131-1561a2a0a9a0", false, "aallsebrook9@oracle.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5756bc33-5178-476a-8d6b-e9c39dc24de9", 0, "ea423765-fed5-4b05-9ca7-fb7ba84a997d", "gquant16@webnode.com", false, false, null, "GQUANT16@WEBNODE.COM", "GQUANT16@WEBNODE.COM", "AQAAAAEAACcQAAAAEOhYvUftwPDZbRAKZZuQt2QHFxtgHWNemp+EQQhHigLvkZKT1Cts/85QoNFO9zjEfg==", null, false, "0a69fcbd-2df6-4d5c-8e0a-b4b6f89de0fd", false, "gquant16@webnode.com" });
+                values: new object[] { "5756bc33-5178-476a-8d6b-e9c39dc24de9", 0, "4f0b5e55-7ac2-46b0-8140-c22aeba8134b", "gquant16@webnode.com", false, false, null, "GQUANT16@WEBNODE.COM", "GQUANT16@WEBNODE.COM", "AQAAAAEAACcQAAAAELpS/GgLLmVInE8c5JhgYotB7AaviCDBQalFymwgX8Z8LmDeMmqF6/sL+b9V6sqQ+A==", null, false, "0a69fcbd-2df6-4d5c-8e0a-b4b6f89de0fd", false, "gquant16@webnode.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "713a606e-41d4-463c-a582-b0900f3eedf2", 0, "7ee6bdb3-77c6-40cc-99e1-29ee78a38aa5", "mbaffordk@patch.com", false, false, null, "MBAFFORDK@PATCH.COM", "MBAFFORDK@PATCH.COM", "AQAAAAEAACcQAAAAEHMS4j/MI/G0Z0FCR1hbuOfK5X1m0vBffemxwliyD+iAMZDmNP23k0QWW1ivkioZdg==", null, false, "8541d879-029a-4d39-87b2-8cfdc9d2d5aa", false, "mbaffordk@patch.com" });
+                values: new object[] { "713a606e-41d4-463c-a582-b0900f3eedf2", 0, "f2b712e7-807d-41f9-80cf-5cc431599f20", "mbaffordk@patch.com", false, false, null, "MBAFFORDK@PATCH.COM", "MBAFFORDK@PATCH.COM", "AQAAAAEAACcQAAAAEET1JL/UzJ9OjTkjf0Oyt1Hd4Q8q8pul4RdCiemBRYnzJdnxt59yQPXgjW8hNl17Pg==", null, false, "8541d879-029a-4d39-87b2-8cfdc9d2d5aa", false, "mbaffordk@patch.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "40127f88-0db2-444f-a207-76c5c22d2516", 0, "7c5de060-8c9d-4d89-a7ff-6afb21f5a395", "dacomm@theguardian.com", false, false, null, "DACOMM@THEGUARDIAN.COM", "DACOMM@THEGUARDIAN.COM", "AQAAAAEAACcQAAAAEGICscfFCWche1DRJfhJsFgD3OybVHLAVAGNJsHzT29o8aqPvVA8DXtpE2uPrNGquA==", null, false, "6651502b-73d6-4a74-8958-71638de90a75", false, "dacomm@theguardian.com" });
+                values: new object[] { "40127f88-0db2-444f-a207-76c5c22d2516", 0, "fabba4f7-ffd8-4c18-9021-f5ff8ce1f0de", "dacomm@theguardian.com", false, false, null, "DACOMM@THEGUARDIAN.COM", "DACOMM@THEGUARDIAN.COM", "AQAAAAEAACcQAAAAEM/sf7PqwrMTWJYKe8Ox0ljkjGK6EPWzDeuD6KclKZfM+kZlY9pWpXZtla1Ogs2U4w==", null, false, "6651502b-73d6-4a74-8958-71638de90a75", false, "dacomm@theguardian.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5094b654-b527-4269-a4eb-ea723ca8983a", 0, "41e8e51c-f538-4191-9d4e-3913243aca59", "pstoeckle14@flickr.com", false, false, null, "PSTOECKLE14@FLICKR.COM", "PSTOECKLE14@FLICKR.COM", "AQAAAAEAACcQAAAAEOuwe/CiOmGMXIzNNgAHy60iH01Q5KU9ZaRLVP3T/3YlhhQI0eejSsDjf7CxpYt4sg==", null, false, "6f80a1d6-8755-4c40-9406-84f2e41ece48", false, "pstoeckle14@flickr.com" });
+                values: new object[] { "5094b654-b527-4269-a4eb-ea723ca8983a", 0, "59384c15-43ad-4f44-b82e-5d872e299d31", "pstoeckle14@flickr.com", false, false, null, "PSTOECKLE14@FLICKR.COM", "PSTOECKLE14@FLICKR.COM", "AQAAAAEAACcQAAAAEN/iuhJ5lYj6f0J8/aOVHUyDn9u8HmkIF30q8imCxSS5vHdowHlBv2+Ye1ZPxAGR9A==", null, false, "6f80a1d6-8755-4c40-9406-84f2e41ece48", false, "pstoeckle14@flickr.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8ca6348e-c9c8-4b90-b3a7-d18e36b80846", 0, "a47430ca-476c-44a8-a749-2cee8aba2f16", "ohowen13@usnews.com", false, false, null, "OHOWEN13@USNEWS.COM", "OHOWEN13@USNEWS.COM", "AQAAAAEAACcQAAAAEFajLrwVf+5FymF+8xBOzjTJOCyZthKnRgdPDcqk/oScXhKzyO6A0hRDXkXsYiE10A==", null, false, "76f515f6-f499-4827-9365-f0f5429114ef", false, "ohowen13@usnews.com" });
+                values: new object[] { "8ca6348e-c9c8-4b90-b3a7-d18e36b80846", 0, "be9a36ef-cda3-4a37-953a-12b86962ddc6", "ohowen13@usnews.com", false, false, null, "OHOWEN13@USNEWS.COM", "OHOWEN13@USNEWS.COM", "AQAAAAEAACcQAAAAEENgni71cShPetHt2fVv8ILe1j8yiLpFgMq0lzdFOHIypixFCXN7qTy35ueRrvnZtQ==", null, false, "76f515f6-f499-4827-9365-f0f5429114ef", false, "ohowen13@usnews.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ead59a62-b839-4050-990f-5c32e81b2a7a", 0, "0e0b3d4a-5da5-4515-9b91-f95a4a1340aa", "tcurrum12@istockphoto.com", false, false, null, "TCURRUM12@ISTOCKPHOTO.COM", "TCURRUM12@ISTOCKPHOTO.COM", "AQAAAAEAACcQAAAAEA2i9e8gatga1DVObBbzK3k0arl6/t+RPg/a6ucsmwhhQ+GnFGAvAJJTPtEuBVODvg==", null, false, "27f5b5da-f27b-4d93-b8bf-b9288e1b3d99", false, "tcurrum12@istockphoto.com" });
+                values: new object[] { "ead59a62-b839-4050-990f-5c32e81b2a7a", 0, "e991cb33-c9e2-4356-ad21-6e5dcb203186", "tcurrum12@istockphoto.com", false, false, null, "TCURRUM12@ISTOCKPHOTO.COM", "TCURRUM12@ISTOCKPHOTO.COM", "AQAAAAEAACcQAAAAEOQl3U7u5RMmWMEtQqvSzD1ybXw6wDBEEDU9X0r1cr6L9emQ1+6vS1AFcw00WdMMiQ==", null, false, "27f5b5da-f27b-4d93-b8bf-b9288e1b3d99", false, "tcurrum12@istockphoto.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3b5b5b86-ff29-4ab1-8429-565df441de41", 0, "fb492ea8-5a28-4e88-a47b-7e19b3cdcd29", "amum11@nasa.gov", false, false, null, "AMUM11@NASA.GOV", "AMUM11@NASA.GOV", "AQAAAAEAACcQAAAAEEaAeQmNOtxhgSXGg8zapeMB7v5YqhcfrYV6PcRyj9yc+Xd9w2+0kTca0wGFo2YESQ==", null, false, "0b293ca9-4321-419c-8a5c-766bac45b796", false, "amum11@nasa.gov" });
+                values: new object[] { "3b5b5b86-ff29-4ab1-8429-565df441de41", 0, "94037cf1-3b7c-4c66-96b7-6613b358cd2b", "amum11@nasa.gov", false, false, null, "AMUM11@NASA.GOV", "AMUM11@NASA.GOV", "AQAAAAEAACcQAAAAEF19vhweBCEWDvBm2z82oesJ1BX0GD9E+olK0KSNKhIA+qceyYIQUtI1pSphOXiVfQ==", null, false, "0b293ca9-4321-419c-8a5c-766bac45b796", false, "amum11@nasa.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "b20789fc-fe19-46bc-965b-5c00c2d354d2", 0, "faab6c25-8e2e-400a-8a51-f1a510b3f751", "bgrief10@adobe.com", false, false, null, "BGRIEF10@ADOBE.COM", "BGRIEF10@ADOBE.COM", "AQAAAAEAACcQAAAAEN2Ax4YBtlEiveiu5nQ3+XMyZIC2OeW2VAqr0yX0bGQGCV+yWy+39QnCm6QQ3AF2lg==", null, false, "1cba241e-a212-4457-ac0a-bc57d8cdbb21", false, "bgrief10@adobe.com" });
+                values: new object[] { "b20789fc-fe19-46bc-965b-5c00c2d354d2", 0, "035f3e79-7127-4e13-9873-b5067972a99a", "bgrief10@adobe.com", false, false, null, "BGRIEF10@ADOBE.COM", "BGRIEF10@ADOBE.COM", "AQAAAAEAACcQAAAAEGHrp9U1yJmEz+MJdBlakSXvrlM3ITi64L97wZwq+Cz58330dXfe86Y4MTzjZuTwGA==", null, false, "1cba241e-a212-4457-ac0a-bc57d8cdbb21", false, "bgrief10@adobe.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d203163d-4362-4a21-b877-0018742b8e7e", 0, "8de03b00-8c23-42a7-9d77-e22bc0cdaba1", "nruppertzz@ask.com", false, false, null, "NRUPPERTZZ@ASK.COM", "NRUPPERTZZ@ASK.COM", "AQAAAAEAACcQAAAAEHduyTlCrKhkw+1sJVa0B8Yf1DPEotfahsSdbwqHnycwJ5hK9X/0+6yd6W/jgmGpUQ==", null, false, "5b08d3ee-3746-4d4b-a255-2b20c8ebf3be", false, "nruppertzz@ask.com" });
+                values: new object[] { "d203163d-4362-4a21-b877-0018742b8e7e", 0, "9d28e6e9-c0bc-4506-9c91-71e856939710", "nruppertzz@ask.com", false, false, null, "NRUPPERTZZ@ASK.COM", "NRUPPERTZZ@ASK.COM", "AQAAAAEAACcQAAAAECVbYuGQ/oeNTXysLGf9MCpu5pnuaSfF1UU1NDpsz++K5g4OL8SeiNW4Rf2rfwtrxQ==", null, false, "5b08d3ee-3746-4d4b-a255-2b20c8ebf3be", false, "nruppertzz@ask.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4374025d-a991-495d-9463-b61ca4ade69d", 0, "9d69abd7-1f89-456c-8a5a-afb8d776d805", "alupartoy@forbes.com", false, false, null, "ALUPARTOY@FORBES.COM", "ALUPARTOY@FORBES.COM", "AQAAAAEAACcQAAAAEKwTVU8FGJ5+ppHR65grVnvDR9Ud97m5wWEqtyV3qX3ahJl+eL6tIusqT6JEGEL4ng==", null, false, "f8ce4f33-a05e-4ec3-a04d-198a58e150aa", false, "alupartoy@forbes.com" });
+                values: new object[] { "4374025d-a991-495d-9463-b61ca4ade69d", 0, "620320d3-9938-4e83-84ce-ac0f43385026", "alupartoy@forbes.com", false, false, null, "ALUPARTOY@FORBES.COM", "ALUPARTOY@FORBES.COM", "AQAAAAEAACcQAAAAEJWU4Jurg22/bJZQ2dkCAPoNhWABzdkk1ckHTha9buoAqmDBeOHDnz49GUdkwZJqLg==", null, false, "f8ce4f33-a05e-4ec3-a04d-198a58e150aa", false, "alupartoy@forbes.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a4cf8807-aac0-4e74-be8f-b8cdf7f8ac9e", 0, "3c81ef0d-f822-4d11-a042-442efa282af0", "cgennx@deliciousdays.com", false, false, null, "CGENNX@DELICIOUSDAYS.COM", "CGENNX@DELICIOUSDAYS.COM", "AQAAAAEAACcQAAAAEHNOKLA6r+o15LFcoSzHo5YlgVrKLwGoxlq8BVYDBxobzkhkngwyndui/MaUHKNuYA==", null, false, "32694c34-e302-4985-93f0-b420c4006252", false, "cgennx@deliciousdays.com" });
+                values: new object[] { "a4cf8807-aac0-4e74-be8f-b8cdf7f8ac9e", 0, "01e6eb96-10d1-476a-a01c-182c3fa54c4b", "cgennx@deliciousdays.com", false, false, null, "CGENNX@DELICIOUSDAYS.COM", "CGENNX@DELICIOUSDAYS.COM", "AQAAAAEAACcQAAAAECneZD+3rQMHQ1kgdP781QGZhElRL1DeBpIds4R23krn4muyg/pubvfU71GNB1XDyw==", null, false, "32694c34-e302-4985-93f0-b420c4006252", false, "cgennx@deliciousdays.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8da6aecc-9bbf-44c1-863b-6013961b7b6b", 0, "b2c41e53-c567-4c25-afda-bda5176f2165", "stippingl@blog.com", false, false, null, "STIPPINGL@BLOG.COM", "STIPPINGL@BLOG.COM", "AQAAAAEAACcQAAAAEHuHWmuLoP+eBfEVsaZzSmpxXcSg74AJfWufU6f9Y0fB4vQGR9wcKrCCZYFDjbV3rQ==", null, false, "137e116e-fd11-47d1-8113-76dbb1df9036", false, "stippingl@blog.com" });
+                values: new object[] { "8da6aecc-9bbf-44c1-863b-6013961b7b6b", 0, "15e7b066-d19c-4311-8c77-36aa9dd63b4e", "stippingl@blog.com", false, false, null, "STIPPINGL@BLOG.COM", "STIPPINGL@BLOG.COM", "AQAAAAEAACcQAAAAEOk4DoVaBz+t3cut2H9zhMjeHmI+QOzIAB+tHhQ5/82DchaJsGG9Znet+yyXBtV+jQ==", null, false, "137e116e-fd11-47d1-8113-76dbb1df9036", false, "stippingl@blog.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "93ace3ce-2965-4824-9892-8b67d3188b2f", 0, "b7d0f49b-c6da-4bb9-b463-4c536d5eca83", "hsurgeonw@diigo.com", false, false, null, "HSURGEONW@DIIGO.COM", "HSURGEONW@DIIGO.COM", "AQAAAAEAACcQAAAAEEU7M4ly/gAAmBYWkvM+iCDwSrPsu/XZieJQAfPZel+XFonXtoISS/SB/7hsEUeZsQ==", null, false, "9b84488d-dcdd-472d-a66c-a3bdda905a20", false, "hsurgeonw@diigo.com" });
+                values: new object[] { "93ace3ce-2965-4824-9892-8b67d3188b2f", 0, "9ab23a41-0ff1-4cdb-af2a-cf053c5270f5", "hsurgeonw@diigo.com", false, false, null, "HSURGEONW@DIIGO.COM", "HSURGEONW@DIIGO.COM", "AQAAAAEAACcQAAAAEG8sF0lrVLO1AxQEhUL1Nopsd/g1a+M5uDhirWfSxjgKtJCEJrF98eJle0l6G6z33A==", null, false, "9b84488d-dcdd-472d-a66c-a3bdda905a20", false, "hsurgeonw@diigo.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "06e5c113-57e6-4392-ba74-bfe8a56e0e85", 0, "0004abf6-285e-434d-b7a5-ee8684ce471e", "fofeeneyu@tinyurl.com", false, false, null, "FOFEENEYU@TINYURL.COM", "FOFEENEYU@TINYURL.COM", "AQAAAAEAACcQAAAAECuudVO/3RBjW6ZEVGS/6EsOQ5mxLGImLjZQ4WdEubaqaZ/DAP/Ec0rXQin019g0uA==", null, false, "6f738329-6807-4380-b7e0-9c311338eb94", false, "fofeeneyu@tinyurl.com" });
+                values: new object[] { "06e5c113-57e6-4392-ba74-bfe8a56e0e85", 0, "8a15746f-71b0-429d-884e-0c03958cd594", "fofeeneyu@tinyurl.com", false, false, null, "FOFEENEYU@TINYURL.COM", "FOFEENEYU@TINYURL.COM", "AQAAAAEAACcQAAAAEPJ9p5wfCMMXs8BOyunuOyG9CiGOV0RJWqzxpWCYdaeF/IaGBId7jgrunDlAeevQXg==", null, false, "6f738329-6807-4380-b7e0-9c311338eb94", false, "fofeeneyu@tinyurl.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "57af1907-5e9e-4212-9d16-3746c01731f1", 0, "47d53158-7286-453e-907e-d26fdd308db7", "floebert@mapquest.com", false, false, null, "FLOEBERT@MAPQUEST.COM", "FLOEBERT@MAPQUEST.COM", "AQAAAAEAACcQAAAAEI13KO62xST7Pow1SpbSmDsZXgQU0olEq+Lz+INRbJNl/+tzmEH5RapGo7kRp/+RAQ==", null, false, "8de39b06-e667-487f-86da-6318e4f6efaa", false, "floebert@mapquest.com" });
+                values: new object[] { "57af1907-5e9e-4212-9d16-3746c01731f1", 0, "352fbf5b-4357-44f0-8e0d-64978e632309", "floebert@mapquest.com", false, false, null, "FLOEBERT@MAPQUEST.COM", "FLOEBERT@MAPQUEST.COM", "AQAAAAEAACcQAAAAEFbup4JdejnTe7NFIAXNMdrpROs1eEK61pQa/ir5ZxJH2HjVfugnab7s85+wWnp5hg==", null, false, "8de39b06-e667-487f-86da-6318e4f6efaa", false, "floebert@mapquest.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5d4c05c2-b328-440d-9245-49ad6a7d09ec", 0, "fc4f1e2c-5879-4aa4-91f4-658184749e43", "gkisss@ca.gov", false, false, null, "GKISSS@CA.GOV", "GKISSS@CA.GOV", "AQAAAAEAACcQAAAAEFkI6KCDO8+dSpXEB7SxDFkLi3fX5+4ysRYQeTPZtokVOAieiGfkKe32UUTJjBtzgw==", null, false, "37bb57df-c89d-445d-8b22-ec31fe534045", false, "gkisss@ca.gov" });
+                values: new object[] { "5d4c05c2-b328-440d-9245-49ad6a7d09ec", 0, "97b8b62f-5c48-4474-b385-11b92a622fc2", "gkisss@ca.gov", false, false, null, "GKISSS@CA.GOV", "GKISSS@CA.GOV", "AQAAAAEAACcQAAAAEN6/T4I9+QteiGNJ91Uj1lKELVJpgGZ+fjPlLxpP8lBAlB/A861X2KuILE46oqYGzw==", null, false, "37bb57df-c89d-445d-8b22-ec31fe534045", false, "gkisss@ca.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9a620ec9-c0e8-44ec-8cf2-0cfdda1bc225", 0, "e46ae866-e0e6-4123-847a-7d89fa71fda0", "ckeebler@plala.or.jp", false, false, null, "CKEEBLER@PLALA.OR.JP", "CKEEBLER@PLALA.OR.JP", "AQAAAAEAACcQAAAAEEVQJYltJBYSqndxA6uIpVkUCQgxuuvwhifzKx8pDwjimxevpsSBnG7sIiPMjXvabg==", null, false, "10b1bd7d-6948-451f-80bb-56aac7826969", false, "ckeebler@plala.or.jp" });
+                values: new object[] { "9a620ec9-c0e8-44ec-8cf2-0cfdda1bc225", 0, "101a1e22-814c-49e4-abfb-8d48eab07eb0", "ckeebler@plala.or.jp", false, false, null, "CKEEBLER@PLALA.OR.JP", "CKEEBLER@PLALA.OR.JP", "AQAAAAEAACcQAAAAEGKij/qfVTMvYbUXe7CKkpXyhcxbIeYx/pp6lvMyitpMMuvNH4N6GNWH/qHt6n5CJA==", null, false, "10b1bd7d-6948-451f-80bb-56aac7826969", false, "ckeebler@plala.or.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a5e3b925-739a-4bbc-a424-79df5c990fcf", 0, "c25660aa-6df5-4f2c-b699-b68051a874c5", "oyearronq@icio.us", false, false, null, "OYEARRONQ@ICIO.US", "OYEARRONQ@ICIO.US", "AQAAAAEAACcQAAAAEHZYjpSBXmgTE9zuiaNOFvHyYMk+LcfEbHBDCCw9EoWJpuDNJKKF9yRrb7wYWsdQ4Q==", null, false, "9caf505a-712a-43ba-82b6-ce20c6ed0bf8", false, "oyearronq@icio.us" });
+                values: new object[] { "a5e3b925-739a-4bbc-a424-79df5c990fcf", 0, "a193b0a0-6748-4d85-aabd-a57f6425ffb8", "oyearronq@icio.us", false, false, null, "OYEARRONQ@ICIO.US", "OYEARRONQ@ICIO.US", "AQAAAAEAACcQAAAAEOhK8AwjmC/9O6hSP0t9rn+cYHH5sXCUS9mcpD1h05CNihMqcGOhnhoq3e3Qdm0XFw==", null, false, "9caf505a-712a-43ba-82b6-ce20c6ed0bf8", false, "oyearronq@icio.us" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a026bb7d-0a26-4e53-8b3a-421c47fef4b3", 0, "111172c2-832f-4b45-8dff-07b641649bb9", "esenettp@chicagotribune.com", false, false, null, "ESENETTP@CHICAGOTRIBUNE.COM", "ESENETTP@CHICAGOTRIBUNE.COM", "AQAAAAEAACcQAAAAEFthc3YcQtHKa6G61hAwyqd1fgezl6yefeAqCnykYVdz+GIsm5izdXuv5JjYzioGHg==", null, false, "1b06feee-c319-4de7-9282-908c7a663b42", false, "esenettp@chicagotribune.com" });
+                values: new object[] { "a026bb7d-0a26-4e53-8b3a-421c47fef4b3", 0, "32ef4935-2299-4d10-acb8-b6d6570b3704", "esenettp@chicagotribune.com", false, false, null, "ESENETTP@CHICAGOTRIBUNE.COM", "ESENETTP@CHICAGOTRIBUNE.COM", "AQAAAAEAACcQAAAAEBHrpB2WLjb0EmoMc25myk7r9vzB6SfKL3SAGpGtUR4KdnylSVvSrUEmImxnTFTmlQ==", null, false, "1b06feee-c319-4de7-9282-908c7a663b42", false, "esenettp@chicagotribune.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f282b3cc-6440-42dd-a51c-aa932d56c09e", 0, "8ba76e0f-e42b-40be-b26a-023755c1f5ed", "piresono@shareasale.com", false, false, null, "PIRESONO@SHAREASALE.COM", "PIRESONO@SHAREASALE.COM", "AQAAAAEAACcQAAAAEMQ5jCWZngal3fZOLkZ7Q3+0E3P4YGj1svXsAMWBepMCvuyTp7Qsca9DB3EulG0LJQ==", null, false, "80534988-1493-4a7e-9375-99c767373314", false, "piresono@shareasale.com" });
+                values: new object[] { "f282b3cc-6440-42dd-a51c-aa932d56c09e", 0, "410cb891-c608-4f24-b44f-bd2fff521f43", "piresono@shareasale.com", false, false, null, "PIRESONO@SHAREASALE.COM", "PIRESONO@SHAREASALE.COM", "AQAAAAEAACcQAAAAEI/yQXtb3Sgxn9cZZLE60uvkwojkP/WZPeH37K9gIOK7WbAUoTDMfAqUK3/h3N/iOA==", null, false, "80534988-1493-4a7e-9375-99c767373314", false, "piresono@shareasale.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a0c20cae-8f6f-4503-8ca4-800fa62b6559", 0, "948fffeb-129e-4b70-9da9-adc7fb79f93d", "tkirtleyn@surveymonkey.com", false, false, null, "TKIRTLEYN@SURVEYMONKEY.COM", "TKIRTLEYN@SURVEYMONKEY.COM", "AQAAAAEAACcQAAAAECDDGIu2XU11jJnKSpro5+u/tG7H44n5kgAFrssqMtTtHAt7c5631ogN+iCyAj13KQ==", null, false, "a3f5b989-126c-4073-8293-c131c5e97a16", false, "tkirtleyn@surveymonkey.com" });
+                values: new object[] { "a0c20cae-8f6f-4503-8ca4-800fa62b6559", 0, "fbb66653-00c6-41c7-819c-fb4a898f2632", "tkirtleyn@surveymonkey.com", false, false, null, "TKIRTLEYN@SURVEYMONKEY.COM", "TKIRTLEYN@SURVEYMONKEY.COM", "AQAAAAEAACcQAAAAEGzhA7uz1j+6y1l4hsj8B3KV243J3FKgkDRMw7u0IcbhbnfjTnTclj+I2R4Yzt6ZqQ==", null, false, "a3f5b989-126c-4073-8293-c131c5e97a16", false, "tkirtleyn@surveymonkey.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c5ab4106-e05e-4e7f-b23f-7018fd3ce4c8", 0, "38cc6ae7-1853-4794-b68a-6c91584be37f", "ghatherleyv@fastcompany.com", false, false, null, "GHATHERLEYV@FASTCOMPANY.COM", "GHATHERLEYV@FASTCOMPANY.COM", "AQAAAAEAACcQAAAAEC9W7eOcmouF1sA4fduveDCWLY0XOOqqbLW72hM5z+0dX/8JNvPnXofDT0Z2OYDslw==", null, false, "0184b4a0-b6c8-47a8-b433-2a9bd9aa7aa0", false, "ghatherleyv@fastcompany.com" });
+                values: new object[] { "c5ab4106-e05e-4e7f-b23f-7018fd3ce4c8", 0, "5023c587-9f95-44ee-843a-764c12697cd3", "ghatherleyv@fastcompany.com", false, false, null, "GHATHERLEYV@FASTCOMPANY.COM", "GHATHERLEYV@FASTCOMPANY.COM", "AQAAAAEAACcQAAAAED2LM7E4ti/UxjvEZNnPHBtTTDjBA8OtiNErtPup91NGr79/9OpqOMf2ekSKuq6YOA==", null, false, "0184b4a0-b6c8-47a8-b433-2a9bd9aa7aa0", false, "ghatherleyv@fastcompany.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "47d2e05c-5353-4082-b858-99efe5e23d03", 0, "24c72847-921b-42ab-9e3e-83ba727031a9", "bmizzen9o@soup.io", false, false, null, "BMIZZEN9O@SOUP.IO", "BMIZZEN9O@SOUP.IO", "AQAAAAEAACcQAAAAELfSrhyJYzW0bu45KCs5fwkKMvvEhjbzXoi65iqP3ULVdqUvNalICRAH3nSYCZrE3Q==", null, false, "13202365-76fa-4ace-bca1-47e7965e05f5", false, "bmizzen9o@soup.io" });
+                values: new object[] { "47d2e05c-5353-4082-b858-99efe5e23d03", 0, "b4fb88be-1324-411c-8b94-28e213bfe090", "bmizzen9o@soup.io", false, false, null, "BMIZZEN9O@SOUP.IO", "BMIZZEN9O@SOUP.IO", "AQAAAAEAACcQAAAAELotTicuACX6T9yp7kbjnOY+QpJpWYA2PKgD0ghb/xkuw759zdDFSuZG/AQVJyF0gw==", null, false, "13202365-76fa-4ace-bca1-47e7965e05f5", false, "bmizzen9o@soup.io" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1902e594-26bc-439f-8e77-b5b1709211eb", 0, "96b9fcfa-50f4-4007-ba73-9a7c1e1c8c92", "rlanphere2e@123-reg.co.uk", false, false, null, "RLANPHERE2E@123-REG.CO.UK", "RLANPHERE2E@123-REG.CO.UK", "AQAAAAEAACcQAAAAEJ4EbKQa5QglVgzLAW+k/gZOUnoReC3eKYdQ64nd7pWCWv076RnMK6jiLHrLmbr74g==", null, false, "12ad8d62-3d73-4025-9ddc-0796e9d3a8d4", false, "rlanphere2e@123-reg.co.uk" });
+                values: new object[] { "1902e594-26bc-439f-8e77-b5b1709211eb", 0, "777b96cd-c269-4510-913c-3db56895a1b4", "rlanphere2e@123-reg.co.uk", false, false, null, "RLANPHERE2E@123-REG.CO.UK", "RLANPHERE2E@123-REG.CO.UK", "AQAAAAEAACcQAAAAEI2yRtOj8xgeU6BgIBnOBrIylS01bI+gwBHSv0fLhNxdSVzXJe511w+5mvHGx8tkAg==", null, false, "12ad8d62-3d73-4025-9ddc-0796e9d3a8d4", false, "rlanphere2e@123-reg.co.uk" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "73c9c76f-cea4-4880-be21-28d315fbcc8d", 0, "c4a21365-9794-4aa6-9fa3-c5714482aefd", "rcornehl2g@is.gd", false, false, null, "RCORNEHL2G@IS.GD", "RCORNEHL2G@IS.GD", "AQAAAAEAACcQAAAAEHTjHxBqxKw6fDzShLxFNiM2gj0cVmjkOhIqKtlOWGccBSGcpKViFUhLPNQ+nNnPew==", null, false, "b4ac9579-8ee8-4d12-b710-d1694a44c238", false, "rcornehl2g@is.gd" });
+                values: new object[] { "73c9c76f-cea4-4880-be21-28d315fbcc8d", 0, "2ba6682c-5b32-402c-9821-8bcb9bc52ed6", "rcornehl2g@is.gd", false, false, null, "RCORNEHL2G@IS.GD", "RCORNEHL2G@IS.GD", "AQAAAAEAACcQAAAAEAUK9QUlmAiddzM0KhXZAThnzTTJ2cFl6v8FWmTRDn9YlTLGutm1qr1CxU/dUAFmoA==", null, false, "b4ac9579-8ee8-4d12-b710-d1694a44c238", false, "rcornehl2g@is.gd" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "b33a0b8a-b9a9-486c-a12d-fb12655781c0", 0, "2350bb43-6408-47d0-b5b5-25155b9c72f5", "vpollack46@typepad.com", false, false, null, "VPOLLACK46@TYPEPAD.COM", "VPOLLACK46@TYPEPAD.COM", "AQAAAAEAACcQAAAAEGJl+EfiA9ZMXGccZDN7O6JirzGPJYlRgAREy+Gs0EbddztO6XCVxytLVWTuacYQ8A==", null, false, "062644e6-2958-423e-8ca1-db0b2b1c1518", false, "vpollack46@typepad.com" });
+                values: new object[] { "b33a0b8a-b9a9-486c-a12d-fb12655781c0", 0, "ed975c3d-77fb-426e-b32c-d1261b676011", "vpollack46@typepad.com", false, false, null, "VPOLLACK46@TYPEPAD.COM", "VPOLLACK46@TYPEPAD.COM", "AQAAAAEAACcQAAAAECDYQWme4lKeeAH+WVNGKyQm5E+FvEaOa/WG5ppzGwhY/H+jNhnEur8lkiLLUQkBiA==", null, false, "062644e6-2958-423e-8ca1-db0b2b1c1518", false, "vpollack46@typepad.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e22a3874-2be0-4c38-bf83-3fd284c7eacb", 0, "65beb69c-7bc8-4205-9371-4354d5f77fd8", "gkeenor45@pen.io", false, false, null, "GKEENOR45@PEN.IO", "GKEENOR45@PEN.IO", "AQAAAAEAACcQAAAAELyvZ1mkO5o+UTw36BQzvFpdVmYKzumdldE4/EfK1eeCCUZ5OPJqBA9FG4jtQIvURA==", null, false, "2bfbcb39-74bf-48dc-beb3-cd3b9e85a230", false, "gkeenor45@pen.io" });
+                values: new object[] { "e22a3874-2be0-4c38-bf83-3fd284c7eacb", 0, "ece5ed2b-101d-436e-a33f-4bf6089aae12", "gkeenor45@pen.io", false, false, null, "GKEENOR45@PEN.IO", "GKEENOR45@PEN.IO", "AQAAAAEAACcQAAAAEKojPnQg+ZxLUJC0Utw7KkM1zVG6TFvbPfPPBem2vwByYN2m+nLumnukIdYJpilq1Q==", null, false, "2bfbcb39-74bf-48dc-beb3-cd3b9e85a230", false, "gkeenor45@pen.io" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "206a4e6c-b918-4c86-83e6-a539f6685465", 0, "d7e9c29c-41f4-4330-9711-aff2c2b902f5", "szupone44@angelfire.com", false, false, null, "SZUPONE44@ANGELFIRE.COM", "SZUPONE44@ANGELFIRE.COM", "AQAAAAEAACcQAAAAEI6sVdywVhvxUP8EGtxbuQIg6fqnva6OgeGPvVZW5PaTS04EnTOLQm/AZ5+fcuUOeg==", null, false, "96fe311b-5952-4842-94c9-11de844088a0", false, "szupone44@angelfire.com" });
+                values: new object[] { "206a4e6c-b918-4c86-83e6-a539f6685465", 0, "620ff1e8-4f31-472d-8dcf-3affb56863ff", "szupone44@angelfire.com", false, false, null, "SZUPONE44@ANGELFIRE.COM", "SZUPONE44@ANGELFIRE.COM", "AQAAAAEAACcQAAAAEBcgCSFbe2qHFtSWB24e38ZIC9IYtw3DS2sNn5bjW+RMq4GgJeybNfgsFbu3gz5Tvg==", null, false, "96fe311b-5952-4842-94c9-11de844088a0", false, "szupone44@angelfire.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "24284753-e86a-4094-a8bb-73619a77db54", 0, "f05e625e-695b-4431-9ecb-7203690f36b5", "hmisk43@csmonitor.com", false, false, null, "HMISK43@CSMONITOR.COM", "HMISK43@CSMONITOR.COM", "AQAAAAEAACcQAAAAEAXFX+PGvLlX1/ALW8rtkSJ8HGJA+iekpPB/HkkV+LlVm8hZEYvLd0Bo34GnDwiiRQ==", null, false, "229a5322-317e-462f-8c72-763f1d84f62f", false, "hmisk43@csmonitor.com" });
+                values: new object[] { "24284753-e86a-4094-a8bb-73619a77db54", 0, "4b2b501e-45b3-452d-8516-11e142f9891a", "hmisk43@csmonitor.com", false, false, null, "HMISK43@CSMONITOR.COM", "HMISK43@CSMONITOR.COM", "AQAAAAEAACcQAAAAEJiasQLtY53vsdCpmUeO08Cv+KE909Q2p+994pUGS722K7BsBDTTFQPzJ8tPN0esBw==", null, false, "229a5322-317e-462f-8c72-763f1d84f62f", false, "hmisk43@csmonitor.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "b5b8659d-43f8-4905-bb2c-ce139dd7bf1f", 0, "a5f6bc5c-4a29-43a5-8aea-a5d59d6f29e4", "hdollard42@businessweek.com", false, false, null, "HDOLLARD42@BUSINESSWEEK.COM", "HDOLLARD42@BUSINESSWEEK.COM", "AQAAAAEAACcQAAAAEIm0VbVpfxwFGnTleFebwq5IZF5/IduM6HEYuSQ9TlJOxCWayQIc7XVfRC15mwOUkg==", null, false, "8ee5b5e6-a089-469b-9eb0-04709547481c", false, "hdollard42@businessweek.com" });
+                values: new object[] { "b5b8659d-43f8-4905-bb2c-ce139dd7bf1f", 0, "7769ba52-0e9c-4775-949f-b4ad3bebac18", "hdollard42@businessweek.com", false, false, null, "HDOLLARD42@BUSINESSWEEK.COM", "HDOLLARD42@BUSINESSWEEK.COM", "AQAAAAEAACcQAAAAECHL7Bs2uWv5DxhZ27N8XdwZOtfQMIyMr41KM93c+MO44pkhCA+GNLgqcTABW1M8Hw==", null, false, "8ee5b5e6-a089-469b-9eb0-04709547481c", false, "hdollard42@businessweek.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "7507916f-7f2e-4ab2-ab13-4c43ed1fb937", 0, "d72f74b9-5b67-4caf-b8ed-0358912701f1", "dixer41@ed.gov", false, false, null, "DIXER41@ED.GOV", "DIXER41@ED.GOV", "AQAAAAEAACcQAAAAEEZ5U8V2AXlbOZozZAIcj8KsDOqJHJ1TQaZyqE5cb0SqE10+17ZrhX/Zeweue+8XIA==", null, false, "06f66755-88af-4293-83dd-00b8abc4b667", false, "dixer41@ed.gov" });
+                values: new object[] { "7507916f-7f2e-4ab2-ab13-4c43ed1fb937", 0, "fda0c90a-ed2d-406e-aa11-d924ee8396de", "dixer41@ed.gov", false, false, null, "DIXER41@ED.GOV", "DIXER41@ED.GOV", "AQAAAAEAACcQAAAAEJkO3IdILCLa005tUf8dVT5vLXEEK/LRF+GAKWB1U89rprJJdHBp9IecV/AVp9jibw==", null, false, "06f66755-88af-4293-83dd-00b8abc4b667", false, "dixer41@ed.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3679343d-0b8c-4974-9480-23b59f9371fc", 0, "793f882d-0dbb-4bcb-8a5a-e08fbb910add", "sheffy40@discovery.com", false, false, null, "SHEFFY40@DISCOVERY.COM", "SHEFFY40@DISCOVERY.COM", "AQAAAAEAACcQAAAAEEOrKaULIis57cA5v6Jm0FrN6u0zKVIe9O9yLz6uAmHp2xRviVSEqj3KYyw7NOkF6g==", null, false, "e9f98285-d5b1-4e1c-9898-1a9eb1a8fa0b", false, "sheffy40@discovery.com" });
+                values: new object[] { "3679343d-0b8c-4974-9480-23b59f9371fc", 0, "8e9a047a-0e95-4f31-8a3f-7adb38bab497", "sheffy40@discovery.com", false, false, null, "SHEFFY40@DISCOVERY.COM", "SHEFFY40@DISCOVERY.COM", "AQAAAAEAACcQAAAAEIv9u6PxyFGRsESNq3lKRmaJErpKTX6cTjARCREN8jSTfxth9ptWYtN3MiEKYqGlTw==", null, false, "e9f98285-d5b1-4e1c-9898-1a9eb1a8fa0b", false, "sheffy40@discovery.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fc0ab699-7930-4239-9a35-3011bb359ab9", 0, "7e701259-18b2-42e2-a490-8549c96fed7b", "dkleewein3z@mail.ru", false, false, null, "DKLEEWEIN3Z@MAIL.RU", "DKLEEWEIN3Z@MAIL.RU", "AQAAAAEAACcQAAAAEERdMcFwT4PMH14KMTrusQ2eB1a3qdJeqwZmy/Nq6bL5UZuhORveE0DJpy56eaZHig==", null, false, "5b32505d-5a34-4d5d-9b4b-04228f58be1d", false, "dkleewein3z@mail.ru" });
+                values: new object[] { "fc0ab699-7930-4239-9a35-3011bb359ab9", 0, "9a0214e9-02af-46c0-9650-decafe53454b", "dkleewein3z@mail.ru", false, false, null, "DKLEEWEIN3Z@MAIL.RU", "DKLEEWEIN3Z@MAIL.RU", "AQAAAAEAACcQAAAAEHOrpmwCOixOYSDLN8bVHaETKEkeFnbD8jXcLoaj0V8gdfM0uF4umTghQ82zHbEmfw==", null, false, "5b32505d-5a34-4d5d-9b4b-04228f58be1d", false, "dkleewein3z@mail.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "96bb33f9-407a-4f38-a683-fee0b0d91a46", 0, "25836053-cd8d-4577-bd01-9024cbb25337", "hhonywill47@dell.com", false, false, null, "HHONYWILL47@DELL.COM", "HHONYWILL47@DELL.COM", "AQAAAAEAACcQAAAAEABgYLK4Hz26pRwZtP+rJb7nwnZoUDho8F7xWX492h6CLEh0SieD2qs547IdhYjwmQ==", null, false, "a1e2a179-3832-4d96-8fc7-e158c3c6f62f", false, "hhonywill47@dell.com" });
+                values: new object[] { "96bb33f9-407a-4f38-a683-fee0b0d91a46", 0, "f863efbf-4fb9-4fc2-8a2a-8802842b43ac", "hhonywill47@dell.com", false, false, null, "HHONYWILL47@DELL.COM", "HHONYWILL47@DELL.COM", "AQAAAAEAACcQAAAAENAbsV/15RdU45tWoSnlLCPVMiBxKzHrYW+E63RX+ngHx0igJU+QJKciZD3YgqSmwA==", null, false, "a1e2a179-3832-4d96-8fc7-e158c3c6f62f", false, "hhonywill47@dell.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3698cd95-b494-4016-a258-6011a694892d", 0, "74d5e3cc-83d7-4150-9622-f32430614575", "asiflet3y@yelp.com", false, false, null, "ASIFLET3Y@YELP.COM", "ASIFLET3Y@YELP.COM", "AQAAAAEAACcQAAAAELGl8fw3OQQiId1DJEQh7GSsmNfwHze3y4OsEX02FkvSzCXVqKZzV6jyBE93KDrnOw==", null, false, "76d814a7-e2e3-43f8-b3d0-0125ed6b6601", false, "asiflet3y@yelp.com" });
+                values: new object[] { "3698cd95-b494-4016-a258-6011a694892d", 0, "dd19f15a-64a0-4ace-868d-d4a6b96302c3", "asiflet3y@yelp.com", false, false, null, "ASIFLET3Y@YELP.COM", "ASIFLET3Y@YELP.COM", "AQAAAAEAACcQAAAAEEmaj534XvgPxftVo0vicL8zoiyB9YsgL4p5wijMm5/d/bjekuzFlw3gmVWxPN4hYA==", null, false, "76d814a7-e2e3-43f8-b3d0-0125ed6b6601", false, "asiflet3y@yelp.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2db32d29-d51d-4233-ba11-d2c929d41d93", 0, "f17bad88-4949-4d54-a003-ae33155dcd00", "swilmott3w@amazonaws.com", false, false, null, "SWILMOTT3W@AMAZONAWS.COM", "SWILMOTT3W@AMAZONAWS.COM", "AQAAAAEAACcQAAAAED4wQNRqMyJscqvwib6e7ni/SNwvPNeYRq6Y49U9SlO5DIPjiu0DWsbnYuhzsCUYzA==", null, false, "058e59a5-b4f9-4d22-b3da-6d1989727ee3", false, "swilmott3w@amazonaws.com" });
+                values: new object[] { "2db32d29-d51d-4233-ba11-d2c929d41d93", 0, "6dbd203d-7104-4230-90e8-cafec06316d0", "swilmott3w@amazonaws.com", false, false, null, "SWILMOTT3W@AMAZONAWS.COM", "SWILMOTT3W@AMAZONAWS.COM", "AQAAAAEAACcQAAAAENhSbTtMUpdhhTGvegBnxAwbcXo5MkDaCm80nk/VoMJRmzuz7xky9H53XdUKFCRVIw==", null, false, "058e59a5-b4f9-4d22-b3da-6d1989727ee3", false, "swilmott3w@amazonaws.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3d5c6039-ddc4-4fbd-9fb1-f46e792a2e2f", 0, "f5d5c89c-1f55-4f74-b718-bfde2fd67c5c", "yianilli3v@arstechnica.com", false, false, null, "YIANILLI3V@ARSTECHNICA.COM", "YIANILLI3V@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAECzKYdPDYBTn4s9zYExfNI2SWGifSEAQod7qk84fybOGoCnsjCAdvZI54eiEg9qvoQ==", null, false, "f40a7a3d-416f-46b6-89f8-1cd580ffed19", false, "yianilli3v@arstechnica.com" });
+                values: new object[] { "3d5c6039-ddc4-4fbd-9fb1-f46e792a2e2f", 0, "a6eb222d-4213-40f9-992e-e21dfc5ee793", "yianilli3v@arstechnica.com", false, false, null, "YIANILLI3V@ARSTECHNICA.COM", "YIANILLI3V@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAEO/v2JjEdB5PPH7/2kSeS3Pa1UKlAnT/srSxKjvJIXaDykHrniyWt6udIZypWsjj1Q==", null, false, "f40a7a3d-416f-46b6-89f8-1cd580ffed19", false, "yianilli3v@arstechnica.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e90da7c0-3f99-49cd-a62b-dbcb9fd5fad4", 0, "3339a0f7-bf85-476a-a696-e9e817c8439b", "fwallbutton3u@samsung.com", false, false, null, "FWALLBUTTON3U@SAMSUNG.COM", "FWALLBUTTON3U@SAMSUNG.COM", "AQAAAAEAACcQAAAAEOpuoXMZg+rWariPy2y9m+VmuIX7mnot0bns8Q/fa7rjo+MsRXZrRGUUxjtrZypDEg==", null, false, "06a32824-0583-4311-8317-cb428fa3cebe", false, "fwallbutton3u@samsung.com" });
+                values: new object[] { "e90da7c0-3f99-49cd-a62b-dbcb9fd5fad4", 0, "28f31c69-bc2b-4cf3-9eeb-6fd3d1eadce5", "fwallbutton3u@samsung.com", false, false, null, "FWALLBUTTON3U@SAMSUNG.COM", "FWALLBUTTON3U@SAMSUNG.COM", "AQAAAAEAACcQAAAAELETRVV2MFY0ztFte5cn7v/SK1D8a4laVBA2vg709JenO7F0H1Qk3rzx1nRICQXJOQ==", null, false, "06a32824-0583-4311-8317-cb428fa3cebe", false, "fwallbutton3u@samsung.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "152d10a0-56d5-4d9b-8b52-c3e61beb867b", 0, "ab212583-e699-4e0f-8493-90897931e48c", "rcreavin3t@ow.ly", false, false, null, "RCREAVIN3T@OW.LY", "RCREAVIN3T@OW.LY", "AQAAAAEAACcQAAAAEPXlphGmKPwKnqTOMn9VsKpXxroXViD0znGZMCt7dySBFnUbKdfSo5LaoFO8HhhbHg==", null, false, "275c0d20-53b3-4f29-9ed4-b2fdcf642a93", false, "rcreavin3t@ow.ly" });
+                values: new object[] { "152d10a0-56d5-4d9b-8b52-c3e61beb867b", 0, "efba5c86-ef52-4281-80ca-bf0697b663f8", "rcreavin3t@ow.ly", false, false, null, "RCREAVIN3T@OW.LY", "RCREAVIN3T@OW.LY", "AQAAAAEAACcQAAAAEHcfgx29ZE/2kfBdybkehgTHlGLQWLhQPxEg4PGTg/rcjyjn77O2kGSGXQ/Q3CnIvw==", null, false, "275c0d20-53b3-4f29-9ed4-b2fdcf642a93", false, "rcreavin3t@ow.ly" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4f59e6c0-f688-4297-bf13-3664ccbc386e", 0, "6cae3922-523a-4d99-91a0-68965819103f", "mgarrad3s@msu.edu", false, false, null, "MGARRAD3S@MSU.EDU", "MGARRAD3S@MSU.EDU", "AQAAAAEAACcQAAAAEOxPdmjEGlbnRlTrlrA4q/dot8JU98IHIhMssYAcdexWgi2PWTUe6/xbiHp38BuzfQ==", null, false, "a0f6b765-5504-4778-aaaf-f85a8c786bd6", false, "mgarrad3s@msu.edu" });
+                values: new object[] { "4f59e6c0-f688-4297-bf13-3664ccbc386e", 0, "412250f1-0166-46c8-b84a-0d1ecd5dfc1b", "mgarrad3s@msu.edu", false, false, null, "MGARRAD3S@MSU.EDU", "MGARRAD3S@MSU.EDU", "AQAAAAEAACcQAAAAECZZcAkw1GHfyk0diE4vWsPuWgGagHGP+mX2cVE8pYukED/O9buO30BCPgw43eG7Yg==", null, false, "a0f6b765-5504-4778-aaaf-f85a8c786bd6", false, "mgarrad3s@msu.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fe3d780e-fe09-4612-bee2-daa904e610ff", 0, "a67c48ff-68b1-4623-9ef8-54743ced50e5", "mpossa3r@google.nl", false, false, null, "MPOSSA3R@GOOGLE.NL", "MPOSSA3R@GOOGLE.NL", "AQAAAAEAACcQAAAAEKU2OPsdORM8F243Qv+4e2gqXIrT157SnpFQsXW+eJmGLBv6lYZ8fjTLfhT6W4+Ijw==", null, false, "9c08bc7f-b414-4a5c-aa0c-e1d27661eae9", false, "mpossa3r@google.nl" });
+                values: new object[] { "fe3d780e-fe09-4612-bee2-daa904e610ff", 0, "03c53b24-dd9d-42b3-9827-a4bb4c3a8a61", "mpossa3r@google.nl", false, false, null, "MPOSSA3R@GOOGLE.NL", "MPOSSA3R@GOOGLE.NL", "AQAAAAEAACcQAAAAEIuwjEvaThOYy16F/vATFzG9aZfc/m87uMSPvjcOggpfz1+jWCqdHZUhdSc0Jt91CQ==", null, false, "9c08bc7f-b414-4a5c-aa0c-e1d27661eae9", false, "mpossa3r@google.nl" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fdff6374-44db-4402-bc49-57c4bdb4433a", 0, "3ae97897-8c37-4289-8c01-829f8f6982fc", "htrowbridge3q@geocities.jp", false, false, null, "HTROWBRIDGE3Q@GEOCITIES.JP", "HTROWBRIDGE3Q@GEOCITIES.JP", "AQAAAAEAACcQAAAAEIt2Ttu87BEuxhn5Pz4s8Oz3av1zJL0I9LQydStZiAUBw602+HhpXGK6GColSHhWCw==", null, false, "e657d4d7-e9ee-4988-bd38-5ae701f7e58b", false, "htrowbridge3q@geocities.jp" });
+                values: new object[] { "fdff6374-44db-4402-bc49-57c4bdb4433a", 0, "8de3fbd1-884d-4cfa-95cb-9f6a5f022c96", "htrowbridge3q@geocities.jp", false, false, null, "HTROWBRIDGE3Q@GEOCITIES.JP", "HTROWBRIDGE3Q@GEOCITIES.JP", "AQAAAAEAACcQAAAAEAu4KcQfZyRq3B0nsLRGfn4NRnUEOY7GNnv/gZVdXObYIjqe9UzC801fz2+YpZOHwA==", null, false, "e657d4d7-e9ee-4988-bd38-5ae701f7e58b", false, "htrowbridge3q@geocities.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "32df50c3-41d1-4097-87cb-897851f447a9", 0, "23d5333b-6a1f-43fd-b936-17beaf9379b4", "nmcowen3p@japanpost.jp", false, false, null, "NMCOWEN3P@JAPANPOST.JP", "NMCOWEN3P@JAPANPOST.JP", "AQAAAAEAACcQAAAAEBxqhmkx0af6AnbaJ/xhJgt0XU+zgUm549iGyUu1VzZJJDePvAjFYVOLWZAOEE8N1Q==", null, false, "3aae0216-4b78-4cb0-a84e-84359a9c2fd3", false, "nmcowen3p@japanpost.jp" });
+                values: new object[] { "32df50c3-41d1-4097-87cb-897851f447a9", 0, "977a815a-1eab-48db-bbe7-7cf1d6929d1a", "nmcowen3p@japanpost.jp", false, false, null, "NMCOWEN3P@JAPANPOST.JP", "NMCOWEN3P@JAPANPOST.JP", "AQAAAAEAACcQAAAAEN31JA4VvzlYCwsBGD59v/xso0hzY7It26Zr0CsgJqXp0P2S8e7TZsJL1uyqBO1EvA==", null, false, "3aae0216-4b78-4cb0-a84e-84359a9c2fd3", false, "nmcowen3p@japanpost.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "79df2a8b-3056-49d7-a33e-24733caea16b", 0, "6fcadf9f-a151-42b7-b743-4d6f10ec1112", "arown3x@quantcast.com", false, false, null, "AROWN3X@QUANTCAST.COM", "AROWN3X@QUANTCAST.COM", "AQAAAAEAACcQAAAAEMuGLfVNDWwIl8vYplY/MOxd2M4WUc4jXFSVrhAKqoH/s0Ea+MwR7vv82G+ORfkNXQ==", null, false, "71563553-063e-4bd9-8d98-9c2fdeb3a242", false, "arown3x@quantcast.com" });
+                values: new object[] { "79df2a8b-3056-49d7-a33e-24733caea16b", 0, "514c3ae9-3efb-4412-8ea9-835a5b86f655", "arown3x@quantcast.com", false, false, null, "AROWN3X@QUANTCAST.COM", "AROWN3X@QUANTCAST.COM", "AQAAAAEAACcQAAAAELDZpZsbjSgWBSsaxdI0TVKiTlysfyplqUTxMNgpMFTRHCLuAZuyZzTXZN0x0tlCyw==", null, false, "71563553-063e-4bd9-8d98-9c2fdeb3a242", false, "arown3x@quantcast.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1a5ebbf7-f2ba-4e1e-a4d2-d436d4732093", 0, "7cf9732b-c760-4b3a-bb3a-5f419fdeada6", "vsalvadore3o@weebly.com", false, false, null, "VSALVADORE3O@WEEBLY.COM", "VSALVADORE3O@WEEBLY.COM", "AQAAAAEAACcQAAAAEP2WnlN9EDjewk3ECYfO1Mc7IXzjNpKOSnU6yIaBdBRJ4IE2vQsyJ4SngTUWHNHAxg==", null, false, "1415be82-719c-4e25-9b4e-622c3994ff13", false, "vsalvadore3o@weebly.com" });
+                values: new object[] { "1a5ebbf7-f2ba-4e1e-a4d2-d436d4732093", 0, "940cfe88-aa48-4db2-9699-9c83ac184dde", "vsalvadore3o@weebly.com", false, false, null, "VSALVADORE3O@WEEBLY.COM", "VSALVADORE3O@WEEBLY.COM", "AQAAAAEAACcQAAAAECpkgusdiJBbRZX9oM1t1zLVEN8RSfZNRMP9T1jeERrzmqsWg5CjMUEDWZ774yKyCA==", null, false, "1415be82-719c-4e25-9b4e-622c3994ff13", false, "vsalvadore3o@weebly.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "dad0e12f-81c9-4f5f-9190-3035a6bd62e4", 0, "973419e9-1bb2-4155-9d96-6fb9b624dd4f", "aeast48@surveymonkey.com", false, false, null, "AEAST48@SURVEYMONKEY.COM", "AEAST48@SURVEYMONKEY.COM", "AQAAAAEAACcQAAAAEAsfKRuiFrreGdV24TxQpEO7GE0oalTnQ1YKrBF2Zp3vyLr1bu1xEL+nRzqoOKwpdQ==", null, false, "c07176ad-aa96-4e8a-9ddd-af48331a2cf0", false, "aeast48@surveymonkey.com" });
+                values: new object[] { "dad0e12f-81c9-4f5f-9190-3035a6bd62e4", 0, "bd1cb61a-3e20-4b25-89c6-47b9f5a57048", "aeast48@surveymonkey.com", false, false, null, "AEAST48@SURVEYMONKEY.COM", "AEAST48@SURVEYMONKEY.COM", "AQAAAAEAACcQAAAAEFRRPFpnwoyXPMUN8m0XmFlxxbfyOBew4VujokjJnKDmcIubg7kW07E43kSF21VDLg==", null, false, "c07176ad-aa96-4e8a-9ddd-af48331a2cf0", false, "aeast48@surveymonkey.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "52146efe-b837-4f99-996f-517139d60fdc", 0, "a14ff456-dd56-4244-8ab0-16c88cccef07", "gstump4a@blogtalkradio.com", false, false, null, "GSTUMP4A@BLOGTALKRADIO.COM", "GSTUMP4A@BLOGTALKRADIO.COM", "AQAAAAEAACcQAAAAEDoHQJNFe8uB8HWE5rFwefxQrLV92Q0T59so0Eq2yQ/pRieHFZtqGDYXXMk1E/0fNg==", null, false, "045b46fe-dc71-42d0-b607-fce966b68b9c", false, "gstump4a@blogtalkradio.com" });
+                values: new object[] { "52146efe-b837-4f99-996f-517139d60fdc", 0, "f67e1f4f-731c-4955-8661-7754704c361f", "gstump4a@blogtalkradio.com", false, false, null, "GSTUMP4A@BLOGTALKRADIO.COM", "GSTUMP4A@BLOGTALKRADIO.COM", "AQAAAAEAACcQAAAAEBjrMXSFGJccNgw0m1DIBjQlkv98pDRueZmD/xp7gVONuDUXAknkIbn/Hmfe4vAGxQ==", null, false, "045b46fe-dc71-42d0-b607-fce966b68b9c", false, "gstump4a@blogtalkradio.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9eeaec2e-e03a-46fb-8c20-2208a2925e58", 0, "cdb670da-ba59-4dc8-9d5a-56ef347ab833", "ceykelbosch4s@twitter.com", false, false, null, "CEYKELBOSCH4S@TWITTER.COM", "CEYKELBOSCH4S@TWITTER.COM", "AQAAAAEAACcQAAAAENqD9iL9JnmH1JY8Q41eO4N8s3Wwsw+iRtoES1RHi5JcGtVwJb+YP689HHzXo5q+2Q==", null, false, "f5ee7c37-680e-47af-9101-fbb475833d47", false, "ceykelbosch4s@twitter.com" });
+                values: new object[] { "9eeaec2e-e03a-46fb-8c20-2208a2925e58", 0, "824cebaa-5e79-4a76-ac73-cafbceeccda4", "ceykelbosch4s@twitter.com", false, false, null, "CEYKELBOSCH4S@TWITTER.COM", "CEYKELBOSCH4S@TWITTER.COM", "AQAAAAEAACcQAAAAEJoJJsWAVDrj2oksRJOSf+Bpp+BHtUqKbmsKaWK/bLoTJY4cnKlmcMSVsT4gSubU8w==", null, false, "f5ee7c37-680e-47af-9101-fbb475833d47", false, "ceykelbosch4s@twitter.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ea6e42cc-a756-4f12-bcb1-2dde1f1dd47a", 0, "007dcbe0-0283-429c-bdd8-35c204c1e703", "ctomasik4r@chron.com", false, false, null, "CTOMASIK4R@CHRON.COM", "CTOMASIK4R@CHRON.COM", "AQAAAAEAACcQAAAAEF/EXkoUTJ7Xj+T+v5iTZ+DwyCOM4rFEE2JwAjSmArKDqgeuTUz46R5KQqWKSOgK7w==", null, false, "31774361-d117-4953-9c67-536690ea05bb", false, "ctomasik4r@chron.com" });
+                values: new object[] { "ea6e42cc-a756-4f12-bcb1-2dde1f1dd47a", 0, "96480215-1e2f-4528-ac56-8dcdb03711d3", "ctomasik4r@chron.com", false, false, null, "CTOMASIK4R@CHRON.COM", "CTOMASIK4R@CHRON.COM", "AQAAAAEAACcQAAAAEAW9RH6W9z1AdBIbX1MS/L8oILpABFtX2PsbbT2xsZYSt8WNv4U8zHMBHpsMkVnHmA==", null, false, "31774361-d117-4953-9c67-536690ea05bb", false, "ctomasik4r@chron.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4dda8607-04c9-4ac4-8a26-9407b288e865", 0, "45bcdee5-de29-4350-91a6-037e24b0173b", "pobradane4q@hubpages.com", false, false, null, "POBRADANE4Q@HUBPAGES.COM", "POBRADANE4Q@HUBPAGES.COM", "AQAAAAEAACcQAAAAEAhrNiZcbyw1k4Eg4SRntLUH4ELX3lkmtiiJ1eWdCqZV3zIyD61fycChryaL8YvRAQ==", null, false, "459f0455-0745-4b89-b25c-722dd314d98f", false, "pobradane4q@hubpages.com" });
+                values: new object[] { "4dda8607-04c9-4ac4-8a26-9407b288e865", 0, "b185a0b6-8ac4-4460-9232-cdff6df4ed16", "pobradane4q@hubpages.com", false, false, null, "POBRADANE4Q@HUBPAGES.COM", "POBRADANE4Q@HUBPAGES.COM", "AQAAAAEAACcQAAAAEPiec3sJCt4E4nSJ1YdsrfY/vYUPQNto7cr22dQBQwf6+tvpCRcO09yAfREUlP3wzQ==", null, false, "459f0455-0745-4b89-b25c-722dd314d98f", false, "pobradane4q@hubpages.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e19c7d8d-b1f3-4383-824f-fd681843e8ae", 0, "bcba9196-2315-447d-978c-1181c445a73e", "galdgate4p@globo.com", false, false, null, "GALDGATE4P@GLOBO.COM", "GALDGATE4P@GLOBO.COM", "AQAAAAEAACcQAAAAELFjAncnSf0cUgoO5YjTq0dGHdyX4Me9nM/v+zaA10jatHR5r/scj9oOm93A9LmQ3A==", null, false, "9d62dbfa-d945-4c8b-89da-89d38f5e97c5", false, "galdgate4p@globo.com" });
+                values: new object[] { "e19c7d8d-b1f3-4383-824f-fd681843e8ae", 0, "0c1b73d6-4091-4cc1-9dcf-cfc0f3f24a7d", "galdgate4p@globo.com", false, false, null, "GALDGATE4P@GLOBO.COM", "GALDGATE4P@GLOBO.COM", "AQAAAAEAACcQAAAAEFEaPhWiZRLHtnIg3a/mk8YHuoTrnNz32ZtnP9HDQpOebBOEzQnGmKsjDLCPZt/pgg==", null, false, "9d62dbfa-d945-4c8b-89da-89d38f5e97c5", false, "galdgate4p@globo.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "bd21724a-c179-4e90-9b4a-0b52900f5be3", 0, "4b78bf3d-6470-4cc0-a971-b8eb32a2f0ee", "ldeavin4o@prlog.org", false, false, null, "LDEAVIN4O@PRLOG.ORG", "LDEAVIN4O@PRLOG.ORG", "AQAAAAEAACcQAAAAEJ9OVmJmVaXdE/mY7iXwqbANHBTa0AqTsMpzialxvQuhlUrp9/t73Ng7ubiPzdcE5w==", null, false, "851486f9-982f-41a0-a0a4-085cc4647939", false, "ldeavin4o@prlog.org" });
+                values: new object[] { "bd21724a-c179-4e90-9b4a-0b52900f5be3", 0, "df7fb221-a62f-47f8-95bb-773cb798417e", "ldeavin4o@prlog.org", false, false, null, "LDEAVIN4O@PRLOG.ORG", "LDEAVIN4O@PRLOG.ORG", "AQAAAAEAACcQAAAAELjhtP/v/kFXFN5XAliZDDNhTEtOUkkfaLHBr+dIrRCHdTxK+PRU0zTEv218i00jyA==", null, false, "851486f9-982f-41a0-a0a4-085cc4647939", false, "ldeavin4o@prlog.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "32e3258c-dc6e-4f0c-868a-499374f5fa44", 0, "6feee3b2-b23c-48cb-b4e0-8ed5f8ad2a08", "ctatlow4n@cpanel.net", false, false, null, "CTATLOW4N@CPANEL.NET", "CTATLOW4N@CPANEL.NET", "AQAAAAEAACcQAAAAEE1iE16He55Izcy1HUlRAkutLYYZyzbxCTyRDftGN1kQq0trOdT21lkdIw0pN0U5/A==", null, false, "bfd00137-a66f-47d0-9f63-00f50090691f", false, "ctatlow4n@cpanel.net" });
+                values: new object[] { "32e3258c-dc6e-4f0c-868a-499374f5fa44", 0, "bc0c304b-be27-418b-8695-2e831ca8a319", "ctatlow4n@cpanel.net", false, false, null, "CTATLOW4N@CPANEL.NET", "CTATLOW4N@CPANEL.NET", "AQAAAAEAACcQAAAAEA1/Mdla0BV2uisTEd+BHtHFZ3i7xosoiFJ0c3El0VSObC1oj3DFY5M9Y7MvGtFxLg==", null, false, "bfd00137-a66f-47d0-9f63-00f50090691f", false, "ctatlow4n@cpanel.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "851d2159-e6d5-4dfc-a993-b3a12788fdef", 0, "5bc6bbe0-288d-42ef-ad21-dcd7023398cd", "mdunkerley4m@bizjournals.com", false, false, null, "MDUNKERLEY4M@BIZJOURNALS.COM", "MDUNKERLEY4M@BIZJOURNALS.COM", "AQAAAAEAACcQAAAAEIsSQZm+0prFEEnzc4kwMUEFtxAUG8iMPFGP6aDk6T5NPZ7CdYj1aOEMLUJYv62MBg==", null, false, "54005b57-7dee-4dcd-a088-bf2f91863463", false, "mdunkerley4m@bizjournals.com" });
+                values: new object[] { "851d2159-e6d5-4dfc-a993-b3a12788fdef", 0, "5023b1b9-4b61-44f9-8b8e-a7a88231ee4b", "mdunkerley4m@bizjournals.com", false, false, null, "MDUNKERLEY4M@BIZJOURNALS.COM", "MDUNKERLEY4M@BIZJOURNALS.COM", "AQAAAAEAACcQAAAAEJ77NsVvcxdZgOuKQzO8l7gC/N0shkgs+YrAXWsE3jA8PqnSI7LRtZ6bOfTnawDM5Q==", null, false, "54005b57-7dee-4dcd-a088-bf2f91863463", false, "mdunkerley4m@bizjournals.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "44690b10-8d2f-4817-9bb0-275387698ded", 0, "40a2c3ca-a5cb-4cac-995e-a8b748288bf6", "msansam4l@usgs.gov", false, false, null, "MSANSAM4L@USGS.GOV", "MSANSAM4L@USGS.GOV", "AQAAAAEAACcQAAAAEFQsW2Oq3K+0Fi/PPbytcuF06iafCvWdf1g7290rjj47mMQCWLVIuGr6Jfcn4OB+eQ==", null, false, "88030a95-8717-4622-b83e-be7d7d0a3d67", false, "msansam4l@usgs.gov" });
+                values: new object[] { "44690b10-8d2f-4817-9bb0-275387698ded", 0, "51989b8f-5582-4bf2-80ff-bade5104341b", "msansam4l@usgs.gov", false, false, null, "MSANSAM4L@USGS.GOV", "MSANSAM4L@USGS.GOV", "AQAAAAEAACcQAAAAECHZanrQqvMe+gcq4o3ljyVV/b0TQA8yZ6nzJXTOqWia3T3LZv523HJiPF3t+s8TPg==", null, false, "88030a95-8717-4622-b83e-be7d7d0a3d67", false, "msansam4l@usgs.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0de30aa8-d4f9-489c-8bf7-3c04d2da87b1", 0, "51a40114-b72a-4995-9974-ea9e757f254c", "rbartoszewicz49@ehow.com", false, false, null, "RBARTOSZEWICZ49@EHOW.COM", "RBARTOSZEWICZ49@EHOW.COM", "AQAAAAEAACcQAAAAEBqA2FqzwvfVN82moWNN27hOVnuxTy51FKGFQyljvreaYRlU6RsmL9cfXILZvjZF0w==", null, false, "2f8e358c-4eee-41cb-bc41-7bf28b610fe0", false, "rbartoszewicz49@ehow.com" });
+                values: new object[] { "0de30aa8-d4f9-489c-8bf7-3c04d2da87b1", 0, "27fb9b8b-c0ff-4aea-b53f-57add3f0b155", "rbartoszewicz49@ehow.com", false, false, null, "RBARTOSZEWICZ49@EHOW.COM", "RBARTOSZEWICZ49@EHOW.COM", "AQAAAAEAACcQAAAAELE97Zu0rZkFZEtzs9eZruHs4bdcenD445tEGucbClieUBfzFt5AfZ5D9jBcDDGeVw==", null, false, "2f8e358c-4eee-41cb-bc41-7bf28b610fe0", false, "rbartoszewicz49@ehow.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6543dbf2-5f47-48ba-8d4b-4f4c75217a71", 0, "e2ac5b66-e854-4696-9369-fff2bda4af98", "mleetham4k@arstechnica.com", false, false, null, "MLEETHAM4K@ARSTECHNICA.COM", "MLEETHAM4K@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAEH6YxPXj11rapOvAkdhk9l04s6cZm18W09+GKvVxopmuB7/DE126Vhi4WvXLqk51dA==", null, false, "004cb396-c504-4b57-aeeb-996e0b61d907", false, "mleetham4k@arstechnica.com" });
+                values: new object[] { "6543dbf2-5f47-48ba-8d4b-4f4c75217a71", 0, "1b99bbb4-847f-4f6e-8968-b5274ffefb4c", "mleetham4k@arstechnica.com", false, false, null, "MLEETHAM4K@ARSTECHNICA.COM", "MLEETHAM4K@ARSTECHNICA.COM", "AQAAAAEAACcQAAAAEDhnJ40Pux3jdQEA+uPbP7vzGxxGUfh2HfvEWkfGo3nfnoC7ui8VczNBSbN5Q7ttdg==", null, false, "004cb396-c504-4b57-aeeb-996e0b61d907", false, "mleetham4k@arstechnica.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9a518701-f79d-4111-9d8a-8fd9e5eaaa0a", 0, "b6d98823-39ac-4593-b2af-bc4b64918c1d", "cesslement4i@answers.com", false, false, null, "CESSLEMENT4I@ANSWERS.COM", "CESSLEMENT4I@ANSWERS.COM", "AQAAAAEAACcQAAAAECP7qI+gT3FQOVktyqNYQ63+3QWvzohPTyXYZ+WuJ+Br/lJIjBu20JwbmlzukHp9kA==", null, false, "7aac2ad2-cac4-4192-a5e7-1039e46468fa", false, "cesslement4i@answers.com" });
+                values: new object[] { "9a518701-f79d-4111-9d8a-8fd9e5eaaa0a", 0, "e38c708b-c86c-42d8-9399-9e9f3e103abb", "cesslement4i@answers.com", false, false, null, "CESSLEMENT4I@ANSWERS.COM", "CESSLEMENT4I@ANSWERS.COM", "AQAAAAEAACcQAAAAEByKMqK+x0I2lPhd9ubT+AIURtCbORLPticYoeUd5+O8MCTQfM7uwRA78h9do/nesA==", null, false, "7aac2ad2-cac4-4192-a5e7-1039e46468fa", false, "cesslement4i@answers.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d65000ed-9950-4189-bca5-ba7d3788a07e", 0, "f8c31aa5-83e1-42b4-849b-694f489d5658", "ftagg4h@bing.com", false, false, null, "FTAGG4H@BING.COM", "FTAGG4H@BING.COM", "AQAAAAEAACcQAAAAEM3n5KohBIfl+UKaq+kf0Ei3+Ppa14ycSRPG7z4iRrFdTX0NjPTsd8KK2McTEsaqNw==", null, false, "cbcfe09c-37b8-4da2-a5a9-c34623a3d910", false, "ftagg4h@bing.com" });
+                values: new object[] { "d65000ed-9950-4189-bca5-ba7d3788a07e", 0, "485e6848-b13c-454c-b9ac-d842a0d77fcd", "ftagg4h@bing.com", false, false, null, "FTAGG4H@BING.COM", "FTAGG4H@BING.COM", "AQAAAAEAACcQAAAAEDKRIN1dfd6N0hT+6FtfhEiG5mQGL0RYUJpbAJ0beNaTRKC2Cx/eaIzCVN9m6+mNlw==", null, false, "cbcfe09c-37b8-4da2-a5a9-c34623a3d910", false, "ftagg4h@bing.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e8df5e25-cc61-4308-a519-5a765e312a83", 0, "3b059f7e-8710-4302-8d36-e3852c2382eb", "igiamuzzo4g@cbc.ca", false, false, null, "IGIAMUZZO4G@CBC.CA", "IGIAMUZZO4G@CBC.CA", "AQAAAAEAACcQAAAAEODL5/aDsVuElTEFhBZd0AEzuzut3JQqNob53+u/9N9PEhaYf3ignumUhyxN8lscpA==", null, false, "84908852-9953-4bab-a9bf-f193b31c685e", false, "igiamuzzo4g@cbc.ca" });
+                values: new object[] { "e8df5e25-cc61-4308-a519-5a765e312a83", 0, "b6fd890c-93ac-4cd4-8c70-7de0d841b56e", "igiamuzzo4g@cbc.ca", false, false, null, "IGIAMUZZO4G@CBC.CA", "IGIAMUZZO4G@CBC.CA", "AQAAAAEAACcQAAAAEAjWdG+D5FyLOZYKIuQGX5wYI+5BlG60XJA6pQ+KuIcKH+A2Fv0Y18AtpIIBK1nJAw==", null, false, "84908852-9953-4bab-a9bf-f193b31c685e", false, "igiamuzzo4g@cbc.ca" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a78b781a-9fa9-48c5-a690-108c6d796210", 0, "7a12171b-8b50-459f-bcb3-a6aacc781b10", "hpenn4f@infoseek.co.jp", false, false, null, "HPENN4F@INFOSEEK.CO.JP", "HPENN4F@INFOSEEK.CO.JP", "AQAAAAEAACcQAAAAEK3QloINHEoQLzj+iiD8zTiaegY8AkX+cOPdo79Z9wp1OA5IfWUGIDFjRSd9bun1Pg==", null, false, "f6b3d2c6-9b6f-4543-9451-15b3901e13e5", false, "hpenn4f@infoseek.co.jp" });
+                values: new object[] { "a78b781a-9fa9-48c5-a690-108c6d796210", 0, "1330bd8a-1eb1-4818-bcef-041fe5675fda", "hpenn4f@infoseek.co.jp", false, false, null, "HPENN4F@INFOSEEK.CO.JP", "HPENN4F@INFOSEEK.CO.JP", "AQAAAAEAACcQAAAAELtVhJ9XOqxZEm9BUxf6mPeS13lPBosgqsObuv6I9sUeoe+QpoohrNtdJ8FJmlgsRw==", null, false, "f6b3d2c6-9b6f-4543-9451-15b3901e13e5", false, "hpenn4f@infoseek.co.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3b875c50-efbc-4a4a-a2a8-2e0a8a0f0e4c", 0, "82f6828a-4e71-4cb8-bc33-7eddd78afc57", "mfarnan4e@cpanel.net", false, false, null, "MFARNAN4E@CPANEL.NET", "MFARNAN4E@CPANEL.NET", "AQAAAAEAACcQAAAAELehN6GJPvSzf44rtFBlZTk0OwUgGxqdUSq9dzg7tnn0yF0AOI2GvJPHm4McbHrpiQ==", null, false, "5c14364e-7987-4f8c-83a8-f42a04933db1", false, "mfarnan4e@cpanel.net" });
+                values: new object[] { "3b875c50-efbc-4a4a-a2a8-2e0a8a0f0e4c", 0, "e546a46d-3f5f-477f-90e7-0f0e2ad6df43", "mfarnan4e@cpanel.net", false, false, null, "MFARNAN4E@CPANEL.NET", "MFARNAN4E@CPANEL.NET", "AQAAAAEAACcQAAAAEDyNHkK3WlI2BRE+3SmbzEs4WK7HMSrpUXSf++y7Sk3OkoBhitmSLXEcoaCQU1kPmQ==", null, false, "5c14364e-7987-4f8c-83a8-f42a04933db1", false, "mfarnan4e@cpanel.net" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "519575b1-e253-4510-8ae7-a8bf48f2bb2e", 0, "96599d1b-a746-4b3b-9e74-c655f55d298a", "cdenes4d@exblog.jp", false, false, null, "CDENES4D@EXBLOG.JP", "CDENES4D@EXBLOG.JP", "AQAAAAEAACcQAAAAED3QtfParlpY0QKSagVSt4O0SUmAsDNiF4dUqDOig7ATpxfLJSk8VSDM+BLEEhumzA==", null, false, "1612899b-886c-4a37-b7b3-eb8dcbea5ded", false, "cdenes4d@exblog.jp" });
+                values: new object[] { "519575b1-e253-4510-8ae7-a8bf48f2bb2e", 0, "009d1500-1a16-4957-8ca4-c80835817d13", "cdenes4d@exblog.jp", false, false, null, "CDENES4D@EXBLOG.JP", "CDENES4D@EXBLOG.JP", "AQAAAAEAACcQAAAAEFTtMFZbqc2hRTzf57Z9Dz70kUNWNaCyI1uiUad/IGnKsufh7I6Du049vBSbeEo4Eg==", null, false, "1612899b-886c-4a37-b7b3-eb8dcbea5ded", false, "cdenes4d@exblog.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "71a0b490-656f-42fe-afcb-bab366c44fdf", 0, "44031a0c-d1e2-49b5-ad0a-5a7e9a949d08", "obuckthorp4c@example.com", false, false, null, "OBUCKTHORP4C@EXAMPLE.COM", "OBUCKTHORP4C@EXAMPLE.COM", "AQAAAAEAACcQAAAAEBVMVuMV3GfgKmAyVYDr2+WmZVC5xGMWdgdHbko6CxF1A8fdZvH5gNzXEzsriZEgaw==", null, false, "3cddfcda-7fed-4214-97e4-ee384f515b55", false, "obuckthorp4c@example.com" });
+                values: new object[] { "71a0b490-656f-42fe-afcb-bab366c44fdf", 0, "ffc82dca-7b4e-42e7-b439-6d85366421ed", "obuckthorp4c@example.com", false, false, null, "OBUCKTHORP4C@EXAMPLE.COM", "OBUCKTHORP4C@EXAMPLE.COM", "AQAAAAEAACcQAAAAEMboxrm1RLZMcM+VW05w8pS44ClawjA9sqQQiOEtjWT8hDikWFmmm9eKWncny5LXqA==", null, false, "3cddfcda-7fed-4214-97e4-ee384f515b55", false, "obuckthorp4c@example.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "5f669903-4120-4085-bdb5-5cfbfc176e8b", 0, "5b0289ff-6695-4f1a-9919-a4e6e1e8b4df", "vbernardos4b@va.gov", false, false, null, "VBERNARDOS4B@VA.GOV", "VBERNARDOS4B@VA.GOV", "AQAAAAEAACcQAAAAEAFVV78A7/7fqUPPhul9EGO3o8Pjgq+J3vbqlvuQosgPDy5rR/nyv4utmJJ3E5fqLw==", null, false, "892cfdaf-9569-4cff-84bc-11c932572cf2", false, "vbernardos4b@va.gov" });
+                values: new object[] { "5f669903-4120-4085-bdb5-5cfbfc176e8b", 0, "1c4e4d8c-3c51-4f49-b267-2b965733d362", "vbernardos4b@va.gov", false, false, null, "VBERNARDOS4B@VA.GOV", "VBERNARDOS4B@VA.GOV", "AQAAAAEAACcQAAAAEJF6o0x+Ft+zxj5nepLt3dafvXJ7OoUGMMLRya+4GwTDGr93I+YqW+IhyktMXYp4xQ==", null, false, "892cfdaf-9569-4cff-84bc-11c932572cf2", false, "vbernardos4b@va.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "912480ac-3d71-4502-8cce-c8c2d8aa4810", 0, "038478b9-3054-427c-ab57-db9dffb9e1d0", "dmoulton4j@vkontakte.ru", false, false, null, "DMOULTON4J@VKONTAKTE.RU", "DMOULTON4J@VKONTAKTE.RU", "AQAAAAEAACcQAAAAEL/TZDRG/Sv37uo2Wzvvvzij6FEbEt19GS0Ymx5idoqIb4p00LxM98bHpXbJPyHo9w==", null, false, "fc779877-8292-4993-8edc-7defd2104005", false, "dmoulton4j@vkontakte.ru" });
+                values: new object[] { "912480ac-3d71-4502-8cce-c8c2d8aa4810", 0, "315eafd8-3412-47e0-a71c-da5aa774e895", "dmoulton4j@vkontakte.ru", false, false, null, "DMOULTON4J@VKONTAKTE.RU", "DMOULTON4J@VKONTAKTE.RU", "AQAAAAEAACcQAAAAEIn/73q//+qqpnn0S4/oojaUMgmrL2Z3yEuzdCLlehvausKYdWhqjTDuXqrn3OOYWA==", null, false, "fc779877-8292-4993-8edc-7defd2104005", false, "dmoulton4j@vkontakte.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "adadfb4e-f11f-4dda-bb40-1e42ea064ac1", 0, "4e0ef657-f895-4056-ae47-99b71beeaee6", "tnashe2f@go.com", false, false, null, "TNASHE2F@GO.COM", "TNASHE2F@GO.COM", "AQAAAAEAACcQAAAAELb34/ZsY6fGZLz8z0WoW4wFd4Cwnlhf50CPCv0FFaZIQfwMmAp97+XjHn67oY9khQ==", null, false, "fa931b10-faf0-4a2a-85e1-d2d1f007e19d", false, "tnashe2f@go.com" });
+                values: new object[] { "adadfb4e-f11f-4dda-bb40-1e42ea064ac1", 0, "b22f1100-3e29-46a7-baa2-a9f44253661a", "tnashe2f@go.com", false, false, null, "TNASHE2F@GO.COM", "TNASHE2F@GO.COM", "AQAAAAEAACcQAAAAEIpvyn+kYG9Ppw4AP8j7iIcLB0D5jqk5MvEqezN65WAwC2wEHslGmHvayzGM1z+x8w==", null, false, "fa931b10-faf0-4a2a-85e1-d2d1f007e19d", false, "tnashe2f@go.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "067f35f5-5214-47c9-92cd-6b501c34e193", 0, "fd0c1fe9-576b-4ec8-bf73-44f6748bdd3c", "mdiggles3n@mozilla.com", false, false, null, "MDIGGLES3N@MOZILLA.COM", "MDIGGLES3N@MOZILLA.COM", "AQAAAAEAACcQAAAAEKlh6CYLEvurBBblNB14pEcWBUQp+399HuIMN9JB4gF2WRM+USfqnpjVbmhnW+qatA==", null, false, "b6a0ac3b-1499-470b-a0e4-c3df8108bb62", false, "mdiggles3n@mozilla.com" });
+                values: new object[] { "067f35f5-5214-47c9-92cd-6b501c34e193", 0, "359b3d6b-311d-4831-8d65-06a129015afd", "mdiggles3n@mozilla.com", false, false, null, "MDIGGLES3N@MOZILLA.COM", "MDIGGLES3N@MOZILLA.COM", "AQAAAAEAACcQAAAAEL3JtzpKKvTuDcaEm1ajbaEuMwpX49pFM9tROuSHxVGb1jt+ZxuIQI1RlUfegq/15Q==", null, false, "b6a0ac3b-1499-470b-a0e4-c3df8108bb62", false, "mdiggles3n@mozilla.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c1e49c4a-f08e-4454-8837-06f2e25dd796", 0, "c138d069-d2b9-473f-873d-bb3e6560a4aa", "ddantoni3l@biglobe.ne.jp", false, false, null, "DDANTONI3L@BIGLOBE.NE.JP", "DDANTONI3L@BIGLOBE.NE.JP", "AQAAAAEAACcQAAAAEE8yyGUtuCyh9WLu+GE4H8UhQ2wbLf1DWrJ6vDfhBrdFgM36/Gjzf8wA8SvNYKOIHQ==", null, false, "3480cef2-71d4-4921-95b1-e26e97a74cd3", false, "ddantoni3l@biglobe.ne.jp" });
+                values: new object[] { "c1e49c4a-f08e-4454-8837-06f2e25dd796", 0, "6a25567e-376c-4678-944c-88dae85ba51e", "ddantoni3l@biglobe.ne.jp", false, false, null, "DDANTONI3L@BIGLOBE.NE.JP", "DDANTONI3L@BIGLOBE.NE.JP", "AQAAAAEAACcQAAAAEKhK7IavLRTv1INxdPGpbyQHhn+dwLlTdVc/zEjwSBfRzivEA+FxXWk9FC3qzcSTfw==", null, false, "3480cef2-71d4-4921-95b1-e26e97a74cd3", false, "ddantoni3l@biglobe.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d10576e1-b966-4024-bcab-46f41e30fc75", 0, "414b9c54-a0c4-4008-875b-597d61268ec1", "vsalomon2y@creativecommons.org", false, false, null, "VSALOMON2Y@CREATIVECOMMONS.ORG", "VSALOMON2Y@CREATIVECOMMONS.ORG", "AQAAAAEAACcQAAAAEK0bqBxnhJHRbJ+zMHwEgm5vFHQ8VRkFMAId/uf13K2Yn0sImQR0SL8uof5ERuTF7w==", null, false, "c5bc3485-705f-4ec4-bcbc-7733d01afb20", false, "vsalomon2y@creativecommons.org" });
+                values: new object[] { "d10576e1-b966-4024-bcab-46f41e30fc75", 0, "004d0196-b293-40ac-bb6d-52b5e40fe6a5", "vsalomon2y@creativecommons.org", false, false, null, "VSALOMON2Y@CREATIVECOMMONS.ORG", "VSALOMON2Y@CREATIVECOMMONS.ORG", "AQAAAAEAACcQAAAAEPNVCSUhXmuvHF4UGdVLMgguH4OB+4gKu1ADaXWiYDIsRi79N71b/Du0c1umqwP8MQ==", null, false, "c5bc3485-705f-4ec4-bcbc-7733d01afb20", false, "vsalomon2y@creativecommons.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1915f4e6-ef01-4168-906f-1f1ba39401e0", 0, "ef9ef303-47c0-45a6-8c58-19b94579c436", "thallatt2x@1und1.de", false, false, null, "THALLATT2X@1UND1.DE", "THALLATT2X@1UND1.DE", "AQAAAAEAACcQAAAAEH83uxsNJ+tHQTQplh+6pROrfLy7AmeNEwhiCZ1GFa2e0mG1AV/iMOps5t0jtPL+wA==", null, false, "19a759cb-008e-4fca-adeb-20ba6e2a0665", false, "thallatt2x@1und1.de" });
+                values: new object[] { "1915f4e6-ef01-4168-906f-1f1ba39401e0", 0, "ee50bb67-b364-418b-96de-660dc3f04ca9", "thallatt2x@1und1.de", false, false, null, "THALLATT2X@1UND1.DE", "THALLATT2X@1UND1.DE", "AQAAAAEAACcQAAAAEKxoefO2+QaFpbmOY9YiBVwBb+MdUno8i5jM+aoFV79BhbLBwkWmAnQA7nACBh0PsA==", null, false, "19a759cb-008e-4fca-adeb-20ba6e2a0665", false, "thallatt2x@1und1.de" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8a278fd6-82ab-411f-a273-26f32ea8370c", 0, "6f6972eb-6c00-4267-aeec-b992519c7ab7", "rhinksen2w@jiathis.com", false, false, null, "RHINKSEN2W@JIATHIS.COM", "RHINKSEN2W@JIATHIS.COM", "AQAAAAEAACcQAAAAEOrcknbStMdSw22LZ6zfVc2gJxqWtKo8HYJjZLnsQfln6sf/6ZtShlRS/DGVfii1rg==", null, false, "6faffba9-1611-4004-a32f-6a67db417da8", false, "rhinksen2w@jiathis.com" });
+                values: new object[] { "8a278fd6-82ab-411f-a273-26f32ea8370c", 0, "5826977f-0089-41f5-b970-05851f63a2bc", "rhinksen2w@jiathis.com", false, false, null, "RHINKSEN2W@JIATHIS.COM", "RHINKSEN2W@JIATHIS.COM", "AQAAAAEAACcQAAAAEIokkNRt6a473pxDIrWmWZVeCaTu3BfNr/d8FXLbfL5RBfDXtveZW26zPJ8mi5ytkg==", null, false, "6faffba9-1611-4004-a32f-6a67db417da8", false, "rhinksen2w@jiathis.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "59877249-83ad-4e58-835d-97385e104ecf", 0, "39e39360-a4ee-432a-92f8-7e86c95f3a82", "ewoloschin2v@apache.org", false, false, null, "EWOLOSCHIN2V@APACHE.ORG", "EWOLOSCHIN2V@APACHE.ORG", "AQAAAAEAACcQAAAAEFSJYoD74j21ZmQZeKs+Nf0jqPL9t0vOO0m4EcCFE/XYz6NL8nLiKQF1hPctyp6mxQ==", null, false, "ea6150cd-a4fa-45da-b0b3-88ef7d0b2b59", false, "ewoloschin2v@apache.org" });
+                values: new object[] { "59877249-83ad-4e58-835d-97385e104ecf", 0, "589bb8b5-10dd-4afb-89ad-02c5fa94d818", "ewoloschin2v@apache.org", false, false, null, "EWOLOSCHIN2V@APACHE.ORG", "EWOLOSCHIN2V@APACHE.ORG", "AQAAAAEAACcQAAAAEDNEHUbhrt1+Dn15XJ/+R2+yVxv6k2BFXQQ97VNu9G0Dctp8muAqrBBoJ6J8HOSnQA==", null, false, "ea6150cd-a4fa-45da-b0b3-88ef7d0b2b59", false, "ewoloschin2v@apache.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "71f63a6b-d52e-4beb-8127-270a86160aec", 0, "83c216df-5ca5-405f-bd55-6a900df17360", "gmerrick2u@geocities.jp", false, false, null, "GMERRICK2U@GEOCITIES.JP", "GMERRICK2U@GEOCITIES.JP", "AQAAAAEAACcQAAAAEMshBhCKsA27T0rBk5F9ttnMzwehYpScUETklwlp/L0kv7oWhTO3Q9NnuzmAR6kxzw==", null, false, "45d9f0cc-4ac5-43aa-aa84-3b2b9dafd7e2", false, "gmerrick2u@geocities.jp" });
+                values: new object[] { "71f63a6b-d52e-4beb-8127-270a86160aec", 0, "cb14206f-d81b-433a-b187-d3f5604807d9", "gmerrick2u@geocities.jp", false, false, null, "GMERRICK2U@GEOCITIES.JP", "GMERRICK2U@GEOCITIES.JP", "AQAAAAEAACcQAAAAEFH2NwEoi04nMS6u5eLaZulgP4cwfm3p+ZfcdsnIoujaoUxgVb3yBQUTQzNNiLMgXg==", null, false, "45d9f0cc-4ac5-43aa-aa84-3b2b9dafd7e2", false, "gmerrick2u@geocities.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "4557d4e9-92c1-44e3-9535-e2519bf2100c", 0, "c187b388-feaa-4d8d-9fc0-5cbab30fb6ec", "urushmer2t@cmu.edu", false, false, null, "URUSHMER2T@CMU.EDU", "URUSHMER2T@CMU.EDU", "AQAAAAEAACcQAAAAEAN3FilyK79UyBRbWmTuCOivvfd2ivTyjxGxio+varEVCHOwlONonf+YDvwAk9RXfg==", null, false, "c95332f1-6c42-43a4-8aea-f434e38739b2", false, "urushmer2t@cmu.edu" });
+                values: new object[] { "4557d4e9-92c1-44e3-9535-e2519bf2100c", 0, "8915d0c6-b9ab-4d88-8b76-cc634850d93a", "urushmer2t@cmu.edu", false, false, null, "URUSHMER2T@CMU.EDU", "URUSHMER2T@CMU.EDU", "AQAAAAEAACcQAAAAEDYOYDCWtMflUmP+OT2ddcGCWPJq/I++1CpNOJz8x3gBg1gqafWNsv1Fvso4tJB6eA==", null, false, "c95332f1-6c42-43a4-8aea-f434e38739b2", false, "urushmer2t@cmu.edu" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "67672bc3-b2fb-4b89-a3be-d020c515f629", 0, "5a9a9342-39ad-4828-993c-359af63709ae", "rshmyr2s@livejournal.com", false, false, null, "RSHMYR2S@LIVEJOURNAL.COM", "RSHMYR2S@LIVEJOURNAL.COM", "AQAAAAEAACcQAAAAEE+7Jn3onf6MXigjVhJnTEtzEq2Z79vUZAgxVHV7HAQoV0cimp0DjradbheDB8Rp5Q==", null, false, "1ac810a6-3040-4d49-8be4-503af158fcb3", false, "rshmyr2s@livejournal.com" });
+                values: new object[] { "67672bc3-b2fb-4b89-a3be-d020c515f629", 0, "5a568563-f37d-4bd7-a318-1aed877351ca", "rshmyr2s@livejournal.com", false, false, null, "RSHMYR2S@LIVEJOURNAL.COM", "RSHMYR2S@LIVEJOURNAL.COM", "AQAAAAEAACcQAAAAEKXIP0fx2HPo9k2U6/yBu+S/ahiSxj7mB+TThroigNCuhQGHQyJXY6y7Sdi450I2sA==", null, false, "1ac810a6-3040-4d49-8be4-503af158fcb3", false, "rshmyr2s@livejournal.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e85414d4-c51d-4165-933d-aa5058f7bd51", 0, "32bad8fa-735c-47a6-91c0-a4f9a07ba737", "jrandales2r@google.it", false, false, null, "JRANDALES2R@GOOGLE.IT", "JRANDALES2R@GOOGLE.IT", "AQAAAAEAACcQAAAAEG+O79sEfYnq60VRPc/TOOkyRcCIMfg282uT+f9g4mg1iAsQPN8H69mAaNNEzyk6ow==", null, false, "c9ce9fda-86bb-411e-978b-e54422b525f5", false, "jrandales2r@google.it" });
+                values: new object[] { "e85414d4-c51d-4165-933d-aa5058f7bd51", 0, "e87e94fa-a1f9-480e-9830-1b5aaa924c6c", "jrandales2r@google.it", false, false, null, "JRANDALES2R@GOOGLE.IT", "JRANDALES2R@GOOGLE.IT", "AQAAAAEAACcQAAAAEE1m2fw0CFy3L74NYme/kDifPZqyON7dnbQ2kpxMcJlJcsB80xGtdv5wsomZpK0NdQ==", null, false, "c9ce9fda-86bb-411e-978b-e54422b525f5", false, "jrandales2r@google.it" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "968b4642-d483-41e2-907c-2ac5f7a7e828", 0, "81fb23c5-c368-44bf-b387-c0f2b94fb89c", "gmackness2z@so-net.ne.jp", false, false, null, "GMACKNESS2Z@SO-NET.NE.JP", "GMACKNESS2Z@SO-NET.NE.JP", "AQAAAAEAACcQAAAAEGZcksUX7TnBMrhXOF7cPqgW+hSn8zpjXtwiCOBlARMru8muIBt6wWBEHBovWl/tWg==", null, false, "f0cca230-8542-4f53-8cfa-39967fa23477", false, "gmackness2z@so-net.ne.jp" });
+                values: new object[] { "968b4642-d483-41e2-907c-2ac5f7a7e828", 0, "4a2738de-6a2e-496e-8216-fe20bfd4c831", "gmackness2z@so-net.ne.jp", false, false, null, "GMACKNESS2Z@SO-NET.NE.JP", "GMACKNESS2Z@SO-NET.NE.JP", "AQAAAAEAACcQAAAAEPR3eQFLC/rxylyU2TJ9fBuPCWrCYgALMHD5xKaXeyJvYiyeUfaGkRsM9ZVxhTHipw==", null, false, "f0cca230-8542-4f53-8cfa-39967fa23477", false, "gmackness2z@so-net.ne.jp" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "0408edf1-eb56-47b8-8b55-55d29963a433", 0, "3eeb83f5-36fe-49f3-864b-e087f06fbf18", "dmcaster2q@ezinearticles.com", false, false, null, "DMCASTER2Q@EZINEARTICLES.COM", "DMCASTER2Q@EZINEARTICLES.COM", "AQAAAAEAACcQAAAAEGlmW8VIm5hvkoof1VhCbO0qCKktGiQR0edFUsIW9mrBAfjc6TS1yUGYYPzg/eRtng==", null, false, "d5c2e2a2-5f75-4a58-b7a0-88365bc81ae8", false, "dmcaster2q@ezinearticles.com" });
+                values: new object[] { "0408edf1-eb56-47b8-8b55-55d29963a433", 0, "060c3433-728a-472d-bfa2-d516309185cc", "dmcaster2q@ezinearticles.com", false, false, null, "DMCASTER2Q@EZINEARTICLES.COM", "DMCASTER2Q@EZINEARTICLES.COM", "AQAAAAEAACcQAAAAEFGcpnyK+pBOQ0hJwN1ncw6ksHXpI00/QnYvchmc7yv1RzByQw0fsUi9jJbPEbo5uw==", null, false, "d5c2e2a2-5f75-4a58-b7a0-88365bc81ae8", false, "dmcaster2q@ezinearticles.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f7d34a6c-c5a7-4152-8bcb-03af1c1660df", 0, "80049c69-3e83-41b0-adfc-93c78aa6e2ae", "bwetheril2o@ycombinator.com", false, false, null, "BWETHERIL2O@YCOMBINATOR.COM", "BWETHERIL2O@YCOMBINATOR.COM", "AQAAAAEAACcQAAAAEGmbTF8scBJ2Aebzgsm2vV53unmYbI46oTJkQyad9EChpwL3wIsLEl7tVwBZK6hRdA==", null, false, "feefc859-fcde-4978-a189-9faa4ccd7109", false, "bwetheril2o@ycombinator.com" });
+                values: new object[] { "f7d34a6c-c5a7-4152-8bcb-03af1c1660df", 0, "854a1010-8964-4387-89c3-e9f96397ecbb", "bwetheril2o@ycombinator.com", false, false, null, "BWETHERIL2O@YCOMBINATOR.COM", "BWETHERIL2O@YCOMBINATOR.COM", "AQAAAAEAACcQAAAAEBzHsxzth297iFh59TctQbT7E3ZSvT6ZaCzBCOnyLdfpamQwOFjdHtRrdjR6BXoy9A==", null, false, "feefc859-fcde-4978-a189-9faa4ccd7109", false, "bwetheril2o@ycombinator.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "f207f974-feae-4018-9c68-8bab16a18691", 0, "7f11c1ed-ec99-494d-b291-4b56b8becda9", "abold2n@bizjournals.com", false, false, null, "ABOLD2N@BIZJOURNALS.COM", "ABOLD2N@BIZJOURNALS.COM", "AQAAAAEAACcQAAAAEL+I5s4IcxjvLR28S7ahZb1F3rckyHoFQdQhQ+plm/Dc8hoNalUSYI2W/WZ5E3ZOPg==", null, false, "2b6f38d5-1fca-472f-bca7-ea2a83d34b90", false, "abold2n@bizjournals.com" });
+                values: new object[] { "f207f974-feae-4018-9c68-8bab16a18691", 0, "053d3407-c512-4f2d-82b0-bd4d0b8d861b", "abold2n@bizjournals.com", false, false, null, "ABOLD2N@BIZJOURNALS.COM", "ABOLD2N@BIZJOURNALS.COM", "AQAAAAEAACcQAAAAEBJ7c0Do7EAWoLM0+emUV77BfRzZ0cVi04tXxJ28A2fdkyVRqu8Z+UGXGGAit68Ysw==", null, false, "2b6f38d5-1fca-472f-bca7-ea2a83d34b90", false, "abold2n@bizjournals.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e743769f-a25b-444a-aed0-4e5aa9797abe", 0, "cdc6401b-0fc0-482c-b9b7-260aa15e9085", "nruckhard2m@fema.gov", false, false, null, "NRUCKHARD2M@FEMA.GOV", "NRUCKHARD2M@FEMA.GOV", "AQAAAAEAACcQAAAAEPtB5TmkiTJwNWILasSQRpSInE/R1nxU3RdgnifyNrVNXFixpGy+H1vmMWA0+cL3KA==", null, false, "f9e56005-be69-443f-ae13-bcea295e8886", false, "nruckhard2m@fema.gov" });
+                values: new object[] { "e743769f-a25b-444a-aed0-4e5aa9797abe", 0, "43ba1b6c-2b3d-4519-8a76-1f4092efdd13", "nruckhard2m@fema.gov", false, false, null, "NRUCKHARD2M@FEMA.GOV", "NRUCKHARD2M@FEMA.GOV", "AQAAAAEAACcQAAAAEHTDU43HYlWW0/fi6v4zjyNfbrZHXF2zDWo5OIQlqlmw6fygA6PIRmXGbNVt0g7TNA==", null, false, "f9e56005-be69-443f-ae13-bcea295e8886", false, "nruckhard2m@fema.gov" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "269cac9c-9e25-4b90-a6c4-6e4fd6c1b6ef", 0, "cad83383-9211-4ca9-8a2f-9b7c94875648", "phedditch2l@example.com", false, false, null, "PHEDDITCH2L@EXAMPLE.COM", "PHEDDITCH2L@EXAMPLE.COM", "AQAAAAEAACcQAAAAENL0wGarIKBu0T8miqgNl05yBNRFqN5jzZDRI3AahfxeG9A4bdZsvkHq4BZ0rbUnvg==", null, false, "2712729a-6b18-4736-8a52-8f5e002b6cc1", false, "phedditch2l@example.com" });
+                values: new object[] { "269cac9c-9e25-4b90-a6c4-6e4fd6c1b6ef", 0, "67f2752b-ed54-46b1-9f24-f6cc2db9922c", "phedditch2l@example.com", false, false, null, "PHEDDITCH2L@EXAMPLE.COM", "PHEDDITCH2L@EXAMPLE.COM", "AQAAAAEAACcQAAAAEE2fxcdNBix17XAPvDuTtndHmhY2su1bTrfS7lS2pAvfGQL1u4Z4TFrzUzRSspNnlg==", null, false, "2712729a-6b18-4736-8a52-8f5e002b6cc1", false, "phedditch2l@example.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c2f0685f-5eec-4022-bb7d-506a02292635", 0, "ec1522a9-b38a-4cb2-95fb-cce60c610145", "awoolpert2k@pcworld.com", false, false, null, "AWOOLPERT2K@PCWORLD.COM", "AWOOLPERT2K@PCWORLD.COM", "AQAAAAEAACcQAAAAEG8KPNokxGhwzIcFvmY/RS/ZE6RngCHAa21hR10u2v5Oe8cFs/Bls10ScNsysgV28g==", null, false, "0c2b1d4f-0d2d-473a-a8d6-1f82cadfe1b2", false, "awoolpert2k@pcworld.com" });
+                values: new object[] { "c2f0685f-5eec-4022-bb7d-506a02292635", 0, "2c6f4136-5dbf-4188-8ad7-853b4c09c9dd", "awoolpert2k@pcworld.com", false, false, null, "AWOOLPERT2K@PCWORLD.COM", "AWOOLPERT2K@PCWORLD.COM", "AQAAAAEAACcQAAAAED+pj1IhkGcGYWTAUd1gjRw0M0jYn+0Phn5qXgF+PTPvIB9cp3Kp2j47/tfSrB1CDQ==", null, false, "0c2b1d4f-0d2d-473a-a8d6-1f82cadfe1b2", false, "awoolpert2k@pcworld.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "539b0269-ef0d-4a4f-81c8-fa883379614b", 0, "d92c63fc-8b5d-434a-b72e-24bcdf17f946", "scisec2j@digg.com", false, false, null, "SCISEC2J@DIGG.COM", "SCISEC2J@DIGG.COM", "AQAAAAEAACcQAAAAENBXj2rQQ6t2qe/L0RhknSmyPh2eHuR0NUAHTGroHLL+V+pFHeysuaxx9GCkT1yz0A==", null, false, "2eb2d1ec-e09a-45e2-a508-d41c1612c3d4", false, "scisec2j@digg.com" });
+                values: new object[] { "539b0269-ef0d-4a4f-81c8-fa883379614b", 0, "bbc7e0a3-4947-410f-8859-69816e335357", "scisec2j@digg.com", false, false, null, "SCISEC2J@DIGG.COM", "SCISEC2J@DIGG.COM", "AQAAAAEAACcQAAAAEGNZ7koER1D1M0/Itbz/L1zqnBY4fzdqBE9yRQ7jffx1shmJLWg4MV4NJx3nqpt0Pg==", null, false, "2eb2d1ec-e09a-45e2-a508-d41c1612c3d4", false, "scisec2j@digg.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "fd31b5d1-d95e-4197-afd7-6cce672d8fe1", 0, "796c1ece-e84b-480f-a5fb-8bd2516ddd29", "htruelove2i@github.io", false, false, null, "HTRUELOVE2I@GITHUB.IO", "HTRUELOVE2I@GITHUB.IO", "AQAAAAEAACcQAAAAEMrKfiKZSRitR94ejSFJRyWB6RklUG0oFbmUzfrIeg4GZWHGYshpi3bXfxHo9yS2/w==", null, false, "055e12fa-8dc2-4308-95bf-de07df228865", false, "htruelove2i@github.io" });
+                values: new object[] { "fd31b5d1-d95e-4197-afd7-6cce672d8fe1", 0, "9a3ae441-3025-441f-98bb-66e4595cb78a", "htruelove2i@github.io", false, false, null, "HTRUELOVE2I@GITHUB.IO", "HTRUELOVE2I@GITHUB.IO", "AQAAAAEAACcQAAAAELpSBkaVhuuvB9yUNPVhsRGr/Xk13hotdJZr91ptBLYlS0+CHwOyOL3LEzGceneMzQ==", null, false, "055e12fa-8dc2-4308-95bf-de07df228865", false, "htruelove2i@github.io" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "de7b99e2-2904-4992-baee-e4df77668378", 0, "b4c490ec-7721-4d38-a236-6be663ab853d", "hgerriessen2h@elegantthemes.com", false, false, null, "HGERRIESSEN2H@ELEGANTTHEMES.COM", "HGERRIESSEN2H@ELEGANTTHEMES.COM", "AQAAAAEAACcQAAAAEOiKYat4m9qfxMnczRZ+Z7lNjb91mC5ZMtPUGm7VF4eMttX7tkzrBjST8hYqebB5Mg==", null, false, "1c579a2a-740d-4977-8cdd-785ad32a7edd", false, "hgerriessen2h@elegantthemes.com" });
+                values: new object[] { "de7b99e2-2904-4992-baee-e4df77668378", 0, "29d471fd-bc5b-456e-b2c7-baa2352ef354", "hgerriessen2h@elegantthemes.com", false, false, null, "HGERRIESSEN2H@ELEGANTTHEMES.COM", "HGERRIESSEN2H@ELEGANTTHEMES.COM", "AQAAAAEAACcQAAAAEB00xiE6GRbjG/XT9SytO4cmHJTCYyF+uxxDZuHgigOi0Gbl5Ky4RldAHkWtrcKsBw==", null, false, "1c579a2a-740d-4977-8cdd-785ad32a7edd", false, "hgerriessen2h@elegantthemes.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "288f4f00-41f8-4190-884d-270f3a50b5bb", 0, "c79aa612-54c6-4244-8426-429321799a7a", "ssebley2p@jigsy.com", false, false, null, "SSEBLEY2P@JIGSY.COM", "SSEBLEY2P@JIGSY.COM", "AQAAAAEAACcQAAAAEFuwh8DJqUasayneBzC/G0qoArwUQW8L2BWU+1AtaEnV0zFizC84IM2orvInn4LFNw==", null, false, "af13887a-61d3-467b-8899-ea9454fdd4a3", false, "ssebley2p@jigsy.com" });
+                values: new object[] { "288f4f00-41f8-4190-884d-270f3a50b5bb", 0, "6bae633d-3dec-4c46-b8d3-556f146db70e", "ssebley2p@jigsy.com", false, false, null, "SSEBLEY2P@JIGSY.COM", "SSEBLEY2P@JIGSY.COM", "AQAAAAEAACcQAAAAEFq6t2j2+mIr2PoSBzFs1XdSAXelGFZ/TwFXn/KwWvg6OEb0w/W8m8ygjTQwbHef9Q==", null, false, "af13887a-61d3-467b-8899-ea9454fdd4a3", false, "ssebley2p@jigsy.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "55a43ad3-fb08-4dc5-a196-3274e76a414a", 0, "6e6d58a3-1ac4-4aa1-bdcb-6376c5abe2c2", "aellerton3m@wikispaces.com", false, false, null, "AELLERTON3M@WIKISPACES.COM", "AELLERTON3M@WIKISPACES.COM", "AQAAAAEAACcQAAAAEFzHupi1SwU+Mt9o5g7VhRwFWBBaXlV9T7MvNe53i8EEOopyDU23/IootMdlyJFApA==", null, false, "1d1bba75-2c27-40af-8de8-0f6e62bf74d2", false, "aellerton3m@wikispaces.com" });
+                values: new object[] { "55a43ad3-fb08-4dc5-a196-3274e76a414a", 0, "14b14a4e-55d4-43eb-8b21-52a889feda75", "aellerton3m@wikispaces.com", false, false, null, "AELLERTON3M@WIKISPACES.COM", "AELLERTON3M@WIKISPACES.COM", "AQAAAAEAACcQAAAAEFXJBhpefn5hAxI344AoOVy/AQt66Qz30tb1qL/ak1Hpx/F4e1yCBI6f2LheMGlKwQ==", null, false, "1d1bba75-2c27-40af-8de8-0f6e62bf74d2", false, "aellerton3m@wikispaces.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "26e4f5c7-2bd8-4228-87f8-560013a3ca01", 0, "67eec95f-0911-4fde-83b7-5be641eaf69d", "cputland30@jiathis.com", false, false, null, "CPUTLAND30@JIATHIS.COM", "CPUTLAND30@JIATHIS.COM", "AQAAAAEAACcQAAAAEPTyz6zGPn2NOv2KBq0tvocE0xgxUkbdU8uYeyOIWlETDxoXcu5iEBG8bMy+989C0g==", null, false, "4a912e00-e095-4fa3-a453-aacee777134f", false, "cputland30@jiathis.com" });
+                values: new object[] { "26e4f5c7-2bd8-4228-87f8-560013a3ca01", 0, "88050b6e-4378-446b-bb0f-8a675b339b17", "cputland30@jiathis.com", false, false, null, "CPUTLAND30@JIATHIS.COM", "CPUTLAND30@JIATHIS.COM", "AQAAAAEAACcQAAAAEEsCwFreKPg/vF6rPCpz6y/RXFNJfBhEbN3KmpOydulBjNITrbekemThN+O0v01UWw==", null, false, "4a912e00-e095-4fa3-a453-aacee777134f", false, "cputland30@jiathis.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e56f7b59-0cff-498c-9c8c-731e8fade8d4", 0, "ed70ac43-a012-4b59-a0d1-fafd3f0c1086", "cseebright32@deliciousdays.com", false, false, null, "CSEEBRIGHT32@DELICIOUSDAYS.COM", "CSEEBRIGHT32@DELICIOUSDAYS.COM", "AQAAAAEAACcQAAAAEOoxGS10IXSrI/IyJuSB51X1IXROzw/5uh15VqRUpQIYdotMNXGAZUSKRcT0ySeyFA==", null, false, "46c92901-793c-467e-b57f-13d158e47f38", false, "cseebright32@deliciousdays.com" });
+                values: new object[] { "e56f7b59-0cff-498c-9c8c-731e8fade8d4", 0, "93d7ae38-b137-4fc9-ac41-ee71b32cb7ec", "cseebright32@deliciousdays.com", false, false, null, "CSEEBRIGHT32@DELICIOUSDAYS.COM", "CSEEBRIGHT32@DELICIOUSDAYS.COM", "AQAAAAEAACcQAAAAEBCK9nHBUaMH01f56Xvf+YwNjYtOpSyEIcIOtT0odRhQbWdwcXglAC4vwQQ4YJ8CPA==", null, false, "46c92901-793c-467e-b57f-13d158e47f38", false, "cseebright32@deliciousdays.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "763a94d8-da5a-4471-b6e9-264645cb14fd", 0, "f82b6307-2178-4392-bfe8-d6a62d78f275", "dbischof3k@free.fr", false, false, null, "DBISCHOF3K@FREE.FR", "DBISCHOF3K@FREE.FR", "AQAAAAEAACcQAAAAEAo4eN6Q/Jb8PJxJYZipgffhmsU8imANJ+87y2UF+nbgNrduJpI+xLPs/NNSyiBHOg==", null, false, "716dc39b-2a68-4803-a757-0d34cea529d4", false, "dbischof3k@free.fr" });
+                values: new object[] { "763a94d8-da5a-4471-b6e9-264645cb14fd", 0, "b46ee07d-65d8-44b0-8663-ef1555f50308", "dbischof3k@free.fr", false, false, null, "DBISCHOF3K@FREE.FR", "DBISCHOF3K@FREE.FR", "AQAAAAEAACcQAAAAEE8WAKmZguDf12ClKVc0j/Yipt9HIV07d7Ov0SjTPBmrJbfrnMUC5QkHWPwC4pQHpQ==", null, false, "716dc39b-2a68-4803-a757-0d34cea529d4", false, "dbischof3k@free.fr" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "29c5d2af-d169-4b75-9418-91a2bbd5c441", 0, "0a316f6c-1042-4fb8-ae6f-e41a98d3064b", "pmaric3j@unicef.org", false, false, null, "PMARIC3J@UNICEF.ORG", "PMARIC3J@UNICEF.ORG", "AQAAAAEAACcQAAAAEGnm70SmNphmj8pL+IEd2+FTBJ9bECrPi22XQyTR5Q9NSMDHGh59EoMceDdNewA9XQ==", null, false, "4c77ab72-db1a-4eb8-a317-329d0c612314", false, "pmaric3j@unicef.org" });
+                values: new object[] { "29c5d2af-d169-4b75-9418-91a2bbd5c441", 0, "211b2e23-a657-42a7-9e32-17dbcc35e987", "pmaric3j@unicef.org", false, false, null, "PMARIC3J@UNICEF.ORG", "PMARIC3J@UNICEF.ORG", "AQAAAAEAACcQAAAAEKd07Fh9KUbBWCW60rNSQgcf3CnGqcbvQYaTN3RcV6xcOvDj7Mzki1dlD47u8YlNeA==", null, false, "4c77ab72-db1a-4eb8-a317-329d0c612314", false, "pmaric3j@unicef.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cb6e89c2-5b09-4720-8bc8-1e2775302b25", 0, "987a1a54-5213-452b-9dc6-440e9a684088", "dknevit3i@drupal.org", false, false, null, "DKNEVIT3I@DRUPAL.ORG", "DKNEVIT3I@DRUPAL.ORG", "AQAAAAEAACcQAAAAEGf81ciJMmatitI2IUPzR0TrM4OekbddRchcqPwD9eCkJyBiCxeFwJRz9Jpuh0gLhQ==", null, false, "5fe36355-69f2-441c-aa50-6b4bc786f6cd", false, "dknevit3i@drupal.org" });
+                values: new object[] { "cb6e89c2-5b09-4720-8bc8-1e2775302b25", 0, "741fa2a2-1a64-475d-aad1-b94cdb1bdaea", "dknevit3i@drupal.org", false, false, null, "DKNEVIT3I@DRUPAL.ORG", "DKNEVIT3I@DRUPAL.ORG", "AQAAAAEAACcQAAAAENhAKIeqONDJhGjZb6a89cutVVnutQhzBQv/7NJe2UFVHTafC5PwXzpWXd2ajGzd1g==", null, false, "5fe36355-69f2-441c-aa50-6b4bc786f6cd", false, "dknevit3i@drupal.org" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cc73c961-2b43-4cd2-9f07-acd12584da1f", 0, "c7fab5e6-c8ab-4c3d-a200-43fe335ab228", "wmacmeeking3h@apple.com", false, false, null, "WMACMEEKING3H@APPLE.COM", "WMACMEEKING3H@APPLE.COM", "AQAAAAEAACcQAAAAEBIYq/6DGwtcfmO7cqUsLl7xrxXBAgqMQ9wSAQbWSMrL3q4e6MoWp1ilfuR80P8oyA==", null, false, "734b0464-ea06-4304-a05a-acf50076c653", false, "wmacmeeking3h@apple.com" });
+                values: new object[] { "cc73c961-2b43-4cd2-9f07-acd12584da1f", 0, "bc4dc79b-ab92-47ff-88f4-03a93f065d31", "wmacmeeking3h@apple.com", false, false, null, "WMACMEEKING3H@APPLE.COM", "WMACMEEKING3H@APPLE.COM", "AQAAAAEAACcQAAAAEAXmzDowAsppnD7Ge93lEiQj8g0Hg7vscIjhuVjJSsWvqmS3IPmn7/PrK79OBqJsLQ==", null, false, "734b0464-ea06-4304-a05a-acf50076c653", false, "wmacmeeking3h@apple.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c2d0cbb8-b830-4458-8c7c-311decfa4502", 0, "7c1bd4f7-6c86-4ff5-a9a5-06d7f5f58e8f", "bkiddie3g@engadget.com", false, false, null, "BKIDDIE3G@ENGADGET.COM", "BKIDDIE3G@ENGADGET.COM", "AQAAAAEAACcQAAAAEFDPMtly8k19v2KdylMVyk6AC3/w5Nkzbiwc9YeW+wfp95Qk+oNr6yHmXOu4Bg372g==", null, false, "306e835f-faed-4b57-8e84-455875e0e7ad", false, "bkiddie3g@engadget.com" });
+                values: new object[] { "c2d0cbb8-b830-4458-8c7c-311decfa4502", 0, "a907a4d6-fb1b-4de0-b352-1a723208fa5a", "bkiddie3g@engadget.com", false, false, null, "BKIDDIE3G@ENGADGET.COM", "BKIDDIE3G@ENGADGET.COM", "AQAAAAEAACcQAAAAEMvHhFj641jwPPBbXfgjXMjasjzPCiTAfgp2vlutW+W/6wRnqR5nKtKLWaEs4nW8kg==", null, false, "306e835f-faed-4b57-8e84-455875e0e7ad", false, "bkiddie3g@engadget.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "6d4e3c31-21e2-4bd3-9d76-fe680681e04b", 0, "28250a90-6184-4572-ba76-8a92c9882ae0", "dcrow3f@fotki.com", false, false, null, "DCROW3F@FOTKI.COM", "DCROW3F@FOTKI.COM", "AQAAAAEAACcQAAAAEOBZPpyeLca2SD+y18pmKJhzda1dtwSRmdG0C3wED12t+j+mT8HRIl+lVWjpoV5sbQ==", null, false, "e4dc57ae-8412-47ec-9c8d-2b9588007595", false, "dcrow3f@fotki.com" });
+                values: new object[] { "6d4e3c31-21e2-4bd3-9d76-fe680681e04b", 0, "268d0831-b6f4-44c0-938a-a73475fca576", "dcrow3f@fotki.com", false, false, null, "DCROW3F@FOTKI.COM", "DCROW3F@FOTKI.COM", "AQAAAAEAACcQAAAAED7SqaxG5kyfjUpaigkSG4aDYaoBVpnSaXTSjXUVQR7SHHAm5YtJ47+18gkeRtv32w==", null, false, "e4dc57ae-8412-47ec-9c8d-2b9588007595", false, "dcrow3f@fotki.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "18e49ac6-6940-4b9f-a807-fa5e8a3e3249", 0, "6e39be73-d028-44d1-b3bc-01bc5619508e", "swille3e@mozilla.com", false, false, null, "SWILLE3E@MOZILLA.COM", "SWILLE3E@MOZILLA.COM", "AQAAAAEAACcQAAAAEKI/zFDbaz46o08+53gbQ7SLfePMKenoKY8TSHYISnAp4xiGXPzoSbQc5xbpRxSYDg==", null, false, "eea922b5-3618-4905-bc74-98219f4836e0", false, "swille3e@mozilla.com" });
+                values: new object[] { "18e49ac6-6940-4b9f-a807-fa5e8a3e3249", 0, "eeafdf2d-dafa-41a5-9f91-ed2523a7f73c", "swille3e@mozilla.com", false, false, null, "SWILLE3E@MOZILLA.COM", "SWILLE3E@MOZILLA.COM", "AQAAAAEAACcQAAAAELnBM6LxPs+bIbk5VX53BphFF5Yl7AyC5mJH8yZlazYlK9jUwBo7xtIr0Jnz7uABww==", null, false, "eea922b5-3618-4905-bc74-98219f4836e0", false, "swille3e@mozilla.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "b6d97887-1b61-4016-b5a3-f8e034894a11", 0, "e5b18301-3646-477b-b8cb-296d2d80f9fb", "rbeales3d@nba.com", false, false, null, "RBEALES3D@NBA.COM", "RBEALES3D@NBA.COM", "AQAAAAEAACcQAAAAEOrB8bOqVh0uv3oobHknnXn9u9WVM5hOy1QNhL58Vo344dMcITkIqWPw53eJIC5hfQ==", null, false, "ad41614c-e46f-4147-91f3-7a7aa3d409f4", false, "rbeales3d@nba.com" });
+                values: new object[] { "b6d97887-1b61-4016-b5a3-f8e034894a11", 0, "26c80957-de5d-4d09-bf55-03f8f45a1c4a", "rbeales3d@nba.com", false, false, null, "RBEALES3D@NBA.COM", "RBEALES3D@NBA.COM", "AQAAAAEAACcQAAAAEPO0fbXySpAmR/DmNJKN1G2pq0pRVQyD5/dpMZh7XTzGkWNyn8U7O5FjapYr2mWlig==", null, false, "ad41614c-e46f-4147-91f3-7a7aa3d409f4", false, "rbeales3d@nba.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "251f5884-a633-4ba5-887b-209e16f91d33", 0, "138b4afc-e9c5-44a6-a6d1-ad12994f5e4c", "wsanchis31@zdnet.com", false, false, null, "WSANCHIS31@ZDNET.COM", "WSANCHIS31@ZDNET.COM", "AQAAAAEAACcQAAAAENZZ1pXmt1K0DB6+zBjvgWJxg8/SWZEvADsOYqA+R95mfZs+BBJ2L9XQeV1LmUl3vA==", null, false, "f12a43e8-95aa-430e-901b-8d3f3f9e0580", false, "wsanchis31@zdnet.com" });
+                values: new object[] { "251f5884-a633-4ba5-887b-209e16f91d33", 0, "07790222-2961-406f-8de9-e9580c53241c", "wsanchis31@zdnet.com", false, false, null, "WSANCHIS31@ZDNET.COM", "WSANCHIS31@ZDNET.COM", "AQAAAAEAACcQAAAAEGeB7N5qczr5eDT1GHoK+0rSJ1lslAbCwjNoNmK/J3FUejY2I4N4dKmwy+0t+ctckA==", null, false, "f12a43e8-95aa-430e-901b-8d3f3f9e0580", false, "wsanchis31@zdnet.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "578db249-825d-4978-b23c-de5ec1d49abf", 0, "344643f4-8df0-4dc9-88ba-df897af76282", "dbelhome3c@163.com", false, false, null, "DBELHOME3C@163.COM", "DBELHOME3C@163.COM", "AQAAAAEAACcQAAAAEJE5SWr2zWEO8h6eMWEoAc/a7w86C7SGbUGiw8eNwpUS0acGR7RUyh298a4535T4cQ==", null, false, "106c2af7-738d-4fb6-8d6f-c77198b06691", false, "dbelhome3c@163.com" });
+                values: new object[] { "578db249-825d-4978-b23c-de5ec1d49abf", 0, "9d6280c8-1c75-4f13-ab31-3f54d2f5d5c6", "dbelhome3c@163.com", false, false, null, "DBELHOME3C@163.COM", "DBELHOME3C@163.COM", "AQAAAAEAACcQAAAAEA43+gi/UjvnfntXyd6jHulPn1PHKDAqHWHjAIiP7tezh42sZr/i+IC1dEByFoJwTw==", null, false, "106c2af7-738d-4fb6-8d6f-c77198b06691", false, "dbelhome3c@163.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "72968a41-316a-4722-9d4a-aaebdba467ee", 0, "7a27606b-c708-401b-9155-f56bc2b9b7b1", "msalandino3a@scribd.com", false, false, null, "MSALANDINO3A@SCRIBD.COM", "MSALANDINO3A@SCRIBD.COM", "AQAAAAEAACcQAAAAENbQ2AhZlObrPiG+16v8rDAuV1ID0vYiIT/R5Nb5XbP71WiFcIDbMSrV42JA8dZKnw==", null, false, "bd9f0a23-de53-41fb-beda-7f6c03594a21", false, "msalandino3a@scribd.com" });
+                values: new object[] { "72968a41-316a-4722-9d4a-aaebdba467ee", 0, "9ca48eca-6d1f-432b-b871-d31abc1f89bd", "msalandino3a@scribd.com", false, false, null, "MSALANDINO3A@SCRIBD.COM", "MSALANDINO3A@SCRIBD.COM", "AQAAAAEAACcQAAAAEH1/vAat9ZPk/uGSgbRyBiw8kmDh77feeJYhxby8y6Hwhmv4fBpc/cVXgNhYBPWyIA==", null, false, "bd9f0a23-de53-41fb-beda-7f6c03594a21", false, "msalandino3a@scribd.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "98126401-82fa-432c-9b46-055b8cf8b56c", 0, "639f923b-c3a1-4aa6-8a72-10ef0da3eb55", "ccartmale39@nba.com", false, false, null, "CCARTMALE39@NBA.COM", "CCARTMALE39@NBA.COM", "AQAAAAEAACcQAAAAEFkWEMk9hZchvRgbHMv28lGRO210r+Nnfz7QvNXCnwhIPVACGWRVYYJdZr0xG4jDIg==", null, false, "1e37063c-a625-43f9-a979-99f804a40e9f", false, "ccartmale39@nba.com" });
+                values: new object[] { "98126401-82fa-432c-9b46-055b8cf8b56c", 0, "9f62a83e-d7af-430d-9f34-0e16239ec359", "ccartmale39@nba.com", false, false, null, "CCARTMALE39@NBA.COM", "CCARTMALE39@NBA.COM", "AQAAAAEAACcQAAAAEKWKRmCwBDY5+gL8IBOWZOX7vkZBORHyzesVydNjyOZ7yePdHMDvi25aERMXicE4SQ==", null, false, "1e37063c-a625-43f9-a979-99f804a40e9f", false, "ccartmale39@nba.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "dac0128a-2c6f-4a44-afbe-f24b4dc2e0db", 0, "f01a743e-2444-4071-b665-73f3adab829f", "mrispine38@wired.com", false, false, null, "MRISPINE38@WIRED.COM", "MRISPINE38@WIRED.COM", "AQAAAAEAACcQAAAAEHTRsN2+SvcC2TTdqQucpzrbPyClbsyhTPd/umo2gxvtLbT5jfPvOyuU/7Bkg8H5Xg==", null, false, "9df6f7f1-9eb5-42cd-93aa-6e1f70b144d8", false, "mrispine38@wired.com" });
+                values: new object[] { "dac0128a-2c6f-4a44-afbe-f24b4dc2e0db", 0, "c8b4a43a-3abe-46f9-9c22-2cd35c07655b", "mrispine38@wired.com", false, false, null, "MRISPINE38@WIRED.COM", "MRISPINE38@WIRED.COM", "AQAAAAEAACcQAAAAEK9OkmgnNMTvMct/guvQw+p5Fadv3rKMH1l8TOMm98Mwu8RwdfYR2l9G6Y2AJAOY6Q==", null, false, "9df6f7f1-9eb5-42cd-93aa-6e1f70b144d8", false, "mrispine38@wired.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "97e2c256-db49-4419-923e-df1feb5c2776", 0, "83b4d635-f803-4560-8941-a33ba5ecf28c", "snisard37@skype.com", false, false, null, "SNISARD37@SKYPE.COM", "SNISARD37@SKYPE.COM", "AQAAAAEAACcQAAAAEKgBryQBvi+KwleE4x8o1fhT1YF4yuKjTyCLZb/dM03/bM/2deUeSr7tpUarsKoiwg==", null, false, "caffaaad-5566-4d43-ad9f-172461b1d763", false, "snisard37@skype.com" });
+                values: new object[] { "97e2c256-db49-4419-923e-df1feb5c2776", 0, "67aa100c-01a8-4bf8-b8a0-bd0e74d36ea5", "snisard37@skype.com", false, false, null, "SNISARD37@SKYPE.COM", "SNISARD37@SKYPE.COM", "AQAAAAEAACcQAAAAEI5W8m4TUmh/deA4OvhA0WrnCzLppkOAC/u6omm3NDvDZWQc6Gcs4wuf+PviG+GWgQ==", null, false, "caffaaad-5566-4d43-ad9f-172461b1d763", false, "snisard37@skype.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8707decb-641c-44b0-95c1-f0f7edf56d68", 0, "c281fdc1-de11-4488-8cf2-b6a97e84ec78", "afollett36@github.io", false, false, null, "AFOLLETT36@GITHUB.IO", "AFOLLETT36@GITHUB.IO", "AQAAAAEAACcQAAAAELacfeAwhUvwOEc9lNUMkkQ/D2wKF0TmkT0NTQ9T5QbTXEOkAwrC/3AAwMsBCnBOZw==", null, false, "20c3b254-ae37-48ae-ae83-bbcc17a5395a", false, "afollett36@github.io" });
+                values: new object[] { "8707decb-641c-44b0-95c1-f0f7edf56d68", 0, "db100f9d-10a7-4e92-aa39-841513da879a", "afollett36@github.io", false, false, null, "AFOLLETT36@GITHUB.IO", "AFOLLETT36@GITHUB.IO", "AQAAAAEAACcQAAAAEB3Hcj/HDenMtFThXnqv/DAjbbUhpwBx1otcfSS3IZLmQ4xBEDIIiBwfQ1Bi8213Tg==", null, false, "20c3b254-ae37-48ae-ae83-bbcc17a5395a", false, "afollett36@github.io" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "bcc7fd15-1919-4e60-9b94-e5268a90e678", 0, "a44bbae6-d3f8-4936-afc6-3ba7bd8a53b2", "fgeal35@samsung.com", false, false, null, "FGEAL35@SAMSUNG.COM", "FGEAL35@SAMSUNG.COM", "AQAAAAEAACcQAAAAEHmDdEhtmezGM+F/OHK2SRLTh0aRSZ8AxqUUAMd/i4Xmb36EU2/wtVBH6c3qOzP7wg==", null, false, "fd424650-5dfc-45e5-b506-3b8134cd68f6", false, "fgeal35@samsung.com" });
+                values: new object[] { "bcc7fd15-1919-4e60-9b94-e5268a90e678", 0, "cdab7e96-6dfe-4ce7-a0c6-0b0c69ae6681", "fgeal35@samsung.com", false, false, null, "FGEAL35@SAMSUNG.COM", "FGEAL35@SAMSUNG.COM", "AQAAAAEAACcQAAAAECMGk3qYepzkk/fZSo7JODBaG11391aw9id/mnAlUYDwuRz3aJPTi0jwgGIlipEU0Q==", null, false, "fd424650-5dfc-45e5-b506-3b8134cd68f6", false, "fgeal35@samsung.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d50c5b08-a495-4821-b241-bc254efd5b64", 0, "db58bcff-572a-4779-811c-49bb260f16e8", "sbaitman34@homestead.com", false, false, null, "SBAITMAN34@HOMESTEAD.COM", "SBAITMAN34@HOMESTEAD.COM", "AQAAAAEAACcQAAAAEIu91TNHZ4rJNKALG8iNrkS8XitKJpnOvnJBNt6VS/Sk+IE50cVWkVWMyvNj53Y6QQ==", null, false, "5e497d26-d1dc-4477-a75b-97d8da0364d8", false, "sbaitman34@homestead.com" });
+                values: new object[] { "d50c5b08-a495-4821-b241-bc254efd5b64", 0, "aad3e051-e7e8-4859-bd34-64021fabc761", "sbaitman34@homestead.com", false, false, null, "SBAITMAN34@HOMESTEAD.COM", "SBAITMAN34@HOMESTEAD.COM", "AQAAAAEAACcQAAAAEHYt28WjxNiT3qlPL09YOuLhexuAzXImc/q4zVELnE5Iwc/AMGMwaKDZiZT0zpLNig==", null, false, "5e497d26-d1dc-4477-a75b-97d8da0364d8", false, "sbaitman34@homestead.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "61ce7456-cbe6-41f7-8e24-7b2ff9cb4e48", 0, "117bb407-2e8c-49a5-a20e-8e458dc72fae", "awillimont33@yandex.ru", false, false, null, "AWILLIMONT33@YANDEX.RU", "AWILLIMONT33@YANDEX.RU", "AQAAAAEAACcQAAAAEAjlj/2fwX577aPAkwLHtjtG60HSZToyZhrkL2U7mOVtui+HISV4CXW2k/hkv0xuVQ==", null, false, "8e37e6ff-dbf6-4eb1-905d-6198e18bf448", false, "awillimont33@yandex.ru" });
+                values: new object[] { "61ce7456-cbe6-41f7-8e24-7b2ff9cb4e48", 0, "66b65b05-42d0-4d01-b62a-74688a3dd756", "awillimont33@yandex.ru", false, false, null, "AWILLIMONT33@YANDEX.RU", "AWILLIMONT33@YANDEX.RU", "AQAAAAEAACcQAAAAEEVa5MLCTrtRCcLMnRVwyRyja0NVHGpX2oNqUpk2J9JUICM72Xnp4HZNC2ogndutTQ==", null, false, "8e37e6ff-dbf6-4eb1-905d-6198e18bf448", false, "awillimont33@yandex.ru" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "611d80c6-3b99-4235-8dad-4172bcf4ce4b", 0, "11900d79-bacd-42d0-81b0-d36a780b35ad", "hstather3b@free.fr", false, false, null, "HSTATHER3B@FREE.FR", "HSTATHER3B@FREE.FR", "AQAAAAEAACcQAAAAEAstMmjCfR6y93sHfRFFK8ByvCKtysoVtmV22au7F5aqWxOvkXJxXGfAHUrzPHHYcw==", null, false, "615dee16-860b-4c89-a984-ead2528cf604", false, "hstather3b@free.fr" });
+                values: new object[] { "611d80c6-3b99-4235-8dad-4172bcf4ce4b", 0, "f766de60-dbb1-4f76-8e76-2b150a2ce8cf", "hstather3b@free.fr", false, false, null, "HSTATHER3B@FREE.FR", "HSTATHER3B@FREE.FR", "AQAAAAEAACcQAAAAEKfkBrMrRIvNxxqfMic4t5ZTL7GAuu1lPV3JHJq2osxzPYW7qk5qAx38kC0GFJ/JPw==", null, false, "615dee16-860b-4c89-a984-ead2528cf604", false, "hstather3b@free.fr" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3d634b9a-42bd-4a53-9a4b-194fda6d9e1b", 0, "7f2ed3a7-8dcf-47b9-aafd-b78dc4c1c865", "lleipoldt9p@microsoft.com", false, false, null, "LLEIPOLDT9P@MICROSOFT.COM", "LLEIPOLDT9P@MICROSOFT.COM", "AQAAAAEAACcQAAAAEKxYroEMQDSGn9YU0tmwPysBZADu9RkHEennQH+eRfxFRK6rrxYFmrR2xqdp29G6rQ==", null, false, "df9e126d-f0ad-4a3e-8347-b4ff85ac9c97", false, "lleipoldt9p@microsoft.com" });
+                values: new object[] { "3d634b9a-42bd-4a53-9a4b-194fda6d9e1b", 0, "7e0b2615-c432-4fce-ad4e-b718bf478663", "lleipoldt9p@microsoft.com", false, false, null, "LLEIPOLDT9P@MICROSOFT.COM", "LLEIPOLDT9P@MICROSOFT.COM", "AQAAAAEAACcQAAAAELWUVeYznjPN/1WbM5AgDKNZAiXbCI6kLfCwlJR+ZoyL7bdS/wjo7+keCsL88kX9DQ==", null, false, "df9e126d-f0ad-4a3e-8347-b4ff85ac9c97", false, "lleipoldt9p@microsoft.com" });
 
             migrationBuilder.InsertData(
                 table: "Profiles",
