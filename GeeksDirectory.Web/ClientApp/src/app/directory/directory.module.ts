@@ -10,7 +10,7 @@ import { reducers } from './reducers';
 import { SharedModule } from '@shared/shared.module';
 import { DirectoryRoutingModule } from './directory-routing.module';
 import { ProfileListComponent, ProfileDetailsComponent } from './containers';
-import { ProfileCardComponent, EditProfileComponent, ProfileSkillsComponent } from './components';
+import { ProfileCardComponent, EditProfileComponent } from './components';
 import { ProfileListResolveGuard, ProfileResolveGuard } from './resolvers';
 import { SearchComponent } from './containers/search/search.component';
 import { SearchTableComponent } from './components/search-table/search-table.component';
@@ -21,7 +21,6 @@ import { SearchTableComponent } from './components/search-table/search-table.com
         ProfileListComponent,
         ProfileCardComponent,
         EditProfileComponent,
-        ProfileSkillsComponent,
         SearchComponent,
         SearchTableComponent
     ],

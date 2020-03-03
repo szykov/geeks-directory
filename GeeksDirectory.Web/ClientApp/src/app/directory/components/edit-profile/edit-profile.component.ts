@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 
 import { IProfile, ISkill } from '@app/responses';
-import { ProfileModel, SkillModel } from '@app/models';
+import { ProfileModel } from '@app/models';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -55,9 +55,7 @@ export class EditProfileComponent implements OnChanges {
         }
     }
 
-    public onEditSkill(model: SkillModel) {
-        this.editSkill.emit(model);
-    }
+    public onEditSkill = (skill: ISkill) => this.editSkill.emit(skill);
 
     public onNewSkill() {
         this.newSkill.emit();

@@ -9,7 +9,7 @@ import * as fromState from '@app/reducers';
 import * as fromProfiles from '@app/directory/reducers';
 import * as fromAuth from '@app/auth/reducers';
 
-import { IProfile } from '@app/responses';
+import { IProfile, ISkill } from '@app/responses';
 import { ProfileModel, SkillModel } from '@app/models';
 import { ProfilesDetailsActions } from '@app/directory/actions';
 
@@ -56,7 +56,8 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
         this.store.dispatch(ProfilesDetailsActions.openAddSkillDialog({ profileId: this.profileId }));
     }
 
-    public onEditSkill(skillModel: SkillModel) {
+    public onEditSkill(skill: ISkill) {
+        let skillModel = new SkillModel(skill.name, skill.description);
         this.store.dispatch(ProfilesDetailsActions.evaluateSkillDialog({ profileId: this.profileId, skillModel }));
     }
 

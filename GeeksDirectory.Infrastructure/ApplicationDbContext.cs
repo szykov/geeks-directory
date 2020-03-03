@@ -3,8 +3,11 @@
 using GeeksDirectory.Domain.Entities;
 using GeeksDirectory.Infrastructure.Seed;
 
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Hosting;
 
 namespace GeeksDirectory.Infrastructure
 {
@@ -65,7 +68,11 @@ namespace GeeksDirectory.Infrastructure
                 .WithMany(u => u.Assessments)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Seed();
+            var env = this.GetService<IWebHostEnvironment>();
+            if (env.IsDevelopment())
+            {
+                builder.Seed();
+            }
         }
     }
 }
