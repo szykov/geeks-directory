@@ -27,8 +27,8 @@ import { QueryOptions } from '@app/models';
 export class SearchComponent implements OnInit, OnDestroy {
     public originLimit = 10;
 
-    public get queryValue() {
-        return this.queryOptions.query;
+    public get filterValue() {
+        return this.queryOptions.filter;
     }
 
     public profiles$: Observable<IProfilesEnvelope>;
@@ -42,8 +42,8 @@ export class SearchComponent implements OnInit, OnDestroy {
     constructor(private store: Store<fromState.State>, private router: Router, private route: ActivatedRoute) {}
 
     ngOnInit() {
-        let queryParam = this.route.snapshot.paramMap.get('query');
-        this.queryOptions.query = queryParam ? queryParam : null;
+        let filterParam = this.route.snapshot.paramMap.get('filter');
+        this.queryOptions.filter = filterParam ? filterParam : null;
         this.searchProfiles(this.queryOptions);
 
         this.profiles$ = this.store.select(fromProfiles.getSearchedProfiles);
@@ -55,20 +55,20 @@ export class SearchComponent implements OnInit, OnDestroy {
     }
 
     private searchProfiles(queryOptions: QueryOptions) {
-        this.router.navigate([], { relativeTo: this.route, queryParams: { query: queryOptions.query } });
+        this.router.navigate([], { relativeTo: this.route, queryParams: { filter: queryOptions.filter } });
         this.store.dispatch(SearchActions.searchProfiles({ queryOptions: { ...queryOptions } }));
     }
 
-    public onKeyUpQuery(queryValue: string, keyCode: string) {
+    public onKeyUpFilter(filterValue: string, keyCode: string) {
         if (keyCode !== 'Enter') {
-            this.queryOptions.query = queryValue || null;
+            this.queryOptions.filter = filterValue || null;
             this.delaySearch$.next();
         }
     }
 
-    public onChangeQuery(queryValue: string) {
-        if (this.queryOptions.query) {
-            this.queryOptions.query = queryValue || null;
+    public onChangeFilter(filterValue: string) {
+        if (this.queryOptions.filter) {
+            this.queryOptions.filter = filterValue || null;
             this.searchProfiles(this.queryOptions);
         }
     }

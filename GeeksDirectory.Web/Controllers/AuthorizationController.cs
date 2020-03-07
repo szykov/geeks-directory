@@ -1,8 +1,8 @@
 ﻿using AspNet.Security.OpenIdConnect.Extensions;
 using AspNet.Security.OpenIdConnect.Primitives;
 
-using GeeksDirectory.Data.Entities;
-using GeeksDirectory.SharedTypes.Responses;
+using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Domain.Responses;
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AuthorizationServer.Controllers
+namespace GeeksDirectory.Web.Controllers
 {
     /**
      * <summary>Authorization Controller for generating JWT Oauth2 tokens</summary>
@@ -29,7 +29,7 @@ namespace AuthorizationServer.Controllers
     [ApiVersion("1.0")]
     [Consumes("application/x-www-form-urlencoded")]
     [Produces("application/json")]
-    public class AuthorizationController : Controller
+    public class AuthorizationController : BaseApiController
     {
         private readonly IOptions<IdentityOptions> identityOptions;
         private readonly SignInManager<ApplicationUser> signInManager;

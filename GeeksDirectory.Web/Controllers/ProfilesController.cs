@@ -1,11 +1,11 @@
-﻿using AutoMapper;
+﻿using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Services.Commands;
+using GeeksDirectory.Services.Queries;
+using GeeksDirectory.Domain.Attributes;
+using GeeksDirectory.Domain.Models;
+using GeeksDirectory.Domain.Responses;
 
-using GeeksDirectory.Data.Entities;
-using GeeksDirectory.SharedTypes.Attributes;
-using GeeksDirectory.SharedTypes.Classes;
-using GeeksDirectory.SharedTypes.Models;
-using GeeksDirectory.SharedTypes.Responses;
-using GeeksDirectory.Web.Services.Interfaces;
+using MediatR;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,7 +14,6 @@ using Microsoft.Extensions.Logging;
 
 using OpenIddict.Validation;
 
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Web.Controllers
@@ -29,20 +28,18 @@ namespace GeeksDirectory.Web.Controllers
     [ApiVersion("1.0")]
     [Consumes("application/json")]
     [Produces("application/json")]
-    public class ProfilesController : Controller
+    public class ProfilesController : BaseApiController
     {
-        private readonly IProfilesService context;
-        private readonly IMapper mapper;
+        private readonly IMediator mediator;
         private readonly ILogger logger;
 
-        public ProfilesController(IProfilesService context, IMapperService mapperService, ILogger<ProfilesController> logger)
+        public ProfilesController(IMediator mediator, ILogger<ProfilesController> logger)
         {
-            this.context = context;
-            this.mapper = mapperService.GetExceptionMapper();
+            this.mediator = mediator;
             this.logger = logger;
         }
 
-        // GET: /api/profiles?take={limit}&skip={offset}
+        // GET: /api/profiles?limit={limit}&offset={offset}
         /**
          * <summary>Get profile</summary>
          * <remarks>Searches profiles in database.</remarks>
@@ -56,14 +53,15 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet]
-        public ActionResult<GeekProfileResponsesEnvelope> GetProfiles(
-            int limit = 10,
-            int offset = 0,
-            string? orderBy = nameof(GeekProfile.ProfileId),
-            string? orderDirection = "ASC")
+        public async Task<ActionResult<GeekProfilesResponse>> GetProfiles(
+            int limit,
+            int offset,
+            string? orderDirection,
+            string? orderBy = nameof(GeekProfile.ProfileId))
         {
-            var profiles = this.context.Get(limit, offset, orderBy, orderDirection);
-            return this.Ok(profiles);
+            var query = new GetProfilesQuery(limit, offset, orderBy, orderDirection);
+            var profile = await this.mediator.Send(query);
+            return this.Ok(profile);
         }
 
         // GET: /api/profiles/me
@@ -75,19 +73,18 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("me")]
-        public ActionResult<GeekProfileResponse> GetMyProfile()
+        public async Task<ActionResult<GeekProfileResponse>> GetMyProfile()
         {
-            var userName = this.User.Identity.Name!;
-            var profile = this.context.Get(userName);
-
+            var query = new GetPersonalProfileQuery();
+            var profile = await this.mediator.Send(query);
             return this.Ok(profile);
         }
 
-        // GET: /api/profiles/search?query={query}
+        // GET: /api/profiles/search?filter={filter}
         /**
          * <summary>Search profiles</summary>
          * <remarks>Search for profiles based on query.</remarks>
-         * <param name="query">Query for filtering profiles</param>
+         * <param name="filter">Text for filtering profiles</param>
          * <param name="limit">Limit how many matches will be returned</param>
          * <param name="offset">How many matched users will be skipped</param>
          * <param name="orderBy">Order by which profile's property</param>
@@ -98,15 +95,16 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("search")]
-        public ActionResult<IEnumerable<GeekProfileResponse>> SearchProfiles(
-            [RequiredFromQuery]string query,
-            int limit = 10,
-            int offset = 0,
-            string? orderBy = nameof(GeekProfile.ProfileId),
-            string? orderDirection = "ASC")
+        public async Task<ActionResult<GeekProfilesResponse>> SearchProfiles(
+            [RequiredFromQuery]string filter,
+            int limit,
+            int offset,
+            string? orderDirection,
+            string? orderBy = nameof(GeekProfile.ProfileId))
         {
-            var profiles = this.context.Search(query, limit, offset, orderBy, orderDirection);
-            return this.Ok(profiles);
+            var query = new SearchQuery(filter, limit, offset, orderBy, orderDirection);
+            var profile = await this.mediator.Send(query);
+            return this.Ok(profile);
         }
 
         // GET: /api/profiles/{id}
@@ -120,9 +118,10 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("{id}", Name = nameof(GetProfile))]
-        public ActionResult<GeekProfileResponse> GetProfile([FromRoute]int id)
+        public async Task<ActionResult<GeekProfileResponse>> GetProfile([FromRoute]int id)
         {
-            var profile = this.context.Get(id);
+            var query = new GetProfileQuery(id);
+            var profile = await this.mediator.Send(query);
             return this.Ok(profile);
         }
 
@@ -140,8 +139,14 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPost]
         public async Task<ActionResult<GeekProfileResponse>> RegisterProfileAsync([FromBody]CreateGeekProfileModel model)
         {
-            var profile = await this.context.AddAsync(model);
-            return this.CreatedAtRoute(nameof(GetProfile), new { profile.Id }, profile);
+            var query = new RegisterProfileCommand(model);
+            var result = await this.mediator.Send(query);
+
+            if (result.IsFailed)
+                return this.UnprocessableEntity(result);
+
+            var profile = new GetProfileQuery(result.Value);
+            return this.CreatedAtRoute(nameof(GetProfile), new { result.Value }, profile);
         }
 
         // PATCH: /api/profiles/me
@@ -154,11 +159,17 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpPatch("me")]
-        public ActionResult<GeekProfileResponse> UpdatePersonalProfile([FromBody]GeekProfileModel model)
+        public async Task<ActionResult<GeekProfileResponse>> UpdatePersonalProfile([FromBody]GeekProfileModel model)
         {
-            var userName = this.User.Identity.Name!;
+            var command = new UpdatePersonalProfileCommand(model);
+            var result = await this.mediator.Send(command);
 
-            var profile = this.context.Update(userName, model);
+            if (result.IsFailed)
+                return this.UnprocessableEntity(result);
+
+            var query = new GetProfileQuery(result.Value);
+            var profile = await this.mediator.Send(query);
+
             return this.Ok(profile);
         }
     }

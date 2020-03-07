@@ -1,11 +1,12 @@
-﻿using AutoMapper;
+﻿using GeeksDirectory.Services.Commands;
+using GeeksDirectory.Services.Notifications;
+using GeeksDirectory.Services.Queries;
+using GeeksDirectory.Domain.Models;
+using GeeksDirectory.Domain.Responses;
 
-using GeeksDirectory.SharedTypes.Classes;
-using GeeksDirectory.SharedTypes.Models;
-using GeeksDirectory.SharedTypes.Responses;
-using GeeksDirectory.Web.Services.Interfaces;
-
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -26,16 +27,14 @@ namespace GeeksDirectory.Web.Controllers
     [ApiVersion("1.0")]
     [Consumes("application/json")]
     [Produces("application/json")]
-    public class SkillsController : ControllerBase
+    public class SkillsController : BaseApiController
     {
-        private readonly ISkillsService context;
-        private readonly IMapper mapper;
+        private readonly IMediator mediator;
         private readonly ILogger logger;
 
-        public SkillsController(ISkillsService context, IMapperService mapperService, ILogger<ProfilesController> logger)
+        public SkillsController(IMediator mediator, ILogger<ProfilesController> logger)
         {
-            this.context = context;
-            mapper = mapperService.GetExceptionMapper();
+            this.mediator = mediator;
             this.logger = logger;
         }
 
@@ -51,9 +50,12 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("{profileId}/skills/{skillName}", Name = "GetSkill")]
-        public ActionResult<SkillResponse> GetSkill([FromRoute]int profileId, [FromRoute]string skillName)
+        public async Task<ActionResult<SkillResponse>> GetSkill([FromRoute]int profileId, [FromRoute]string skillName)
         {
-            return context.Get(profileId, skillName);
+            var query = new GetSkillQuery(profileId, skillName);
+            var skill = await this.mediator.Send(query);
+
+            return this.Ok(skill);
         }
 
         // POST: /api/profiles/{profileId}/skills
@@ -68,10 +70,20 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status409Conflict)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpPost("{profileId}/skills")]
-        public async Task<ActionResult<SkillResponse>> AddSkillAsync([FromRoute]int profileId, [FromBody]SkillModel model)
+        public async Task<ActionResult<SkillResponse>> RegisterSkillAsync([FromRoute]int profileId, [FromBody]SkillModel model)
         {
-            var userName = User.Identity.Name!;
-            var skill = await context.AddAsync(profileId, model, userName);
+            var command = new RegisterSkillCommand(profileId, model);
+            var result = await this.mediator.Send(command);
+
+            if (result.IsFailed)
+                return this.UnprocessableEntity(result);
+
+            var skillEvaluation = new SkillEvaluationModel() { Score = model.Score };
+            var notification = new EvaluateSkillNotification(profileId, model.Name, skillEvaluation);
+            await this.mediator.Publish(notification);
+
+            var query = new GetSkillQuery(profileId, model.Name);
+            var skill = await this.mediator.Send(query);
 
             return CreatedAtRoute(nameof(GetSkill), new { profileId, skillName = skill.Name }, skill);
         }
@@ -90,8 +102,13 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPost("{profileId}/skills/{skillName}/score")]
         public async Task<ActionResult<SkillResponse>> EvaluateSkillAsync([FromRoute]int profileId, [FromRoute]string skillName, [FromBody]SkillEvaluationModel model)
         {
-            var userName = User.Identity.Name!;
-            return await context.EvaluateSkillAsync(profileId, skillName, userName, model);
+            var notification = new EvaluateSkillNotification(profileId, skillName, model);
+            await this.mediator.Publish(notification);
+
+            var query = new GetSkillQuery(profileId, skillName);
+            var skill = await this.mediator.Send(query);
+
+            return this.Ok(skill);
         }
 
         // GET: /api/profiles/{profileId}/skills/{skillName}/score
@@ -107,8 +124,13 @@ namespace GeeksDirectory.Web.Controllers
         [HttpGet("{profileId}/skills/{skillName}/score")]
         public async Task<ActionResult<AssessmentResponse?>> GetMySkillEvaluationAsync([FromRoute]int profileId, [FromRoute]string skillName)
         {
-            var userName = User.Identity.Name!;
-            return await context.TryGetMySkillEvaluationAsync(profileId, skillName, userName);
+            var query = new GetMySkillEvaluationQuery(profileId, skillName);
+            var assessment = await this.mediator.Send(query);
+
+            if (assessment == null) 
+                return this.NoContent();
+
+            return this.Ok(assessment);
         }
     }
 }

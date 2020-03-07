@@ -1,13 +1,40 @@
-.card-content > p {
+.card-content>p {
     display: inline-block;
     margin-right: 22px;
-}
-
-.skills-header {
-    margin-bottom: 20px;
 }
 
 .profile-actions {
     text-align: right;
     margin-top: 20px;
+}
+
+.skills-container {
+    .skills-header {
+        margin-bottom: 20px;
+    }
+
+    .skill-chip {
+        height: 40px;
+
+        .mat-badge {
+            margin-right: 10px;
+        }
+
+        .mat-badge-content {
+            right: -18px;
+        }
+    }
+
+    .skill-chip.editable {
+        cursor: pointer;
+    }
+
+    .add-skill {
+        margin-left: 10px;
+
+        mat-icon {
+            width: 40px;
+            font-size: 40px;
+        }
+    }
 }

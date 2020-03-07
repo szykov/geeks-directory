@@ -1,7 +1,7 @@
 ﻿#pragma warning disable CA1307
 
-using GeeksDirectory.SharedTypes.Classes;
-
+using GeeksDirectory.Domain.Classes;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 using System.Threading.Tasks;
@@ -26,6 +26,8 @@ namespace GeeksDirectory.Web.Configuration
                         return Task.FromResult(0);
                     }
                 };
+
+                config.Cookie.SameSite = SameSiteMode.Strict;
             });
 
             return services;

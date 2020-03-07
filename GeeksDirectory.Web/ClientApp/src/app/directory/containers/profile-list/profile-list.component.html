@@ -1,13 +1,8 @@
 <div class="profile-list-container" *ngIf="profiles.length">
-    <div
-        fxLayout="row"
-        fxLayout.xs="column"
-        fxLayoutAlign="center"
-        gdGap="25px"
-        gdColumns.gt-xs="repeat(auto-fill, minmax(280px, 1fr))"
-        class="profile-list"
-    >
-        <gd-profile-card class="profile-container" *ngFor="let profile of profiles" [profile]="profile"></gd-profile-card>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" gdGap="25px"
+        gdColumns.gt-xs="repeat(auto-fill, minmax(280px, 1fr))" class="profile-list">
+        <gd-profile-card class="profile-container" *ngFor="let profile of profiles" [profile]="profile">
+        </gd-profile-card>
     </div>
     <div class="profiles-bottom-list">
         <div class="loading-bar" *ngIf="loading$ | async">

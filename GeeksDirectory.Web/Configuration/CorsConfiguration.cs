@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Linq;
 
-using GeeksDirectory.SharedTypes.Extensions;
+using GeeksDirectory.Domain.Extensions;
 
 namespace GeeksDirectory.Web.Configuration
 {

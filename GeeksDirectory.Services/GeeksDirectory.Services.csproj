@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <PackageId>geeks-directory-services</PackageId>
+    <Authors>Sergey Zykov</Authors>
+    <Product>Geeks Directory Services</Product>
+
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentResults" Version="1.4.0" />
+    <PackageReference Include="MediatR" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeeksDirectory.Infrastructure\GeeksDirectory.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

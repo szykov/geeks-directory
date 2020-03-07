@@ -1,4 +1,4 @@
-using GeeksDirectory.SharedTypes.Extensions;
+using GeeksDirectory.Domain.Extensions;
 using GeeksDirectory.Web.Configuration;
 
 using Microsoft.AspNetCore.Builder;

@@ -8,11 +8,8 @@ export const updatePersonalProfile = createAction(
     props<{ profileModel: ProfileModel }>()
 );
 
-export const openAddSkillDialog = createAction(
-    '[Profiles Details] Open Add Skill Dialog',
-    props<{ profileId: number; skillModel: SkillModel }>()
-);
-export const openEditSkillDialog = createAction(
-    '[Profiles Details] Open Edit Skill Dialog',
+export const openAddSkillDialog = createAction('[Profiles Details] Open Add Skill Dialog', props<{ profileId: number }>());
+export const evaluateSkillDialog = createAction(
+    '[Profiles Details] Evaluate Skill Dialog',
     props<{ profileId: number; skillModel: SkillModel }>()
 );

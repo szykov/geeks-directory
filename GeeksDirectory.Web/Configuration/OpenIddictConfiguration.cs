@@ -1,7 +1,7 @@
 ﻿using AspNet.Security.OpenIdConnect.Primitives;
 
-using GeeksDirectory.Data;
-using GeeksDirectory.Data.Entities;
+using GeeksDirectory.Infrastructure;
+using GeeksDirectory.Domain.Entities;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;

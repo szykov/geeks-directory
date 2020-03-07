@@ -1,3 +1,3 @@
 export * from './viewer-container/viewer-container.component';
-export * from './skill-dialog/skill-dialog.component';
-export * from './city-select/city-select.component';
+export * from './add-skill-dialog/add-skill-dialog.component';
+export * from './evaluate-skill-score/evaluate-skill-score.component';

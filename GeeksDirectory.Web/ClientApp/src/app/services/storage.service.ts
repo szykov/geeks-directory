@@ -17,8 +17,12 @@ export class StorageService {
         }
     }
 
-    public setAuthToken(value: IToken) {
-        this.cookieService.set(`${CONFIG.prefix}-token`, JSON.stringify(value));
+    public setAuthToken(token: IToken) {
+        let expiredDate = new Date();
+        expiredDate.setDate(Date.now());
+        expiredDate.setSeconds(expiredDate.getSeconds() + token.expires_in);
+
+        this.cookieService.set(`${CONFIG.prefix}-token`, JSON.stringify(token), expiredDate, '/', null, null, 'Strict');
     }
 
     public getAuthToken(): IToken {
@@ -31,7 +35,7 @@ export class StorageService {
     }
 
     public clearAuthToken() {
-        this.cookieService.delete(`${CONFIG.prefix}-token`);
+        this.cookieService.delete(`${CONFIG.prefix}-token`, '/');
     }
 
     public setAuthUser(profile: IProfile) {
