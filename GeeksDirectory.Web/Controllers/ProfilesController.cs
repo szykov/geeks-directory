@@ -41,8 +41,8 @@ namespace GeeksDirectory.Web.Controllers
 
         // GET: /api/profiles?limit={limit}&offset={offset}
         /**
-         * <summary>Get profile</summary>
-         * <remarks>Searches profiles in database.</remarks>
+         * <summary>Get profiles</summary>
+         * <remarks>Get profiles.</remarks>
          * <param name="limit">Limit how many matches will be returned</param>
          * <param name="offset">How many matched users will be skipped</param>
          * <param name="orderBy">Order by which profile's property</param>
@@ -75,8 +75,11 @@ namespace GeeksDirectory.Web.Controllers
         [HttpGet("me")]
         public async Task<ActionResult<GeekProfileResponse>> GetMyProfile()
         {
-            var query = new GetPersonalProfileQuery();
+            var user = await this.mediator.Send(new GetCurrentUserQuery());
+
+            var query = new GetProfileByEmailQuery(user.Email);
             var profile = await this.mediator.Send(query);
+
             return this.Ok(profile);
         }
 
@@ -102,8 +105,9 @@ namespace GeeksDirectory.Web.Controllers
             string? orderDirection,
             string? orderBy = nameof(GeekProfile.ProfileId))
         {
-            var query = new SearchQuery(filter, limit, offset, orderBy, orderDirection);
+            var query = new SearchProfilesQuery(filter, limit, offset, orderBy, orderDirection);
             var profile = await this.mediator.Send(query);
+
             return this.Ok(profile);
         }
 
@@ -120,15 +124,16 @@ namespace GeeksDirectory.Web.Controllers
         [HttpGet("{id}", Name = nameof(GetProfile))]
         public async Task<ActionResult<GeekProfileResponse>> GetProfile([FromRoute]int id)
         {
-            var query = new GetProfileQuery(id);
+            var query = new GetProfileByIdQuery(id);
             var profile = await this.mediator.Send(query);
+
             return this.Ok(profile);
         }
 
         // POST: /api/profiles
         /**
          * <summary>Register profile</summary>
-         * <remarks>Add new profile to database.</remarks>
+         * <remarks>Register new profile.</remarks>
          * <param name="model">User profile model</param>
          * <returns>Created user profile</returns>
         **/
@@ -145,14 +150,14 @@ namespace GeeksDirectory.Web.Controllers
             if (result.IsFailed)
                 return this.UnprocessableEntity(result);
 
-            var profile = new GetProfileQuery(result.Value);
+            var profile = new GetProfileByIdQuery(result.Value);
             return this.CreatedAtRoute(nameof(GetProfile), new { result.Value }, profile);
         }
 
         // PATCH: /api/profiles/me
         /**
          * <summary>Update profile</summary>
-         * <remarks>Update user profile in database.</remarks>
+         * <remarks>Update user profile properties except email.</remarks>
          * <param name="model">User profile model</param>
          * <returns>Updated user profile</returns>
         **/
@@ -161,13 +166,15 @@ namespace GeeksDirectory.Web.Controllers
         [HttpPatch("me")]
         public async Task<ActionResult<GeekProfileResponse>> UpdatePersonalProfile([FromBody]GeekProfileModel model)
         {
-            var command = new UpdatePersonalProfileCommand(model);
+            var user = await this.mediator.Send(new GetCurrentUserQuery());
+
+            var command = new UpdateProfileCommand(model, user.Profile.ProfileId);
             var result = await this.mediator.Send(command);
 
             if (result.IsFailed)
                 return this.UnprocessableEntity(result);
 
-            var query = new GetProfileQuery(result.Value);
+            var query = new GetProfileByIdQuery(result.Value);
             var profile = await this.mediator.Send(query);
 
             return this.Ok(profile);

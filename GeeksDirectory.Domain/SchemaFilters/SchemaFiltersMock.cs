@@ -47,38 +47,16 @@ namespace GeeksDirectory.Domain.SchemaFilters
                         ["id"] = new OpenApiInteger(1),
                         ["name"] = new OpenApiString("python"),
                         ["description"] = new OpenApiString("Excepteur sint in culpa id est laborum."),
-                        ["averageScore"] = new OpenApiInteger(4),
-                        ["assessments"] = GetAssessments()
+                        ["averageScore"] = new OpenApiInteger(4)
                     },
                     new OpenApiObject()
                     {
                         ["id"] = new OpenApiInteger(2),
                         ["name"] = new OpenApiString("cpp"),
                         ["description"] = new OpenApiString("Excepteur occaecat cupida proident, suntid est."),
-                        ["averageScore"] = new OpenApiInteger(3),
-                        ["assessments"] = GetAssessments()
+                        ["averageScore"] = new OpenApiInteger(3)
                     }
                 };
-            }
-
-        public static OpenApiArray GetAssessments()
-        {
-            return new OpenApiArray()
-            {
-                new OpenApiObject()
-                {
-                    ["id"] = new OpenApiInteger(1),
-                    ["author"] = new OpenApiString("78988724-2d03-41b2-b678-df86c7332a5d"),
-                    ["score"] = new OpenApiInteger(5)
-                },
-                new OpenApiObject()
-                {
-                    ["id"] = new OpenApiInteger(2),
-                    ["author"] = new OpenApiString("749d7g4-2d303-41b2-d678-dfd6c73afa5d"),
-                    ["score"] = new OpenApiInteger(3)
-                }
-            };
-        }
-        
+            }    
     }
 }

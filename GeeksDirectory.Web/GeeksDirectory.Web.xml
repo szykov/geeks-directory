@@ -33,8 +33,8 @@
             
         </member>
         <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.GetProfiles(System.Int32,System.Int32,System.String,System.String)">
-                     * <summary>Get profile</summary>
-                     * <remarks>Searches profiles in database.</remarks>
+                     * <summary>Get profiles</summary>
+                     * <remarks>Get profiles.</remarks>
                      * <param name="limit">Limit how many matches will be returned</param>
                      * <param name="offset">How many matched users will be skipped</param>
                      * <param name="orderBy">Order by which profile's property</param>
@@ -68,14 +68,14 @@
         </member>
         <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.RegisterProfileAsync(GeeksDirectory.Domain.Models.CreateGeekProfileModel)">
                      * <summary>Register profile</summary>
-                     * <remarks>Add new profile to database.</remarks>
+                     * <remarks>Register new profile.</remarks>
                      * <param name="model">User profile model</param>
                      * <returns>Created user profile</returns>
                     *
         </member>
         <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.UpdatePersonalProfile(GeeksDirectory.Domain.Models.GeekProfileModel)">
                      * <summary>Update profile</summary>
-                     * <remarks>Update user profile in database.</remarks>
+                     * <remarks>Update user profile properties except email.</remarks>
                      * <param name="model">User profile model</param>
                      * <returns>Updated user profile</returns>
                     *
@@ -85,11 +85,11 @@
                  * <remarks>CRUD operations regarding skills.</remarks>
                 *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.GetSkill(System.Int32,System.String)">
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.GetSkill(System.Int32,System.Int32)">
                      * <summary>Get skill</summary>
-                     * <remarks>Get skill profile's skill by it's name.</remarks>
+                     * <remarks>Get profile's skill by it's name.</remarks>
                      * <param name="profileId">User profile id</param>
-                     * <param name="skillName">Name of the skill</param>
+                     * <param name="skillId">Skill's id</param>
                      * <returns>Matched skill</returns>
                     *
         </member>
@@ -101,20 +101,20 @@
                      * <returns>Added skill</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.EvaluateSkillAsync(System.Int32,System.String,GeeksDirectory.Domain.Models.SkillEvaluationModel)">
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.EvaluateSkillAsync(System.Int32,System.Int32,GeeksDirectory.Domain.Models.SkillEvaluationModel)">
                      * <summary>Evaluate skill</summary>
-                     * <remarks>Evaluate skill for profile.</remarks>
+                     * <remarks>Evaluate profile's skill.</remarks>
                      * <param name="profileId">User profile id</param>
-                     * <param name="skillName">Skill's name</param>
+                     * <param name="skillId">Skill's id</param>
                      * <param name="model">Skill Evaluation model</param>
                      * <returns>Updated skill's average score</returns>
                     *
         </member>
-        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.GetMySkillEvaluationAsync(System.Int32,System.String)">
-                     * <summary>Get my skill evaluation</summary>
-                     * <remarks>Can get your skill evaluation score if it exists</remarks>
+        <member name="M:GeeksDirectory.Web.Controllers.SkillsController.GetMySkillEvaluationAsync(System.Int32,System.Int32)">
+                     * <summary>Get previous skill evaluation</summary>
+                     * <remarks>Try to get previous skill evaluation if such exists</remarks>
                      * <param name="profileId">User profile id</param>
-                     * <param name="skillName">Skill's name</param>
+                     * <param name="skillId">Skill's id</param>
                      * <returns>Assessment data with your score</returns>
                     *
         </member>

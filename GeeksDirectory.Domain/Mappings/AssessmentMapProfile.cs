@@ -11,7 +11,7 @@ namespace GeeksDirectory.Domain.Mappings
         {
             this.CreateMap<Assessment, AssessmentResponse>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AssessmentId))
-                .ForMember(dest => dest.Author, opt => opt.MapFrom(src => src.User.Email));
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.User.Email));
         }
     }
 }

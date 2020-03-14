@@ -2,8 +2,6 @@
 
 using Swashbuckle.AspNetCore.Annotations;
 
-using System.Collections.Generic;
-
 namespace GeeksDirectory.Domain.Responses
 {
     [SwaggerSchemaFilter(typeof(SkillResponseSchemaFilter))]
@@ -16,7 +14,5 @@ namespace GeeksDirectory.Domain.Responses
         public string? Description { get; set; }
 
         public int AverageScore { get; set; }
-
-        public IEnumerable<AssessmentResponse> Assessments { get; set; } = new List<AssessmentResponse>();
     }
 }

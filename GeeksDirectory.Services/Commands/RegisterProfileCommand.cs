@@ -10,9 +10,6 @@ namespace GeeksDirectory.Services.Commands
     {
         public readonly CreateGeekProfileModel Profile;
 
-        public RegisterProfileCommand(CreateGeekProfileModel profile)
-        {
-            this.Profile = profile;
-        }
+        public RegisterProfileCommand(CreateGeekProfileModel profile) => this.Profile = profile;
     }
 }

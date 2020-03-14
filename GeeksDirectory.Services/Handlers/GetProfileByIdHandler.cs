@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS1998
 
 using AutoMapper;
+
 using GeeksDirectory.Domain.Interfaces;
 using GeeksDirectory.Services.Mappings;
 using GeeksDirectory.Services.Queries;
@@ -13,21 +14,21 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class GetSkillHandler : IRequestHandler<GetSkillQuery, SkillResponse?>
+    public class GetProfileByIdHandler : IRequestHandler<GetProfileByIdQuery, GeekProfileResponse?>
     {
-        private readonly ISkillsRepository repository;
+        private readonly IProfilesRepository repository;
         private readonly IMapper mapper;
 
-        public GetSkillHandler(ISkillsRepository repository, IMapperService mapperService)
+        public GetProfileByIdHandler(IProfilesRepository repository, IMapperService mapperService)
         {
             this.repository = repository;
             this.mapper = mapperService.GetDataMapper();
         }
 
-        public async Task<SkillResponse?> Handle(GetSkillQuery request, CancellationToken cancellationToken)
+        public async Task<GeekProfileResponse?> Handle(GetProfileByIdQuery request, CancellationToken cancellationToken)
         {
-            var skill = this.repository.Get(request.ProfileId, request.SkillId);
-            return this.mapper.Map<SkillResponse?>(skill);
+            var profile = this.repository.GetProfileById(request.ProfileId);
+            return this.mapper.Map<GeekProfileResponse?>(profile);
         }
     }
 }

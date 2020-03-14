@@ -4,12 +4,12 @@ namespace GeeksDirectory.Domain.Interfaces
 {
     public interface IAssessmentsRepository
     {
-        Assessment? Get(int profileId, string skillName, string userId);
+        Assessment? Get(int profileId, int skillId, string userId);
 
-        void Add(int profileId, string skillName, string userId, int score);
+        void Add(int profileId, int skillId, string userId, int score);
 
-        bool Exists(int profileId, string skillName, string userId);
+        bool Exists(int profileId, int skillId, string userId);
 
-        void Update(int profileId, string skillName, string userId, int score);
+        void Update(int profileId, int skillId, string userId, int score);
     }
 }

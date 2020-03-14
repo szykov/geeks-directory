@@ -1,5 +1,4 @@
-﻿using GeeksDirectory.Domain.Attributes;
-using GeeksDirectory.Domain.SchemaFilters.Models;
+﻿using GeeksDirectory.Domain.SchemaFilters.Models;
 
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -11,8 +10,6 @@ namespace GeeksDirectory.Domain.Models
     public class SkillModel
     {
         [Required]
-        [NoWhitespace]
-        [SpecialCharacter(false)]
         [StringLength(maximumLength: 50)]
         public string Name { get; set; } = default!;
 

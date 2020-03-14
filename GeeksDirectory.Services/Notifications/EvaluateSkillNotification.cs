@@ -1,21 +1,20 @@
-﻿using GeeksDirectory.Domain.Models;
-
-using MediatR;
-
+﻿using MediatR;
 
 namespace GeeksDirectory.Services.Notifications
 {
     public class EvaluateSkillNotification : INotification
     {
+        public readonly string UserId;
         public readonly int ProfileId;
-        public readonly string SkillName;
-        public readonly SkillEvaluationModel SkillEvaluation;
+        public readonly int skillId;
+        public readonly int Score;
 
-        public EvaluateSkillNotification(int profileId, string skillName, SkillEvaluationModel skillEvaluation)
+        public EvaluateSkillNotification(string userId, int profileId, int skillId, int score)
         {
+            this.UserId = userId;
             this.ProfileId = profileId;
-            this.SkillName = skillName;
-            this.SkillEvaluation = skillEvaluation;
+            this.skillId = skillId;
+            this.Score = score;
         }
     }
 }

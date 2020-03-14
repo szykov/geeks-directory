@@ -18,18 +18,18 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class SearchHandler : IRequestHandler<SearchQuery, GeekProfilesResponse>
+    public class SearchProfilesHandler : IRequestHandler<SearchProfilesQuery, GeekProfilesResponse>
     {
         private readonly IProfilesRepository repository;
         private readonly IMapper mapper;
 
-        public SearchHandler(IProfilesRepository repository, IMapperService mapperService)
+        public SearchProfilesHandler(IProfilesRepository repository, IMapperService mapperService)
         {
             this.repository = repository;
             this.mapper = mapperService.GetDataMapper();
         }
 
-        public async Task<GeekProfilesResponse> Handle(SearchQuery request, CancellationToken cancellationToken)
+        public async Task<GeekProfilesResponse> Handle(SearchProfilesQuery request, CancellationToken cancellationToken)
         {
             var queryOptionsBuilder = new QueryOptionsBuilder()
                 .AddQuery(request.Filter)

@@ -4,43 +4,32 @@ using AutoMapper;
 
 using FluentResults;
 
-using GeeksDirectory.Domain.Entities;
 using GeeksDirectory.Domain.Interfaces;
 using GeeksDirectory.Services.Commands;
 using GeeksDirectory.Services.Mappings;
 
 using MediatR;
 
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class UpdatePersonalProfileHandler : IRequestHandler<UpdatePersonalProfileCommand, Result<int>>
+    public class UpdateProfileHandler : IRequestHandler<UpdateProfileCommand, Result<int>>
     {
-        private readonly HttpContext httpContext;
-        private readonly UserManager<ApplicationUser> userManager;
         private readonly IProfilesRepository repository;
         private readonly IMapper mapper;
 
-        public UpdatePersonalProfileHandler(
-            IHttpContextAccessor httpContextAccessor,
-            UserManager<ApplicationUser> userManager,
+        public UpdateProfileHandler(
             IProfilesRepository repository, IMapperService mapperService)
         {
-            this.httpContext = httpContextAccessor.HttpContext;
-            this.userManager = userManager;
             this.repository = repository;
             this.mapper = mapperService.GetDataMapper();
         }
 
-        public async Task<Result<int>> Handle(UpdatePersonalProfileCommand request, CancellationToken cancellationToken)
+        public async Task<Result<int>> Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
         {
-            var user = await this.userManager.GetUserAsync(httpContext.User);
-            var entity = this.repository.GetProfileByUserName(user.Email);
+            var entity = this.repository.GetProfileById(request.ProfileId);
 
             if (entity is null)
                 return Results.Fail("Profile doesn't exist.");

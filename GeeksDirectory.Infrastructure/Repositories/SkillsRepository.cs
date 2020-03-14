@@ -18,26 +18,26 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context = context;
         }
 
-        public Skill? Get(int profileId, string skillName)
+        public Skill? Get(int profileId, int skillId)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillName))
-                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillName)} are invalid.");
+            if (profileId == 0 || skillId == 0)
+                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillId)} are invalid.");
 
             return this.context.Skills
                 .Include(s => s.Assessments)
                 .ThenInclude(s => s.User)
                 .Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.Name == skillName)
+                .Where(s => s.SkillId == skillId)
                 .SingleOrDefault();
         }
 
-        public bool Exists(int profileId, string skillName)
+        public bool Exists(int profileId, int skillId)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillName))
-                throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skillName)} are invalid.");
+            if (profileId == 0 || skillId == 0)
+                throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skillId)} are invalid.");
 
             return this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.Name == skillName).Any();
+                .Where(s => s.SkillId == skillId).Any();
         }
 
         public void Add(int profileId, Skill skill)
@@ -54,12 +54,12 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context.SaveChanges();
         }
 
-        public Skill RefreshAverageScore(int profileId, string skillName)
+        public Skill RefreshAverageScore(int profileId, int skillId)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillName))
-                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillName)} are invalid.");
+            if (profileId == 0 || skillId == 0)
+                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillId)} are invalid.");
 
-            var skill = this.Get(profileId, skillName) ?? throw new KeyNotFoundException("Skill has not been found."); ;
+            var skill = this.Get(profileId, skillId) ?? throw new KeyNotFoundException("Skill has not been found."); ;
 
             var averageScore = Convert.ToInt32(skill.Assessments.Average(a => a.Score));
 
