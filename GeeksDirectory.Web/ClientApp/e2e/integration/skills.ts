@@ -39,14 +39,12 @@ describe('Skills', () => {
             .click();
 
         cy.get('[data-cy=addSkill]').click();
-        cy.get('[data-cy=skillName]').type('^_ _^');
+
+        cy.get('[data-cy=skillName]')
+            .type('Skill Name')
+            .clear();
         cy.get('[data-cy=skillDescription]').focus();
 
-        cy.contains('Name should not have white spaces');
-        cy.contains('Name should not have special letters');
-        cy.get('[data-cy=skillOk]').should('have.attr', 'disabled');
-
-        cy.get('[data-cy=skillName]').clear();
         cy.contains('Name is required');
         cy.get('[data-cy=skillOk]').should('have.attr', 'disabled');
     });

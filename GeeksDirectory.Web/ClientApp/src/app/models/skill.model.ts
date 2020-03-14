@@ -1,11 +1,15 @@
+import { ISkill } from '@app/responses';
+
 export class SkillModel {
     public name: string;
     public description: string;
-    public score;
+    public score: number;
 
-    constructor(name?: string, description?: string, score?: number) {
-        this.name = name;
-        this.description = description;
-        this.score = score;
+    public static fromSkill(skill: ISkill) {
+        let model = new SkillModel();
+        model.name = skill.name;
+        model.description = skill.description;
+
+        return model;
     }
 }

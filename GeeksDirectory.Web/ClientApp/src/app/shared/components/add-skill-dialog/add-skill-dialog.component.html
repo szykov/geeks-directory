@@ -4,12 +4,8 @@
         <div class="skill-body">
             <mat-form-field>
                 <input data-cy="skillName" type="text" matInput placeholder="Name" [(ngModel)]="model.name"
-                    #name="ngModel" id="name" name="name" gdNoWhiteSpace [gdSpecialCharacter]="false" required />
+                    #name="ngModel" id="name" name="name" required />
                 <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required</mat-error>
-                <mat-error *ngIf="!name.valid && !name.pristine && name.errors['noWhiteSpace']">Name
-                    should not have white spaces</mat-error>
-                <mat-error *ngIf="!name.valid && !name.pristine && name.errors['specialCharacter']">Name
-                    should not have special letters</mat-error>
             </mat-form-field>
 
             <mat-form-field>

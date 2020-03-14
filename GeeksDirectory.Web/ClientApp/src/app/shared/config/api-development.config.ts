@@ -15,8 +15,8 @@ export const API = {
             searchProfiles: 'api/profiles/search',
             getSkill: 'api/profiles/{profileId}/skills',
             addSkill: 'api/profiles/{profileId}/skills',
-            setSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score',
-            getSkillScore: 'api/profiles/{profileId}/skills/{skillName}/score'
+            setSkillScore: 'api/profiles/{profileId}/skills/{skillId}/score',
+            getSkillScore: 'api/profiles/{profileId}/skills/{skillId}/score'
         }
     }
 };

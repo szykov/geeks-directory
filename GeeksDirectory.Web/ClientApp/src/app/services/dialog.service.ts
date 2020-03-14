@@ -20,8 +20,8 @@ export class DialogService {
         return this.baseDialog(AddSkillDialogComponent, { data });
     }
 
-    public evaluateSkillDialog(profileId: number, model: SkillModel): Observable<ISkillDialogResult> {
-        let data: ISkillDialogData = { profileId, model };
+    public evaluateSkillDialog(profileId: number, skillId: number, model: SkillModel): Observable<ISkillDialogResult> {
+        let data: ISkillDialogData = { profileId, skillId, model };
         return this.baseDialog(EvaluateSkillScoreComponent, { data });
     }
 

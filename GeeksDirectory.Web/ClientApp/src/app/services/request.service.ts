@@ -72,19 +72,19 @@ export class RequestService {
         return this.http.get<IProfilesEnvelope>(urlBulder.build(), { headers: this.headers });
     }
 
-    public setSkillScore(profileId: number, skillName: string, skillEvaluation: SkillEvaluationModel): Observable<ISkill> {
+    public setSkillScore(profileId: number, skillId: number, skillEvaluation: SkillEvaluationModel): Observable<ISkill> {
         let url = new EndpointBuilder(CONFIG.api.connection.endpoints.setSkillScore)
             .setUrlParam('profileId', profileId.toString())
-            .setUrlParam('skillName', skillName)
+            .setUrlParam('skillId', skillId.toString())
             .build();
 
         return this.http.post<ISkill>(url, skillEvaluation, { headers: this.headers });
     }
 
-    public getMySkillEvaluation(profileId: number, skillName: string): Observable<IAssessment> {
+    public getMySkillEvaluation(profileId: number, skillId: number): Observable<IAssessment> {
         let url = new EndpointBuilder(CONFIG.api.connection.endpoints.getSkillScore)
             .setUrlParam('profileId', profileId.toString())
-            .setUrlParam('skillName', skillName)
+            .setUrlParam('skillId', skillId.toString())
             .build();
 
         return this.http.get<IAssessment>(url, { headers: this.headers });
