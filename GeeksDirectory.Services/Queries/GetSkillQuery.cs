@@ -6,10 +6,10 @@ namespace GeeksDirectory.Services.Queries
 {
     public class GetSkillQuery : IRequest<SkillResponse?>
     {
-        public readonly int ProfileId;
-        public readonly int SkillId;
+        public readonly long ProfileId;
+        public readonly long SkillId;
 
-        public GetSkillQuery(int profileId, int skillId) =>
+        public GetSkillQuery(long profileId, long skillId) =>
             (this.ProfileId, this.SkillId) = (profileId, skillId);
     }
 }

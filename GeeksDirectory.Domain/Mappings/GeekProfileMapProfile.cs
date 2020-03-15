@@ -14,7 +14,7 @@ namespace GeeksDirectory.Domain.Mappings
             this.CreateMap<CreateGeekProfileModel, GeekProfile>();
 
             this.CreateMap<GeekProfile, GeekProfileResponse>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ProfileId));
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
         }
     }
 }

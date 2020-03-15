@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using GeeksDirectory.Domain.Classes;
+using System;
 
 namespace GeeksDirectory.Web.Configuration
 {
@@ -26,7 +28,7 @@ namespace GeeksDirectory.Web.Configuration
             });
 
             // Register the Identity services.
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 

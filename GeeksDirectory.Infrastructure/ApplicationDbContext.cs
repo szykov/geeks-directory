@@ -1,5 +1,6 @@
 ﻿#nullable disable
 
+using GeeksDirectory.Domain.Classes;
 using GeeksDirectory.Domain.Entities;
 using GeeksDirectory.Infrastructure.Seed;
 
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Hosting;
 
+using System;
+
 namespace GeeksDirectory.Infrastructure
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {
         public virtual DbSet<GeekProfile> Profiles { get; set; }
 
@@ -28,45 +31,49 @@ namespace GeeksDirectory.Infrastructure
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
-            builder.Entity<ApplicationUser>()
-                .HasOne(u => u.Profile)
-                .WithOne(p => p.User)
-                .HasForeignKey<GeekProfile>(p => p.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<ApplicationUser>(entity =>
+            {
+                entity.HasOne(u => u.Profile)
+                    .WithOne(p => p.User)
+                    .HasForeignKey<GeekProfile>(p => p.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
 
-            builder.Entity<GeekProfile>()
-                .HasKey(p => p.ProfileId);
 
-            builder.Entity<GeekProfile>()
-                .Property(p => p.ProfileId)
-                .ValueGeneratedOnAdd();
+            builder.Entity<GeekProfile>(entity =>
+            {
+                entity.HasKey(p => p.Id);
 
-            builder.Entity<GeekProfile>()
-                .HasMany(p => p.Skills)
-                .WithOne(s => s.Profile)
-                .HasForeignKey(s => s.ProfileId)
-                .OnDelete(DeleteBehavior.Cascade);
+                entity.Property(p => p.Id)
+                    .ValueGeneratedOnAdd();
 
-            builder.Entity<Skill>()
-                .HasKey(s => s.SkillId);
+                entity.HasMany(p => p.Skills)
+                    .WithOne(s => s.Profile)
+                    .HasForeignKey(s => s.ProfileId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
 
-            builder.Entity<Skill>()
-                .Property(s => s.SkillId)
-                .ValueGeneratedOnAdd();
+            builder.Entity<Skill>(entity =>
+            {
+                entity.HasKey(s => s.Id);
 
-            builder.Entity<Skill>()
-                .HasMany(s => s.Assessments)
-                .WithOne(a => a.Skill)
-                .HasForeignKey(a => a.SkillId)
-                .OnDelete(DeleteBehavior.Cascade);
+                entity.Property(s => s.Id)
+                    .ValueGeneratedOnAdd();
 
-            builder.Entity<Assessment>()
-                .HasKey(a => a.AssessmentId);
+                entity.HasMany(s => s.Assessments)
+                    .WithOne(a => a.Skill)
+                    .HasForeignKey(a => a.SkillId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
 
-            builder.Entity<Assessment>()
-                .HasOne(a => a.User)
-                .WithMany(u => u.Assessments)
-                .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Assessment>(entity =>
+            {
+                entity.HasKey(a => a.Id);
+
+                entity.HasOne(a => a.User)
+                    .WithMany(u => u.Assessments)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
 
             var env = this.GetService<IWebHostEnvironment>();
             if (env.IsDevelopment())

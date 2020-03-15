@@ -2,15 +2,17 @@
 
 using MediatR;
 
+using System;
+
 namespace GeeksDirectory.Services.Queries
 {
     public class GetSkillEvaluationQuery : IRequest<AssessmentResponse?>
     {
-        public readonly int ProfileId;
-        public readonly int SkillId;
-        public readonly string UserId;
+        public readonly long ProfileId;
+        public readonly long SkillId;
+        public readonly Guid UserId;
 
-        public GetSkillEvaluationQuery(int profileId, int skillId, string userId) =>
+        public GetSkillEvaluationQuery(long profileId, long skillId, Guid userId) =>
             (this.ProfileId, this.SkillId, this.UserId) = (profileId, skillId, userId);
     }
 }

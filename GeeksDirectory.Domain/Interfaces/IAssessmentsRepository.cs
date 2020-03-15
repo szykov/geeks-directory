@@ -1,15 +1,17 @@
 ﻿using GeeksDirectory.Domain.Entities;
 
+using System;
+
 namespace GeeksDirectory.Domain.Interfaces
 {
     public interface IAssessmentsRepository
     {
-        Assessment? Get(int profileId, int skillId, string userId);
+        Assessment? Get(long profileId, long skillId, Guid userId);
 
-        void Add(int profileId, int skillId, string userId, int score);
+        void Add(long profileId, long skillId, Guid userId, int score);
 
-        bool Exists(int profileId, int skillId, string userId);
+        bool Exists(long profileId, long skillId, Guid userId);
 
-        void Update(int profileId, int skillId, string userId, int score);
+        void Update(long profileId, long skillId, Guid userId, int score);
     }
 }

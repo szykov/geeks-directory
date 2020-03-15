@@ -4,12 +4,12 @@ namespace GeeksDirectory.Domain.Interfaces
 {
     public interface ISkillsRepository
     {
-        Skill? Get(int profileId, int skillId);
+        Skill? Get(long profileId, long skillId);
 
-        bool Exists(int profileId, int skillId);
+        bool Exists(long profileId, long skillId);
 
-        void Add(int profileId, Skill skill);
+        void Add(long profileId, Skill skill);
 
-        Skill RefreshAverageScore(int profileId, int skillId);
+        Skill RefreshAverageScore(long profileId, long skillId);
     }
 }

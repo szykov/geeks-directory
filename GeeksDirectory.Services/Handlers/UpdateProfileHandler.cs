@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class UpdateProfileHandler : IRequestHandler<UpdateProfileCommand, Result<int>>
+    public class UpdateProfileHandler : IRequestHandler<UpdateProfileCommand, Result<long>>
     {
         private readonly IProfilesRepository repository;
         private readonly IMapper mapper;
@@ -27,7 +27,7 @@ namespace GeeksDirectory.Services.Handlers
             this.mapper = mapperService.GetDataMapper();
         }
 
-        public async Task<Result<int>> Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
+        public async Task<Result<long>> Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
         {
             var entity = this.repository.GetProfileById(request.ProfileId);
 
@@ -37,7 +37,7 @@ namespace GeeksDirectory.Services.Handlers
             this.mapper.Map(request.Profile, entity);
             this.repository.Update(entity);
 
-            return Results.Ok(entity.ProfileId);
+            return Results.Ok(entity.Id);
         }
     }
 }

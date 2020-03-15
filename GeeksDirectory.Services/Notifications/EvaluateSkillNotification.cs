@@ -1,15 +1,16 @@
 ﻿using MediatR;
+using System;
 
 namespace GeeksDirectory.Services.Notifications
 {
     public class EvaluateSkillNotification : INotification
     {
-        public readonly string UserId;
-        public readonly int ProfileId;
-        public readonly int skillId;
+        public readonly Guid UserId;
+        public readonly long ProfileId;
+        public readonly long skillId;
         public readonly int Score;
 
-        public EvaluateSkillNotification(string userId, int profileId, int skillId, int score)
+        public EvaluateSkillNotification(Guid userId, long profileId, long skillId, int score)
         {
             this.UserId = userId;
             this.ProfileId = profileId;

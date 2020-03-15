@@ -29,15 +29,15 @@ namespace GeeksDirectory.Services.Handlers
             var sql = @"SELECT A.[AssessmentId] as Id,
                                P.[Email],
                                A.[Score]
-                        FROM   [profiles] AS P 
-                               LEFT JOIN [skills] AS S 
-                                      ON P.[profileid] = S.[profileid] 
-                               LEFT JOIN [assessments] AS A 
-                                      ON S.[skillid] = A.[skillid] 
-                        WHERE  P.[profileid] = @ProfileId 
-                               AND S.[skillId] = @SkillId 
-                               AND A.[userid] = @UserId";
-            var assesment = db.QuerySingleOrDefault<AssessmentResponse>(sql, new { request.ProfileId, request.SkillId, request.UserId });
+                        FROM   [Profiles] AS P 
+                               LEFT JOIN [Skills] AS S 
+                                      ON P.[ProfileId] = S.[ProfileId] 
+                               LEFT JOIN [Assessments] AS A 
+                                      ON S.[Skillid] = A.[skillid] 
+                        WHERE  P.[Profileid] = @ProfileId 
+                               AND S.[SkillId] = @SkillId 
+                               AND A.[UserId] = @UserId";
+            var assesment = await db.QuerySingleAsync<AssessmentResponse>(sql, new { request.ProfileId, request.SkillId, request.UserId });
 
             return assesment;
         }

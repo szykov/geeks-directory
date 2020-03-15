@@ -11,6 +11,6 @@ namespace GeeksDirectory.Domain.Responses
 
         public int Limit { get; set; }
 
-        public int Total { get; set; }
+        public long Total { get; set; }
     }
 }

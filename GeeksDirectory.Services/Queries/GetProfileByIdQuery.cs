@@ -6,8 +6,8 @@ namespace GeeksDirectory.Services.Queries
 {
     public class GetProfileByIdQuery : IRequest<GeekProfileResponse?> 
     {
-        public readonly int ProfileId;
+        public readonly long ProfileId;
 
-        public GetProfileByIdQuery(int profileId) => this.ProfileId = profileId;
+        public GetProfileByIdQuery(long profileId) => this.ProfileId = profileId;
     }
 }

@@ -18,7 +18,7 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context = context;
         }
 
-        public Skill? Get(int profileId, int skillId)
+        public Skill? Get(long profileId, long skillId)
         {
             if (profileId == 0 || skillId == 0)
                 throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillId)} are invalid.");
@@ -26,26 +26,26 @@ namespace GeeksDirectory.Infrastructure.Repositories
             return this.context.Skills
                 .Include(s => s.Assessments)
                 .ThenInclude(s => s.User)
-                .Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.SkillId == skillId)
+                .Where(s => s.Profile.Id == profileId)
+                .Where(s => s.Id == skillId)
                 .SingleOrDefault();
         }
 
-        public bool Exists(int profileId, int skillId)
+        public bool Exists(long profileId, long skillId)
         {
             if (profileId == 0 || skillId == 0)
                 throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skillId)} are invalid.");
 
-            return this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.SkillId == skillId).Any();
+            return this.context.Skills.Where(s => s.Profile.Id == profileId)
+                .Where(s => s.Id == skillId).Any();
         }
 
-        public void Add(int profileId, Skill skill)
+        public void Add(long profileId, Skill skill)
         {
             if (profileId == 0 || skill == null)
                 throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skill)} are invalid.");
 
-            var profile = this.context.Profiles.Where(prf => prf.ProfileId == profileId).SingleOrDefault()
+            var profile = this.context.Profiles.Where(prf => prf.Id == profileId).SingleOrDefault()
                 ?? throw new KeyNotFoundException("Profile has not been found.");
 
             skill.Profile = profile;
@@ -54,7 +54,7 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context.SaveChanges();
         }
 
-        public Skill RefreshAverageScore(int profileId, int skillId)
+        public Skill RefreshAverageScore(long profileId, long skillId)
         {
             if (profileId == 0 || skillId == 0)
                 throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillId)} are invalid.");

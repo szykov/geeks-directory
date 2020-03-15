@@ -35,7 +35,7 @@ namespace GeeksDirectory.Infrastructure.Repositories
             return result.Skip(queryOptions.Offset).Take(queryOptions.Limit);
         }
 
-        public GeekProfile? GetProfileById(int profileId)
+        public GeekProfile? GetProfileById(long profileId)
         {
             if (profileId == 0)
                 throw new ArgumentException(message: $"Argument {nameof(profileId)} is invalid.");
@@ -43,7 +43,7 @@ namespace GeeksDirectory.Infrastructure.Repositories
             return this.context.Profiles
                 .Include(prf => prf.Skills)
                 .Include(prf => prf.User)
-                .Where(prf => prf.ProfileId == profileId)
+                .Where(prf => prf.Id == profileId)
                 .SingleOrDefault();
         }
 
@@ -72,7 +72,7 @@ namespace GeeksDirectory.Infrastructure.Repositories
                 .Any();
         }
 
-        public IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out int total)
+        public IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out long total)
         {
             if (queryOptions is null)
                 throw new ArgumentNullException(paramName: nameof(queryOptions));

@@ -47,7 +47,7 @@ namespace GeeksDirectory.Infrastructure.Seed
                 var skills =  JsonSerializer.Deserialize<IEnumerable<Skill>>(json);
                 this.Skills = skills.Select(s => new Skill()
                 {
-                    SkillId = s.SkillId,
+                    Id = s.Id,
                     ProfileId = s.ProfileId,
                     Name = s.Name,
                     Description = s.Description,
@@ -57,7 +57,7 @@ namespace GeeksDirectory.Infrastructure.Seed
                 this.Assessments = skills.SelectMany(s => s.Assessments)
                     .Select((a, index) => new Assessment()
                     {
-                        AssessmentId = index + 1,
+                        Id = index + 1,
                         SkillId = a.SkillId,
                         UserId = a.UserId,
                         Score = a.Score

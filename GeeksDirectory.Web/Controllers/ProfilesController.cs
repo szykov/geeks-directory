@@ -57,7 +57,7 @@ namespace GeeksDirectory.Web.Controllers
             int limit,
             int offset,
             string? orderDirection,
-            string? orderBy = nameof(GeekProfile.ProfileId))
+            string? orderBy = nameof(GeekProfile.Id))
         {
             var query = new GetProfilesQuery(limit, offset, orderBy, orderDirection);
             var profile = await this.mediator.Send(query);
@@ -103,7 +103,7 @@ namespace GeeksDirectory.Web.Controllers
             int limit,
             int offset,
             string? orderDirection,
-            string? orderBy = nameof(GeekProfile.ProfileId))
+            string? orderBy = nameof(GeekProfile.Id))
         {
             var query = new SearchProfilesQuery(filter, limit, offset, orderBy, orderDirection);
             var profile = await this.mediator.Send(query);
@@ -168,7 +168,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             var user = await this.mediator.Send(new GetCurrentUserQuery());
 
-            var command = new UpdateProfileCommand(model, user.Profile.ProfileId);
+            var command = new UpdateProfileCommand(model, user.Profile.Id);
             var result = await this.mediator.Send(command);
 
             if (result.IsFailed)
