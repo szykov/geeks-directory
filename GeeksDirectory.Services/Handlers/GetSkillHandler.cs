@@ -1,12 +1,14 @@
 ﻿#pragma warning disable CS1998
 
-using AutoMapper;
-using GeeksDirectory.Domain.Interfaces;
-using GeeksDirectory.Services.Mappings;
-using GeeksDirectory.Services.Queries;
+using Dapper;
+
 using GeeksDirectory.Domain.Responses;
+using GeeksDirectory.Services.Queries;
 
 using MediatR;
+
+using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Configuration;
 
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,19 +17,29 @@ namespace GeeksDirectory.Services.Handlers
 {
     public class GetSkillHandler : IRequestHandler<GetSkillQuery, SkillResponse?>
     {
-        private readonly ISkillsRepository repository;
-        private readonly IMapper mapper;
+        private readonly string connection;
 
-        public GetSkillHandler(ISkillsRepository repository, IMapperService mapperService)
+        public GetSkillHandler(IConfiguration configuration)
         {
-            this.repository = repository;
-            this.mapper = mapperService.GetDataMapper();
+            this.connection = configuration.GetConnectionString("DefaultConnection");
         }
 
         public async Task<SkillResponse?> Handle(GetSkillQuery request, CancellationToken cancellationToken)
         {
-            var skill = this.repository.Get(request.ProfileId, request.SkillName);
-            return this.mapper.Map<SkillResponse?>(skill);
+            using var db = new SqliteConnection(this.connection);
+
+            var sql = @"SELECT [Id],
+                               [Name],
+                               [Description],
+                               [AverageScore],
+                               [Profileid]
+                        FROM   [Skills] AS S
+                        WHERE  S.[ProfileId] = @ProfileId
+                               AND S.[Id] = @SkillId;";
+
+            var skills = await db.QuerySingleOrDefaultAsync<SkillResponse>(sql, new { request.ProfileId, request.SkillId });
+
+            return skills;
         }
     }
 }

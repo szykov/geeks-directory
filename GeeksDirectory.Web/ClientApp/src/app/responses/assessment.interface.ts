@@ -1,5 +1,5 @@
 export interface IAssessment {
     id: number;
-    author: string;
+    email: string;
     score: number;
 }

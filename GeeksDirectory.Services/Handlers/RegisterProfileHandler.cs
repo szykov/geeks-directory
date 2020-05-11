@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class RegisterProfileHandler : IRequestHandler<RegisterProfileCommand, Result<int>>
+    public class RegisterProfileHandler : IRequestHandler<RegisterProfileCommand, Result<long>>
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IProfilesRepository repository;
@@ -35,10 +35,10 @@ namespace GeeksDirectory.Services.Handlers
             this.mapper = mapperService.GetDataMapper();
         }
 
-        public async Task<Result<int>> Handle(RegisterProfileCommand request, CancellationToken cancellationToken)
+        public async Task<Result<long>> Handle(RegisterProfileCommand request, CancellationToken cancellationToken)
         {
             if (this.repository.UserExists(request.Profile.Email))
-                return Results.Fail<int>("Profile already exists.");
+                return Results.Fail<long>("Profile already exists.");
 
             var applicationUser = await this.CreateUser(request.Profile.Email, request.Profile.Password);
 
@@ -47,7 +47,7 @@ namespace GeeksDirectory.Services.Handlers
 
             this.repository.Add(profile);
 
-            return Results.Ok(profile.ProfileId);
+            return Results.Ok(profile.Id);
         }
 
 
@@ -60,7 +60,7 @@ namespace GeeksDirectory.Services.Handlers
                 Email = email,
                 NormalizedEmail = normalizedEmail,
                 NormalizedUserName = normalizedEmail,
-                Id = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid(),
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 

@@ -12,7 +12,9 @@ namespace GeeksDirectory.Domain.Classes
 
         public string? OrderBy { get; set; }
 
-        public OrderDirection OrderDirection { get; set; } = OrderDirection.Ascending;
+        public OrderDirection OrderDirection { get; set; } = OrderDirection.Asc;
+
+        internal QueryOptions() { }
 
         public bool IsSortable()
         {

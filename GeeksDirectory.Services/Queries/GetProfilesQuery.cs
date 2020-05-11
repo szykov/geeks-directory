@@ -1,22 +1,28 @@
-﻿using GeeksDirectory.Domain.Responses;
+﻿using GeeksDirectory.Domain.Classes;
+using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Domain.Extensions;
+using GeeksDirectory.Domain.Responses;
 
 using MediatR;
+using System;
+using System.Collections.Generic;
 
 namespace GeeksDirectory.Services.Queries
 {
-    public class GetProfilesQuery : IRequest<GeekProfilesResponse>
+    public class GetProfilesQuery : IRequest<(IEnumerable<GeekProfileResponse> profiles, long total)>
     {
-        public readonly int Limit;
-        public readonly int Offset;
-        public readonly string? OrderBy;
-        public readonly string? OrderDirection;
+        public readonly QueryOptions queryOptions;
 
         public GetProfilesQuery(int limit, int offset, string? orderBy, string? orderDirection)
         {
-            this.Limit = limit;
-            this.Offset = offset;
-            this.OrderBy = orderBy;
-            this.OrderDirection = orderDirection;
+            var queryOptionsBuilder = new QueryOptionsBuilder()
+                .AddLimit(limit)
+                .AddOffset(offset)
+                .AddOrderDirection(orderDirection);
+
+            this.queryOptions = !String.IsNullOrEmpty(orderBy) ?
+                queryOptionsBuilder.AddOrderBy<GeekProfile>(orderBy.FirstCharToUpper()).Build() :
+                queryOptionsBuilder.Build();
         }
     }
 }

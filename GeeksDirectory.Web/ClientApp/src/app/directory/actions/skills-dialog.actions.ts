@@ -6,6 +6,6 @@ export const addSkillCanceled = createAction('[Skills Dialog] Add Skill Canceled
 
 export const evaluateSkillOk = createAction(
     '[Skills Dialog] Evaluate Skill',
-    props<{ profileId: number; skillModel: SkillModel }>()
+    props<{ skillId: number; skillModel: SkillModel }>()
 );
 export const evaluateSkillCanceled = createAction('[Skills Dialog] Evaluate Skill Canceled');

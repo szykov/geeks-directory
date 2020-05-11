@@ -1,14 +1,15 @@
 ﻿#nullable disable
 
+using GeeksDirectory.Domain.Classes;
+
 using System.Collections.Generic;
+using System;
 
 namespace GeeksDirectory.Domain.Entities
 {
-    public class GeekProfile
+    public class GeekProfile : Entity
     {
-        public int ProfileId { get; set; }
-
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
 
         public ApplicationUser User { get; set; }
 

@@ -33,8 +33,8 @@ export class ProfileListComponent implements OnInit, OnDestroy {
         this.store
             .select(fromProfiles.getProfiles)
             .pipe(takeUntil(this.unsubscribe))
-            .subscribe(result => {
-                this.profiles = [...this.profiles, ...result.data];
+            .subscribe((result) => {
+                this.profiles = [...this.profiles, ...result.profiles];
                 this.paginationInfo = result.pagination;
                 this.loadedProfiles = result.pagination.offset + result.pagination.limit;
             });
@@ -43,7 +43,7 @@ export class ProfileListComponent implements OnInit, OnDestroy {
             .select(fromCore.getScrollPosition)
             .pipe(
                 takeUntil(this.unsubscribe),
-                filter(result => result === ScrollPosition.Down)
+                filter((result) => result === ScrollPosition.Down)
             )
             .subscribe(() => {
                 if (this.paginationInfo.total > this.profiles.length) {
@@ -56,7 +56,7 @@ export class ProfileListComponent implements OnInit, OnDestroy {
     }
 
     public isLoadedAll(): boolean {
-        return this.profiles.length >= this.paginationInfo.total;
+        return this.profiles.length >= this.paginationInfo?.total;
     }
 
     ngOnDestroy() {

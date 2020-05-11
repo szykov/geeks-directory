@@ -1,4 +1,6 @@
-import { IProfilesEnvelope, IProfile, IToken } from '../responses';
+// tslint:disable: no-shadowed-variable
+
+import { IProfile, IToken } from '../responses';
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -33,10 +35,10 @@ import { IProfilesEnvelope, IProfile, IToken } from '../responses';
 
 Cypress.Commands.add('sort', (name: string, compareFn?: (a: any, b: any) => number) => {
     cy.get(`[data-cy=${name}]`).click();
-    cy.wait('@profilesApi').then(xhr => {
-        let response = xhr.response.body as IProfilesEnvelope;
+    cy.wait('@profilesApi').then((xhr) => {
+        let profiles = xhr.response.body as IProfile[];
 
-        let values = response.data.map(p => (p as any)[name]);
+        let values = profiles.map((p) => (p as any)[name]);
         expect(values.join()).to.equal(values.sort(compareFn).join());
         expect(xhr.url).to.include('orderDirection=asc');
     });
@@ -44,15 +46,10 @@ Cypress.Commands.add('sort', (name: string, compareFn?: (a: any, b: any) => numb
 
 Cypress.Commands.add('reverse', (name: string, compareFn?: (a: any, b: any) => number) => {
     cy.get(`[data-cy=${name}]`).click();
-    cy.wait('@profilesApi').then(xhr => {
-        let response = xhr.response.body as IProfilesEnvelope;
-        let values = response.data.map(p => (p as any)[name]);
-        expect(values.join()).to.equal(
-            values
-                .sort(compareFn)
-                .reverse()
-                .join()
-        );
+    cy.wait('@profilesApi').then((xhr) => {
+        let profiles = xhr.response.body as IProfile[];
+        let values = profiles.map((p) => (p as any)[name]);
+        expect(values.join()).to.equal(values.sort(compareFn).reverse().join());
         expect(xhr.url).to.include('orderDirection=desc');
     });
 });
@@ -61,11 +58,11 @@ Cypress.Commands.add('search', (filter: string, fieldName: string) => {
     cy.get('[data-cy=search').type(filter);
 
     cy.url().should('include', `filter=${filter}`);
-    cy.wait('@searchApi').then(xhr => {
-        let response = xhr.response.body as IProfilesEnvelope;
-        let count = response.data.filter((p: any) => p[fieldName].includes(filter)).length;
-        expect(response.data.length).to.greaterThan(0);
-        expect(response.data.length).to.equal(count);
+    cy.wait('@searchApi').then((xhr) => {
+        let profiles = xhr.response.body as IProfile[];
+        let count = profiles.filter((p: any) => p[fieldName].includes(filter)).length;
+        expect(profiles.length).to.greaterThan(0);
+        expect(profiles.length).to.equal(count);
         expect(xhr.url).to.include(`filter=${filter}`);
     });
 });
@@ -77,14 +74,14 @@ Cypress.Commands.add('login', (userName: string, password: string) => {
         body: `grant_type=password&username=${userName}&password=${password}`,
         headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
         form: true
-    }).then(xhr => {
+    }).then((xhr) => {
         let jwt: IToken = xhr.body;
         cy.setCookie('gd-token', JSON.stringify(xhr.body));
         cy.request({
             method: 'GET',
             url: 'api/profiles/me',
             headers: { Authorization: `Bearer ${jwt.access_token}` }
-        }).then(xhr => {
+        }).then((xhr) => {
             sessionStorage.setItem(`gd-profile`, JSON.stringify(xhr.body));
         });
     });

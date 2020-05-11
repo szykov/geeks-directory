@@ -6,15 +6,13 @@ using MediatR;
 
 namespace GeeksDirectory.Services.Commands
 {
-    public class RegisterSkillCommand : IRequest<Result>
+    public class RegisterSkillCommand : IRequest<Result<long>>
     {
-        public readonly int ProfileId;
+        public readonly long ProfileId;
+        public readonly long SkillId;
         public readonly SkillModel Skill;
 
-        public RegisterSkillCommand(int profileId, SkillModel skill)
-        {
-            this.ProfileId = profileId;
-            this.Skill = skill;
-        }
+        public RegisterSkillCommand(long profileId, SkillModel skill) => 
+            (this.ProfileId, this.Skill) = (profileId, skill);
     }
 }

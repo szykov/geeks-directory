@@ -1,20 +1,14 @@
 ﻿using GeeksDirectory.Domain.Responses;
+
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GeeksDirectory.Services.Queries
 {
     public class GetSkillQuery : IRequest<SkillResponse?>
     {
-        public readonly int ProfileId;
-        public readonly string SkillName;
+        public readonly long ProfileId;
+        public readonly long SkillId;
 
-        public GetSkillQuery(int profileId, string skillName)
-        {
-            this.ProfileId = profileId;
-            this.SkillName = skillName;
-        }
+        public GetSkillQuery(long skillId) => (this.SkillId) = (skillId);
     }
 }

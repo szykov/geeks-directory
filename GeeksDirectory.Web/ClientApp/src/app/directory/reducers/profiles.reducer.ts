@@ -46,7 +46,7 @@ export const reducer = createReducer(
     }),
     on(SkillsApiActions.evaluateSkillSuccess, (state, { skill }) => {
         let selected = { ...state.selected };
-        let index = selected.skills.findIndex(s => s.name === skill.name);
+        let index = selected.skills.findIndex((s) => s.name === skill.name);
         selected.skills = [...selected.skills.slice(0, index), skill, ...selected.skills.slice(index + 1)];
 
         return { ...state, selected };

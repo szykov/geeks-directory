@@ -13,7 +13,7 @@ namespace GeeksDirectory.Domain.Responses
     {
         public string? Code { get; set; }
 
-        public string? Message { get; set; }
+        public string Message { get; set; } = default!;
 
         public IEnumerable<IErrorDetail>? Details { get; set; }
 

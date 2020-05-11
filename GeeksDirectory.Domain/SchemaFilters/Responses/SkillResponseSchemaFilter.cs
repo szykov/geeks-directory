@@ -14,8 +14,7 @@ namespace GeeksDirectory.Domain.SchemaFilters.Responses
                 ["id"] = new OpenApiInteger(1),
                 ["name"] = new OpenApiString("python"),
                 ["description"] = new OpenApiString("Excepteur sint in culpa id est laborum."),
-                ["averageScore"] = new OpenApiInteger(4),
-                ["assessments"] = SchemaFiltersMock.GetAssessments()
+                ["averageScore"] = new OpenApiInteger(4)
             };
         }
     }

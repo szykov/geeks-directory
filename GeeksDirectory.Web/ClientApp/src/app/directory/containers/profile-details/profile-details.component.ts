@@ -35,7 +35,7 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
         this.store
             .select(fromProfiles.getSelectedProfile)
             .pipe(takeUntil(this.unsubscribe))
-            .subscribe(profile => {
+            .subscribe((profile) => {
                 this.profile = { ...profile };
                 this.cdr.detectChanges();
             });
@@ -57,8 +57,8 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
     }
 
     public onEditSkill(skill: ISkill) {
-        let skillModel = new SkillModel(skill.name, skill.description);
-        this.store.dispatch(ProfilesDetailsActions.evaluateSkillDialog({ profileId: this.profileId, skillModel }));
+        let skillModel = SkillModel.fromSkill(skill);
+        this.store.dispatch(ProfilesDetailsActions.evaluateSkillDialog({ skillId: skill.id, skillModel }));
     }
 
     ngOnDestroy() {

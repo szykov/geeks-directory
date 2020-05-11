@@ -24,7 +24,8 @@ namespace GeeksDirectory.Web.Configuration
                         builder.WithOrigins(webUrls.ToArray())
                             .AllowAnyMethod()
                             .AllowAnyHeader()
-                            .AllowCredentials();
+                            .AllowCredentials()
+                            .WithExposedHeaders("X-Pagination");
                     });
                 });
             }

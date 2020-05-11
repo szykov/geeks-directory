@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class RegisterSkillHandler : IRequestHandler<RegisterSkillCommand, Result>
+    public class RegisterSkillHandler : IRequestHandler<RegisterSkillCommand, Result<long>>
     {
         private readonly ISkillsRepository repository;
         private readonly IMapper mapper;
@@ -27,15 +27,15 @@ namespace GeeksDirectory.Services.Handlers
             this.mapper = mapperService.GetDataMapper();
         }
 
-        public async Task<Result> Handle(RegisterSkillCommand request, CancellationToken cancellationToken)
+        public async Task<Result<long>> Handle(RegisterSkillCommand request, CancellationToken cancellationToken)
         {
-            if (this.repository.Exists(request.ProfileId, request.Skill.Name))
+            if (this.repository.Exists(request.SkillId))
                 return Results.Fail("Skill already exists.");
 
             var skill = this.mapper.Map<Skill>(request.Skill);
             this.repository.Add(request.ProfileId, skill);
 
-            return Results.Ok();
+            return Results.Ok(skill.Id);
         }
     }
 }

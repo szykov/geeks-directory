@@ -26,7 +26,6 @@ export class EvaluateSkillScoreComponent implements OnInit {
 
     ngOnInit() {
         this.isMobile$ = this.scrollService.isMobile;
-
         this.model = this.data.model;
     }
 
@@ -38,7 +37,7 @@ export class EvaluateSkillScoreComponent implements OnInit {
     public onSubmit() {
         let data: ISkillDialogResult = {
             choice: DialogChoice.Ok,
-            profileId: this.data.profileId,
+            skillId: this.data.skillId,
             skillModel: this.data.model
         };
         this.dialogRef.close(data);

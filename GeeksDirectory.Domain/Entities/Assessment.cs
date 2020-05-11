@@ -1,16 +1,18 @@
 ﻿#nullable disable
 
+using GeeksDirectory.Domain.Classes;
+
+using System;
+
 namespace GeeksDirectory.Domain.Entities
 {
-    public class Assessment
+    public class Assessment : Entity
     {
-        public int AssessmentId { get; set; }
-
-        public string UserId { get; set; }
+        public Guid UserId { get; set; }
 
         public ApplicationUser User { get; set; }
 
-        public int SkillId { get; set; }
+        public long SkillId { get; set; }
 
         public Skill Skill { get; set; }
 

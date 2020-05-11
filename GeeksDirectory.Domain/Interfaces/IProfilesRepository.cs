@@ -9,7 +9,7 @@ namespace GeeksDirectory.Domain.Interfaces
     {
         void Add(GeekProfile profile);
 
-        GeekProfile? GetProfileById(int id);
+        GeekProfile? GetProfileById(long id);
 
         GeekProfile? GetProfileByUserName(string userName);
 
@@ -17,10 +17,10 @@ namespace GeeksDirectory.Domain.Interfaces
 
         IEnumerable<GeekProfile> GetProfiles(QueryOptions queryOptions);
 
-        IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out int total);
+        IEnumerable<GeekProfile> Search(QueryOptions queryOptions, out long total);
 
         void Update(GeekProfile profile);
 
-        int Total();
+        long Total();
     }
 }

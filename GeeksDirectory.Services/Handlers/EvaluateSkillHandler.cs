@@ -1,13 +1,9 @@
 ﻿#pragma warning disable CS1998
 
-using GeeksDirectory.Domain.Entities;
 using GeeksDirectory.Domain.Interfaces;
 using GeeksDirectory.Services.Notifications;
 
 using MediatR;
-
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,28 +12,19 @@ namespace GeeksDirectory.Services.Handlers
 {
     public class AddOrUpdateAssesmentHandler : INotificationHandler<EvaluateSkillNotification>
     {
-        private readonly HttpContext httpContext;
         private readonly IAssessmentsRepository repository;
-        private readonly UserManager<ApplicationUser> userManager;
 
-        public AddOrUpdateAssesmentHandler(
-            IHttpContextAccessor httpContextAccessor,
-            UserManager<ApplicationUser> userManager,
-            IAssessmentsRepository repository)
+        public AddOrUpdateAssesmentHandler(IAssessmentsRepository repository)
         {
-            this.httpContext = httpContextAccessor.HttpContext;
-            this.userManager = userManager;
             this.repository = repository;
         }
 
         public async Task Handle(EvaluateSkillNotification notification, CancellationToken cancellationToken)
         {
-            var user = await this.userManager.GetUserAsync(httpContext.User);
-
-            if (this.repository.Exists(notification.ProfileId, notification.SkillName, user.Id))
-                this.repository.Update(notification.ProfileId, notification.SkillName, user.Id, notification.SkillEvaluation.Score);
+            if (this.repository.Exists(notification.SkillId, notification.UserId))
+                this.repository.Update(notification.SkillId, notification.UserId, notification.Score);
             else
-                this.repository.Add(notification.ProfileId, notification.SkillName, user.Id, notification.SkillEvaluation.Score);
+                this.repository.Add(notification.SkillId, notification.UserId, notification.Score);
         }
     }
 
@@ -52,7 +39,7 @@ namespace GeeksDirectory.Services.Handlers
 
         public async Task Handle(EvaluateSkillNotification notification, CancellationToken cancellationToken)
         {
-            this.repository.RefreshAverageScore(notification.ProfileId, notification.SkillName);
+            this.repository.RefreshAverageScore(notification.SkillId);
         }
     }
 }

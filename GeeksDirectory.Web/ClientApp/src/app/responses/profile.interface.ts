@@ -1,4 +1,4 @@
-import { ISkill } from '.';
+import { ISkill } from './skill.interface';
 
 export interface IProfile {
     id: number;

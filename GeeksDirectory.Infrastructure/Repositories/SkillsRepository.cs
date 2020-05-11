@@ -18,34 +18,30 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context = context;
         }
 
-        public Skill? Get(int profileId, string skillName)
+        public Skill? Get(long skillId)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillName))
-                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillName)} are invalid.");
+            if (skillId == 0) throw new ArgumentException(message: $"Argument {nameof(skillId)} is invalid.");
 
             return this.context.Skills
                 .Include(s => s.Assessments)
                 .ThenInclude(s => s.User)
-                .Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.Name == skillName)
+                .Where(s => s.Id == skillId)
                 .SingleOrDefault();
         }
 
-        public bool Exists(int profileId, string skillName)
+        public bool Exists(long skillId)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillName))
-                throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skillName)} are invalid.");
+            if (skillId == 0) throw new ArgumentException(message: $" Argument {nameof(skillId)} is invalid.");
 
-            return this.context.Skills.Where(s => s.Profile.ProfileId == profileId)
-                .Where(s => s.Name == skillName).Any();
+            return this.context.Skills.Where(s => s.Id == skillId).Any();
         }
 
-        public void Add(int profileId, Skill skill)
+        public void Add(long profileId, Skill skill)
         {
             if (profileId == 0 || skill == null)
-                throw new ArgumentException(message: $" Arguments {nameof(profileId)} or {nameof(skill)} are invalid.");
+                throw new ArgumentException(message: $" Arguments {nameof(profileId)}/{nameof(skill)} are invalid.");
 
-            var profile = this.context.Profiles.Where(prf => prf.ProfileId == profileId).SingleOrDefault()
+            var profile = this.context.Profiles.Where(prf => prf.Id == profileId).SingleOrDefault()
                 ?? throw new KeyNotFoundException("Profile has not been found.");
 
             skill.Profile = profile;
@@ -54,15 +50,13 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context.SaveChanges();
         }
 
-        public Skill RefreshAverageScore(int profileId, string skillName)
+        public Skill RefreshAverageScore(long skillId)
         {
-            if (profileId == 0 || String.IsNullOrEmpty(skillName))
-                throw new ArgumentException(message: $"Arguments {nameof(profileId)}/{nameof(skillName)} are invalid.");
+            if (skillId == 0)  throw new ArgumentException(message: $"Argument {nameof(skillId)} is invalid.");
 
-            var skill = this.Get(profileId, skillName) ?? throw new KeyNotFoundException("Skill has not been found."); ;
+            var skill = this.Get(skillId) ?? throw new KeyNotFoundException("Skill has not been found."); ;
 
             var averageScore = Convert.ToInt32(skill.Assessments.Average(a => a.Score));
-
             skill.AverageScore = averageScore;
 
             this.context.Skills.Update(skill);

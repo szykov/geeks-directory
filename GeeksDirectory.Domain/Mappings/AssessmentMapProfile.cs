@@ -10,8 +10,8 @@ namespace GeeksDirectory.Domain.Mappings
         public AssessmentMapProfile()
         {
             this.CreateMap<Assessment, AssessmentResponse>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AssessmentId))
-                .ForMember(dest => dest.Author, opt => opt.MapFrom(src => src.User.Email));
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.User.Email));
         }
     }
 }

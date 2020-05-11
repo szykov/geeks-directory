@@ -1,5 +1,5 @@
 ﻿using GeeksDirectory.Domain.SchemaFilters.Responses;
-
+using Microsoft.VisualBasic;
 using Swashbuckle.AspNetCore.Annotations;
 
 using System;
@@ -10,13 +10,13 @@ namespace GeeksDirectory.Domain.Responses
     [SwaggerSchemaFilter(typeof(GeekProfileResponseSchemaFilter))]
     public class GeekProfileResponse
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
 
-        public string? Email { get; set; }
+        public string Email { get; set; } = default!;
 
-        public string? Name { get; set; }
+        public string Name { get; set; } = default!;
 
-        public string? Surname { get; set; }
+        public string Surname { get; set; } = default!;
 
         public string? MiddleName { get; set; }
 
@@ -24,8 +24,8 @@ namespace GeeksDirectory.Domain.Responses
             $"{this.Name} {this.Surname}" :
             $"{ this.Name} { this.MiddleName} { this.Surname}";
 
-        public string? City { get; set; }
+        public string City { get; set; } = default!;
 
-        public IEnumerable<SkillResponse> Skills { get; set; } = new List<SkillResponse>();
+        public List<SkillResponse> Skills { get; set; } = new List<SkillResponse>();
     }
 }
