@@ -9,7 +9,6 @@ namespace GeeksDirectory.Services.Queries
         public readonly long ProfileId;
         public readonly long SkillId;
 
-        public GetSkillQuery(long profileId, long skillId) =>
-            (this.ProfileId, this.SkillId) = (profileId, skillId);
+        public GetSkillQuery(long skillId) => (this.SkillId) = (skillId);
     }
 }

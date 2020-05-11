@@ -11,38 +11,26 @@ describe('Skills', () => {
         cy.fixture('add_skill_ok').as('skillResponse');
         cy.route({ method: 'POST', url: 'api/profiles/3/skills', response: '@skillResponse' });
 
-        cy.get('[data-cy=profileCard][id=3]')
-            .find('[data-cy=openProfile]')
-            .click();
+        cy.get('[data-cy=profileCard][id=3]').find('[data-cy=openProfile]').click();
 
         cy.get('[data-cy=addSkill]').click();
         cy.contains('New skill');
 
         cy.get('[data-cy=skillName]').type('js');
         cy.get('[data-cy=skillDescription]').type('the same as java');
-        cy.get('[data-cy=score]')
-            .children()
-            .eq(5)
-            .click();
+        cy.get('[data-cy=score]').children().eq(5).click();
         cy.get('[data-cy=skillOk]').click();
 
         cy.contains('Skill has been added.');
-        cy.get('[data-cy=skill]')
-            .last()
-            .children()
-            .should('contain.text', 'js');
+        cy.get('[data-cy=skill]').last().children().should('contain.text', 'js');
     });
 
     it('skill name is invalid', () => {
-        cy.get('[data-cy=profileCard][id=3]')
-            .find('[data-cy=openProfile]')
-            .click();
+        cy.get('[data-cy=profileCard][id=3]').find('[data-cy=openProfile]').click();
 
         cy.get('[data-cy=addSkill]').click();
 
-        cy.get('[data-cy=skillName]')
-            .type('Skill Name')
-            .clear();
+        cy.get('[data-cy=skillName]').type('Skill Name').clear();
         cy.get('[data-cy=skillDescription]').focus();
 
         cy.contains('Name is required');
@@ -50,20 +38,11 @@ describe('Skills', () => {
     });
 
     it('evaluate skill', () => {
-        cy.get('[data-cy=profileCard][id=1]')
-            .find('[data-cy=openProfile]')
-            .click();
+        cy.get('[data-cy=profileCard][id=1]').find('[data-cy=openProfile]').click();
 
-        cy.get('[data-cy=skill]')
-            .first()
-            .as('selectedSkill')
-            .click();
+        cy.get('[data-cy=skill]').first().as('selectedSkill').click();
 
-        cy.get('[data-cy=score]')
-            .children()
-            .eq(3)
-            .as('selectedScore')
-            .click();
+        cy.get('[data-cy=score]').children().eq(3).as('selectedScore').click();
 
         cy.get('[data-cy=skillOk]').click();
         cy.contains('Skill has been evaluated.');

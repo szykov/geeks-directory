@@ -29,7 +29,7 @@ namespace GeeksDirectory.Services.Handlers
 
         public async Task<Result<long>> Handle(RegisterSkillCommand request, CancellationToken cancellationToken)
         {
-            if (this.repository.Exists(request.ProfileId, request.SkillId))
+            if (this.repository.Exists(request.SkillId))
                 return Results.Fail("Skill already exists.");
 
             var skill = this.mapper.Map<Skill>(request.Skill);

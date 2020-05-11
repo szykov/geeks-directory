@@ -21,6 +21,6 @@ namespace GeeksDirectory.Domain.Interfaces
 
         void Update(GeekProfile profile);
 
-        int Total();
+        long Total();
     }
 }

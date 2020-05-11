@@ -18,34 +18,34 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context = context;
         }
 
-        public Assessment? Get(long profileId, long skillId, Guid userId)
+        public Assessment? Get(long skillId, Guid userId)
         {
-            if (skillId == 0 || profileId == 0 || userId == Guid.Empty)
-                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(profileId)}/{nameof(userId)} are invalid.");
+            if (skillId == 0 || userId == Guid.Empty)
+                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(userId)} are invalid.");
 
-            var skill = this.GetSkill(profileId, skillId);
+            var skill = this.GetSkill(skillId);
 
             return skill.Assessments.Where(s => s.User.Id == userId).SingleOrDefault();
         }
 
-        public void Add(long profileId, long skillId, Guid userId, int score)
+        public void Add(long skillId, Guid userId, int score)
         {
-            if (skillId == 0 || profileId == 0 || userId == Guid.Empty)
-                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(profileId)}/{nameof(userId)} are invalid.");
+            if (skillId == 0 || userId == Guid.Empty)
+                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(userId)} are invalid.");
 
-            var skill = this.GetSkill(profileId, skillId);
+            var skill = this.GetSkill(skillId);
             var assessment = new Assessment() { SkillId = skill.Id, UserId = userId, Score = score };
 
             this.context.Assessments.Add(assessment);
             this.context.SaveChanges();
         }
 
-        public void Update(long profileId, long skillId, Guid userId, int score)
+        public void Update(long skillId, Guid userId, int score)
         {
-            if (skillId == 0 || profileId == 0 || userId == Guid.Empty)
-                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(profileId)}/{nameof(userId)} are invalid.");
+            if (skillId == 0 || userId == Guid.Empty)
+                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(userId)} are invalid.");
 
-            var skill = this.GetSkill(profileId, skillId);
+            var skill = this.GetSkill(skillId);
             var assessment = skill.Assessments.Where(s => s.User.Id == userId).SingleOrDefault()
                 ?? throw new KeyNotFoundException("Assessment has not been found.");
 
@@ -55,24 +55,23 @@ namespace GeeksDirectory.Infrastructure.Repositories
             this.context.SaveChanges();
         }
 
-        public bool Exists(long profileId, long skillId, Guid userId)
+        public bool Exists(long skillId, Guid userId)
         {
-            if (profileId == 0 || skillId == 0 || userId == Guid.Empty)
-                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(profileId)}/{nameof(userId)} are invalid.");
+            if (skillId == 0 || userId == Guid.Empty)
+                throw new ArgumentException(message: $"Arguments {nameof(skillId)}/{nameof(userId)} are invalid.");
 
-            Skill skill = this.GetSkill(profileId, skillId);
+            Skill skill = this.GetSkill(skillId);
 
             return skill.Assessments.Where(a => a.User.Id == userId).Any();
         }
 
-        private Skill GetSkill(long profileId, long skillId)
+        private Skill GetSkill(long skillId)
         {
             return this.context.Skills
                 .Include(s => s.Assessments)
                 .ThenInclude(s => s.User)
-                .Where(s => s.ProfileId == profileId)
-                .Where(s => s.Id == skillId).SingleOrDefault()
-                ?? throw new KeyNotFoundException("Skill has not been found.");
+                .Where(s => s.Id == skillId).SingleOrDefault() ?? 
+                    throw new KeyNotFoundException("Skill has not been found.");
         }
     }
 }

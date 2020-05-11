@@ -1,4 +1,5 @@
-﻿using GeeksDirectory.Domain.Entities;
+﻿#pragma warning disable CS1572, CS1573
+
 using GeeksDirectory.Services.Commands;
 using GeeksDirectory.Services.Queries;
 using GeeksDirectory.Domain.Attributes;
@@ -15,6 +16,9 @@ using Microsoft.Extensions.Logging;
 using OpenIddict.Validation;
 
 using System.Threading.Tasks;
+using GeeksDirectory.Web.ResourceParameters;
+using System.Collections.Generic;
+using System.Text.Json;
 
 namespace GeeksDirectory.Web.Controllers
 {
@@ -53,15 +57,21 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet]
-        public async Task<ActionResult<GeekProfilesResponse>> GetProfiles(
-            int limit,
-            int offset,
-            string? orderDirection,
-            string? orderBy = nameof(GeekProfile.Id))
+        public async Task<ActionResult<IEnumerable<GeekProfileResponse>>> GetProfiles([FromQuery] ProfilesResourceParameters prm)
         {
-            var query = new GetProfilesQuery(limit, offset, orderBy, orderDirection);
-            var profile = await this.mediator.Send(query);
-            return this.Ok(profile);
+            var query = new GetProfilesQuery(prm.Limit, prm.Offset, prm.OrderBy, prm.OrderDirection);
+            var (profiles, total) = await this.mediator.Send(query);
+
+            var paginationMetadata = new
+            {
+                offset = prm.Offset,
+                limit = prm.Limit,
+                total
+            };
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
+
+            return this.Ok(profiles);
         }
 
         // GET: /api/profiles/me
@@ -77,7 +87,7 @@ namespace GeeksDirectory.Web.Controllers
         {
             var user = await this.mediator.Send(new GetCurrentUserQuery());
 
-            var query = new GetProfileByEmailQuery(user.Email);
+            var query = new GetProfileByUserQuery(user.Id);
             var profile = await this.mediator.Send(query);
 
             return this.Ok(profile);
@@ -98,17 +108,21 @@ namespace GeeksDirectory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
         [HttpGet("search")]
-        public async Task<ActionResult<GeekProfilesResponse>> SearchProfiles(
-            [RequiredFromQuery]string filter,
-            int limit,
-            int offset,
-            string? orderDirection,
-            string? orderBy = nameof(GeekProfile.Id))
+        public async Task<ActionResult<IEnumerable<GeekProfileResponse>>> SearchProfiles([RequiredFromQuery] SearchProfilesResourceParameters prm)
         {
-            var query = new SearchProfilesQuery(filter, limit, offset, orderBy, orderDirection);
-            var profile = await this.mediator.Send(query);
+            var query = new SearchProfilesQuery(prm.Filter, prm.Limit, prm.Offset, prm.OrderBy, prm.OrderDirection);
+            var (profiles, total) = await this.mediator.Send(query);
 
-            return this.Ok(profile);
+            var paginationMetadata = new
+            {
+                offset = prm.Offset,
+                limit = prm.Limit,
+                total
+            };
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
+
+            return this.Ok(profiles);
         }
 
         // GET: /api/profiles/{id}
@@ -167,8 +181,9 @@ namespace GeeksDirectory.Web.Controllers
         public async Task<ActionResult<GeekProfileResponse>> UpdatePersonalProfile([FromBody]GeekProfileModel model)
         {
             var user = await this.mediator.Send(new GetCurrentUserQuery());
+            var userProfile = await this.mediator.Send(new GetProfileByUserQuery(user.Id));
 
-            var command = new UpdateProfileCommand(model, user.Profile.Id);
+            var command = new UpdateProfileCommand(model, userProfile.Id);
             var result = await this.mediator.Send(command);
 
             if (result.IsFailed)

@@ -1,4 +1,4 @@
-import { IProfilesEnvelope } from '../responses';
+import { IProfile, IPagination } from '../responses';
 
 describe('Search', () => {
     beforeEach(() => {
@@ -21,27 +21,19 @@ describe('Search', () => {
     });
 
     it('change limit', () => {
-        cy.get('[data-cy=searchTable]')
-            .find('tbody tr')
-            .should('have.length', 10);
+        cy.get('[data-cy=searchTable]').find('tbody tr').should('have.length', 10);
 
         cy.get('#mat-select-0').click();
         cy.get('#mat-option-1').click();
 
-        cy.get('[data-cy=searchTable]')
-            .find('tbody tr')
-            .should('have.length', 20);
+        cy.get('[data-cy=searchTable]').find('tbody tr').should('have.length', 20);
 
-        cy.wait('@profilesApi')
-            .its('url')
-            .should('include', 'limit=20');
+        cy.wait('@profilesApi').its('url').should('include', 'limit=20');
 
         cy.get('#mat-select-0').click();
         cy.get('#mat-option-2').click();
 
-        cy.get('[data-cy=searchTable]')
-            .find('tbody tr')
-            .should('have.length.greaterThan', 20);
+        cy.get('[data-cy=searchTable]').find('tbody tr').should('have.length.greaterThan', 20);
     });
 
     it('change offset', () => {
@@ -51,35 +43,36 @@ describe('Search', () => {
         cy.get('.mat-paginator button:nth-child(5)').as('end');
 
         cy.get('@next').click();
-        cy.wait('@profilesApi').then(xhr => {
-            let response = xhr.response.body as IProfilesEnvelope;
-            expect(response.data).to.have.length(10);
-            expect(response.data[0].id).to.equal(11);
+        cy.wait('@profilesApi').then((xhr) => {
+            let profiles = xhr.response.body as IProfile[];
+            expect(profiles).to.have.length(10);
+            expect(profiles[0].id).to.equal(11);
             expect(xhr.url).to.include('offset=10');
         });
 
         cy.get('@back').click();
-        cy.wait('@profilesApi').then(xhr => {
-            let response = xhr.response.body as IProfilesEnvelope;
-            expect(response.data).to.have.length(10);
-            expect(response.data[0].id).to.equal(1);
+        cy.wait('@profilesApi').then((xhr) => {
+            let profiles = xhr.response.body as IProfile[];
+            expect(profiles).to.have.length(10);
+            expect(profiles[0].id).to.equal(1);
             expect(xhr.url).to.include('offset=0');
         });
 
         cy.get('@end').click();
-        cy.wait('@profilesApi').then(xhr => {
-            let response = xhr.response.body as IProfilesEnvelope;
-            let count = response.data.length % response.pagination.total;
-            expect(response.data).to.have.length(count);
-            expect(response.data[0].id).to.equal(response.pagination.total - count + 1);
-            expect(xhr.url).to.include(`offset=${response.pagination.total - count}`);
+        cy.wait('@profilesApi').then((xhr) => {
+            let profiles = xhr.response.body as IProfile[];
+            let pagination: IPagination = JSON.parse(xhr.responseHeaders['x-pagination']);
+            let count = profiles.length % pagination.total;
+            expect(profiles).to.have.length(count);
+            expect(profiles[0].id).to.equal(pagination.total - count + 1);
+            expect(xhr.url).to.include(`offset=${pagination.total - count}`);
         });
 
         cy.get('@start').click();
-        cy.wait('@profilesApi').then(xhr => {
-            let response = xhr.response.body as IProfilesEnvelope;
-            expect(response.data).to.have.length(10);
-            expect(response.data[0].id).to.equal(1);
+        cy.wait('@profilesApi').then((xhr) => {
+            let profiles = xhr.response.body as IProfile[];
+            expect(profiles).to.have.length(10);
+            expect(profiles[0].id).to.equal(1);
             expect(xhr.url).to.include('offset=0');
         });
     });

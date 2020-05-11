@@ -21,10 +21,10 @@ namespace GeeksDirectory.Services.Handlers
 
         public async Task Handle(EvaluateSkillNotification notification, CancellationToken cancellationToken)
         {
-            if (this.repository.Exists(notification.ProfileId, notification.skillId, notification.UserId))
-                this.repository.Update(notification.ProfileId, notification.skillId, notification.UserId, notification.Score);
+            if (this.repository.Exists(notification.SkillId, notification.UserId))
+                this.repository.Update(notification.SkillId, notification.UserId, notification.Score);
             else
-                this.repository.Add(notification.ProfileId, notification.skillId, notification.UserId, notification.Score);
+                this.repository.Add(notification.SkillId, notification.UserId, notification.Score);
         }
     }
 
@@ -39,7 +39,7 @@ namespace GeeksDirectory.Services.Handlers
 
         public async Task Handle(EvaluateSkillNotification notification, CancellationToken cancellationToken)
         {
-            this.repository.RefreshAverageScore(notification.ProfileId, notification.skillId);
+            this.repository.RefreshAverageScore(notification.SkillId);
         }
     }
 }

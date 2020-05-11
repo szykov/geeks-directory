@@ -116,14 +116,14 @@ namespace GeeksDirectory.Infrastructure.Repositories
             context.SaveChanges();
         }
 
-        public int Total()
+        public long Total()
         {
-            return this.context.Profiles.Count();
+            return this.context.Profiles.LongCount();
         }
 
         private IQueryable<GeekProfile> Sort(IQueryable<GeekProfile> profiles, OrderDirection orderDirection, string OrderBy)
         {
-            return orderDirection == OrderDirection.Ascending ? 
+            return orderDirection == OrderDirection.Asc ? 
                 profiles.OrderBy(p => EF.Property<object>(p, OrderBy)) : 
                 profiles.OrderByDescending(p => EF.Property<object>(p, OrderBy));
         }

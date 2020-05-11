@@ -18,34 +18,35 @@ using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class GetProfileByIdHandler : IRequestHandler<GetProfileByIdQuery, GeekProfileResponse?>
+    public class GetProfileByUserlHandler : IRequestHandler<GetProfileByUserQuery, GeekProfileResponse>
     {
         private readonly string connection;
 
-        public GetProfileByIdHandler(IConfiguration configuration)
+        public GetProfileByUserlHandler(IConfiguration configuration)
         {
             this.connection = configuration.GetConnectionString("DefaultConnection");
         }
 
-        public async Task<GeekProfileResponse?> Handle(GetProfileByIdQuery request, CancellationToken cancellationToken)
+        public async Task<GeekProfileResponse> Handle(GetProfileByUserQuery request, CancellationToken cancellationToken)
         {
             using var db = new SqliteConnection(this.connection);
 
-            var sql = @"SELECT  P.[Id],
-                                P.[Email],
-                                P.[Name],
-                                P.[Surname],
-                                P.[Middlename],
-                                P.[City],
-                                S.[Id],
-                                S.[Name],
-                                S.[Description],
-                                S.[AverageScore]
-                        FROM    [Profiles] AS P
-                                LEFT JOIN [Skills] AS S
-                                         ON S.[ProfileId] = P.[Id]
-                        WHERE   P.[Id] = @ProfileId;";
+            var sql = @"SELECT P.[Id],
+                               P.[Email],
+                               P.[Name],
+                               P.[Surname],
+                               P.[Middlename],
+                               P.[City],
+                               S.[Id],
+                               S.[Name],
+                               S.[Description],
+                               S.[AverageScore]
+                        FROM   [Profiles] AS P
+                               LEFT JOIN [Skills] AS S
+                                      ON S.[ProfileId] = P.[id]
+                        WHERE  P.[UserId] = @UserId;";
 
+            var normalizedUserId = request.UserId.ToString().ToUpperInvariant().Normalize();
             var skills = new List<SkillResponse>();
             var response = await db.QueryAsync<GeekProfileResponse, SkillResponse, GeekProfileResponse>(sql,
                 map: (profile, skill) =>
@@ -53,7 +54,7 @@ namespace GeeksDirectory.Services.Handlers
                     skills.AddIfNotEmpty(skill);
                     return profile;
                 },
-                param: new { request.ProfileId },
+                param: new { UserId = normalizedUserId },
                 splitOn: "Id");
 
             var profile = response.First();

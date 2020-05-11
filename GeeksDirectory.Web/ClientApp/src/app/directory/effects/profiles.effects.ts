@@ -21,7 +21,7 @@ export class ProfileEffects {
             mergeMap(({ queryOptions }) =>
                 this.requestService
                     .getProfiles(queryOptions)
-                    .pipe(map(result => ProfilesApiActions.loadProfilesSuccess({ collection: result })))
+                    .pipe(map((result) => ProfilesApiActions.loadProfilesSuccess({ collection: result })))
             )
         )
     );
@@ -46,7 +46,7 @@ export class ProfileEffects {
             mergeMap(({ profileId }) =>
                 this.requestService
                     .getProfile(profileId)
-                    .pipe(map(result => ProfilesApiActions.loadProfileDetailsSuccess({ selected: result })))
+                    .pipe(map((result) => ProfilesApiActions.loadProfileDetailsSuccess({ selected: result })))
             )
         )
     );
@@ -57,7 +57,7 @@ export class ProfileEffects {
             mergeMap(({ profileModel }) =>
                 this.requestService.updatePersonalProfile(profileModel).pipe(
                     tap(() => this.notificationService.showSuccess('Personal profile has been updated.')),
-                    map(result => ProfilesApiActions.updatePersonalProfileSuccess({ selected: result }))
+                    map((result) => ProfilesApiActions.updatePersonalProfileSuccess({ selected: result }))
                 )
             )
         )
@@ -77,12 +77,12 @@ export class ProfileEffects {
                 if (!queryOptions.filter) {
                     return this.requestService
                         .getProfiles(queryOptions)
-                        .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
+                        .pipe(map((result) => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
                 }
 
                 return this.requestService
                     .searchProfiles(queryOptions)
-                    .pipe(map(result => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
+                    .pipe(map((result) => ProfilesApiActions.searchProfilesSuccess({ searched: result })));
             })
         )
     );

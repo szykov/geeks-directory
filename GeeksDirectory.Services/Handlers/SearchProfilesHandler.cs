@@ -1,54 +1,83 @@
 ﻿#pragma warning disable CS1998
 
-using AutoMapper;
+using Dapper;
 
-using GeeksDirectory.Domain.Entities;
-using GeeksDirectory.Domain.Interfaces;
-using GeeksDirectory.Services.Mappings;
-using GeeksDirectory.Services.Queries;
-using GeeksDirectory.Domain.Classes;
 using GeeksDirectory.Domain.Responses;
+using GeeksDirectory.Services.Helpers;
+using GeeksDirectory.Services.Queries;
 
 using MediatR;
 
-using System;
+using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Configuration;
+
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace GeeksDirectory.Services.Handlers
 {
-    public class SearchProfilesHandler : IRequestHandler<SearchProfilesQuery, GeekProfilesResponse>
+    public class SearchProfilesHandler : IRequestHandler<SearchProfilesQuery, (IEnumerable<GeekProfileResponse> profiles, long total)>
     {
-        private readonly IProfilesRepository repository;
-        private readonly IMapper mapper;
+        private readonly string connection;
 
-        public SearchProfilesHandler(IProfilesRepository repository, IMapperService mapperService)
+        public SearchProfilesHandler(IConfiguration configuration)
         {
-            this.repository = repository;
-            this.mapper = mapperService.GetDataMapper();
+            this.connection = configuration.GetConnectionString("DefaultConnection");
         }
 
-        public async Task<GeekProfilesResponse> Handle(SearchProfilesQuery request, CancellationToken cancellationToken)
+        public async Task<(IEnumerable<GeekProfileResponse> profiles, long total)> Handle(SearchProfilesQuery request, CancellationToken cancellationToken)
         {
-            var queryOptionsBuilder = new QueryOptionsBuilder()
-                .AddQuery(request.Filter)
-                .AddLimit(request.Limit)
-                .AddOffset(request.Offset)
-                .AddOrderDirection(request.OrderDirection);
+            using var db = new SqliteConnection(this.connection);
 
-            var queryOptions = !String.IsNullOrEmpty(request.OrderBy) ?
-                queryOptionsBuilder.AddOrderBy<GeekProfile>(request.OrderBy).Build() :
-                queryOptionsBuilder.Build();
+            var options = request.queryOptions;
+            var sql = $@"SELECT      P.[Id],
+                                     P.[Email],
+                                     P.[Name],
+                                     P.[Surname],
+                                     P.[Middlename],
+                                     P.[City],
+                                     S.[Id],
+                                     S.[Name],
+                                     S.[Description],
+                                     S.[AverageScore]
+                         FROM        [Profiles] AS P
+                         LEFT JOIN   [Skills]   AS S
+                         ON          S.[ProfileId] = P.[Id]
+                         WHERE       P.[Name] LIKE @Query
+                         OR          P.[Surname] LIKE @Query
+                         OR          P.[Middlename] LIKE @Query
+                         OR          P.[City] LIKE @Query
+                         OR          S.[Name] LIKE @Query
+                         OR          S.[Description] LIKE @Query
+                         ORDER BY    @OrderBy {options.OrderDirection};";
 
-            var profiles = this.repository.Search(queryOptions, out var total);
-            var profileResponses = this.mapper.Map<IEnumerable<GeekProfileResponse>>(profiles);
+            var profiles = new Dictionary<long, GeekProfileResponse>();
+            await db.QueryAsync<GeekProfileResponse, SkillResponse, GeekProfileResponse>(sql,
+                map: (profile, skill) =>
+                {
+                    if (profiles.TryGetValue(profile.Id, out var found))
+                        found.Skills.AddIfNotEmpty(skill);
+                    else
+                    {
+                        profile.Skills.AddIfNotEmpty(skill);
+                        profiles.Add(profile.Id, profile);
+                    }
 
-            return new GeekProfilesResponse()
-            {
-                Pagination = new PaginationResponse() { Limit = request.Limit, Offset = request.Offset, Total = total },
-                Data = profileResponses
-            };
+                    return profile;
+                },
+                param: new
+                {
+                    options.OrderBy,
+                    options.Limit,
+                    options.Offset,
+                    options.Query
+                },
+                splitOn: "Id");
+
+
+            return (profiles.Values.ToList().Skip(options.Offset).Take(options.Limit), profiles.Count());
         }
     }
 }

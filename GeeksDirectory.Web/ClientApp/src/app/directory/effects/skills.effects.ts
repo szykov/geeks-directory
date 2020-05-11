@@ -42,7 +42,7 @@ export class SkillsEffects {
                 this.requestService.addSkill(profileId, skillModel).pipe(
                     tap(() => this.notificationService.showSuccess('Skill has been added.')),
                     map(
-                        result => SkillsApiActions.addSkillSuccess({ skill: result }),
+                        (result) => SkillsApiActions.addSkillSuccess({ skill: result }),
                         catchError(() => of(ProfilesDetailsActions.openAddSkillDialog({ profileId })))
                     )
                 )
@@ -53,20 +53,18 @@ export class SkillsEffects {
     evaluateSkillDialog$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProfilesDetailsActions.evaluateSkillDialog),
-            concatMap(({ profileId, skillId, skillModel }) =>
-                this.requestService
-                    .getMySkillEvaluation(profileId, skillId)
-                    .pipe(map(assessment => ({ profileId, skillId, skillModel, assessment })))
+            concatMap(({ skillId, skillModel }) =>
+                this.requestService.getMySkillEvaluation(skillId).pipe(map((assessment) => ({ skillId, skillModel, assessment })))
             ),
-            exhaustMap(({ profileId, skillId, skillModel, assessment }) => {
+            exhaustMap(({ skillId, skillModel, assessment }) => {
                 let model = { ...skillModel };
                 model.score = assessment ? assessment.score : null;
-                return this.dialogService.evaluateSkillDialog(profileId, skillId, { ...model });
+                return this.dialogService.evaluateSkillDialog(skillId, { ...model });
             }),
-            map(({ choice, profileId, skillId, skillModel }) => {
+            map(({ choice, skillId, skillModel }) => {
                 switch (choice) {
                     case DialogChoice.Ok:
-                        return SkillsDialog.evaluateSkillOk({ profileId, skillId, skillModel });
+                        return SkillsDialog.evaluateSkillOk({ skillId, skillModel });
 
                     default:
                         return SkillsDialog.evaluateSkillCanceled();
@@ -78,12 +76,12 @@ export class SkillsEffects {
     evaluateSkill$ = createEffect(() =>
         this.actions$.pipe(
             ofType(SkillsDialog.evaluateSkillOk),
-            mergeMap(({ profileId, skillId, skillModel }) =>
-                this.requestService.setSkillScore(profileId, skillId, { score: skillModel.score }).pipe(
+            mergeMap(({ skillId, skillModel }) =>
+                this.requestService.setSkillScore(skillId, { score: skillModel.score }).pipe(
                     tap(() => this.notificationService.showSuccess('Skill has been evaluated.')),
                     map(
-                        skill => SkillsApiActions.evaluateSkillSuccess({ skill }),
-                        catchError(() => of(ProfilesDetailsActions.evaluateSkillDialog({ profileId, skillId, skillModel })))
+                        (skill) => SkillsApiActions.evaluateSkillSuccess({ skill }),
+                        catchError(() => of(ProfilesDetailsActions.evaluateSkillDialog({ skillId, skillModel })))
                     )
                 )
             )

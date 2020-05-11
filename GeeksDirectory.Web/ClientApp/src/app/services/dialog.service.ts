@@ -20,8 +20,8 @@ export class DialogService {
         return this.baseDialog(AddSkillDialogComponent, { data });
     }
 
-    public evaluateSkillDialog(profileId: number, skillId: number, model: SkillModel): Observable<ISkillDialogResult> {
-        let data: ISkillDialogData = { profileId, skillId, model };
+    public evaluateSkillDialog(skillId: number, model: SkillModel): Observable<ISkillDialogResult> {
+        let data: ISkillDialogData = { skillId, model };
         return this.baseDialog(EvaluateSkillScoreComponent, { data });
     }
 
@@ -32,6 +32,6 @@ export class DialogService {
         const dialogRef = this.dialog.open(component, config);
         let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
 
-        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter(result => !!result));
+        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter((result) => !!result));
     }
 }

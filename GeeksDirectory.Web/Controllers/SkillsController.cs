@@ -5,8 +5,8 @@ using GeeksDirectory.Domain.Models;
 using GeeksDirectory.Domain.Responses;
 
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -38,21 +38,20 @@ namespace GeeksDirectory.Web.Controllers
             this.logger = logger;
         }
 
-        // GET: /api/profiles/{profileId}/skills/{skillId}
+        // GET: /api/profiles/skills/{skillId}
         /**
          * <summary>Get skill</summary>
          * <remarks>Get profile's skill by it's name.</remarks>
-         * <param name="profileId">User profile id</param>
          * <param name="skillId">Skill's id</param>
          * <returns>Matched skill</returns>
         **/
         [AllowAnonymous]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
-        [HttpGet("{profileId}/skills/{skillId}", Name = "GetSkill")]
-        public async Task<ActionResult<SkillResponse>> GetSkill([FromRoute]int profileId, [FromRoute]int skillId)
+        [HttpGet("skills/{skillId}", Name = "GetSkill")]
+        public async Task<ActionResult<SkillResponse>> GetSkill([FromRoute]int skillId)
         {
-            var query = new GetSkillQuery(profileId, skillId);
+            var query = new GetSkillQuery(skillId);
             var skill = await this.mediator.Send(query);
 
             return this.Ok(skill);
@@ -80,56 +79,54 @@ namespace GeeksDirectory.Web.Controllers
 
             var user = await this.mediator.Send(new GetCurrentUserQuery());
 
-            var notification = new EvaluateSkillNotification(user.Id, profileId, result.Value, model.Score);
+            var notification = new EvaluateSkillNotification(user.Id, result.Value, model.Score);
             await this.mediator.Publish(notification);
 
-            var query = new GetSkillQuery(profileId, result.Value);
+            var query = new GetSkillQuery(result.Value);
             var skill = await this.mediator.Send(query);
 
-            return CreatedAtRoute(nameof(GetSkill), new { profileId, skillId = skill.Id }, skill);
+            return CreatedAtRoute(nameof(GetSkill), new { skillId = skill!.Id }, skill);
         }
 
-        // POST: /api/profiles/{profileId}/skills/{skillId}/score
+        // POST: /api/profiles/skills/{skillId}/score
         /**
          * <summary>Evaluate skill</summary>
          * <remarks>Evaluate profile's skill.</remarks>
-         * <param name="profileId">User profile id</param>
          * <param name="skillId">Skill's id</param>
          * <param name="model">Skill Evaluation model</param>
          * <returns>Updated skill's average score</returns>
         **/
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
-        [HttpPost("{profileId}/skills/{skillId}/score")]
-        public async Task<ActionResult<SkillResponse>> EvaluateSkillAsync([FromRoute]int profileId, [FromRoute]int skillId, [FromBody]SkillEvaluationModel model)
+        [HttpPost("skills/{skillId}/score")]
+        public async Task<ActionResult<SkillResponse>> EvaluateSkillAsync([FromRoute]int skillId, [FromBody]SkillEvaluationModel model)
         {
             var user = await this.mediator.Send(new GetCurrentUserQuery());
 
-            var notification = new EvaluateSkillNotification(user.Id, profileId, skillId, model.Score);
+            var notification = new EvaluateSkillNotification(user.Id, skillId, model.Score);
             await this.mediator.Publish(notification);
 
-            var query = new GetSkillQuery(profileId, skillId);
+            var query = new GetSkillQuery(skillId);
             var skill = await this.mediator.Send(query);
 
             return this.Ok(skill);
         }
 
-        // GET: /api/profiles/{profileId}/skills/{skillId}/score
+        // GET: /api/profiles/skills/{skillId}/score
         /**
          * <summary>Get previous skill evaluation</summary>
          * <remarks>Try to get previous skill evaluation if such exists</remarks>
-         * <param name="profileId">User profile id</param>
          * <param name="skillId">Skill's id</param>
          * <returns>Assessment data with your score</returns>
         **/
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]
-        [HttpGet("{profileId}/skills/{skillId}/score")]
-        public async Task<ActionResult<AssessmentResponse?>> GetMySkillEvaluationAsync([FromRoute]int profileId, [FromRoute]int skillId)
+        [HttpGet("skills/{skillId}/score")]
+        public async Task<ActionResult<AssessmentResponse?>> GetMySkillEvaluationAsync([FromRoute]int skillId)
         {
             var user = await this.mediator.Send(new GetCurrentUserQuery());
 
-            var query = new GetSkillEvaluationQuery(profileId, skillId, user.Id);
+            var query = new GetSkillEvaluationQuery(skillId, user.Id);
             var assessment = await this.mediator.Send(query);
 
             if (assessment == null) 

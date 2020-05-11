@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { CONFIG } from '@shared/config';
 import { EndpointBuilder } from '@shared/common';
-import { IProfile, ISkill, IProfilesEnvelope, IAssessment } from '@app/responses';
+import { IProfile, ISkill, IAssessment, IProfilesEnvelope, IPagination } from '@app/responses';
 import { ProfileModel, SkillModel, QueryOptions, SkillEvaluationModel } from '@app/models';
 
 @Injectable({
@@ -31,7 +32,14 @@ export class RequestService {
             urlBulder.addQueryParam('orderDirection', queryOptions.orderDirection);
         }
 
-        return this.http.get<IProfilesEnvelope>(urlBulder.build(), { headers: this.headers });
+        return this.http
+            .get<IProfile[]>(urlBulder.build(), { headers: this.headers, observe: 'response' })
+            .pipe(
+                map((response) => {
+                    let pagination = JSON.parse(response.headers.get('X-Pagination')) as IPagination;
+                    return { profiles: response.body, pagination };
+                })
+            );
     }
 
     public getProfile(profileId: number): Observable<IProfile> {
@@ -69,21 +77,26 @@ export class RequestService {
             urlBulder.addQueryParam('orderDirection', queryOptions.orderDirection);
         }
 
-        return this.http.get<IProfilesEnvelope>(urlBulder.build(), { headers: this.headers });
+        return this.http
+            .get<IProfile[]>(urlBulder.build(), { headers: this.headers, observe: 'response' })
+            .pipe(
+                map((response) => {
+                    let pagination = JSON.parse(response.headers.get('X-Pagination')) as IPagination;
+                    return { profiles: response.body, pagination };
+                })
+            );
     }
 
-    public setSkillScore(profileId: number, skillId: number, skillEvaluation: SkillEvaluationModel): Observable<ISkill> {
+    public setSkillScore(skillId: number, skillEvaluation: SkillEvaluationModel): Observable<ISkill> {
         let url = new EndpointBuilder(CONFIG.api.connection.endpoints.setSkillScore)
-            .setUrlParam('profileId', profileId.toString())
             .setUrlParam('skillId', skillId.toString())
             .build();
 
         return this.http.post<ISkill>(url, skillEvaluation, { headers: this.headers });
     }
 
-    public getMySkillEvaluation(profileId: number, skillId: number): Observable<IAssessment> {
+    public getMySkillEvaluation(skillId: number): Observable<IAssessment> {
         let url = new EndpointBuilder(CONFIG.api.connection.endpoints.getSkillScore)
-            .setUrlParam('profileId', profileId.toString())
             .setUrlParam('skillId', skillId.toString())
             .build();
 

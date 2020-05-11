@@ -12,7 +12,7 @@ namespace GeeksDirectory.Domain.Classes
             if (String.IsNullOrEmpty(query))
                 throw new ArgumentException($"The {nameof(query)} cannot be null or empty.");
 
-            this.queryOptions.Query = query;
+            this.queryOptions.Query = $"%{query}%";
             return this;
         }
 
@@ -49,14 +49,14 @@ namespace GeeksDirectory.Domain.Classes
         {
             if (String.IsNullOrEmpty(orderDirection))
             {
-                this.queryOptions.OrderDirection = OrderDirection.Ascending;
+                this.queryOptions.OrderDirection = OrderDirection.Asc;
                 return this;
             }
 
-            this.queryOptions.OrderDirection = orderDirection.ToLowerInvariant() switch
+            this.queryOptions.OrderDirection = orderDirection.ToUpperInvariant() switch
             {
-                "asc" => OrderDirection.Ascending,
-                "desc" => OrderDirection.Descending,
+                "ASC" => OrderDirection.Asc,
+                "DESC" => OrderDirection.Desc,
                 _ => throw new ArgumentException("Order Direction is not valid."),
             };
 

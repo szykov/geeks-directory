@@ -42,6 +42,8 @@ namespace GeeksDirectory.Web
             services.AddPredefinedApplicationCookie();
 
             services.AddPredefinedErrorHandling();
+
+            services.AddPredefinedDapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

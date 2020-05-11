@@ -28,16 +28,6 @@ namespace GeeksDirectory.Domain.SchemaFilters
             };
         }
 
-        public static OpenApiObject GetPaginationResponse()
-        {
-            return new OpenApiObject()
-            {
-                ["offset"] = new OpenApiInteger(0),
-                ["limit"] = new OpenApiInteger(10),
-                ["total"] = new OpenApiInteger(25)
-            };
-        }
-
         public static OpenApiArray GetSkillsResponse()
         {
             return new OpenApiArray()

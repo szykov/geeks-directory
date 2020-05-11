@@ -3,6 +3,7 @@
 using Dapper;
 
 using GeeksDirectory.Domain.Entities;
+using GeeksDirectory.Domain.Responses;
 using GeeksDirectory.Services.Queries;
 
 using MediatR;
@@ -31,10 +32,13 @@ namespace GeeksDirectory.Services.Handlers
         {
             using var db = new SqliteConnection(this.connection);
 
-            var sql = @"SELECT * FROM [AspNetUsers] WHERE [UserName] = @Email";
-            var user = await db.QuerySingleOrDefaultAsync<ApplicationUser>(sql, new { Email = httpContext.User.Identity.Name });
+            var sql = @"SELECT * 
+                        FROM   [AspnetUsers]
+                        WHERE  [UserName] = @UserName;";
 
-            return user;
+            var profile = await db.QuerySingleOrDefaultAsync<ApplicationUser>(sql, new { UserName = httpContext.User.Identity.Name });
+
+            return profile;
         }
 
     }
