@@ -24,6 +24,6 @@ export class AuthDialogService {
         const dialogRef = this.dialog.open(component, config);
         let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
 
-        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter(result => !!result));
+        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter((result) => !!result));
     }
 }

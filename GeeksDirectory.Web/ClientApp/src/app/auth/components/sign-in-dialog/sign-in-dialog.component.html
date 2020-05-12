@@ -18,15 +18,16 @@
             <mat-error *ngIf="!password.valid && !password.pristine && password.errors['required']">Password is required
             </mat-error>
         </mat-form-field>
-
-        <div class="sign-form-actions" mat-dialog-actions>
-            <button data-cy="createAccount" class="create-account" mat-button (click)="onCreateAccount()">Create
-                Account?</button>
-            <button data-cy="cancel" mat-flat-button (click)="onCancel()">Cancel</button>
-            <button data-cy="submit" type="submit" mat-flat-button color="primary" (click)="onSubmit()"
-                [disabled]="signInForm.form.invalid">
-                Ok
-            </button>
-        </div>
     </form>
+</div>
+<div class="sign-form-actions" mat-dialog-actions>
+    <button data-cy="createAccount" class="create-account" mat-button (click)="onCreateAccount()">Create
+        Account?</button>
+    <div class="end-actions">
+        <button data-cy="cancel" mat-flat-button (click)="onCancel()">Cancel</button>
+        <button data-cy="submit" type="submit" mat-flat-button color="primary" (click)="onSubmit()"
+            [disabled]="signInForm.form.invalid">
+            Ok
+        </button>
+    </div>
 </div>

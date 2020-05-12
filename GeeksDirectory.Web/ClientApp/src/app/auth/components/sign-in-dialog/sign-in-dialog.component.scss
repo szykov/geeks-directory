@@ -3,21 +3,12 @@
 .mat-dialog-content {
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 150px;
     min-width: 200px;
 }
 
-.sign-form-actions {
-    justify-content: flex-end;
-
-    >button {
-        margin-left: 10px;
-    }
-
-    .create-account {
-        float: right;
-        right: 73px;
-    }
+.sign-form-actions .end-actions {
+    margin-left: auto;
 }
 
 @media only screen and (max-width: $xs) {
