@@ -1,8 +1,8 @@
 @import '~src/assets/styles/variables';
 
 .mat-dialog-content {
-    min-width: 230px;
     height: 260px;
+    min-width: 230px;
 }
 
 .skill-form {
@@ -17,7 +17,7 @@
 .skill-form-actions {
     justify-content: flex-end;
 
-    >button {
+    > button {
         margin-left: 10px;
     }
 }

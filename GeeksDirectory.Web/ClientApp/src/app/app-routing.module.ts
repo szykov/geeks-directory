@@ -5,17 +5,17 @@ import { PageNotFoundComponent } from './core/containers/page-not-found/page-not
 import { environment } from 'src/environments/environment';
 
 const routes: Routes = [
-    {
-        path: 'profiles',
-        loadChildren: () => import('./directory/directory.module').then(m => m.DirectoryModule),
-        data: { preload: true }
-    },
-    { path: '', redirectTo: '/profiles', pathMatch: 'full' },
-    { path: '**', component: PageNotFoundComponent }
+	{
+		path: 'profiles',
+		loadChildren: (): Promise<unknown> => import('./directory/directory.module').then((m) => m.DirectoryModule),
+		data: { preload: true }
+	},
+	{ path: '', redirectTo: '/profiles', pathMatch: 'full' },
+	{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { enableTracing: environment.development })],
-    exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes, { enableTracing: environment.development })],
+	exports: [RouterModule]
 })
 export class AppRoutingModule {}

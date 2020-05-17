@@ -1,4 +1,4 @@
 export enum ExceptionCode {
-    KeyNotFoundException = 'KeyNotFoundException',
-    Unauthorized = 'Unauthorized'
+	KeyNotFoundException = 'KeyNotFoundException',
+	Unauthorized = 'Unauthorized'
 }

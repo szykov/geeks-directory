@@ -1,8 +1,16 @@
-<mat-button-toggle-group data-cy="score" class="score" #skillGroup="matButtonToggleGroup" [value]="score"
-    (change)="score = skillGroup.value">
+<mat-button-toggle-group
+    data-cy="score"
+    class="score"
+    #skillGroup="matButtonToggleGroup"
+    [value]="score"
+    (change)="score = skillGroup.value"
+>
     <ng-container *ngFor="let scoreType of scoreTypes">
-        <mat-button-toggle [class.checked]="score == scoreType.value" [checked]="score == scoreType.value"
-            [value]="scoreType.value">
+        <mat-button-toggle
+            [class.checked]="score == scoreType.value"
+            [checked]="score == scoreType.value"
+            [value]="scoreType.value"
+        >
             {{ isMin ? scoreType.value : scoreType.name }}
         </mat-button-toggle>
     </ng-container>

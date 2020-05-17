@@ -3,14 +3,31 @@
     <form class="skill-form" #skillForm="ngForm">
         <div class="skill-body">
             <mat-form-field>
-                <input data-cy="skillName" type="text" matInput placeholder="Name" [(ngModel)]="model.name"
-                    #name="ngModel" id="name" name="name" required />
+                <input
+                    data-cy="skillName"
+                    type="text"
+                    matInput
+                    placeholder="Name"
+                    [(ngModel)]="model.name"
+                    #name="ngModel"
+                    id="name"
+                    name="name"
+                    required
+                />
                 <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required</mat-error>
             </mat-form-field>
 
             <mat-form-field>
-                <input data-cy="skillDescription" type="text" matInput placeholder="Description"
-                    [(ngModel)]="model.description" #description="ngModel" id="description" name="description" />
+                <input
+                    data-cy="skillDescription"
+                    type="text"
+                    matInput
+                    placeholder="Description"
+                    [(ngModel)]="model.description"
+                    #description="ngModel"
+                    id="description"
+                    name="description"
+                />
             </mat-form-field>
 
             <mat-label class="title-header">Your Evaluation</mat-label>
@@ -22,8 +39,14 @@
 
 <div class="skill-form-actions" mat-dialog-actions>
     <button data-cy="skillCancel" mat-flat-button (click)="onCancel()">Cancel</button>
-    <button data-cy="skillOk" type="submit" mat-flat-button color="primary" (click)="onSubmit()"
-        [disabled]="skillForm.form.invalid">
+    <button
+        data-cy="skillOk"
+        type="submit"
+        mat-flat-button
+        color="primary"
+        (click)="onSubmit()"
+        [disabled]="skillForm.form.invalid"
+    >
         Ok
     </button>
 </div>

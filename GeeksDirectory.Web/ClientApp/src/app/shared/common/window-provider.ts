@@ -1,4 +1,4 @@
-// tslint:disable: ban-types
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * https://brianflove.com/2018/01/11/angular-window-provider/
  */
@@ -11,42 +11,45 @@ export const WINDOW = new InjectionToken('WindowToken');
 
 /* Define abstract class for obtaining reference to the global window object. */
 export abstract class WindowRef {
-    get nativeWindow(): Window | Object {
-        throw new Error('Not implemented.');
-    }
+	get nativeWindow(): Window | Record<string, any> {
+		throw new Error('Not implemented.');
+	}
 }
 
 /* Define class that implements the abstract class and returns the native window object. */
 @Injectable()
 export class BrowserWindowRef extends WindowRef {
-    constructor() {
-        super();
-    }
+	constructor() {
+		super();
+	}
 
-    get nativeWindow(): Window | Object {
-        return window;
-    }
+	get nativeWindow(): Window | Record<string, any> {
+		return window;
+	}
 }
 
 /* Create an factory function that returns the native window object. */
-export function windowFactory(browserWindowRef: BrowserWindowRef, platformId: Object): Window | Object {
-    if (isPlatformBrowser(platformId)) {
-        return browserWindowRef.nativeWindow;
-    }
-    return new Object();
+export function windowFactory(
+	browserWindowRef: BrowserWindowRef,
+	platformId: Record<string, any>
+): Window | Record<string, any> {
+	if (isPlatformBrowser(platformId)) {
+		return browserWindowRef.nativeWindow;
+	}
+	return new Object();
 }
 
 /* Create a injectable provider for the WindowRef token that uses the BrowserWindowRef class. */
 const browserWindowProvider: ClassProvider = {
-    provide: WindowRef,
-    useClass: BrowserWindowRef
+	provide: WindowRef,
+	useClass: BrowserWindowRef
 };
 
 /* Create an injectable provider that uses the windowFactory function for returning the native window object. */
 const windowProvider: FactoryProvider = {
-    provide: WINDOW,
-    useFactory: windowFactory,
-    deps: [WindowRef, PLATFORM_ID]
+	provide: WINDOW,
+	useFactory: windowFactory,
+	deps: [WindowRef, PLATFORM_ID]
 };
 
 /* Create an array of providers. */

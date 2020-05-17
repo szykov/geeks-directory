@@ -1,25 +1,25 @@
 $minWidth: 400px;
 
 .success-snackbar {
-    min-width: $minWidth !important;
     background: #00c853;
+    min-width: $minWidth !important;
     span {
-        color: #000000;
+        color: #000;
     }
 }
 
 .error-snackbar {
-    min-width: $minWidth !important;
     background: #d50000;
+    min-width: $minWidth !important;
     span {
-        color: #ffffff;
+        color: #fff;
     }
 }
 
 .warning-snackbar {
+    background: #ff0;
     min-width: $minWidth !important;
-    background: #ffff00;
     span {
-        color: #000000;
+        color: #000;
     }
 }

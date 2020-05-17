@@ -11,29 +11,29 @@ import { IToken } from '@app/auth/responses';
 import { EndpointBuilder } from '@shared/common';
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class AuthService {
-    private headers: HttpHeaders;
+	private headers: HttpHeaders;
 
-    constructor(private http: HttpClient) {
-        this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    }
+	constructor(private http: HttpClient) {
+		this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+	}
 
-    public registerProfile(profile: ProfileModel): Observable<IProfile> {
-        let url = new EndpointBuilder(CONFIG.api.connection.endpoints.registerProfile).build();
-        return this.http.post<IProfile>(url, profile, { headers: this.headers });
-    }
+	public registerProfile(profile: ProfileModel): Observable<IProfile> {
+		let url = new EndpointBuilder(CONFIG.api.connection.endpoints.registerProfile).build();
+		return this.http.post<IProfile>(url, profile, { headers: this.headers });
+	}
 
-    public getAuthToken(requestToken: RequestTokenModel): Observable<IToken> {
-        let url = new EndpointBuilder(CONFIG.api.connection.endpoints.getToken).build();
-        return this.http.post<IToken>(url, requestToken.encodeToSend(), {
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        });
-    }
+	public getAuthToken(requestToken: RequestTokenModel): Observable<IToken> {
+		let url = new EndpointBuilder(CONFIG.api.connection.endpoints.getToken).build();
+		return this.http.post<IToken>(url, requestToken.encodeToSend(), {
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+		});
+	}
 
-    public getMyProfile() {
-        let url = new EndpointBuilder(CONFIG.api.connection.endpoints.getMyProfile).build();
-        return this.http.get<IProfile>(url, { headers: this.headers });
-    }
+	public getMyProfile(): Observable<IProfile> {
+		let url = new EndpointBuilder(CONFIG.api.connection.endpoints.getMyProfile).build();
+		return this.http.get<IProfile>(url, { headers: this.headers });
+	}
 }

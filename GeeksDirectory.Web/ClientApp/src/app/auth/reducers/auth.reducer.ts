@@ -5,22 +5,22 @@ import { IProfile } from '@app/responses';
 import { IToken } from '@app/auth/responses';
 
 export interface State {
-    profile: IProfile | null;
-    token: IToken | null;
+	profile: IProfile | null;
+	token: IToken | null;
 }
 
 export const initialState: State = {
-    profile: null,
-    token: null
+	profile: null,
+	token: null
 };
 
 export const reducer = createReducer(
-    initialState,
-    on(AuthApiActions.signInSuccess, (state, { token }) => ({ ...state, token })),
-    on(AuthApiActions.personalizeSuccess, (state, { profile }) => ({ ...state, profile })),
-    on(AuthApiActions.restoreSuccess, (state, { token, profile }) => ({ ...state, token, profile })),
-    on(AuthActions.signOut, () => initialState)
+	initialState,
+	on(AuthApiActions.signInSuccess, (state, { token }) => ({ ...state, token })),
+	on(AuthApiActions.personalizeSuccess, (state, { profile }) => ({ ...state, profile })),
+	on(AuthApiActions.restoreSuccess, (state, { token, profile }) => ({ ...state, token, profile })),
+	on(AuthActions.signOut, () => initialState)
 );
 
-export const getProfile = (state: State) => state.profile;
-export const getToken = (state: State) => state.token;
+export const getProfile = (state: State): IProfile => state.profile;
+export const getToken = (state: State): IToken => state.token;

@@ -3,6 +3,15 @@
         "dist": true,
         "node_modules": true,
         "*.lock": true
-	},
-	"explorer.compactFolders": false
+    },
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        }
+    },
+    "[scss]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": true
+        }
+    }
 }

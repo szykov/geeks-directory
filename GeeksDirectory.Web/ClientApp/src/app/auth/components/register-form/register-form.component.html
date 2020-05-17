@@ -1,55 +1,114 @@
 <form data-cy="regForm" class="reg-form" form #regForm="ngForm">
     <mat-form-field>
-        <input data-cy="name" type="text" matInput placeholder="Name" [(ngModel)]="model.name" #name="ngModel" id="name"
-            name="name" required />
+        <input
+            data-cy="name"
+            type="text"
+            matInput
+            placeholder="Name"
+            [(ngModel)]="model.name"
+            #name="ngModel"
+            id="name"
+            name="name"
+            required
+        />
         <mat-error *ngIf="!name.valid && !name.pristine && name.errors['required']">Name is required </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-        <input data-cy="surname" type="text" matInput placeholder="Surname" [(ngModel)]="model.surname"
-            #surname="ngModel" id="surname" name="surname" required />
-        <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']">Surname is required
+        <input
+            data-cy="surname"
+            type="text"
+            matInput
+            placeholder="Surname"
+            [(ngModel)]="model.surname"
+            #surname="ngModel"
+            id="surname"
+            name="surname"
+            required
+        />
+        <mat-error *ngIf="!surname.valid && !surname.pristine && surname.errors['required']"
+            >Surname is required
         </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-        <input data-cy="middleName" type="text" matInput placeholder="Middle Name" [(ngModel)]="model.middleName"
-            #middleName="ngModel" id="middleName" name="middleName" />
+        <input
+            data-cy="middleName"
+            type="text"
+            matInput
+            placeholder="Middle Name"
+            [(ngModel)]="model.middleName"
+            #middleName="ngModel"
+            id="middleName"
+            name="middleName"
+        />
     </mat-form-field>
 
     <gd-city-select [(ngModel)]="model.city" name="city" id="city" required></gd-city-select>
 
     <mat-form-field>
-        <input data-cy="email" type="email" matInput placeholder="Email" [(ngModel)]="model.email" #email="ngModel"
-            id="email" name="email" email required />
+        <input
+            data-cy="email"
+            type="email"
+            matInput
+            placeholder="Email"
+            [(ngModel)]="model.email"
+            #email="ngModel"
+            id="email"
+            name="email"
+            email
+            required
+        />
         <mat-error *ngIf="!email.valid && !email.pristine && email.errors['required']">Email is required </mat-error>
         <mat-error *ngIf="!email.valid && !email.pristine && email.errors['email']">Email is invalid </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-        <input data-cy="password" type="password" matInput placeholder="Password" [type]="hide ? 'password' : 'text'"
-            [(ngModel)]="model.password" #password="ngModel" id="password" name="password" minlength="8" gdNoWhiteSpace
-            gdHasLowerCase gdHasUpperCase gdHasNumber [gdSpecialCharacter]="true" required />
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide" tabindex="-1">
+        <input
+            data-cy="password"
+            type="password"
+            matInput
+            placeholder="Password"
+            [type]="hide ? 'password' : 'text'"
+            [(ngModel)]="model.password"
+            #password="ngModel"
+            id="password"
+            name="password"
+            minlength="8"
+            gdNoWhiteSpace
+            gdHasLowerCase
+            gdHasUpperCase
+            gdHasNumber
+            [gdSpecialCharacter]="true"
+            required
+        />
+        <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+            tabindex="-1"
+        >
             <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
-        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['required']">Password is required
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['required']"
+            >Password is required
         </mat-error>
-        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['noWhiteSpace']">Password should not
-            have white spaces
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['noWhiteSpace']"
+            >Password should not have white spaces
         </mat-error>
-        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasLowerCase']">Password should have
-            lower case letters
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasLowerCase']"
+            >Password should have lower case letters
         </mat-error>
-        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasUpperCase']">Password should have
-            upper case letters
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasUpperCase']"
+            >Password should have upper case letters
         </mat-error>
-        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasNumber']">Password should have
-            numbers
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['hasNumber']"
+            >Password should have numbers
         </mat-error>
-        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['specialCharacter']">Password should
-            have special letters
+        <mat-error *ngIf="!password.valid && !password.pristine && password.errors['specialCharacter']"
+            >Password should have special letters
         </mat-error>
         <mat-error *ngIf="!password.valid && !password.pristine && password.errors['minlength']">
             Password must be of minimum 8 characters length

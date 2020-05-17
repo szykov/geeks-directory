@@ -1,6 +1,6 @@
 .profile-card {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     max-width: 280px;
 }
 
@@ -11,8 +11,8 @@
 }
 
 .card-content {
-    margin-bottom: 0;
     flex-grow: 1;
+    margin-bottom: 0;
     .mat-button {
         text-transform: uppercase;
     }
@@ -25,6 +25,6 @@
 
 .card-content > div {
     display: inline-block;
-    margin-right: 22px;
     margin-bottom: 15px;
+    margin-right: 22px;
 }

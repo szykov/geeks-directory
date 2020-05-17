@@ -16,23 +16,23 @@ import { SearchComponent } from './containers/search/search.component';
 import { SearchTableComponent } from './components/search-table/search-table.component';
 
 @NgModule({
-    declarations: [
-        ProfileDetailsComponent,
-        ProfileListComponent,
-        ProfileCardComponent,
-        EditProfileComponent,
-        SearchComponent,
-        SearchTableComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        DirectoryRoutingModule,
-        SharedModule,
-        StoreModule.forFeature('directory', reducers),
-        EffectsModule.forFeature([ProfileEffects, SkillsEffects])
-    ],
-    providers: [ProfileListResolveGuard, ProfileResolveGuard]
+	declarations: [
+		ProfileDetailsComponent,
+		ProfileListComponent,
+		ProfileCardComponent,
+		EditProfileComponent,
+		SearchComponent,
+		SearchTableComponent
+	],
+	imports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		DirectoryRoutingModule,
+		SharedModule,
+		StoreModule.forFeature('directory', reducers),
+		EffectsModule.forFeature([ProfileEffects, SkillsEffects])
+	],
+	providers: [ProfileListResolveGuard, ProfileResolveGuard]
 })
 export class DirectoryModule {}

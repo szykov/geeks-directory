@@ -1,8 +1,15 @@
 <form [formGroup]="profileForm" novalidate>
     <mat-form-field>
         <mat-label>Email</mat-label>
-        <input data-cy="email" type="email" matInput id="email" name="email" [value]="profileForm.controls.email.value"
-            disabled />
+        <input
+            data-cy="email"
+            type="email"
+            matInput
+            id="email"
+            name="email"
+            [value]="profileForm.controls.email.value"
+            disabled
+        />
     </mat-form-field>
 
     <mat-form-field>
@@ -15,8 +22,15 @@
 
     <mat-form-field>
         <mat-label>Surname</mat-label>
-        <input data-cy="surname" type="text" matInput placeholder="Surname" formControlName="surname" id="surname"
-            name="surname" />
+        <input
+            data-cy="surname"
+            type="text"
+            matInput
+            placeholder="Surname"
+            formControlName="surname"
+            id="surname"
+            name="surname"
+        />
         <mat-error *ngIf="profileForm.controls['surname'].invalid">
             Surname is required
         </mat-error>
@@ -24,8 +38,15 @@
 
     <mat-form-field *ngIf="profileForm.controls['middleName'] || editableProfile">
         <mat-label>Middle Name</mat-label>
-        <input data-cy="middleName" type="text" matInput placeholder="Middle Name" formControlName="middleName"
-            id="middleName" name="middleName" />
+        <input
+            data-cy="middleName"
+            type="text"
+            matInput
+            placeholder="Middle Name"
+            formControlName="middleName"
+            id="middleName"
+            name="middleName"
+        />
     </mat-form-field>
 
     <gd-city-select formControlName="city" id="city" name="city" required></gd-city-select>
@@ -39,21 +60,46 @@
 
     <mat-chip-list class="card-content">
         <ng-container *ngFor="let skill of skills">
-            <mat-chip data-cy="skill" [disableRipple]="!editableSkills" class="skill-chip"
-                [ngClass]="{ editable: editableSkills }" (click)="editableSkills ? onEditSkill(skill) : null">
-                <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false"
-                    id="{{ skill.id }}">
-                    {{ skill.name }}</span>
+            <mat-chip
+                data-cy="skill"
+                [disableRipple]="!editableSkills"
+                class="skill-chip"
+                [ngClass]="{ editable: editableSkills }"
+                (click)="editableSkills ? onEditSkill(skill) : null"
+            >
+                <span
+                    matBadge="{{ skill.averageScore }}"
+                    matBadgeSize="small"
+                    matBadgeOverlap="false"
+                    id="{{ skill.id }}"
+                >
+                    {{ skill.name }}</span
+                >
             </mat-chip>
         </ng-container>
-        <button data-cy="addSkill" *ngIf="editableSkills" class="add-skill" mat-icon-button color="primary"
-            aria-label="Add Skill" (click)="onNewSkill()">
+        <button
+            data-cy="addSkill"
+            *ngIf="editableSkills"
+            class="add-skill"
+            mat-icon-button
+            color="primary"
+            aria-label="Add Skill"
+            (click)="onNewSkill()"
+        >
             <mat-icon>add</mat-icon>
         </button>
     </mat-chip-list>
 </div>
 
 <div class="profile-actions" data-cy="update">
-    <button data-cy="submit" *ngIf="editableProfile" mat-flat-button color="primary" (click)="onSubmit()"
-        [disabled]="profileForm.invalid">Update</button>
+    <button
+        data-cy="submit"
+        *ngIf="editableProfile"
+        mat-flat-button
+        color="primary"
+        (click)="onSubmit()"
+        [disabled]="profileForm.invalid"
+    >
+        Update
+    </button>
 </div>

@@ -1,10 +1,15 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center">
     <div class="profile-container">
         <gd-viewer-container title="{{ profile.fullName }}">
-            <gd-edit-profile [skills]="profile.skills" [profile]="profile"
-                [editableProfile]="(currentProfile$ | async)?.id == profile?.id" [editableSkills]="isAuth$ | async"
-                (updateProfile)="onUpdatePersonalProfile($event)" (newSkill)="onAddSkill()"
-                (editSkill)="onEditSkill($event)">
+            <gd-edit-profile
+                [skills]="profile.skills"
+                [profile]="profile"
+                [editableProfile]="(currentProfile$ | async)?.id == profile?.id"
+                [editableSkills]="isAuth$ | async"
+                (updateProfile)="onUpdatePersonalProfile($event)"
+                (newSkill)="onAddSkill()"
+                (editSkill)="onEditSkill($event)"
+            >
             </gd-edit-profile>
         </gd-viewer-container>
     </div>

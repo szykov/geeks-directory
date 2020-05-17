@@ -35,15 +35,21 @@
             <th data-cy="skill" class="hide-sm" mat-header-cell *matHeaderCellDef>Skills</th>
             <td class="hide-sm" mat-cell *matCellDef="let profile">
                 <div class="skill-badge" *ngFor="let skill of profile.skills">
-                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small"
-                        matBadgeOverlap="false">{{ skill.name }}</span>
+                    <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false">{{
+                        skill.name
+                    }}</span>
                 </div>
             </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-        <tr class="st-row" [class.st-row-disabled]="loading" mat-row *matRowDef="let row; columns: displayedColumns"
-            (click)="!loading && onGoToProfile(row)"></tr>
+        <tr
+            class="st-row"
+            [class.st-row-disabled]="loading"
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            (click)="!loading && onGoToProfile(row)"
+        ></tr>
     </table>
 
     <mat-paginator [length]="total" [pageSizeOptions]="[pageSize, pageSize * 2, pageSize * 3]" showFirstLastButtons>

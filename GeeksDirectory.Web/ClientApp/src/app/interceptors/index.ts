@@ -11,24 +11,24 @@ export * from './loader.interceptor';
 export * from './not-found.interceptor';
 
 export const INTERCEPTORS = [
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: HttpConfigInterceptor,
-        multi: true
-    },
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: AuthInterceptor,
-        multi: true
-    },
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: LoaderInterceptor,
-        multi: true
-    },
-    {
-        provide: HTTP_INTERCEPTORS,
-        useClass: NotFoundInterceptor,
-        multi: true
-    }
+	{
+		provide: HTTP_INTERCEPTORS,
+		useClass: HttpConfigInterceptor,
+		multi: true
+	},
+	{
+		provide: HTTP_INTERCEPTORS,
+		useClass: AuthInterceptor,
+		multi: true
+	},
+	{
+		provide: HTTP_INTERCEPTORS,
+		useClass: LoaderInterceptor,
+		multi: true
+	},
+	{
+		provide: HTTP_INTERCEPTORS,
+		useClass: NotFoundInterceptor,
+		multi: true
+	}
 ];

@@ -11,27 +11,27 @@ import { SidebarService } from '@app/services';
 
 @Injectable()
 export class CoreEffects {
-    constructor(private actions$: Actions, private sidebarService: SidebarService) {}
+	constructor(private actions$: Actions, private sidebarService: SidebarService) {}
 
-    toogleSidebarMode$ = createEffect(
-        () =>
-            this.actions$.pipe(
-                ofType(SidebarActions.toogleModeSidebar),
-                tap(() => {
-                    this.sidebarService.toogleMode();
-                })
-            ),
-        { dispatch: false }
-    );
+	toogleSidebarMode$ = createEffect(
+		() =>
+			this.actions$.pipe(
+				ofType(SidebarActions.toogleModeSidebar),
+				tap(() => {
+					this.sidebarService.toogleMode();
+				})
+			),
+		{ dispatch: false }
+	);
 
-    toogleSidebarStatus$ = createEffect(
-        () =>
-            this.actions$.pipe(
-                ofType(SidebarActions.toogleStatusSidebar),
-                tap(() => {
-                    this.sidebarService.toogleStatus();
-                })
-            ),
-        { dispatch: false }
-    );
+	toogleSidebarStatus$ = createEffect(
+		() =>
+			this.actions$.pipe(
+				ofType(SidebarActions.toogleStatusSidebar),
+				tap(() => {
+					this.sidebarService.toogleStatus();
+				})
+			),
+		{ dispatch: false }
+	);
 }

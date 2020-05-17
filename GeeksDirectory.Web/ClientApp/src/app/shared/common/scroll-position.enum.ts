@@ -1,5 +1,5 @@
 export const enum ScrollPosition {
-    Up,
-    Middle,
-    Down
+	Up,
+	Middle,
+	Down
 }

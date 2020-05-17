@@ -23,31 +23,31 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 const MATERIAL_BUNDLE = [
-    MatAutocompleteModule,
-    MatBadgeModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatChipsModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatPaginatorModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatRippleModule
+	MatAutocompleteModule,
+	MatBadgeModule,
+	MatButtonModule,
+	MatButtonToggleModule,
+	MatCardModule,
+	MatChipsModule,
+	MatDialogModule,
+	MatDividerModule,
+	MatFormFieldModule,
+	MatIconModule,
+	MatInputModule,
+	MatListModule,
+	MatMenuModule,
+	MatPaginatorModule,
+	MatProgressSpinnerModule,
+	MatSidenavModule,
+	MatSnackBarModule,
+	MatSortModule,
+	MatTableModule,
+	MatToolbarModule,
+	MatRippleModule
 ];
 
 @NgModule({
-    imports: [CommonModule, MATERIAL_BUNDLE],
-    exports: [MATERIAL_BUNDLE]
+	imports: [CommonModule, MATERIAL_BUNDLE],
+	exports: [MATERIAL_BUNDLE]
 })
 export class MaterialModule {}

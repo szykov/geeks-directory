@@ -1,11 +1,11 @@
-.card-content>p {
+.card-content > p {
     display: inline-block;
     margin-right: 22px;
 }
 
 .profile-actions {
-    text-align: right;
     margin-top: 20px;
+    text-align: right;
 }
 
 .skills-container {
@@ -33,8 +33,8 @@
         margin-left: 10px;
 
         mat-icon {
-            width: 40px;
             font-size: 40px;
+            width: 40px;
         }
     }
 }

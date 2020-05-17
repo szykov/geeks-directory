@@ -1,14 +1,14 @@
 .drawer-container {
-    min-width: 60px;
     max-width: 60px;
+    min-width: 60px;
     overflow: hidden;
 }
 
 .profile-icon {
-    width: 30px;
+    border-radius: 50%;
     height: 30px;
     object-fit: cover;
-    border-radius: 50%;
+    width: 30px;
 }
 
 .drawer-icon {
@@ -20,17 +20,17 @@
 }
 
 .nav-link {
-    white-space: nowrap;
-    padding-left: 26px;
-    padding-top: 2px;
     font-weight: 500;
     line-height: 30px;
+    padding-left: 26px;
+    padding-top: 2px;
+    white-space: nowrap;
 }
 
 .active-link {
+    background-color: #e91e63 !important;
     outline-style: solid;
     outline-width: thin;
-    background-color: #e91e63 !important;
 }
 
 .toogle-container {

@@ -5,19 +5,17 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class HttpConfigInterceptor implements HttpInterceptor {
-    constructor() {}
+	intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+		if (!request.headers.has('Content-Type')) {
+			request = request.clone({
+				headers: request.headers.set('Content-Type', 'application/json')
+			});
+		}
 
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if (!request.headers.has('Content-Type')) {
-            request = request.clone({
-                headers: request.headers.set('Content-Type', 'application/json')
-            });
-        }
+		request = request.clone({
+			headers: request.headers.set('Accept', 'application/json')
+		});
 
-        request = request.clone({
-            headers: request.headers.set('Accept', 'application/json')
-        });
-
-        return next.handle(request);
-    }
+		return next.handle(request);
+	}
 }

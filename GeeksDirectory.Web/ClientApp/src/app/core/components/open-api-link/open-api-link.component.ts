@@ -6,28 +6,28 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { CONFIG } from '@shared/config';
 
 @Component({
-    selector: 'gd-open-api-link',
-    templateUrl: './open-api-link.component.html',
-    styles: ['button { text-align: left; }', 'mat-icon { padding-left: 5px; }'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'gd-open-api-link',
+	templateUrl: './open-api-link.component.html',
+	styles: ['button { text-align: left; }', 'mat-icon { padding-left: 5px; }'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OpenApiLinkComponent {
-    @Input() showText: boolean;
-    @Input() height = '36px';
-    @Input() width = '120px';
+	@Input() showText: boolean;
+	@Input() height = '36px';
+	@Input() width = '120px';
 
-    constructor(
-        private matIconRegistry: MatIconRegistry,
-        private domSanitizer: DomSanitizer,
-        @Inject(DOCUMENT) private document: Document
-    ) {
-        this.matIconRegistry.addSvgIcon(
-            'open-api',
-            this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/swagger-seeklogo.svg')
-        );
-    }
+	constructor(
+		private matIconRegistry: MatIconRegistry,
+		private domSanitizer: DomSanitizer,
+		@Inject(DOCUMENT) private document: Document
+	) {
+		this.matIconRegistry.addSvgIcon(
+			'open-api',
+			this.domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/swagger-seeklogo.svg')
+		);
+	}
 
-    public goToSpecs() {
-        this.document.location.href = CONFIG.specsUrl;
-    }
+	public goToSpecs(): void {
+		this.document.location.href = CONFIG.specsUrl;
+	}
 }

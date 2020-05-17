@@ -5,32 +5,32 @@
 }
 
 .viewer-wrapper {
-    border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .viewer-container {
-    height: 40px;
-    color: rgba(0, 0, 0, 0.54);
-    background: rgba(0, 0, 0, 0.03);
-    background-color: rgba(255, 255, 255, 0.03);
     align-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, 0.03);
+    background-color: rgba(255, 255, 255, 0.03);
+    color: rgba(0, 0, 0, 0.54);
     display: flex;
+    height: 40px;
     justify-content: center;
     padding: 8px 20px;
 }
 
 .viewer-title {
-    flex: 1 1 auto;
     color: white;
+    flex: 1 1 auto;
     text-transform: uppercase;
 }
 
 .viewer-body {
     background-color: #424242;
-    padding: 30px;
     display: flex;
     flex-direction: column;
+    padding: 30px;
 }

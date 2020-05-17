@@ -14,53 +14,53 @@ import { ScrollPosition } from '@shared/common';
 import { QueryOptions } from '@app/models';
 
 @Component({
-    selector: 'gd-profile-list',
-    templateUrl: './profile-list.component.html',
-    styleUrls: ['./profile-list.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'gd-profile-list',
+	templateUrl: './profile-list.component.html',
+	styleUrls: ['./profile-list.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfileListComponent implements OnInit, OnDestroy {
-    public profiles: IProfile[] = [];
-    public loadedProfiles: number;
-    public paginationInfo: IPagination;
-    public loading$: Observable<boolean>;
+	public profiles: IProfile[] = [];
+	public loadedProfiles: number;
+	public paginationInfo: IPagination;
+	public loading$: Observable<boolean>;
 
-    private unsubscribe: Subject<void> = new Subject();
+	private unsubscribe: Subject<void> = new Subject();
 
-    constructor(private store: Store<fromState.State>) {}
+	constructor(private store: Store<fromState.State>) {}
 
-    ngOnInit() {
-        this.store
-            .select(fromProfiles.getProfiles)
-            .pipe(takeUntil(this.unsubscribe))
-            .subscribe((result) => {
-                this.profiles = [...this.profiles, ...result.profiles];
-                this.paginationInfo = result.pagination;
-                this.loadedProfiles = result.pagination.offset + result.pagination.limit;
-            });
+	ngOnInit(): void {
+		this.store
+			.select(fromProfiles.getProfiles)
+			.pipe(takeUntil(this.unsubscribe))
+			.subscribe((result) => {
+				this.profiles = [...this.profiles, ...result.profiles];
+				this.paginationInfo = result.pagination;
+				this.loadedProfiles = result.pagination.offset + result.pagination.limit;
+			});
 
-        this.store
-            .select(fromCore.getScrollPosition)
-            .pipe(
-                takeUntil(this.unsubscribe),
-                filter((result) => result === ScrollPosition.Down)
-            )
-            .subscribe(() => {
-                if (this.paginationInfo.total > this.profiles.length) {
-                    let queryOptions = new QueryOptions(null, this.paginationInfo.limit, this.loadedProfiles);
-                    this.store.dispatch(ProfilesListActions.loadProfiles({ queryOptions }));
-                }
-            });
+		this.store
+			.select(fromCore.getScrollPosition)
+			.pipe(
+				takeUntil(this.unsubscribe),
+				filter((result) => result === ScrollPosition.Down)
+			)
+			.subscribe(() => {
+				if (this.paginationInfo.total > this.profiles.length) {
+					let queryOptions = new QueryOptions(null, this.paginationInfo.limit, this.loadedProfiles);
+					this.store.dispatch(ProfilesListActions.loadProfiles({ queryOptions }));
+				}
+			});
 
-        this.loading$ = this.store.select(fromProfiles.getLoadingStatus);
-    }
+		this.loading$ = this.store.select(fromProfiles.getLoadingStatus);
+	}
 
-    public isLoadedAll(): boolean {
-        return this.profiles.length >= this.paginationInfo?.total;
-    }
+	public isLoadedAll(): boolean {
+		return this.profiles.length >= this.paginationInfo?.total;
+	}
 
-    ngOnDestroy() {
-        this.unsubscribe.next();
-        this.unsubscribe.complete();
-    }
+	ngOnDestroy(): void {
+		this.unsubscribe.next();
+		this.unsubscribe.complete();
+	}
 }

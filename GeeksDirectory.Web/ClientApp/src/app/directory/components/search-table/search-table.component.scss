@@ -1,8 +1,8 @@
 @import '~src/assets/styles/variables';
 
 .search-table {
-    width: 100%;
     max-height: 400px;
+    width: 100%;
 }
 
 .skill-badge {
@@ -19,8 +19,8 @@
 }
 
 .st-row-disabled {
-    opacity: 0.6;
     filter: grayscale(100%);
+    opacity: 0.6;
 }
 
 @media only screen and (max-width: $sm) {

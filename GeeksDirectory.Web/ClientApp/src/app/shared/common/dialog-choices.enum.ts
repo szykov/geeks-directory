@@ -1,5 +1,5 @@
 export const enum DialogChoice {
-    Ok,
-    Canceled,
-    CreateAccount
+	Ok,
+	Canceled,
+	CreateAccount
 }

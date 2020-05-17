@@ -13,8 +13,9 @@
 
     <mat-card-content class="card-content">
         <div class="skill-badge" *ngFor="let skill of profile.skills">
-            <span matBadge="{{ skill.averageScore }}" matBadgeSize="small"
-                matBadgeOverlap="false">{{ skill.name }}</span>
+            <span matBadge="{{ skill.averageScore }}" matBadgeSize="small" matBadgeOverlap="false">{{
+                skill.name
+            }}</span>
         </div>
     </mat-card-content>
 
