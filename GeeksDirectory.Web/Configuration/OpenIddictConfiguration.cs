@@ -3,12 +3,11 @@
 using GeeksDirectory.Infrastructure;
 using GeeksDirectory.Domain.Entities;
 
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+
 using GeeksDirectory.Domain.Classes;
-using System;
 
 namespace GeeksDirectory.Web.Configuration
 {

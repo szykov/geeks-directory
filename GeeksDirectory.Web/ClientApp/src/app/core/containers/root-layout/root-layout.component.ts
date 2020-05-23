@@ -45,7 +45,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 	];
 
 	private personalProfile: IProfile;
-	private unsubscribe: Subject<void> = new Subject();
+	private unsubscribe$: Subject<void> = new Subject();
 
 	constructor(
 		private store: Store<fromState.State>,
@@ -57,7 +57,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.isAuth$ = this.store.select(fromAuth.isAuth);
 		this.sidebar$ = this.store.select(fromCore.getSidebar);
 
-		this.route.queryParams.pipe(takeUntil(this.unsubscribe)).subscribe((params) => {
+		this.route.queryParams.pipe(takeUntil(this.unsubscribe$)).subscribe((params) => {
 			if (params.signIn) {
 				this.store.dispatch(SignInDialogActions.openNewDialog());
 			}
@@ -66,7 +66,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.store
 			.select(fromAuth.getProfile)
 			.pipe(
-				takeUntil(this.unsubscribe),
+				takeUntil(this.unsubscribe$),
 				filter((profile) => !!profile)
 			)
 			.subscribe((result) => {
@@ -77,13 +77,13 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngAfterViewInit(): void {
 		this.drawerContainer.backdropClick.subscribe(() => this.onDrawerToogle());
-		this.scrollService.isMobile.pipe(takeUntil(this.unsubscribe)).subscribe((result) => {
+		this.scrollService.isMobile.pipe(takeUntil(this.unsubscribe$)).subscribe((result) => {
 			this.isMobile = result;
 		});
 
 		this.store
 			.select(fromCore.getSidebar)
-			.pipe(takeUntil(this.unsubscribe))
+			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe((sidebar) => {
 				this.drawer.toggle(sidebar.status);
 				setTimeout(() => this.drawerContainer.updateContentMargins(), 300);
@@ -114,7 +114,7 @@ export class RootLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	public ngOnDestroy(): void {
-		this.unsubscribe.next();
-		this.unsubscribe.complete();
+		this.unsubscribe$.next();
+		this.unsubscribe$.complete();
 	}
 }

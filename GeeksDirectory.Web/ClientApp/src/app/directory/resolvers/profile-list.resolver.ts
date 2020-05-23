@@ -16,8 +16,9 @@ export class ProfileListResolveGuard implements Resolve<IProfilesEnvelope> {
 	constructor(private store: Store<fromProfiles.State>, private paginationService: PaginationService) {}
 
 	resolve(): Observable<IProfilesEnvelope> {
-		let paginationStep = this.paginationService.getPaginationStep();
-		let queryOptions = new QueryOptions(null, paginationStep);
+		let queryOptions = new QueryOptions();
+		queryOptions.limit = this.paginationService.getPaginationStep();
+
 		this.store.dispatch(ProfilesListActions.loadProfiles({ queryOptions }));
 
 		return this.store.select(fromProfiles.getProfiles).pipe(take(2));

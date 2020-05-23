@@ -78,7 +78,7 @@ namespace GeeksDirectory.Web.Controllers
         /**
          * <summary>Get personal profile</summary>
          * <remarks>Get personal profile based on authenticated credentials.</remarks>
-         * <returns>Profile of authentificated user</returns>
+         * <returns>Profile of authenticated user</returns>
         **/
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status422UnprocessableEntity)]

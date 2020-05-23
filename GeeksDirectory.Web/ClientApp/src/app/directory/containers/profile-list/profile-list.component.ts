@@ -25,14 +25,14 @@ export class ProfileListComponent implements OnInit, OnDestroy {
 	public paginationInfo: IPagination;
 	public loading$: Observable<boolean>;
 
-	private unsubscribe: Subject<void> = new Subject();
+	private unsubscribe$: Subject<void> = new Subject();
 
 	constructor(private store: Store<fromState.State>) {}
 
 	ngOnInit(): void {
 		this.store
 			.select(fromProfiles.getProfiles)
-			.pipe(takeUntil(this.unsubscribe))
+			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe((result) => {
 				this.profiles = [...this.profiles, ...result.profiles];
 				this.paginationInfo = result.pagination;
@@ -42,12 +42,15 @@ export class ProfileListComponent implements OnInit, OnDestroy {
 		this.store
 			.select(fromCore.getScrollPosition)
 			.pipe(
-				takeUntil(this.unsubscribe),
+				takeUntil(this.unsubscribe$),
 				filter((result) => result === ScrollPosition.Down)
 			)
 			.subscribe(() => {
 				if (this.paginationInfo.total > this.profiles.length) {
-					let queryOptions = new QueryOptions(null, this.paginationInfo.limit, this.loadedProfiles);
+					let queryOptions = new QueryOptions();
+					queryOptions.limit = this.paginationInfo.limit;
+					queryOptions.offset = this.loadedProfiles;
+
 					this.store.dispatch(ProfilesListActions.loadProfiles({ queryOptions }));
 				}
 			});
@@ -60,7 +63,7 @@ export class ProfileListComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.unsubscribe.next();
-		this.unsubscribe.complete();
+		this.unsubscribe$.next();
+		this.unsubscribe$.complete();
 	}
 }

@@ -1,17 +1,19 @@
 {
-    "files.exclude": {
-        "dist": true,
-        "node_modules": true,
-        "*.lock": true
-    },
-    "[typescript]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true
-        }
-    },
-    "[scss]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll.stylelint": true
-        }
-    }
+	"files.exclude": {
+		"dist": true,
+		"node_modules": true,
+		"*.lock": true
+	},
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
+	"[scss]": {
+		"editor.codeActionsOnSave": {
+			"source.fixAll.stylelint": true
+		}
+	},
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false
 }

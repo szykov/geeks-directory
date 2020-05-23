@@ -17,7 +17,7 @@ export class SignInDialogComponent implements OnInit, OnDestroy {
 	public model: CredentialsModel = new CredentialsModel();
 	public hide = true;
 
-	private unsubscribe: Subject<void> = new Subject();
+	private unsubscribe$: Subject<void> = new Subject();
 
 	constructor(
 		public dialogRef: MatDialogRef<SignInDialogComponent>,
@@ -29,7 +29,7 @@ export class SignInDialogComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.dialogRef
 			.backdropClick()
-			.pipe(takeUntil(this.unsubscribe))
+			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe(() => this.onCancel());
 	}
 
@@ -46,7 +46,7 @@ export class SignInDialogComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.unsubscribe.next();
-		this.unsubscribe.complete();
+		this.unsubscribe$.next();
+		this.unsubscribe$.complete();
 	}
 }

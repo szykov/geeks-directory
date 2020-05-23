@@ -1,6 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 
 import { Subject, Observable } from 'rxjs';
@@ -25,8 +25,6 @@ import { QueryOptions } from '@app/models';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit, OnDestroy {
-	public originLimit = 10;
-
 	public get filterValue(): string {
 		return this.queryOptions.filter;
 	}
@@ -34,10 +32,11 @@ export class SearchComponent implements OnInit, OnDestroy {
 	public profiles$: Observable<IProfilesEnvelope>;
 	public loading$: Observable<boolean>;
 
-	private queryOptions: QueryOptions = new QueryOptions();
+	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-	private unsubscribe: Subject<void> = new Subject();
-	private delaySearch$: Subject<void> = new Subject<void>();
+	private queryOptions: QueryOptions = new QueryOptions();
+	private unsubscribe$: Subject<void> = new Subject();
+	private delayChangeFilter$: Subject<string> = new Subject<string>();
 
 	constructor(private store: Store<fromState.State>, private router: Router, private route: ActivatedRoute) {}
 
@@ -49,34 +48,24 @@ export class SearchComponent implements OnInit, OnDestroy {
 		this.profiles$ = this.store.select(fromProfiles.getSearchedProfiles);
 		this.loading$ = this.store.select(fromProfiles.getLoadingStatus);
 
-		this.delaySearch$
-			.pipe(takeUntil(this.unsubscribe), debounceTime(1000))
-			.subscribe(() => this.searchProfiles(this.queryOptions));
-	}
+		this.delayChangeFilter$
+			.pipe(takeUntil(this.unsubscribe$), debounceTime(1000))
+			.subscribe((queryOptions) => this.onChangeFilter(queryOptions));
 
-	private searchProfiles(queryOptions: QueryOptions): void {
-		this.router.navigate([], { relativeTo: this.route, queryParams: { filter: queryOptions.filter } });
-		this.store.dispatch(SearchActions.searchProfiles({ queryOptions: { ...queryOptions } }));
-	}
+		this.paginator.page.pipe(takeUntil(this.unsubscribe$)).subscribe((eventPage) => {
+			this.queryOptions.limit = eventPage.pageSize;
+			this.queryOptions.offset = eventPage.pageIndex * this.queryOptions.limit;
 
-	public onKeyUpFilter(filterValue: string, keyCode: string): void {
-		if (keyCode !== 'Enter') {
-			this.queryOptions.filter = filterValue || null;
-			this.delaySearch$.next();
-		}
-	}
-
-	public onChangeFilter(filterValue: string): void {
-		if (this.queryOptions.filter) {
-			this.queryOptions.filter = filterValue || null;
 			this.searchProfiles(this.queryOptions);
-		}
+		});
 	}
 
-	public onChangePage(event: PageEvent): void {
-		this.queryOptions.limit = event.pageSize;
-		this.queryOptions.offset = event.pageIndex * this.queryOptions.limit;
+	public onKeyUpFilter = (filter: string): void => this.delayChangeFilter$.next(filter);
 
+	public onChangeFilter(filter: string): void {
+		this.queryOptions.filter = filter || null;
+
+		this.paginator.firstPage();
 		this.searchProfiles(this.queryOptions);
 	}
 
@@ -85,6 +74,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 		this.queryOptions.orderBy = sort.active;
 		this.queryOptions.orderDirection = sort.direction;
 
+		this.paginator.firstPage();
 		this.searchProfiles(this.queryOptions);
 	}
 
@@ -92,8 +82,13 @@ export class SearchComponent implements OnInit, OnDestroy {
 		this.router.navigate(['/profiles', profileId]);
 	}
 
+	private searchProfiles(queryOptions: QueryOptions): void {
+		this.router.navigate([], { relativeTo: this.route, queryParams: { filter: queryOptions.filter } });
+		this.store.dispatch(SearchActions.searchProfiles({ queryOptions: queryOptions.clone() }));
+	}
+
 	ngOnDestroy(): void {
-		this.unsubscribe.next();
-		this.unsubscribe.complete();
+		this.unsubscribe$.next();
+		this.unsubscribe$.complete();
 	}
 }

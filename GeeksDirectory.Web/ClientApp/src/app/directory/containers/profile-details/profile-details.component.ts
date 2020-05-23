@@ -27,20 +27,20 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
 
 	public profile: IProfile;
 
-	private unsubscribe: Subject<void> = new Subject();
+	private unsubscribe$: Subject<void> = new Subject();
 
 	constructor(private store: Store<fromState.State>, private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}
 
 	ngOnInit(): void {
 		this.store
 			.select(fromProfiles.getSelectedProfile)
-			.pipe(takeUntil(this.unsubscribe))
+			.pipe(takeUntil(this.unsubscribe$))
 			.subscribe((profile) => {
 				this.profile = { ...profile };
 				this.cdr.detectChanges();
 			});
 
-		this.route.paramMap.pipe(takeUntil(this.unsubscribe)).subscribe((params: ParamMap) => {
+		this.route.paramMap.pipe(takeUntil(this.unsubscribe$)).subscribe((params: ParamMap) => {
 			this.profileId = Number(params.get('id'));
 		});
 
@@ -62,7 +62,7 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.unsubscribe.next();
-		this.unsubscribe.complete();
+		this.unsubscribe$.next();
+		this.unsubscribe$.complete();
 	}
 }
