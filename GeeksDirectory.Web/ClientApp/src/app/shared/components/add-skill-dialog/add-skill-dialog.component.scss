@@ -1,14 +1,13 @@
 @import '~src/assets/styles/variables';
 
 .mat-dialog-content {
+    height: 260px;
     min-width: 230px;
-    height: 312px;
 }
 
 .skill-form {
     display: flex;
     flex-direction: column;
-    height: 288px;
 }
 
 .skill-body {
@@ -18,7 +17,7 @@
 .skill-form-actions {
     justify-content: flex-end;
 
-    >button {
+    > button {
         margin-left: 10px;
     }
 }

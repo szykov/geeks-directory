@@ -1,16 +1,16 @@
 @import '~src/assets/styles/variables';
 
 .drawer-trigger {
-    min-width: 0;
-    width: 25px;
     margin: 0 10px 0 0;
+    min-width: 0;
     padding: 0;
+    width: 25px;
 }
 
 .drawer-container {
+    bottom: 0;
     position: fixed;
     top: 64px;
-    bottom: 0;
     width: 100%;
 }
 

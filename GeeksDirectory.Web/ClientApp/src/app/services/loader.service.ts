@@ -3,20 +3,20 @@ import { Injectable } from '@angular/core';
 import { NgProgressRef, NgProgress } from '@ngx-progressbar/core';
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class LoaderService {
-    private progressRef: NgProgressRef;
+	private progressRef: NgProgressRef;
 
-    constructor(private progress: NgProgress) {
-        this.progressRef = this.progress.ref('progress');
-    }
+	constructor(private progress: NgProgress) {
+		this.progressRef = this.progress.ref('progress');
+	}
 
-    startLoading() {
-        this.progressRef.start();
-    }
+	startLoading(): void {
+		this.progressRef.start();
+	}
 
-    completeLoading() {
-        this.progressRef.complete();
-    }
+	completeLoading(): void {
+		this.progressRef.complete();
+	}
 }

@@ -8,45 +8,45 @@ import { takeUntil } from 'rxjs/operators';
 import { CredentialsModel } from '@app/auth/models';
 
 @Component({
-    selector: 'gd-sign-in-dialog',
-    templateUrl: './sign-in-dialog.component.html',
-    styleUrls: ['./sign-in-dialog.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'gd-sign-in-dialog',
+	templateUrl: './sign-in-dialog.component.html',
+	styleUrls: ['./sign-in-dialog.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignInDialogComponent implements OnInit, OnDestroy {
-    public model: CredentialsModel = new CredentialsModel();
-    public hide = true;
+	public model: CredentialsModel = new CredentialsModel();
+	public hide = true;
 
-    private unsubscribe: Subject<void> = new Subject();
+	private unsubscribe$: Subject<void> = new Subject();
 
-    constructor(
-        public dialogRef: MatDialogRef<SignInDialogComponent>,
-        @Optional() @Inject(MAT_DIALOG_DATA) public data: CredentialsModel
-    ) {}
+	constructor(
+		public dialogRef: MatDialogRef<SignInDialogComponent>,
+		@Optional() @Inject(MAT_DIALOG_DATA) private data: CredentialsModel
+	) {
+		this.model = this.data || new CredentialsModel();
+	}
 
-    ngOnInit() {
-        this.model = this.data || new CredentialsModel();
+	ngOnInit(): void {
+		this.dialogRef
+			.backdropClick()
+			.pipe(takeUntil(this.unsubscribe$))
+			.subscribe(() => this.onCancel());
+	}
 
-        this.dialogRef
-            .backdropClick()
-            .pipe(takeUntil(this.unsubscribe))
-            .subscribe(() => this.onCancel());
-    }
+	public onSubmit(): void {
+		this.dialogRef.close({ choice: DialogChoice.Ok, data: this.model });
+	}
 
-    public onSubmit() {
-        this.dialogRef.close({ choice: DialogChoice.Ok, data: this.model });
-    }
+	public onCancel(): void {
+		this.dialogRef.close({ choice: DialogChoice.Canceled, data: this.model });
+	}
 
-    public onCancel() {
-        this.dialogRef.close({ choice: DialogChoice.Canceled, data: this.model });
-    }
+	public onCreateAccount(): void {
+		this.dialogRef.close({ choice: DialogChoice.CreateAccount });
+	}
 
-    public onCreateAccount() {
-        this.dialogRef.close({ choice: DialogChoice.CreateAccount });
-    }
-
-    ngOnDestroy() {
-        this.unsubscribe.next();
-        this.unsubscribe.complete();
-    }
+	ngOnDestroy(): void {
+		this.unsubscribe$.next();
+		this.unsubscribe$.complete();
+	}
 }

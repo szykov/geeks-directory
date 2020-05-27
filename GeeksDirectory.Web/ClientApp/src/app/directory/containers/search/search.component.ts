@@ -1,6 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 
 import { Subject, Observable } from 'rxjs';
@@ -18,82 +18,77 @@ import { IProfilesEnvelope } from '@app/responses';
 import { QueryOptions } from '@app/models';
 
 @Component({
-    selector: 'gd-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.scss'],
-    animations: [fadeInUpOnEnterAnimation(CONFIG.animation.fadeInUpOnEnterAnimation)],
-    changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'gd-search',
+	templateUrl: './search.component.html',
+	styleUrls: ['./search.component.scss'],
+	animations: [fadeInUpOnEnterAnimation(CONFIG.animation.fadeInUpOnEnterAnimation)],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent implements OnInit, OnDestroy {
-    public originLimit = 10;
+	public get filterValue(): string {
+		return this.queryOptions.filter;
+	}
 
-    public get filterValue() {
-        return this.queryOptions.filter;
-    }
+	public profiles$: Observable<IProfilesEnvelope>;
+	public loading$: Observable<boolean>;
 
-    public profiles$: Observable<IProfilesEnvelope>;
-    public loading$: Observable<boolean>;
+	@ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-    private queryOptions: QueryOptions = new QueryOptions();
+	private queryOptions: QueryOptions = new QueryOptions();
+	private unsubscribe$: Subject<void> = new Subject();
+	private delayChangeFilter$: Subject<string> = new Subject<string>();
 
-    private unsubscribe: Subject<void> = new Subject();
-    private delaySearch$: Subject<void> = new Subject<void>();
+	constructor(private store: Store<fromState.State>, private router: Router, private route: ActivatedRoute) {}
 
-    constructor(private store: Store<fromState.State>, private router: Router, private route: ActivatedRoute) {}
+	ngOnInit(): void {
+		let filterParam = this.route.snapshot.paramMap.get('filter');
+		this.queryOptions.filter = filterParam ? filterParam : null;
+		this.searchProfiles(this.queryOptions);
 
-    ngOnInit() {
-        let filterParam = this.route.snapshot.paramMap.get('filter');
-        this.queryOptions.filter = filterParam ? filterParam : null;
-        this.searchProfiles(this.queryOptions);
+		this.profiles$ = this.store.select(fromProfiles.getSearchedProfiles);
+		this.loading$ = this.store.select(fromProfiles.getLoadingStatus);
 
-        this.profiles$ = this.store.select(fromProfiles.getSearchedProfiles);
-        this.loading$ = this.store.select(fromProfiles.getLoadingStatus);
+		this.delayChangeFilter$
+			.pipe(takeUntil(this.unsubscribe$), debounceTime(1000))
+			.subscribe((queryOptions) => this.onChangeFilter(queryOptions));
 
-        this.delaySearch$
-            .pipe(takeUntil(this.unsubscribe), debounceTime(1000))
-            .subscribe(() => this.searchProfiles(this.queryOptions));
-    }
+		this.paginator.page.pipe(takeUntil(this.unsubscribe$)).subscribe((eventPage) => {
+			this.queryOptions.limit = eventPage.pageSize;
+			this.queryOptions.offset = eventPage.pageIndex * this.queryOptions.limit;
 
-    private searchProfiles(queryOptions: QueryOptions) {
-        this.router.navigate([], { relativeTo: this.route, queryParams: { filter: queryOptions.filter } });
-        this.store.dispatch(SearchActions.searchProfiles({ queryOptions: { ...queryOptions } }));
-    }
+			this.searchProfiles(this.queryOptions);
+		});
+	}
 
-    public onKeyUpFilter(filterValue: string, keyCode: string) {
-        if (keyCode !== 'Enter') {
-            this.queryOptions.filter = filterValue || null;
-            this.delaySearch$.next();
-        }
-    }
+	public onKeyUpFilter = (filter: string): void => this.delayChangeFilter$.next(filter);
 
-    public onChangeFilter(filterValue: string) {
-        if (this.queryOptions.filter) {
-            this.queryOptions.filter = filterValue || null;
-            this.searchProfiles(this.queryOptions);
-        }
-    }
+	public onChangeFilter(filter: string): void {
+		this.queryOptions.filter = filter || null;
 
-    public onChangePage(event: PageEvent) {
-        this.queryOptions.limit = event.pageSize;
-        this.queryOptions.offset = event.pageIndex * this.queryOptions.limit;
+		this.paginator.firstPage();
+		this.searchProfiles(this.queryOptions);
+	}
 
-        this.searchProfiles(this.queryOptions);
-    }
+	public onChangeOrder(sort: Sort): void {
+		this.queryOptions.offset = 0;
+		this.queryOptions.orderBy = sort.active;
+		this.queryOptions.orderDirection = sort.direction;
 
-    public onChangeOrder(sort: Sort) {
-        this.queryOptions.offset = 0;
-        this.queryOptions.orderBy = sort.active;
-        this.queryOptions.orderDirection = sort.direction;
+		this.paginator.firstPage();
+		this.searchProfiles(this.queryOptions);
+	}
 
-        this.searchProfiles(this.queryOptions);
-    }
+	public onGoToProfile(profileId: number): void {
+		this.router.navigate(['/profiles', profileId]);
+	}
 
-    public onGoToProfile(profileId: number) {
-        this.router.navigate(['/profiles', profileId]);
-    }
+	private searchProfiles(queryOptions: QueryOptions): void {
+		this.router.navigate([], { relativeTo: this.route, queryParams: { filter: queryOptions.filter } });
+		this.store.dispatch(SearchActions.searchProfiles({ queryOptions: queryOptions.clone() }));
+	}
 
-    ngOnDestroy() {
-        this.unsubscribe.next();
-        this.unsubscribe.complete();
-    }
+	ngOnDestroy(): void {
+		this.unsubscribe$.next();
+		this.unsubscribe$.complete();
+	}
 }

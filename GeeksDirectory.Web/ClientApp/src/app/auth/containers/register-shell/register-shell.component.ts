@@ -7,17 +7,17 @@ import { CreateProfileModel } from '@app/models';
 import { RegistrationActions } from '@app/auth/actions';
 
 @Component({
-    selector: 'gd-register-shell',
-    templateUrl: './register-shell.component.html',
-    styleUrls: ['./register-shell.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+	selector: 'gd-register-shell',
+	templateUrl: './register-shell.component.html',
+	styleUrls: ['./register-shell.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterShellComponent {
-    public model: CreateProfileModel = new CreateProfileModel();
+	public model: CreateProfileModel = new CreateProfileModel();
 
-    constructor(private store: Store<fromAuth.State>) {}
+	constructor(private store: Store<fromAuth.State>) {}
 
-    public onRegister(profile: CreateProfileModel) {
-        this.store.dispatch(RegistrationActions.registerProfile({ profile }));
-    }
+	public onRegister(profile: CreateProfileModel): void {
+		this.store.dispatch(RegistrationActions.registerProfile({ profile }));
+	}
 }

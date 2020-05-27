@@ -11,16 +11,28 @@
             </mat-form-field>
 
             <mat-label class="title-header">Your Evaluation</mat-label>
-            <gd-skill-score data-cy="score" id="score" name="score" [isMin]="isMobile$ | async"
-                [(ngModel)]="model.score" required></gd-skill-score>
-        </div>
-
-        <div class="skill-form-actions" mat-dialog-actions>
-            <button data-cy="skillCancel" mat-flat-button (click)="onCancel()">Cancel</button>
-            <button data-cy="skillOk" type="submit" mat-flat-button color="primary" (click)="onSubmit()"
-                [disabled]="skillForm.form.invalid">
-                Ok
-            </button>
+            <gd-skill-score
+                data-cy="score"
+                id="score"
+                name="score"
+                [isMin]="isMobile$ | async"
+                [(ngModel)]="model.score"
+                required
+            ></gd-skill-score>
         </div>
     </form>
+</div>
+
+<div class="skill-form-actions" mat-dialog-actions>
+    <button data-cy="skillCancel" mat-flat-button (click)="onCancel()">Cancel</button>
+    <button
+        data-cy="skillOk"
+        type="submit"
+        mat-flat-button
+        color="primary"
+        (click)="onSubmit()"
+        [disabled]="skillForm.form.invalid"
+    >
+        Ok
+    </button>
 </div>

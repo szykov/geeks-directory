@@ -15,15 +15,15 @@ import { RegisterShellComponent } from './containers';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 
 @NgModule({
-    declarations: [SignInDialogComponent, RegisterShellComponent, RegisterFormComponent],
-    imports: [
-        CommonModule,
-        FormsModule,
-        SharedModule,
-        AuthRoutingModule,
-        StoreModule.forFeature('auth', reducers),
-        EffectsModule.forFeature([AuthEffects])
-    ],
-    entryComponents: [SignInDialogComponent]
+	declarations: [SignInDialogComponent, RegisterShellComponent, RegisterFormComponent],
+	imports: [
+		CommonModule,
+		FormsModule,
+		SharedModule,
+		AuthRoutingModule,
+		StoreModule.forFeature('auth', reducers),
+		EffectsModule.forFeature([AuthEffects])
+	],
+	entryComponents: [SignInDialogComponent]
 })
 export class AuthModule {}

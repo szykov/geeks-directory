@@ -4,17 +4,17 @@ import * as fromRoot from '@app/reducers';
 import * as fromCore from './core.reducer';
 
 export interface CoreState {
-    layout: fromCore.State;
+	layout: fromCore.State;
 }
 
 export interface State extends fromRoot.State {
-    core: CoreState;
+	core: CoreState;
 }
 
-export function reducers(state: CoreState | undefined, action: Action) {
-    return combineReducers({
-        layout: fromCore.reducer
-    })(state, action);
+export function reducers(state: CoreState | undefined, action: Action): { layout: fromCore.State } {
+	return combineReducers({
+		layout: fromCore.reducer
+	})(state, action);
 }
 
 // Selector functions

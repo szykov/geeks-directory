@@ -12,7 +12,7 @@ Web site for assessment of competence in technologies.
 
 ## Demo
 
-http://geeks-directory.azurewebsites.net/
+http://geeks-directory.azurewebsites.net/ (on first load is warming up)
 
 To login use profile's email and password. Password is always `Pa$$w0rd`.
 
@@ -33,5 +33,5 @@ To login use profile's email and password. Password is always `Pa$$w0rd`.
    There will be created a new **sqlite** db when applied migrations;
 2. Open terminal with the path of project `GeeksDirectory.Data`. <br />
    Update database with migrations `dotnet ef database update -s "../GeeksDirectory.Web"`;
-3. Run angular in watch mode `ng serve` or `npm run start`;
-4. Run in Visual Studio;
+3. Use `ng serve` or `npm run start` to run angular;
+4. To run back-end use `dotnet run` or use Visual Studio;

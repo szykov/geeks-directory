@@ -1,4 +1,4 @@
 export interface ISideBar {
-    mode: boolean;
-    status: boolean;
+	mode: boolean;
+	status: boolean;
 }

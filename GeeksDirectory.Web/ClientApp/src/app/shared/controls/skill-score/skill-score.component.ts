@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-empty-function */
+
 import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -19,7 +24,7 @@ export class SkillScoreComponent implements ControlValueAccessor {
     @Input() isMin: boolean;
     public scoreTypes = SCORE_TYPES;
 
-    public get score() {
+    public get score(): number {
         return this.value;
     }
 
@@ -30,15 +35,13 @@ export class SkillScoreComponent implements ControlValueAccessor {
 
     private value: number;
 
-    constructor() {}
+    public writeValue = (value: number): number => (this.score = value);
 
-    public writeValue = (value: number) => (this.score = value);
+    public propagateChange = (_: any): void => {};
 
-    public propagateChange = (_: any) => {};
+    public registerOnChange = (fn: any): any => (this.propagateChange = fn);
 
-    public registerOnChange = (fn: any) => (this.propagateChange = fn);
+    public onChangeScore = (value: number): number => (this.score = value);
 
-    public onChangeScore = (value: number) => (this.score = value);
-
-    public registerOnTouched(fn: any) {}
+    public registerOnTouched(fn: any): void {}
 }

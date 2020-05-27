@@ -10,28 +10,28 @@ import { AddSkillDialogComponent, EvaluateSkillScoreComponent } from '@shared/co
 import { ComponentType } from '@angular/cdk/portal';
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class DialogService {
-    constructor(private dialog: MatDialog) {}
+	constructor(private dialog: MatDialog) {}
 
-    public addSkillDialog(profileId: number): Observable<ISkillDialogResult> {
-        let data: ISkillDialogData = { profileId };
-        return this.baseDialog(AddSkillDialogComponent, { data });
-    }
+	public addSkillDialog(profileId: number): Observable<ISkillDialogResult> {
+		let data: ISkillDialogData = { profileId };
+		return this.baseDialog(AddSkillDialogComponent, { data });
+	}
 
-    public evaluateSkillDialog(skillId: number, model: SkillModel): Observable<ISkillDialogResult> {
-        let data: ISkillDialogData = { skillId, model };
-        return this.baseDialog(EvaluateSkillScoreComponent, { data });
-    }
+	public evaluateSkillDialog(skillId: number, model: SkillModel): Observable<ISkillDialogResult> {
+		let data: ISkillDialogData = { skillId, model };
+		return this.baseDialog(EvaluateSkillScoreComponent, { data });
+	}
 
-    private baseDialog(component: ComponentType<any>, config: MatDialogConfig): Observable<ISkillDialogResult> {
-        config.height = '410px';
-        config.width = '400px';
+	private baseDialog(component: ComponentType<unknown>, config: MatDialogConfig): Observable<ISkillDialogResult> {
+		config.height = '410px';
+		config.width = '400px';
 
-        const dialogRef = this.dialog.open(component, config);
-        let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
+		const dialogRef = this.dialog.open(component, config);
+		let backDrop$ = dialogRef.backdropClick().pipe(mapTo({ choice: DialogChoice.Canceled }));
 
-        return merge(dialogRef.afterClosed(), backDrop$).pipe(filter((result) => !!result));
-    }
+		return merge(dialogRef.afterClosed(), backDrop$).pipe(filter((result) => !!result));
+	}
 }

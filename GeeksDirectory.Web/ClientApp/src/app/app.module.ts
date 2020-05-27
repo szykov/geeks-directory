@@ -24,45 +24,45 @@ import { AppComponent } from '@app/app.component';
 import { SidebarService, ScrollService } from './services';
 
 @NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        NgProgressModule.withConfig({
-            thick: true,
-            color: '#fff',
-            spinner: false
-        }),
-        NgProgressHttpModule,
-        NgProgressRouterModule,
-        CoreModule,
-        SharedModule,
-        AuthModule,
-        RootStoreModule,
-        AppRoutingModule
-    ],
-    providers: [
-        {
-            provide: APP_INITIALIZER,
-            useFactory: (scrollService: ScrollService) => {
-                return () => scrollService.setIsMobile(scrollService.mobileQueryMatches);
-            },
-            multi: true,
-            deps: [ScrollService]
-        },
-        {
-            provide: APP_INITIALIZER,
-            useFactory: (store: Store<fromState.State>, sidebarService: SidebarService) => {
-                return () => store.dispatch(SidebarActions.initSidebar({ sidebar: sidebarService.getSidebar() }));
-            },
-            multi: true,
-            deps: [Store, SidebarService]
-        },
-        WINDOW_PROVIDERS,
-        INTERCEPTORS,
-        CookieService
-    ],
-    bootstrap: [AppComponent]
+	declarations: [AppComponent],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		HttpClientModule,
+		NgProgressModule.withConfig({
+			thick: true,
+			color: '#fff',
+			spinner: false
+		}),
+		NgProgressHttpModule,
+		NgProgressRouterModule,
+		CoreModule,
+		SharedModule,
+		AuthModule,
+		RootStoreModule,
+		AppRoutingModule
+	],
+	providers: [
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (scrollService: ScrollService) => {
+				return (): void => scrollService.setIsMobile(scrollService.mobileQueryMatches);
+			},
+			multi: true,
+			deps: [ScrollService]
+		},
+		{
+			provide: APP_INITIALIZER,
+			useFactory: (store: Store<fromState.State>, sidebarService: SidebarService) => {
+				return (): void => store.dispatch(SidebarActions.initSidebar({ sidebar: sidebarService.getSidebar() }));
+			},
+			multi: true,
+			deps: [Store, SidebarService]
+		},
+		WINDOW_PROVIDERS,
+		INTERCEPTORS,
+		CookieService
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule {}

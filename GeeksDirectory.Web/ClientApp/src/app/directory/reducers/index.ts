@@ -4,17 +4,17 @@ import * as fromRoot from '@app/reducers';
 import * as fromProfiles from './profiles.reducer';
 
 export interface ProfilesState {
-    profiles: fromProfiles.State;
+	profiles: fromProfiles.State;
 }
 
 export interface State extends fromRoot.State {
-    directory: ProfilesState;
+	directory: ProfilesState;
 }
 
-export function reducers(state: ProfilesState | undefined, action: Action) {
-    return combineReducers({
-        profiles: fromProfiles.reducer
-    })(state, action);
+export function reducers(state: ProfilesState | undefined, action: Action): { profiles: fromProfiles.State } {
+	return combineReducers({
+		profiles: fromProfiles.reducer
+	})(state, action);
 }
 
 // Selector functions

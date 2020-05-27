@@ -45,7 +45,7 @@
         <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.GetMyProfile">
                      * <summary>Get personal profile</summary>
                      * <remarks>Get personal profile based on authenticated credentials.</remarks>
-                     * <returns>Profile of authentificated user</returns>
+                     * <returns>Profile of authenticated user</returns>
                     *
         </member>
         <member name="M:GeeksDirectory.Web.Controllers.ProfilesController.SearchProfiles(GeeksDirectory.Web.ResourceParameters.SearchProfilesResourceParameters)">

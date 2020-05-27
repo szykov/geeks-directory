@@ -3,20 +3,20 @@ import { Injectable, Inject } from '@angular/core';
 import { WINDOW } from '@shared/common';
 
 @Injectable({
-    providedIn: 'root'
+	providedIn: 'root'
 })
 export class PaginationService {
-    constructor(@Inject(WINDOW) private window: Window) {}
-    public getPaginationStep(): number {
-        let widthCount = Math.round(this.window.innerWidth / 395);
-        let heightCount = Math.floor(this.window.innerHeight / 160);
+	constructor(@Inject(WINDOW) private window: Window) {}
+	public getPaginationStep(): number {
+		let widthCount = Math.round(this.window.innerWidth / 395);
+		let heightCount = Math.floor(this.window.innerHeight / 160);
 
-        return this.getClosestInRange([1, 2, 3, 4], widthCount) * heightCount;
-    }
+		return this.getClosestInRange([1, 2, 3, 4], widthCount) * heightCount;
+	}
 
-    private getClosestInRange(arr: number[], target: number) {
-        return arr.reduce((prev, curr) => {
-            return Math.abs(curr - target) < Math.abs(prev - target) ? curr : prev;
-        });
-    }
+	private getClosestInRange(arr: number[], target: number): number {
+		return arr.reduce((prev, curr) => {
+			return Math.abs(curr - target) < Math.abs(prev - target) ? curr : prev;
+		});
+	}
 }

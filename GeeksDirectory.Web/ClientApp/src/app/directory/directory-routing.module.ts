@@ -5,13 +5,13 @@ import { ProfileListComponent, ProfileDetailsComponent, SearchComponent } from '
 import { ProfileListResolveGuard, ProfileResolveGuard } from '@app/directory/resolvers';
 
 const routes: Routes = [
-    { path: '', component: ProfileListComponent, resolve: { data: ProfileListResolveGuard } },
-    { path: 'search', component: SearchComponent },
-    { path: ':id', component: ProfileDetailsComponent, resolve: { data: ProfileResolveGuard } }
+	{ path: '', component: ProfileListComponent, resolve: { data: ProfileListResolveGuard } },
+	{ path: 'search', component: SearchComponent },
+	{ path: ':id', component: ProfileDetailsComponent, resolve: { data: ProfileResolveGuard } }
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
 export class DirectoryRoutingModule {}

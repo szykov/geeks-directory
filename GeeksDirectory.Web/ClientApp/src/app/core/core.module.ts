@@ -18,25 +18,25 @@ import { GithubLinkComponent } from './components/github-link/github-link.compon
 import { OpenApiLinkComponent } from './components/open-api-link/open-api-link.component';
 
 @NgModule({
-    declarations: [
-        PageNotFoundComponent,
-        TopbarComponent,
-        LeftBarComponent,
-        RootLayoutComponent,
-        GithubLinkComponent,
-        OpenApiLinkComponent
-    ],
-    imports: [
-        CommonModule,
-        RouterModule,
-        SharedModule,
-        StoreModule.forFeature('core', reducers),
-        EffectsModule.forFeature([CoreEffects])
-    ],
-    exports: [PageNotFoundComponent, TopbarComponent, LeftBarComponent, RootLayoutComponent]
+	declarations: [
+		PageNotFoundComponent,
+		TopbarComponent,
+		LeftBarComponent,
+		RootLayoutComponent,
+		GithubLinkComponent,
+		OpenApiLinkComponent
+	],
+	imports: [
+		CommonModule,
+		RouterModule,
+		SharedModule,
+		StoreModule.forFeature('core', reducers),
+		EffectsModule.forFeature([CoreEffects])
+	],
+	exports: [PageNotFoundComponent, TopbarComponent, LeftBarComponent, RootLayoutComponent]
 })
 export class CoreModule {
-    constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
-        throwIfAlreadyLoaded(parentModule, 'CoreModule');
-    }
+	constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+		throwIfAlreadyLoaded(parentModule, 'CoreModule');
+	}
 }
